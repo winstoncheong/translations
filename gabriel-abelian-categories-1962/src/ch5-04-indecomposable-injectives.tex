@@ -1,9 +1,343 @@
-%@ pages 421-425
-%@ status todo
-% Original: pp. 421--425.  French title: see reference/ocr/page-0421.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Indecomposable Injectives and Two-Sided Ideals}
+%@ pages 421-426
+%@ status translated
+% Chapter V, section 4: Indecomposable injectives and prime two-sided
+% ideals (pp. 421--426). Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer. The section opens
+% mid-p. 421 (after Corollary 2 to Theorem 2, which closes section 3)
+% and ends on p. 426 with Proposition 8; section 5 begins on the same
+% page.
+%
+% Numbering is automatic (src/preamble.tex). This section prints
+% Propositions 6, 7 and 8 (the chapter's run of propositions is at
+% Proposition 5 on p. 415), Lemmas 1 and 2 (the lemma counter restarts
+% at every section) and Corollaries 1, 2 and 3 (to Proposition 7).
+%
+% No emendations.
 
-\notyet{pp. 421--425 of the original French edition.}
+\section{Indecomposable Injectives and Prime Two-Sided Ideals}
+
+--- Let $A$ be a right noetherian ring. If $M$ is an $A$-module,
+$\operatorname{Ann} M$ will denote the two-sided ideal formed by the
+$a$ such that $M.a = 0$. Likewise, if $m$ is an element of $M$,
+$\operatorname{Ann} m$ will denote the right ideal formed by the $a$
+such that $m.a = 0$.
+
+Let $I$ be an indecomposable injective $A$-module. If $M$ and $N$ are
+two non-zero submodules of $I$, $M \cap N$ is non-zero and one has
+\[
+\operatorname{Ann}(M \cap N) \supset \operatorname{Ann} M + \operatorname{Ann} N.
+\]
+
+The annihilators of the non-zero submodules of $I$ thus form an
+increasing filtered family of two-sided ideals of $A$. This family has
+a maximal element which we shall denote $A(I)$.
+
+One sees first that $A(I)$ is a prime two-sided ideal; in other words,
+$A(I)$ is not equal to $A$ and one has
+$a.A.b \subset A(I) \Rightarrow a \in A(I)$ or $b \in A(I)$. This follows
+from the following lemma, whose proof is left to the reader:
+
+\begin{lemma}
+If $\mathfrak{a}$ is a two-sided ideal of a ring $A$, the following
+assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $\mathfrak{a}$ is a prime two-sided ideal.
+\item[\normalfont b.] There exists a non-zero $A$-module $M$ such that
+  $\operatorname{Ann} N = \mathfrak{a}$ for every non-zero submodule
+  $N$ of $M$.
+\end{description}
+\end{lemma}
+
+I also claim that every prime two-sided ideal $\mathfrak{p}$ is of the
+form $A(I)$, where $I$ is an indecomposable injective $A$-module:
+indeed, let $\bigoplus_k I_k$ be a decomposition of the injective
+envelope of $A/\mathfrak{p}$ into indecomposable injectives; let $M_k$
+be a submodule of $I_k$ whose annihilator is $A(I_k)$. Then
+$M_k \cap A/\mathfrak{p}$ is different from $0$ and has for annihilator
+both $\mathfrak{p}$ and $A(I_k)$; whence $\mathfrak{p} = A(I_k)$ for
+every $k$, and the result.
+
+It is easy to see that $A/\mathfrak{p}$ is in fact an isotypic
+$A$-module (Chapter~IV, \S2), i.e.\ that the injectives $I_k$ are all
+isomorphic. Indeed, Corollary~1 to Theorem~2 applies to the ring
+$A/\mathfrak{p}$. This ring is therefore contained in a simple ring $B$
+which is the injective envelope of $A/\mathfrak{p}$ as a right
+$(A/\mathfrak{p})$-module. The injective envelope $I$ of $A/\mathfrak{p}$
+considered as an $A$-module contains $B$, and $B$ coincides with the set
+of elements of $I$ which are annihilated by $\mathfrak{p}$. The
+assertion thus follows from the fact that $B$ is a direct sum of simple
+right ideals which are isomorphic co-irreducible $A$-modules.
+
+Let now $M$ be an arbitrary $A$-module, let $I$ be the injective
+envelope of $M$ and let $I = \sum_k I_k$ be a decomposition of $I$ as a
+direct sum of indecomposable injective modules. The prime two-sided
+ideal $\mathfrak{p}$ of $A$ will be said to be \emph{associated} with
+$M$ if there exists a $k$ such that $\mathfrak{p} = A(I_k)$. The
+indecomposable injectives associated with the same prime two-sided
+ideal may then be grouped together in packets
+$J_{\mathfrak{p}} = \sum_{A(I_k) = \mathfrak{p}} I_k$. A decomposition
+of $I$ is thus obtained, unique up to automorphism, of the form
+$I = \sum_{\mathfrak{p}} J_{\mathfrak{p}}$, where $\mathfrak{p}$ runs
+through the prime ideals associated with $M$.
+
+In particular, if $M_{\mathfrak{p}}$ is equal to the intersection
+$M \cap \left(\sum_{\mathfrak{q} \ne \mathfrak{p}} J_{\mathfrak{q}}\right)$,
+one has the equality $0 = \bigcap_{\mathfrak{p}} M_{\mathfrak{p}}$,
+where $\mathfrak{p}$ runs through the prime ideals associated with $M$.
+Moreover, the decomposition is irredundant and $M/M_{\mathfrak{p}}$ has
+$\mathfrak{p}$ as its sole associated prime two-sided ideal. The
+following proposition follows from Lemma~1:
+
+\begin{proposition}
+The prime two-sided ideal $\mathfrak{p}$ is associated with $M$ if and
+only if $M$ possesses a submodule $N$ such that $\mathfrak{p}$ is the
+annihilator of $N$ and of every non-zero submodule of $N$.
+\end{proposition}
+
+The results of Lesieur-Croisot on the ``tertiary'' decomposition are
+thus recovered by a different procedure \cite{lesieur-croisot-2}.
+
+We now propose to see under which conditions the theory obtained is no
+finer than that of Lesieur-Croisot, i.e.\ when the correspondence
+established between indecomposable injectives and prime two-sided ideals
+is bijective. For this, we shall assume hypothesis (H) satisfied:
+
+(H) If $I$ is a right ideal of $A$ and if $\mathfrak{p}$ is the
+annihilator of $A/I$, there exists a finite number of elements
+$x_1, \ldots, x_r$ of $A/I$ such that
+\[
+\mathfrak{p} = \bigcap_{1 \le i \le r} \operatorname{Ann} x_i.
+\]
+
+If condition (H) is satisfied, I claim that, for every indecomposable
+injective $I$, the injective envelope of $A/A(I)$ is a direct sum of a
+finite number of modules isomorphic to $I$: let indeed $M$ be a
+submodule of $I$ whose annihilator is $A(I)$. One manifestly has
+\[
+A(I) = \bigcap_{\substack{x \ne 0 \\ x \in M}} \operatorname{Ann} x.
+\]
+
+But it follows from (H) that $A(I)$ is the intersection of a finite
+number of $\operatorname{Ann} x$, say
+$\operatorname{Ann} x_1, \ldots, \operatorname{Ann} x_r$; there is
+therefore a monomorphism from $A/A(I)$ into the finite direct sum
+$\bigoplus_{i=1}^{r} x_i.A$. The injective envelope of this sum is
+isotypic; whence the result:
+
+\begin{lemma}
+If condition (H) is satisfied, the correspondence $I \leadsto A(I)$
+between types of indecomposable injectives and prime two-sided ideals
+is bijective.
+\end{lemma}
+
+It remains to give examples where condition (H) is satisfied:
+
+\begin{description}
+\item[\normalfont a.] Every right ideal of $A$ is two-sided.
+\item[\normalfont b.] The ring $A$ is right artinian. The radical
+  $\mathfrak{r}(A)$ of $A$ is then nilpotent and every prime two-sided
+  ideal contains $\mathfrak{r}(A)$. The prime two-sided ideals of $A$
+  are therefore in bijective correspondence with those of the
+  semisimple ring $A/\mathfrak{r}(A)$, i.e.\ with the irreducible
+  representations of $A$.
+\item[\normalfont c.] The centre $Z(A)$ of $A$ is a noetherian ring and
+  $A$ is a $Z(A)$-module of finite type: let $M$ be an $A$-module of
+  finite type, $x$ and $y$ two elements of $M$. If $x'$ and $y'$ denote
+  the sets formed by the elements of $M$ which are annihilated by
+  $\operatorname{Ann} x$ and $\operatorname{Ann} y$, one sees that $x'$
+  and $y'$ are modules of finite type over $Z(A)$. Moreover, one has
+  the equality
+  \[
+  \operatorname{Ann}(x' + y') = \operatorname{Ann} x \cap \operatorname{Ann} y.
+  \]
+  Since $M$ is a noetherian $Z(A)$-module, there exists a finite number
+  of elements $x_1, \ldots, x_r$ of $M$ such that
+  \[
+  x_1' + \cdots + x_r' = M.
+  \]
+  Condition (H) is therefore satisfied.
+\item[\normalfont d.] A counterexample: let $k$ be a commutative field
+  of characteristic $0$ and $k(X)$ the field of rational fractions in
+  one indeterminate $X$ over $k$. Let $d$ be the $k$-derivation
+  $P(X) \mapsto P'(X)$ of $k(X)$ and $A$ the ring of operators generated
+  by $d$ and the homotheties of $k(X)$. The ring $A$ is a domain, every
+  right ideal is principal and there is no two-sided ideal distinct from
+  $0$ or $A$ (\cite{bourbaki-algebre}, \S5, exerc.~13). In particular,
+  the prime two-sided ideals associated with a simple $A$-module and
+  with $A_d$ are zero. Since these modules do not have the same
+  injective envelope, one sees that the correspondence
+  $I \leadsto A(I)$ is not bijective.
+\end{description}
+
+The set of prime two-sided ideals of $A$ will henceforth be called the
+\emph{prime spectrum} of $A$ [notation: $\operatorname{Spec}(A)$]. We
+know that it is possible to associate with every prime two-sided ideal
+$\mathfrak{p}$ an indecomposable injective $A$-module $I_{\mathfrak{p}}$
+satisfying the following condition: the injective envelope of
+$A/\mathfrak{p}$ is a finite direct sum of modules isomorphic to
+$I_{\mathfrak{p}}$. The map $\mathfrak{p} \leadsto I_{\mathfrak{p}}$
+defines an injection of $\operatorname{Spec}(A)$ into the spectrum of
+the category $\operatorname{mod} A$. We shall always identify
+$\operatorname{Spec}(A)$ with the image of this injection.
+
+\begin{proposition}
+Let $A$ be a right noetherian ring and $\mathbf{C}$ a localizing
+subcategory of $\operatorname{mod} A$. A prime two-sided ideal
+$\mathfrak{p}$ belongs to $\operatorname{Sp}(\mathbf{C})$
+(Chapter~IV, \S1) if and only if $A/\mathfrak{p}$ is an object of
+$\mathbf{C}$.
+\end{proposition}
+
+It is clear that $\mathfrak{p}$ belongs to
+$\operatorname{Sp}(\mathbf{C})$ if $A/\mathfrak{p}$ is an object of
+$\mathbf{C}$. Suppose conversely that $\mathfrak{p}$ belongs to
+$\operatorname{Sp}(\mathbf{C})$. This means that $I_{\mathfrak{p}}$
+contains a non-zero submodule belonging to $\mathbf{C}$. It follows that
+$A/\mathfrak{p}$ contains a non-zero submodule $N$ belonging to
+$\mathbf{C}$. We denote by $S$ the multiplicative set formed by the
+regular elements of $A/\mathfrak{p}$ (cf.~\S3). If $P$ is a subgroup of
+$N$, the right ideal $\operatorname{Ann} P$ of $A/\mathfrak{p}$ formed by
+the $a$ such that $P.a$ is zero is the intersection of $A/\mathfrak{p}$
+with a right ideal of the simple ring $(A/\mathfrak{p})_S$. It follows
+that the right ideals of $A$ of the form $\operatorname{Ann} P$ satisfy
+the descending chain condition. In particular, there exists a finite
+number of elements $x_1, \ldots, x_r$ of $N$ such that
+\[
+0 = \bigcap_{i=1}^{r} \operatorname{Ann} x_i.
+\]
+
+There is therefore an $A$-linear map from $A/\mathfrak{p}$ to the direct
+sum of the modules $x_i.A$. It follows that $A/\mathfrak{p}$ belongs to
+$\mathbf{C}$. \hfill Q.E.D.
+
+If $s$ is an element of $\operatorname{Sp}(\operatorname{mod} A)$, and if
+$I_s$ is an indecomposable injective $A$-module of type $s$, the
+two-sided ideal $A(I_s)$ belongs to $\operatorname{Spec}(A)$. We shall
+say that the map $s \leadsto A(I_s)$ is the \emph{canonical projection}
+from $\operatorname{Sp}(\operatorname{mod} A)$ onto
+$\operatorname{Spec}(A)$. This projection is the identity on
+$\operatorname{Spec}(A)$; it is therefore surjective. When it is
+bijective, we say that the ring $A$ \emph{has enough two-sided ideals}.
+
+Let $A$ be a ring, right noetherian and having enough two-sided ideals.
+If $F$ is a topologising and idempotent set of right ideals, we have
+seen that the product $I.\mathfrak{m}$ of two right ideals $I$ and
+$\mathfrak{m}$ belongs to $F$ provided $I$ and $\mathfrak{m}$ belong to
+$F$. The multiplicative law of $A$ therefore equips the set $F$ with a
+monoid structure. I claim that the submonoid of $F$ generated by the
+prime two-sided ideals belonging to $F$ is cofinal: the subcategory
+$\mathbf{F}$ is indeed generated by the modules $A/\mathfrak{p}$, where
+$\mathfrak{p}$ runs through the prime two-sided ideals belonging to $F$
+(Proposition~7 and Corollary~2 to Proposition~2, Chapter~IV). Every
+noetherian module $M$ belonging to $\mathbf{F}$ consequently possesses a
+composition series
+\[
+0 = M_0 \subset M_1 \subset \cdots \subset M_r \subset M_{r+1} = M,
+\]
+whose quotients $M_{i+1}/M_i$ are annihilated by a prime two-sided ideal
+$\mathfrak{p}_i \in F$. One deduces from this that the product
+$\mathfrak{p}_r.\mathfrak{p}_{r-1}\ldots\mathfrak{p}_0$ annihilates $M$.
+If $M$ is the quotient of $A$ by an element $I$ of $F$, it follows that
+$I$ contains the product
+$\mathfrak{p}_r.\mathfrak{p}_{r-1}\ldots\mathfrak{p}_0$. Proposition~7
+therefore implies the
+
+\begin{corollary}
+Let $A$ be a right noetherian ring having enough two-sided ideals and
+$E$ a set of prime two-sided ideals of $A$. The set $F$ of right ideals
+containing a product of the form
+$\mathfrak{p}_r.\mathfrak{p}_{r-1}\ldots\mathfrak{p}_0$, where
+$\mathfrak{p}_i \in E$, is topologising and idempotent. Conversely,
+every topologising and idempotent set of right ideals is of this type.
+\end{corollary}
+
+If the ring $A$ has enough two-sided ideals, the prime spectrum of $A$
+coincides with the spectrum of the category $\operatorname{mod} A$. The
+latter is thus equipped with a noetherian ordered set structure.
+Moreover, for every localizing subcategory $\mathbf{C}$ of
+$\operatorname{mod} A$, $\operatorname{Sp}(\mathbf{C})$ coincides with the
+set of prime two-sided ideals $\mathfrak{p}$ such that $A/\mathfrak{p}$
+belongs to $\mathbf{C}$. If $\alpha$ is an ordinal, we denote in
+particular by $E_\alpha$ the set of prime ideals such that
+$\operatorname{Kdim} A/\mathfrak{p} \le \alpha$ (see Chapter~IV, \S1).
+One then has the
+
+\begin{corollary}
+Let $A$ be a right noetherian ring having enough two-sided ideals. With
+the notation above, the sets $E_\alpha$ may be defined as follows:
+\begin{itemize}
+\item $E_{-1}$ is empty.
+\item If the ordinal $\alpha$ has a predecessor $\beta$, $E_\alpha$ is
+  formed by the prime two-sided ideals $\mathfrak{p}$ such that every
+  prime two-sided ideal containing $\mathfrak{p}$ and distinct from
+  $\mathfrak{p}$ belongs to $E_\beta$.
+\item If $\alpha$ is a limit ordinal, $E_\alpha$ is the union of the
+  $E_\beta$ for $\beta < \alpha$.
+\end{itemize}
+\end{corollary}
+
+It is clear that $E_{-1}$ is empty. Let therefore $\gamma$ be an
+arbitrary ordinal and suppose that the statements of Corollary~2 hold
+for every ordinal $\alpha < \gamma$. If $\gamma$ is a limit ordinal,
+these statements manifestly remain true when $\alpha$ is equal to
+$\gamma$. Let us examine the case where $\gamma$ has a predecessor
+$\beta$, and let $T_\beta$ be the canonical functor from
+$\operatorname{mod} A = \mathbf{A}$ to
+$\mathbf{A}/\mathbf{A}_\beta$ (the notation being that of
+Chapter~IV):
+
+Let $\mathfrak{p}$ be a prime two-sided ideal such that
+$\operatorname{Kdim} A/\mathfrak{p} = \gamma$. On the other hand, let
+$\mathfrak{q}$ be a prime two-sided ideal containing $\mathfrak{p}$ and
+distinct from $\mathfrak{p}$. It is clear that
+$\operatorname{Kdim} A/\mathfrak{q}$ is less than or equal to
+$\operatorname{Kdim} A/\mathfrak{p}$; if equality held, the
+Jordan-H\"older quotients of $T_\beta(A/\mathfrak{p})$ would not all be
+isomorphic. There would follow the existence of a non-zero submodule $N$
+of $A/\mathfrak{p}$ which would not generate the same localizing
+subcategory of $\operatorname{mod} A$ as $A/\mathfrak{p}$. Since there
+exists an $A$-linear injection of $A/\mathfrak{p}$ into a direct sum of
+modules isomorphic to $N$ (cf.~the proof of Proposition~7), this is
+impossible. One has therefore the inequality
+$\operatorname{Kdim} A/\mathfrak{q} < \operatorname{Kdim} A/\mathfrak{p}$.
+
+Conversely, suppose that $A/\mathfrak{q}$ belongs to
+$\mathbf{A}_\beta$ for every prime ideal $\mathfrak{q}$ containing
+$\mathfrak{p}$ and distinct from $\mathfrak{p}$. Let $I$ be a right
+ideal of $A/\mathfrak{p}$ which is maximal among the right ideals
+$\mathfrak{m}$ such that $A/\mathfrak{m}$ does not belong to
+$\mathbf{A}_\beta$. Then $T_\beta(A/I)$ is a simple object; it follows
+that there exists a two-sided prime ideal associated with $A/I$. This
+prime ideal contains $\mathfrak{p}$, and the hypothesis we have made
+shows that it coincides with $\mathfrak{p}$. Since $A/I$ belongs to
+$\mathbf{A}_\gamma$, $\operatorname{Sp}(\mathbf{A}_\gamma)$ contains
+$\mathfrak{p}$. It follows that $A/\mathfrak{p}$ belongs to
+$\mathbf{A}_\gamma$ (Proposition~7).
+
+\begin{corollary}
+Let $A$ be a right noetherian ring having enough two-sided ideals,
+$\mathfrak{p}$ a prime two-sided ideal of $A$ and $\eta$ a finite
+ordinal. The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $\operatorname{Kdim} A/\mathfrak{p} \le \eta$.
+\item[\normalfont b.] Every chain of prime two-sided ideals containing
+  $\mathfrak{p}$ has at most $\eta + 1$ elements.
+\end{description}
+\end{corollary}
+
+Corollary~3 follows directly from Corollary~2. If $A$ is a commutative
+noetherian ring, it shows that the notion of Krull dimension we
+introduced in $\operatorname{mod} A$ coincides with the classical notion.
+
+To conclude this section, we recall the examples we have given:
+
+\begin{proposition}
+A right noetherian ring $A$ has enough two-sided ideals if one of the
+following conditions holds:
+\begin{description}
+\item[\normalfont a.] $A$ is right artinian.
+\item[\normalfont b.] Every right ideal is two-sided.
+\item[\normalfont c.] The centre $Z(A)$ of $A$ is a noetherian ring and
+  $A$ is a $Z(A)$-module of finite type.
+\end{description}
+\end{proposition}

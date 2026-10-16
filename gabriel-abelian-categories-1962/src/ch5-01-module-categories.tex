@@ -1,12 +1,603 @@
-%@ pages 402-410
-%@ status todo
-% Original: pp. 402--410.  French title: see reference/ocr/page-0402.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 402-411
+%@ status translated
+% Chapter V, section 1: Module categories (pp. 402--411).
+% Transcribed from the page images in reference/source.pdf (pp. 402--411),
+% not from the OCR text layer, which mangles Hom subscripts, tensor
+% products, Fraktur letters and the indices of the direct sums.
+%
+% Numbering is automatic (see src/preamble.tex).  This section prints
+% Proposition 1, Proposition 1 bis, Corollaries 1--4, Lemmas 1--5,
+% Proposition 2 and one corollary which Gabriel prints without a number,
+% hence `unnumberedcorollary'.  "Proposition 1 bis" is set with a local
+% unnumbered `propbis' environment so that the automatic proposition
+% counter still numbers Proposition 2 correctly.
+%
+% The category of (right) modules over a ring $A$ is printed
+% $\mathbf{mod}\,A$ (bold, per the convention for categories); $A_d$ is
+% the right $A$-module underlying $A$, ${}_sA$ the left $A$-module
+% underlying $A$, ${}_AU$ (resp.\ $U_B$) the left (resp.\ right) module
+% underlying a bimodule $U$.  Citations follow the numbering of the
+% original bibliography: [1] is \cite{auslander-goldman}, [3] is
+% \cite{azumaya-2}, [5] is \cite{bourbaki-commutative}, [6] is
+% \cite{cartan-eilenberg} and [18] is \cite{morita}.
+%
+% Three emendations, each footnoted at the point where it occurs:
+% p.~409 prints "$R$-$A^c$-bimodule" (with the $A^e$ of the same sentence
+% written $A^c$); we print $R$-$A^e$.  Proposition~2~(e), p.~410, prints
+% "$R/\mathfrak m$" as "$A$"; we print $R/\mathfrak m$.  The proof of
+% $(e)\Rightarrow(d)$, p.~411, concludes "assertion~(c)" under a heading
+% $(e)\Rightarrow(d)$ after proving exactly the map of (d) bijective;
+% we print~(d).
+% (Transcription readings, not emendations: p.~404 $\psi_1$ is indexed
+% over $j\in J$; p.~406 "($b$ un \'{e}l\'{e}ment de $B$)" reads $b$.)
+
 \chapter{Applications to the Study of Modules}
 \markboth{Chapter V. Applications to the Study of Modules}{}
 
 \section{Module Categories}
 
-\notyet{pp. 402--410 of the original French edition.}
+% `propbis' reproduces the heading "Proposition 1 bis." of the original
+% without advancing the proposition counter.
+\newtheorem*{propbis}{Proposition 1 bis}
+
+--- We take up here some properties of commutative rings.  We try to
+generalise them to rings that are not necessarily commutative.
+
+Unless expressly stated otherwise, all the rings considered in this
+chapter admit a unit element.  All the modules considered are unitary
+right modules.  We suppose moreover that the underlying set of a ring
+or of a module is an element of the universe $\Univ$.
+
+--- Let $A$ be a ring.  We call \emph{module category} (on the right)
+over $A$, and we denote by $\mathbf{mod}\,A$, the following category:
+\begin{itemize}
+\item an object of $\mathbf{mod}\,A$ is a module over $A$;
+\item if $M$ and $N$ are two modules over $A$, a morphism from $M$
+      into $N$ is an $A$-linear map from $M$ into $N$;
+\item composition of morphisms coincides with composition of maps.
+\end{itemize}
+
+It is clear that $\mathbf{mod}\,A$ is an abelian $\Univ$-category with
+exact inductive limits.  Moreover, the right $A$-module $A_d$
+underlying the ring $A$ is a projective generator of
+$\mathbf{mod}\,A$.  The category $\mathbf{mod}\,A$ is locally
+noetherian if and only if the ring $A$ is right noetherian.
+
+The category of left modules over $A$ is defined analogously.
+Consider now an object $U$ of an abelian category $\mathbf B$ and let
+$\chi\colon A\to\operatorname{Hom}_{\mathbf B}(U,U)$ be a unital ring
+homomorphism.  As $M$ ranges over the objects of $\mathbf B$,
+composition of morphisms defines a bilinear map from
+$\operatorname{Hom}_{\mathbf B}(U,M)\times A$ into
+$\operatorname{Hom}_{\mathbf B}(U,M)$:
+$(f,a)\mapsto f\circ\chi(a)$.  This map makes
+$\operatorname{Hom}_{\mathbf B}(U,M)$ into an $A$-module.  One thus
+defines a functor $M\mapsto\operatorname{Hom}_{\mathbf B}(U,M)$ from
+$\mathbf B$ into $\mathbf{mod}\,A$.  This functor will be denoted
+$\operatorname{Hom}_{\mathbf B}(\chi U,.)$, or
+$\operatorname{Hom}(U,.)$ when no confusion is possible.
+
+\begin{proposition}
+Let $A$ be a ring, $\mathbf B$ a $(\Univ)$-category abelian and $S$ a
+functor from $\mathbf B$ into $\mathbf{mod}\,A$.  The following
+assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $S$ is adjoint to a functor
+      $T\colon\mathbf{mod}\,A\to\mathbf B$.
+\item[\normalfont b.] There exists a homomorphism $\chi$ from $A$ into
+      the endomorphism ring of an object $U$ of $\mathbf B$ satisfying
+      the following conditions: $S$ is isomorphic to the functor
+      $\operatorname{Hom}_{\mathbf B}(\chi U,.)$; moreover, every family
+      of objects isomorphic to $U$ has a direct sum.
+\end{description}
+\end{proposition}
+
+$(a)\Rightarrow(b)$: let indeed $\psi$ be a functorial isomorphism
+from $\operatorname{Hom}_{\mathbf B}(T.,.)$ onto
+$\operatorname{Hom}_A(.,S.)$.  Identify $A$ with the endomorphism ring
+of $A_d$ and put $U=TA_d$, $\chi=T(A_d,A_d)$.  For every object $N$ of
+$\mathbf B$, $\psi(A_d,N)$ is a bijective map from
+$\operatorname{Hom}_{\mathbf B}(TA_d,N)$ onto
+$\operatorname{Hom}_A(A_d,SN)$.  It is easy to see that this map is
+$A$-linear.  Since $\operatorname{Hom}_A(A_d,SN)$ is isomorphic to
+$SN$, there results a functorial isomorphism from
+$\operatorname{Hom}_{\mathbf B}(U,.)$ onto $S$.
+
+On the other hand, let $(U_i)_{i\in I}$ be a family of objects
+isomorphic to $U$, indexed by a set belonging to $\Univ$.  Let $u_i$ be
+an isomorphism from $U_i$ onto $U$ and put $A_i=A_d$ for every $i$.
+If $v_i$ is the canonical map from $A_i$ into the direct sum
+$\sum_i A_i$, the following equalities show that the morphisms
+$(Tv_i)\circ u_i$ make $T(\sum_i A_i)$ into a direct sum of the family
+$(U_i)_{i\in I}$:
+\[
+\operatorname{Hom}_{\mathbf B}\!\left(T\sum_i A_i,N\right)
+  =\operatorname{Hom}_A\!\left(\sum_i A_i,SN\right)
+\]
+\[
+=\prod_i\operatorname{Hom}_A(A_i,SN)
+  =\prod_i\operatorname{Hom}_{\mathbf B}(TA_i,N).
+\]
+
+$(b)\Rightarrow(a)$: choose indeed for every $A$-module $M$ an exact
+sequence
+\[
+\sum_j A_j \xrightarrow{q} \sum_i A_i \xrightarrow{p} M \to 0,
+\]
+where $(A_i)_{i\in I}$ and $(A_j)_{j\in J}$ are two families of modules
+equal to $A_d$.  Put $U_j=U$ for every $j$ and $U_i=U$ for every $i$.
+Every isomorphism from
+$\operatorname{Hom}_{\mathbf B}(\chi U,.)$ onto $S$ induces functorial
+isomorphisms:
+\[
+\psi_0\colon
+  \operatorname{Hom}_{\mathbf B}\!\left(\sum_{i\in I}U_i,.\right)
+  \to\operatorname{Hom}_A\!\left(\sum_{i\in I}A_i,S.\right),
+\]
+\[
+\psi_1\colon
+  \operatorname{Hom}_{\mathbf B}\!\left(\sum_{j\in J}U_j,.\right)
+  \to\operatorname{Hom}_A\!\left(\sum_{j\in J}A_j,S.\right).
+\]
+Moreover, there exists a morphism $q'$ from $\sum_j U_j$ into
+$\sum_i U_i$ such that
+$\operatorname{Hom}_A(q,.)\circ\psi_0
+  =\psi_1\circ\operatorname{Hom}_{\mathbf B}(q',.)$.
+
+If we put $TM=\operatorname{Coker}q'$, $\psi_0$ induces an isomorphism
+$\psi(M,.)$ from $\operatorname{Hom}_{\mathbf B}(TM,.)$ onto
+$\operatorname{Hom}_A(M,S.)$.  This shows that the functor
+$N\mapsto\operatorname{Hom}_A(M,SN)$ is representable for every $M$;
+the desired implication thus follows from the dual of
+Proposition~10 (Chapter~I).
+
+When $\mathbf B$ is the category of modules over a ring $B$, the
+homomorphism $\chi$ makes $U$ into an $A$-$B$-bimodule ($A$ on the
+left, $B$ on the right).  In this case, one may choose for $T$ the
+functor $M\mapsto M\otimes_A U$.  The functorial isomorphism from
+$\operatorname{Hom}_B(T.,.)$ onto $\operatorname{Hom}_A(.,S.)$
+described in~\cite{cartan-eilenberg} will be called canonical.
+
+\begin{propbis}
+Let $A$ be a ring, $\mathbf B$ an abelian category and $T$ a functor
+from $\mathbf{mod}\,A$ into $\mathbf B$.  The following assertions are
+equivalent:
+\begin{description}
+\item[\normalfont a.] There exists a functor $S$ adjoint to $T$.
+\item[\normalfont b.] The functor $T$ is right exact and it commutes
+      with direct sums.
+\end{description}
+\end{propbis}
+
+$(a)\Rightarrow(b)$: Proposition~11 (Chapter~I) shows that $T$ is right
+exact.  An argument analogous to the one used to prove the implication
+$(a)\Rightarrow(b)$ of Proposition~1 shows that $T$ commutes with
+direct sums.
+
+$(b)\Rightarrow(a)$: put indeed $TA_d=U$ and $\chi=T(A_d,A_d)$.  We
+shall define a functorial morphism from
+$\operatorname{Hom}_{\mathbf B}(T.,.)$ into $\operatorname{Hom}_A(.,S.)$,
+where $S$ is the functor $\operatorname{Hom}_{\mathbf B}(\chi U,.)$;
+for this, let $M$ be an $A$-module, $N$ an object of $\mathbf B$ and
+$f$ a morphism from $TM$ into $N$.  If $m$ is an element of $M$, we
+denote by $g_m$ the map $a\mapsto m\cdot a$ from $A$ into $M$.  One
+verifies easily that the map $m\mapsto f\circ Tg_m$ is an $A$-linear
+map $f'$ from $M$ into $SN$.  As $M$ and $N$ vary, the maps
+$f\mapsto f'$ define a functorial morphism
+$\psi\colon\operatorname{Hom}_{\mathbf B}(T.,.)
+  \to\operatorname{Hom}_A(.,S.)$.
+
+It remains to show that the maps $\psi(M,N)\colon f\mapsto f'$ are
+bijective.  This is obviously true when $M$ is equal to $A_d$, $N$
+being arbitrary.  Since the contravariant functors
+$\operatorname{Hom}_{\mathbf B}(T.,N)$ and $\operatorname{Hom}_A(.,SN)$
+turn direct sums into direct products, $\psi(M,N)$ is still bijective
+when $M$ is free.  In the general case, one chooses an exact sequence
+\[
+L_1 \xrightarrow{q} L_0 \xrightarrow{p} M \to 0,
+\]
+where $L_0$ and $L_1$ are free modules.  The contravariant functors
+$\operatorname{Hom}_{\mathbf B}(T.,N)$ and $\operatorname{Hom}_A(.,SN)$
+are left exact and the maps $\psi(L_1,N)$ and $\psi(L_0,N)$ are
+bijective.  It results by a classical argument that $\psi(M,N)$ is
+bijective.
+
+\begin{corollary}
+Let $S$ be a functor from an abelian category $\mathbf B$ into
+$\mathbf{mod}\,A$.  The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $S$ defines an equivalence between $\mathbf B$
+      and $\mathbf{mod}\,A$.
+\item[\normalfont b.] There exists an isomorphism $\chi$ from $A$ onto
+      the endomorphism ring of an object $U$ of $\mathbf B$ satisfying
+      the following conditions: $S$ is isomorphic to the functor
+      $\operatorname{Hom}_{\mathbf B}(\chi U,.)$; the object $U$ is a
+      projective generator of $\mathbf B$; every family
+      $(U_i)_{i\in I}$ of objects isomorphic to $U$ has a direct sum;
+      moreover, the canonical map from
+      $\sum_{i\in I}\operatorname{Hom}_{\mathbf B}(U,U_i)$ into
+      $\operatorname{Hom}_{\mathbf B}(U,\sum_{i\in I}U_i)$ is bijective.
+\end{description}
+\end{corollary}
+
+$(a)\Rightarrow(b)$: indeed, $S$ is adjoint to a functor
+$T\colon\mathbf{mod}\,A\to\mathbf B$.  If we put $U=TA_d$ and
+$\chi=T(A_d,A_d)$, we have seen that $S$ is isomorphic to the functor
+$\operatorname{Hom}_{\mathbf B}(\chi U,.)$.  Since $T$ defines an
+equivalence, $T(A_d,A_d)$ is a bijective map.  Since $A_d$ is a
+projective generator of $\mathbf{mod}\,A$, $TA_d$ is a projective
+generator of $\mathbf B$.  Finally, since $S$ defines an equivalence,
+$S$ commutes with direct sums.  The same holds for the functor
+$\operatorname{Hom}_{\mathbf B}(\chi U,.)$, which proves the last
+assertion of~(b).
+
+$(b)\Rightarrow(a)$: let us indeed show that the functor
+$S'=\operatorname{Hom}_{\mathbf B}(\chi U,.)$ defines an equivalence
+between $\mathbf B$ and $\mathbf{mod}\,A$: since $U$ is projective,
+$S'$ is an exact functor.  Since $\chi$ is an isomorphism, $S'U$ is
+identified with $A_d$.  If $(U_i)_{i\in I}$ is a family of objects
+equal to $U$, the last assertion of~(b) shows that
+$S'(\sum_{i\in I}U_i)$ is a free $A$-module.  If $(U_j)_{j\in J}$ is
+another family of objects equal to $U$, the same condition furnishes
+the following ``equalities'':
+\[
+\operatorname{Hom}_{\mathbf B}\!\left(\sum_i U_i,\sum_j U_j\right)
+\]
+\[
+=\prod_i\sum_j\operatorname{Hom}_{\mathbf B}(U_i,U_j)
+  =\prod_i\sum_j\operatorname{Hom}_A(S'U_i,S'U_j)
+\]
+\[
+=\operatorname{Hom}_A\!\left(\sum_i S'U_i,\sum_j S'U_j\right)
+  =\operatorname{Hom}_A\!\left(S'\sum_i U_i,S'\sum_j U_j\right).
+\]
+
+Denote by $\mathbf P$ (resp.\ by $\mathbf Q$) the full subcategory of
+$\mathbf{mod}\,A$ (resp.\ of $\mathbf B$) consisting of the free
+$A$-modules (resp.\ of the objects isomorphic to the direct sum of a
+family of objects equal to $U$).  What precedes proves that $S'$
+induces an equivalence between $\mathbf Q$ and $\mathbf P$
+[Proposition~12~(b), Chapter~I].  The implication thus follows from the
+dual of Proposition~14, Corollary~3 (Chapter~I).
+
+One will observe that the last two conditions of assertion~(b) may be
+replaced by the following stronger conditions: $\mathbf B$ is a
+category with generators and exact inductive limits, and $U$ is an
+object of finite type of $\mathbf B$ (i.e.\ every filtered increasing
+family of subobjects of $U$ whose supremum is equal to $U$ is
+stationary).
+
+\begin{corollary}
+Let $A$ and $B$ be two rings and $S$ a functor from $\mathbf{mod}\,B$
+into $\mathbf{mod}\,A$.  The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $S$ defines an equivalence between
+      $\mathbf{mod}\,B$ and $\mathbf{mod}\,A$.
+\item[\normalfont b.] There exists an isomorphism $\chi$ from $A$ onto
+      the endomorphism ring of a $B$-module $U$ satisfying the
+      following conditions: $S$ is isomorphic to the functor
+      $\operatorname{Hom}_B(\chi U,.)$; $U$ is a projective $B$-module
+      of finite type; moreover, $U$ is a projective generator of
+      $\mathbf{mod}\,B$.
+\end{description}
+\end{corollary}
+
+It obviously amounts to the same to give a homomorphism $\chi$ from
+$A$ into the endomorphism ring of a $B$-module $U$ or to give $U$ an
+$A$-$B$-module structure ($A$ on the left, $B$ on the right).  In
+Corollary~3, $U$ is such a bimodule; we denote by ${}_AU$ (resp.\ by
+$U_B$) the left $A$-module (resp.\ the right $B$-module) underlying
+$U$.  If $a$ is an element of $A$ (resp.\ $b$ an element of $B$),
+$a_U$ (resp.\ $b_U$) denotes the endomorphism $x\mapsto a\cdot x$
+(resp.\ $x\mapsto x\cdot b$) of the abelian group underlying $U$.
+
+\begin{corollary}
+(Morita~\cite{morita}). --- Let $A$ and $B$ be two rings and
+$U$ an $A$-$B$-module ($A$ on the left, $B$ on the right).  The
+following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] The functor $M\mapsto M\otimes_A U$ defines an
+      equivalence between $\mathbf{mod}\,A$ and $\mathbf{mod}\,B$.
+\item[\normalfont b.] The functor $N\mapsto\operatorname{Hom}_B(U,N)$
+      defines an equivalence between $\mathbf{mod}\,B$ and
+      $\mathbf{mod}\,A$.
+\item[\normalfont c.] $U_B$ (resp.\ ${}_AU$) is a $B$-module (resp.\ a
+      left $A$-module), projective and of finite type; the map
+      $a\mapsto a_U$ (resp.\ $b\mapsto b_U$) is an isomorphism from $A$
+      (resp.\ from the ring opposite to $B$) onto the endomorphism ring
+      of $U_B$ (resp.\ of ${}_AU$).
+\end{description}
+\end{corollary}
+
+The equivalence of~(a) and of~(b) results from the fact that the
+functor $S\colon N\mapsto\operatorname{Hom}_B(U,N)$ is adjoint to the
+functor $T\colon M\mapsto M\otimes_A U$.
+
+$(a)\Rightarrow(c)$: one has indeed $TA_d=U$ and the map
+$a\mapsto a_U$ coincides with $T(A_d,A_d)$.  It results from the proof
+of Corollary~1 that $U_B$ is a $B$-module of finite type and that
+$a\mapsto a_U$ is a bijection from $A$ onto the endomorphism ring of
+$U_B$.
+
+By Corollary~2, there is on the other hand a $B$-$A$-bimodule $V$ such
+that $T$ is isomorphic to the functor $M\mapsto\operatorname{Hom}_A(V,M)$.
+Moreover, $V_A$ is projective, of finite type, and the map
+$b\mapsto b_V$ is an isomorphism from $B$ onto the endomorphism ring
+of $V_A$.
+
+The ring $B$ operates on the right on the abelian group
+$\operatorname{Hom}_A(V,A_d)$; the endomorphism ring of $A_d$ operates
+on the left on $\operatorname{Hom}_A(V,A_d)$; this group is thus
+equipped with an $A$-$B$-bimodule structure.  Since $U$ is identified
+with $TA_d$, the $A$-$B$-bimodules $U$ and
+$\operatorname{Hom}_A(V,A_d)$ are isomorphic.  The properties of $V_A$
+and the following lemma therefore imply that ${}_AU$ is projective,
+of finite type, and that the map $b\mapsto b_U$ is an isomorphism from
+the ring $B^0$, opposite to $B$, onto the endomorphism ring of
+${}_AU$.
+
+\begin{lemma}
+If $M$ is a projective right $A$-module of finite type, the left
+$A$-module $\operatorname{Hom}_A(M,A_d)$ is projective and of finite
+type.  The functor $M\mapsto\operatorname{Hom}_A(M,A_d)$ defines a
+duality between the projective right $A$-modules of finite type and
+the projective left $A$-modules of finite type.
+\end{lemma}
+
+The left $A$-module structure on
+$\operatorname{Hom}_A(M,A_d)$ is obviously defined as follows: if $a$
+belongs to $A$ and $f$ to $\operatorname{Hom}_A(M,A_d)$, $a\cdot f$ is
+such that $(a\cdot f)(x)=a\cdot f(x)$ for $x\in M$.  Lemma~1 is well
+known, and we shall omit the proof.
+
+$(c)\Rightarrow(b)$: by Corollary~2, it suffices to prove that $U_B$ is
+a generator of the category $\mathbf{mod}\,B$.  For this we shall show
+that $B_d$ is a direct factor of a product $U_B^n$:
+
+Consider first two left $A$-modules $P$ and $Q$, and let ${}_sA$ be
+the left $A$-module underlying $A$.  The abelian group
+$\operatorname{Hom}_A(P,{}_sA)$ is naturally equipped with a right
+$A$-module structure, so that it is legitimate to speak of the tensor
+product $\operatorname{Hom}_A(P,{}_sA)\otimes_A Q$.  If $q$ is an
+element of $Q$ and $f$ an element of
+$\operatorname{Hom}_A(P,{}_sA)$, we denote by $v_{q,f}$ the $A$-linear
+map $p\mapsto f(p)\cdot q$.  As $q$ and $f$ vary, the function
+$(q,f)\mapsto v_{q,f}$ defines a linear map $v(P,Q)$ from
+$\operatorname{Hom}_A(P,{}_sA)\otimes_A Q$ into
+$\operatorname{Hom}_A(P,Q)$.  As $P$ and $Q$ vary, the maps $v(P,Q)$
+define a morphism from the functor
+$(P,Q)\mapsto\operatorname{Hom}_A(P,{}_sA)\otimes_A Q$ into the
+functor $(P,Q)\mapsto\operatorname{Hom}_A(P,Q)$.  It follows in
+particular that $v(P,Q)$ is a morphism of left modules over the ring
+$C$ of endomorphisms of $Q$.
+
+When $P$ is equal to ${}_sA$, $v(P,Q)$ is a bijection.  One deduces
+easily that $v(P,Q)$ is a bijection whenever $P$ is a projective left
+$A$-module of finite type.  If this is so, the left $C$-module
+$\operatorname{Hom}_A(P,Q)$ is isomorphic to the left $C$-module
+$\operatorname{Hom}_A(P,{}_sA)\otimes_A Q$, which is a direct factor of
+a product $Q^n$.
+
+One obtains the desired result by choosing $P$ and $Q$ equal to
+${}_AU$.  The ring $C$ is then identified with the ring opposite
+to~$B$.
+
+\begin{corollary}
+Let $A$ and $B$ be two rings and $U$ an $A$-$B$-bimodule ($A$ on the
+left, $B$ on the right).  The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $U_B$ is a projective $B$-module of finite type;
+      it is a generator of the category $\mathbf{mod}\,B$; moreover,
+      the map $a\mapsto a_U$ is an isomorphism from $A$ onto the
+      endomorphism ring of $U_B$.
+\item[\normalfont b.] $U$ satisfies assertion~(b) of Corollary~3.
+\item[\normalfont c.] ${}_AU$ is a projective left $A$-module of
+      finite type; it is a generator of the category of left
+      $A$-modules; moreover, the map $b\mapsto b_U$ is an isomorphism
+      from the ring opposite to $B$ onto the endomorphism ring of
+      ${}_AU$.
+\end{description}
+\end{corollary}
+
+The equivalence of~(a) and~(b) results from Corollaries~2 and~3.  The
+same goes for the equivalence of~(b) and of~(c), on condition that $A$
+and $B$ be replaced respectively by $B^0$ and $A^0$.
+
+We now give a few applications of the foregoing:
+
+a.\ First, let $\mathfrak B$ be a universe with
+$\Univ\in\mathfrak B$, $\Univ$ being the universe chosen once and for
+all at the beginning of this work.  Let on the other hand
+$\mathbf E$ be the category whose objects are the categories
+$\mathbf C$ such that $\mathbf{MC}\in\mathfrak B$ and
+$\mathbf{OC}\in\mathfrak B$, the morphisms of $\mathbf E$ being the
+isomorphism classes of functors (cf.\ Chapter~I, \S8).  If $A$ is a
+ring whose underlying set belongs to $\Univ$, the category
+$\mathbf{mod}\,A$ is an object of $\mathbf E$; what precedes allows us
+to determine the group $G(A)$ of automorphisms of this object:
+
+By Corollaries~2 and~3 of Proposition~1, a functor
+$T\colon\mathbf{mod}\,A\to\mathbf{mod}\,A$ defines an equivalence if it
+is isomorphic to a functor $M\mapsto M\otimes_A U$, where $U$ is an
+$A$-$A$-bimodule satisfying assertion~(c) of Corollary~3.  We may thus
+identify the elements of $G(A)$ with the types of $A$-$A$-bimodules
+satisfying assertion~(c) of Corollary~3.  Modulo this identification,
+the law of $G(A)$ is defined by the map
+$(U,V)\mapsto V\otimes_A U$.  Moreover, if $U$ satisfies
+assertion~(c) of Corollary~3, the same holds for the $A$-$A$-bimodule
+$\operatorname{Hom}_A(U,A_d)$; the types of $U$ and of
+$\operatorname{Hom}_A(U,A_d)$ are then elements inverse to one another.
+
+b.\ Let $B$ be a ring and $U$ the free $B$-module $B_d^n$.  The
+endomorphism ring of $B_d^n$ is the ring $M_n(B)$ of $(n,n)$-matrices
+with coefficients in $B$.  Corollary~2 shows that the functor
+$N\mapsto\operatorname{Hom}_B(B_d^n,N)$ defines an equivalence between
+$\mathbf{mod}\,B$ and $\mathbf{mod}\,M_n(B)$.
+
+In particular, if $M$ is a $B$-submodule of $B_d^n$,
+$\operatorname{Hom}_B(B_d^n,M)$ is identified with the right ideal
+$\mathfrak d(M)$ of $M_n(B)$ consisting of the endomorphisms $f$ of
+$B_d^n$ whose image is contained in $M$.  One recovers in this way that
+the map $M\mapsto\mathfrak d(M)$ is a bijection from the set of
+$B$-submodules of $B_d^n$ onto the set of right ideals of $M_n(B)$.
+
+c.\ The following example is due to Azumaya~\cite{azumaya-2}:
+let $R$ be a commutative ring and $A$ a finite $R$-algebra (i.e.\ the
+$R$-module underlying $A$ is of finite type) and faithful (i.e.\ the
+map $r\mapsto r\cdot 1_A$ is an injection of $R$ into $A$).  We denote
+by $A^0$ the algebra opposite to $A$ and by $A^e$ the algebra
+$A\otimes_R A^0$~\cite{cartan-eilenberg}.  The map
+$(x,a\otimes b)\mapsto b\cdot x\cdot a$ defines on $A$ a right
+$A^e$-module structure; the map $(r,x)\mapsto r\cdot x$ defines a left
+$R$-module structure on $A$: the algebra $A$ is thus equipped with an
+$R$-$A^e$-bimodule structure ($R$ on the left, $A^e$ on the
+right)\ednote{The original prints ``$R$-$A^c$-bimodule'' here; we
+print $R$-$A^e$, the enveloping algebra defined above, as the
+parenthesis that follows ($R$ on the left, $A^e$ on the right)
+confirms.}.  It is this structure that we consider in the rest of the
+paragraph.
+
+\begin{lemma}
+Let $R$ be a commutative ring, $A$ an $R$-algebra, $S$ a commutative
+$R$-algebra, $B$ the $S$-algebra deduced from $A$ by extension of
+scalars and $B^e$ the tensor product $B\otimes_S B^0$.  We suppose that
+$A_{A^e}$ is a projective $A^e$-module; $B_{B^e}$ is then a projective
+$B^e$-module.
+\end{lemma}
+
+Let indeed $\mu(A|R)$ be the map $a\otimes b\mapsto b\cdot a$ from
+$A^e$ into $A$.  The $A^e$-module $A_{A^e}$ is projective if and only
+if $\mu(A|R)$ induces an isomorphism from a direct factor of $A^e$
+onto $A$.  In this case $\mu(A|R)\otimes_R S$ induces an isomorphism
+from a direct factor of $A^e\otimes_R S$ onto $A\otimes_R S$.  The
+lemma results from the fact that $\mu(A|R)\otimes_R S$,
+$A^e\otimes_R S$ and $A\otimes_R S$ ``are identified'' respectively
+with $\mu(B|S)$, $B^e$ and $B$.
+
+\begin{lemma}
+The hypotheses are those of Lemma~2; for every prime ideal $p$ of $R$,
+$(A/pA)_p$ is then a semi-simple separable algebra over $(R/pR)_p$.
+\end{lemma}
+
+One applies Lemma~2 choosing for $S$ the algebra $(R/pR)_p$.  In this
+case, $B$ coincides with $(A/pA)_p$.  Since $S$ is a field, one knows
+on the other hand that $B_{B^e}$ is a projective $B^e$-module if and
+only if $B$ is a separable $S$-algebra
+(cf.~\cite{cartan-eilenberg}, Chapter~VI).
+
+\begin{lemma}
+The hypotheses are those of Lemma~2.  If $i$ is the canonical map from
+the centre $Z(A)$ of $A$ into $A$, then $i\otimes_R S$ is an
+isomorphism from $Z(A)\otimes_R S$ onto the centre of $A\otimes_R S$.
+\end{lemma}
+
+The centres of $A$ and of $B$ are indeed identified with
+$\operatorname{Hom}_{A^e}(A,A)$ and $\operatorname{Hom}_{B^e}(B,B)$.
+The lemma results from this and from the fact that the canonical map
+from $\operatorname{Hom}_{A^e}(M,N)\otimes_R S$ into
+$\operatorname{Hom}_{B^e}(M\otimes_R S,N\otimes_R S)$ is a bijection
+when $M$ is a projective $A^e$-module of finite type.
+
+\begin{lemma}
+If $R$ is a commutative ring and $M$ a projective $R$-module of finite
+type, the following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $M$ is a generator of $\mathbf{mod}\,R$.
+\item[\normalfont b.] $M$ is a faithful $R$-module (i.e.\ the
+      annihilator of $M$ is zero).
+\end{description}
+\end{lemma}
+
+The implication $(a)\Rightarrow(b)$ is clear.  Let us prove the
+converse: it suffices to show that $\operatorname{Hom}_R(M,N)$ is not
+zero if $N$ is not zero; let therefore $m$ be a maximal ideal of $R$
+such that $N_m$ is not zero.  It is clear that $M_m$ is a projective
+$R_m$-module (hence free) and that the annihilator of $M_m$ is zero.
+Since $M$ is of finite presentation,
+$(\operatorname{Hom}_R(M,N))_m$ is identified with
+$\operatorname{Hom}_{R_m}(M_m,N_m)$~\cite{bourbaki-commutative}.
+Since this last module is not zero, the same holds for
+$(\operatorname{Hom}_R(M,N))_m$, hence for
+$\operatorname{Hom}_R(M,N)$.
+
+\begin{proposition}
+Let $R$ be a commutative ring and $A$ a finite faithful $R$-algebra.
+The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] The functor $N\mapsto N\otimes_R A$ defines an
+      equivalence between $\mathbf{mod}\,R$ and $\mathbf{mod}\,A^e$.
+\item[\normalfont b.] The functor
+      $M\mapsto\operatorname{Hom}_{A^e}(A,M)$ defines an equivalence
+      between $\mathbf{mod}\,A^e$ and $\mathbf{mod}\,R$.
+\item[\normalfont c.] The right $A^e$-module $A_{A^e}$ is projective;
+      moreover, the map $r\mapsto r\cdot 1_A$ is an isomorphism from
+      $R$ onto the centre of $A$.
+\item[\normalfont d.] The left $R$-module ${}_RA$ is projective;
+      moreover, the map $b\mapsto b_A$ is an isomorphism from the ring
+      opposite to $A^e$ onto the endomorphism ring of ${}_RA$.
+\item[\normalfont e.] The left $R$-module ${}_RA$ is projective; for
+      every maximal ideal $m$ of $R$, $A/mA$ is moreover a simple
+      central algebra over $R/m$\ednote{The original prints ``sur $A$''
+      (over $A$); we print over $R/m$, the residue field over which
+      $A/mA$ is an algebra, as the proof below via Lemmas~3 and~4
+      confirms.}.
+\end{description}
+\end{proposition}
+
+The equivalence of~(a) and~(b) results from Corollary~3 of
+Proposition~1.  The equivalence of~(a) and~(d) results from Lemma~5 and
+Corollaries~2 and~4 of Proposition~1.  The implication
+$(b)\Rightarrow(c)$ results from Corollary~3 of Proposition~1 and from
+the fact that $\operatorname{Hom}_{A^e}(A,A)$ is the centre of $A$.
+
+$(c)\Rightarrow(b)$: by Corollary~3 of Proposition~1 it suffices to
+prove that $A_{A^e}$ is a generator of $\mathbf{mod}\,A^e$.  It is
+equivalent to say that, for every maximal right ideal $m$ of $A^e$,
+there exists an $A^e$-linear map $f\colon A\to A^e$ such that
+$\operatorname{Im}f$ is not contained in $m$.  Now $m\cap R$ is a
+prime ideal $p$ of $R$ and $A^e/m$ is a simple module over the ring
+$B^e=B\otimes_S B^0$, where $S=(R/pR)_p$ and $B=(A/pA)_p$.  Since $B$
+is a simple central algebra over $S$ by Lemmas~3 and~4, $B^e$ is a
+simple ring and the abelian group
+$\operatorname{Hom}_{B^e}(B,A^e/m)$ is not zero.  Since
+$\operatorname{Hom}_{B^e}(B,A^e/m)$ is identified with
+$(\operatorname{Hom}_{A^e}(A,A^e/m))_p$, one deduces that
+$\operatorname{Hom}_{A^e}(A,A^e/m)$ is not zero.  Finally, since $A$
+is projective, every non-zero morphism from $A$ into $A^e/m$ lifts to
+$f\colon A\to A^e$ with $\operatorname{Im}f\not\subset m$.
+
+$(c),(d)\Rightarrow(e)$: follows from Lemmas~3 and~4.
+
+$(e)\Rightarrow(d)$: put indeed $L_R(A)=\operatorname{Hom}_R(A,A)$.
+Let on the other hand $\varphi(A|R)$ be the map $b\mapsto b_A$ from
+the ring $A^0\otimes_R A$, opposite to $A^e$, into $L_R(A)$.
+
+Since ${}_RA$ is projective, $L_R(A)$ and $A^0\otimes_R A$ are
+projective $R$-modules of finite type.  To show that $\varphi(A|R)$ is
+a bijection, it therefore suffices to prove that
+$\varphi(A|R)\otimes_R R/m$ is a bijection for every maximal ideal $m$
+of $R$.  Now $(A^0\otimes_R A)\otimes_R R/m$,
+$L_R(A)\otimes_R R/m$ and $\varphi(A|R)\otimes_R R/m$ are identified
+respectively with $B^0\otimes_S B$, $L_S(B)$ and $\varphi(B|S)$, where
+we have put $B=A/mA$ and $S=R/m$.  Since $B$ is a simple central
+algebra over $R/m$, $\varphi(B|S)$ is a bijection for every $m$;
+assertion~(d) results\ednote{The original prints ``assertion~(c)'';
+the paragraph headed $(e)\Rightarrow(d)$ proves the map of~(d)
+bijective, so we print~(d).}.
+
+\begin{unnumberedcorollary}
+Suppose the equivalent conditions of Proposition~2 satisfied.  The map
+$a\mapsto a\cdot A$ is a bijection from the set of ideals of $R$ onto
+the set of two-sided ideals of $A$.
+\end{unnumberedcorollary}
+
+The canonical injection of $a$ into $R$ indeed defines an injection
+from $a\otimes_R A$ into $R\otimes_R A=A$.  The image of this injection
+is none other than $a\cdot A$, and we identify $a\otimes_R A$ with this
+image.  Since the functor $N\mapsto N\otimes_R A$ defines an
+equivalence between $\mathbf{mod}\,R$ and $\mathbf{mod}\,A^e$, the map
+$a\mapsto a\otimes_R A$ is a bijection from the set of $R$-submodules
+of $R$ onto the set of $A^e$-submodules of $A$; the latter coincide
+with the two-sided ideals of $A$.  We refer the reader
+to~\cite{auslander-goldman} for other applications of
+Proposition~2.

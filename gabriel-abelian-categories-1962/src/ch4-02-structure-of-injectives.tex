@@ -1,9 +1,177 @@
-%@ pages 387-389
-%@ status todo
-% Original: pp. 387--389.  French title: see reference/ocr/page-0387.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 387-390
+%@ status translated
+% Chapter IV, section 2: The structure of injective objects in a locally
+% noetherian category (pp. 387--390). Transcribed from the page images
+% in reference/source.pdf (PDF pp. 65--68), not from the OCR text layer,
+% which mangles subscripts and fraktur letters. The section opens with
+% its heading in the middle of p. 387 and runs to the section~3 heading
+% in the middle of p. 390 (the end of the proof of Proposition~9 and
+% the two closing paragraphs stand at the top of p.~390).
+%
+% Numbering is automatic (see src/preamble.tex). This section prints
+% Proposition 6, Proposition 7, Theorem 2, Proposition 8, one
+% corollary printed without a number (hence `unnumberedcorollary')
+% and Proposition 9.
+%
+% Conventions: $\mathbf{KI}_n$ is the homotopy-category construction of
+% Chapter~I, \S9 (cf.\ Corollary~1 to Proposition~14); bold capitals
+% $\mathbf{L}$, $\mathbf{N}$, $\mathbf{P}$ denote sets (index sets and
+% sets of parts).
+%
+% No emendations.
+
 \section{The Structure of Injective Objects in a Locally Noetherian Category}
 
-\notyet{pp. 387--389 of the original French edition.}
+--- The statements of the preceding paragraph simplify when
+$\mathbf{A}$ is a locally noetherian category. Corollary~1 to
+Theorem~1 (Chapter~II) has indeed the following consequence:
+
+\begin{proposition}
+Let $\mathbf{A}$ be a locally noetherian category and
+$(I_l)_{l\in\mathbf{L}}$ a family of injective objects of
+$\mathbf{A}$. The direct sum $\sum_{l\in\mathbf{L}} I_l$ is then an
+injective object of $\mathbf{A}$.
+\end{proposition}
+
+\begin{proposition}
+For every locally noetherian category $\mathbf{A}$, the localizing
+subcategory $\mathbf{A}_\omega$ coincides with $\mathbf{A}$; moreover,
+the categories
+$\mathbf{A}_{\alpha \mathbin{T} 0}/\mathbf{A}_\alpha$ are locally
+finite.
+\end{proposition}
+
+We know indeed that $\mathbf{A}/\mathbf{A}_\omega$ possesses no simple
+object. As $\mathbf{A}$ is a locally noetherian category, the same
+holds for $\mathbf{A}/\mathbf{A}_\omega$. If $\mathbf{A}_\omega$ did
+not coincide with $\mathbf{A}$, the category
+$\mathbf{A}/\mathbf{A}_\omega$ would therefore contain a nonzero
+noetherian object $M$. For every maximal proper subobject $N$ of $M$,
+the quotient $M/N$ would be simple, which is absurd.
+
+The last assertion follows from the fact that every locally
+noetherian category whose Krull dimension is zero is locally finite.
+
+Modulo Propositions~6 and~7, Theorem~1 and Proposition~5 read as
+follows:
+
+\begin{theorem}[Matlis~\cite{matlis}]
+Let $\mathbf{A}$ be a locally noetherian category. Every injective
+$I$ is isomorphic to the direct sum $\sum_{l\in\mathbf{L}} I_l$ of a
+family $(I_l)_{l\in\mathbf{L}}$ of indecomposable injective objects.
+
+If $(J_n)_{n\in\mathbf{N}}$ is a second family of indecomposable
+injectives, and if the direct sums $\sum_{l\in\mathbf{L}} I_l$ and
+$\sum_{n\in\mathbf{N}} J_n$ are isomorphic, there exists a bijection
+$h$ from $\mathbf{L}$ onto $\mathbf{N}$ such that $I_l$ is isomorphic
+to $J_{h(l)}$.
+\end{theorem}
+
+The second assertion of Theorem~2 also follows from Theorem~1
+(Chapter~I).
+
+\begin{proposition}[exchange theorem]
+Let $\mathbf{A}$ be a locally noetherian category and
+$(I_l)_{l\in\mathbf{L}}$ a family of indecomposable injectives of
+$\mathbf{A}$. If $J$ is a direct factor of
+$\sum_{l\in\mathbf{L}} I_l$, there exists a part $\mathbf{N}$ of
+$\mathbf{L}$ such that $\sum_{l\in\mathbf{N}} I_l$ is a complement of
+$J$ in $\sum_{l\in\mathbf{L}} I_l$.
+\end{proposition}
+
+We suppose in the rest of this paragraph that $\mathbf{A}$ is a
+locally noetherian category. We say that the category $\mathbf{A}$ is
+\emph{connected} if it is not equivalent to the product of two nonzero
+categories.
+
+\begin{unnumberedcorollary}
+Every locally noetherian category $\mathbf{A}$ is equivalent to the
+product of a family $(\mathbf{A}_n)_{n\in E}$ of connected categories.
+\end{unnumberedcorollary}
+
+Let indeed $\mathbf{I}$ be the full subcategory of $\mathbf{A}$ whose
+objects are the injective objects of $\mathbf{A}$. By Corollary~1 to
+Proposition~14 (Chapter~I), it suffices to show that $\mathbf{I}$ is
+the product of a family $(\mathbf{I}_n)_{n\in E}$ of additive
+categories such that $\mathbf{KI}_n$ is a connected category for every
+$n$. For this we agree to say that two indecomposable injectives $I$
+and $J$ are equivalent if there exists a finite sequence $(I_l)$,
+$1 \le l \le k$, of indecomposable injectives satisfying the following
+conditions: $I_1 = I$, $I_k = J$; if $1 \le l \le k-1$, the abelian
+groups $\operatorname{Hom}(I_l, I_{l+1})$ and
+$\operatorname{Hom}(I_{l+1}, I_l)$ are not both zero. We denote by $E$
+the set of equivalence classes thus obtained (Brauer calls such a
+class a \emph{block}; to be precise, let us say that Brauer considers
+the indecomposable projective modules over an artinian ring $A$; he
+says that two indecomposable projectives $P$ and $Q$ belong to the
+same block if there exists a sequence $P_1 = P$, $P_2$, \dots,
+$P_k = Q$ formed of indecomposable projectives such that the groups
+$\operatorname{Hom}_A(P_l, P_{l+1})$ and
+$\operatorname{Hom}_A(P_{l+1}, P_l)$ are never both zero; we shall see
+in paragraph~3 that Brauer's theory is a particular case of the one
+we develop here). If $n$ is such a class, let $\mathbf{I}_n$ be the
+full subcategory of $\mathbf{I}$ defined by the direct sums of
+indecomposable injectives of $n$. It is clear that the category
+$\mathbf{I}$ is equivalent to the product of the categories
+$\mathbf{I}_n$; moreover, $\mathbf{I}_n$ is not equivalent to the
+product of two nonzero additive categories; whence the assertion.
+
+Let $\mathbf{A}_n$ be the localizing subcategory of $\mathbf{A}$
+defined by the objects $M$ such that $\operatorname{Hom}(M, I)$ is
+zero for every indecomposable injective not belonging to $n$. It is
+clear that the categories $\mathbf{A}_n$ and $\mathbf{KI}_n$ are
+equivalent. The category $\mathbf{A}$ is therefore equivalent to the
+product of the connected categories $\mathbf{A}_n$. We shall say that
+$\mathbf{A}_n$ is a \emph{connected component} of $\mathbf{A}$.
+
+We end this paragraph with a generalisation of the Lasker-Noether
+primary decomposition. For every element $s$ of the spectrum of
+$\mathbf{A}$, we choose an indecomposable injective $I_s$ of type $s$.
+If $M$ is an object of $\mathbf{A}$, we say that $s$ is
+\emph{associated} to $M$ if the injective envelope of $M$ contains a
+subobject isomorphic to $I_s$. The set of elements $s$ of
+$\operatorname{Sp}(\mathbf{A})$ which are associated to $M$ will be
+denoted $\operatorname{ass}(M)$. We say that $M$ is \emph{isotypic of
+type $s$} if $\operatorname{ass}(M)$ has $s$ as its only element.
+
+\begin{proposition}
+Let $M$ be a noetherian object of a locally noetherian category
+$\mathbf{A}$. There exists a map $s \mapsto N_s$ from a finite part
+$\mathbf{L}$ of $\operatorname{Sp}(\mathbf{A})$ into the set of
+subobjects of $M$ satisfying the following conditions: $M/N_s$ is
+isotypic of type $s$; the intersection of the $N_s$ is zero; if
+$\mathbf{P}$ is a part of $\mathbf{L}$ distinct from $\mathbf{L}$,
+the intersection $\bigcap_{s\in\mathbf{P}} N_s$ is not zero. If these
+conditions are satisfied, $\mathbf{L}$ is equal to
+$\operatorname{ass}(M)$.
+\end{proposition}
+
+Let indeed $i\colon M \to I$ be an injective envelope of $M$. We
+suppose for simplicity that $M$ is a subobject of $I$ and that $i$ is
+the canonical morphism from $M$ into $I$. We suppose also that $I$ is
+the direct sum of a family $(I_l)_{l\in\mathbf{L}}$ of indecomposable
+injectives. The subobjects $M \cap I_l$ of $M$ are then nonzero for
+every $l$ and their sum is direct. As $M$ is noetherian, the set
+$\mathbf{L}$ is finite. If $s$ is an element of
+$\operatorname{ass}(M)$, denote by $J_s$ the direct sum of the $I_l$
+isomorphic to $I_s$. In these conditions, it suffices to choose
+$\mathbf{L}$ equal to $\operatorname{ass}(M)$ and $N_s$ equal to
+$M \cap \left(\sum_{t \ne s} J_t\right)$.
+
+Conversely, suppose given $\mathbf{L}$ and the map $s \mapsto N_s$.
+The canonical morphisms $q_s\colon M \to M/N_s$ define a monomorphism
+$q$ from $M$ into the direct sum $N$ of the $M/N_s$. We deduce the
+formula
+$\operatorname{ass}(M) \subset \operatorname{ass}(N) = \mathbf{L}$.
+Let moreover $M_s$ be the intersection of the $N_t$ for $t$ distinct
+from $s$. The morphism $q_s$ induces a monomorphism from $M_s$ into
+$M/N_s$. As $\operatorname{ass}(M_s)$ is nonempty and
+$\operatorname{ass}(M/N_s) = \{s\}$, we have the following formulas:
+$s \in \operatorname{ass}(M_s) \subset \operatorname{ass}(M)$. This
+proves that $\mathbf{L}$ is contained in $\operatorname{ass}(M)$,
+which remained to be proved.
+
+We leave to the reader the task of transcribing into the language of
+this article the many propositions of the primary decomposition. We
+also leave to him the task of formulating the dual statements of the
+preceding statements.

@@ -1,12 +1,184 @@
 %@ pages 439-441
-%@ status todo
-% Original: pp. 439--441.  French title: see reference/ocr/page-0439.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\chapter{Applications to the Study of Quasi-Coherent Sheaves}
-\markboth{Chapter VI. Applications to the Study of Quasi-Coherent Sheaves}{}
+%@ status translated
+% Chapter VI, section 1: Gluing of abelian categories (pp. 439--441).
+% Transcribed from the page images in reference/source.pdf, not from the
+% OCR text layer, which mangles subscripts and symbols.
+%
+% Numbering is automatic (src/preamble.tex).  This section prints
+% Propositions 1, 2 and 3 --- the chapter's first run of propositions.
+% No lemma, theorem or corollary is stated in this section.
+%
+% Two emendations, both footnoted with \ednote at the point where they bite:
+% p. 440: the original prints $(FA, GA, \tau(A))$ for the functor $R$;
+%   $F$ and $G$ are defined on $\mathbf{C}$ and $\mathbf{D}$, not on
+%   $\mathbf{A}$; we print $(SA, TA, \tau(A))$.
+% p. 441: the original prints $F|U\cap V$ (resp.\ $G|U\cap V)$ for the
+%   restriction of the sheaf to $U\cap V$; $F$ and $G$ are not defined on
+%   sheaves; we print $M|U\cap V$ (resp.\ $N|U\cap V$).
+%
+% Local notation: \gluecat{C}{B}{D} renders Gabriel's gluing symbol
+% (double vertical bar with the base category underneath).  Defined with
+% \providecommand so the three Chapter VI files can each be compiled in
+% isolation and together.
+\providecommand{\gluecat}[3]{#1 \underset{#2}{\Vert} #3}
+
+\chapter{Applications to Quasi-Coherent Sheaves}
+\markboth{Chapter VI. Applications to Quasi-Coherent Sheaves}{}
+
+We wish to study here the injective quasi-coherent sheaves on a
+noetherian prescheme \textup{\cite{grothendieck-dieudonne}}. Whenever we
+speak of a prescheme $(X, \mathcal{O}_X)$, it will be understood that the
+set underlying $X$ and the étalé space associated with
+$\mathcal{O}_X$ are elements of the universe $\Univ$. Whenever we speak
+of an $\mathcal{O}_X$-module $M$, it will be understood that $M$ is
+quasi-coherent and that the étalé space associated with $M$ is an
+element of $\Univ$. We denote by $\mathbf{F}_X$ the category of
+$\mathcal{O}_X$-modules; with our conventions, $\mathbf{F}_X$ is an
+abelian $\Univ$-category with exact inductive limits.
+
+We show in the first section that $\mathbf{F}_X$ can be obtained by
+``gluing'' module categories. What follows is devoted to the properties
+of module categories which are preserved under ``gluing''.
 
 \section{Gluing of Abelian Categories}
 
-\notyet{pp. 439--441 of the original French edition.}
+--- Consider the diagram
+\[
+(\star)\qquad
+\begin{tikzcd}
+\mathbf{C} \arrow[dr, "F"] \\
+& \mathbf{B} \\
+\mathbf{D} \arrow[ur, "G"']
+\end{tikzcd}
+\]
+where $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{B}$ are abelian categories
+and where $F$ and $G$ are exact functors. We call \emph{gluing}
+(\emph{recollement}) of $\mathbf{C}$ and $\mathbf{D}$ \emph{along}
+$\mathbf{B}$, and we denote by
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ the following category:
+
+\begin{itemize}
+\item An object of $\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is a
+      triple $(C, D, \sigma)$ such that $C$ is an object of
+      $\mathbf{C}$, $D$ an object of $\mathbf{D}$ and $\sigma$ an
+      isomorphism from $FC$ onto $GD$. One sometimes says that
+      $(C, D, \sigma)$ is gluing data (\emph{donnée de recollement}).
+
+\item If $(C', D', \sigma')$ and $(C, D, \sigma)$ are two objects, a
+      morphism from the first to the second is a pair $(u, v)$ such that
+      $u$ is a morphism from $C'$ to $C$ and $v$ a morphism from $D'$
+      to $D$; one imposes in addition the equality
+      \[
+        \sigma \circ (Fu) = (Gv) \circ \sigma'.
+      \]
+
+\item Composition of morphisms is defined by the formula
+      \[
+        (u', v') \circ (u, v) = (u' \circ u, v' \circ v).
+      \]
+\end{itemize}
+
+The hypotheses we have made imply that
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is an abelian category
+and that the functors $(C, D, \sigma) \leadsto C$ and
+$(C, D, \sigma) \leadsto D$ are exact. These functors are said to be the
+canonical projections of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ onto $\mathbf{C}$ and
+$\mathbf{D}$. The notation
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is justified by the
+following statement:
+
+\begin{proposition}
+Let $\mathbf{A}$ be a category, $S : \mathbf{A} \to \mathbf{C}$ and
+$T : \mathbf{A} \to \mathbf{D}$ two functors such that $F \circ S$ is
+isomorphic to $G \circ T$. There then exists a functor
+$R : \mathbf{A} \to
+\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$, unique up to isomorphism,
+such that $S$ and $T$ are isomorphic to the composites of $R$ with the
+canonical projections of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ into $\mathbf{C}$ and
+$\mathbf{D}$.
+\end{proposition}
+
+Let $\tau$ be a functorial isomorphism from $F \circ S$ onto
+$G \circ T$. We leave to the reader the task of verifying that
+Proposition~1 holds if one takes for $R$ the functor
+$A \leadsto (SA, TA, \tau(A))$\ednote{The original prints
+$(FA, GA, \tau(A))$; since $F$ and $G$ are defined on $\mathbf{C}$ and
+$\mathbf{D}$, not on $\mathbf{A}$, this is meaningless. We print
+$(SA, TA, \tau(A))$, the only reading under which the triple is gluing
+data.}. If one regards $\mathbf{C}$, $\mathbf{D}$, $\mathbf{B}$ and
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ as objects of the
+category $\mathbf{E}$ of Chapter~I (\S8), and if one replaces $F$ and $G$
+by the isomorphism classes of these functors, Proposition~1 implies that
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is the fibred product of
+the diagram $(\star)$. In particular, this shows that Proposition~1
+determines the category
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ up to equivalence.
+
+Consider now a prescheme $(X, \mathcal{O}_X)$ and let $U$ and $V$ be two
+open subsets covering $X$. If $M$ (resp.\ $N$) is an
+$(\mathcal{O}_X|U)$-module [resp.\ an $(\mathcal{O}_X|V)$-module], then
+$M|U \cap V$ (resp.\ $N|U \cap V$) is an
+$(\mathcal{O}_X|U \cap V)$-module\ednote{The original prints here
+$F|U \cap V$ (resp.\ $G|U \cap V)$; since $F$ and $G$ are not defined on
+sheaves, this is meaningless. We print $M|U \cap V$ (resp.\ $N|U \cap V)$,
+the only reading consistent with the restriction functors $\rho_U$ and
+$\rho_V$ defined below.}; we denote by $\rho_U$ (resp.\ by $\rho_V$)
+the restriction functor $M \leadsto M|U \cap V$ (resp.\ $N \leadsto
+N|U \cap V$). One thus has the diagram $(\star\star)$:
+\[
+(\star\star)\qquad
+\begin{tikzcd}
+\mathbf{F}_U \arrow[dr, "\rho_U"] \\
+& \mathbf{F}_{U \cap V} \\
+\mathbf{F}_V \arrow[ur, "\rho_V"']
+\end{tikzcd}
+\]
+
+If $P$ is an $\mathcal{O}_X$-module, the sheaves $(P|U)|U \cap V$,
+$P|U \cap V$ and $(P|V)|U \cap V$ evidently coincide; if $\sigma_P$ is
+the identity morphism of $P|U \cap V$, the triple
+$(P|U, P|V, \sigma_P)$ is thus gluing data.
+
+\begin{proposition}
+Let $U$ and $V$ be two open subsets of a prescheme $X$ such that
+$U \cup V = X$. The functor $P \leadsto (P|U, P|V, \sigma_P)$ defines an
+equivalence between $\mathbf{F}_X$ and the gluing of $\mathbf{F}_U$ and
+$\mathbf{F}_V$ along $\mathbf{F}_{U \cap V}$.
+\end{proposition}
+
+Proposition~2 follows directly from Proposition~12 (Chapter~I) (cf.\
+also \textup{\cite{grothendieck-dieudonne}}, prop.~0.3.3).
+
+\begin{proposition}
+Let $(X, \mathcal{O}_X)$ be a prescheme and $U$ an open subset of $X$
+such that the canonical injection $j : U \to X$ is a quasi-compact
+morphism. Let $T$ be the functor which associates to every
+$\mathcal{O}_X$-module $M$ the restriction $M|U$ of $M$ to the
+prescheme $(U, \mathcal{O}_X|U)$. The functor $T$ defines, on passing to
+the quotient, an equivalence between the categories
+$\mathbf{F}_X/\operatorname{Ker} T$ and $\mathbf{F}_U$.
+\end{proposition}
+
+Denote indeed by $j_*(N)$ the direct image in $X$ of an
+$(\mathcal{O}_X|U)$-module $N$. By Proposition~9.4.2 of
+\textup{\cite{grothendieck-dieudonne}}, $j_*(N)$ is a quasi-coherent
+$\mathcal{O}_X$-module; it follows that $S : G \leadsto j_*(G)$ is a
+functor adjoint to $T$. The assertion thus follows from Proposition~5
+(Chapter~III).
+
+Propositions~2 and~3 will be used in the following way: if $X$ is a
+noetherian prescheme, $X$ is the union of a finite sequence of affine
+open subsets $X_1, X_2, \ldots, X_n$. The category
+$\mathbf{F}_{X_1 \cup X_2}$ is then equivalent to the gluing of
+$\mathbf{F}_{X_1}$ and $\mathbf{F}_{X_2}$ along one and the same
+quotient category $\mathbf{F}_{X_1 \cap X_2}$. In other words,
+$\mathbf{F}_{X_1 \cup X_2}$ is equivalent to the gluing of two module
+categories along a ``common'' quotient category. Likewise,
+$\mathbf{F}_{X_1 \cup X_2 \cup X_3}$ is equivalent to the gluing of
+$\mathbf{F}_{X_1 \cup X_2}$ and of a module category
+$\mathbf{F}_{X_3}$ along a ``common'' quotient category
+$\mathbf{F}_{(X_1 \cup X_2) \cap X_3}$. One continues in this way until
+one arrives at $\mathbf{F}_X$; this category is thus obtained by
+``successive gluings'' of module categories.

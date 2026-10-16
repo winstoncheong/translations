@@ -1,9 +1,447 @@
-%@ pages 395-401
-%@ status todo
-% Original: pp. 395--447.  French title: see reference/ocr/page-0395.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 395-402
+%@ status translated
+% Chapter IV, section 4: Duality between locally finite categories and
+% pseudocompact modules (pp. 395--402). Transcribed from the page images
+% in reference/source.pdf, not from the OCR text layer, which mangles
+% subscripts, limits and fraktur letters. The section opens with its
+% heading in the middle of p. 395 and runs to the middle of p. 402
+% ("Ceci achève la preuve." at the end of the proof of Corollary 6),
+% where Chapter V begins.
+%
+% Numbering is automatic (src/preamble.tex). This section prints
+% Propositions 12 and 13 (propositions run continuously across the sections
+% of the chapter; section~3 ends with Proposition 11), Theorem 4 (theorems
+% restart at each chapter), Lemmas 1 and 2 (the lemma counter restarts at
+% every section) and Corollaries 1--6 (the corollary counter restarts at
+% every section).
+%
+% No emendations.
+
 \section{Duality between Locally Finite Categories and Pseudocompact Modules}
 
-\notyet{pp. 395--447 of the original French edition.}
+--- We propose to show that every locally finite category is equivalent
+to the dual category of a category of pseudocompact modules; we begin
+with a few definitions:
+
+A full subcategory of a category $\mathbf{A}$ is said to be
+\emph{closed} if the following conditions are satisfied: every
+subobject and every quotient of an object of $\mathbf{C}$ belongs to
+$\mathbf{C}$; the direct sum (in $\mathbf{A}$) of two objects of
+$\mathbf{C}$ belongs to $\mathbf{C}$; the inductive limit (in
+$\mathbf{A}$) of an inductive system of objects of $\mathbf{C}$ belongs
+to $\mathbf{C}$.
+
+If $M$ is an object of $\mathbf{A}$, $M$ contains a subobject
+$\mathbf{C}M$ which belongs to $\mathbf{C}$ and which contains all the
+other subobjects of $M$ belonging to $\mathbf{C}$. If $f\colon M\to N$
+is a morphism of $\mathbf{A}$, $f(\mathbf{C}M)$ is contained in
+$\mathbf{C}N$; moreover, the functor $M\mapsto\mathbf{C}M$ is adjoint
+to the canonical functor from $\mathbf{C}$ into $\mathbf{A}$; in
+particular, the functor $M\mapsto\mathbf{C}M$ is left exact
+(Proposition~11, Chap.~I). For example, the semisimple objects of
+$\mathbf{A}$ are the objects of a closed subcategory $\mathbf{S}$. If
+$M$ is an object of $\mathbf{A}$, the subobject $\mathbf{S}M$ is called
+the \emph{socle} of $M$.
+
+If $\mathbf{C}$ and $\mathbf{D}$ are two closed subcategories of
+$\mathbf{A}$, we denote by $\mathbf{C}\cdot\mathbf{D}$ the following
+closed subcategory: an object $M$ of $\mathbf{A}$ belongs to
+$\mathbf{C}\cdot\mathbf{D}$ if $M/\mathbf{D}M$ is an object of
+$\mathbf{C}$. The product
+$(\mathbf{C},\mathbf{D})\mapsto\mathbf{C}\cdot\mathbf{D}$ is manifestly
+associative. We may therefore speak of the powers $\mathbf{C}^n$ of a
+closed subcategory $\mathbf{C}$ of $\mathbf{A}$.
+
+Let now $\mathbf{A}$ be a locally finite category and $\mathbf{S}$ the
+closed subcategory of $\mathbf{A}$ defined by the semisimple objects of
+$\mathbf{A}$. If $M$ is an object of $\mathbf{A}$, we denote by $M_n$
+the largest subobject of $M$ belonging to the closed subcategory
+$\mathbf{S}^{n+1}$ (for example, $M_0$ will denote the socle of $M$).
+Since $\mathbf{A}$ is a locally finite category, it is clear that $M$
+is the supremum of the subobjects $M_n$. We shall examine the case
+where $M$ is an injective object of $\mathbf{A}$.
+
+\begin{proposition}
+Let $I$ be an injective object of a locally finite category
+$\mathbf{A}$, $A$ the ring of endomorphisms of $I$ and $\mathfrak{r}$
+the set of endomorphisms of $I$ whose kernel contains the socle $I_0$.
+Then $\mathfrak{r}$ is the Jacobson radical of $A$; the intersection of
+the powers $\mathfrak{r}^n$ is zero; the quotient ring
+$A/\mathfrak{r}$ is isomorphic to the product of the rings of
+endomorphisms of a family of vector spaces.
+\end{proposition}
+
+Let indeed $\mathfrak{r}^{(n)}$ be the two-sided ideal formed of the
+endomorphisms of $I$ whose kernel contains $I_{n-1}$. If $f$ is an
+element of $\mathfrak{r}^{(n)}$, it is clear that $f(I_{m+n})$ is
+contained in $I_m$. It follows that
+$\mathfrak{r}^{(m)}\cdot\mathfrak{r}^{(n)}$ is contained in
+$\mathfrak{r}^{(m+n)}$. In particular $\mathfrak{r}^n$ is contained in
+$\mathfrak{r}^{(n)}$.
+
+On the other hand the canonical morphisms from $I_n$ into $I$ and from
+$I$ onto $I/I_n$ give rise to exact sequences
+\[
+0\to\operatorname{Hom}(I/I_n,I)\xrightarrow{i_n}\operatorname{Hom}(I,I)\xrightarrow{p_n}\operatorname{Hom}(I_n,I)\to0.
+\]
+
+The ideal $\mathfrak{r}^{(n+1)}$ is none other than the image of $i_n$.
+The map $p_n$ therefore defines an isomorphism from
+$A/\mathfrak{r}^{(n+1)}$ onto $\operatorname{Hom}(I_n,I)$. The formulas
+\[
+A=\operatorname{Hom}(I,I)=\operatorname{Hom}(\varinjlim I_n,I)=\varprojlim\operatorname{Hom}(I_n,I)=\varprojlim A/\mathfrak{r}^{(n+1)}
+\]
+then show that $A$ is separated and complete for the filtration defined
+by the ideals $\mathfrak{r}^{(n)}$. The formula
+$(1-x)^{-1}=1+x+x^2+\cdots$ shows moreover that the inverse of $1-x$
+exists if $x$ belongs to $\mathfrak{r}$; in other words,
+$\mathfrak{r}$ is contained in the Jacobson radical of $A$.
+
+Let us note finally that for every morphism $f$ from $I_0$ into $I$,
+$f(I_0)$ is contained in $I_0$. The quotient $A/\mathfrak{r}$ is
+therefore equal to $\operatorname{Hom}(I_0,I_0)$: it is the ring of
+endomorphisms of a semisimple object. The last assertion of the
+proposition follows from this (cf.\ Chap.~I, \S~6). It also follows
+that $\mathfrak{r}$ is an intersection of maximal ideals and contains
+the Jacobson radical; this completes the proof.
+
+When $M$ runs through the subobjects of finite length of $I$, the
+canonical morphism from $I$ onto $I/M$ defines an injection of
+$\operatorname{Hom}(I/M,I)$ into $A$. The image of this map is a left
+ideal which we shall denote $l(M)$. If $M$ and $N$ are two subobjects
+of finite length, the exactness of the functor
+$X\mapsto\operatorname{Hom}(X,I)$ implies the equality
+$l(M+N)=l(M)\cap l(N)$. This equality shows that the left ideals $l(M)$
+form a base of neighbourhoods of $0$ for a topology which makes $A$ a
+topological group. We shall always equip $A$ with this topology, which
+we shall call \emph{natural}.
+
+\begin{proposition}
+a.\ Let $\mathbf{A}$ be a locally finite category, $I$ an injective of
+$\mathbf{A}$ and $A$ the ring of endomorphisms of $I$. Equipped with the
+natural topology, $A$ is a pseudocompact ring.
+
+b.\ Conversely, every pseudocompact ring $A$ is isomorphic to the ring
+of endomorphisms of an injective of a locally finite category. In
+particular, the Jacobson radical $\mathfrak{r}$ of $A$ is the
+intersection of the maximal open left ideals; the intersection of the
+$\mathfrak{r}^n$ is zero and $A/\mathfrak{r}$ is isomorphic to the
+product of the rings of endomorphisms of a family of vector spaces.
+\end{proposition}
+
+a.\ Let us first show that $A$ is a topological ring. Since there
+exists a base of neighbourhoods of $0$ formed of left ideals, it
+suffices to prove the following: for every subobject of finite length
+$M$ of $I$ and for every element $a$ of $A$, there exists a subobject
+of finite length $N$ such that $l(N)\cdot a$ is contained in $l(M)$.
+But it suffices to choose $N$ equal to $a(M)$.
+
+We have on the other hand the ``equalities''
+\[
+A=\operatorname{Hom}(I,I)=\operatorname{Hom}(\varinjlim M,I)=\varprojlim\operatorname{Hom}(M,I)=\varprojlim A/l(M).
+\]
+These equalities show both that $A$ is separated and that $A$ is
+complete. It remains to prove that the $A$-modules $A/l(M)$ are of
+finite length: for this, we first study the $A$-module
+$\operatorname{Hom}(S,I)$ when $S$ is a simple object of $\mathbf{A}$;
+we denote by $I_S$ the isotypic component of type $S$ of $I_0$ and by
+$B$ the ring of endomorphisms of $I_S$.
+
+For every endomorphism $f$ of $I$, $f(I_S)$ is contained in $I_S$; it
+follows that $f$ induces an endomorphism $g$ of $I_S$ and that the map
+$p\colon f\mapsto g$ from $A$ into $B$ is an epimorphism of rings. This
+epimorphism is compatible with the canonical bijection of the
+$A$-module $\operatorname{Hom}(S,I)$ onto the $B$-module
+$\operatorname{Hom}(S,I_S)$. It follows that $\operatorname{Hom}(S,I)$
+is zero or is a simple $A$-module according as $I_S$ is zero or not.
+
+Let now $M$ be a subobject of finite length of $I$ and let
+\[
+0\subset M_1\subset M_2\subset\cdots\subset M_n\subset M
+\]
+be a Jordan--Hölder series of $M$. The $A$-module $A/l(M)$ is
+isomorphic to $\operatorname{Hom}(M,I)$ and the modules
+$\operatorname{Hom}(M/M_i,I)$ define a composition series of
+$\operatorname{Hom}(M,I)$. The quotient of $\operatorname{Hom}(M/M_i,I)$
+by $\operatorname{Hom}(M/M_{i+1},I)$ is isomorphic to
+$\operatorname{Hom}(M_{i+1}/M_i,I)$. It follows that the length of
+$A/l(M)$ is less than or equal to the length of $M$. This proves (a).
+
+b.\ Let $\mathbf{A}$ be the dual category of $\operatorname{PC}(A)$.
+The left $A$-module underlying $A$ is projective; it is therefore an
+injective object of $\mathbf{A}$. Assertion~(b) follows from the fact
+that $A$ is the ring of endomorphisms of this injective object.
+
+Proposition~13 being proved, we turn our attention to the functor
+$M\mapsto\operatorname{Hom}(M,I)$: the abelian group
+$\operatorname{Hom}(M,I)$ is equipped with a left module structure over
+the ring $A$ of endomorphisms of $I$. On the other hand, when $N$ runs
+through the subobjects of finite length of $M$, the canonical
+epimorphism from $M$ onto $M/N$ defines an injection of
+$\operatorname{Hom}(M/N,I)$ into $\operatorname{Hom}(M,I)$. The image of
+this map is a submodule which we shall again denote $l(N)$. In
+general, the arguments we used when $M$ was equal to $I$ remain valid
+here and they have the following consequence: the submodules $l(N)$ of
+$\operatorname{Hom}(M,I)$ form a base of neighbourhoods of $0$ for a
+topology which makes $\operatorname{Hom}(M,I)$ a pseudocompact
+$A$-module. We shall always equip $\operatorname{Hom}(M,I)$ with this
+topology, which we shall call \emph{natural}.
+
+If $f\colon M\to M'$ is a morphism of $\mathbf{A}$,
+$\operatorname{Hom}(f,I)$ is a continuous map from
+$\operatorname{Hom}(M',I)$ into $\operatorname{Hom}(M,I)$: since
+$\operatorname{Hom}(f,I)$ is a linear map, it suffices indeed to prove
+that, for every subobject of finite length $N$ of $M$, there exists a
+subobject of finite length $N'$ of $M'$ such that
+$\operatorname{Hom}(f,I)$ maps $l(N')$ into $l(N)$. But it suffices to
+choose $N'$ equal to $f(N)$. This shows that $\operatorname{Hom}(f,I)$
+is a morphism of pseudocompact modules. We have therefore defined a
+functor from $\mathbf{A}$ into the dual category of
+$\operatorname{PC}(A)$.
+
+\begin{theorem}
+Let $I$ be an injective object of a locally finite category
+$\mathbf{A}$, $A$ the ring of endomorphisms of $I$ and $F$ the functor
+$M\mapsto\operatorname{Hom}(M,I)$. The functor $F$ defines by passing
+to the quotient an equivalence between
+$\mathbf{A}/\operatorname{Ker}F$ and the dual category of the category
+$\operatorname{PC}(A)$ of pseudocompact modules over $A$.
+\end{theorem}
+
+The subcategory $\operatorname{Ker}F$ is formed of the $M$ such that
+$\operatorname{Hom}(M,I)=0$ and it is localizing (corollary of
+Proposition~8, Chap.~III). By Proposition~10 (Chap.~III),
+$\operatorname{Ker}F$ is the smallest localizing subcategory containing
+the simple objects $S$ such that $\operatorname{Hom}(S,I)$ is zero. One
+may also say that the localizing subcategory $\operatorname{Ker}F$ is
+generated by the simple objects which ``do not occur'' in the
+decomposition of the socle of $I$ into isotypic components.
+
+Let $T$ be the canonical functor from $\mathbf{A}$ into
+$\mathbf{A}/\operatorname{Ker}F$. Then $TI$ is an injective object of
+$\mathbf{A}/\operatorname{Ker}F$ and the socle of $TI$ contains simple
+objects of $\mathbf{A}/\operatorname{Ker}F$ of every type. Moreover,
+since $I$ is $\operatorname{Ker}F$-closed, the map $T(M,I)$ from
+$\operatorname{Hom}(M,I)$ into $\operatorname{Hom}(TM,TI)$ is a
+bijection. We may therefore replace $\mathbf{A}$ by the locally finite
+category $\mathbf{A}/\operatorname{Ker}F$ and replace $I$ by $TI$. In
+other words, we may reduce to the case where the category
+$\operatorname{Ker}F$ is zero: this is what we shall suppose in the
+sequel of this proof.
+
+\begin{lemma}
+For every object $M$ of $\mathbf{A}$, the map $F(M,I)$ from
+$\operatorname{Hom}_{\mathbf{A}}(M,I)$ into
+$\operatorname{Hom}_{\operatorname{PC}(A)}(FI,FM)$ is a bijection.
+\end{lemma}
+
+Let indeed $f$ be a morphism from $M$ into $I$. The image of $f$ under
+the map $F(M,I)$ is none other than $\operatorname{Hom}_{\mathbf{A}}(f,I)$;
+this latter map associates to every element $a$ of
+$\operatorname{Hom}_{\mathbf{A}}(I,I)$ the element $a\circ f$ of
+$\operatorname{Hom}_{\mathbf{A}}(M,I)$. But the morphisms from $A=FI$
+into $FM$ are of the form $a\mapsto a\circ f$. This proves the lemma.
+
+\begin{lemma}
+Let $M$ be an object of $\mathbf{A}$, $(I_j)_{j\in E}$ a family of
+objects isomorphic to $I$ and $J$ the direct sum of the family
+$(I_j)_{j\in E}$. The map $F(M,J)$ from
+$\operatorname{Hom}_{\mathbf{A}}(M,J)$ into
+$\operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FM)$ is bijective.
+\end{lemma}
+
+We first consider the case where the object $M$ is of finite length.
+One knows that then the canonical map $u$ from the direct sum of the
+groups $\operatorname{Hom}_{\mathbf{A}}(M,I_j)$ into
+$\operatorname{Hom}_{\mathbf{A}}(M,J)$ is a bijection (Corollary~1 of
+Theorem~1, Chap.~II); the same holds for the canonical map $v$ from the
+direct sum of the $\operatorname{Hom}_{\operatorname{PC}(A)}(FI_j,FM)$
+into $\operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FM)$. Moreover,
+$F(M,I_j)$ is a bijection for every $j$. The assertion therefore
+follows from the equality
+\[
+v\circ\bigl(\sum F(M,I_j)\bigr)=F(M,J)\circ u.
+\]
+
+In the general case, $\operatorname{Hom}_{\mathbf{A}}(M,J)$ is the
+projective limit of the groups $\operatorname{Hom}_{\mathbf{A}}(N,J)$
+when $N$ runs through the subobjects of finite length of $M$.
+Likewise, $\operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FM)$ is the
+projective limit of the groups
+$\operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FN)$. We have moreover the
+following commutative diagram:
+% Braced commas in the arrow labels, as required by tikz-cd.
+\[
+\begin{tikzcd}
+\operatorname{Hom}_{\mathbf{A}}(M,J) \arrow[r, "F(M{,}J)"] \arrow[d, "\wr"'] & \operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FM) \arrow[d, "\wr"'] \\
+\varprojlim_N\operatorname{Hom}_{\mathbf{A}}(N,J) \arrow[r, "\varprojlim_N F(N{,}J)"] & \varprojlim_N\operatorname{Hom}_{\operatorname{PC}(A)}(FJ,FN)
+\end{tikzcd}
+\]
+
+Since $F(N,J)$ is an isomorphism for every $N$, the same holds for
+$F(M,J)$, which proves Lemma~2.
+
+If the category $\operatorname{Ker}F$ is zero, let us denote by
+$\mathbf{I}$ the full subcategory of $\mathbf{A}$ whose objects are
+isomorphic to the direct sum of a family of objects equal to $I$.
+Likewise, let $\mathbf{L}$ be the full subcategory of
+$\operatorname{PC}(A)$ whose objects are isomorphic to the direct
+product of a family of pseudocompact modules equal to $A$. Lemma~2
+shows that the functor $F$ induces an equivalence between $\mathbf{I}$
+and the category $\mathbf{L}^\circ$ dual to $\mathbf{L}$. Corollary~3
+of Proposition~14 (Chap.~I) shows that $F$ defines an equivalence
+between $\mathbf{A}$ and the category $\operatorname{PC}(A)^\circ$.
+
+\begin{corollary}
+With the hypotheses and notations of Theorem~4: if $I$ contains an
+indecomposable injective of each type, the functor $F$ defines an
+equivalence between $\mathbf{A}$ and the dual category of
+$\operatorname{PC}(A)$.
+\end{corollary}
+
+We shall suppose from now on that $I$ contains an indecomposable
+injective of each type. If $M$ is any subobject of $I$, we denote by
+$l(M)$ the left ideal of $A$ formed of the endomorphisms of $I$ whose
+kernel contains $M$.
+
+\begin{corollary}
+With the hypotheses and notations of Corollary~1: the map
+$M\mapsto l(M)$ is a bijection from the set of subobjects of $I$ onto
+the set of closed left ideals of $A$. The ideal $l(M)$ is two-sided if
+and only if the subobject $M$ of $I$ is characteristic [i.e.\ $f(M)$
+is contained in $M$ for every endomorphism $f$ of $I$].
+\end{corollary}
+
+The proof of Corollary~2 is left to the reader. We associate to every
+closed subcategory $\mathbf{C}$ of $\mathbf{A}$ the largest subobject
+$\mathbf{C}I$ of $I$ belonging to $\mathbf{C}$. If $f$ is an
+endomorphism of $I$, $f(\mathbf{C}I)$ is contained in $\mathbf{C}I$. In
+other words, $\mathbf{C}I$ is a characteristic subobject of $I$.
+
+Conversely, let $J$ be a characteristic subobject of $I$. The objects
+$M$ for which the canonical map from $\operatorname{Hom}(M,J)$ into
+$\operatorname{Hom}(M,I)$ is bijective form a closed subcategory
+$J\mathbf{A}$ of $\mathbf{A}$. Moreover, if $I$ contains an
+indecomposable injective of each type, the maps
+$\mathbf{C}\mapsto\mathbf{C}I$ and $J\mapsto J\mathbf{A}$ define a
+bijective correspondence between the set of closed subcategories of
+$\mathbf{A}$ and the set of characteristic subobjects of $I$. In other
+words, the map $\mathbf{C}\mapsto l(\mathbf{C}I)$ is a bijection from
+the set of closed subcategories of $\mathbf{A}$ onto the set of closed
+two-sided ideals of $A$. In the corollary which follows, we write
+$l(\mathbf{C})$ instead of $l(\mathbf{C}I)$.
+
+\begin{corollary}
+With the hypotheses and notations of Corollary~1: if $\mathbf{C}$ and
+$\mathbf{D}$ are two closed subcategories of $\mathbf{A}$, the
+two-sided ideal $l(\mathbf{C}\cdot\mathbf{D})$ is the closure of the
+product $l(\mathbf{C})\cdot l(\mathbf{D})$.
+\end{corollary}
+
+The proof of Corollary~3 is left to the reader. It follows that with
+the notations of Proposition~12, $\mathfrak{r}^{(n)}$ is the closure of
+the product $\mathfrak{r}^n$.
+
+If the injective $I$ contains one and only one indecomposable injective
+of each type, the socle $I_0$ of $I$ contains one and only one simple
+object of each type. One then says that the ring $A$ of endomorphisms
+of $I$ is the \emph{pseudocompact ring associated to} $\mathbf{A}$.
+This ring is determined up to isomorphism by the datum of the category
+$\mathbf{A}$. Two equivalent locally finite categories have isomorphic
+associated pseudocompact rings.
+
+We say that a pseudocompact ring $A$ is \emph{sober} (\emph{sobre}) if
+the quotient of $A$ by its Jacobson radical is a product of fields. We
+say that two pseudocompact rings $A$ and $B$ are \emph{equivalent} if
+the categories $\operatorname{PC}(A)$ and $\operatorname{PC}(B)$ are
+equivalent. We then have the following results: the pseudocompact ring
+associated to a locally finite category is sober. Every pseudocompact
+ring is equivalent to a sober pseudocompact ring. Two sober
+pseudocompact rings are equivalent if and only if they are isomorphic.
+
+If $A$ is a pseudocompact ring, Theorem~4 applies in particular to the
+category $\operatorname{dis}(A)$ of discrete topological $A$-modules.
+If $A^*$ is the pseudocompact ring associated to
+$\operatorname{dis}(A)$, the categories $\operatorname{dis}(A)$ and
+$\operatorname{PC}(A^*)$ are dual [i.e.\ the categories
+$\operatorname{dis}(A)$ and $\operatorname{PC}(A^*)^\circ$ are
+equivalent]. It follows that the categories $\mathbf{T}(A)$ and
+$\mathbf{T}(A^*)$, formed of the discrete modules of finite length over
+$A$ and $A^*$, are dual. By Theorem~1 (Chap.~II) finally, every duality
+between $\mathbf{T}(A)$ and $\mathbf{T}(A^*)$ extends to a duality
+between $\operatorname{PC}(A)$ and $\operatorname{dis}(A^*)$. If $A$ is
+sober, $A$ is therefore isomorphic to $(A^*)^*$ and one may say that
+$A^*$ is the dual pseudocompact ring of $A$.
+
+Corollary~1 has the following consequence:
+
+\begin{corollary}
+If $\mathbf{A}$ is a locally finite category and $A$ is the
+pseudocompact ring associated to $\mathbf{A}$, then $\mathbf{A}$ is
+equivalent to the category of discrete topological modules over the
+ring $A^*$ dual to $A$.
+\end{corollary}
+
+\begin{corollary}
+Let $I$ be an injective object of a locally finite category
+$\mathbf{A}$ and $A$ the ring of endomorphisms of $I$. If $I$ contains
+an indecomposable injective of each type, the centre $Z[\mathbf{A}]$ of
+the category $\mathbf{A}$ (Chap.~III, \S~5) is isomorphic to the centre
+of the ring $A$.
+\end{corollary}
+
+An element $z$ of $Z[\mathbf{A}]$ is indeed a morphism from the
+identity functor $I_{\mathbf{A}}$ into itself. In particular, $z$
+defines an endomorphism $z(I)\colon I\to I$. Since $z(I)$ commutes with
+all the endomorphisms of $I$, $z(I)$ belongs to the centre of $A$. We
+leave to the reader the task of verifying that the map $z\mapsto z(I)$
+is a bijection from $Z[\mathbf{A}]$ onto the centre of $A$.
+
+\begin{corollary}
+Every commutative pseudocompact ring $A$ is isomorphic to the dual ring
+$A^*$. In particular, the category $\mathbf{T}(A)$ of discrete
+topological $A$-modules of finite length is equivalent to the dual
+category $\mathbf{T}(A)^\circ$.
+\end{corollary}
+
+Since $A$ is a sober pseudocompact ring, it suffices indeed to show
+that the pseudocompact rings $A$ and $A^*$ are equivalent, i.e.\ that
+the categories $\mathbf{T}(A)$ and $\mathbf{T}(A)^\circ$ are equivalent.
+We shall exhibit a contravariant functor from $\mathbf{T}(A)$ into
+$\mathbf{T}(A)$ which defines an equivalence between $\mathbf{T}(A)$
+and $\mathbf{T}(A)^\circ$.
+
+When $\mathfrak{m}$ runs through the maximal open ideals of $A$, the
+quotients $A/\mathfrak{m}$ run through simple objects of each type of
+the category $\operatorname{dis}(A)$. We denote by $E$ an injective
+envelope [in $\operatorname{dis}(A)$] of the direct sum of these
+quotients.
+
+For every $A$-module $M$, the abelian group $\operatorname{Hom}_A(M,E)$
+is then equipped with an $A$-module structure: if $\varphi$ is an
+element of $\operatorname{Hom}_A(M,E)$ and if $a$ is an element of $A$,
+$a\cdot\varphi$ is the map $x\mapsto a\cdot\varphi(x)=\varphi(a\cdot x)$
+from $M$ into $E$. In particular, the annihilator of
+$\operatorname{Hom}_A(M,E)$ contains the annihilator of $M$. It follows
+that $\operatorname{Hom}_A(M,E)$ is a discrete topological $A$-module
+if $M$ is an object of $\mathbf{T}(A)$. Moreover,
+$\operatorname{Hom}_A(M,E)$ is isomorphic to $A/\mathfrak{m}$ if $M$ is
+isomorphic to $A/\mathfrak{m}$. The exactness of the functor
+$M\mapsto\operatorname{Hom}_A(M,E)$ therefore implies that
+$\operatorname{Hom}_A(M,E)$ is a discrete topological $A$-module of the
+same length as $M$ when $M$ runs through the objects of
+$\mathbf{T}(A)$. We denote by $D$ the contravariant functor from
+$\mathbf{T}(A)$ into $\mathbf{T}(A)$ which we have just defined:
+$DM=\operatorname{Hom}_A(M,E)$.
+
+It suffices to show that the functor $D\circ D$ is isomorphic to the
+identity functor of $\mathbf{T}(A)$ (Chap.~I, Proposition~12): if $M$
+is a discrete topological $A$-module of finite length and $m$ is an
+element of $M$, we denote by $m'$ the $A$-linear map from
+$\operatorname{Hom}_A(M,E)$ into $E$ defined by the formula
+$m'(f)=f(m)$. When $M$ varies, the maps $m\mapsto m'$ define a morphism
+from the identity functor of $\mathbf{T}(A)$ into $D\circ D$. Moreover,
+the map $m\mapsto m'$ is bijective when $M$ is of the form
+$A/\mathfrak{m}$. The exactness of the functor $D\circ D$ implies that
+it is still bijective when $M$ is of finite length. This completes the
+proof.

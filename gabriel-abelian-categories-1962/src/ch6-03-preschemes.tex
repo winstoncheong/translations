@@ -1,9 +1,45 @@
-%@ pages 446-446
-%@ status todo
-% Original: pp. 446--447.  French title: see reference/ocr/page-0446.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 446-447
+%@ status translated
+% Chapter VI, section 3: Preschemes and abelian categories (pp. 446--447;
+% p. 446 is shared with section 2, whose centre discussion ends just above
+% the section heading, and the bibliography begins on p. 447).
+% Transcribed from the page images in reference/source.pdf, not from the
+% OCR text layer, which mangles subscripts and symbols.
+%
+% Numbering is automatic (src/preamble.tex).  No numbered result is
+% stated in this section.
+%
+% No emendations.
+
 \section{Preschemes and Abelian Categories}
 
-\notyet{pp. 446--447 of the original French edition.}
+--- Let $(X, \mathcal{O}_X)$ be a noetherian prescheme. We shall see
+that the data, up to equivalence, of the category $\mathbf{F}_X$ allows
+one to reconstruct the prescheme $(X, \mathcal{O}_X)$; for this, we
+shall say that a localizing subcategory $\mathbf{A}$ of
+$\mathbf{F}_X$ is \emph{finite} if there exists a noetherian object $M$
+such that $\mathbf{A}$ is the smallest localizing subcategory
+containing $M$; it amounts to the same to say that $\mathbf{A}$ is of
+the form $\operatorname{Cat} R$, where $R$ is a closed subset of $X$.
+
+Theorem~1 establishes a bijective correspondence between $X$ and the
+spectrum $\operatorname{Sp}(\mathbf{F}_X)$ of $\mathbf{F}_X$. In this
+correspondence, the open subsets correspond to the spectra
+$\operatorname{Sp}(\mathbf{F}_X/\mathbf{A})$, where $\mathbf{A}$ ranges
+over the \emph{finite} localizing subcategories of $\mathbf{F}_X$.
+Precisely, the open subset $U$ corresponds to
+$\operatorname{Sp}(\mathbf{F}_X/\mathbf{A}(U))$ if $\mathbf{A}(U)$
+denotes the subcategory consisting of the $\mathcal{O}_X$-modules whose
+support does not meet $U$.
+
+The sets $\operatorname{Sp}(\mathbf{F}_X/\mathbf{A})$ defining on
+$\operatorname{Sp}(\mathbf{F}_X)$ a topological space structure, it
+remains to equip this topological space with a sheaf of rings $O$: by
+the end of Section~2, one may take $Z[\mathbf{F}_X/\mathbf{A}]$ as the
+ring of sections of $O$ over
+$\operatorname{Sp}(\mathbf{F}_X/\mathbf{A})$. If $\mathbf{A}$ is
+contained in $\mathbf{B}$, the canonical functor from
+$\mathbf{F}_X/\mathbf{A}$ to $\mathbf{F}_X/\mathbf{B}$ induces a
+homomorphism from $Z[\mathbf{F}_X/\mathbf{A}]$ to
+$Z[\mathbf{F}_X/\mathbf{B}]$ (cf.\ \S2); it is this homomorphism which
+is chosen for restriction homomorphism.

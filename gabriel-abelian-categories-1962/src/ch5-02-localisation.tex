@@ -1,9 +1,358 @@
-%@ pages 411-415
-%@ status todo
-% Original: pp. 411--415.  French title: see reference/ocr/page-0411.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 411-416
+%@ status translated
+% Chapter V, section 2: Localisation (pp. 411--416).  Transcribed from the
+% page images in reference/source.pdf, not from the OCR text layer, which
+% mangles subscripts, primes and the letters $F$/$\mathbf{F}$.
+%
+% Numbering is automatic (src/preamble.tex).  This section prints
+% Proposition 3, Proposition 4 and Proposition 5 (continuing the chapter's
+% run, which reaches Proposition 2 on p. 411), Lemma 1 and Lemma 2, one
+% corollary which Gabriel prints without a number (hence
+% `unnumberedcorollary'), Corollary 1 and Corollary 2, one unnumbered
+% definition and Remarks 1--3.
+%
+% Notation: $F$ is a topologising set of right ideals, $\mathbf{F}$ the
+% associated closed subcategory of $\operatorname{mod} A$; $A_d$ is $A$
+% viewed as a right module over itself, ${}_{s}B$ is $B$ viewed as a left
+% module over itself.  The star conditions $(\star)$ and $(\star\star)$ of
+% Proposition 5 are so printed in the original.
+%
+% Two emendations, both footnoted in the text: in the proof of
+% $(a)\Rightarrow(b)$ of Proposition 5 the original prints ``si $a$ est
+% nul'' where the argument requires ``si $s.a$ est nul''; in the statement
+% of Proposition 5 the original prints ``$A_F$'' for the target of $\psi$,
+% where the notation $M_S$ for $M_{F_S}$ just introduced forces $A_S$.
+
 \section{Localisation}
 
-\notyet{pp. 411--415 of the original French edition.}
+--- Let $A$ be a ring. A topology on $A$ is said to be \emph{linear} (on
+the right) if it makes $A$ a topological ring and if there exists a base
+of neighbourhoods of $0$ formed of right ideals. In this case, the set
+$F$ of open right ideals satisfies the following conditions:
+
+a. If $\mathfrak{m}$ is a right ideal containing an element $\mathfrak{I}$
+of $F$, then $\mathfrak{m}$ belongs to $F$.
+
+b. If $\mathfrak{m}\in F$ and if $\mathfrak{I}\in F$, then
+$\mathfrak{m}\cap\mathfrak{I}\in F$.
+
+c. If $\mathfrak{I}\in F$ and if $a\in A$, then
+$(\mathfrak{I}:a)=\{x\mid a.x\in\mathfrak{I}\}$ belongs to $F$.
+
+We shall say that a set $F$, formed of right ideals of $A$, is
+\emph{topologising} if conditions~(a), (b) and~(c) are satisfied. We
+shall also say that an $A$-module $M$ is \emph{$F$-negligible} if the
+annihilator of every element of $M$ is a right ideal belonging to $F$.
+If $\mathbf{F}$ is the full subcategory of $\operatorname{mod} A$ whose
+objects are the $F$-negligible $A$-modules, $\mathbf{F}$ is a closed
+subcategory (cf.\ Chapter~IV, \S4).
+
+\begin{lemma}
+The map $F\mapsto\mathbf{F}$ is a bijection from the set of
+topologising sets of right ideals onto the set of closed subcategories
+of $\operatorname{mod} A$.
+\end{lemma}
+
+If $\mathbf{F}$ is known, one can indeed recover $F$: a right ideal
+$\mathfrak{I}$ belongs to $F$ if and only if $A/\mathfrak{I}$ is an
+object of $\mathbf{F}$.
+
+If $F$ and $G$ are two topologising sets of right ideals, $F.G$ shall
+denote the topologising set associated to the product
+$\mathbf{F}.\mathbf{G}$ (Chapter~IV, \S4). It amounts to the same to say
+that a right ideal $\mathfrak{m}$ belongs to $F.G$ if, for every
+$a\in A$, there exists an element $\mathfrak{I}$ of $F$ such that
+$(a.\mathfrak{I}+\mathfrak{m})/\mathfrak{m}$ is $G$-negligible. In
+particular, if $\mathfrak{p}$ is an element of $F$ and $\mathfrak{q}$ an
+element of $G$, then $\mathfrak{p}.\mathfrak{q}$ belongs to $F.G$.
+With these conventions, the closed subcategory $\mathbf{F}$ is
+localising if and only if $F.F$ is equal to $\mathbf{F}$. The localising
+subcategories of $\operatorname{mod} A$ therefore correspond
+bijectively to the sets of right ideals which are topologising and
+idempotent.
+
+Let now $F$ be a topologising and idempotent set of right ideals. For
+every $A$-module $M$, we choose an $\mathbf{F}$-envelope which we denote
+by $u_M:M\to M_F$ (cf.\ Chapter~III). Since $M_F$ is an $A$-module, every
+element $m$ of $M_F$ defines an $A$-linear map from $A_d$ into $M_F$:
+$a\mapsto m.a$. This map extends in one and only one way to an
+$A$-linear map from $A_F=(A_d)_F$ into $M_F$; one thus defines a bilinear
+map
+\[
+M_F\times A_F\to M_F.
+\]
+
+We leave to the reader the task of verifying that, if $M$ is equal to
+$A_d$, this bilinear map makes $A_F$ a ring. If $M$ is arbitrary, this
+map makes $M_F$ an $A_F$-module. In particular, if $\mathfrak{I}$ is a
+right ideal of $A$, we may suppose that $\mathfrak{I}_F$ has been
+chosen to be a right ideal of $A_F$.
+
+In what follows, we always endow $A_F$ and $M_F$ with the structures we
+have just made explicit. We also employ the following notations: $T$ is
+the canonical functor from $\operatorname{mod} A$ into
+$\operatorname{mod} A/\mathbf{F}$; $S'$ is the functor from
+$\operatorname{mod} A/\mathbf{F}$ into $\operatorname{mod} A_F$ induced
+by the localisation functor; $\rho$ is the functor which associates to
+every $A_F$-module $N$ the underlying $A$-module (for the $A$-module
+structure defined by $u_A$). With these notations, $\rho\circ S'$ is a
+functor adjoint to $T$.
+
+\begin{lemma}
+Let $M$ be an $A$-module and $N$ an $A_F$-module. The map
+$\rho(N,M_F)$ from $\operatorname{Hom}_{A_F}(N,M_F)$ into
+$\operatorname{Hom}_A(\rho N,\rho M_F)$ is bijective.
+\end{lemma}
+
+It is indeed clear that $\rho(N,M_F)$ is an injection. Let $f$ therefore
+be an $A$-linear map from $N$ into $M_F$. If $n$ is an element of $N$,
+we want to show that $f(n.a)=f(n).a$ for every $a$ in $A_F$. But the
+maps $g:a\mapsto f(n.a)$ and $h:a\mapsto f(n).a$ are $A$-linear, and one
+has the equality $g\circ u_A=h\circ u_A$. We deduce the equality of $g$
+and of $h$ (definition of $\mathbf{F}$-closed objects, Lemma~1, \S2,
+Chapter~III).\hfill Q.E.D.
+
+Let $F'$ be the set of right ideals $\mathfrak{I}$ of $A_F$ such that
+$\rho(A_F/\mathfrak{I})$ is $F$-negligible. It is clear that $F'$ is
+topologising and idempotent, and that an $A_F$-module $N$ is
+$F'$-negligible if and only if $\rho N$ is $F$-negligible. We can
+therefore speak of the canonical functor $T'$ from
+$\operatorname{mod} A_F$ into the quotient category
+$\operatorname{mod} A_F/\mathbf{F}'$.
+
+\begin{proposition}
+Let $A$ be a ring and $F$ a topologising and idempotent set of right
+ideals. With the notations above, the functor $T\circ\rho$ defines by
+passage to the quotient an equivalence between
+$\operatorname{mod} A_F/\mathbf{F}'$ and
+$\operatorname{mod} A/\mathbf{F}$.
+\end{proposition}
+
+Let indeed $\mathbf{B}$ be the quotient category
+$\operatorname{mod} A/\mathbf{F}$; let us show that the functor $S'$ is
+adjoint to $T\circ\rho$: if $M$ is an object of $\mathbf{B}$ and $N$ an
+object of $\operatorname{mod} A_F$, the abelian group
+$\operatorname{Hom}_{\mathbf{B}}(T\rho N,M)$ is identified with
+$\operatorname{Hom}_A(\rho N,\rho S'M)$, since $\rho\circ S'$ is adjoint
+to $T$. By Lemma~2, $\operatorname{Hom}_A(\rho N,\rho S'M)$ ``is
+identified'' with $\operatorname{Hom}_{A_F}(N,S'M)$. This proves that
+$S'$ is adjoint to $T\circ\rho$. The proposition therefore follows from
+Proposition~5 (Chapter~III).
+
+\begin{unnumberedcorollary}
+An $A_F$-module $N$ is $\mathbf{F}'$-closed (resp.\ $\mathbf{F}'$-closed
+and injective) if and only if $\rho N$ is $\mathbf{F}$-closed (resp.\
+$\mathbf{F}$-closed and injective).
+\end{unnumberedcorollary}
+
+This corollary follows from the preceding proposition and from the
+corollary to Proposition~3 (Chapter~III).
+
+If $M$ is an $A$-module, we denote by $\mathbf{F}M$ the largest
+$F$-negligible submodule of $M$. The abelian group underlying $M_F$ is
+identified with $\operatorname{Hom}_A(A_d,M_F)$; this last group is
+itself isomorphic to
+$\operatorname{Hom}_{\operatorname{mod} A/\mathbf{F}}(A_d,M)$, that is,
+to the inductive limit
+$\varinjlim_{I\in F}\operatorname{Hom}_A(I,M/\mathbf{F}M)$.
+
+It is easy to endow this inductive limit with a structure of $A$-module
+such that the preceding isomorphism from $M_F$ onto
+$\varinjlim_{I\in F}\operatorname{Hom}_A(I,M/\mathbf{F}M)$ is an
+isomorphism of $A$-modules. The proposition which follows is a
+consequence of this:
+
+\begin{proposition}
+Let $A$ be a ring and $F$ a topologising and idempotent set of right
+ideals. The localisation functor defined by $F$ is isomorphic to the
+functor
+$M\leadsto\varinjlim_{I\in F}\operatorname{Hom}_A(I,M/\mathbf{F}M)$.
+\end{proposition}
+
+\begin{corollary}
+The hypotheses are those of the proposition. One supposes moreover that
+the injective envelope of an object of $\mathbf{F}$ belongs to
+$\mathbf{F}$. The localisation functor defined by $F$ is then
+isomorphic to the functor
+$M\leadsto\varinjlim_{I\in F}\operatorname{Hom}_A(I,M)$.
+\end{corollary}
+
+Consider indeed the following exact sequence:
+\[
+0\to\varinjlim_{I\in F}\operatorname{Hom}_A(I,\mathbf{F}M)
+\xrightarrow{i}\varinjlim_{I\in F}\operatorname{Hom}_A(I,M)
+\xrightarrow{p}\varinjlim_{I\in F}\operatorname{Hom}_A(I,M/\mathbf{F}M)
+\xrightarrow{d}\varinjlim_{I\in F}\operatorname{Ext}^1_A(I,\mathbf{F}M).
+\]
+One checks at once that
+$\varinjlim_{I\in F}\operatorname{Hom}_A(I,N)$ is zero if $N$ is
+$F$-negligible. It follows that $p$ is an injection. On the other hand,
+the functor
+$N\leadsto\varinjlim_{I\in F}\operatorname{Ext}^1_A(I,N)$ is the
+satellite of the functor
+$N\leadsto\varinjlim_{I\in F}\operatorname{Hom}_A(I,N)$. If $N$ is
+$F$-negligible, there exists an exact sequence
+\[
+0\to N\xrightarrow{u} I\xrightarrow{v} N'\to 0,
+\]
+where $I$ is an $F$-negligible injective $A$-module. One deduces that
+$\varinjlim_{I\in F}\operatorname{Ext}^1_A(I,N)$ is zero if $N$ is
+$F$-negligible. In particular, the map $d$ is surjective.
+
+\begin{corollary}
+Let $A$ be a ring and $F$ a topologising and idempotent set of right
+ideals. Suppose that there exists a cofinal subset $G$ of $F$, formed
+of finitely generated right ideals. If the localisation functor defined
+by $F$ is exact, this functor is isomorphic to the functor
+$M\leadsto M\otimes_A A_F$; moreover, the categories
+$\operatorname{mod} A/\mathbf{F}$ and $\operatorname{mod} A_F$ are then
+equivalent.
+\end{corollary}
+
+Let us first show that the functor
+$M\leadsto\varinjlim_{I\in G}\operatorname{Hom}_A(I,M/\mathbf{F}M)$
+commutes with direct sums. This is obviously true for the functors
+$M\leadsto\mathbf{F}M$ and $M\leadsto M/\mathbf{F}M$; if $N$ is a
+finitely generated $A$-module, the functor $\operatorname{Hom}_A(N,.)$
+commutes with direct sums. It follows that the functor
+$M\leadsto\operatorname{Hom}_A(I,M/\mathbf{F}M)$ commutes with direct
+sums if $I$ is an element of $G$. The first assertion of the corollary
+follows (see Proposition~1\textit{bis} and the remark preceding it).
+
+Let furthermore $\mathbf{B}$ be the quotient category
+$\operatorname{mod} A/\mathbf{F}$, let $T$ be the canonical functor from
+$\operatorname{mod} A$ into $\mathbf{B}$ and let $S$ be a functor
+adjoint to $T$. The functor $\operatorname{Hom}_{\mathbf{B}}(A_F,.)$ is
+isomorphic to the functor $\operatorname{Hom}_A(A,S.)$; since $S$ is
+exact, $A_F$ is a projective object of $\mathbf{B}$; since $S$ commutes
+with direct sums, the same holds for
+$\operatorname{Hom}_{\mathbf{B}}(A_F,.)$. The last assertion therefore
+follows from Corollary~1 to Proposition~1.
+
+Here is an application of Corollary~2: let $S$ be a multiplicative set
+of $A$ (a subset of $A$ such that $a.b\in S$ if $a\in S$ and $b\in S$).
+The datum of $S$ makes it possible to define a topologising and
+idempotent set $F_S$ of right ideals: a right ideal $\mathfrak{I}$
+belongs to $F_S$ if, for every $a\in A$, there exists an $s\in S$ such
+that $a.s$ belongs to $\mathfrak{I}$. It amounts to the same to say
+that an $A$-module $M$ is $F_S$-negligible if every element $m$ of $M$
+is annihilated by an element $s$ of $S$.
+
+Every ideal belonging to $F_S$ obviously meets $S$; the converse is
+true if $\forall s\in S$, $\forall a\in A$, $\exists t\in S$,
+$\exists b\in A$ such that $a.t=s.b$. We shall recover this condition;
+for this, we write $M_S$ instead of $M_{F_S}$:
+
+\begin{definition}
+Let $\varphi:A\to B$ be a homomorphism of rings with unit element and
+$S$ a multiplicative set of $A$. One says that $(B,\varphi)$ is a
+\emph{right ring of fractions} of $A$ for $S$ if:
+\begin{description}
+\item[\normalfont a.] $\operatorname{Ker}\varphi$ is $F_S$-negligible;
+in other words, if $\varphi(a)$ is zero, there exists $s\in S$ such that
+$a.s=0$.
+\item[\normalfont b.] The image under $\varphi$ of every element of $S$
+is invertible (on the left and on the right).
+\item[\normalfont c.] Every element $b$ of $B$ is of the form
+$b=\varphi(a).\varphi(s)^{-1}$, $a\in A$, $s\in S$.
+\end{description}
+\end{definition}
+
+\begin{proposition}
+Let $A$ be a ring and $S$ a multiplicative set of $A$. The following
+assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] There exists a right ring of fractions of $A$ for
+$S$.
+\item[\normalfont b.] $S$ satisfies the following conditions:
+\end{description}
+$(\star)\quad\forall s\in S,\ \forall a\in A,\ \exists t\in S,\
+\exists b\in A$ such that $a.t=s.b$.
+
+$(\star\star)\quad$ if $a\in A$, if $s\in S$ and if $s.a=0$, there
+exists $t\in S$ such that $a.t=0$.
+\begin{description}
+\item[\normalfont c.] The image of an element of $S$ under the map
+$u_A:A\to A_S$ is invertible.
+\end{description}
+If these conditions are satisfied and if $(B,\varphi)$ is a right ring
+of fractions of $A$ for $S$, there exists one and only one isomorphism
+$\psi$ from $B$ onto $A_S$ such that
+$\psi\circ\varphi=u_A$.\ednote{The original prints $A_F$ here; with the
+notation $M_S$ for $M_{F_S}$ introduced above, the target can only be
+$A_S$.} The functor $M\leadsto M_S$ is then exact and is isomorphic to
+the functor $M\leadsto M\otimes_A A_S$.
+\end{proposition}
+
+$(a)\Rightarrow(b)$: assertion $(\star\star)$ is indeed clear, for
+$\varphi(a)$ is zero if $s.a$ is zero.\ednote{The original prints ``si
+$a$ est nul''; since $\varphi(s)$ is invertible,
+$\varphi(s.a)=0$ gives $\varphi(a)=0$, and it is $s.a$ which must be
+zero for the conclusion $a.t=0$ to follow from~(a) of the definition.}
+On the other hand, $\varphi(s)^{-1}.\varphi(a)$ is an element of $B$,
+and is therefore of the form
+\[
+\varphi(s)^{-1}.\varphi(a)=\varphi(c).\varphi(r)^{-1},\qquad r\in S,
+\qquad c\in A.
+\]
+One deduces the equality
+$\varphi(a).\varphi(r)=\varphi(s).\varphi(c)$. In other words,
+$a.r-s.c$ belongs to $\operatorname{Ker}\varphi$; there consequently
+exists a $u\in S$ such that $a.r.u-s.c.u=0$. One shall put $t=r.u$ and
+$b=c.u$.
+
+$(b)\Rightarrow(c)$: we first show that conditions $(\star)$ and
+$(\star\star)$ imply the exactness of the functor $M\leadsto M_S$. Let
+us give ourselves a diagram
+\[
+\begin{tikzcd}
+& I \arrow[d, "u"] \\
+M \arrow[r, "p"] & N \arrow[r] & 0.
+\end{tikzcd}
+\]
+where $I$ belongs to $F_S$ and where $M$ and $\operatorname{Ker}p$ are
+$F_S$-closed. It suffices to show that $I$ contains an ideal
+$\mathfrak{m}\in F_S$ such that the restriction of $u$ to
+$\mathfrak{m}$ is of the form $p\circ v$, where $v:\mathfrak{m}\to M$
+[Proposition~7~(b), Chapter~III].
+
+If $s$ belongs to $I\cap S$, $u(s)$ is of the form $p(m)$, where
+$m\in M$; moreover, $m.a$ is zero if $s.a$ is zero. One shall therefore
+put $\mathfrak{m}=s.A$ and $v(s.a)=m.a$.
+
+The exactness of the functor $M\leadsto M_S$ implies that $u_A(s)$ is
+invertible on the right for every $s\in S$ (let indeed $g_s$ be the map
+$a\mapsto s.a$; since $\operatorname{Coker}g_s$ is $F_S$-negligible,
+$g_s$ induces an epimorphism from $A_S$ onto $A_S$). It follows that
+$u_A(s).(s'.u_A(s)-1)$ is zero if $s'$ is such that
+$u_A(s).s'=1$. Since $u_A(s)$ is an element regular on the right and on
+the left [condition $(\star\star)$], one has $s'.u_A(s)=1$.
+
+$(c)\Rightarrow(a)$: this is clear, as is the uniqueness of the ring of
+fractions. The last assertion follows from Corollary~2 to
+Proposition~4.
+
+\begin{remark}
+Conditions $(\star)$ and $(\star\star)$ are always satisfied when $S$ is
+contained in the centre of $A$. One then recovers localisation with
+respect to the centre (Chapter~III, \S5).
+\end{remark}
+
+\begin{remark}
+If conditions $(\star)$ and $(\star\star)$ of Proposition~5 are
+satisfied, one can exhibit a construction of $M_S$ closer to
+established traditions: for this, one agrees to say that two elements
+$(m,s)$ and $(n,t)$ of $M\times S$ are equivalent if there exist two
+elements $u$ and $v$ of $A$ such that $s.u=t.v\in S$ and $m.u=n.v$.
+The set underlying $M_S$ is then chosen equal to the quotient of
+$M\times S$ by the equivalence relation we have just defined. The
+definition of the laws of addition and multiplication is easy.
+\end{remark}
+
+\begin{remark}
+We leave to the reader the task of proving that, if $A$ is commutative,
+$A_F$ is commutative for every topologising and idempotent set of ideals
+$F$; moreover, the map $\mathfrak{p}\mapsto\mathfrak{p}_F$ is a
+bijection from the set of prime ideals of $A$ not belonging to $F$ onto
+the set of prime ideals of $A_F$ not belonging to $F'$.
+\end{remark}

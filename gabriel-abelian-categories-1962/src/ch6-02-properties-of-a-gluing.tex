@@ -1,9 +1,292 @@
-%@ pages 442-445
-%@ status todo
-% Original: pp. 442--445.  French title: see reference/ocr/page-0442.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 442-446
+%@ status translated
+% Chapter VI, section 2: Properties of a gluing of abelian categories
+% (pp. 442--446; p. 446 is shared with section 3, whose heading stands at
+% the foot of that page).  Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer, which mangles
+% subscripts and symbols.
+%
+% Numbering is automatic (src/preamble.tex).  This section prints
+% Lemmas 1, 2 and 3 (the lemma counter restarts at every section),
+% Theorem 1 (the chapter's only theorem) and Proposition 4 (continuing the
+% chapter's run of propositions, which reaches Proposition 3 on p. 441).
+%
+% No emendations.
+%
+% Local notation: \gluecat{C}{B}{D} renders Gabriel's gluing symbol
+% (double vertical bar with the base category underneath); \glueelt
+% renders the same double bar between two centre elements.  See ch6-01.
+\providecommand{\gluecat}[3]{#1 \underset{#2}{\Vert} #3}
+\providecommand{\glueelt}[2]{#1 \Vert #2}
+
 \section{Properties of a Gluing of Abelian Categories}
 
-\notyet{pp. 442--445 of the original French edition.}
+--- We keep the notations of Section~1.
+
+\begin{lemma}
+Let $T$ be the functor $(C, D, \sigma) \leadsto D$. Suppose that
+$\operatorname{Ker} F$ is a localizing subcategory of $\mathbf{C}$ and
+that $F$ defines, on passing to the quotient, an equivalence between
+$\mathbf{C}/\operatorname{Ker} F$ and $\mathbf{B}$. The functor
+$M \leadsto (M, 0, 0)$ is then an isomorphism from
+$\operatorname{Ker} F$ onto $\operatorname{Ker} T$,
+$\operatorname{Ker} T$ is a localizing subcategory of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$, and $T$ defines, on
+passing to the quotient, an equivalence between
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}/\operatorname{Ker} T$ and
+$\mathbf{D}$.
+\end{lemma}
+
+Let indeed $H$ be a functor adjoint to $F$, $\chi$ an isomorphism from
+$\operatorname{Hom}_{\mathbf{C}}(., H.)$ onto
+$\operatorname{Hom}_{\mathbf{B}}(F., .)$ and $X$ the morphism from
+$F \circ H$ onto $I_{\mathbf{B}}$ associated with $\chi$ (cf.\
+Chapter~I, \S7); $X$ is known to be a functorial isomorphism. If $S$
+denotes the functor $D \leadsto (HGD, D, X(GD))$, $T \circ S$ is the
+identity functor of $\mathbf{D}$. The identity morphisms $1_D$ thus
+define a functorial isomorphism $\Phi$ from $T \circ S$ onto
+$I_{\mathbf{D}}$. This isomorphism $\Phi$ makes $S$ a functor adjoint to
+$T$, and the lemma follows from Proposition~5 (Chapter~III).
+
+\begin{lemma}
+Suppose that $\operatorname{Ker} F$ (resp.\ $\operatorname{Ker} G$) is a
+localizing subcategory of $\mathbf{C}$ (resp.\ of $\mathbf{D}$) and that
+$F$ (resp.\ $G$) defines, on passing to the quotient, an equivalence
+between $\mathbf{C}/\operatorname{Ker} F$ and $\mathbf{B}$ (resp.\
+between $\mathbf{D}/\operatorname{Ker} G$ and $\mathbf{B}$). If the
+categories $\mathbf{C}$ and $\mathbf{D}$ are locally noetherian, the
+same holds for
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$.
+\end{lemma}
+
+It is indeed clear that
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is a $\Univ$-category
+with exact inductive limits. If $(C', D', \sigma')$ is a proper
+subobject of $(C, D, \sigma)$, let us show that there exists a
+noetherian subobject of $(C, D, \sigma)$ which is not contained in
+$(C', D', \sigma')$. For this one may suppose $C'$ different from $C$.
+There then exists a noetherian subobject $C''$ of $C$ which is not
+contained in $C'$. It thus remains to ``lift'' $FC''$ to a noetherian
+subobject of $D$.
+
+It remains to prove that there exists a set belonging to $\Univ$ and
+having the same cardinality as the set of types of noetherian objects of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$; this follows from the
+corresponding properties of $\mathbf{C}$ and of $\mathbf{D}$; we leave
+the proof to the reader.
+
+Suppose the hypotheses of Lemma~2 still satisfied and use the notations
+introduced in the proof of Lemma~1. If $I$ is an indecomposable
+injective object of $\mathbf{D}$, $SI$ is an indecomposable injective
+object of $\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$. The map
+$I \leadsto SI$ induces an injection from $\operatorname{Sp}(\mathbf{D})$
+into
+$\operatorname{Sp}(\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}})$.
+
+In accordance with the conventions of Chapter~IV, we identify
+$\operatorname{Sp}(\mathbf{D})$ with the image of this injection. We
+likewise identify $\operatorname{Sp}(\mathbf{B})$ and
+$\operatorname{Sp}(\mathbf{C})$ with subsets of
+$\operatorname{Sp}(\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}})$.
+Lemma~1 and the remarks of Chapter~IV (\S1) show that
+$\operatorname{Sp}(\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}})$ is the
+union of the disjoint subsets $\operatorname{Sp}(\mathbf{D})$ and
+$\operatorname{Sp}(\operatorname{Ker} T)$. Since
+$\operatorname{Sp}(\operatorname{Ker} T)$ coincides with
+$\operatorname{Sp}(\operatorname{Ker} F)$ and is contained in
+$\operatorname{Sp}(\mathbf{C})$, one sees that
+$\operatorname{Sp}(\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}})$ is the
+union of $\operatorname{Sp}(\mathbf{C})$ and of
+$\operatorname{Sp}(\mathbf{D})$. Since
+$\operatorname{Sp}(\mathbf{D})$ is the union of
+$\operatorname{Sp}(\operatorname{Ker} G)$ and of
+$\operatorname{Sp}(\mathbf{B})$, one sees that
+$\operatorname{Sp}(\mathbf{B})$ is the intersection of
+$\operatorname{Sp}(\mathbf{C})$ and of $\operatorname{Sp}(\mathbf{D})$;
+one thus has the formulae
+\[
+(\star\star\star)\qquad
+\operatorname{Sp}\left(
+\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}\right)
+= \operatorname{Sp}(\mathbf{C}) \cup \operatorname{Sp}(\mathbf{D}),\qquad
+\operatorname{Sp}(\mathbf{B})
+= \operatorname{Sp}(\mathbf{C}) \cap \operatorname{Sp}(\mathbf{D}).
+\]
+
+\begin{theorem}
+Let $(X, \mathcal{O}_X)$ be a noetherian prescheme. One has the
+following assertions:
+\begin{description}
+\item[\normalfont a.] The category $\mathbf{F}_X$ is locally noetherian.
+\item[\normalfont b.] The support $\operatorname{Supp}(I)$ of an
+      indecomposable injective $\mathcal{O}_X$-module is a closed
+      irreducible subset of $X$. Every non-zero
+      $\mathcal{O}_X$-submodule of $I$ has the same support as $I$.
+\item[\normalfont c.] The map $I \leadsto \operatorname{supp}(I)$
+      induces a bijection from the spectrum of the category
+      $\mathbf{F}_X$ onto the set of irreducible closed subsets of $X$.
+\end{description}
+\end{theorem}
+
+When $X$ is the affine scheme associated with a noetherian ring, the
+theorem follows from Proposition~8 and Corollary~2 to Proposition~14 of
+Chapter~V. By what was said at the end of Section~1, it thus suffices
+to prove that the theorem holds for $X$ if it holds for two open subsets
+$U$ and $V$ of $X$ such that $X = U \cup V$. In this case we identify
+$\mathbf{F}_X$, $\mathbf{F}_U$, $\mathbf{F}_V$,
+$\mathbf{F}_{U \cap V}$, $\rho_U$ and $\rho_V$ with
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$, $\mathbf{C}$,
+$\mathbf{D}$, $\mathbf{B}$, $F$ and $G$ respectively (cf.\
+Proposition~2). Assertion~(a) is then an immediate consequence of
+Lemma~2.
+
+Let us prove assertion~(b): if $I$ is an indecomposable injective
+$\mathcal{O}_X$-module, three cases are possible:
+--- $I$ belongs to $\operatorname{Sp}(\operatorname{Ker} T)$; in other
+words, $I$ contains a non-zero $\mathcal{O}_X$-submodule whose support
+is contained in $V' = X - V$. It follows that $I$ belongs to
+$\operatorname{Sp}(\mathbf{C})$, in other words is isomorphic to the
+direct image of an indecomposable injective $(\mathcal{O}_X|U)$-module
+$J$. Since $U$ satisfies the theorem, the support of $J$ is a closed
+irreducible subset contained in $V'$. The support of $I$ consequently
+coincides with the support of $J$; assertion~(b) follows.
+--- $I$ contains a non-zero $\mathcal{O}_X$-submodule whose support is
+contained in $U' = X - U$. An argument analogous to the preceding
+argument then shows that the support of $I$ is a closed irreducible
+subset contained in $U'$.
+--- $I$ belongs to $\operatorname{Sp}(\mathbf{B})$; in other words, the
+support of every non-zero $\mathcal{O}_X$-submodule of $I$ meets
+$U \cap V$. If $j$ is the canonical injection of $U \cap V$ into $X$,
+$I$ is then isomorphic to the direct image $j_*(K)$ of an
+indecomposable injective $(\mathcal{O}_X|U \cap V)$-module $K$. Since the
+direct image of $K$ in $V$ coincides with $j_*(K)|V$ and is an
+indecomposable injective $(\mathcal{O}_X|V)$-module, the support of
+$I|V$ is a closed irreducible subset of $V$; moreover, every non-zero
+submodule of $I|V$ has the same support as $I|V$. For the same reason,
+the support of $I|U$ is closed and irreducible and every non-zero
+submodule of $I|U$ has the same support as $I|U$. Assertion~(b) follows.
+
+Assertion~(c) finally follows from the classification we have just made
+and from the fact that every closed irreducible subset of $X$ is the
+closure of a closed irreducible subset of $U$ or of $V$.
+
+Let us now return to the diagram $(\star)$, and let $R$ and $T$ be the
+canonical projections of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ onto $\mathbf{C}$ and
+$\mathbf{D}$. We suppose that the categories $\mathbf{C}$ and
+$\mathbf{D}$ are locally noetherian, that the hypotheses of Lemma~2
+hold and that the localizing subcategories $\operatorname{Ker} F$ and
+$\operatorname{Ker} G$ are stable under injective envelopes. It follows
+that the subcategories $\operatorname{Ker} T$ and
+$\operatorname{Ker} R$ of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ are stable under
+injective envelopes and that gluing data $(I, J, \sigma)$ is an
+injective object of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ if and only if $I$ and
+$J$ are injective objects of $\mathbf{C}$ and $\mathbf{D}$. We propose
+to investigate the localizing subcategories of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$; if $\mathbf{C}'$
+(resp.\ $\mathbf{D}'$) is a localizing subcategory of $\mathbf{C}$
+(resp.\ of $\mathbf{D}$), we denote for this purpose by $F\mathbf{C}'$
+(resp.\ by $G\mathbf{D}'$) the smallest localizing subcategory of
+$\mathbf{B}$ containing the objects $FC$ (resp.\ $GD$), as $C$
+(resp.\ $D$) ranges over the objects of $\mathbf{C}'$ (resp.\ of
+$\mathbf{D}'$).
+
+\begin{lemma}
+Let $\mathbf{C}'$ and $\mathbf{D}'$ be localizing subcategories of
+$\mathbf{C}$ and $\mathbf{D}$ such that
+$F\mathbf{C}' = G\mathbf{D}'$. Under the hypotheses above,
+$\gluecat{\mathbf{C}'}{\mathbf{B}}{\mathbf{D}'}$ is a localizing
+subcategory of $\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ and every
+localizing subcategory is of this type. If $\mathbf{C}'$ and
+$\mathbf{D}'$ are stable under injective envelopes, the same holds for
+$\gluecat{\mathbf{C}'}{\mathbf{B}}{\mathbf{D}'}$.
+\end{lemma}
+
+It is clear that the category
+$\gluecat{\mathbf{C}'}{\mathbf{B}}{\mathbf{D}'}$ is ``contained'' in
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$. We shall content
+ourselves with showing that every localizing subcategory $\mathbf{A}$ of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$ is of the form
+$\gluecat{\mathbf{C}'}{\mathbf{B}}{\mathbf{D}'}$: for this, let
+$K = (I, J, \tau)$ be an injective containing no non-zero subobject of
+$\mathbf{A}$; let $E = (C, D, \sigma)$ be an arbitrary object of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$. We shall first show that
+the canonical map from $\operatorname{Hom}(E, K)$ to
+$\operatorname{Hom}(C, I)$ is surjective: let indeed $J'$ be the largest
+subobject of $J$ annihilated by $G$; since $\operatorname{Ker} G$ is
+stable under injective envelopes, $J$ is the direct sum of $J'$ and of
+an injective object $J''$ such that $GJ'' = GJ$; it follows that, for
+every $f : C \to I$, $\tau \circ Ff \circ \sigma^{-1}$ lifts to a
+morphism from $D$ to $J''$, hence also to a morphism $g$ from $D$ to
+$J$; in other words, $f$ is the image of the morphism
+$(f, g) : E \to K$.
+
+Let thus $\mathbf{C}'$ and $\mathbf{D}'$ be the localizing
+subcategories of $\mathbf{C}$ and $\mathbf{D}$ consisting of the objects
+$C$ and $D$ such that
+$\operatorname{Hom}_{\mathbf{C}}(C, I) = 0$ and
+$\operatorname{Hom}_{\mathbf{D}}(D, J) = 0$ as $(I, J, \tau)$ ranges over
+the injective objects containing no non-zero subobject of
+$\mathbf{A}$. What precedes implies that $\operatorname{Hom}(E, K)$ is
+zero if and only if $\operatorname{Hom}_{\mathbf{C}}(C, I)$ and
+$\operatorname{Hom}_{\mathbf{D}}(D, J)$ are zero.
+
+In other words, $(C, D, \sigma)$ belongs to $\mathbf{A}$ if and only if
+$C$ and $D$ belong to $\mathbf{C}'$ and $\mathbf{D}'$; i.e.\ if and only
+if $(C, D, \sigma)$ belongs to
+$\gluecat{\mathbf{C}'}{\mathbf{B}}{\mathbf{D}'}$. This completes the
+proof of the lemma.
+
+Let $(X, \mathcal{O}_X)$ again be a noetherian prescheme. If $R$ is the
+union of a family of closed subsets of $X$, we denote by
+$\operatorname{Cat} R$ the full subcategory of $\mathbf{F}_X$ consisting
+of the $\mathcal{O}_X$-modules whose support is contained in $R$.
+
+\begin{proposition}
+\begin{description}
+\item[\normalfont a.] Every localizing subcategory of $\mathbf{F}_X$ is
+      stable under injective envelopes.
+\item[\normalfont b.] The map $R \leadsto \operatorname{Cat} R$ is a
+      bijection from the set of subsets of $X$ which are unions of
+      closed subsets onto the set of localizing subcategories of
+      $\mathbf{F}_X$.
+\end{description}
+\end{proposition}
+
+When $X$ is the affine scheme associated with a noetherian ring, the
+proposition follows from Proposition~10 and Corollary~1 to
+Proposition~7 of Chapter~V. By what was said at the end of Section~1,
+it thus suffices to prove that the proposition holds for $X$ if it
+holds for two open subsets $U$ and $V$ of $X$ such that
+$U \cup V = X$. This last point follows from Lemma~3.
+
+Return one last time to the diagram $(\star)$, and suppose the
+hypotheses of Lemma~2 satisfied. If $\varphi$ is an element of the
+centre $Z[\mathbf{C}]$ of $\mathbf{C}$, it is clear that there exists
+one and only one element $F\varphi$ of $Z[\mathbf{B}]$ such that
+$(F\varphi)(FC) = F(\varphi(C))$ for every object $C$ of $\mathbf{C}$.
+The map $\varphi \leadsto F\varphi$ is a ring homomorphism from
+$Z[\mathbf{C}]$ to $Z[\mathbf{B}]$. One defines analogously a
+homomorphism $\psi \leadsto G\psi$ from $Z[\mathbf{D}]$ to
+$Z[\mathbf{B}]$.
+
+If $\varphi$ and $\psi$ are elements of $Z[\mathbf{C}]$ and
+$Z[\mathbf{D}]$ such that $F\varphi = G\psi$, the morphisms
+$(\varphi(C), \psi(D)) : (C, D, \sigma) \to (C, D, \sigma)$ evidently
+define an element $\glueelt{\varphi}{\psi}$ of the centre of
+$\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}$. Moreover it is clear
+that the map $(\varphi, \psi) \leadsto \glueelt{\varphi}{\psi}$ is a
+bijection from the fibred product
+$\gluecat{Z[\mathbf{C}]}{Z[\mathbf{B}]}{Z[\mathbf{D}]}$ onto
+$Z[\gluecat{\mathbf{C}}{\mathbf{B}}{\mathbf{D}}]$.
+
+What precedes, and the fact that the centre of a ring $A$ is identified
+with the centre of the category $\operatorname{mod} A$, imply ``by
+gluing'' the following result: let $(X, \mathcal{O}_X)$ be a noetherian
+prescheme, $z$ a section of $\mathcal{O}_X$ over $X$, $M$ an
+$\mathcal{O}_X$-module and $z_M$ the endomorphism of $M$ defined by $z$;
+the maps $z \leadsto z_M$ then define an isomorphism from
+$\Gamma(X, \mathcal{O}_X)$ onto the centre of the category
+$\mathbf{F}_X$.

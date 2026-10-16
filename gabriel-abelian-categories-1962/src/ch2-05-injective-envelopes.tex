@@ -13,7 +13,7 @@
 %     "morphism" (as the definition above requires).
 %   * The complement definition prints "M cap Q = 0"; we print
 %     "N cap Q = 0" (Q being a subobject of M, the print forces Q = 0).
-\section{Injective Envelopes in Abelian Categories [8]}
+\section{Injective Envelopes in Abelian Categories \cite{eckmann-schopf}}
 --- Let $\Cat$ be an abelian category and let $M$ be an object of $\Cat$.
 An \emph{essential extension} of $M$ is a monomorphism
 $i\colon M\to P$ satisfying the following condition: if $f$ is a
@@ -70,7 +70,7 @@ is different from $M$ and if, for every pair $(P,Q)$ of subobjects of
 $M$ containing $N$, the relation $P\cap Q = N$ implies $P = N$ or
 $Q = N$. It amounts to the same to say that $M/N$ is an essential
 extension of every nonzero subobject. If $0$ is irreducible in $M$, we
-also say that $M$ is \emph{coreducible}.
+also say that $M$ is \emph{coirreducible}.
 
 Let us consider an object $M$ of $\Cat$ and $r$ subobjects
 $N_1, N_2, \ldots, N_r$. Let $p_l$ be the canonical epimorphism from
@@ -204,12 +204,12 @@ $I$ is equal to $h(J/Q)$; we have $I + Q = J$, $I\cap Q = 0$, and the
 monomorphism of $M$ into $I$ induced by $j$ is an injective envelope of
 $M$.
 
-\begin{proposition}[17]
+\begin{proposition}[\cite{matlis}]
 Let $\Cat$ be an abelian category with injective envelopes, $M$ a
 nonzero object of $\Cat$ and $i\colon M\to I$ an injective envelope of
 $M$. The following assertions are equivalent:
 \begin{enumerate}
-\item[a.] $M$ is coreducible.
+\item[a.] $M$ is coirreducible.
 \item[b.] $I$ is indecomposable.
 \item[c.] $I$ is the injective envelope of every nonzero subobject of
       $I$.
@@ -228,7 +228,7 @@ $\operatorname{Ker}u\cap\operatorname{Ker}v \neq 0$ by $(c)$ and
 $\operatorname{Ker}(u + v)$ contains this intersection.
 
 \begin{unnumberedcorollary}
-Let $M$ and $N$ be two coreducible objects of a category with injective
+Let $M$ and $N$ be two coirreducible objects of a category with injective
 envelopes. Then $M$ and $N$ have the same injective envelope if and only
 if $N$ contains a subobject $M'$, nonzero and isomorphic to a subobject
 $N'$ of $N$.\ednote{The condition is vacuous as printed: $M'$ and $N'$ are

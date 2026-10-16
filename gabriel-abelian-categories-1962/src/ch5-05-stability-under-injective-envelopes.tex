@@ -1,9 +1,195 @@
-%@ pages 426-428
-%@ status todo
-% Original: pp. 426--428.  French title: see reference/ocr/page-0426.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 426-429
+%@ status translated
+% Chapter V, section 5: Stability under injective envelopes
+% (pp. 426--429). Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer. The section opens
+% on p. 426 (after Proposition 8, which closes section 4) and ends on
+% p. 429, where section 6 begins.
+%
+% Numbering is automatic (src/preamble.tex). This section prints
+% Propositions 9 and 10 (continuing the chapter's run), Corollaries 1
+% and 2 (the corollary counter restarts at every section) and
+% Lemmas 1 and 2 (likewise per section).
+%
+% Emendation: on p. 427 the original prints "proposition 11" where the
+% i-adic reformulation of Proposition 9(a) and Corollary 1 is meant (see
+% the \ednote at that point).  Note that the "proposition 11" on p. 428
+% is NOT a slip: with "lemme 1, \S3, chap. IV" it cites Proposition 11
+% and Lemma 1 of Chapter IV, \S3, whose exactness results give
+% Corollary 2; it is reproduced as printed.
+
 \section{Stability under Injective Envelopes}
 
-\notyet{pp. 426--428 of the original French edition.}
+--- Let $A$ be a ring and $\mathbf{C}$ a full subcategory of
+$\operatorname{mod} A$ satisfying the following conditions:
+\begin{description}
+\item[\normalfont $(\star)$] If $M$ is an $A$-module belonging to
+  $\mathbf{C}$, every submodule of $M$ belongs to $\mathbf{C}$.
+\item[\normalfont $(\star\star)$] If $M$ and $N$ are two $A$-modules
+  belonging to $\mathbf{C}$, the direct sum $M \oplus N$ belongs to
+  $\mathbf{C}$.
+\end{description}
+
+Let us now denote by $M$ an arbitrary $A$-module. If $M'$ and $M''$ are
+two submodules of $M$ such that $M/M'$ and $M/M''$ belong to
+$\mathbf{C}$, then $M/(M' \cap M'')$ belongs to $\mathbf{C}$; this module
+is indeed isomorphic to a submodule of $M/M' \oplus M/M''$. The
+submodules $M'$ of $M$ such that $M/M'$ belongs to $\mathbf{C}$ thus
+form a neighbourhood base of $0$ for a topology $T_{\mathbf{C}}M$ which
+makes $M$ a topological group. The reader will verify that the topology
+$T_{\mathbf{C}}A_d$ makes $A$ a topological ring. If $A$ is equipped with
+this topology, the topology $T_{\mathbf{C}}M$ makes $M$ a topological
+$A$-module. Moreover, every $A$-linear map $f : M \to N$ is continuous
+when $M$ and $N$ are equipped with the topologies $T_{\mathbf{C}}M$ and
+$T_{\mathbf{C}}N$. The situation may be summed up by saying that the
+data of $\mathbf{C}$ defines on the one hand a topological ring
+structure on $A$; on the other hand it defines a functor from
+$\operatorname{mod} A$ to the category of topological $A$-modules.
+
+\begin{proposition}
+Let $A$ be a ring and $\mathbf{C}$ a full subcategory of
+$\operatorname{mod} A$ satisfying conditions $(\star)$ and
+$(\star\star)$. The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] For every $A$-module $M$ and for every submodule
+  $N$ of $M$, the topology $T_{\mathbf{C}}N$ coincides with the
+  restriction to $N$ of the topology $T_{\mathbf{C}}M$.
+\item[\normalfont b.] For every $A$-module $M$ belonging to
+  $\mathbf{C}$, the injective envelope of $M$ belongs to $\mathbf{C}$.
+\end{description}
+\end{proposition}
+
+$(a)\Rightarrow(b)$: it amounts indeed to the same to say that $M$
+belongs to $\mathbf{C}$ or to say that the topology $T_{\mathbf{C}}M$ is
+discrete. If $M$ belongs to $\mathbf{C}$ and is contained in an
+$A$-module $I$, assertion (a) implies that there exists a submodule $Q$
+of $I$ such that $I/Q$ belongs to $\mathbf{C}$ and $Q \cap M = 0$. If $I$
+is the injective envelope of $M$, $Q$ is necessarily zero. Whence
+assertion (b).
+
+$(b)\Rightarrow(a)$: let indeed $N'$ be a submodule of $N$ such that
+$N/N'$ belongs to $\mathbf{C}$. We have to show that there exists a
+submodule $M'$ of $M$ such that $M/M'$ belongs to $\mathbf{C}$ and
+$N \cap M'$ is contained in $N'$. We shall choose for $M'$ a submodule
+of $M$ which is maximal for the equality $N \cap M' = N'$. Then $M/M'$
+is an essential extension of $N/N'$ and (a) follows from (b).
+
+\begin{corollary}
+Let $A$ be a ring and $\mathbf{C}$ a full subcategory of
+$\operatorname{mod} A$ satisfying conditions $(\star)$, $(\star\star)$
+and conditions (a) and (b) of Proposition~9. Let $M$ be an $A$-module
+and let $N$ be the intersection of the submodules $M'$ of $M$ such that
+$M/M'$ belongs to $\mathbf{C}$. There is then no submodule $N'$ of $N$,
+distinct from $N$ and such that $N/N'$ belongs to $\mathbf{C}$.
+\end{corollary}
+
+Indeed, the topology $T_{\mathbf{C}}N$ coincides with the topology
+induced by $T_{\mathbf{C}}M$. This last topology is coarse.
+
+We suppose from now on that $A$ is right noetherian. Proposition~9 and
+Corollary~1 are then often used as follows: let $\mathfrak{i}$ be a
+two-sided ideal of $A$ and let $\mathbf{C}$ be the localizing
+subcategory of $\operatorname{mod} A$ whose noetherian objects are the
+$A$-modules annihilated by a power of $\mathfrak{i}$. If $\mathbf{C}$ is
+stable under injective envelopes [i.e.\ if $\mathbf{C}$ satisfies
+assertion (b) of Proposition~9], Proposition~9\ednote{The original
+prints ``proposition 11''; Proposition~11 is stated in \S6 and concerns
+finite extensions of commutative rings, whereas the two statements
+reformulated below are assertion~(a) of Proposition~9 and Corollary~1.
+We print Proposition~9.} and Corollary~1 may be formulated as follows:
+if $N$ is a submodule of a noetherian $A$-module $M$, the
+$\mathfrak{i}$-adic topology of $N$ (i.~e.\ $T_{\mathbf{C}}N$) is the
+restriction to $N$ of the $\mathfrak{i}$-adic topology of $M$; moreover,
+if $R$ is the intersection of the submodules $M.\mathfrak{i}^n$ of $M$,
+$R.\mathfrak{i}$ is equal to $R$. These propositions evoke well-known
+results of Artin-Rees and Krull.
+
+In section~6, we use Proposition~9 in a slightly different manner: if
+$A$ is a right noetherian ring, we take for $\mathbf{C}$ the localizing
+subcategory $(\operatorname{mod} A)_0$ whose objects are the $A$-modules
+of Krull dimension $\le 0$. If $M$ is an $A$-module, we then denote by
+$\hat{M}$ the completion of $M$ for the topology $T_{\mathbf{C}}M$; this
+completion $\hat{M}$ is the projective limit of the modules $M/M'$,
+where $M'$ runs through the submodules of $M$ such that
+$\operatorname{Kdim} M/M' \le 0$. If $M$ is noetherian, the quotients
+$M/M'$ are of finite length. In particular, $\hat{A}$ is a right
+pseudocompact ring; if $M$ is noetherian, $\hat{M}$ is a right
+pseudocompact module over $\hat{A}$.
+
+It is clear that $(\operatorname{mod} A)_0$ identifies with the category
+of discrete topological right $\hat{A}$-modules. Moreover, one has the
+
+\begin{corollary}
+Let $A$ be a right noetherian ring. The functor which associates with
+every noetherian right $A$-module $M$ the right pseudocompact $A$-module
+$\hat{M}$ is right exact. This functor is exact if the injective
+envelope of an $A$-module of Krull dimension zero has Krull dimension
+zero.
+\end{corollary}
+
+This corollary follows easily from Proposition~11 and Lemma~1, \S3,
+Chapter~IV.
+
+\begin{proposition}
+If $A$ is a commutative noetherian ring, every localizing subcategory of
+$\operatorname{mod} A$ is stable under injective envelopes.
+\end{proposition}
+
+Let indeed $\mathbf{C}$ be such a localizing subcategory and let $M$ be
+an $A$-module belonging to $\mathbf{C}$. If the prime ideal
+$\mathfrak{p}$ is associated with $M$, the module $A/\mathfrak{p}$
+belongs to $\mathbf{C}$ (Proposition~7). We shall show that, for every
+prime ideal $\mathfrak{p}$, the injective envelope of $A/\mathfrak{p}$
+belongs to the localizing subcategory generated by $A/\mathfrak{p}$; if
+$M$ is an $A$-module and if $a$ is an element of $A$, we denote by $a_M$
+the homothety $x \mapsto x.a$ of $M$. We say that $a_M$ is
+\emph{almost nilpotent} if every noetherian submodule of $M$ is
+annihilated by a power of $a_M$.
+
+\begin{lemma}
+Let $\mathfrak{p}$ be a prime ideal of a commutative noetherian ring $A$
+and $M$ an $A$-module. The following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $M$ belongs to the localizing subcategory of
+  $\operatorname{mod} A$ generated by $A/\mathfrak{p}$.
+\item[\normalfont b.] For every element $a$ of $\mathfrak{p}$, $a_M$ is
+  almost nilpotent.
+\end{description}
+\end{lemma}
+
+If $I$ is an ideal of $A$, the quotient $A/I$ belongs indeed to the
+localizing subcategory generated by $A/\mathfrak{p}$ if and only if $I$
+contains a power of $\mathfrak{p}$ (Corollary~1 to Proposition~7). It
+follows that $M$ belongs to the localizing subcategory generated by
+$A/\mathfrak{p}$ if and only if every element of $M$ is annihilated by a
+power of $\mathfrak{p}$.
+
+\begin{lemma}
+Let $A$ be a commutative noetherian ring and $I$ an indecomposable
+injective $A$-module. For every element $a$ of $A$, the homothety $a_I$
+is either bijective or almost nilpotent.
+\end{lemma}
+
+Let indeed $M$ be a non-zero noetherian submodule of $I$. Since $M$ is
+noetherian, the following equality holds for $n$ large enough:
+\[
+\operatorname{Ker} a_M^n \cap \operatorname{Im} a_M^n = 0.
+\]
+
+Since the intersection of two non-zero submodules of $I$ is non-zero,
+one has either $a_M^n = 0$ or $\operatorname{Ker} a_M^n = 0$. In the
+latter case, $a_M$ is a monomorphism from $I$ to $I$, hence an
+automorphism, since $I$ contains no injectives distinct from $I$ or $0$.
+In the former case, every noetherian submodule of $I$ is annihilated by
+a power of $a$.
+
+We are now in a position to prove the proposition: if $I$ is the
+injective envelope of $A/\mathfrak{p}$, $\operatorname{Ker} a_I$ is
+different from $0$ for every element $a$ of $\mathfrak{p}$. It follows
+that $a_I$ is almost nilpotent (Lemma~2) and that $I$ belongs to the
+localizing subcategory of $\operatorname{mod} A$ generated by
+$A/\mathfrak{p}$ (Lemma~1).
+
+Corollary~2 to Proposition~9 therefore applies to every commutative
+noetherian ring. The same goes for the remarks following Corollary~1
+(lemmas of Artin-Rees and Krull).

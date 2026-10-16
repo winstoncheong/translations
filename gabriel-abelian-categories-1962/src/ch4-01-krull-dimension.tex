@@ -1,12 +1,391 @@
-%@ pages 382-386
-%@ status todo
-% Original: pp. 382--386.  French title: see reference/ocr/page-0382.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 382-387
+%@ status translated
+% Chapter IV, section 1: The Krull dimension of an abelian category
+% (pp. 382--387). Transcribed from the page images in
+% reference/source.pdf (PDF pp. 60--65), not from the OCR text layer,
+% which mangles subscripts, fraktur letters and the ordinal-sum symbol.
+% The section opens Chapter IV on p. 382 and runs to the section~2
+% heading in the middle of p. 387 (the end of the proof of Theorem~1
+% and Proposition~5 stand on p.~387).
+%
+% Numbering is automatic (see src/preamble.tex). This section prints
+% Proposition 1, Proposition 2, Corollary 1, Corollary 2,
+% Proposition 3, Proposition 4, Lemma 1, Theorem 1 and Proposition 5
+% (the chapter's first run of each).
+%
+% Conventions: the ordinal sum ("first $\alpha$, then $\beta$") is
+% written $\alpha \mathbin{T} \beta$; the successor of $\alpha$ is
+% therefore $\alpha \mathbin{T} 0$. Bold capitals $\mathbf{L}$,
+% $\mathbf{M}$, $\mathbf{N}$ denote sets (index sets and sets of
+% parts); the non-bold $L$ in the proof of Proposition~5 is Gabriel's
+% own collision and is kept as printed.
+%
+% No emendations.
+
 \chapter{Locally Noetherian Categories}
 \markboth{Chapter IV. Locally Noetherian Categories}{}
 
+Unless expressly stated to the contrary, all the categories considered
+in this chapter are abelian $\Univ$-categories with generators and
+exact inductive limits.
+
+This chapter is devoted to the study of the injective objects of a
+locally noetherian $\Univ$-category. We draw from this study the
+following moral: a locally noetherian category is an ``extension'' of
+locally finite categories; a locally finite category is comparable to
+a category of modules.
+
 \section{The Krull Dimension of an Abelian Category}
 
-\notyet{pp. 382--386 of the original French edition.}
+--- Let $\mathbf{A}$ be a category (abelian...). We shall associate to
+every ordinal $\alpha$ a localizing subcategory $\mathbf{A}_\alpha$ of
+$\mathbf{A}$. The ordinal possessing no element will be denoted $-1$
+for historical reasons; likewise, the ordinal possessing a finite
+number $n$ of elements will be denoted $n-1$. If $\alpha$ and $\beta$
+are two ordinals, the symbol $\alpha \mathbin{T} \beta$ will denote the
+ordinal obtained by taking ``first $\alpha$, then $\beta$''. If
+$\alpha$ and $\beta$ are two finite ordinals, we have for example the
+formula $\alpha \mathbin{T} \beta = \alpha + \beta + 1$. We denote by
+$T_\alpha$ the canonical functor from $\mathbf{A}$ into
+$\mathbf{A}/\mathbf{A}_\alpha$.
+
+The construction of the subcategories $\mathbf{A}_\alpha$ is carried
+out by transfinite recursion:
+\begin{itemize}
+\item[---] $\mathbf{A}_{-1}$ is the localizing subcategory of
+      $\mathbf{A}$ whose only objects are the zero objects of
+      $\mathbf{A}$. The functor $T_{-1}$ is therefore the identity
+      functor of $\mathbf{A}$.
+\item[---] If the ordinal $\alpha$ has a predecessor $\beta$,
+      $\mathbf{A}_\alpha$ is the smallest localizing subcategory
+      containing all the objects $M$ such that $T_\beta M$ is of finite
+      length.
+\item[---] If $\alpha$ is a limit ordinal, $\mathbf{A}_\alpha$ is the
+      smallest localizing subcategory containing all the
+      subcategories $\mathbf{A}_\beta$ for $\beta < \alpha$.
+\end{itemize}
+
+We denote by $\mathbf{A}_\omega$ the smallest localizing subcategory
+containing all the subcategories $\mathbf{A}_\alpha$; the quotient
+category $\mathbf{A}/\mathbf{A}_\omega$ then possesses no simple
+object. When $M$ is an object of $\mathbf{A}_\omega$, the \emph{Krull
+dimension} of $M$ is the smallest ordinal $\alpha$ such that $M$
+belongs to $\mathbf{A}_\alpha$ (notation:
+$\operatorname{Kdim} M = \alpha$). If $\mathbf{A}_\omega$ coincides
+with $\mathbf{A}$, the smallest ordinal $\alpha$ such that
+$\mathbf{A}_\alpha$ is equal to $\mathbf{A}$ will be called the
+\emph{Krull dimension} of $\mathbf{A}$ (notation
+$\operatorname{Kdim} \mathbf{A} = \alpha$). The following proposition
+results from the definitions:
+
+\begin{proposition}
+Let $\mathbf{C}$ be a localizing subcategory of $\mathbf{A}$. Then
+$\mathbf{A}_\omega$ coincides with $\mathbf{A}$ if and only if
+$\mathbf{C}_\omega$ and $(\mathbf{A}/\mathbf{C})_\omega$ coincide with
+$\mathbf{C}$ and $\mathbf{A}/\mathbf{C}$ respectively. In this case we
+have the inequalities
+\[
+\sup(\operatorname{Kdim} \mathbf{C},
+\operatorname{Kdim} \mathbf{A}/\mathbf{C}) \le
+\operatorname{Kdim} \mathbf{A} \le
+(\operatorname{Kdim} \mathbf{C}) \mathbin{T}
+(\operatorname{Kdim} \mathbf{A}/\mathbf{C}).
+\]
+\end{proposition}
+
+We suppose throughout the rest of this paragraph that the Krull
+dimension of $\mathbf{A}$ is defined, i.e.\ that
+$\mathbf{A}_\omega$ coincides with $\mathbf{A}$. For every ordinal
+$\alpha < \operatorname{Kdim} \mathbf{A}$, the category
+$\mathbf{A}_{\alpha \mathbin{T} 0}/\mathbf{A}_\alpha$ is then of
+dimension zero.
+
+If $M$ is an object of $\mathbf{A}$, the \emph{type} (\emph{type}) of
+this object will be the set of objects of $\mathbf{A}$ isomorphic to
+$M$. We denote by $\operatorname{Sp}(\mathbf{A})$
+(\emph{spectre de $\mathbf{A}$}) the set of types of indecomposable
+injective objects of $\mathbf{A}$. For every ordinal
+$\alpha < \operatorname{Kdim} \mathbf{A}$, we denote by
+$\operatorname{Sp}_\alpha(\mathbf{A})$ the set of types consisting of
+$\mathbf{A}_\alpha$-closed indecomposable injective objects containing
+a nonzero subobject of
+$\mathbf{A}_{\alpha \mathbin{T} 0}$. It is clear that the sets
+$\operatorname{Sp}_\alpha(\mathbf{A})$ are pairwise disjoint and that
+their union is equal to $\operatorname{Sp}(\mathbf{A})$.
+
+If $I$ is an indecomposable injective object whose type belongs to
+$\operatorname{Sp}_\alpha(\mathbf{A})$, $T_\alpha I$ contains a
+subobject of finite length of $\mathbf{A}/\mathbf{A}_\alpha$. It
+follows that the socle of $T_\alpha I$ is nonzero and is a simple
+object of
+$\mathbf{A}_{\alpha \mathbin{T} 0}/\mathbf{A}_\alpha$. We denote by
+$s(I)$ the smallest nonzero $\mathbf{A}_\alpha$-closed subobject of
+$I$. The canonical morphism from $s(I)$ into $I$ then induces an
+isomorphism from $T_\alpha s(I)$ onto the socle of $T_\alpha I$. By
+abuse of language, we shall say that $s(I)$ is the socle of $I$. We
+shall treat $s(I)$ indifferently as an object of $\mathbf{A}$ or as an
+object of $\mathbf{A}/\mathbf{A}_\alpha$.
+
+\begin{proposition}
+Let $\mathbf{A}$ be a category whose Krull dimension is defined. For
+every ordinal $\alpha < \operatorname{Kdim} \mathbf{A}$, the map
+$I \mapsto s(I)$ induces a bijection from
+$\operatorname{Sp}_\alpha(\mathbf{A})$ onto the set of types of simple
+objects of $\mathbf{A}/\mathbf{A}_\alpha$.
+\end{proposition}
+
+Let indeed $I$ and $J$ be two indecomposable injectives whose types
+belong to $\operatorname{Sp}_\alpha(\mathbf{A})$. The corollary to
+Proposition~11 (Chapter~II) implies that $I$ and $J$ are isomorphic if
+and only if the same holds for $s(I)$ and $s(J)$. Let on the other
+hand $M$ be a simple object of
+$\mathbf{A}_{\alpha \mathbin{T} 0}/\mathbf{A}_\alpha$ and let
+$u\colon M \to EM$ be an injective envelope of $M$ in
+$\mathbf{A}/\mathbf{A}_\alpha$. If $S_\alpha$ is a functor adjoint to
+$T_\alpha$, $S_\alpha EM$ is an indecomposable injective whose socle
+is isomorphic to $M$ (as an object of
+$\mathbf{A}/\mathbf{A}_\alpha$). This completes the proof.
+
+If we compare Proposition~2 with Proposition~11 (Chapter~II), we see
+how the notions of spectrum, simple object and coirreducible object are
+related.
+
+Let now $\mathbf{C}$ be a localizing subcategory of $\mathbf{A}$, let
+$T$ be the canonical functor from $\mathbf{A}$ into
+$\mathbf{A}/\mathbf{C}$ and let $S$ be a functor adjoint to $T$. If
+$I$ is an indecomposable injective of $\mathbf{C}$ and if $EI$ is an
+injective envelope of $I$ in $\mathbf{A}$, it is immediate that $EI$
+is still indecomposable. The map $I \mapsto EI$ therefore induces an
+injection from $\operatorname{Sp}(\mathbf{C})$ into
+$\operatorname{Sp}(\mathbf{A})$; we shall always identify
+$\operatorname{Sp}(\mathbf{C})$ with the image of this injection.
+Likewise, if $J$ is an indecomposable injective of
+$\mathbf{A}/\mathbf{C}$, $SJ$ is an indecomposable injective of
+$\mathbf{A}$. The map $J \mapsto SJ$ induces an injection from
+$\operatorname{Sp}(\mathbf{A}/\mathbf{C})$ into
+$\operatorname{Sp}(\mathbf{A})$; we always identify
+$\operatorname{Sp}(\mathbf{A}/\mathbf{C})$ with the image of this
+injection. Corollary~2 to Proposition~6 (Chapter~III) then shows that
+$\operatorname{Sp}(\mathbf{A}/\mathbf{C})$ is the complement of
+$\operatorname{Sp}(\mathbf{C})$ in $\operatorname{Sp}(\mathbf{A})$.
+Moreover Proposition~2 gives the
+
+\begin{corollary}
+Let $\mathbf{C}$ be a localizing subcategory of a category
+$\mathbf{A}$ whose Krull dimension is defined. An object $M$ of
+$\mathbf{A}$ belongs to $\mathbf{C}$ if and only if
+$\operatorname{Hom}_{\mathbf{A}}(M, I)$ is zero for every
+indecomposable injective of $\mathbf{A}$ whose type belongs to
+$\operatorname{Sp}(\mathbf{A}/\mathbf{C})$.
+\end{corollary}
+
+Let indeed $\mathbf{D}$ be the localizing subcategory of
+$\mathbf{A}$ whose objects $M$ are such that
+$\operatorname{Hom}_{\mathbf{A}}(M, I)$ is zero for every
+indecomposable injective whose type belongs to
+$\operatorname{Sp}(\mathbf{A}/\mathbf{C})$ (corollary to
+Proposition~8, Chapter~III). It is clear that $\mathbf{D}$ contains
+$\mathbf{C}$. If $\mathbf{D}$ does not coincide with $\mathbf{C}$,
+there exists an object $M$ of $\mathbf{D}$ which is nonzero and which
+contains no nonzero subobject of $\mathbf{C}$. Let $\beta$ therefore
+be the smallest ordinal such that $M$ contains a nonzero subobject of
+$\mathbf{A}_\beta$. It is clear that $\beta$ has a predecessor
+$\alpha$. There therefore exists a subobject $N$ of $M$ such that
+$T_\alpha N$ is simple. If $I$ is the injective envelope of $N$, the
+type of $I$ belongs to $\operatorname{Sp}(\mathbf{A}/\mathbf{C})$
+and $\operatorname{Hom}_{\mathbf{A}}(M, I)$ is not zero: a
+contradiction.
+
+\begin{corollary}
+Let $\mathbf{C}$ and $\mathbf{D}$ be two localizing subcategories of
+a category $\mathbf{A}$ whose Krull dimension is defined. Then
+$\mathbf{C}$ coincides with $\mathbf{D}$ if and only if
+$\operatorname{Sp}(\mathbf{C})$ coincides with
+$\operatorname{Sp}(\mathbf{D})$.
+\end{corollary}
+
+This follows from Corollary~1.
+
+If $I$ is an indecomposable injective of $\mathbf{A}$, we remark that
+the ring of endomorphisms of $s(I)$ (in $\mathbf{A}$ or in
+$\mathbf{A}/\mathbf{A}_\alpha$) is a field. If $\mathbf{A}$ is the
+local ring of endomorphisms of $I$, this field is none other than the
+quotient of $\mathbf{A}$ by its Jacobson radical: let indeed $f$ be an
+endomorphism of $I$ (in $\mathbf{A}$ or in
+$\mathbf{A}/\mathbf{A}_\alpha$); the image of $s(I)$ under $f$ is zero
+or is a simple object (in $\mathbf{A}/\mathbf{A}_\alpha$); the
+morphism $f$ therefore induces an endomorphism $f'$ of $s(I)$; as $I$
+is injective, every endomorphism of $s(I)$ extends conversely to an
+endomorphism of $I$. This shows that the map $f \mapsto f'$ is
+surjective. Moreover $f'$ is nonzero if and only if $f$ is an
+automorphism. We have thus proved the
+
+\begin{proposition}
+Let $\mathbf{A}$ be a category whose Krull dimension is defined, and
+$I$ an indecomposable injective object of $\mathbf{A}$. The field of
+endomorphisms of the socle $s(I)$ is the quotient of the ring of
+endomorphisms of $I$ by its Jacobson radical.
+\end{proposition}
+
+The following proposition will give us information on the injective
+envelopes of the category $\mathbf{A}$:
+
+\begin{proposition}
+Let $M$ be an object of a category $\mathbf{A}$ whose Krull dimension
+is defined. There exists a family $(f_\alpha)$ of morphisms of
+$\mathbf{A}$, indexed by the ordinals
+$\alpha < \operatorname{Kdim} \mathbf{A}$ and satisfying conditions
+(a), (b), (c) and (d):
+\begin{description}
+\item[\normalfont a.] $f_\alpha$ is a morphism from an object
+      $N_\alpha$ into $M$.
+\item[\normalfont b.] Every subobject of $N_\alpha$ belonging to
+      $\mathbf{A}_\alpha$ is zero.
+\item[\normalfont c.] $T_\alpha N_\alpha$ is a semi-simple object of
+      $\mathbf{A}/\mathbf{A}_\alpha$.
+\item[\normalfont d.] The morphism $f$ from $\sum_\alpha N_\alpha$
+      into $M$ defined by the family $(f_\alpha)$ is an essential
+      extension of $\sum_\alpha N_\alpha$.
+\end{description}
+\end{proposition}
+
+For every family $(f_\alpha)$ satisfying (a), (b), (c) and (d),
+$T_\alpha f_\alpha$ is an isomorphism from $T_\alpha N_\alpha$ onto
+the socle of $T_\alpha M$.
+
+Denote indeed by $M_\alpha$ the largest subobject of $M$ belonging to
+$\mathbf{A}_\alpha$
+($\alpha < \operatorname{Kdim} \mathbf{A}$). Let $Q_\alpha$ be a
+complement of $M_\alpha$ in $M_{\alpha \mathbin{T} 0}$
+(Chapter~II, \S5); let $i_\alpha$ be the canonical monomorphism from
+$Q_\alpha$ into $M$.
+
+\begin{lemma}
+The morphism $j$ from $\sum_\alpha Q_\alpha$ into $M$ defined by the
+family $(i_\alpha)$ is an essential extension of
+$\sum_\alpha Q_\alpha$.
+\end{lemma}
+
+This is clear if $\operatorname{Kdim} \mathbf{A}$ is equal to $-1$; we
+therefore suppose the property proved for all categories
+$\mathbf{B}$ such that
+$\operatorname{Kdim} \mathbf{B} < \operatorname{Kdim} \mathbf{A}$; we
+prove that the property is then true for $\mathbf{A}$. Two cases are
+indeed possible:
+
+--- The ordinal $\operatorname{Kdim} \mathbf{A}$ has a predecessor
+$\beta$: it is known that the morphism $h$ from
+$M_\beta \oplus Q_\beta$ into $M$ defined by the canonical morphisms
+from $M_\beta$ and $Q_\beta$ into $M$ is then an essential extension.
+Moreover, $j$ is the composite of a morphism $i$ from
+$\sum_\alpha Q_\alpha$ into $M_\beta \oplus Q_\beta$ and of $h$; as $i$
+is an essential extension by the recurrence hypothesis and Lemma~2
+(\S5, Chapter~II), it follows that $j$ is an essential extension
+(Lemma~1, \S5, Chapter~II).
+
+--- $\operatorname{Kdim} \mathbf{A}$ is a limit ordinal: $M$ is then
+the upper bound of the $M_\beta$, for
+$\beta < \operatorname{Kdim} \mathbf{A}$. Let $j_\beta$ be the
+morphism from $\sum_{\gamma < \beta} Q_\gamma$ into $M_\beta$ defined
+by the morphisms $i_\gamma$. As $j_\beta$ is an essential extension by
+the recurrence hypothesis, the assertion follows from Proposition~13
+(Chapter~II).
+
+The lemma being proved, the construction of a family $(f_\alpha)$ is
+simple: let indeed $N_\alpha$ be a subobject of $Q_\alpha$ and let
+$g_\alpha$ be the canonical morphism from $N_\alpha$ into $Q_\alpha$;
+we shall suppose that $T_\alpha g_\alpha$ is an isomorphism from
+$T_\alpha N_\alpha$ onto the socle of $T_\alpha Q_\alpha$. If $P$ is
+a nonzero subobject of $Q_\alpha$, $T_\alpha P$ contains a simple
+subobject and $T_\alpha P \cap T_\alpha N_\alpha$ is not zero. It
+follows that $P \cap N_\alpha$ is not zero. This proves that $g_\alpha$
+is an essential extension. If we set
+$f_\alpha = i_\alpha \circ g_\alpha$, conditions (a), (b), (c) and (d)
+are satisfied.
+
+Conversely, let $(f_\alpha)$ be a family of morphisms satisfying
+conditions (a), (b), (c) and (d). It is clear that
+$\operatorname{Im} T_\alpha f_\alpha$ is the largest subobject of
+$\operatorname{Im} T_\alpha f$ belonging to
+$\mathbf{A}_{\alpha \mathbin{T} 0}$. If $S$ is a simple subobject of
+$T_\alpha M$, $S \cap \operatorname{Im} T_\alpha f$ is a nonzero
+subobject of $T_\alpha M$ belonging to
+$\mathbf{A}_{\alpha \mathbin{T} 0}$. It follows that
+$S \cap \operatorname{Im} T_\alpha f$ is contained in
+$\operatorname{Im} T_\alpha f_\alpha$; every simple subobject of
+$T_\alpha M$ thus ``meets'' $\operatorname{Im} T_\alpha f_\alpha$,
+which proves the last assertion.
+
+\begin{theorem}
+Let $I$ be an injective object of a category $\mathbf{A}$ whose Krull
+dimension is defined. There exists a family
+$(I_l)_{l\in\mathbf{L}}$ of indecomposable injectives of
+$\mathbf{A}$, such that $I$ is isomorphic to the injective envelope of
+the direct sum $\sum_{l\in\mathbf{L}} I_l$.
+
+If $(J_n)_{n\in\mathbf{N}}$ is a second family of indecomposable
+injectives, and if $\sum_l I_l$ and $\sum_n J_n$ have the same
+injective envelope, there exists a bijection $h$ from $\mathbf{L}$
+onto $\mathbf{N}$ such that $I_l$ is isomorphic to $J_{h(l)}$.
+\end{theorem}
+
+Let us first prove the existence of a family
+$(I_l)_{l\in\mathbf{L}}$: we use the preceding proposition, choosing
+$M$ equal to $I$. If $EN_\alpha$ is ``the'' injective envelope of
+$N_\alpha$, it is clear that $I$ is isomorphic to the injective
+envelope of the direct sum $\sum_\alpha EN_\alpha$. It therefore
+suffices to prove that $EN_\alpha$ is the injective envelope of a
+direct sum of indecomposable injectives. Now $N_\alpha$ contains no
+nonzero subobject belonging to $\mathbf{A}_\alpha$; moreover,
+$T_\alpha N_\alpha$ is a semi-simple object of
+$\mathbf{A}/\mathbf{A}_\alpha$. We deduce the existence of a family
+$(N_\alpha^\sigma)_{\sigma\in\mathbf{S}}$ of subobjects of $N_\alpha$
+satisfying the following conditions: $T_\alpha N_\alpha^\sigma$ is a
+simple object; the sum $N'_\alpha$ of the $N_\alpha^\sigma$ is
+direct; the canonical monomorphism from $N'_\alpha$ into $N_\alpha$
+induces an isomorphism from $T_\alpha N'_\alpha$ onto
+$T_\alpha N_\alpha$. If $EN_\alpha^\sigma$ is the injective envelope
+of $N_\alpha^\sigma$, it follows that $N_\alpha$ and
+$\sum_\sigma EN_\alpha^\sigma$ have the same injective envelope. As
+$EN_\alpha^\sigma$ is indecomposable, the first part of the theorem
+is proved.
+
+Let us prove the second assertion: denote by $\mathbf{L}_\alpha$
+(resp.\ by $\mathbf{N}_\alpha$) the set of $l$ (resp.\ of $n$) such
+that the socle of $I_l$ (resp.\ of $J_n$) ``belongs'' to
+$\operatorname{Sp}_\alpha(\mathbf{A})$. With the notations of the
+preceding proposition, it is then clear that $N_\alpha$,
+$\sum_{l\in\mathbf{L}_\alpha} I_l$ and
+$\sum_{n\in\mathbf{N}_\alpha} J_n$ have the same injective envelope.
+If we consider these objects as objects of
+$\mathbf{A}/\mathbf{A}_\alpha$, it follows that $N_\alpha$,
+$\sum_{l\in\mathbf{L}_\alpha} I_l$ and
+$\sum_{n\in\mathbf{N}_\alpha} J_n$ have the same socle; in other words,
+the direct sums $\sum_{l\in\mathbf{L}_\alpha} s(I_l)$ and
+$\sum_{n\in\mathbf{N}_\alpha} s(J_n)$ are isomorphic in
+$\mathbf{A}/\mathbf{A}_\alpha$. The properties of semi-simple objects
+imply the existence of a bijection $h_\alpha$ from
+$\mathbf{L}_\alpha$ onto $\mathbf{N}_\alpha$ such that $s(I_l)$ is
+isomorphic to $s(J_{h_\alpha(l)})$. Then $I_l$ is isomorphic to
+$J_{h_\alpha(l)}$.
+
+\begin{proposition}[exchange theorem]
+Suppose the hypotheses of Theorem~1 satisfied. Let
+$(I_l)_{l\in\mathbf{L}}$ be a family of indecomposable injectives and
+$u\colon \sum_{l\in\mathbf{L}} I_l \to I$ an injective envelope. If $J$
+is a direct factor of $I$, there exists a part $\mathbf{N}$ of
+$\mathbf{L}$ satisfying the following condition: every maximal
+essential extension of $u\left(\sum_{l\in\mathbf{N}} I_l\right)$ in $I$
+is a complement of $J$.
+\end{proposition}
+
+Let indeed $\mathbf{N}$ be a maximal element of the set of parts
+$\mathbf{M}$ of $\mathbf{L}$ satisfying the following condition: $J$
+and $u\left(\sum_{l\in\mathbf{M}} I_l\right)$ have zero intersection.
+We shall prove that $I$ is an essential extension of the sum
+$J + u\left(\sum_{l\in\mathbf{N}} I_l\right)$: let indeed $L$ be a
+maximal essential extension of this sum in $I$. As $\mathbf{N}$ is
+maximal, $L$ ``meets'' every $u(I_l)$; in other words, $u(I_l)$ is an
+essential extension of $L \cap u(I_l)$ for every
+$l \in \mathbf{L}$. It follows that $I$ is an essential extension of
+$L$. Whence the equality $L = I$. This completes the proof.

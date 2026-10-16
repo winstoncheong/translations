@@ -46,8 +46,13 @@
 %     restart at each chapter   (Ch. I ends at Proposition 15 on p. 345;
 %     Ch. II opens at Proposition 1 on p. 346);
 %   * theorems restart at each chapter;
-%   * lemmas and corollaries restart at each SECTION (Ch. II §2 opens with
+%   * lemmas restart at each SECTION (Ch. II §2 opens with
 %     "Lemme 1" on p. 349, after §1 has run to "Lemme 4" on p. 348);
+%   * corollaries are numbered afresh after each PROPOSITION
+%     (Ch. V §6 prints Corollaries 1 and 2 to Proposition 11, then
+%     Corollaries 1, 2 and 3 to Proposition 13, then Corollaries 1
+%     and 2 to Proposition 14; Gabriel cites them as "corollaire N
+%     de la proposition M" throughout);
 %   * and some corollaries are printed with no number at all ("Corollaire."
 %     on p. 360, between Proposition 9 and Proposition 10).
 % The counters below reproduce that exactly; do not "simplify" them.
@@ -74,6 +79,13 @@
 \@addtoreset{proposition}{chapter}
 \@addtoreset{lemma}{section}
 \@addtoreset{corollary}{section}
+% Gabriel numbers the corollaries of each proposition (or theorem) afresh:
+% the corollary counter must therefore also restart at each proposition.
+% Verified 2026-10-16 against Ch. V §6 (Cor. 1-2 to Prop. 11, Cor. 1-3 to
+% Prop. 13, Cor. 1-2 to Prop. 14): this changes nothing in any section
+% whose numbered corollaries all follow a single proposition, which is
+% the case of every section translated so far.
+\@addtoreset{corollary}{proposition}
 \@addtoreset{definition}{section}
 \@addtoreset{remark}{section}
 \@addtoreset{footnote}{chapter}

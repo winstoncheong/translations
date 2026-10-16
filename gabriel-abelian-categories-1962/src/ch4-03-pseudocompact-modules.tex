@@ -1,9 +1,313 @@
-%@ pages 390-394
-%@ status todo
-% Original: pp. 390--394.  French title: see reference/ocr/page-0390.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 390-395
+%@ status translated
+% Chapter IV, section 3: Pseudocompact modules (pp. 390--395). Transcribed
+% from the page images in reference/source.pdf, not from the OCR text layer,
+% which mangles subscripts, limits and fraktur letters. The section opens
+% with its heading in the middle of p. 390 and runs to the section~4 heading
+% in the middle of p. 395 (the diagram and the remark on APC$'$/MPC$'$
+% stand at the top of p. 395).
+%
+% Numbering is automatic (src/preamble.tex). This section prints Lemma 1
+% (the lemma counter restarts at every section), Propositions 10 and 11
+% (propositions run continuously across the sections of the chapter;
+% section~2 ends with Proposition 9), Theorem 3 (theorems restart at each
+% chapter) and Corollaries 1, 2 and 3 (the corollary counter restarts at
+% every section).
+%
+% Emendations: in the proof of Corollary 3 (p. 394) the original prints
+% "$h\circ g$ ... the identity map of $\prod_i P_i$"; since
+% $h\circ g\colon A\to A$ whereas the identity in question is that of
+% $\prod_i P_i$, and since the "Ker g" below would otherwise be vacuous,
+% we print $g\circ h$ (the section of the epimorphism $g$ given by the
+% projectivity of $\prod_i P_i$), with an \ednote at that point.
+
 \section{Pseudocompact Modules}
 
-\notyet{pp. 390--394 of the original French edition.}
+--- We have seen in the preceding paragraphs how locally finite
+categories enter into the study of locally noetherian categories. The
+end of this chapter will be devoted to a more thorough study of
+locally finite categories. We begin by giving an example:
+
+We call a \emph{left pseudocompact ring} a ring $A$ with unit element,
+topological, separated, complete, whose underlying set belongs to
+$\Univ$ and which satisfies axiom APC:
+
+APC: The ring $A$ possesses a base of neighbourhoods of $0$ formed of
+left ideals $l$ of finite colength [i.e.\
+$\operatorname{long}_A(A/l)<+\infty$].
+
+Unless expressly mentioned to the contrary, we consider in the sequel
+of this chapter only unitary left $A$-modules whose underlying set
+belongs to $\Univ$. If $M$ is such an $A$-module, the discrete topology
+makes $M$ a topological module over the topological ring $A$ if and
+only if the annihilator of every element $m$ of $M$ is an open left
+ideal (hence of finite colength). The discrete topological $A$-modules
+form a locally finite category which we denote
+$\operatorname{dis}(A)$ (for the definition of topological modules,
+cf.\ Bourbaki, \emph{Topologie}, III, \S~6, n\textsuperscript{o}~6,
+3\textsuperscript{e}~éd.).
+
+The objects of finite length of $\operatorname{dis}(A)$ are the
+discrete topological modules of finite length. These modules define a
+finite abelian category $\mathbf{T}(A)$, and Theorem~1 (Chap.~II) shows
+that the datum of $\mathbf{T}(A)$ determines $\operatorname{dis}(A)$ up
+to equivalence. Since the dual category $\mathbf{T}(A)^\circ$ is also a
+finite abelian category, the same theorem proves the existence of a
+locally finite category $\mathbf{D}$ such that $\mathbf{T}(A)^\circ$ is
+equivalent to the category of objects of finite length of
+$\mathbf{D}$. We shall show that the dual category $\mathbf{D}^\circ$
+is equivalent to a category of $A$-modules:
+
+We call a \emph{pseudocompact $A$-module} any topological, separated,
+complete left $A$-module $M$ satisfying axiom MPC:
+
+MPC: The module $M$ possesses a base of neighbourhoods of $0$ formed
+of submodules $N$ such that $M/N$ is of finite length.
+
+If $M$ and $N$ are two pseudocompact $A$-modules, a morphism from $M$
+to $N$ will be a continuous $A$-linear map from $M$ to $N$; the
+composition of morphisms will be the usual composition of maps. We have
+thus defined a new category which we shall denote
+$\operatorname{PC}(A)$. It is clear that $\operatorname{PC}(A)$ is an
+additive category. We shall see that $\operatorname{PC}(A)$ is even an
+abelian category. The proof of this fact rests on a well-known lemma of
+algebra (Bourbaki, \emph{Topologie}, I, Appendix, 3\textsuperscript{e}
+éd.):
+
+\begin{lemma}
+Let $B$ be a ring, $I$ a filtered ordered set, $(M_i,f_{ji})$ and
+$(N_i,g_{ji})$ two projective systems, indexed by $I$ and formed of
+left $B$-modules. Let $(h_i)$ be a morphism from the first system to
+the second, and suppose $h_i$ surjective with artinian kernel for every
+$i$. Then $\varprojlim h_i$ is a surjective map from $\varprojlim M_i$
+onto $\varprojlim N_i$.
+\end{lemma}
+
+This lemma has as consequence the following two propositions:
+
+\begin{proposition}
+Let $M$ be a pseudocompact $A$-module and $(M_i)$ a filtered decreasing
+family of closed submodules of $M$. The canonical map from $M$ to the
+projective limit $\varprojlim M/M_i$ is surjective with kernel
+$\inf_i M_i$.
+\end{proposition}
+
+Let indeed $(N_j)$ be the filtered decreasing family of open submodules
+of $M$. In the following diagram, all the arrows represent
+``obvious'' maps:
+\[
+\begin{tikzcd}
+0 \arrow[r] \arrow[d] & M \arrow[r, "p"] \arrow[d, "q"] & \varprojlim_j M/N_j \arrow[dr, "s"] \\
+0 \arrow[r] & \varprojlim_{i,j}(M_i+N_j)/M_i \arrow[r] & \varprojlim_i M/M_i \arrow[r, "r"] & \varprojlim_{i,j}M/(M_i+N_j)
+\end{tikzcd}
+\]
+
+Since $M$ is complete, $p$ is an isomorphism; by Lemma~1, $s$ is
+surjective. It follows that $r$ is surjective. We have on the other
+hand the equalities
+\[
+\varprojlim_{i,j}(M_i+N_j)/M_i=\varprojlim_i\varprojlim_j(M_i+N_j)/M_i=\varprojlim_i M_i/M_i=0,
+\]
+since $M_i$ is closed and is the intersection of the $M_i+N_j$. It
+follows that $r$ is an isomorphism and that $q$ is surjective. Finally,
+the kernel of $q$ is the projective limit of the $M_i$, that is
+$\inf_i M_i$.
+
+\begin{proposition}
+Let $M$ be a pseudocompact $A$-module, $N$ a closed submodule of $M$
+and $(M_i)$ a filtered decreasing family of closed submodules of $M$.
+Then the submodules $N+\inf_i M_i$ and $\inf_i(N+M_i)$ coincide.
+\end{proposition}
+
+We have indeed the following commutative and exact diagram (the arrows
+represent ``obvious'' maps):
+\[
+\begin{tikzcd}
+0 \arrow[r] & N \arrow[r] \arrow[d, "l"] & M \arrow[r] \arrow[d, "j"] & M/N \arrow[r] \arrow[d, "h"] & 0 \\
+0 \arrow[r] & \varprojlim_i N/(N\cap M_i) \arrow[r] & \varprojlim_i M/M_i \arrow[r] & \varprojlim_i M/(M_i+N) &
+\end{tikzcd}
+\]
+
+Now $N$ is manifestly a pseudocompact module for the topology induced
+by $M$. The preceding proposition therefore shows that $l$ and $j$ are
+surjections. It follows that the kernel of $h$ is the image of the
+kernel of $j$ (\cite{cartan-eilenberg}, Lemma~III, 3.3). Since
+$\operatorname{Ker}h$ is equal to $\inf_i(M_i+N)/N$ and
+$\operatorname{Ker}j$ to $\inf_i M_i$, we have ``the equality''
+\[
+\inf_i(M_i+N)/N=\bigl((\inf_i M_i)+N\bigr)/N.
+\]
+
+\begin{theorem}
+Pseudocompact modules over the pseudocompact ring $A$ form an abelian
+category with cogenerators and exact projective limits. The dual
+category is locally finite.
+\end{theorem}
+
+Let indeed $M$ be a pseudocompact module and let
+$\operatorname{Hom}_{\operatorname{PC}(A)}(M,\,.)$ be the functor
+$N\mapsto\operatorname{Hom}_{\operatorname{PC}(A)}(M,N)$ from
+$\mathbf{T}(A)$ to $\mathbf{Ab}$. One may verify directly that the
+functor $M\mapsto\operatorname{Hom}_{\operatorname{PC}(A)}(M,\,.)$
+defines an equivalence between $\operatorname{PC}(A)^\circ$ and the
+category $\operatorname{Sex}(\mathbf{T}(A),\mathbf{Ab})$ (cf.\
+Chap.~II). We prefer however a proof which makes explicit the
+construction of kernels and cokernels:
+
+If $f\colon M\to N$ is a morphism of pseudocompact modules, the module
+underlying $\operatorname{Ker}f$ is formed of the elements $m$ of $M$
+such that $f(m)$ is zero. This submodule is closed, and we equip it
+with the topology induced by $M$.
+
+The coimage of $f$ is the quotient module $M/\operatorname{Ker}f$
+equipped with the quotient topology. Let us show that
+$M/\operatorname{Ker}f$ is a pseudocompact module: the verification of
+axiom MPC is immediate; it remains to see that
+$M/\operatorname{Ker}f$ is complete, i.e.\ that the canonical map from
+$M/\operatorname{Ker}f$ into
+$\varprojlim M/(\operatorname{Ker}f+N_j)$ is an isomorphism when $N_j$
+runs through the projective system of open submodules of $M$. This
+follows from Proposition~10.
+
+Let $N'$ be the ``set-theoretic'' image of $M$ under the map $f$, and
+identify $N'$ with $M/\operatorname{Ker}f$ for the convenience of the
+argument. The topology induced by $N$ on $N'$ is separated, linear
+(i.e.\ defined by submodules) and coarser than the quotient topology.
+Let $(N'_j)$ be a filtered family of submodules of $N'$ decreasing
+towards $0$ and open for the induced topology. If $P$ is a submodule
+of $N'$ which is open for the quotient topology, the family
+$(P+N'_j)$ is filtered decreasing. Since $N'/P$ is artinian, this
+family possesses a smallest element. Since finally
+$\inf_j(P+N'_j)$ is equal to $P+\inf_j N'_j$ by Proposition~11, we see
+that this smallest element is equal to $P$. In other words, $P$
+contains $N'_j$ when $N'_j$ is small enough: the induced topology
+coincides with the quotient topology.
+
+In particular, $N'$ is complete for the topology induced by $N$; hence
+$N'$ is closed in $N$. It follows that $\operatorname{Im}f$ and
+$\operatorname{Coim}f$ are isomorphic and that
+$\operatorname{Coker}f$ is the quotient $N/N'$ equipped with the
+quotient topology. This proves that $\operatorname{PC}(A)$ is an
+abelian category.
+
+If $(M_i,f_{ji})$ is a projective system of pseudocompact modules, the
+projective limit of this system is defined as follows: the module
+underlying $\varprojlim M_i$ is the projective limit of the underlying
+modules; the topology of $\varprojlim M_i$ is the topology of the
+projective limit. The exactness of projective limits is equivalent to
+one or the other of Propositions~10 and~11 (dual proposition of
+Proposition~6, Chap.~I).
+
+Finally, when $n$ runs through the positive integers and $M$ through
+the pseudocompact submodules of finite colength of $A^n$, the quotients
+$A^n/M$ define a family of cogenerators of $\operatorname{PC}(A)$. This
+completes the proof of the theorem.
+
+\begin{corollary}
+The pseudocompact ring $A$ is a topological direct product of closed
+indecomposable left ideals. Every projective pseudocompact module is a
+topological direct product of indecomposable projective pseudocompact
+modules. Every indecomposable projective pseudocompact module is
+isomorphic to a left ideal $A\cdot e$, where $e$ is a primitive
+idempotent of $A$.
+\end{corollary}
+
+Recall that an idempotent $e$ is said to be primitive if $e$ is not the
+sum of two idempotents $e'$ and $e''$ such that
+$e'\cdot e''=e''\cdot e'=0$.
+
+Every morphism from $A$ into a pseudocompact module $M$ is indeed of
+the form $a\mapsto a\cdot m$, where $m\in M$. It follows that $A$ is a
+projective pseudocompact module. The first two assertions of the
+corollary therefore follow by duality from Theorem~2. On the other
+hand, every indecomposable projective $P$ is the projective envelope of
+a simple pseudocompact module $S$. Since $S$ is isomorphic to a
+quotient of $A$, $P$ is isomorphic to a direct summand of $A$.
+
+\begin{corollary}
+Let $A$ be a pseudocompact ring and $(e_i)_{i\in I}$ a summable family
+of pairwise orthogonal idempotents. If $e$ is the sum of this family,
+the canonical injections of $A\cdot e_i$ into $A\cdot e$ extend to an
+isomorphism from the direct product $\prod_i A\cdot e_i$ onto
+$A\cdot e$.
+\end{corollary}
+
+Recall that two idempotents $e$ and $f$ are said to be orthogonal if
+$e\cdot f=f\cdot e=0$.
+
+It is indeed clear that $e$ is an idempotent of $A$. Let us denote by
+$f_i$ the map $a\cdot e\mapsto a\cdot e_i$ from $A\cdot e$ onto
+$A\cdot e_i$. These maps define a morphism $f$ from $A\cdot e$ into
+the direct product $\prod_{i\in I}A\cdot e_i$. If $J$ is a finite
+subset of $I$, $f$ induces a surjection from $A\cdot e$ onto
+$\prod_{i\in J}A\cdot e_i$. It follows that $f$ is a surjection
+(exactness of projective limits) and that the kernel
+$\operatorname{Ker}f$ is a direct summand of $A\cdot e$. Suppose
+$\operatorname{Ker}f$ nonzero and let $l$ be an open left ideal of $A$
+not containing $\operatorname{Ker}f$. For every finite subset $J$ of
+$I$, $A\cdot e$ is the direct product of the $A\cdot e_i$, $i\in J$,
+of $\operatorname{Ker}f$ and of a third summand. We have therefore a
+decomposition of $e$ into a finite sum of pairwise orthogonal
+idempotents, say
+\[
+e=\sum_{i\in J}e_i+e'+e'',
+\]
+where $e'$ generates $\operatorname{Ker}f$.
+
+For $J$ large enough, $e-\sum_{i\in J}e_i$ must belong to $l$; hence
+$e'+e''$ and $e'=e'\cdot(e'+e'')$ belong to $l$: this is absurd. In
+other words, $\operatorname{Ker}f$ is zero and the corollary is proved.
+
+\begin{corollary}
+Let $A$ be a pseudocompact ring, $\mathfrak{a}$ a closed two-sided
+ideal of $A$ and $(e_i)_{i\in I}$ a summable family of pairwise
+orthogonal idempotents of $A/\mathfrak{a}$. There exists a summable
+family $(f_i)_{i\in I}$ of pairwise orthogonal idempotents of $A$ such
+that $e_i$ is the image of $f_i$ under the canonical map from $A$ onto
+$A/\mathfrak{a}$.
+\end{corollary}
+
+The ring $A/\mathfrak{a}$ is indeed pseudocompact for the quotient
+topology. It follows that the map $f\colon a\mapsto(a\cdot e_i)$ from
+$A/\mathfrak{a}$ into the product $\prod_{i\in I}A\cdot e_i$ is
+surjective (Corollary~2). Let $p$ be the canonical map from $A$ onto
+$A/\mathfrak{a}$, $u_i\colon P_i\to A\cdot e_i$ a projective envelope
+of $A\cdot e_i$ and $u$ the product $\prod_{i\in I}u_i$.
+
+Since $A$ is projective, there exists a morphism $g$ from $A$ into
+$\prod_{i\in I}P_i$ such that $u\circ g$ is equal to $f\circ p$. Since
+$u$ is a projective envelope and $u\circ g$ is surjective, there exists
+a morphism $h$ from $\prod_i P_i$ into $A$ such that $g\circ h$\ednote{The original prints $h\circ g$ here; since
+$h\circ g\colon A\to A$ whereas the identity map in question is that
+of $\prod_i P_i$, and since the $\operatorname{Ker}g$ below would
+otherwise be vacuous, we print $g\circ h$, the section of the
+epimorphism $g$ given by the projectivity of $\prod_i P_i$.}
+is the identity map of $\prod_i P_i$. It then suffices to choose for $f_i$
+the image of $1$ under the projection of $A$ onto $h(P_i)$ annihilating
+$\operatorname{Ker}g$ and the modules $h(P_j)$, $j\ne i$.
+\[
+\begin{tikzcd}
+A \arrow[r, "p"] \arrow[d, shift left, "g"] & A/\mathfrak{a} \arrow[d, "f"] \\
+\prod_i P_i \arrow[r, "u"] \arrow[u, shift left, "h"] & \prod_i A\cdot e_i
+\end{tikzcd}
+\]
+
+\begin{remark}
+The proofs of this paragraph remain valid when APC and MPC are replaced
+by the following weaker conditions:
+
+APC$'$: The ring $A$ possesses a base of neighbourhoods of $0$ formed
+of left ideals $I$ such that $A/I$ is artinian.
+
+MPC$'$: The module $M$ possesses a base of neighbourhoods of $0$
+formed of submodules $N$ such that $M/N$ is artinian.
+
+The only modifications to be made in the preceding statements are the
+following: the left $A$-modules satisfying MPC$'$ form an abelian
+category whose dual category is locally noetherian. Moreover, the last
+assertion of Corollary~1 is no longer true.
+
+The topological rings satisfying condition APC$'$ have been studied by
+H.~Leptin by different methods (\cite{leptin-1}, \cite{leptin-2}); we
+shall need only pseudocompact rings.
+\end{remark}
