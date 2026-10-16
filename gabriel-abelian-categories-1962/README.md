@@ -120,6 +120,50 @@ One file per section of the original, in `src/`, in the original's order:
 | `ch6-03-preschemes.tex` | Preschemes and abelian categories | 446 |
 | `bibliography.tex` | Bibliography | 447–448 |
 
+## Editorial decisions (running log)
+
+Added as sections are translated. Recorded here because section files are not
+allowed to touch this file.
+
+### Typos and slips in the original are reproduced, not corrected
+
+Where Gabriel prints something that is plainly a slip, the translation
+follows the print and the file header records it. Known cases so far:
+
+| Place | What's printed | Handling |
+| --- | --- | --- |
+| p. 345, Prop. 15 | "$F$" where the context demands "$G$" | reproduced |
+| p. 361, Corollaire | "$N'$ *of* $N$" where "$M$" is meant | reproduced |
+| p. 354, Lemma 2 (§4) | "*C*" in italics where **C** is meant | reproduced |
+| p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$, indices transposed | reproduced |
+
+Each is noted in the comment header of its own file. Nothing has been silently
+corrected; if a reader prefers emendations, they belong in footnotes.
+
+### Notation decided here
+
+- **Zero object**: Gabriel prints it inconsistently (`O` on p. 336, italic
+  `o` elsewhere). The translation uses `0` throughout, which is the modern
+  convention and unambiguous in context.
+- **Hook arrow** `X \longmapsto F` for Gabriel's wavy arrow.
+- **`somme fibrée` / `produit fibré`** are rendered "coproduct" / "product",
+  per the terminology policy.
+- **Fraktur where Gabriel uses it**: the Coim→Im morphism is `\mathfrak{S}`,
+  the set of isomorphism classes `\mathfrak{E}`; the semisimple subcategory
+  is `\mathbf{S}`, consistent with `\Cat` = `\mathbf{C}`.
+- **Bold upright** for categories and object/morphism sets throughout, as in
+  the original.
+
+### Page ranges do not align with section boundaries
+
+Sections run on past the page on which the next one starts: §9 of Ch. I ends
+on p. 345, §1 of Ch. II ends on p. 348, §5 ends on p. 336 and §6 on p. 338, §3
+of Ch. II ends on p. 355 and §4 on p. 358. Pages are therefore *shared* between
+adjacent files. The `%@ pages` range of each file is the true extent of that
+section, and `tools/translation_report.py` counts a union of ranges, so nothing
+is double-counted. Ranges that are still provisional are noted in the
+respective file headers.
+
 ## Working on this document
 
 Read `../../AGENTS.md` first. In particular:

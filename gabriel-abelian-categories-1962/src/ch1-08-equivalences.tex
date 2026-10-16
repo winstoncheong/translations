@@ -1,9 +1,106 @@
 %@ pages 341-342
-%@ status todo
-% Original: pp. 341--342.  French title: see reference/ocr/page-0341.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Equivalences of Categories}
+%@ status translated
+% Chapter I, section 8: Equivalences of categories (pp. 341--342).
 
-\notyet{pp. 341--342 of the original French edition.}
+\section{Equivalences of Categories}
+--- Let $\mathbf{A}$ and $\mathbf{B}$ be two categories. An
+\emph{equivalence} between $\mathbf{A}$ and $\mathbf{B}$ consists of the
+data of two functors, $T\colon \mathbf{A}\to\mathbf{B}$ and
+$S\colon \mathbf{B}\to\mathbf{A}$, and of two isomorphisms of functors,
+$\Psi\colon I_{\mathbf{A}}\to S\circ T$ and
+$\Phi'\colon I_{\mathbf{B}}\to T\circ S$. We suppose in addition that the
+natural transformations $T\Psi\colon T\to TST$ and
+$\Phi'T\colon T\to TST$ coincide.
+
+It follows from the conditions imposed on $T$, $S$, $\Psi$ and $\Phi'$
+that the natural transformations $S\Phi'\colon S\to STS$ and
+$\Psi S\colon S\to STS$ coincide as well. If $\Psi'$ and $\Phi$ are the
+inverse functorial isomorphisms of $\Psi$ and $\Phi'$, we see that $\Psi$
+and $\Phi$ make $S$ a functor adjoint to $T$. In particular, the datum of
+$T$ determines $S$ up to an isomorphism of functors. Likewise, the natural
+transformations $\Psi'$ and $\Phi'$ make $T$ a functor adjoint to $S$.
+
+Let $\psi$, $\psi'$, $\varphi$ and $\varphi'$ be the natural
+transformations associated respectively to $\Psi$, $\Psi'$, $\Phi$ and
+$\Phi'$, as this was explained in the preceding paragraph. The datum of
+$\Psi$ determines $\psi$ and therefore $\varphi$, which is the inverse
+functorial morphism of $\psi$. We deduce from this that if $S$ and $T$
+are given, the datum of $\Psi$ determines $\Phi'$; and conversely\ldots
+
+\begin{lemma}\label{lem:equivalence}
+Let $(T,S,\Psi,\Phi')$ be an equivalence between $\mathbf{A}$ and
+$\mathbf{B}$:
+\begin{description}
+\item[\normalfont a.] For every pair $(M,N)$ of objects of $\mathbf{A}$,
+      the map $T(M,N)$ of $\operatorname{Hom}_{\mathbf{A}}(M,N)$ into
+      $\operatorname{Hom}_{\mathbf{B}}(TM,TN)$ is bijective.
+\item[\normalfont b.] Every object $P$ of $\mathbf{B}$ is isomorphic to
+      an object of the form $TM$.
+\end{description}
+\end{lemma}
+
+\begin{proposition}\label{prop:conditions-for-equivalence}
+If $T$ is a functor of $\mathbf{A}$ into $\mathbf{B}$ the following
+assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] There exists a functor $S\colon \mathbf{B}\to
+      \mathbf{A}$ and isomorphisms $\Psi\colon I_{\mathbf{A}}\to S\circ T$
+      and $\Phi'\colon I_{\mathbf{B}}\to T\circ S$ such that
+      $(T,S,\Psi,\Phi')$ is an equivalence between $\mathbf{A}$ and
+      $\mathbf{B}$.
+\item[\normalfont b.] The functor $T$ satisfies conditions (a) and (b) of
+      Lemma~\ref{lem:equivalence}.
+\item[\normalfont c.] There exists a functor $S\colon \mathbf{B}\to
+      \mathbf{A}$ such that $S\circ T$ is isomorphic to the functor
+      $I_{\mathbf{A}}$ and that $T\circ S$ is isomorphic to
+      $I_{\mathbf{B}}$.
+\end{description}
+\end{proposition}
+
+We shall henceforth say that two categories $\mathbf{A}$ and $\mathbf{B}$
+are \emph{equivalent} if there exists a functor $T$ satisfying the
+assertions of the preceding proposition. In that case we shall also say
+that $T$ defines an equivalence between $\mathbf{A}$ and $\mathbf{B}$. We
+note finally that assertion (c) fits conveniently into the following
+formalism:
+
+If $\mathfrak{B}$ is a universe of which the universe $\Univ$ is an
+element, we can construct a new category $\mathbf{E}$: the objects of
+$\mathbf{E}$ are the categories whose set of morphisms belongs to
+$\mathfrak{B}$ (we identify the objects with the identity morphisms); if
+$\mathbf{A}$ and $\mathbf{B}$ are two objects of $\mathbf{E}$,
+$\operatorname{Hom}(\mathbf{A},\mathbf{B})$ is the set of isomorphism
+classes of functors of $\mathbf{A}$ into $\mathbf{B}$, composition being
+made in the obvious way. One will observe that $\mathbf{E}$ is not a
+$\Univ$-category. Assertion (c) says that the class of functors isomorphic
+to $T$ is an isomorphism in the category $\mathbf{E}$.
+
+To finish, we propose to the reader some easy exercises, whose results we
+shall use freely: let $(T,S,\Psi,\Phi')$ be an equivalence between
+$\mathbf{A}$ and $\mathbf{B}$. If $f$ is a monomorphism (resp.\ an
+epimorphism), $Tf$ is a monomorphism (resp.\ an epimorphism). If $M$ is a
+generator of $\mathbf{A}$ (resp.\ a projective object of $\mathbf{A}$),
+$TM$ is a generator of $\mathbf{B}$ (resp.\ a projective object of
+$\mathbf{B}$). If $P$ is the fibre product of diagram (1), $TP$ is the
+fibre product of diagram (2); one also says that $T$ commutes with
+fibre products. The functor $T$ ``commutes'' also with fibre sums,
+inductive limits\ldots More generally, the ``homological'' properties of
+two equivalent categories are the ``same''.
+\begin{tikzcd}[column sep=large]
+(1) & M \arrow[ddr, "f"] & & (2) & TM \arrow[ddr, "Tf"] & \\
+    & & L & & & TL \\
+    & N \arrow[uur, "g"'] & & & TN \arrow[uur, "Tg"'] &
+\end{tikzcd}
+
+The preceding exercises and Proposition~3 have the following
+consequence:
+
+\begin{proposition}\label{prop:equivalence-additive}
+Let $T$ be a functor defining an equivalence between two additive
+categories $\mathbf{A}$ and $\mathbf{B}$. Then $T$ is an additive
+functor. If $\mathbf{A}$ and $\mathbf{B}$ are two abelian categories,
+$T$ is moreover an exact functor.
+\end{proposition}
+
+The last assertion results from
+Proposition~\ref{prop:adjoints-exactness}.

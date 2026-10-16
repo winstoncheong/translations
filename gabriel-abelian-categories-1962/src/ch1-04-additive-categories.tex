@@ -1,9 +1,133 @@
 %@ pages 333-334
-%@ status todo
-% Original: pp. 333--334.  French title: see reference/ocr/page-0333.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Additive Categories}
+%@ status translated
+% Chapter I, section 4: Additive categories (pp. 333-334).  The section opens
+% in the middle of p. 333, just below the last paragraph of section 3.
+% Transcribed from the page images in reference/source.pdf (pages 333--334),
+% not from the OCR text layer, which loses the subscripts of the canonical
+% morphisms and misreads the bold Sigma and Pi as ordinary capitals.
+%
+% The original prints the section heading as
+%   "4. Catégories additives (d'après Grothendieck)"
+% The attribution is carried by the heading rather than by the running text.
 
-\notyet{pp. 333--334 of the original French edition.}
+\section{Additive categories (after Grothendieck)}
+--- Let $\Cat$ be a category satisfying the following axioms:
+
+\begin{description}
+\item[$\mathbf{C}$ Ad 1] There exists a zero object $O$.
+
+\item[$\mathbf{C}$ Ad 2] For every pair $(M,N)$ of objects of $\Cat$, the
+direct product of $M$ and $N$, and likewise the direct sum of $M$ and $N$,
+exist.
+\end{description}
+
+\begin{lemma}
+If $M$ and $N$ are two objects of $\Cat$, there exists one and only one
+morphism $h(M,N)\colon M\boldsymbol{\Sigma}N\to M\boldsymbol{\Pi}N$ such
+that we have
+\[
+\begin{gathered}
+  q_M\circ h(M,N)\circ j_M = 1_M, \qquad
+  q'_N\circ h(M,N)\circ j_M = 0,\\
+  q'_N\circ h(M,N)\circ j'_N = 1_N, \qquad
+  q_M\circ h(M,N)\circ j'_N = 0.
+\end{gathered}
+\]
+\end{lemma}
+
+If we denote by $\boldsymbol{\Pi}$ (resp.\ $\boldsymbol{\Sigma}$) the functor
+\[
+  (M,N)\leadsto M\boldsymbol{\Pi}N
+  \quad[\text{resp.}\ (M,N)\leadsto M\boldsymbol{\Sigma}N]
+\]
+of the product category $\Cat\boldsymbol{\Pi}\Cat$ into $\Cat$, Lemma~1 can be
+completed by the following:
+
+\begin{lemma}
+The morphisms $h(M,N)$ define a natural transformation of the functor
+$\boldsymbol{\Sigma}$ into the functor $\boldsymbol{\Pi}$.
+\end{lemma}
+
+Let us now suppose that $\Cat$ satisfies one axiom more:
+
+\begin{description}
+\item[$\mathbf{C}$ Ad 3] For every pair $(M,N)$ of objects of $\Cat$, the
+morphism $h(M,N)$ of $M\boldsymbol{\Sigma}N$ into
+$M\boldsymbol{\Pi}N$ is an isomorphism.
+\end{description}
+
+Under these conditions, we may suppose that $M\boldsymbol{\Sigma}N$ has been
+chosen equal to $M\boldsymbol{\Pi}N$ and such that $h(M,N)$ is the identity
+morphism of $M\boldsymbol{\Pi}N$. We then write $M\oplus N$ in place of
+$M\boldsymbol{\Sigma}N$ or $M\boldsymbol{\Pi}N$. It is easy to prove that the
+identification of the direct sum with the direct product is compatible with
+``the interchange of the factors $M$ and $N$'' and with the canonical
+isomorphisms of $(M\boldsymbol{\Sigma}N)\boldsymbol{\Sigma}P$ onto
+$M\boldsymbol{\Sigma}(N\boldsymbol{\Sigma}P)$ and of
+$(M\boldsymbol{\Pi}N)\boldsymbol{\Pi}P$ onto
+$M\boldsymbol{\Pi}(N\boldsymbol{\Pi}P)$.
+
+If $M$ is an object of $\Cat$, we denote by $\Delta_M$ (resp.\
+$\boldsymbol{\Sigma}_M$) the morphism, called \emph{diagonal}, of $M$ into
+$M\oplus M$ (resp.\ of $M\oplus M$ into $M$) which is defined by the
+equalities $q_M\circ\Delta_M = 1_M$, $q'_M\circ\Delta_M = 1_M$ (resp.\
+$\boldsymbol{\Sigma}_M\circ j_M = 1_M$,
+$\boldsymbol{\Sigma}'_M\circ j'_M = 1_M$). If $f$ and $g$ are two morphisms
+with the same source $M$ and the same target $N$, we denote by $f+g$ the
+composite of the following morphisms:
+\[
+  M \xrightarrow{\Delta_M} M\oplus M
+    \xrightarrow{f\oplus g} N\oplus N
+    \xrightarrow{\boldsymbol{\Sigma}_M} N.
+\]
+
+\begin{lemma}
+The internal law $(f,g)\mapsto f+g$ is commutative and associative. The
+morphism $o_{N,M}$ is a neutral element for this law.
+\end{lemma}
+
+\begin{lemma}
+Let $f,f'\colon M\to N$ and $g,g'\colon N\to P$ be morphisms of $\Cat$. We
+have the equalities $g\circ(f+f') = g\circ f + g\circ f'$ and
+$(g+g')\circ f = g\circ f + g'\circ f$.
+\end{lemma}
+
+There exist categories satisfying the axioms $\mathbf{C}$ Ad 1, 2 and 3 and
+for which the monoids $\operatorname{Hom}(M,N)$ are not abelian groups. This
+cannot happen if the category $\Cat$ satisfies the axiom $\mathbf{C}$ Ad 4:
+
+\begin{description}
+\item[$\mathbf{C}$ Ad 4] For every object $M$, there exists a morphism
+$c(M)\colon M\to M$ such that the following diagram is commutative:
+\end{description}
+
+\begin{tikzcd}
+M \arrow[r, "0"] \arrow[d, "\Delta_M"'] & M \arrow[u, "\boldsymbol{\Sigma}_M"'] \\
+M \oplus M \arrow[r, "1_M \oplus c(M)"] & M \oplus M
+\end{tikzcd}
+
+The commutativity of the diagram means that $c(M)$ is an inverse of $1_M$ in
+$\operatorname{Hom}(M,N)$.
+% The original prints Hom(M, N) here, although c(M) and 1_M are both
+% endomorphisms of M; we reproduce the original as printed.
+It follows that a morphism $f\colon M\to N$ has for its inverse the composite
+\[
+  c(N)\circ f = f\circ c(M).
+\]
+
+\begin{proposition}
+If $\Cat$ is a category, the two following assertions are equivalent:
+
+\begin{description}
+\item[\normalfont a.] The category $\Cat$ satisfies the axioms $\mathbf{C}$
+Ad 1, 2, 3 and 4.
+
+\item[\normalfont b.] The category $\Cat$ satisfies $\mathbf{C}$ Ad 1 and
+either of the two assertions of $\mathbf{C}$ Ad 2; moreover, the sets
+$\operatorname{Hom}(M,N)$ can be given a structure of abelian group in such a
+way that the laws of composition are bilinear maps.
+\end{description}
+\end{proposition}
+
+The implication $(a)\Rightarrow(b)$ follows from the preceding lemmas. The
+implication $(b)\Rightarrow(a)$ is classical; it is proved in [10].

@@ -1,9 +1,192 @@
 %@ pages 330-332
-%@ status todo
-% Original: pp. 330--332.  French title: see reference/ocr/page-0330.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Functors}
+%@ status translated
+% Chapter I, section 3: Functors (pp. 330-332; the section runs on into the
+% top of p. 333, up to the heading of section 4).
+% Transcribed from the page images in reference/source.pdf (pages 330--333),
+% not from the OCR text layer, which mangles the dotted objects, the
+% capital Sigma/Pi of sums and products, and the small-cap result headers.
 
-\notyet{pp. 330--332 of the original French edition.}
+\section{Functors}
+--- Let $\Cat$ and $\mathbf{D}$ be two categories. A \emph{functor} $F$ from
+$\Cat$ into $\mathbf{D}$ (we write $F\colon \Cat\to\mathbf{D}$) is constituted
+by the following data:
+
+\begin{itemize}
+\item A map $M \leadsto FM$ of $\mathbf{OC}$ into $\mathbf{OD}$.
+\item For every pair $(M,N)$ of objects of $\Cat$, we are given a map
+      $F(M,N)$ of $\operatorname{Hom}_{\Cat}(M,N)$ into
+      $\operatorname{Hom}_{\mathbf{D}}(FM,FN)$. [We shall also write $F$
+      instead of $F(M,N)$.]
+\end{itemize}
+
+We also suppose that $(Ff)\circ(Fg)$ is equal to $F(f\circ g)$ whenever the
+source of $f$ coincides with the target of $g$.
+
+For example, if $\Cat$ is a full subcategory of $\mathbf{D}$, we call
+\emph{canonical functor} of $\Cat$ into $\mathbf{D}$ the functor $F$ which is
+defined by the following equalities: $FM = M$ if $M\in\mathbf{OC}$;
+$Ff = f$ if $f\in\mathbf{MC}$. In the case where $\Cat$ coincides with
+$\mathbf{D}$, we shall also say that $F$ is the \emph{identity functor} of
+$\Cat$. We shall then write $I_{\Cat}$ instead of $F$.
+
+The reader will note that, with the terminology of [10], we consider here only
+covariant functors. When no confusion will be possible, it may happen to us not
+to make explicit the maps $F(M,N)$, but only the map of $\mathbf{OC}$ into
+$\mathbf{OD}$ which is associated with $F$. The symbol $M\leadsto FM$ shall
+then designate the functor $F$.
+
+The functors of $\Cat$ into $\mathbf{D}$ are the objects of a category which we
+shall denote $\operatorname{Hom}(\Cat,\mathbf{D})$ and whose morphisms are
+defined as follows: let $F$ and $G$ be two functors of $\Cat$ into $\mathbf{D}$;
+a morphism (or \emph{functorial morphism} --- French \emph{morphisme
+functoriel} --- that is, a natural transformation) $\varphi$ of $F$ into $G$
+consists in the datum, for every object $M$ of $\Cat$, of a morphism
+$\varphi(M)\colon FM\to GM$. We suppose in addition that, for every morphism
+$f\colon M\to N$ of $\Cat$, the following diagram is commutative:
+
+\begin{tikzcd}
+FM \arrow[r, "\varphi^{(M)}"] \arrow[d, "Ff"'] & GM \arrow[d, "Gf"] \\
+FN \arrow[r, "\varphi^{(N)}"'] & GN
+\end{tikzcd}
+
+If $\varphi\colon F\to G$ and $\psi\colon G\to H$ are two natural
+transformations, the composite $\psi\circ\varphi$ is defined by the formula
+\[
+  (\psi\circ\varphi)(M) = \psi(M)\circ_{\mathbf{D}}\varphi(M).
+\]
+
+It follows in particular that $\varphi$ is an isomorphism in
+$\operatorname{Hom}(\Cat,\mathbf{D})$ if and only if $\varphi(M)$ is an
+isomorphism for every object $M$ of $\Cat$; we then say that $\varphi$ is
+\emph{a functorial isomorphism}.
+
+Let us now consider two objects $X$ and $Y$ of $\Cat$; since we suppose that
+$\Cat$ is a $\Univ$-category, $\operatorname{Hom}_{\Cat}(X,Y)$ is an element of
+$\Univ$. We denote by $\dot X$, $\operatorname{Hom}_{\Cat}(\dot X,.) $ or
+$\operatorname{Hom}(\dot X,.)$ the functor
+$Y\leadsto\operatorname{Hom}(X,Y)$ of $\Cat$ into $\Ens$. If
+$f\colon X\to X'$ is a morphism of $\Cat$, we denote by $\dot f$ or by
+$\operatorname{Hom}(f,.)$ the natural transformation which applies the element
+$g$ of $\dot X Y = \operatorname{Hom}(X',Y)$ to the element $g\circ f$ of
+$\dot X Y = \operatorname{Hom}(X,Y)$.
+
+The maps $X\leadsto\dot X$ and $f\leadsto\dot f$ obviously define a functor of
+$\Cat^{\circ}$ into $\operatorname{Hom}(\Cat,\Ab)$. We are going to examine
+this functor a little more closely: for this, let $F$ be an arbitrary functor
+of $\Cat$ into $\Ab$; every element $\xi$ of $FX$ then defines a natural
+transformation $\dot\xi$ of $\dot X$ into $F$: for every object $Y$ of $\Cat$,
+$\dot\xi(Y)$ is the map $f\leadsto(Ff)(\xi)$ of
+$\dot X Y = \operatorname{Hom}(X,Y)$ into $FY$.
+
+\begin{proposition}
+For every object $X$ of $\Cat$ the map $\xi\leadsto\dot\xi$ of $FX$ into
+$\operatorname{Hom}(\dot X,F)$ is bijective.
+% The original prints Hom(dot X, F) here, although the proof below makes the
+% codomain F(dot X) = Hom(dot X, dot F); we reproduce the original as printed.
+\end{proposition}
+
+In fact, let $\varphi$ be a natural transformation of $\dot X$ into $F$; let
+$\dot\varphi$ be the image of $1_X$ under the map $\varphi(\dot X)$ of
+$\operatorname{Hom}(\dot X,\dot X)$ into $F\dot X$. In the case where
+$\varphi$ is equal to $\dot\xi$, $\dot\varphi$ is none other than $\xi$. It
+remains therefore to prove that $\varphi = \dot\xi$ if
+$\xi = \dot\varphi$. In other words, we must show that for every object $Y$ of
+$\Cat$ and every morphism $f\colon X\to Y$ we have the equality
+\[
+  \varphi(Y)(f) = (Ff)(\xi).
+\]
+
+This follows from the commutative diagram
+\begin{tikzcd}
+\operatorname{Hom}(\dot X,Y) \arrow[r, "\varphi(Y)"]
+  \arrow[u, "\operatorname{Hom}(\dot X,f)"] & FY \arrow[u, "F\dot f"'] \\
+\operatorname{Hom}(\dot X,\dot X) \arrow[r, "\varphi(\dot X)"] & F\dot X
+\end{tikzcd}
+and from the fact that $\dot\xi = \varphi(\dot X)(1_X)$.
+
+\begin{corollary}[11]
+If $X$ and $X'$ are two objects of $\Cat$, the map
+$f\leadsto\operatorname{Hom}(f,.)$ of $\operatorname{Hom}(X',X)$ into the set
+of the natural transformations of $\operatorname{Hom}(X,.)$ into
+$\operatorname{Hom}(X',.)$ is bijective.
+\end{corollary}
+
+The corollary is proved by replacing $F$ by $\dot X'$ in Proposition~1.
+
+\begin{corollary}
+Every isomorphism of the functor $\operatorname{Hom}(X,.)$ onto the functor
+$\operatorname{Hom}(X',.)$ is induced by an isomorphism of $X'$ onto $X$.
+\end{corollary}
+
+We shall henceforth say that a functor $F$ of $\Cat$ into $\Ens$ is
+\emph{representable} [11] if $F$ is isomorphic to a functor
+$\operatorname{Hom}(\dot X,.)$. We also say that $X$ is \emph{a
+representative} of $F$. Such a representative is obviously defined up to an
+isomorphism.
+
+In particular, if the functor $F$ which associates to every object the set
+$\{\emptyset\}$ is representable, we choose once and for all a representative
+$O$ of $F$. This representative will be called \emph{the initial object} of
+$\Cat$. For every object $Y$ of $\Cat$, we then denote by $\eta_Y$ the unique
+morphism of $O$ into $Y$.
+
+Dually, \emph{the final object} $O'$ of $\Cat$, if it exists, is such that
+$\operatorname{Hom}(Y,O')$ contains one and only one element $\varepsilon_Y$
+for every object $Y$.
+
+We say that $O$ is \emph{zero} if it is both initial and final. If $M$ and
+$N$ are then two objects of $\Cat$, we denote by $O_{M,N}$ or simply $O$ in
+place of $\eta_M\circ\varepsilon_N$.
+
+Let us give another example: we recall that a \emph{direct sum} of two objects
+$M$ and $N$ is a triple $(P,u,v)$ made up of an object $P$ and of two
+morphisms, $u\colon M\to P$ and $v\colon N\to P$; moreover, we suppose that
+the maps $\operatorname{Hom}(u,X)$ and $\operatorname{Hom}(v,X)$ define for
+every object $X$ an isomorphism of $\operatorname{Hom}(P,X)$ onto the
+Cartesian product
+$\operatorname{Hom}(M,X)\times\operatorname{Hom}(N,X)$. The object $P$ is
+therefore a representative of the functor
+\[
+  X \leadsto \operatorname{Hom}(M,X)\times\operatorname{Hom}(N,X).
+\]
+
+If there exist direct sums of $M$ and $N$, we choose one of them which we
+denote by $(M\boldsymbol{\Sigma}N,\, j_M,\, j'_N)$. We then say that
+$M\boldsymbol{\Sigma}N$ is \emph{the} direct sum of $M$ and $N$ and that
+$j_M$ and $j'_N$ are \emph{the} canonical morphisms.
+
+The dual notion is the notion of direct product of $M$ and $N$: if it exists,
+we denote \emph{the} product $M\boldsymbol{\Pi}N$; \emph{the} canonical
+morphisms are denoted $q_M$ and $q'_M$.
+
+Let us now consider the diagrams (1) and (2):
+
+\begin{center}
+\begin{tikzcd}[row sep=2.6em, column sep=3.4em]
+(1)\quad A \arrow[ur, "h"] \arrow[dr, "k"'] & B \\
+& C
+\end{tikzcd}
+\qquad\qquad\qquad
+\begin{tikzcd}[row sep=2.6em, column sep=3.4em]
+(2)\quad A & B \arrow[dl, "f"] \arrow[ul, "g"'] \\
+& C
+\end{tikzcd}
+\end{center}
+
+A \emph{fibred sum} (\emph{somme fibrée}) of the diagram (1) is a triple
+$(P,u,v)$ made up of an object $P$ and of two morphisms, $u\colon B\to P$,
+$v\colon C\to P$, such that we have: $u\circ h = v\circ k$; for every pair
+$(b,c)$ of morphisms such that $b\circ h$ and $c\circ k$ are defined and
+equal, there exists one and only one morphism $a$ whose source is $P$, which
+has the same target as $b$ and $c$ and which satisfies the equalities
+$b = a\circ u$, $c = a\circ v$. If there exist fibred sums of the diagram (1),
+we choose one of them which we denote by
+\[
+  (B\boldsymbol{\Sigma}_A C,\, j_B,\, j'_C).
+\]
+We then say that $B\boldsymbol{\Sigma}_A C$ is \emph{the} fibred sum of the
+diagram (1) and that $j_B$ and $j'_C$ are \emph{the} canonical morphisms.
+
+The dual notion is that of \emph{fibred product}: if it exists, we denote
+\emph{the} fibred product of the diagram (2) by $B\boldsymbol{\Pi}_A C$;
+\emph{the} canonical morphisms are denoted $q_B$ and $q'_C$.
