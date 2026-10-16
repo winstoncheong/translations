@@ -9,21 +9,27 @@
 % text layer mangles subscripts, fractions and page numbers.
 %
 % Notes on the notation reproduced here:
-%   * S \succeq S' is Gabriel's preorder on the exact sequences S_A: it reads
-%     "S' filters S".  The glyph in the scan is a right-pointing triangle
-%     over a bar, i.e. \succeq, not \preceq (checked at 1400 dpi).
+%   * S \leq S' is Gabriel's preorder on the exact sequences S_A: there is
+%     a diagram of type (\star) with S on top and S' below.  We keep the
+%     original's \leq (and the \geq so derived); an earlier draft reversed
+%     them to \succeq and is corrected throughout.
 %   * F \leadsto RF is the map which associates to a functor its left exact
 %     approximation; the scan draws it as a wave followed by an arrow.
 %   * The zero object is printed "o" in the original; throughout this
 %     translation it is rendered 0.
-%   * On p. 350 the limit (RF)A = lim FS is indexed "F \in S_A", where "S"
-%     is clearly meant; reproduced as printed.  Likewise "Si S' \succeq S et
-%     S' \succeq S'" (p. 350) for "S \succeq S' et S' \succeq S".
-%   * Proposition 4 ends "tel qu'on ait \sigma = \tau \circ \rho", where
-%     \varphi is clearly meant; reproduced as printed.
+%   * On p. 350 the limit (RF)A = lim FS is indexed "F \in S_A"; the
+%     elements of S_A are the sequences S, not the functors F.  We print
+%     "S \in S_A" with an \ednote at that point.
+%   * Proposition 4 prints \sigma\colon F\to G throughout (used both in the
+%     statement and in "\sigma = \tau\circ\rho").
+%   * On p. 350 Gabriel introduces the auxiliary morphism as g\colon A\to A'
+%     but writes f (fS, F(f,S), (RF)f) for the rest of the passage; we
+%     follow the print, with an \ednote at the switch.
 %   * Corollary 1 is printed at the very top of p. 354, immediately before
 %     the heading of section 3; it belongs to this section, so it is
 %     included here (the section therefore runs three lines past p. 353).
+%     The original prints it with no number ("Corollaire."), hence
+%     `unnumberedcorollary'.
 
 \section{Left Exact Functors with Values in an Abelian Category}
 --- We now suppose that $\mathbf{C}$ is an abelian category whose set of
@@ -44,7 +50,7 @@ exist a functor $R^{0}F$ and a morphism $\rho\colon F\to R^{0}F$ which
 satisfy the following conditions:
 
 \emph{The functor $R^{0}F$ is left exact}; moreover, if
-$\varphi\colon F\to G$ is a morphism of $F$ into a left exact functor $G$,
+$\sigma\colon F\to G$ is a morphism of $F$ into a left exact functor $G$,
 there exists a morphism
 \[
   \tau\colon R^{0}F\to G
@@ -72,12 +78,12 @@ If
   \qquad\text{and}\qquad
   S' = \bigl(0\to A\xrightarrow{u'}M'\xrightarrow{v'}N'\to0\bigr)
 \]
-are two elements of $\mathbf{S}_A$, we shall agree to write $S\succeq S'$
+are two elements of $\mathbf{S}_A$, we shall agree to write $S\leq S'$
 if there is a diagram of the following type
 \begin{equation*}
 \begin{tikzcd}
 0 \arrow[r] &
-A \arrow[r, "u"] \arrow[d, "i_A"'] &
+A \arrow[r, "u"] \arrow[d, "1_A"'] &
 M \arrow[r, "v"] \arrow[d, "m"'] &
 N \arrow[r] \arrow[d, "n"'] &
 0 \\
@@ -92,7 +98,7 @@ N' \arrow[r] &
 
 \begin{lemma}
 \itshape
-The relation $S\succeq S'$ is a preorder, which filters to the right.
+The relation $S\leq S'$ is a preorder, which filters to the right.
 \end{lemma}
 
 It is clear that we are dealing with a preorder. Let then
@@ -104,22 +110,19 @@ It is clear that we are dealing with a preorder. Let then
 be two elements of $\mathbf{S}_A$. We consider the commutative diagram
 \begin{equation*}
 \begin{tikzcd}
-A \arrow[r, "u'"] \arrow[d, "u"'] & M' \arrow[d, "i_{M'}"] \\
-M \arrow[r, "i_M"'] & M\,\Sigma_A\,M'
+A \arrow[r, "u'"] \arrow[d, "u"'] & M' \arrow[d, "j'_{M'}"] \\
+M \arrow[r, "j_M"'] & M\,\Sigma_A\,M'
 \end{tikzcd}
 \]
-By the end of paragraph~7 (Chap.~I), $j_M$ and $j'_M$ are monomorphisms.
+By the end of paragraph~7 (Chap.~I), $j_M$ and $j'_{M'}$ are monomorphisms.
 It follows that the sequence
 \[
-  S'' = \bigl(0\to A\xrightarrow{j_{M'\circ u}}
+  S'' = \bigl(0\to A\xrightarrow{j_M\circ u}
   M\,\Sigma_A\,M'\to\operatorname{Coker}(j_M\circ u)\to0\bigr)
 \]
-belongs to $\mathbf{S}_A$ and that $S\succeq S''$, $S''\succeq S'$.\ednote{The
-original prints $S''$ in both places, which makes the second condition
-vacuous; the statement requires $S\succeq S''\succeq S'$. We print it that
-way.}
+belongs to $\mathbf{S}_A$ and that $S\leq S''$, $S'\leq S''$.
 
-If $F$ is a functor of $\mathbf{C}$ into $\mathbf{D}$, and if $S\succeq S'$,
+If $F$ is a functor of $\mathbf{C}$ into $\mathbf{D}$, and if $S\leq S'$,
 diagram $(\star)$ yields the equality
 $(Fn)\circ(Fv) = (Fv')\circ(Fm)$. It follows that $Fm$ induces a morphism
 $f$ of $\operatorname{Ker}(Fv)$ into $\operatorname{Ker}(Fv')$.
@@ -139,7 +142,7 @@ $(Fw)\circ(Fv)$ vanishes on $\operatorname{Ker}(Fv)$.
 
 Henceforth we denote by $FS$ the object $\operatorname{Ker}(Fv)$ and by
 $F(S',S)$ the morphism $f$ of $\operatorname{Ker}(Fv)$ into
-$\operatorname{Ker}(Fv')$. If $S'\succeq S$ and $S'\succeq S'$, the
+$\operatorname{Ker}(Fv')$. If $S'\leq S$ and $S\geq S'$, the
 preceding lemma shows that $F(S',S)$ is an isomorphism whose inverse is
 $F(S,S')$. It is therefore legitimate to give the definition
 \begin{equation*}
@@ -148,7 +151,9 @@ $F(S,S')$. It is therefore legitimate to give the definition
   sequences $S$, not the functors $F$. We print $S\in\mathbf{S}_A$.}
 \end{equation*}
 
-Let us give moreover a morphism $g\colon A\to A'$. For every sequence
+Let us give moreover a morphism $g\colon A\to A'$.\ednote{The original
+introduces this morphism as $g$ here but writes $f$ ($fS$, $F(f,S)$,
+$(RF)f$) for the rest of the passage; we follow the print.} For every sequence
 \[
   S = \bigl(0\to A\xrightarrow{u}M\xrightarrow{v}N\to0\bigr)
 \]
@@ -171,7 +176,7 @@ Let $fS$ be the sequence of the second row. The morphism $Fj'_M$
 obviously induces a morphism of $FS$ into $F(fS)$. We denote by $F(f,S)$
 the composite of this morphism with the canonical morphism of $F(fS)$
 into $(RF)A'$. The reader will verify the relations
-$F(f,S) = F(f,S')\circ F(S',S)$ when $S'\succeq S$. By passing to the
+$F(f,S) = F(f,S')\circ F(S',S)$ when $S'\geq S$. By passing to the
 limit the morphisms $F(f,S)$ therefore define a morphism $(RF)f$ of
 $(RF)A$ into $(RF)A'$.
 
@@ -273,7 +278,7 @@ N' \arrow[r] \arrow[u] &
 \end{equation*}
 where $N'$ is the cokernel of $u\circ g$. If $g^{-1}S$ denotes the
 sequence of the second row, it is clear that the sequences $g^{-1}S$
-form a cofinal subset of $\mathbf{S}_A$. We deduce from this that $(RF)A'$
+form a cofinal subset of $\mathbf{S}_{A'}$. We deduce from this that $(RF)A'$
 is equal to $\lim_{\overline{\longrightarrow}\,S}F(g^{-1}S)$ and that
 $(RF)g$ is the inductive limit of the canonical monomorphisms of
 $F(g^{-1}S)$ into $FS$. This proves the lemma.
@@ -289,13 +294,13 @@ monomorphism. Then:
 \end{description}
 \end{lemma}
 
-To prove (a) we use the notation of Lemma~1. If $S'\succeq S$, the exact
+To prove (a) we use the notation of Lemma~1. If $S'\geq S$, the exact
 sequence
 \[
-  S'' = \bigl(0\to A\xrightarrow{j_{M'\circ u}}
-  M\,\Sigma_A\,M'\to\operatorname{Coker}j_M\circ u\to0\bigr)
+  S'' = \bigl(0\to A\xrightarrow{j_M\circ u}
+  M\,\Sigma_A\,M'\to\operatorname{Coker}(j_M\circ u)\to0\bigr)
 \]
-``dominates'' both $S$ and $S'$ (i.e.\ $S''\succeq S$, $S''\succeq S'$);
+``dominates'' both $S$ and $S'$ (i.e.\ $S''\geq S$, $S''\geq S'$);
 moreover $F(S'',S)$ is induced by the morphism $Fj_M$. We deduce from
 this that $F(S'',S) = F(S'',S')\circ F(S',S)$ and that $F(S',S)$ are
 monomorphisms.
@@ -418,12 +423,12 @@ $\operatorname{Coim}\varphi$ and $R^{0}\zeta$ is the canonical morphism of
 $\operatorname{Coim}\varphi$ into $\operatorname{Im}\varphi$: it is indeed
 an isomorphism. The rest of the proposition is clear.
 
-\begin{corollary}
+\begin{unnumberedcorollary}
 \itshape
 The functor $F\leadsto R^{0}F$ is an exact functor of
 $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$ into
 $\operatorname{Sex}(\mathbf{C},\mathbf{D})$.
-\end{corollary}
+\end{unnumberedcorollary}
 
 We already know that $F\leadsto R^{0}F$ is a left exact functor. It is
 therefore enough to prove that $R^{0}v$ is an epimorphism of
