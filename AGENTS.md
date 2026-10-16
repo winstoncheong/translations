@@ -78,7 +78,7 @@ translation wrong:
 | Proposition | each **chapter**, continuous across its sections | Ch. I ends at Prop. 15 (p. 345); Ch. II opens at Prop. 1 (p. 346); §2 continues at Prop. 4 (p. 348) |
 | Theorem | each **chapter** | "Théorème 1" on p. 338 and again on p. 356 |
 | Lemma | each **section** | §1 of Ch. II runs to "Lemme 4" (p. 348), §2 opens with "Lemme 1" (p. 349) |
-| Corollary | each **section** | p. 332, 344, 355, 358 each open a run at "Corollaire 1" |
+| Corollary | after each **proposition** (fresh 1, 2, … run per proposition) | Ch. V §6 prints Cors. 1--2 to Prop. 11, then 1--3 to Prop. 13, then 1--2 to Prop. 14, cited as "corollaire $N$ de la proposition $M$" |
 | Definition / Remark | each **section** | — |
 
 The environments in `preamble.tex` already do this: `theorem`, `proposition`,

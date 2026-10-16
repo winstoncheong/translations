@@ -66,9 +66,13 @@ clause. This is why Chapter I §2 reads as verbosely as it does.
 running counter.** Gabriel numbers propositions continuously across the
 sections of a chapter and restarts them at each chapter (Chapter I ends at
 Proposition 15 on p. 345; Chapter II opens at Proposition 1 on p. 346);
-theorems restart per chapter; lemmas and corollaries restart per *section*;
-and some corollaries are printed with no number at all (p. 360). The preamble
-encodes this with four separate counters, and those corollaries use the
+theorems restart per chapter; lemmas restart per *section* while
+corollaries start afresh after every *proposition* (Ch. V §6 prints
+Corollaries 1--2 to Proposition 11, then 1--3 to Proposition 13, then
+1--2 to Proposition 14, cited as "corollaire $N$ de la proposition
+$M$"); and some corollaries are printed with no number at all (p. 360).
+The preamble encodes this with separate counters plus a reset of the
+corollary counter at each proposition, and those corollaries use the
 `unnumberedcorollary` environment. This was established by reading the page
 images — the obvious assumption (one counter throughout) is wrong.
 
@@ -86,38 +90,38 @@ One file per section of the original, in `src/`, in the original's order:
 | `introduction.tex` | Introduction | 324–327 |
 | `ch1-01-univers.tex` | Grothendieck universes | 328 |
 | `ch1-02-categories.tex` | Definition of categories | 328–330 |
-| `ch1-03-functors.tex` | Functors | 330–332 |
-| `ch1-04-additive-categories.tex` | Additive categories | 333–334 |
-| `ch1-05-abelian-categories.tex` | Abelian categories | 335 |
-| `ch1-06-generators-and-limits.tex` | Categories with generators and exact inductive limits | 336–337 |
-| `ch1-07-adjoint-functors.tex` | Adjoint functors | 338–340 |
+| `ch1-03-functors.tex` | Functors | 330–333 |
+| `ch1-04-additive-categories.tex` | Additive categories | 333–335 |
+| `ch1-05-abelian-categories.tex` | Abelian categories | 335–336 |
+| `ch1-06-generators-and-limits.tex` | Categories with generators and exact inductive limits | 336–338 |
+| `ch1-07-adjoint-functors.tex` | Adjoint functors | 338–341 |
 | `ch1-08-equivalences.tex` | Equivalences of categories | 341–342 |
-| `ch1-09-enough-injectives.tex` | Abelian categories with enough injectives | 343–344 |
-| `ch2-01-functor-categories.tex` | Functor categories | 345–347 |
-| `ch2-02-left-exact-functors-abelian.tex` | Left exact functors with values in an abelian category | 348–353 |
-| `ch2-03-left-exact-functors-groups.tex` | Left exact functors with values in abelian groups | 354 |
-| `ch2-04-noetherian-categories.tex` | Noetherian categories | 355–357 |
-| `ch2-05-injective-envelopes.tex` | Injective envelopes in abelian categories | 358–361 |
+| `ch1-09-enough-injectives.tex` | Abelian categories with enough injectives | 343–345 |
+| `ch2-01-functor-categories.tex` | Functor categories | 345–348 |
+| `ch2-02-left-exact-functors-abelian.tex` | Left exact functors with values in an abelian category | 348–354 |
+| `ch2-03-left-exact-functors-groups.tex` | Left exact functors with values in abelian groups | 354–355 |
+| `ch2-04-noetherian-categories.tex` | Noetherian categories | 355–358 |
+| `ch2-05-injective-envelopes.tex` | Injective envelopes in abelian categories | 358–362 |
 | `ch2-06-generators-and-limits.tex` | Categories with generators and exact inductive limits | 362–364 |
-| `ch3-01-quotient-categories.tex` | Quotient categories | 365–368 |
-| `ch3-02-section-functor.tex` | Properties of the section functor | 369–373 |
-| `ch3-03-injective-envelopes.tex` | Categories with injective envelopes | 374–376 |
-| `ch3-04-generators-and-limits.tex` | Categories with generators and exact inductive limits | 377–378 |
+| `ch3-01-quotient-categories.tex` | Quotient categories | 365–369 |
+| `ch3-02-section-functor.tex` | Properties of the section functor | 369–374 |
+| `ch3-03-injective-envelopes.tex` | Categories with injective envelopes | 374–377 |
+| `ch3-04-generators-and-limits.tex` | Categories with generators and exact inductive limits | 377–379 |
 | `ch3-05-localizing-subcategories.tex` | A few examples of localising subcategories | 379–381 |
-| `ch4-01-krull-dimension.tex` | The Krull dimension of an abelian category | 382–386 |
-| `ch4-02-structure-of-injectives.tex` | The structure of injective objects in a locally noetherian category | 387–389 |
-| `ch4-03-pseudocompact-modules.tex` | Pseudocompact modules | 390–394 |
-| `ch4-04-duality.tex` | Duality between locally finite categories and pseudocompact modules | 395–401 |
-| `ch5-01-module-categories.tex` | Module categories | 402–410 |
-| `ch5-02-localisation.tex` | Localisation | 411–415 |
-| `ch5-03-goldies-theorem.tex` | Goldie's theorem | 416–420 |
-| `ch5-04-indecomposable-injectives.tex` | Indecomposable injectives and two-sided ideals | 421–425 |
-| `ch5-05-stability-under-injective-envelopes.tex` | Stability under injective envelopes | 426–428 |
-| `ch5-06-finite-extensions.tex` | Finite extensions of commutative noetherian rings | 429–435 |
-| `ch5-07-krull-dimension-of-rings.tex` | The Krull dimension of some rings | 436–438 |
+| `ch4-01-krull-dimension.tex` | The Krull dimension of an abelian category | 382–387 |
+| `ch4-02-structure-of-injectives.tex` | The structure of injective objects in a locally noetherian category | 387–390 |
+| `ch4-03-pseudocompact-modules.tex` | Pseudocompact modules | 390–395 |
+| `ch4-04-duality.tex` | Duality between locally finite categories and pseudocompact modules | 395–402 |
+| `ch5-01-module-categories.tex` | Module categories | 402–411 |
+| `ch5-02-localisation.tex` | Localisation | 411–416 |
+| `ch5-03-goldies-theorem.tex` | Goldie's theorem | 416–421 |
+| `ch5-04-indecomposable-injectives.tex` | Indecomposable injectives and prime two-sided ideals | 421–426 |
+| `ch5-05-stability-under-injective-envelopes.tex` | Stability under injective envelopes | 426–429 |
+| `ch5-06-finite-extensions.tex` | Finite extensions of commutative noetherian rings | 429–436 |
+| `ch5-07-krull-dimension-of-rings.tex` | The Krull dimension of some rings | 436–439 |
 | `ch6-01-gluing-abelian-categories.tex` | Gluing of abelian categories | 439–441 |
-| `ch6-02-properties-of-a-gluing.tex` | Properties of a gluing of abelian categories | 442–445 |
-| `ch6-03-preschemes.tex` | Preschemes and abelian categories | 446 |
+| `ch6-02-properties-of-a-gluing.tex` | Properties of a gluing of abelian categories | 442–446 |
+| `ch6-03-preschemes.tex` | Preschemes and abelian categories | 446–447 |
 | `bibliography.tex` | Bibliography | 447–448 |
 
 ## Editorial decisions (running log)
@@ -152,6 +156,17 @@ Emendations made so far:
 | p. 334 | $c(M)$ opposite in $\operatorname{Hom}(M,N)$ | $\operatorname{Hom}(M,M)$; footnoted |
 | p. 336 | $M\cap N = \ker(M\to M/N\oplus M/P)$ | $N\cap P$; footnoted |
 | p. 345 | $Gf_M$ ($f_M$ undefined) | $Gj_M$; footnoted |
+| p. 409 | $R$-$A^c$-bimodule (enveloping algebra $A^e$ just defined) | $R$-$A^e$; footnoted |
+| p. 410, Prop. 2(e) | $A/\mathfrak m A$ simple central ``over $A$'' | over $R/\mathfrak m$; footnoted |
+| p. 411, $(e)\Rightarrow(d)$ | concludes ``assertion (c)'' | (d); footnoted |
+| p. 415, Prop. 5 | ``si $a$ est nul'' (non-sequitur for $(\star\star)$) | ``si $s.a$ est nul''; footnoted |
+| p. 415, Prop. 5 | target $A_F$ (notation $M_S$ just introduced) | $A_S$; footnoted |
+| p. 427 | ``proposition 11'' reformulating Prop. 9(a) + Cor. 1 | Proposition 9; footnoted |
+| p. 394, Cor. 3 | $h\circ g = \mathrm{id}_{\prod P_i}$ ($h\circ g\colon A\to A$) | $g\circ h$; footnoted |
+| p. 435, Prop. 14 | $m'$ ``$A$-linear'' ($E$ has no $A$-structure) | $R$-linear; footnoted |
+| p. 438, Cor. 1 | $\sigma^{-i}(\mathfrak a_i)=\sigma^{i-1}(\mathfrak a_{i+1})$ | $\sigma^{-i-1}(\mathfrak a_{i+1})$; footnoted |
+| p. 440, Prop. 1 | $(FA,GA,\tau(A))$ ($F,G$ not defined on $\mathbf A$) | $(SA,TA,\tau(A))$; footnoted |
+| p. 441 | $F\|U\cap V$ ($F$ not a sheaf) | $M\|U\cap V$ (resp.\ $N$); footnoted |
 
 Two constraints on this, both stated in `AGENTS.md`:
 
