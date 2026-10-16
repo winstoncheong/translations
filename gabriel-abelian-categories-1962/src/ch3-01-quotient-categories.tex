@@ -1,12 +1,318 @@
-%@ pages 365-368
-%@ status todo
-% Original: pp. 365--368.  French title: see reference/ocr/page-0365.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 365-369
+%@ status translated
+% Chapter III, section 1: Quotient categories (pp. 365--369).
+% Transcribed from the page images in reference/source.pdf (pp. 365--369),
+% not from the OCR text layer, which mangles subscripts, primes and
+% accents.
+%
+% Numbering is automatic (see src/preamble.tex).  This section prints
+% Lemma 1, Lemma 2, Lemma 3, Lemma 4, Proposition 1, and Corollary 1,
+% Corollary 2, Corollary 3 --- the chapter's first run of all of them.
+%
+% One emendation: on p. 368 the original prints "la dernière assertion de
+% la proposition 5" where only Proposition 1 is in scope; we print
+% "proposition 1" and footnote it.
+
 \chapter{Localisation in Abelian Categories}
 \markboth{Chapter III. Localisation in Abelian Categories}{}
 
 \section{Quotient Categories}
 
-\notyet{pp. 365--368 of the original French edition.}
+--- Recall that a full subcategory $\mathbf C$ of the abelian category
+$\mathbf A$ is said to be \emph{thick} (\emph{épaisse}) if the following
+condition is satisfied \textup{[10]}: for every exact sequence of
+$\mathbf A$ of the form $(*)$, the object $M$ is an object of
+$\mathbf C$ if and only if $M'$ and $M''$ are objects of $\mathbf C$:
+\[
+(*)\qquad 0 \to M' \to M \to M'' \to 0.
+\]
+
+The data of $\mathbf A$ and $\mathbf C$ allow one to construct a new
+abelian category, which we shall denote by $\mathbf A/\mathbf C$ and
+which is called the \emph{quotient category} of $\mathbf A$ by
+$\mathbf C$ \textup{[10]}:
+
+\begin{itemize}
+\item The objects of $\mathbf A/\mathbf C$ coincide with the objects of
+      $\mathbf A$.
+
+\item If $M$ and $N$ are two objects of $\mathbf A$, $M'$ and $N'$ two
+      subobjects of $M$ and $N$, the canonical morphisms $M'\to M$ and
+      $N\to N/N'$ define a linear map
+      \[
+        \operatorname{Hom}_{\mathbf A}(M,N)\longrightarrow
+        \operatorname{Hom}_{\mathbf A}(M',N/N').
+      \]
+      When $M/M'$ and $N'$ are objects of $\mathbf C$, the abelian
+      groups $\operatorname{Hom}_{\mathbf A}(M',N/N')$ form an evident
+      inductive system. We set by definition
+      \[
+        \operatorname{Hom}_{\mathbf A/\mathbf C}(M,N) :=
+        \varinjlim \operatorname{Hom}_{\mathbf A}(M',N/N').
+      \]
+      The set $\operatorname{Hom}_{\mathbf A/\mathbf C}(M,N)$ is therefore
+      endowed with a structure of an abelian group.
+
+\item It remains to define bilinear laws of composition:
+      \[
+        \operatorname{Hom}_{\mathbf A/\mathbf C}(M,N)\times
+        \operatorname{Hom}_{\mathbf A/\mathbf C}(N,P)\longrightarrow
+        \operatorname{Hom}_{\mathbf A/\mathbf C}(M,P).
+      \]
+\end{itemize}
+
+For this, let $f$ be an element of
+$\operatorname{Hom}_{\mathbf A/\mathbf C}(M,N)$ and let $g$ be an
+element of $\operatorname{Hom}_{\mathbf A/\mathbf C}(N,P)$. The element
+$f$ is the image of a morphism $f:M'\to N/N'$ where $M/M'$ and $N'$ are
+objects of $\mathbf C$. Likewise, $g$ is the image of a morphism
+$g:N''\to P/P'$ where $N/N''$ and $P'$ are objects of $\mathbf C$. If
+$M''$ denotes the inverse image $f^{-1}((N''+N')/N')$, it is easy to see
+that $M/M''$ belongs to $\mathbf C$; we denote by $f''$ the morphism from
+$M''$ into $(N''+N')/N'$ induced by $f$. Likewise, $N''\cap N'$
+belongs to $\mathbf C$; if $P''$ denotes the sum
+$P'+g(N''\cap N')$, it is easy to see that $P''$ belongs to
+$\mathbf C$; we denote by $g'$ the morphism from
+$N''/(N''\cap N')$ into $P/P''$ induced by $g$. Let $h$ be the
+composite of $f''$, of the canonical isomorphism from
+$(N''+N')/N'$ onto $N''/(N''\cap N')$, and of $g'$. The image
+$\bar h$ of $h$ in
+$\operatorname{Hom}_{\mathbf A/\mathbf C}(M,P)$ depends only on
+$f$ and $g$, and not on the chosen lifts. It is therefore legitimate to
+define the laws of composition of $\mathbf A/\mathbf C$ by the formula
+$g\circ f=h$. These laws of composition are bilinear; they make
+$\mathbf A/\mathbf C$ a category.
+
+In what follows, the letter $T$ will denote the (so-called canonical)
+functor from $\mathbf A$ into $\mathbf A/\mathbf C$ defined as follows:
+$TM=M$ for every object $M$ of $\mathbf A$; if $f:M\to N$ is a morphism
+of $\mathbf A$, $Tf$ is the image of $f$ in the inductive limit
+$\varinjlim \operatorname{Hom}_{\mathbf A}(M',N/N')$.
+
+\begin{lemma}
+The category $\mathbf A/\mathbf C$ is an additive category and $T$ is an
+additive functor from $\mathbf A$ into $\mathbf A/\mathbf C$.
+\end{lemma}
+
+This lemma is a direct consequence of Propositions~2 and~3 of
+Chapter~I.
+
+\begin{lemma}
+Let $u:M\to N$ be a morphism of $\mathbf A$. The morphism $Tu$ is zero
+(resp. is a monomorphism, resp. is an epimorphism) if and only if
+$\operatorname{Im}u$ (resp. $\operatorname{Ker}u$, resp.
+$\operatorname{Coker}u$) belongs to $\mathbf C$.
+\end{lemma}
+
+If $\operatorname{Im}u$ belongs to $\mathbf C$, the image of $u$ in
+$\operatorname{Hom}_{\mathbf A}(M,N/\operatorname{Im}u)$ is indeed zero.
+The same holds, \emph{a fortiori}, for the image of $u$ in the inductive
+limit of the groups $\operatorname{Hom}_{\mathbf A}(M',N/N')$.
+Conversely, if $Tu$ is zero, one may choose the subobjects $M'$ and
+$N'$ so that the morphism from $M'$ into $N/N'$ induced by $u$ is
+zero. This means that $u(M')$ is contained in $N'$, which belongs to
+$\mathbf C$, and therefore that $u(M')$ belongs to $\mathbf C$. As one
+has, moreover, an exact sequence of the form
+\[
+0 \to u(M') \to \operatorname{Im}u \to M/(M'+\operatorname{Ker}u) \to 0,
+\]
+it follows that $\operatorname{Im}u$ belongs to $\mathbf C$.
+
+Suppose now that $Tu$ is a monomorphism; let $i$ be the canonical
+monomorphism from $\operatorname{Ker}u$ into $M$. Since $u\circ i$ is
+zero, the same holds for $Tu\circ Ti$. From this one deduces that $Ti$ is
+zero, hence that $\operatorname{Ker}u$ belongs to $\mathbf C$.
+Conversely, suppose that $\operatorname{Ker}u$ belongs to $\mathbf C$.
+Let $f:TP\to TM$ be a non-zero morphism of
+$\mathbf A/\mathbf C$: this morphism is the image of a morphism
+$f:P'\to M/M'$ where $P/P'$ and $M'$ belong to $\mathbf C$. By replacing
+$M'$ with $M'+\operatorname{Ker}u$, we may suppose moreover that $M'$
+contains $\operatorname{Ker}u$. In this case $u$ induces a
+monomorphism $u'$ from $M/M'$ into $N/u(M')$. Since $f$ is non-zero,
+$\operatorname{Im}f$ and $\operatorname{Im}(u'\circ f)$ do not belong
+to $\mathbf C$. This shows that $(Tu)\circ f$ is non-zero and that $Tu$ is
+a monomorphism.
+
+The last assertion of Lemma~2 is proved in an analogous way.
+
+\begin{lemma}
+Let $u:M\to N$ be a morphism of $\mathbf A$, $i:K\to M$ the kernel
+of $u$ and $p:N\to C$ the cokernel of $u$. The morphism $Tu$ has a
+kernel (resp. a cokernel); moreover $Ti$ (resp. $Tp$) induces an
+isomorphism from $TK$ onto the kernel of $Tu$ (resp. from the cokernel
+of $Tu$ onto $TC$).
+\end{lemma}
+
+We already know that $Ti$ is a monomorphism. Let therefore
+$f:TX\to TM$ be a morphism such that $Tu\circ f=0$: we must prove the
+existence of a morphism $g:TX\to TK$ such that $Ti\circ g=f$. Now $f$
+is the image of an element $f$ of
+$\operatorname{Hom}_{\mathbf A}(X',M/M')$ where $X/X'$ and $M'$ belong
+to $\mathbf C$. We are therefore in the presence of the following
+commutative diagram:
+\[
+\begin{tikzcd}
+K \arrow[r] \arrow[d] & M \arrow[r, "u"] \arrow[d] & N \arrow[d] \\
+K/K\cap M' \arrow[r] & M/M' \arrow[r] & N/u(M')
+\end{tikzcd}
+\]
+where $i_1$, $q$ and $r$ are the canonical morphisms. Since
+$Tu\circ f$ is zero, the image of $X'$ under the induced morphism
+$u':M/M'\to N/u(M')$ belongs to $\mathbf C$. If $X''$ denotes the
+inverse image of $\operatorname{Ker}u'$ by $f$, it follows that
+$X'/X''$ and $X/X''$ belong to $\mathbf C$. Moreover, the restriction of
+$f$ to $X''$ factors through a morphism
+$g:X''\to K/K\cap M'$ composed with $i_1$. If $\tilde g$ is the image
+of $g$ in $\operatorname{Hom}_{\mathbf A/\mathbf C}(X,K)$, we have the
+desired equality $Ti\circ\tilde g=f$. The second part of the lemma is
+proved in a ``dual'' way.
+
+\begin{lemma}
+Let $u:M\to N$ be a morphism of $\mathbf A$. Then $Tu$ is an
+isomorphism if and only if $\operatorname{Ker}u$ and
+$\operatorname{Coker}u$ belong to $\mathbf C$.
+\end{lemma}
+
+If $Tu$ is an isomorphism, it is both a monomorphism and an
+epimorphism. By Lemma~2, it follows that $\operatorname{Ker}u$ and
+$\operatorname{Coker}u$ are objects of $\mathbf C$. Conversely, suppose
+that this last condition is satisfied; let $q$ be the canonical
+epimorphism from $M$ onto $\operatorname{Coim}u$, $j$ the canonical
+morphism from $\operatorname{Im}u$ into $N$ and $s$ the canonical
+isomorphism from $\operatorname{Coim}u$ onto $\operatorname{Im}u$. The
+identity morphism of $\operatorname{Coim}u$ is an element of
+$\operatorname{Hom}_{\mathbf A}(\operatorname{Coim}u,
+M/i(\operatorname{Ker}u))$. This element has an image $q^*$ in
+$\operatorname{Hom}_{\mathbf A/\mathbf C}(\operatorname{Coim}u,M)$ and
+it is clear that $q^*$ is an inverse morphism of $Tq$. This shows that
+$Tq$ is an isomorphism. In the same way $Tj$ is an isomorphism. It
+follows that $Tu=Tj\circ Ts\circ Tq$ is an isomorphism.
+
+\begin{proposition}
+If $\mathbf C$ is a thick subcategory of $\mathbf A$, the category
+$\mathbf A/\mathbf C$ is abelian. Moreover, the canonical functor from
+$\mathbf A$ into $\mathbf A/\mathbf C$ is exact.
+\end{proposition}
+
+Let indeed $f:TM\to TN$ be a morphism of
+$\mathbf A/\mathbf C$. We show that $f$ has a kernel, a cokernel, a
+coimage, an image and that the canonical morphism from the coimage into
+the image is an isomorphism.
+
+Now $f$ is the image of an element $f$ of
+$\operatorname{Hom}_{\mathbf A}(M',N/N')$, where $M/M'$ and $N'$ are
+objects of $\mathbf C$. From this one deduces the commutative diagram
+\[
+\begin{tikzcd}
+TM \arrow[r, "f"] & TN \arrow[d, "Tq_{N'}"] \\
+TM' \arrow[u, "Ti_{M'}"] \arrow[r, "Tf'"] & T(N/N')
+\end{tikzcd}
+\]
+where $Ti_{M'}$ and $Tq_{N'}$ are isomorphisms. This diagram shows that
+$f$ has a kernel, a cokernel, etc., if and only if the same is true of
+$Tf$. In other words, one may suppose that $f$ is of the form $Tf$.
+
+In this case Lemma~3 shows that $f$ has a kernel, a cokernel, a coimage
+and an image. We denote by $q$, $j$ and $s$ respectively the canonical
+morphisms from $M$ into $\operatorname{Coim}f$, from
+$\operatorname{Im}f$ into $N$ and from $\operatorname{Coim}f$ into
+$\operatorname{Im}f$. Lemma~3 shows that $Tq$ induces an isomorphism
+$q'$ from $\operatorname{Coim}Tf$ onto
+$T(\operatorname{Coim}f)$; likewise, $Tj$ induces an isomorphism $j'$
+from $T(\operatorname{Im}f)$ onto $\operatorname{Im}Tf$. Finally, it is
+easy to verify that the canonical morphism from
+$\operatorname{Coim}Tf$ into $\operatorname{Im}Tf$ is the composite
+$j'\circ Ts\circ q'$; this morphism is therefore an isomorphism.
+
+The last assertion of
+proposition 1\ednote{The original prints ``proposition~5''; we print
+``proposition~1'', the only one in scope.} follows directly from
+Lemma~3.
+
+\begin{corollary}
+Let $\mathbf C$ be a thick subcategory of $\mathbf A$ and let
+\[
+0 \to M \to N \to P \to 0
+\]
+be an exact sequence of $\mathbf A/\mathbf C$. There then exists a
+diagram of the form (i), commutative, exact and satisfying the following
+conditions: $u$, $v$ and $w$ are isomorphisms of $\mathbf A/\mathbf C$;
+moreover
+\[
+0 \to M_1 \to N_1 \to P_1 \to 0
+\]
+is an exact sequence of $\mathbf A$.
+\[
+\begin{tikzcd}
+0 \arrow[r] & M \arrow[r] & N \arrow[r] & P \arrow[r] & 0 \\
+0 \arrow[r] & TM_1 \arrow[r] \arrow[u, "u"] & TN_1 \arrow[r] \arrow[u, "v"] & TP_1 \arrow[r] \arrow[u, "w"] & 0
+\end{tikzcd}
+\]
+The morphism $f$ is indeed the image of an element
+$f'\in\operatorname{Hom}_{\mathbf A}(M,N/N')$, where $M/M'$ and $N'$
+belong to $\mathbf C$. Since $Tf$ is a monomorphism, $\operatorname{Ker}f'$
+belongs to $\mathbf C$. If $q$ denotes the canonical morphism from
+$M$ onto $\operatorname{Coim}f'$, it is therefore possible to make the
+following choices: $M_1=\operatorname{Coim}f'$; $N_1=N/N'$;
+$f_1=$ morphism induced by $f'$; $P_1=\operatorname{Coker}f_1$;
+$g_1=$ canonical morphism; $u=(Tq)\circ(Ti)^{-1}$; $v=Tq_{N'}$;
+$w=$ morphism induced by $(Tg_1)\circ v$.
+\end{corollary}
+
+\begin{corollary}
+Let $\mathbf C$ be a thick subcategory of $\mathbf A$ and $G$ an
+exact functor from $\mathbf A$ into an abelian category $\mathbf D$. If
+$GM$ is zero for every object $M$ of $\mathbf C$, there exists one and
+only one functor $H$ from $\mathbf A/\mathbf C$ into $\mathbf D$ such
+that one has $G=H\circ T$.
+\end{corollary}
+
+Let indeed $M$ and $N$ be two objects of $\mathbf A$, $M'$ and $N'$
+subobjects of $M$ and $N$ such that $M/M'$ and $N'$ belong to
+$\mathbf C$. Consider the following commutative diagram, where
+$\varphi$ and $\psi$ denote respectively the maps
+$\operatorname{Hom}_{\mathbf A}(M,N)\to
+\operatorname{Hom}_{\mathbf A}(M',N/N')$ and
+$\operatorname{Hom}_{\mathbf D}(GM,GN)\to
+\operatorname{Hom}_{\mathbf D}(GM',G(N/N'))$:
+\[
+\begin{tikzcd}
+\operatorname{Hom}_{\mathbf A}(M,N) \arrow[r, "G"] \arrow[d] &
+\operatorname{Hom}_{\mathbf D}(GM,GN) \arrow[d, "\varphi"] \\
+\operatorname{Hom}_{\mathbf A}(M',N/N') \arrow[r, "G"] &
+\operatorname{Hom}_{\mathbf D}(GM',G(N/N'))
+\end{tikzcd}
+\]
+It is clear that $\varphi$ is a bijective map; the maps
+$\operatorname{Hom}_{\mathbf A}(M',N/N')\to
+\operatorname{Hom}_{\mathbf D}(GM,GN)$ induced by $G$ and by
+$\varphi^{-1}$ therefore define an application $H(M,N)$ from
+$\varinjlim \operatorname{Hom}_{\mathbf A}(M',N/N')$ into
+$\operatorname{Hom}_{\mathbf D}(GM,GN)$. When $M$ and $N$ range over
+the objects of $\mathbf A$ (or of $\mathbf A/\mathbf C$), the
+applications $H(M,N)$ determine a functor $H$ from
+$\mathbf A/\mathbf C$ into $\mathbf D$; this functor associates to
+every object $M$ of $\mathbf A/\mathbf C$ the object $GM$ of
+$\mathbf D$; it satisfies the equality $G=H\circ T$. The proof of the
+uniqueness of $H$ is left to the reader.
+
+\begin{corollary}
+Let $\mathbf C$ be a thick subcategory of $\mathbf A$ and $H$ a functor
+from $\mathbf A/\mathbf C$ into an abelian category $\mathbf D$. The
+functor $H$ is exact if and only if the functor $H\circ T$ is exact.
+\end{corollary}
+
+It is clear that $H\circ T$ is exact if $H$ is exact. Conversely,
+suppose that $H\circ T$ is exact. If
+\[
+0 \to M \to N \to P \to 0
+\]
+is an exact sequence of $\mathbf A/\mathbf C$, we consider a diagram
+of the form (i). As the sequence
+\[
+0 \to HTM_1 \to HTN_1 \to HTP_1 \to 0
+\]
+is exact, the same holds for the sequence
+\[
+0 \to HM \to HN \to HP \to 0.
+\]

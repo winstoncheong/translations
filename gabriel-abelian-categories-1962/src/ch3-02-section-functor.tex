@@ -1,9 +1,360 @@
-%@ pages 369-373
-%@ status todo
-% Original: pp. 369--373.  French title: see reference/ocr/page-0369.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 369-374
+%@ status translated
+% Chapter III, section 2: Properties of the section functor (pp. 369--374).
+% Transcribed from the page images in reference/source.pdf (pp. 369--374),
+% not from the OCR text layer, which mangles subscripts, primes, indices
+% and accents.
+%
+% Numbering is automatic (see src/preamble.tex).  This section prints
+% Proposition 2, Proposition 3, Proposition 4 and Proposition 5;
+% Lemma 1, Lemma 2, Lemma 3, Lemma 4 and Lemma 5; and one corollary
+% which Gabriel prints without a number, hence `unnumberedcorollary'.
+% (The only numbered corollary in the chapter so far is Corollary 1--3
+% of section 1.)
+%
+% Notation: we write \mathbf{C}-closed for Gabriel's \emph{C-fermé}
+% and "localizing" for \emph{localisante}, as in section 3.
+
 \section{Properties of the Section Functor}
 
-\notyet{pp. 369--373 of the original French edition.}
+--- Let $\mathbf A$ be an abelian category, let $\mathbf C$ be a thick
+subcategory of $\mathbf A$, let $\mathbf B=\mathbf A/\mathbf C$ be the
+quotient category and let $T$ be the canonical functor from $\mathbf A$
+into $\mathbf B$.
+
+The reasoning of the preceding paragraph was ``autodual'': it applied as
+well to the category $\mathbf A$ as to the dual category
+$\mathbf A^{\circ}$. We shall suppose at the beginning of this paragraph
+that there exists a functor $S$ adjoint to $T$. This condition is not
+self-dual; we leave to the reader the task of formulating the dual
+statements of those that follow.
+
+An adjoint functor to $T$ is defined up to isomorphism. We choose once
+and for all such a functor $S$ and we call it the \emph{section
+functor}. We also use the notation of Chapter~I, \S6; in particular, the
+letters $\varphi$, $\psi$, $\Phi$, $\Psi$ will have the following
+meanings: $\varphi$ is a functorial isomorphism from
+$\operatorname{Hom}_{\mathbf A}(.,S.)$ to
+$\operatorname{Hom}_{\mathbf B}(T.,.)$ and $\psi$ is the inverse
+isomorphism of $\varphi$; the letter $\Phi$ (resp.\ $\Psi$) designates
+the functorial morphism from $T\circ S$ to $I_{\mathbf B}$ (resp.\ from
+$I_{\mathbf A}$ to $S\circ T$) associated with $\varphi$ (resp.\ with
+$\psi$).
+
+\begin{proposition}
+The section functor is left exact.
+\end{proposition}
+
+The assertion is indeed verified for every adjoint functor (Proposition~11,
+Chapter~I).
+
+\begin{lemma}
+If $M$ is an object of $\mathbf A$, the following assertions are
+equivalent:
+\begin{enumerate}
+\item[a.] For every morphism $u\colon P\to Q$ such that $\operatorname{Ker}u$
+      and $\operatorname{Coker}u$ belong to $\mathbf C$, the map
+      $\operatorname{Hom}(u,M)\colon
+      \operatorname{Hom}_{\mathbf A}(Q,M)\to
+      \operatorname{Hom}_{\mathbf A}(P,M)$ is a bijection.
+\item[b.] Every subobject of $M$ belonging to $\mathbf C$ is zero; moreover,
+      every exact sequence
+      \[
+        0\longrightarrow M\xrightarrow{\;f\;}N\longrightarrow P
+        \longrightarrow 0
+      \]
+      in which $P$ belongs to $\mathbf C$ splits (i.e.\ $f$ induces an
+      isomorphism of $M$ onto a direct summand of $N$).
+\item[c.] For every object $P$ of $\mathbf A$, the map
+      \[
+        T(P,M)\colon \operatorname{Hom}_{\mathbf A}(P,M)
+        \longrightarrow \operatorname{Hom}_{\mathbf B}(TP,TM)
+      \]
+      is a bijection.
+\end{enumerate}
+\end{lemma}
+
+\emph{(a)}~$\Rightarrow$~\emph{(b)}: let $L$ be a subobject of $M$
+belonging to $\mathbf C$. The identity morphism $1_M$ is the image of an
+element $v\in\operatorname{Hom}_{\mathbf A}(M/L,M)$ under the map
+$\operatorname{Hom}_{\mathbf A}(M/L,M)\to\operatorname{Hom}_{\mathbf A}(M,M)$;
+in other words, one has an equality $1_M=v\circ p$, where
+$p\colon M\to M/L$ is the canonical projection. Hence $p$ is an
+isomorphism and $L$ is zero.
+
+Likewise, if
+\[
+  0\longrightarrow M\xrightarrow{\;f\;}N\longrightarrow P\longrightarrow 0
+\]
+is exact with $P\in\mathbf C$, there exists an element $g\in
+\operatorname{Hom}_{\mathbf A}(N,M)$ such that $1_M=g\circ f$. This
+proves that $f$ is an isomorphism of $M$ onto a direct summand of $N$.
+
+\emph{(b)}~$\Rightarrow$~\emph{(c)}: since every subobject of $M$ belonging
+to $\mathbf C$ is zero, $\operatorname{Hom}_{\mathbf B}(TP,TM)$ is in
+fact the inductive limit of the abelian groups $\operatorname{Hom}_{\mathbf
+A}(P',M)$, where $P'$ ranges over the subobjects of $P$ such that
+$P/P'$ belongs to $\mathbf C$. In particular, every element of
+$\operatorname{Hom}_{\mathbf B}(TP,TM)$ is the image of a morphism
+$f\colon P'\to M$.
+
+Let $N$ be the pushout of the diagram defined by $f$ and by the
+monomorphism $P'\to P$; the canonical morphism $j\colon M\to N$ is a
+monomorphism and $\operatorname{Coker}j\cong P/P'$
+(Chapter~I, end of \S5). By assertion~(b), there exists a morphism $p\colon
+N\to M$ such that $p\circ j=1_M$; it follows that the morphism
+$p\circ k$, where $k\colon P\to N$ is the canonical morphism, is a
+morphism $P\to M$ whose restriction to $P'$ is $f$. This proves that
+$T(P,M)$ is surjective.
+
+Now let $g\colon P\to M$ be a nonzero morphism. Its image is not zero and
+does not belong to $\mathbf C$. It follows that $Tg$ is not zero
+(Lemma~2, \S1). This proves that $T(P,M)$ is injective.
+
+\emph{(c)}~$\Rightarrow$~\emph{(a)}: we have the commutative diagram
+\[
+\begin{tikzcd}
+\operatorname{Hom}_{\mathbf A}(Q,M) \arrow[r, "T"] &
+\operatorname{Hom}_{\mathbf B}(TQ,TM)\\
+\operatorname{Hom}_{\mathbf A}(P,M) \arrow[u, "\operatorname{Hom}(u{,}M)"]
+\arrow[r, "T"] &
+\operatorname{Hom}_{\mathbf B}(TP,TM) \arrow[u, "\operatorname{Hom}(Tu{,}TM)"]
+\end{tikzcd}
+\]
+The maps $T(P,M)$ and $T(Q,M)$ are bijective. If $\operatorname{Ker}u$
+and $\operatorname{Coker}u$ belong to $\mathbf C$, then $Tu$ is an
+isomorphism (Lemma~4, \S1). It follows that the same holds for
+$\operatorname{Hom}(u,M)$.
+
+We shall henceforth say that an object $M$ is
+\emph{$\mathbf C$-closed} if it satisfies the equivalent conditions of the
+preceding lemma. Our aim is to prove that $M$ is $\mathbf C$-closed if
+and only if the morphism $\Psi(M)$ from $M$ into $STM$ is an
+isomorphism. For this we shall need the
+
+\begin{lemma}
+For every object $N$ of $\mathbf A/\mathbf C$, the object $SN$ is
+$\mathbf C$-closed.
+\end{lemma}
+
+To verify assertion~(a) of Lemma~1, we have the commutative diagram
+\[
+\begin{tikzcd}
+\operatorname{Hom}_{\mathbf A}(Q,SN) \arrow[r, "\varphi"] &
+\operatorname{Hom}_{\mathbf B}(TQ,N)\\
+\operatorname{Hom}_{\mathbf A}(P,SN) \arrow[u, "\operatorname{Hom}(u{,}SN)"]
+\arrow[r, "\varphi"] &
+\operatorname{Hom}_{\mathbf B}(TP,N) \arrow[u, "\operatorname{Hom}(Tu{,}N)"]
+\end{tikzcd}
+\]
+The maps $\varphi$ are bijective. It follows that
+$\operatorname{Hom}(u,SN)$ is a bijection if $Tu$ is an isomorphism.
+
+\begin{proposition}
+\begin{enumerate}
+\item[a.] The functorial morphism $\Phi$ is an isomorphism from
+      $T\circ S$ to $I_{\mathbf B}$.
+\item[b.] For every object $M$ of $\mathbf A$, $\operatorname{Ker}\Psi(M)$
+      and $\operatorname{Coker}\Psi(M)$ belong to $\mathbf C$.
+\end{enumerate}
+\end{proposition}
+
+To prove~(a), let $M$ be an object of $\mathbf A$ and let $N$ be an object
+of $\mathbf B$. We have the identity
+\[
+  \varphi(M,N)=\operatorname{Hom}_{\mathbf B}(TM,\Phi(N))\circ
+  T(M,SN).
+\]
+The map $\varphi(M,N)$ is a bijection, as is $T(M,SN)$ (Lemmas~1 and~2).
+It follows that
+$\operatorname{Hom}_{\mathbf B}(TM,\Phi(N))$ is a bijection for every $M$.
+Assertion~(a) results from the fact that every object of $\mathbf A/\mathbf C$
+is of the form $TM$ (Corollary~2 to Proposition~1, Chapter~I).
+
+We now prove~(b) by showing that $T\Psi(M)$ is an isomorphism for every
+$M$. Indeed, the composite of $T\Psi(M)$ and of $\Phi(TM)$ is the identity
+morphism of $TM$ (Proposition~8, Chapter~I). Since $\Phi$ is a functorial
+isomorphism, the result is established.
+
+\begin{unnumberedcorollary}
+An object $M$ of $\mathbf A$ is $\mathbf C$-closed if and only if
+$\Psi(M)$ is an isomorphism from $M$ onto $STM$.
+\end{unnumberedcorollary}
+
+We already know that $STM$ is $\mathbf C$-closed. Suppose therefore that
+$M$ is $\mathbf C$-closed: since every subobject of $M$ belonging to
+$\mathbf C$ is zero, $\operatorname{Ker}\Psi(M)$ is zero; this proves that
+$\Psi(M)$ is a monomorphism. Assertion~(b) of Lemma~1 then shows that
+$\operatorname{Coker}\Psi(M)$ is isomorphic to a direct summand of $STM$.
+Since every subobject of $STM$ belonging to $\mathbf C$ is zero,
+$\operatorname{Coker}\Psi(M)$ is zero; this proves the corollary.
+
+We shall henceforth say that a thick subcategory $\mathbf C$ of
+$\mathbf A$ is a \emph{localizing subcategory} of $\mathbf A$ if there
+exists a functor $S$ adjoint to $T$. In this case, the left exact functor
+$S\circ T$ is called the \emph{localization functor}. This localization
+functor is exact if and only if $S$ is exact (Corollary~3 to
+Proposition~1).
+
+\begin{proposition}
+If $\mathbf C$ is a thick subcategory of $\mathbf A$, the following
+assertions are equivalent:
+\begin{enumerate}
+\item[a.] $\mathbf C$ is a localizing subcategory of $\mathbf A$.
+\item[b.] Every object $M$ of $\mathbf A$ contains a subobject which is
+      maximal among the subobjects of $M$ belonging to $\mathbf C$;
+      moreover, if every subobject of $M$ belonging to $\mathbf C$ is
+      zero, there exists a monomorphism from $M$ into a
+      $\mathbf C$-closed object.
+\end{enumerate}
+\end{proposition}
+
+\emph{(a)}~$\Rightarrow$~\emph{(b)}: with the usual notation it is indeed
+clear that $\operatorname{Ker}\Psi(M)$ is maximal among the subobjects
+of $M$ belonging to $\mathbf C$. If $\operatorname{Ker}\Psi(M)$ is zero,
+$\Psi(M)$ is a monomorphism from $M$ into a $\mathbf C$-closed object.
+
+\emph{(b)}~$\Rightarrow$~\emph{(a)}: let $u\colon M\to N$ be a morphism
+of $\mathbf A$. We say that $u$ is a \emph{$\mathbf C$-envelope} of $M$
+if $N$ is $\mathbf C$-closed and if $\operatorname{Ker}u$ and
+$\operatorname{Coker}u$ are objects of $\mathbf C$. We shall first show
+that every object $M$ possesses a $\mathbf C$-envelope.
+
+Let indeed $M'$ be the largest subobject of $M$ belonging to
+$\mathbf C$ and let $i$ be a monomorphism from $M/M'$ into a
+$\mathbf C$-closed object $R$. Let moreover $N$ be the inverse image in
+$R$ of the largest subobject of $\operatorname{Coker}i$ belonging to
+$\mathbf C$. Condition~(a) of Lemma~1 shows that $N$ is
+$\mathbf C$-closed. If $j$ is the morphism from $M/M'$ into $N$ induced
+by $i$, then $j\circ p$, where $p\colon M\to M/M'$ is the canonical
+projection, is a $\mathbf C$-envelope of $M$.
+
+We are now in a position to construct a functor adjoint to $T$: every
+object $N$ of $\mathbf A/\mathbf C$ can be considered as an object of
+$\mathbf A$; we choose a $\mathbf C$-envelope of this object, say
+$u(N)\colon N\to SN$. Every object $M$ of $\mathbf A$ then gives rise to
+the following maps:
+\[
+  \operatorname{Hom}_{\mathbf B}(TM,N)
+  =\operatorname{Hom}_{\mathbf B}(TM,TN)
+  \xrightarrow{\;\operatorname{Hom}_{\mathbf B}(TM,u(N))\;}
+  \operatorname{Hom}_{\mathbf B}(TM,TSN)
+  \xleftarrow{\;T(M,SN)\;}
+  \operatorname{Hom}_{\mathbf A}(M,SN).
+\]
+These applications are bijective and they define a functorial isomorphism
+from $\operatorname{Hom}_{\mathbf B}(T.,N)$ to
+$\operatorname{Hom}_{\mathbf A}(.,SN)$. In other words,
+$\operatorname{Hom}_{\mathbf B}(T.,N)$ is a representable functor, and
+the proposition results from Proposition~10 (Chapter~I).
+
+Suppose now that $\mathbf C$ is a localizing subcategory of $\mathbf A$
+and consider a morphism $u\colon M\to N$ of $\mathbf A$. Let $M'$
+(resp.\ $N'$) be the largest subobject of $M$ (resp.\ of $N$)
+belonging to $\mathbf C$. Since $u(M')$ is contained in $N'$, $u$
+induces a morphism $u'\colon M/M'\to N/N'$. One has then the following
+assertion, which will be very useful in paragraph~3.
+
+\begin{lemma}
+With the notations and hypotheses above, $Tu$ is an essential extension
+of $TM$ if and only if $u'$ is an essential extension of $M/M'$.
+\end{lemma}
+
+Since $T(M/M')$ and $T(N/N')$ are isomorphisms, $Tu$ is an essential
+extension if and only if the same holds for $Tu'$. In other words, it
+suffices to prove the result when $M'$ and $N'$ are zero. We make this
+hypothesis in the sequel, and we choose the subobjects of $TN$ (resp.\ of
+$TM$) among the $TP$, where $P$ is a subobject of $N$ (resp.\ of $M$).
+
+Suppose that $u$ is an essential extension of $M$, and let $TP$ be a
+subobject of $TN$. If $TP$ is not zero, the same holds for $P$ and for
+$u^{-1}(P)$. The latter object does not belong to $\mathbf C$. Since
+$(Tu)^{-1}(TP)$ is isomorphic to $T(u^{-1}(P))$, it follows that
+$(Tu)^{-1}(TP)$ is not zero and that $Tu$ is an essential extension of
+$TM$.
+
+Conversely, suppose that $Tu$ is an essential extension and let $P$ be a
+nonzero subobject of $N$. Since every subobject of $N$ belonging to
+$\mathbf C$ is zero, $TP$ cannot be zero. It follows that
+$u^{-1}(P)$ is not zero.
+
+\begin{lemma}
+Let $\mathbf C$ be a localizing subcategory of $\mathbf A$ and let
+$(U_i)_{i\in I}$ be a family of generators of $\mathbf A$. Then
+$(TU_i)_{i\in I}$ is a family of generators of $\mathbf A/\mathbf C$.
+\end{lemma}
+
+Let indeed $u\colon M\to N$ be a monomorphism of $\mathbf A/\mathbf C$
+which is not an isomorphism. We must prove that the map
+\[
+  \prod_{i\in I}\operatorname{Hom}_{\mathbf B}(TU_i,M)
+  \longrightarrow
+  \prod_{i\in I}\operatorname{Hom}_{\mathbf B}(TU_i,N)
+\]
+induced by $u$ is not surjective. Now $Su$ is not an isomorphism
+(Proposition~3~(a)). It follows that the map
+\[
+  \prod_{i\in I}\operatorname{Hom}_{\mathbf A}(U_i,SM)
+  \longrightarrow
+  \prod_{i\in I}\operatorname{Hom}_{\mathbf A}(U_i,SN)
+\]
+induced by $Su$ is not surjective. The lemma is a consequence of this
+fact and of the properties of adjoint functors.
+
+\begin{lemma}
+Let $\mathbf C$ be a localizing subcategory of a
+$\Univ$-category with generators $\mathbf A$. Then
+$\mathbf A/\mathbf C$ is a $\Univ$-category with generators.
+\end{lemma}
+
+Let indeed $M$ and $N$ be two objects of $\mathbf A$. According to
+Proposition~5 (Chapter~I), the set of subobjects $M'$ of $M$ such that
+$M/M'$ belongs to $\mathbf C$ can be indexed by a set belonging to
+$\Univ$. The same holds for the set of subobjects $N'$ of $N$ belonging
+to $\mathbf C$. It follows that the inductive limit
+$\varinjlim\operatorname{Hom}_{\mathbf A}(M',N/N')$ is an object of the
+category $\Univ\mathbf{Ab}$. This proves that $\mathbf A/\mathbf C$ is a
+$\Univ$-category.
+
+The existence of generators results from Lemma~4.
+
+The ``nature'' harbours many localizing subcategories. The following
+proposition sometimes allows one to detect them: let $\mathbf A$ and
+$\mathbf B$ be two abelian categories, let $T_1$ be a functor from
+$\mathbf A$ into $\mathbf B$ and let $S_1$ be a functor adjoint to
+$T_1$. We keep for the letters $\Phi_1$, $T_1$, $\varphi_1$ and
+$\psi_1$ their usual meaning (cf.\ Chapter~I, \S7).
+
+\begin{proposition}
+Suppose, with the above notation, that $T_1$ is an exact functor and
+that $\Phi_1$ is an isomorphism from $T_1\circ S_1$ to
+$I_{\mathbf B}$. Then $\operatorname{Ker}T_1$ is a localizing
+subcategory of $\mathbf A$ and $T_1$ induces an equivalence between
+$\mathbf A/\operatorname{Ker}T_1$ and $\mathbf B$.
+\end{proposition}
+
+Let indeed $T$ be the canonical functor from $\mathbf A$ to
+$\mathbf A/\operatorname{Ker}T_1$; ($\operatorname{Ker}T_1$ denotes the
+thick subcategory of $\mathbf A$ whose objects are annihilated by
+$T_1$); let $R$ be the unique functor from
+$\mathbf A/\operatorname{Ker}T_1$ to $\mathbf B$ such that
+$T_1=R\circ T$. If $f$ is a morphism of $\mathbf A$, then $T_1 f$ is an
+isomorphism if and only if $T_1\operatorname{Ker}f$ and
+$T_1\operatorname{Coker}f$ are zero, that is, if and only if $Tf$ is an
+isomorphism. We apply this remark to the special case in which $f$ is the
+morphism $\Psi_1(M)$ from $M$ into $(S_1\circ T_1)M$. We indeed know
+that the composite of $T_1\Psi_1(M)$ and of $\Phi_1(T_1 M)$ is the
+identity morphism of $T_1 M$. Since $\Phi_1(T_1 M)$ is an isomorphism,
+it follows that $T_1\Psi_1(M)$, and hence $T\Psi_1(M)$, are
+isomorphisms. Since moreover the objects $M$ of $\mathbf A$ coincide with
+the objects $TM$ of $\mathbf A/\operatorname{Ker}T_1$, the morphisms
+$T_1\Psi_1(M)$ define an isomorphism from the identity functor of
+$\mathbf A/\operatorname{Ker}T_1$ to the composite functor $TS_1 R$. We
+deduce from this that $TS_1 R$ and $R TS_1$ are isomorphic to the
+identity functors of $\mathbf A/\operatorname{Ker}T_1$ and of
+$\mathbf B$. This means that $R$ and $TS_1$ define an equivalence of
+$\mathbf A/\operatorname{Ker}T_1$ with $\mathbf B$.
+
+We leave to the reader the proof that $S_1\circ R$ is a functor adjoint
+to $T$, which shows that $\operatorname{Ker}T_1$ is a localizing
+subcategory of $\mathbf A$.

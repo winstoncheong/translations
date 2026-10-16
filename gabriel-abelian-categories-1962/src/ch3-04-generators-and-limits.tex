@@ -1,9 +1,129 @@
 %@ pages 377-378
-%@ status todo
-% Original: pp. 377--378.  French title: see reference/ocr/page-0377.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ status translated
+% Chapter III, section 4: Categories with generators and exact inductive
+% limits (pp. 377--378).  Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer.
+%
+% Numbering is automatic (src/preamble.tex).  This section prints
+% Proposition 8 and Proposition 9 (the chapter's run of propositions
+% reaches Proposition 7 on p. 377) and one corollary which Gabriel
+% prints without a number, hence `unnumberedcorollary'.  No lemma is
+% stated in this section.
+%
+% No emendations.
+
 \section{Categories with Generators and Exact Inductive Limits}
 
-\notyet{pp. 377--378 of the original French edition.}
+--- We shall use the notations of the preceding paragraph.
+
+\begin{proposition}
+Let $\mathbf{C}$ be a thick subcategory of a $\Univ$-category
+$\mathbf{A}$ abelian with generators and exact inductive limits. The
+following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $\mathbf{C}$ is a localizing subcategory of
+      $\mathbf{A}$.
+\item[\normalfont b.] The inductive limit (in $\mathbf{A}$) of an
+      inductive system of objects of $\mathbf{C}$ belongs to
+      $\mathbf{C}$.
+\end{description}
+\end{proposition}
+
+$(a)\Rightarrow(b)$: let indeed $(M_i,\varphi_{ji})$ be an inductive
+system of objects of $\mathbf{C}$, the set of indices belonging to the
+universe $\Univ$. Let $M$ be the inductive limit of this system and
+$\varphi_i$ the canonical morphism from $M_i$ into $M$. By
+Corollary~1 to Proposition~6, $M$ contains a subobject $M'$ which
+belongs to $\mathbf{C}$ and which contains every subobject of $M$
+belonging to $\mathbf{C}$; in particular, $M'$ contains
+$\operatorname{Im}\varphi_i$ for every $i$, and is therefore equal to
+$M$.
+
+$(b)\Rightarrow(a)$: let indeed $M$ be an object of $\mathbf{A}$. If
+$P$ and $N$ are two subobjects of $M$ belonging to $\mathbf{C}$, then
+$P+N$ is isomorphic to a quotient of $P\oplus N$. It follows that
+$P+N$ belongs to $\mathbf{C}$ and that the subobjects of $M$
+belonging to $\mathbf{C}$ form a filtered increasing family of
+subobjects of $M$. By $(b)$, the supremum of these subobjects belongs
+to $\mathbf{C}$ and is the largest subobject of $M$ belonging to
+$\mathbf{C}$; whence the result, thanks to Corollary~1 to
+Proposition~6.
+
+\begin{unnumberedcorollary}
+Let $\mathbf{A}$ be a $\Univ$-category abelian with generators and
+exact inductive limits, and $(I_j)$ a family of injective objects of
+$\mathbf{A}$. The objects $M$ of $\mathbf{A}$ such that
+$\operatorname{Hom}_{\mathbf{A}}(M,I_j)$ is zero for every $j$ are the
+objects of a localizing subcategory of $\mathbf{A}$. Conversely, every
+localizing subcategory of $\mathbf{A}$ can be defined in this way.
+\end{unnumberedcorollary}
+
+Let indeed $\mathbf{C}$ be the full subcategory of $\mathbf{A}$ whose
+objects $M$ are such that $\operatorname{Hom}_{\mathbf{A}}(M,I_j)$ is
+zero for every $j$. If $0\to M'\to M\to M''\to0$ is an exact
+sequence of $\mathbf{A}$, we also have the exact sequences
+\[
+0\to\operatorname{Hom}_{\mathbf{A}}(M'',I_j)
+\to\operatorname{Hom}_{\mathbf{A}}(M,I_j)
+\to\operatorname{Hom}_{\mathbf{A}}(M',I_j)\to0.
+\]
+These exact sequences show that $M$ belongs to $\mathbf{C}$ if and
+only if $M'$ and $M''$ belong to $\mathbf{C}$. In other words,
+$\mathbf{C}$ is a thick subcategory of $\mathbf{A}$.
+
+On the other hand, every inductive system $(M_i,\varphi_{ji})$ of
+$\mathbf{A}$ gives rise to the ``equalities''
+\[
+\operatorname{Hom}_{\mathbf{A}}\!\left(\varinjlim_i M_i,I_j\right)
+\cong \varprojlim_i\operatorname{Hom}_{\mathbf{A}}(M_i,I_j).
+\]
+It follows that $\varinjlim_i M_i$ belongs to $\mathbf{C}$ if the
+$M_i$ belong to $\mathbf{C}$.
+
+Conversely, if $\mathbf{C}$ is a localizing subcategory of
+$\mathbf{A}$, then $\mathbf{A}/\mathbf{C}$ is a category with
+injective envelopes; an object $M$ of $\mathbf{A}$ therefore belongs
+to $\mathbf{C}$ if and only if $\operatorname{Hom}_{\mathbf{A}}(M,I)$
+is zero for every injective $\mathbf{C}$-closed object $I$.
+
+\begin{proposition}
+Let $\mathbf{C}$ be a localizing subcategory of a $\Univ$-category
+$\mathbf{A}$ abelian with generators and exact inductive limits. The
+categories $\mathbf{C}$ and $\mathbf{A}/\mathbf{C}$ are
+$\Univ$-categories with generators and exact inductive limits. Moreover,
+the canonical functor $T$ from $\mathbf{A}$ into
+$\mathbf{A}/\mathbf{C}$ commutes with inductive limits.
+\end{proposition}
+
+Let $(U_i)_{i\in I}$ be a family of generators of $\mathbf{A}$. The
+quotients, belonging to $\mathbf{C}$, of the objects $U_i$ form a
+family of generators of $\mathbf{C}$. Moreover, every inductive system
+of objects of $\mathbf{C}$ has an inductive limit in $\mathbf{A}$.
+Proposition~8 shows that this inductive limit still belongs to
+$\mathbf{C}$. It follows that $\mathbf{C}$ is a $\Univ$-category with
+generators and exact inductive limits.
+
+Lemma~5 (\S~2) proves that $\mathbf{A}/\mathbf{C}$ is a
+$\Univ$-category with generators. Consider now an inductive system of
+objects of $\mathbf{A}$, say $(M_i,\varphi_{ji})_{i\in I}$. Let
+$\varphi_i$ be the canonical morphism from $M_i$ into
+$\varinjlim_i M_i$. We then have the ``equalities'':
+\[
+\operatorname{Hom}_{\mathbf{A}/\mathbf{C}}\!\left(T\varinjlim_i M_i,N\right)
+= \operatorname{Hom}_{\mathbf{A}}\!\left(\varinjlim_i M_i,SN\right)
+= \varprojlim_i\operatorname{Hom}_{\mathbf{A}}(M_i,SN)
+= \varprojlim_i
+   \operatorname{Hom}_{\mathbf{A}/\mathbf{C}}(TM_i,N).
+\]
+These equalities show that $(T\varinjlim_i M_i,T\varphi_i)$ is an
+inductive limit of the inductive system $(TM_i,T\varphi_i)$. The
+functor $T$ therefore commutes with inductive limits.
+
+Let now $(N_i,\varphi_{ji})_{i\in I}$ be an inductive system of objects
+of $\mathbf{A}/\mathbf{C}$ and let $\psi_i$ be the canonical morphism
+from $SN_i$ into $\varinjlim_i SN_i$. By the above, the object
+$T\varinjlim_i SN_i$ (together with the morphisms $T\psi_i$) is an
+inductive limit of $(N_i,\varphi_{ji})$. We shall write briefly
+\[
+\varinjlim_i N_i = T\varinjlim_i SN_i.
+\]
