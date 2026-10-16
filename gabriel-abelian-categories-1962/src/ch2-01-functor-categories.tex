@@ -160,3 +160,32 @@ $\sum_{X\in\mathbf{OC}}FX$, we define a product $f.m$ by means of the formula
     (Ff)(m_X)    & \text{if } Z = Y.
   \end{cases}
 \]
+
+The direct sum $\sum_{X\in\mathbf{OC}}FX$ is thus equipped with a
+left module structure over the ring $\mathbf{Z}[C]$. We shall denote by
+$SF$ this module, which is evidently an object of $\mathbf{A}$.
+Likewise, if $\psi\colon F\to G$ is a natural transformation, we shall
+denote by $S\psi$ the linear map
+\[
+  \sum_X\psi(X)\colon \sum_X FX\to \sum_X GX.
+\]
+
+\begin{lemma}
+The maps $F\mapsto SF$, $\psi\mapsto S\psi$ define a functor $S$ from
+$\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$ to $\mathbf{A}$.
+\end{lemma}
+
+It is clear that $T$ and $S$ satisfy the required conditions. This
+completes the proof of Proposition~2. Lemma~2 therefore implies the
+following proposition:
+
+\begin{proposition}
+The category $\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$ has a
+projective generator.
+\end{proposition}
+
+Indeed, $\mathbf{Z}[C]$ is a projective generator of $\mathbf{A}$. It
+follows that $T\mathbf{Z}[C]$ is a projective generator of
+$\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$. Moreover, this functor is
+none other than the functor
+$Y\mapsto \sum_{X\in\mathbf{OC}}\operatorname{Hom}_{\mathbf{C}}(X,Y)$.
