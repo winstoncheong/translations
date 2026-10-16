@@ -137,7 +137,11 @@ jobs:
             main.tex
           # Give the PDF a stable, self-describing name for the website.
           mv ../build/main.pdf "../build/${{ matrix.document }}.pdf"
-          pdfinfo "../build/${{ matrix.document }}.pdf" | grep -E '^(Pages|File size)'
+          ls -lh "../build/${{ matrix.document }}.pdf"
+          # pdfinfo (poppler-utils) is not in the texlive container; use it when present.
+          if command -v pdfinfo >/dev/null 2>&1; then
+            pdfinfo "../build/${{ matrix.document }}.pdf" | grep -E '^(Pages|File size)'
+          fi
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
