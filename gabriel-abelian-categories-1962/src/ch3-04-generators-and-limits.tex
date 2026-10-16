@@ -1,14 +1,17 @@
-%@ pages 377-378
+%@ pages 377-379
 %@ status translated
 % Chapter III, section 4: Categories with generators and exact inductive
-% limits (pp. 377--378).  Transcribed from the page images in
-% reference/source.pdf, not from the OCR text layer.
+% limits (pp. 377--379).  Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer.  The section ends
+% at the top of p. 379 (Proposition 10 and the paragraph on simples);
+% section 5 begins mid-p. 379.
 %
 % Numbering is automatic (src/preamble.tex).  This section prints
-% Proposition 8 and Proposition 9 (the chapter's run of propositions
-% reaches Proposition 7 on p. 377) and one corollary which Gabriel
-% prints without a number, hence `unnumberedcorollary'.  No lemma is
-% stated in this section.
+% Proposition 8, Proposition 9 and Proposition 10 (the chapter's run of
+% propositions reaches Proposition 7 on p. 377), Corollary 1 and
+% Corollary 2 (the corollary counter restarts at every section) and one
+% corollary which Gabriel prints without a number, hence
+% `unnumberedcorollary'.  No lemma is stated in this section.
 %
 % No emendations.
 
@@ -119,11 +122,67 @@ These equalities show that $(T\varinjlim_i M_i,T\varphi_i)$ is an
 inductive limit of the inductive system $(TM_i,T\varphi_i)$. The
 functor $T$ therefore commutes with inductive limits.
 
-Let now $(N_i,\varphi_{ji})_{i\in I}$ be an inductive system of objects
+Let now $(N_i,\psi_{ji})_{i\in I}$ be an inductive system of objects
 of $\mathbf{A}/\mathbf{C}$ and let $\psi_i$ be the canonical morphism
 from $SN_i$ into $\varinjlim_i SN_i$. By the above, the object
-$T\varinjlim_i SN_i$ (together with the morphisms $T\psi_i$) is an
-inductive limit of $(N_i,\varphi_{ji})$. We shall write briefly
+$T\varinjlim_i SN_i$ (together with the morphisms
+$(T\psi_i)\circ\Phi(N_i)^{-1}$) is an
+inductive limit of $(N_i,\psi_{ji})$. We shall write briefly
 \[
 \varinjlim_i N_i = T\varinjlim_i SN_i.
 \]
+
+This last ``formula'' shows in particular that an inductive limit
+of monomorphisms is a monomorphism; this ends the proof.
+
+\begin{corollary}
+Let $\mathbf{C}$ be a localizing subcategory of a locally noetherian
+$\Univ$-category. Then $\mathbf{C}$ and $\mathbf{A}/\mathbf{C}$ are
+locally noetherian $\Univ$-categories. Moreover, the section functor
+commutes with inductive limits.
+\end{corollary}
+
+It remains to show that $S$ commutes with inductive limits. If
+$(N_i,\psi_{ji})$ is an inductive system of objects of
+$\mathbf{A}/\mathbf{C}$, $\varinjlim_i N_i$ is equal to
+$T\varinjlim_i SN_i$. It therefore suffices to prove that the
+functorial morphism $\Psi$ defines an isomorphism from
+$\varinjlim_i SN_i$ onto $ST\varinjlim_i SN_i$: this amounts to saying
+that $\varinjlim_i SN_i$ is $\mathbf{C}$-closed.
+
+This last assertion follows from Lemma~1~(a), \S2: with the notation
+of that lemma, it indeed suffices to verify condition~(a) when $P$
+and $Q$ are noetherian objects. The groups
+$\operatorname{Hom}_{\mathbf{A}}(P,\varinjlim_i SN_i)$ and
+$\operatorname{Hom}_{\mathbf{A}}(Q,\varinjlim_i SN_i)$ are then
+identified respectively with
+$\varinjlim_i\operatorname{Hom}_{\mathbf{A}}(P,SN_i)$ and
+$\varinjlim_i\operatorname{Hom}_{\mathbf{A}}(Q,SN_i)$ (Corollary~1 to
+Theorem~1, Chapter~II); the proof follows directly from these facts
+(Lemma~2, \S2).
+
+\begin{corollary}
+Let $\mathbf{C}$ be a localizing subcategory of a locally finite
+$\Univ$-category. Then $\mathbf{C}$ and $\mathbf{A}/\mathbf{C}$ are
+locally finite $\Univ$-categories.
+\end{corollary}
+
+Suppose now that $\mathbf{A}$ is a locally noetherian
+$\Univ$-category. Let $\mathbf{A}'$ be the full subcategory of
+$\mathbf{A}$ defined by the noetherian objects of $\mathbf{A}$. If
+$\mathbf{C}$ is a localizing subcategory of $\mathbf{A}$, we denote
+by $\mathbf{C}'$ the full subcategory of $\mathbf{A}$ defined by the
+noetherian objects of $\mathbf{C}$. We leave to the reader the task
+of proving the following:
+
+\begin{proposition}
+The map $\mathbf{C}\mapsto\mathbf{C}'$ is a bijective map from the
+set of localizing subcategories of $\mathbf{A}$ onto the set of thick
+subcategories of $\mathbf{A}'$.
+\end{proposition}
+
+In particular, if $\mathbf{A}$ is a locally finite $\Univ$-category,
+every localizing subcategory $\mathbf{C}$ is characterised by the
+simple objects it contains. It may be said that
+$\mathbf{A}/\mathbf{C}$ is obtained from $\mathbf{A}$ by neglecting a
+certain number of simple objects.

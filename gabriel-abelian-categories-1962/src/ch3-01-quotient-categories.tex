@@ -152,17 +152,17 @@ to $\mathbf C$. We are therefore in the presence of the following
 commutative diagram:
 \[
 \begin{tikzcd}
-K \arrow[r] \arrow[d] & M \arrow[r, "u"] \arrow[d] & N \arrow[d] \\
-K/K\cap M' \arrow[r] & M/M' \arrow[r] & N/u(M')
+0 \arrow[r] & K \arrow[r, "i"] \arrow[d, "p"] & M \arrow[r, "u"] \arrow[d, "q"] & N \arrow[d, "r"] \\
+0 \arrow[r] & K/K\cap M' \arrow[r, "i^{\prime}"] & M/M' \arrow[r, "u^{\prime}"] & N/u(M')
 \end{tikzcd}
 \]
-where $i_1$, $q$ and $r$ are the canonical morphisms. Since
+where $p$, $q$ and $r$ are the canonical morphisms. Since
 $Tu\circ f$ is zero, the image of $X'$ under the induced morphism
 $u':M/M'\to N/u(M')$ belongs to $\mathbf C$. If $X''$ denotes the
 inverse image of $\operatorname{Ker}u'$ by $f$, it follows that
 $X'/X''$ and $X/X''$ belong to $\mathbf C$. Moreover, the restriction of
 $f$ to $X''$ factors through a morphism
-$g:X''\to K/K\cap M'$ composed with $i_1$. If $\tilde g$ is the image
+$g:X''\to K/K\cap M'$ composed with $i'$. If $\tilde g$ is the image
 of $g$ in $\operatorname{Hom}_{\mathbf A/\mathbf C}(X,K)$, we have the
 desired equality $Ti\circ\tilde g=f$. The second part of the lemma is
 proved in a ``dual'' way.
@@ -204,11 +204,11 @@ $\operatorname{Hom}_{\mathbf A}(M',N/N')$, where $M/M'$ and $N'$ are
 objects of $\mathbf C$. From this one deduces the commutative diagram
 \[
 \begin{tikzcd}
-TM \arrow[r, "f"] & TN \arrow[d, "Tq_{N'}"] \\
-TM' \arrow[u, "Ti_{M'}"] \arrow[r, "Tf'"] & T(N/N')
+TM \arrow[r, "f"] & TN \arrow[d, "Tq^{N}_{N/N'}"] \\
+TM' \arrow[u, "Ti^{M}_{M'}"] \arrow[r, "Tf"] & T(N/N')
 \end{tikzcd}
 \]
-where $Ti_{M'}$ and $Tq_{N'}$ are isomorphisms. This diagram shows that
+where $Ti^{M}_{M'}$ and $Tq^{N}_{N/N'}$ are isomorphisms. This diagram shows that
 $f$ has a kernel, a cokernel, etc., if and only if the same is true of
 $Tf$. In other words, one may suppose that $f$ is of the form $Tf$.
 
@@ -235,24 +235,25 @@ Let $\mathbf C$ be a thick subcategory of $\mathbf A$ and let
 0 \to M \to N \to P \to 0
 \]
 be an exact sequence of $\mathbf A/\mathbf C$. There then exists a
-diagram of the form (i), commutative, exact and satisfying the following
+diagram of the form (1), commutative, exact and satisfying the following
 conditions: $u$, $v$ and $w$ are isomorphisms of $\mathbf A/\mathbf C$;
 moreover
 \[
-0 \to M_1 \to N_1 \to P_1 \to 0
+0 \to M_1 \xrightarrow{f_1} N_1 \xrightarrow{g_1} P_1 \to 0
 \]
 is an exact sequence of $\mathbf A$.
 \[
+\text{(1)}\qquad
 \begin{tikzcd}
-0 \arrow[r] & M \arrow[r] & N \arrow[r] & P \arrow[r] & 0 \\
-0 \arrow[r] & TM_1 \arrow[r] \arrow[u, "u"] & TN_1 \arrow[r] \arrow[u, "v"] & TP_1 \arrow[r] \arrow[u, "w"] & 0
+0 \arrow[r] & M \arrow[r, "f"] \arrow[d, "u"] & N \arrow[r, "g"] \arrow[d, "v"] & P \arrow[r] \arrow[d, "w"] & 0 \\
+0 \arrow[r] & TM_1 \arrow[r, "Tf_1"] & TN_1 \arrow[r, "Tg_1"] & TP_1 \arrow[r] & 0
 \end{tikzcd}
 \]
 The morphism $f$ is indeed the image of an element
-$f'\in\operatorname{Hom}_{\mathbf A}(M,N/N')$, where $M/M'$ and $N'$
+$f'\in\operatorname{Hom}_{\mathbf A}(M',N/N')$, where $M/M'$ and $N'$
 belong to $\mathbf C$. Since $Tf$ is a monomorphism, $\operatorname{Ker}f'$
 belongs to $\mathbf C$. If $q$ denotes the canonical morphism from
-$M$ onto $\operatorname{Coim}f'$, it is therefore possible to make the
+$M'$ onto $\operatorname{Coim}f'$, it is therefore possible to make the
 following choices: $M_1=\operatorname{Coim}f'$; $N_1=N/N'$;
 $f_1=$ morphism induced by $f'$; $P_1=\operatorname{Coker}f_1$;
 $g_1=$ canonical morphism; $u=(Tq)\circ(Ti)^{-1}$; $v=Tq_{N'}$;
@@ -277,20 +278,20 @@ $\operatorname{Hom}_{\mathbf D}(GM,GN)\to
 \operatorname{Hom}_{\mathbf D}(GM',G(N/N'))$:
 \[
 \begin{tikzcd}
-\operatorname{Hom}_{\mathbf A}(M,N) \arrow[r, "G"] \arrow[d] &
-\operatorname{Hom}_{\mathbf D}(GM,GN) \arrow[d, "\varphi"] \\
+\operatorname{Hom}_{\mathbf A}(M,N) \arrow[r, "G"] \arrow[d, "\varphi"] &
+\operatorname{Hom}_{\mathbf D}(GM,GN) \arrow[d, "\psi"] \\
 \operatorname{Hom}_{\mathbf A}(M',N/N') \arrow[r, "G"] &
 \operatorname{Hom}_{\mathbf D}(GM',G(N/N'))
 \end{tikzcd}
 \]
-It is clear that $\varphi$ is a bijective map; the maps
+It is clear that $\psi$ is a bijective map; the maps
 $\operatorname{Hom}_{\mathbf A}(M',N/N')\to
 \operatorname{Hom}_{\mathbf D}(GM,GN)$ induced by $G$ and by
-$\varphi^{-1}$ therefore define an application $H(M,N)$ from
+$\psi^{-1}$ therefore define a map $H(M,N)$ from
 $\varinjlim \operatorname{Hom}_{\mathbf A}(M',N/N')$ into
 $\operatorname{Hom}_{\mathbf D}(GM,GN)$. When $M$ and $N$ range over
 the objects of $\mathbf A$ (or of $\mathbf A/\mathbf C$), the
-applications $H(M,N)$ determine a functor $H$ from
+maps $H(M,N)$ determine a functor $H$ from
 $\mathbf A/\mathbf C$ into $\mathbf D$; this functor associates to
 every object $M$ of $\mathbf A/\mathbf C$ the object $GM$ of
 $\mathbf D$; it satisfies the equality $G=H\circ T$. The proof of the
@@ -308,7 +309,7 @@ suppose that $H\circ T$ is exact. If
 0 \to M \to N \to P \to 0
 \]
 is an exact sequence of $\mathbf A/\mathbf C$, we consider a diagram
-of the form (i). As the sequence
+of the form (1). As the sequence
 \[
 0 \to HTM_1 \to HTN_1 \to HTP_1 \to 0
 \]

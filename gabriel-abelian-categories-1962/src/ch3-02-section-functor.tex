@@ -14,6 +14,9 @@
 %
 % Notation: we write \mathbf{C}-closed for Gabriel's \emph{C-fermé}
 % and "localizing" for \emph{localisante}, as in section 3.
+%
+% One emendation: in the proof of Proposition 3 the original prints
+% "un objet de A/B"; we print "an object of B = A/C" and footnote it.
 
 \section{Properties of the Section Functor}
 
@@ -79,8 +82,8 @@ belonging to $\mathbf C$. The identity morphism $1_M$ is the image of an
 element $v\in\operatorname{Hom}_{\mathbf A}(M/L,M)$ under the map
 $\operatorname{Hom}_{\mathbf A}(M/L,M)\to\operatorname{Hom}_{\mathbf A}(M,M)$;
 in other words, one has an equality $1_M=v\circ p$, where
-$p\colon M\to M/L$ is the canonical projection. Hence $p$ is an
-isomorphism and $L$ is zero.
+$p\colon M\to M/L$ is the canonical projection. Hence $p$ is a
+monomorphism and $L$ is zero.
 
 Likewise, if
 \[
@@ -98,7 +101,7 @@ $P/P'$ belongs to $\mathbf C$. In particular, every element of
 $\operatorname{Hom}_{\mathbf B}(TP,TM)$ is the image of a morphism
 $f\colon P'\to M$.
 
-Let $N$ be the pushout of the diagram defined by $f$ and by the
+Let $N=M\Sigma_{P'}P$ be the fibred sum of the diagram defined by $f$ and by the
 monomorphism $P'\to P$; the canonical morphism $j\colon M\to N$ is a
 monomorphism and $\operatorname{Coker}j\cong P/P'$
 (Chapter~I, end of \S5). By assertion~(b), there exists a morphism $p\colon
@@ -114,11 +117,11 @@ does not belong to $\mathbf C$. It follows that $Tg$ is not zero
 \emph{(c)}~$\Rightarrow$~\emph{(a)}: we have the commutative diagram
 \[
 \begin{tikzcd}
-\operatorname{Hom}_{\mathbf A}(Q,M) \arrow[r, "T"] &
-\operatorname{Hom}_{\mathbf B}(TQ,TM)\\
-\operatorname{Hom}_{\mathbf A}(P,M) \arrow[u, "\operatorname{Hom}(u{,}M)"]
-\arrow[r, "T"] &
-\operatorname{Hom}_{\mathbf B}(TP,TM) \arrow[u, "\operatorname{Hom}(Tu{,}TM)"]
+\operatorname{Hom}_{\mathbf A}(P,M) \arrow[r, "T(P{,}M)"] &
+\operatorname{Hom}_{\mathbf B}(TP,TM)\\
+\operatorname{Hom}_{\mathbf A}(Q,M) \arrow[u, "\operatorname{Hom}(u{,}M)"]
+\arrow[r, "T(Q{,}M)"] &
+\operatorname{Hom}_{\mathbf B}(TQ,TM) \arrow[u, "\operatorname{Hom}(Tu{,}TM)"]
 \end{tikzcd}
 \]
 The maps $T(P,M)$ and $T(Q,M)$ are bijective. If $\operatorname{Ker}u$
@@ -140,11 +143,11 @@ $\mathbf C$-closed.
 To verify assertion~(a) of Lemma~1, we have the commutative diagram
 \[
 \begin{tikzcd}
-\operatorname{Hom}_{\mathbf A}(Q,SN) \arrow[r, "\varphi"] &
-\operatorname{Hom}_{\mathbf B}(TQ,N)\\
-\operatorname{Hom}_{\mathbf A}(P,SN) \arrow[u, "\operatorname{Hom}(u{,}SN)"]
+\operatorname{Hom}_{\mathbf A}(P,SN) \arrow[r, "\varphi"] &
+\operatorname{Hom}_{\mathbf B}(TP,N)\\
+\operatorname{Hom}_{\mathbf A}(Q,SN) \arrow[u, "\operatorname{Hom}(u{,}SN)"]
 \arrow[r, "\varphi"] &
-\operatorname{Hom}_{\mathbf B}(TP,N) \arrow[u, "\operatorname{Hom}(Tu{,}N)"]
+\operatorname{Hom}_{\mathbf B}(TQ,N) \arrow[u, "\operatorname{Hom}(Tu{,}N)"]
 \end{tikzcd}
 \]
 The maps $\varphi$ are bijective. It follows that
@@ -160,7 +163,8 @@ $\operatorname{Hom}(u,SN)$ is a bijection if $Tu$ is an isomorphism.
 \end{proposition}
 
 To prove~(a), let $M$ be an object of $\mathbf A$ and let $N$ be an object
-of $\mathbf B$. We have the identity
+of $\mathbf B$\ednote{The original prints ``an object of $\mathbf A/\mathbf B$'';
+we print $\mathbf B=\mathbf A/\mathbf C$, the quotient just defined.}. We have the identity
 \[
   \varphi(M,N)=\operatorname{Hom}_{\mathbf B}(TM,\Phi(N))\circ
   T(M,SN).
