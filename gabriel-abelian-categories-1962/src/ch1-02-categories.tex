@@ -1,0 +1,117 @@
+%@ pages 328-330
+%@ status translated
+% Chapter I, section 2: Definition of categories (pp. 328-330).
+
+\section{Definition of categories}
+--- A category $\Cat$ is constituted by the following data:
+
+\begin{itemize}
+\item A set $\mathbf{OC}$ whose elements are called the \emph{objects} of
+      $\Cat$.
+\item For every pair $(M,N)$ of objects of $\Cat$, we are given a set denoted
+      $\operatorname{Hom}_{\Cat}(M,N)$ whose elements are called
+      \emph{morphisms} of $M$ into $N$ [we shall often write $f\colon M\to N$
+      or $M\xrightarrow{f}N$ instead of $f\in
+      \operatorname{Hom}_{\Cat}(M,N)$].
+\item For every triple $(M,N,P)$ of objects of $\Cat$, we are given a map
+      $\mu$ of the product
+      $\operatorname{Hom}_{\Cat}(M,N)\times\operatorname{Hom}_{\Cat}(N,P)$
+      into $\operatorname{Hom}_{\Cat}(M,P)$ [we shall write $g\circ f$ or
+      $g\circ_{\Cat}f$ instead of $\mu(f,g)$; we shall say that $\mu$ is the
+      \emph{law of composition}].
+\end{itemize}
+
+These data are subject to the axioms $\mathrm{C}_1$ and $\mathrm{C}_2$:
+
+\begin{description}
+\item[$\mathrm{C}_1$] Let $f$, $g$ and $h$ be three morphisms:
+$f\colon M\to N$, $g\colon N\to P$ and $h\colon P\to Q$. Under these
+conditions we have the equality $h\circ(g\circ f) = (h\circ g)\circ f$.
+
+\item[$\mathrm{C}_2$] For every object $M$ of $\Cat$, there exists a morphism
+$1_M\colon M\to M$ such that $1_M\circ f = f$ and $g\circ 1_M = g$ whenever
+these equalities have a meaning.
+\end{description}
+
+If $\Cat$ is a category, then for every object $M$ there is a unique morphism
+$1_M$ satisfying $\mathrm{C}_2$. It bears the name of \emph{identity
+morphism} of $M$. If $f\colon M\to N$ is a morphism of $\Cat$, the object $M$
+is called the \emph{source} of $f$, and the object $N$ the \emph{target} of
+$f$. We shall henceforth denote by $\mathbf{MC}$ the sum of the sets
+$\operatorname{Hom}_{\Cat}(M,N)$ and we shall call it the set of
+\emph{morphisms} of $\Cat$.
+
+In what follows, $\Univ\mathbf{Ens}$ or $\mathbf{Ens}$ (resp.\
+$\Univ\mathbf{Ab}$ or $\mathbf{Ab}$) will denote the \emph{category of sets}
+(resp.\ \emph{of abelian groups}):
+
+\begin{itemize}
+\item The objects of $\mathbf{Ens}$ (resp.\ of $\mathbf{Ab}$) are the sets
+      belonging to $\Univ$ (resp.\ the abelian groups whose underlying set
+      belongs to $\Univ$).
+\item If $M$ and $N$ are two objects of $\mathbf{Ens}$ (resp.\ of
+      $\mathbf{Ab}$), a morphism of $M$ into $N$ is a map of $M$ into $N$
+      (resp.\ a linear map of $M$ into $N$).
+\item The law $(f,g)\mapsto g\circ f$ is the usual law of composition of
+      maps.
+\end{itemize}
+
+The definitions given coincide with those of [10], except that the objects of
+a category are here the elements of a set. The reader will do well to refer
+to [10] for the definition of notions such as the following: commutative
+diagram, monomorphism, subobject (called \emph{sub-truc} in [10]),
+generator, etc. We content ourselves with specifying a few notations and
+abuses of language:
+
+A \emph{subobject} of $M$ (resp.\ a \emph{quotient} of $M$) is a
+monomorphism $i_N^M\colon N\to M$ (resp.\ an epimorphism
+$p_Q^M\colon M\to Q$). We shall often say that $N$ is a subobject of $M$ and
+that $i_N^M$ is the canonical monomorphism of $N$ into $M$ (resp.\ that $Q$
+is a quotient of $M$ and that $p_Q^M$ is the canonical epimorphism of $M$
+onto $Q$).
+
+If $\Cat$ is a category, the \emph{dual category} of $\Cat$ shall be denoted
+$\Cat^{\circ}$. If $(\Cat_i)_{i\in I}$ is a family of categories, we denote
+by $\prod_{i\in I}\Cat_i$ the \emph{product category}:
+
+\begin{itemize}
+\item The objects of the product $\prod_{i\in I}\Cat_i$ are the elements of
+      the product of the sets $\mathbf{OC}_i$.
+\item If $(M_i)_{i\in I}$ and $(N_i)_{i\in I}$ are two objects of the
+      product category, a morphism of the first into the second is an element
+      of the product
+      $\prod_{i\in I}\operatorname{Hom}_{\Cat_i}(M_i,N_i)$.
+\item Composition is defined by the formula
+\[
+  (f_i)\circ(g_i) = \bigl(f_i\circ_{\Cat_i}g_i\bigr).
+\]
+\end{itemize}
+
+Finally, let us point out that a \emph{full subcategory} of $\Cat$ is a
+category $\mathbf{D}$ satisfying the following conditions:
+
+\begin{itemize}
+\item The objects of $\mathbf{D}$ are objects of $\Cat$.
+\item If $M$ is an object of $\mathbf{D}$, every object of $\Cat$ isomorphic
+      to $M$ is an object of $\mathbf{D}$.
+\item If $M$ and $N$ are two objects of $\mathbf{D}$,
+      $\operatorname{Hom}_{\mathbf{D}}(M,N)$ is equal to
+      $\operatorname{Hom}_{\Cat}(M,N)$.
+\item The law of composition of $\mathbf{D}$ is induced by that of $\Cat$.
+\end{itemize}
+
+We shall henceforth say that a category $\Cat$ is a
+$\Univ$-category if $\operatorname{Hom}_{\Cat}(M,N)$ belongs to the universe
+$\Univ$ for every pair $(M,N)$ of objects of $\Cat$. Unless expressly stated
+to the contrary, \emph{all the categories considered in this article are
+$\Univ$-categories}. Each time that we speak of an inductive system (resp.\
+of a projective system) of objects of a $\Univ$-category, we shall implicitly
+suppose that this inductive system (resp.\ this projective system) is indexed
+by a set belonging to $\Univ$. Each time that we speak of the direct sum or
+of the direct product of a family of objects of a $\Univ$-category, this
+family is supposed to be indexed by an element of $\Univ$. We shall say that
+$\Cat$ is a \emph{category with inductive limits} if every inductive system
+(indexed by an element of $\Univ$) of objects of $\Cat$ has an inductive
+limit. Likewise, we shall say that $\Cat$ is a \emph{category with
+generators} if there exists a family of generators which is indexed by an
+element of $\Univ$.

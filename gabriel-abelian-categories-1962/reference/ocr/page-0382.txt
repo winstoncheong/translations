@@ -1,0 +1,38 @@
+382
+P. GABRIEL.
+CHAPITRE IV.
+Catégories localement nœthériennes.
+Sauf mention expresse du contraire, toutes les catégories considérées dans
+ce chapitre sont des U-catégories abéliennes avec générateurs et limites
+inductives exactes.
+Ce chapitre est consacré à l'étude des objets injectifs d'une U-catégorie
+localement nœthérienne. Nous tirons de cette étude la morale suivante : une
+catégorie localement nœthérienne est une « extension » de catégorie loca-
+lement finies ; une catégorie localement finie se compare à une catégorie de
+modules.
+1. La dimension de Krull d'une catégorie abélienne. — Soit A une
+catégorie (abélienne...). Nous allons associer à tout ordinal a une sous-
+catégorie localisante Ay, de A. L'ordinal ne possédant aucun élément sera
+noté — i pour des raisons historiques; de même, l'ordinal possédant un
+nombre fini d'éléments n sera noté n — i . Si a et (3 sont deux ordinaux, le
+symbole a T j3 désignera l'ordinal obtenu en prenant « d'abord a, ensuite |3 ». Si
+a et (3 sont deux ordinaux finis, on a par exemple la formule aT|3==a4-P+i '-
+Nous noterons 7^ le foncteur canonique de A dans A/A^.
+La construction des sous-catégories A y, se fait par récurrence transfinie :
+— A_i est la sous-catégorie localisante de A dont les seuls objets sont les
+objets nuls de A. Le foncteur TLi est donc le foncteur identique de A.
+— Si l'ordinal a a un prédécesseur (3, Ay, est la plus petite sous-catégorie
+localisante contenant tous les objets Autels que T^ M soit de longueur finie.
+— Si a est un ordinal limite, Ay, est la plus petite sous-catégorie localisante
+contenant toutes les sous-catégories AQ pour (3 <; a.
+Nous désignons par A^ la plus petite sous-catégorie localisante contenant
+toutes les sous-catégories Ay,\ la catégorie quotient A/A^ ne possède alors
+aucun objet simple. Lorsque M est un objet de A^^ la dimension de Krull de M
+est le plus petit ordinal a tel que M appartienne à Ay. (notation : Kdim M= a).
+Si^d) coïncide avec A^ le plus petit ordinal a tel que A^ soit égal à A sera
+appelé la dimension de Krull de A (notation Kdim A == a). La proposition
+suivante résulte des définitions :
+PROPOSITION 1. — Sou C une sous-catégorie localisante de A. Alors A^
+coïncide avec A si et seulement si C^ et (A/C)^ coïncident respectivement
+avec C et A/C. Dans ce cas on a les inégalités
+sup(KdimÇ, Kdim A /C ) ^ Kdim A ^ (Kdim C) T(Kdim^/C).

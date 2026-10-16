@@ -1,0 +1,46 @@
+CATÉGORIES ABÉLIENNES.
+35 I
+on a le diagramme
+o—^F'M^FM^F"M—^o
+F ' ^ \
+F^\
+F " ^ \
+o —^ A^ FN^ F^N—^ o
+Les morphismes cp (M) et ^ (M) induisent donc une suite exacte
+o->FI'S-^FS-^F!fS
+([4], lemme III, p. 82). L'assertion (c) résulte de cette suite exacte par
+passage à la limite inductive.
+Pour la clarté de l'exposé, nous prouvons l'assertion (d) seulement
+lorsque^ est la catégorie Ah des groupes abéliens; la condition 7?(Cokero)==o
+peut alors s'énoncer de la manière suivante : pour tout objet A de C et tout
+açGA, il existe un monomorphisme i\A->B et un bç.FB tels qu'on ait
+(Gi) (a)=^(£) (b).
+Nous allons voir que cette propriété est encore vraie quand on remplace F
+par RF^ G par RG et cp par 7?cp :
+Soit en effet a en élément de (RG)A. Il existe une suite exacte
+S^Ço-.A-^M-^N-.o)
+et un élément a' de GS dont l'image par l'application canonique de GS dans
+(RG) A est a. Il existe donc aussi un monomorphisme j \M—^B et un élé-
+ment b' de FB tels qu'on ait (67) (a') = cp ( B ) (b'). Si b est l'image de b'
+dans {RF) B et si i=jou^ on trouve l'égalité cherchée :
+((BG)i) (a)=((R^)(£)) (b).
+LKMME h'. — Si g\A'—>A est un monomorphisme^ il en va de même
+pour (RF)g.
+Associons en effet à toute suite 5'== Ço-^A -^M-^N-X)) le diagramme
+o —^ A —"--> M—^-> N ——> o
+^
+^
+^
+1
+
+1M! ^
+o —-> A' -
+u-
+o-
+s-> M—^-^ N' ——> o
+où N ' est le conoyau de uog. Si g~1 S désigne la suite de la seconde ligne,
+il est clair que les suites g—1 S constituent un sous-ensemble cofinal de S^/.
+On en tire que ( H F ) A ' est égal à {{mF^g-^S) et que (RF)g est la limite
+s
+inductive des monomorphismes canoniques de F' (g~~1 S) dans F S. Ceci
+prouve le lemme.

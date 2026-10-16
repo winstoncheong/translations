@@ -1,0 +1,40 @@
+388
+P. GABRIEL.
+ne coïncidait pas avec A, la catégorie A/A^ contiendrait donc un objet nœthé-
+rien non nul M. Pour tout sous-objet propre maximal N de M^ le quo-
+tient M I N serait simple, ce qui est absurde.
+La dernière assertion provient du fait que toute catégorie localement
+nœthérienne dont la dimension de Krull est nulle, est localement finie.
+Module les propositions 6 et 7, le théorème 1 et la proposition 5 s'énoncent
+de la façon suivante :
+THÉORÈME 2 (MATLIS [17]). Soit A une catégorie localement nœthérienne.
+Tout injectif 1 est isomorphe à la somme directe V 7/ d'une famille (//)^
+lei
+d7 objets injectif s indécomposables.
+Si {Jn)nç.ff est une deuxième famille d'injectifs indécomposables^ et si
+les sommes directes ^. // et ^ Jn sont isomorphes^ il existe une bijec-
+l^L
+rc^N
+tion h de i sur N telle que Ii soit isomorphe à Jh{i\-
+La deuxième assertion du théorème 2 résulte aussi du théorème 1 (chap. I).
+PROPOSITION 8 (théorème d'échange). — Soient A une catégorie locale-
+ment nœthérienne et (II) ici une famille d^ injectif s indécomposables de A.
+Si J est un facteur direct de ^ 7^, il existe une partie N de L telle
+i^L
+que ^ Ii soit un supplémentaire de J dans "V //.
+ie.N
+iç.L
+Nous supposons dans la suite de ce paragraphe que A est une catégorie
+localement nœthérienne. Nous disons que la catégorie A est connexe si elle
+n'est pas équivalente au produit de deux catégories non nulles.
+COROLLAIRE. — Toute catégorie localement nœthérienne A est équivalente
+au produit d'une famille (An)nçE de catégories connexes.
+Soit en effet / la sous-catégorie pleine de A dont les objets sont les objets
+injectifs de A. D'après le corollaire 1 de la proposition U (chap. I), il suffit
+de montrer que / est produit d'une famille (In)nçE de catégories additives
+telles que Kl^ soit une catégorie connexe pour tout n. Pour cela nous conve-
+nons de dire que deux injectifs indécomposables I et J sont équivalents s'il
+existe une suite finie (//), i^^^Â, d'injectifs indécomposables satisfaisant
+aux conditions suivantes : /i=7, //.=./; si I ^ / ^ Â ' — I , les groupes
+abéliens IIom(//, //+i) et Hom(//+i, Ii) ne sont pas nuls tous les deux.
+Nous désignons par E l'ensemble des classes d'équivalence ainsi obtenues

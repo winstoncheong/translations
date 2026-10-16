@@ -1,0 +1,43 @@
+358
+P. GABRIEL.
+Dans l'équivalence entre D et Sex(^°, Ab)^ les objets injectifs de D corres-
+pondent aux fondeurs exacts et les limites inductives de 0 correspondent
+aux limites inductives de fondeurs. On en déduit le corollaire suivant.
+COROLLAIRE 1. — Toute limite inductive d^ objets injectifs de 0 est un
+objet injectif. Si (JT^ u^)i^-çj est un système inductif de 0 et si Y est un
+objet nœthérien^ on a V égalité
+Hom^/ Y, lim^\ •==. lim Hom^ ( Y, X^}.
+\
+~T^
+)
+"^>
+COROLLAIRE 2. — Toute catégorie localement nœthérienne est une caté-
+gorie avec limites projectiles.
+Car il en est ainsi pour la catégorie Sex«î°, Ah).
+Nous laissons au lecteur le soin de formuler les énoncés duaux des énoncés
+précédents.
+5. Enveloppes injectives dans les catégories abéliennes [8]. — Soient C
+une catégorie abélienne et M un objet de C. Une extension essentielle de M
+est un monomorphisme i: M—>P qui vérifie la condition suivante : si f est
+un morphisme de source P et si /o i est un monomorphisme, alors / est un
+monomorphisme.
+Il revient au même de dire qu'un sous-objet Ç de P est nul si Qr\i{M)
+est nul. Si M est un sous-objet de P, et si / est le monomorphisme canonique
+de M dans P^ nous dirons que P est extension essentielle de M.
+LEMME 1. — Soient i et j deux monomorphismes^ i : M -> P^ j : P—> Ç.
+Alors j o i est une extension essentielle de M si et seulement si j est une
+extension essentielle de P et i une extension essentielle de M.
+Supposons en effet queyo i soit extension essentielle de M : si y est mono-
+morphisme de source Q et si foj est un monomorphisme, alors /o i est un
+monomorphisme; on en tire que / est un monomorphisme et que j est une
+extension essentielle de P.
+Soit maintenant 7? un sous-objet de P tel que 7?n?(Af)==o; soit / le
+morphisme canonique de Ç sur Ç/j(H). Dans ces conditions, foj'o i est un
+monomorphisme et R est nul. Ceci montre que i est une extension essen-
+tielle de M.
+La réciproque est claire.
+LEMME 2. — Soient deux extensions essentielles i : M —>P^ j : N-> Ç. Le
+morphisme i Q)j' : M Q) N->P © Ç est une extension essentielle de MQN.
+Nous pouvons supposer, pour simplifier, que M et N sont des sous-objets
+de P et Ç, avec i==.i1^^ jz=zi°^. Soit 7? un sous-objet non nul de P Q) Ç.
+Alors l'un des objets c/p{R) ou q'ç(B) n'est pas nul. Si qp(R) n'est pas nul,

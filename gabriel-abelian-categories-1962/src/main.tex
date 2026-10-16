@@ -1,0 +1,82 @@
+% =====================================================================
+%  P. Gabriel, "Des categories abeliennes",
+%  Bulletin de la Societe Mathematique de France 90 (1962), 323-448.
+%  English translation.
+%
+%  Build:  latexmk -pdf -outdir=build src/main.tex
+%          (or simply: make, from this directory)
+%
+%  main.tex carries no page metadata of its own; every content file does.
+%  Page numbers in %@ pages are those of the ORIGINAL French article.
+%
+%  The order below is the order of the original.  Stub files for sections
+%  that are not yet translated print a "not yet translated" notice and are
+%  marked `%@ status todo`; the CI report turns those into the progress
+%  figures, so nothing here is hidden.
+% =====================================================================
+
+\input{preamble}
+
+\begin{document}
+
+% Roman front matter, then the body restarts at the page number of the
+% first page of the original article (323) so the two editions line up.
+\frontmatter
+\input{frontmatter}
+
+\mainmatter
+\setcounter{page}{323}
+
+\input{introduction}
+
+% ---- Chapter I. A Few Recalls on Categories (pp. 328-344) ---------------
+\input{ch1-01-univers}
+\input{ch1-02-categories}
+\input{ch1-03-functors}
+\input{ch1-04-additive-categories}
+\input{ch1-05-abelian-categories}
+\input{ch1-06-generators-and-limits}
+\input{ch1-07-adjoint-functors}
+\input{ch1-08-equivalences}
+\input{ch1-09-enough-injectives}
+
+% ---- Chapter II. Left Exact Functors and Injective Envelopes -----------
+%      (pp. 345-364)
+\input{ch2-01-functor-categories}
+\input{ch2-02-left-exact-functors-abelian}
+\input{ch2-03-left-exact-functors-groups}
+\input{ch2-04-noetherian-categories}
+\input{ch2-05-injective-envelopes}
+\input{ch2-06-generators-and-limits}
+
+% ---- Chapter III. Localisation in Abelian Categories (pp. 365-381) -----
+\input{ch3-01-quotient-categories}
+\input{ch3-02-section-functor}
+\input{ch3-03-injective-envelopes}
+\input{ch3-04-generators-and-limits}
+\input{ch3-05-localizing-subcategories}
+
+% ---- Chapter IV. Locally Noetherian Categories (pp. 382-401) -----------
+\input{ch4-01-krull-dimension}
+\input{ch4-02-structure-of-injectives}
+\input{ch4-03-pseudocompact-modules}
+\input{ch4-04-duality}
+
+% ---- Chapter V. Applications to the Study of Modules (pp. 402-438) -----
+\input{ch5-01-module-categories}
+\input{ch5-02-localisation}
+\input{ch5-03-goldies-theorem}
+\input{ch5-04-indecomposable-injectives}
+\input{ch5-05-stability-under-injective-envelopes}
+\input{ch5-06-finite-extensions}
+\input{ch5-07-krull-dimension-of-rings}
+
+% ---- Chapter VI. Applications to Quasi-Coherent Sheaves (pp. 439-446) --
+\input{ch6-01-gluing-abelian-categories}
+\input{ch6-02-properties-of-a-gluing}
+\input{ch6-03-preschemes}
+
+\backmatter
+\input{bibliography}
+
+\end{document}

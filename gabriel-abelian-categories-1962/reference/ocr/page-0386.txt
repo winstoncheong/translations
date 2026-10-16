@@ -1,0 +1,43 @@
+386
+P. GABRIEL.
+Réciproquement, soit (/a) une famille de morphismes satisfaisant aux
+conditions (a), (&), (c) et ( d ) . Il est clair que Im Ta/a est le plus grand
+sous-objet de Im Ta/ qui appartient à ^aTo- Si 6' est un sous-objet simple
+de Ty^M^ -S'nim Ta/est un sous-objet non nul de Ty^M et appartient à ^aTo-
+II en résulte que S(\\mTy,f est contenu dans Im T'a/a; tout sous-objet
+simple de Ty,M « coupe » donc Tm Ta/ai ce q111 prouve la dernière assertion.
+THÉORÈME 1. — Soit 1 un objet injectif d'une catégorie A dont la dimen-
+sion de Krull est définie. Il existe une famille (T/)/^ d^ injectif s indé-
+composables de A, telle que l soit isomorphe à l'enveloppe injective de la
+somme directe ^ Ii.
+i^L
+Si (Jn) ç:u ^st une deuxième famille d^ injectif s indécomposables^ et
+si 'V Ii et ^ Jn ont même enveloppe injective^ il existe une bijection h
+l
+n
+de L sur N telle que Ii soit isomorphe à Jh{i}'
+Prouvons d'abord l'existence d'une famille (T/)^/
+'- nous utilisons la pro-
+position précédente en choisissant M égal à I. Si ENy. est « 1 » 'enveloppe
+injective de TVa, il est clair que / est isomorphe à l'enveloppe injective de la
+somme directe ^ ENy,. Il est donc suffisant de prouver que ENy. est
+a
+l'enveloppe injective d'une somme directe d'injectifs indécomposables. OrTVa
+ne contient aucun sous-objet non nul appartenant à A^\ de plus, Ty,Ny, est
+un objet semi-simple de A/Ay,. On en déduit l'existence d'une famille (A^)^^
+de sous-objets de TVa? q1111 satisfait aux conditions suivantes : T^N^ est un
+objet simple; la somme N'y, des TVa est directe; le monomorphisme cano-
+nique de N'y. dans TVa induit un isomorphisme de Ty^N'y. sur Ty^Ny.. Si EN^
+est l'enveloppe injective de TVa, il en résulte que Ny. et V ENÏ ont même
+a-
+enveloppe injective. Comme EN^ est indécomposable, la première partie du
+théorème est prouvée.
+Prouvons la deuxième assertion : désignons parla (resp. parYVa) l'ensemble
+des / (resp. des n) tels que le socle de T/ (resp. de Jn) « appartienne »
+à Spa(^). Avec les notations de la proposition précédente, il est alors clair
+que TVa? ^ II et ^ Jn ont même enveloppe injective. Si l'on considère
+i^La.
+nç^
+ces objets comme des objets de A IA^ il en résulte que TVa, ^, II et ^. Jn
+/ela
+rtçNo.

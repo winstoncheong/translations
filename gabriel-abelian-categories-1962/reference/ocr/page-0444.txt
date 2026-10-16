@@ -1,0 +1,41 @@
+444
+P. GABRIEL.
+Prouvons l'assertion (b) : Si /est un (9^-module injectif indécomposable»
+trois cas sont possibles :
+— /appartient à Sp (Ker T) ; autrement dit, / contient un 0^-sous-module
+non nul dont le support est contenu dans V''== X— V. Il s'ensuit que /
+appartient à Sp (<?), autrement dit est isomorphe à l'image directe d'un
+(°x\ ^7)-module injectif indécomposable </. Comme U satisfait au théorème,
+le support de J est une partie fermée irréductible contenue dans V. Le
+support de / coïncide par conséquent avec le support de J\ l'assertion (b)
+en découle.
+— / contient un (^-sous-module non nul dont le support est contenu
+dans U1 ^=. X—U. Un raisonnement analogue au raisonnement précédent
+montre alors que le support de / est une partie fermée irréductible contenue
+dans U ' .
+— 1 appartient à Sp ( B ) ; autrement dit, le support de tout 0^-sous-module
+non nul de /rencontre U r\ V. Si y est l'injection canonique de U r\ V dans
+^T, /est alors isomorphe à l'image directe J\{K) d'un {Ox\ U r\ F)-module
+injectif indécomposable K. Comme l'image directe de K dans V coïncide
+avec j\ (K) \ V et est un (^x\ ïQ-module injectif indécomposable, le support
+de /| V est une partie fermée irréductible de F; de plus, tout sous-module
+non nul de /| Fa même support qiie /[ V. Pour la même raison, le support
+de /| U est fermé et irréductible et tout sous-module non nul de /[ U a
+même support que /[ U. L'assertion (b) en résulte.
+L'assertion (c) enfin résulte de la classification que nous venons de faire
+et do fait que toute partie fermée irréductible de ^T est l'adhérence d'une
+partie fermée irréductible de U ou de V.
+Revenons-en maintenant au diagramme (^), et soient /? et T les projec-
+tions canoniques de C | \ û sur C et 0. Nous supposons que les catégories
+B
+C et 0 sont localement nœthériennes, que les hypothèses du lemme 2 sont
+vérifiées et que les sous-catégories localisantes Ker F et Ker G sont stables
+par enveloppes injectives. Il s'ensuit que les sous-catégories Ker T et Ker/?
+de C | | Z7 sont stables par enveloppes injectives et qu'une donnée de
+B
+recollement (/, </, o") est un objet injectif de C | | û si et seulement si /
+B
+et /sont des objets injectifs de C et 0. Nous nous proposons de rechercher
+les sous-catégories localisantes de C | | D'y si C' (resp. 0 ' ) est une sous-caté-
+B
+gorie localisante de C (resp. de 0), nous désignons pour cela par FC' (resp.

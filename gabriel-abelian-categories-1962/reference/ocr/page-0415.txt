@@ -1,0 +1,48 @@
+CATÉGORIES ABÉLIENNES.
+4l5
+Tout idéal appartenant à F s rencontre évidemment S\ la réciproque est
+vraie si l'on a V s ç, S^ \f açA^ 3 tç. S^ 3 b ç A tels qu'on ait a. t == s .b. Nous
+allons retrouver cette condition ; pour cela, nous notons M s au lieu de Mp :
+DÉFINITION. — Soient
+<? : A --> B un Jiomomorphisme Panneaux avec
+élément unité et S une partie multiplicative de A. On dit que (fi. 9) est
+un anneau de fractions à droite de A pour S si l'on a :
+a. Ker cp est Fg-négligeable ; autrement dit^ si ^(a) est nul^ il existe s € *S'
+tel qu'on ait a. s •=•=. o.
+b. U image par îp de tout élément de S est inversible (a gauche et a
+droite).
+c. Tout élément b de B est de la forme b == 9(0) .îp(^)- 1, aç 4, sçS.
+PROPOSITION 5. — Soient A un anneau et S une partie multiplicative
+de A. Les assertions suivantes sont équivalentes :
+a. Il existe un anneau de fractions à droite de A pour S.
+b. S satisfait aux conditons suivantes :
+(^•)
+^sçS,
+\/açA, 3tçS, 3bçA
+tels qu'on ait a.t=s.b.
+(i^i^)
+si a €^4,
+si sç.S
+et si 5.0=0,
+il existe tç S tel que a. t == o.
+c. L'image d'un élément de S par F application u^ : A -> A^ est inversible.
+Si ces conditions sont remplies et si (^,9) est un anneau de fractions à
+droite de A pour S^ il existe un et un seul isomorphisme ^ de B sur Ap tel
+qu'on ait ^ o cp == u^. Le fondeur M —->Ms est alors exact et il est iso-
+morphe au fondeur M —>M Q)^As.
+(a)=>(^) : L'assertion (içiç) est claire car cp(a) est nul si a est nul.
+D'autre part, ^(s)~ i .^(a) est un élément de /?, et est donc de la forme
+cp(5)-1.9(a)==:(p(^).îp(/•)-^
+r ç S ,
+c ç 4 .
+On en tire l'égalité 9(0) .cp(r) == ^ ( s ) .<^(c). Autrement dit, a . r — s . c
+appartient à Ker cp; il existe par conséquent un uçS tel qu'on ait
+a.r.u — s.c.u ==. o. On posera t == r ,u et b == c.u.
+(b)=^>(c) : Nous montrons d'abord que les conditions ( ^ ) et (**)
+entraînent l'exactitude du fondeur M ^-> Ms' Donnons-nous un diagramme
+l
+l-
+M-^N——>o.
+où 1 appartient à Fs et où M et Ker p sont 7^-fermés. Il suffit de montrer
+que l contient un idéal me^y tel que la restriction de u à m soit de la
+forme p o v ^ où v : m —^ M [ proposition 7 (6), chap. III].

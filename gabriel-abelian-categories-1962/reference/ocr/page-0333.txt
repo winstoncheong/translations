@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+333
+Considérons maintenant les diagrammes ( i ) et (2) :
+B
+B
+/
+/
+(I) <
+(2) <
+•
+C
+C
+Une somme fibrée du diagramme (i) est un triplet (P, M, P) formé d'un
+objet P et de deux morphismes, u : B — ^ P ^ v : C->P^ tels qu'on ait :
+uoh=vok\ pour tout couple (6, c) de morphismes tels que boh e t c o k
+soient définis et égaux, il existe un et un seul morphisme a dont la source
+est P, qui a même but que b et c et qui satisfait aux égalités b=aou^
+c==aop. S'il existe des sommes fibrées du diagramme (i), nous en choisis-
+sons une que nous notons
+(B^C.j^jc)'
+Nous disons alors que B^jC est « la » somme fibrée du diagramme (i)
+et quey/î etyç sont « les » morphismes canoniques.
+La notion duale est celle de produit jibré : s'il existe, nous notons Z? 11^ C
+« le » produit fibre du diagramme (2); « les » morphismes canoniques sont
+notés € / B et q'c-
+^. Catégories additives (d'après Grothendieck). — Soit C une catégorie
+satisfaisant aux axiomes suivants :
+C Ad 1 : II existe un objet nul 0.
+CAd2 : Pour tout couple (M^ N ) d'objets de C, le produit direct de M et
+de 7V, de même que la somme directe de M et de N existent.
+LEMME 1. — Si M et N sont deux objets de C^ il existe un et un seul
+morphisme h(M, N) : MÎN—^MfIN tel qu'on ait
+q^ h(M, N) OJ'M= IM,
+q'N^ ^W N) °JM=O,
+^Â-o A(Af, N) 0^== i^
+qM^h{M,N)oj'N=o.
+Si nous désignons par II (resp. I<) le foncteur
+(Af, N) —^n./V^i-esp. (M, N) ^->MIN]
+de la catégorie produit CIIC dans C, le lemme 1 peut être complété par le
+LEMME 2. — Les morphismes h (M ^ N) définissent un morphime fonctoriel
+du foncteur ^ dans le foncteur II.
+Supposons maintenant que C satisfait à un axiome de plus :
+G Ad 3 : Pour tout couple (M, N ) d'objets de C, le morphisme h(M, TV) de
+M 2 7V dans M II N est un isomorphisme.

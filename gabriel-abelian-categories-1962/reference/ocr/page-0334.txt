@@ -1,0 +1,48 @@
+334
+P. GABRIEL.
+Dans ces conditions, nous pouvons supposer que M^N a été choisi égal
+à MUN et tel que h (A/, TV) soit le morphisme identique de M UN. Nous
+notons alors M Q) N au lieu de A/ J^ 7V ou M II TV. Il est facile de prouver que
+l'identification de la somme directe avec le produit direct est compatible avec
+« l'échange des facteurs M et N » et avec les isomorphismes canoniques de
+( M Î N ) I P s u v M I ( N I P ) et de (^/IITV) HP sur M\\ ( N Î I P ) .
+Si M est un objet de C^ nous désignons par A,y (resp. J^v) le morphisme,
+dit diagonale de J1/dans M ff) M (resp. de M@M dans AT) qui est défini
+par les égalités ^oA^==i^, ^oA^=ij/ (resp. ^M°J'M=ÎM, ^M°JM==ÏM)'
+Si / et g sont deux morphismes de même source M et de même but 7V, nous
+désignons par f-^- g le composé des morphismes suivants :
+M-^ M ® M^ N © TV"-^ TV.
+LEMME 3. — La loi interne (f^ g') -> f'4- g est commutative et associative.
+Le morphisme oy^ ^ est un élément neutre pour cette loi.
+LEMME ^. — Soient /, // : M' —> Net g^ g' : N —^ P des morphismes de C.
+On a les égalités g^(f-Jr-f') ^^oy-h^o^ et (^+^) o/==^o/4-^o/.
+Il existe des catégories satisfaisant aux axiomes CAdI, 2 et 3 et pour
+lesquelles les monoïdes Hom (M^ N) ne sont pas des groupes abéliens. Ceci
+ne peut avoir lieu si la catégorie C satisfait à l'axiome CAd^.
+CAd^ : Pour tout objet M, il existe un morphisme c(M) : M -> M tel que
+le diagramme suivant soit commutatif :
+M
+——°—>
+M
+1
+-t-
+^M\
+\^M
+Y
+^/©^W
+
+1
+M@M———^M@M
+La commutativité du diagramme signifie que c(M) est un élément opposé
+de ÎM dans Hom(Af, N). Il en résulte qu'un morphisme / : M-> N a pour
+opposé le composé
+c(N) of=foc(M).
+PROPOSITION 2. — Si C est une catégorie^ les deux assertions suivantes
+sont équivalentes :
+a. La catégorie C satisfait aux axiomes C Ad 1, 2, 3 et k.
+b. La catégorie C satisfait à C Ad 1 et à l'une ou l'autre assertion de
+G Ad 2 ; en outre, on peut munir les ensembles Hom (M^ 7V) d'une structure
+de groupe abélien de telle façon que les lois de composition soient des
+applications bilinéaires.
+L'implication (a)=^(b) résulte des lemmes précédents. L'implication
+(b) =>(<%) est classique; elle est démontrée dans [10].

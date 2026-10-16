@@ -1,0 +1,49 @@
+Bull. Soc. math. France^
+90, 1962, p. 323 à 448.
+DES CATÉGORIES ABÉLIENNES (1)
+PAR
+PIERRE GABRIEL.
+TABLE DES MATIERES.
+Pages
+INTRODUCTION . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+324
+CHAPITRE 1 : Quelques rappels sur les catégories.
+1. Les univers de G r o t h e n d i e c k . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+328
+2. Définition des c a t é g o r i e s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+328
+3. Fondeurs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+33o
+4. Catégories a d d i t i v e s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+333
+5. Catégories abéliennes .........................................................
+335
+6. Catégories avec générateurs et limites inductives exactes. . . . . . . . . . . . . . . . . . . . . . .
+336
+7. Foncteurs adjoints ............................................................
+338
+8. Equivalences de catégories ....................................................
+34i
+9. Catégories abéliennes ayant assez d ' i n j e c t i f s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+343
+CHAPITRE II : Foncteurs exacts à gauche et enveloppes injectives.
+1. Catégories de fondeurs........................................................
+345
+2. Fondeurs exacts à gauche à valeurs dans une catégorie abélienne ..............
+348
+3. Fondeurs exacts à gauche à valeurs dans les groupes abéliens..................
+354
+4. Catégories n œ t h é r i e n n e s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+355
+5. Enveloppes injectives dans les catégories abéliennes............................
+358
+6. Catégories avec générateurs et limites inductives exactes.......................
+362
+CHAPITRE III : La localisation dans les catégories abéliennes.
+1. Catégories quotien t ...........................................................
+365
+2. Propriétés du fondeur section.................................................
+36Q
+( 1) Thèse Se. math., Paris, 1961.
+BULL. SOC. MATH. — T. 90, FASC. 3.
+2'i

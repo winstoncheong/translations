@@ -1,0 +1,50 @@
+36/^
+P. GABRIEL.
+Le théorème 3 est souvent utilisé pour étendre aux catégories abéliennes
+des résultats prouvés pour les groupes abéliens; nous donnons un exemple :
+considérons dans C le diagramme commutatif et exact (^).
+A-^B——>C
+(*)
+J
+b\
+c\
+4-
+4-
+4-
+o——>Af-u^£f-^C'
+Les morphismes u et p induisent des morphismes u" : Kera-> Kerb
+-et v" : Kerb->Kerc. Je dis que la suite (**) est exacte :
+( * ^ )
+Ker<2 —u-^ Kerb —^> Ker c.
+Comme F est un fondeur exact et fidèle, il suffit en effet de vérifier
+l'exactitude de la suite (***) :
+(***)
+FKera^FKerb^->FKerc.
+Or la suite (* * *) peut être construite à partir de (* ^ ^ ^) comme (* *)
+a été construit à partir de (*); il suffit donc de prouver notre assertion
+lorsque (*) est un diagramme de groupes abéliens, ce qui est facile.
+FAJ^F^^FC
+(¥**^)
+rJ
+pJ
+pJ
+4
+-
+4
+-
+4-
+o — — > F A ' ^ > F B ' - ^ ^ F C '
+CHAPITRE III.
+La localisation dans les catégories abéliennes.
+Soit E un espace topologique, U un ouvert de E\ A la catégorie des
+faisceaux de groupes abéliens sur E et B la catégorie des faisceaux de groupes
+abéliens sur V. Soit T : A -> B le foncteur M —> M\ U, où M\ U désigne la
+restriction de M à U', soit enfin S le foncteur image directe de A dans B.
+Il est bien connu que T est exact, que S est adjoint à T et que To S est iso-
+morphe au foncteur identique de B. Nous étudions ici des foncteurs T :
+A ~^B et S : B—^A qui possèdent les propriétés que nous venons d'énoncer,
+A et B étant remplacées par des catégories abéliennes quelconques. Les
+résultats de ce chapitre seront utilisés au chapitre IV.
+Les catégories considérées dans ce chapitre ne sont pas nécessairement
+des U-catégories. Nous nous servirons cependant des résultats du chapitre 1
+en remplaçant, si besoin est, l'univers U par un univers plus grand.

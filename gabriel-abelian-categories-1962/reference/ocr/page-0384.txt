@@ -1,0 +1,42 @@
+384
+P. GABRIEL.
+COROLLAIRE 1. — Soit C une sous-catégorie localisante d'une catégorie A
+dont la dimension de Krull est définie. Un objet M de A appartient à C si
+et seulement si Horn^ (M, I) est nul pour tout injectif indécomposable de A
+dont le type appartient à S p ( A / C ) .
+Soit en effet D la sous-catégorie localisante de A dont les objets M sont tels
+que Hom^(^ /) soit nul pour tout injectif indécomposable dont le type
+appartient à S p ( A / C ) (corollaire de la proposition 8, chap. III). Il est clair
+que 0 contient C. Si 0 ne coïncide pas avec C, il existe un objet M de 0 qui
+est non nul et qui ne contient aucun sous-objet non nul de C. Soit donc (3 le
+plus petit ordinal tel que M contienne un sous-objet non nul de AQ. Il est
+clair que (3 a un prédécesseur a. Il existe donc un sous-objet N de M tel que
+Ty,N soit simple. Si / est l'enveloppe injective de A\ le type de / appartient
+à S p ( A / C ) et Hom^ {M, I) n'est pas nul : il y a contradiction.
+COROLLAIRE 2. — Soient C et D deux sous-catégories localisantes d'une
+catégorie A dont la dimension de Krull est définie. Alors C coïncide avec D
+si et seulement si Sp (C) coïncide avec Sp (0).
+Cela résulte du corollaire 1.
+Si / est un injectif indécomposable de A^ on remarque que l'anneau des
+endomorphismes de s ( I ) (dans A ou dans A/Ao,) est un corps. Si A est
+l'anneau local des endomorphismes de 7, ce corps n'est autre que le quotient
+de A par son radical de Jacobson : soit en effet / un endomorphisme de /
+(dans A ou dans A / A ^ ) ; l'image de s ( I ) par/est nulle ou est un objet simple
+(dans A / A ^ ) ^ le morphisme / induit donc un endomorphisme // de .?(/);
+comme /est injectif, tout endomorphisme de s ( I ) se prolonge réciproquement
+en un endomorphisme de I. Ceci montre que l'application / —> /' est
+surjective. D'autre part // est non nul si et seulement si / est un auto-
+rnorphisme. Nous avons ainsi prouvé la
+PROPOSITION 3. — Soient A une catégorie dont la dimension de Krull est
+définie^ et
+1 un objet injectif indécomposable de A. Le corps des endo-
+morphismes du socle s(f) est le quotient de F anneau des endomorphismes
+de 1 par son radical de Jacobson.
+La proposition suivante va nous donner des renseignements sur les
+enveloppes injectives de la catégorie A :
+PROPOSITION ^. — Sou M un objet d'une catégorie A dont la dimension
+de Krull est définie. Il existe une famille (/a) de morpïlismes de A^ qui est
+indexée par les ordinaux a < Kdim^ et qui satisfait aux conditions (a),
+(b), ( c ) e t ( d ) :
+a. /a est un morphisme d'un objet A^ dans M.
+b. Tout sous-objet de Ny, appartenant à A^ est nul.

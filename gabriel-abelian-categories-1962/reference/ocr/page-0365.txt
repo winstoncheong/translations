@@ -1,0 +1,37 @@
+CATÉGORIES ABÉLIENNES.
+365
+1. Catégories quotient. — Rappelons qu'une sous-catégorie pleine C de
+la catégorie abélienne A est dite épaisse si la condition suivante est réalisée
+[10] : pour toute suite exacte de A de la forme ( ^ ), Af est un objet de C si
+et seulement si M' et M" sont des objets de C :
+( * )
+o -> M'-^ Af-4 M"-> o.
+La donnée de A et de C permet de construire une nouvelle catégorie abé-
+îienne que nous noterons A/C et qu'on appelle catégorie quotient de A parC
+[10]:
+— Les objets de A/C coïncident avec les objets de A.
+— Si M et N sont deux objets de >1, M' et N ' deux sous-objets de M et 7V,
+les morphismes canoniques de M' dans M et de N dans N / N ' définissent une
+application linéaire
+Hom^ ( fîi,, /^v, ) •
+Horn^ ( ^7, N) -> Hom^ ( ^/, N/N' ).
+Quand J^ et N ' parcourent les sous-objets de M et N tels que M/M' et A'
+soient des objets de C^ les groupes abéliens Hom^ (7^, N / N ' ) définissent de
+façon évidente un système inductif. Nous poserons par définition
+Hom^(Af, N) ==. lim Hom^ (M', N / N ' ) .
+L'ensemble Homj/p(J7, N) est donc muni d'une structure de groupe
+abélien.
+— 11 reste à définir des lois de composition bilinéaires :
+Hom^(^, N) x Hom^/ç(7V, P) —Hom^(^f, P).
+Pour cela, soit/un élément de Homj/p(Af, 7V) et soit "g un élément de
+Homj/^(7y, P). L'élément/est l'image d'un morphisme/: M ' - ^ N / N ' où
+M/M' et A" sont des objets de C. De même, ^ est l'image d'un morphisme g- :
+N'-> P / P ' , où 7V/A^ et P' sont des objets de C. Si J7" désigne l'image réci-
+proque/-l((AW+A/)/7V/), il est facile de voir que M/M" appartient à C; nous
+notons // le morphisme de M" dans N " - ^ r - N ' / N ' qui est induit par/. De
+même, g ( N ' C \ N ' ) est un objet de C; si P" désigne la somme P ' ^ g { N " r\N),
+il est facile de voir que P" appartient à C; nous notons g ' le morphisme de
+N " / N " r\N' dans P / P " qui est induit par g.
+Soit h le composé de/7, de l'isomorphisme canonique de N " + N ' / N ' sur
+N" / N " r\ N ' et de g ' . L'image h de h dans Hom^/p(J7, P) dépend seulement
+de / et ~g et non de / et g. Il est donc licite de définir les lois de composition

@@ -1,0 +1,41 @@
+424
+P. GABRIEL.
+définit une injection de Spec(A) dans le spectre de la catégorie modyl. Nous
+identifierons toujours Spec(A) à l'image de cette injection.
+PROPOSITION 7. — Soient A un anneau nœthérien à droite et C une sous-
+catégorie localisante de mody4. Un idéal bilatère premier p appartient
+à Sp(C) (chap. IV, § 1) si et seulement si A/p est un objet de C.
+Il est clair que p appartient à Sp (C) si A/p est un objet de C. Supposons
+réciproquement que p appartienne à S p ( C ) . Cela signifie que /p contient un
+sous-module non nul appartenant à C. Il en résulte que A / p contient un
+sous-module non nul N appartenant à C. Nous désignons par S la partie
+multiplicative formée des éléments réguliers de A / p (cf. § 3). Si P est un
+sous-groupe de TV, l'idéal à droite AnnP de A / p qui est formé des a tels
+que P. a soit nul, est l'intersection de A / p avec un idéal à droite de l'anneau
+simple ( A / p ) s . Il s'ensuit que les idéaux à droite de A de la forme AnnP
+satisfont à la condition des chaînes descendantes. En particulier, il existe un
+nombre fini d'éléments cTj, . . ., Xr de N tels qu'on ait
+i-=.r
+o == [ \ Anna?;.
+Il existe donc une application ^4-linéaire de A / p dans la somme directe
+des modules Xi.A. Il en résulte que A / p appartient à C.
+c. Q. F. D.
+Si s est un élément de Sp(mody4 ), et si /.ç est un A -module injectif indé-
+composable de type ^, l'idéal bilatère A ( I s ) appartient à Spec(^4). Nous
+dirons que l'application s —^ A (/y) est la projection canonique de Sp(mod^4)
+sur Spec(^4). Cette projection est l'identité sur Spec(^4); elle est donc
+surjective. Lorsqu'elle est bijective, nous disons que Vanneau A possède
+assez d^ idéaux bilatères.
+Soit A un anneau, nœthérien à droite et possédant assez d'idéaux bilatères.
+Si F est un ensemble d'idéaux à droite topologisant et idempotent, nous
+avons vu que le produit I.m de deux idéaux à droite I et m appartient à F
+pourvu que 1 et îîî appartiennent à F. La loi multiplicative de A munit donc
+Pensemble F d'une structure de monoïde. Je dis que le sous-monoïde de F
+qui est engendré par les idéaux bilatères premiers appartenant à F^ est
+cofinal : la sous-catégorie F est en effet engendrée par les modules A / p ^ où p
+parcourt les idéaux bilatères premiers appartenant à F (proposition 7 et
+corollaire 2 de la proposition 2, chap. IV). Tout module nœthérien M
+appartenant à F possède par conséquent une suite de composition
+0==X)C^lC . . . CMrCMr+i==M,
+dont les quotients Mi+i/Mi sont annulés par un idéal bilatère premier p, ç F.
+On tire de là que le produit pr.pr—i- ' -Ro annule M. Si M est le quotient

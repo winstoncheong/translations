@@ -1,0 +1,43 @@
+374
+P. GABRIEL.
+L'existence de générateurs résulte du lemme ^.
+La « nature » recèle beaucoup de sous-catégories localisantes. La proposi-
+tion qui suit permet parfois de les déceler : soient A et B deux catégories
+abéliennes, T^ un foncteur de A dans B et 6'i un fondeur adjoint à T^.
+Nous conservons aux lettres <I»i, Ti, cpi et ^i leur signification habituelle
+(c/.chap. I, §7).
+PROPOSITION 5. — Supposons^ avec les notations ci-dessus^ que T^ est un
+foncteur exact et que <l>i est un isomorphisme de T^o Si sur In. Alors
+Ker 77! est une sous-catégorie localisante de A et T^ induit une équivalence
+entre A/Ker T^ et B.
+Soit en effet T le foncteur canonique de A dans A/Ker 7\ ; (Ker 7\ désigne
+la sous-catégorie épaisse de A dont les objets sont annulés par Ti); soit/?
+l'unique foncteur de A/KerT^ dans B tel qu'on ait T^=Ro T. Si f est un
+morphisme deA^ T^f est un isomorphisme si et seulement si T^Ker/et
+TiCoker/sont nuls, c'est-à-dire si et seulement si Tf est un isomorphisme.
+Nous appliquons cette remarque au cas particulier où / est le morphisme
+W^(M) de M dans ( S ^ o T^)M. On sait en effet que le composé de T^W^M)
+et de <^i (TiM) est le morphisme identique de T^M. Comme 0i ( T^M) est
+un isomorphisme, il s'ensuit que T^\(M), donc TW^(M), sont des iso-
+morphismes. Comme d'autre part les objets M de A coïncident avec les objets
+TM de A/KerTi^ les morphismes T^î\(M) définissent un isomorphisme du
+foncteur identique de A/KerT^ sur le foncteur (TSi)B. On en tire que
+( TSi )7? et 7?( TSi) sont isomorphes aux foncteurs identiques de A/Ker T^
+et de B. Cela signifie que JR et TS^ définissent une équivalence de A/KerT^
+avec B.
+Nous laissons au lecteur le soin de prouver que -S^oT? est un foncteur
+adjoint à 77, ce qui montre que KerT'i est une sous-catégorie localisante
+de A.
+3. Catégories avec enveloppes injectives. — Nous utilisons les notations
+du paragraphe précédent.
+PROPOSITION 6. — Soit C une sous-catégorie épaisse d'une catégorie abé-
+lienne A. Soit i : M—>I une enveloppe injective d'un objet M de A qui ne
+contient aucun objet non nul de C. Alors I est C-fermé et le morphisme Ti
+est une enveloppe injective de TM.
+Soit en effet N un sous-objet de /appartenant à C; alors r~1 (7V) appartient
+à C et est donc nul; comme i est une extension essentielle, il en résulte que 7V
+est nul. Ceci prouve que I est C-fermé [lemme 1 (b), § 2].
+Un argument déjà employé dans la preuve du lemme 3 (§ 2) montre que
+Ti est une extension essentielle. Il reste donc à démontrer que 77 est
+injectif : donnons-nous pour cela un monomorphisme // : TI-> TM', ce
+monomorphisme est l'image d'un morphisme /: I ' - > M / M ' , où I ' et M'

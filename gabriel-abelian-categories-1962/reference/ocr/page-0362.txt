@@ -1,0 +1,42 @@
+362
+P. GABRIEL.
+dans M^ V enveloppe injective de M est isomorphe à la somme directe de
+V enveloppe injective de N et de V enveloppe injective de Ç.
+Soient en effet Ç et Q' deux compléments de N dans M^ et soit P un
+élément maximal de l'ensemble des sous-objets de M qui sont extension
+essentielle de N. Alors P est un complément à la fois de Ç et de Q''. Il en
+résulte que Ç et Ç' ont même enveloppe injective que M/P^ ce qui prouve
+la première assertion. D'autre part 7V+ Ç est isomorphe à la somme
+directe N Q) Ç et M est extension essentielle de 7V 4- Ç. Il s'ensuit que M a
+même enveloppe injective que N Q) Ç; d'où la preuve grâce à la proposition 9.
+Nous laissons au lecteur la recherche des énoncés duaux des énoncés
+précédents. Disons simplement qu'un revêtement essentiel de M est un
+épimorphisme p : P -> M qui vérifie la condition suivante : si f est un
+morphisme de but P, et si p o f est un épimorphisme, alors / est un
+épimorphisme. Il revient au même de dire qu'un sous-objet Ç' de P est égal
+à P pourvu que Ç'4- Ker/? soit égal à P.
+La notion duale de celle d'enveloppe injective est la notion d'enveloppe
+projectile. De même, si M est le quotient de P par un sous-objet M' ^ un
+complément de M est un quotient P / Q ' tel que Q' 4- M' soit égal à P et
+que Q' soit minimal parmi les objets de P satisfaisant à cette condition.
+6. Catégories avec générateurs et limites inductives exactes. — Dans
+ce paragraphe, nous supposons que C est une catégorie abélienne avec géné-
+rateurs et limites inductives exactes ; la lettre U désigne un générateur de C.
+LEMME 1. — Tout sous-objet M d^un objet N possède un complément Q
+dans N.
+Soit en effet E l'ensemble des sous-objets P de N tels que Mr\P==o. 11
+suffît de montrer que E est un ensemble ordonné inductif; pour cela, soit F
+un sous-ensemble totalement ordonné de E. Comme il existe un ensemble
+appartenant à l'univers îl et ayant même puissance que F, la borne supé-
+rieure S des éléments P de F est définie. De plus on a les formules
+Sr\M=(smP\r\M= sup(PnAf) =0,
+\PÇF
+)
+PÇ.F
+Ceci prouve le lemme.
+THÉORÈME 2. — Toute catégorie abélienne avec générateurs et limites
+inductives exactes est une catégorie avec enveloppes injeclives.
+Pour tout objet M de C il existe en effet un monomorphisme de M dans
+un objet injectif : ce fait est prouvé dans [10], théorème 1.10.1. Il reste
+valable sous nos hypothèses. Le théorème résulte donc de la proposition 10
+et du lemme 1.

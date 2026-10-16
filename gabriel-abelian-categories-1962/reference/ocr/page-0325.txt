@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+325
+des treillis 77,; de même, l'objectif de l'algèbre homologique est l'étude
+des Mi au moyen des groupes Hom^(^, M^) et des lois de composition qui
+relient ces groupes. Pour un choix convenable de la famille (J^-)^/, la
+donnée des Hom^(A/;, M/) et des lois de composition permet de reconstruire
+les treillis 7^ ( 77, est le treillis des « sous-objets » de A/,). Les données sont
+donc plus copieuses en algèbre homologique; il s'ensuit que les résultats
+sont plus précis.
+Les résultats auxquels nous aboutissons s'appliquent principalement aux
+cas particuliers que voici :
+a. Catégorie des modules à droite sur un anneau nœthérien a droite.
+— Nos énoncés se traduisent alors dans le langage classique de la théorie
+des modules ; nous faisons partiellement cette traduction pour nous conformer
+aux traditions établies. Il ne fait cependant aucun doute que l'étude des
+catégories de modules fait intervenir des catégories abéliennes plus générales
+(voir la notion de catégorie quotient).
+b. Catégorie des faisceaux quasi cohérents sur un préschéma nœthérien
+(cette application est traitée au chapitre VI).
+c. Catégorie des groupes algébriques commutatifs (voir C19], cette appli-
+cation sera l'objet d'une publication ultérieure).
+d. Catégorie des algèbres de Hopf sur un corps, connexes, à multipli-
+cation et diagonale associatives et commutatives (cette application ne mérite
+pas une publication).
+Le chapitre 1 est formé de rappels et de compléments à la littérature
+publiée jusqu'à ce jour. Nous insistons spécialement sur la notion d'équi-
+valence de deux catégories : deux catégories A et B sont équivalentes si elles
+sont isomorphes lorsqu'on définit les morphismes de la façon suivante : un
+morphisme de A dans B est la classe des foncteurs de A dans B qui sont
+isomorphes à un fondeur donné. Si l'on adopte ce point de vue, on a, par
+exemple, le résultat qui suit : soit A un anneau avec élément unité tel que
+tout ^4-module à droite unitaire, projectif et de type fini soit libre; soit A
+(resp. B) la catégorie des modules à droite unitaires sur A [resp. sur
+l'anneau M.n(A) formé des matrices (n, n) à coefficients dans A}\ le groupe
+des automorphismes de A (resp. de B) est le quotient du groupe des auto-
+morphismes de l'anneau A [resp. de l'anneau 'M.^(A)] par le sous-groupe
+des automorphismes intérieurs. Comme les catégories A et B sont équi-
+valentes (cf. chap. Y, § 1), on retrouve que les quotients considérés sont
+isomorphes.
+Le chapitre II présente la matière que nous travaillons dans la suite :
+disons de façon approximative qu'une catégorie abélienne est nœthérienne
+si tous les objets de cette catégorie sont nœthériens, qu'une catégorie
+abélienne est localement nœthérienne s'il y a des limites inductives, si le
+foncteur limite inductive est exact et si tout objet est limite inductive d'objets

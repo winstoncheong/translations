@@ -1,0 +1,49 @@
+3Q2
+P. GABRIEL.
+On a en effet le diagramme commutatif et exact suivant (les flèches repré-
+sentent des applications « évidentes » ) :
+o ——————> N————————^ M'———————> M/N———> o
+l
+1
+[/
+^
+^
+^
+4,
+o——>\mN/(Nr\Mi)——>\imM/Mi——>\imM/(Mi^-N)
+i
+^T~
+<—
+Or 7V est manifestement un module pseudo-compact pour la topologie
+induite par M. La proposition précédente montre donc que / et j sont des
+surjections. Il en résulte que le noyau de h est l'image du noyau de j ([6],
+lemme III, 3.3). Comme Kerh est égal à inf(Af,+ N ) / N et Ker/ à inf^7,,
+on a « l'égalité »
+inf(^.+ N)/N= (YinfX-) -4- N\IN.
+THÉORÈME 3. — Les modules pseudo-compacts sur
+F anneau pseudo-
+compact A forment une catégorie abélienne avec cogénérateurs et limites
+projectiles exactes. La catégorie duale est localement finie.
+Soit en effet M un module pseudo-compact et soit Hom/^(^(A/, .) le
+fondeur N —>î{ompc^(M, N ) de T ( A ) dans Ab. On peut vérifier direc-
+tement que le fondeur M —>}îompc^)(M, .) définit une équivalence
+entre PC (A)0 et la catégorie Sex(T(A), Ah) (cf. chap. II). Nous préférons
+cependant une démonstration qui explicite la construction des noyaux et
+des conoyaux :
+Si/ : M—^N est un morphisme de modules pseudo-compacts, le module
+sous-jacent à Ker/ est formé des éléments m de M tels que f(m) soit nul.
+Ce sous-module est fermé et on le munit de la topologie induite par M.
+Le coimage de / est le module quotient M/Kerf qu'on munit de la topo-
+logie quotient. Montrons que M/Kerf est un module pseudo-compact :
+la vérification de l'axiome MPC est immédiate ; il reste à voir que M/Kerf
+est complet, ou encore que l'application canonique de M/Kerf dans
+lim^//(Ker/+ N y ) est un isomorphisme quand TVy parcourt le système
+projectif des sous-modules ouverts de M. Cela résulte de la proposition 10.
+Soit N ' l'image « ensembliste )> de M par l'application / et confondons N '
+avec M/Kerf pour la commodité du raisonnement. La topologie induite
+par N dans N ' est séparée, linéaire (i. e. définie par des sous-modules) et
+elle est plus grossière que la topologie quotient. Soit ( N - ) une famille
+filtrante décroissante vers 0 de sous-modules de N ' ouverts pour la topologie
+induite. Si P est un sous-module de N ' qui est ouvert pour la topologie
+quotient, la famille (T^+TVy) est filtrante décroissante. Comme N ' / P est
+artinien, cette famille possède un plus petit élément. Comme enfin inf^-t-TV'.)

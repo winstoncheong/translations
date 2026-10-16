@@ -1,0 +1,57 @@
+324
+P. GABRIEL.
+Pages.
+3. Catégories avec enveloppes injectives ..........................................
+3^4
+4. Catégories avec générateurs et limites inductives exactes ....................... 3^
+5. Quelques exemples de sous-catégories localisantes..............................
+3-9
+CHAPITRE IV : Catégories localement nœthériennes.
+1. La dimension de Krull d'une catégorie abélienne...............................
+382
+2. La structure des objets injectifs dans une catégorie localement nœthérienne ....
+387
+3. Modules pseudo-compacts .....................................................
+3oo
+4. Dualité entre catégories localement finies et modules pseudo-compacts..........
+3g5
+CHAPITRE V : Applications à l'étude des modules.
+1. Catégories de modules ........................................................
+402
+2. La l o c a l i s a t i o n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+411
+3. Le théorème de Goldie.. ......................................................
+416
+4. Injertifs indécomposables et idéaux bilatères...................................
+421
+5. Stabilité par enveloppes injectives. ............................................
+426
+6. Extensions finies d'anneaux commutatifs nœthériens ...........................
+429
+7. La dimension de Krull de quelques anneaux ...................................
+436
+CHAPITRE VI : Applications à l'étude des faisceaux quasi cohérents.
+1. Recollement de catégories abéliennes..........................................
+439
+2. Propriétés d'un recollement de catégories abéliennes...........................
+442
+3. Préschémas et catégories abéliennes...........................................
+446
+BIBLIOGRAPHIE ...................................................................
+44^
+INTRODUCTION.
+Ce travail contient quelques théorèmes généraux sur les catégories abé-
+liennes et quelques applications de ces théorèmes à l'étude des modules.
+Nous avons consacré beaucoup de papier aux rappels et à l'énoncé de
+propriétés élémentaires des catégories abéliennes; il y a deux raisons à cela :
+la première est que le sujet est assez neuf et que nous voulons donner aux
+énoncés la forme qui nous convient.
+La deuxième raison est que nous aimerions convaincre les non-spécialistes
+et leur offrir un exposé d'ensemble : disons donc à ce groupe de lecteurs que
+les catégories abéliennes ont été introduites par BUCHSBAUM et GROTHENDIECK
+pour généraliser les méthodes homologiques de CARTAN et d'EiLENBERG [6].
+Une comparaison montrera tout de suite l'intérêt de cette notion : soient
+{Mi}i^i une famille de modules sur un anneau A^ Ti le treillis des sous-
+modules de Mi(içf) et Hom^(J^, My) le groupe abélien foi me des appli-
+cations ^-linéaires de Mi dans M/(i,jçl). L'un des objectifs de la théorie
+des treillis est d'étudier la famille des modules Mi au moyen de la famille

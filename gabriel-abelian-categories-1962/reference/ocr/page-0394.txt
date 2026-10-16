@@ -1,0 +1,37 @@
+3g4
+P. GABRIEL.
+phisme /de A.e dans le produit direct | | A .61. Si J est une partie finie
+IÇ.I
+de /, f induit une surjection de A.e sur | | A.ei. Il s'ensuit que f est une
+iç.J
+surjection (exactitude des limites projectives) et que le noyau Ker/ est un
+facteur direct de A.e. Supposons Ker/ non nul et soit / un idéal à gauche
+de A^ ouvert et ne contenant pas Ker/. Pour toute partie finie J de /,
+A.e est produit direct des A.e^ /€</, de Ker/ et d'un troisième facteur.
+On a donc une décomposition de e en somme finie d'idempotents orthogo-
+naux deux à deux, soit
+e=^ei-^e'-^-e\
+iç.J
+où e' engendre Ker/.
+Pour J assez grand, e — ^ €i doit appartenir à / ; donc e' 4- e" et
+i ç j
+ef==ef.(ef-\-e") appartiennent à / : ceci est absurde. Autrement dit, Ker/
+est nul et le corollaire est prouvé.
+COROLLAIRE 3. — Soient A un anneau pseudo-compacte û un idéal bila-
+tère fermé de A et (^);e/ une famille sommable d'idempotents orthogonaux
+deux à deux de A/a. Il existe une famille sommable (fi)içi d'idempotents
+orthogonaux deux à deux de A telle que e^ soit l'image de /• par l'appli-
+cation canonique de A dans A/a.
+L'anneau A / a est en effet pseudo-compact pour la topologie quotient. Il
+s'ensuit que F application / : a—>- (a.êi) de A/a dans le produit j | A.Ci est
+iç.1
+surjective (corollaire 2). Soient p l'application canonique de A sur A / a ^
+Ui: Pi->A.ei une enveloppe projective de A.ei et u le produit j | Ui.
+iç.1
+Comme • A est projectif, il existe un morphisme g de A dans | j Pi tel
+ici
+que uog soit égal à fop. Comme u est une enveloppe projective et que uog
+est surjectif, il existe un morphisme h de | j Pi dans A tel que ho g soit
+/
+l'application identique de | | Pi. Il suffit alors de choisir pour /• l'image
+;•

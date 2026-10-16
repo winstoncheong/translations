@@ -1,0 +1,51 @@
+4û6
+P. GABRIEL.
+autre famille d'objets égaux à U, la même condition fournit les « égalités »
+suivantes :
+Hom^]^, ^U\
+\ i
+/
+/
+""n s110111^ ^'^n i^0111^^ s'u,)
+1
+J
+i
+/
+=.Hoin/^ U, ^S' U\ = HomA^, S'^U\
+\ i
+/
+/
+\
+i
+j
+)
+Désignons par P (resp. par Q) la sous-catégorie pleine de mod.4 (resp.
+de B) formée des ^-modules libres (resp. des objets isomorphes à la somme
+directe d'une famille d'objets égaux à U). Ce qui précède prouve que SF
+induit une équivalence entre 0 et P [proposition 12 (b), chap. I]. L'implica-
+tion résulte donc de la proposition duale de la proposition U, corollaire 3,
+(chap. I).
+On remarquera qu'on peut remplacer les deux dernières conditions de
+l'assertion (b) par les conditions plus fortes que voici : B est une catégorie
+avec générateurs et limites inductives exactes et U est un objet de type fini
+de B (i. e. toute famille filtrante croissante de sous-objets de ^/dont la borne
+supérieure est égale à U. est stationnaire).
+COROLLAIRE 2. — Soient A et B deux anneaux et S un fondeur de modZ?
+dans modA. Les assertions suivantes sont équivalentes :
+a. S définit une équivalence entre modB et modA.
+b. Il existe un isomorphisme y de A sur l'anneau des endomorphismes
+d'un B-module U^ qui satisfait aux conditions suivantes : S est isomorphe
+au foncteur Hom^(% U^ .); U est un B-module projectif de type fini; de
+plus^ U est un générateur projectif de modZ?.
+Il revient évvidemment au même de se donner un homomorphisme y de A
+dans l'anneau des endomorphismes d'un 2?-module U ou de se donner sur U
+une structure de ^4-Z?-module ( A à gauche, B à droite). Dans le corollaire3,
+U est un tel bimodule; nous désignons par ^^/(resp. par Us) le .^-module
+à gauche (resp. le ^-module à droite) sous-jacent à U. Si a est un élément
+de A (resp. B un élément de /?), a^ (resp. bu) désigne l'endomorphisme
+x—^a.x (resp. x ^->x.b) du groupe abélien sous-jacent à U.
+COROLLAIRE 3 (MORITA [18]). — Soient A et B deux anneaux et U un
+A-B-module {A à gauche^ B à droite). Les assertions suivantes sont équi-
+valentes :
+a. Le foncteur M^^ M Ç^^U définit une équivalence entre modA et
+modZ?.

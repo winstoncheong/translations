@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+309
+il en va de même de qp{R) C\M et de R^= q~p1 (M) r\R. Si 7?i est contenu
+dans <7ç~
+1 (A), nous avons montré que Rr\(M @ N) n'est pas nul. Dans le cas
+contraire, q'ç(Ri) n'est pas nul et « coupe » 7V; le sous-objet/?2==^ç1 (7V)n7?i
+ne peut donc être nul. Dans tous les cas, un sous-objet non nul de P ff) Ç
+« coupe » M Q) N\ ce qu'il fallait prouver.
+Un sous-objet N de M est dit irréductible dans M si N est différent de M
+et si, pour tout couple (P, Ç) de sous-objets de M contenant 7V, la rela-
+tion Pc\Q=^N entraîne P == N ou Q == TV. Il revient au même de dire
+que M I N est extension essentielle de tout sous-objet non nul. Si 0 est irré-
+ductible dans M^ on dit aussi que M est coir'réductible.
+Considérons un objet M de C et r sous-objets N\^ As, .. ., Nr' Soient pi
+l'épimorphisme canonique de M sur M/Ni et qi la projection canonique
+de M/N, Q) M/N. ©. . . © M/N^ sur le /ième facteur M/Ni. Il existe un
+morphisme u de M dans M/N^Q). . .Q) M/Nr et un seul tel que qio u soit
+égal à pi pour tout /.
+LEMME 3. — Si les sous-objets Ni sont irréductibles dans M^ si 0 est
+intersection des N[ et n^est pas intersection de moins de r d'entre les /V/,
+alors u est une extension essentielle de M.
+Soit en effet Pi l'intersection des Njn pour m ^ /. Les morphismes q^o u
+« annulent » Pi si m^-l et qiou induit un monomorphisme Ui de PI
+dans M/Ni. Les monomorphimes canoniques de Pi dans M induisent un
+morphisme v de la somme directe Q)i?i dans M\ de plus, il est clair que uov
+n'est autre que le morphisme Q)iui de Q)iPi dans Q)iM/Ni. Comme ui est
+une extension essentielle de PI pour tout ^, les lemmes précédents montrent
+que Q)iu^ u et v sont des extensions essentielles.
+Si/est un objet injectif de C, tout monomorphisme u ' . I — > P induit un
+isomorphisme de / sur un facteur direct de P. Si Ç est un supplémentaire
+de u ( I ) - , l'intersection Qr\u{I) est nulle. Il en résulte que u ne peut être
+une extension essentielle de / que si u est un isomorphisme. Nous dirons
+désormais qu'un monomorphisme i: M —> 1 est une enveloppe injective de M
+si i est une extension essentielle de M et si / est un objet injectif de C.
+PROPOSITION 8. — Soient i : M-> I une enveloppe injective de M et
+j '. M —> J un monomorphisme. Les conditions suivantes sont équivalentes :
+a. Le morphisme j est une enveloppe injective de M.
+b. Le morphisme j est une extension essentielle de M et toute extension
+essentielle de J est un isomorphisme.
+c. L'objet J est injectif' ; en outre^ pour tout monomorphisme h de M
+dans un injectif H et pour tout morphisme l de II dans J tel que lo h ==J\
+l est un épimorphisme.
+Si ces conditions sont vérifiées^ il existe un isomorphisme u de J sur I
+tel que u oj ==z i.

@@ -1,0 +1,40 @@
+CATÉGORIES ABÉLIENNES.
+445
+par GO') la plus petite sous-catégorie localisante de B qui contienne les
+objets FC (resp. GD), lorsque C (resp. D) parcourt les objets de C' (resp.
+de D').
+LEMME 3. — Soient C' et D' des sous-catégories localisantes de C et D telles
+que FC' = G D ' . Avec les hypothèses ci-dessus^ C' \ \ D' est une sous-catégorie
+B
+localisante de C \\ 0 et toute sous-catégorie localisante est de ce type.
+B
+Si C' et 0' sont stables par enveloppes injectives^ il en va de même pour
+cy[B
+B
+II est clair que la catégorie C' \ \ D' est a contenue » dans C | 1 D.
+B
+B
+Nous nous contenterons de montrer que toute sous-catégorie localisante A
+de C 1 | ^ est de la forme C' | | B' : pour cela, soit K == (/, J, ï) un injectif
+B
+B
+ne contenant aucun sous-objet non nul de A\ soit E'=: (C, 2), o") un objet
+quelconque de C \\B. Nous allons d'abord montrer que l'application cano-
+B
+nique de Hom {E^ K) dans Hom(<7, /) est surjeclive : soit en effet J ' le
+plus grand sous-objet de J annulé par G\ comme Ker G est stable par
+enveloppes injectives, J est la somme directe de J ' et d'un objet injectif J "
+tel que GJ"'= GJ\ il s'ensuit que, pour tout/: C->I, ToT^/oo—1 se relève
+en un morphisme de D dans J"\ donc aussi en un morphisme^ de D dans J\
+autrement dit, /est l'image du morphisme (/, g) : E—^K.
+Soient donc C' et D' les sous-catégories localisantes de C et B formées des
+objets C et D tels que Hom^C, /) == o et Hom^(7), J) ==. o lorsque (7, J, ï)
+parcourt les objets injectifs ne contenant aucun sous-objet non nul de A.
+Ce qui précède implique que Hom (Z^, K) est nul si et seulement si
+Homp(<7, /) et Hom»(Z>, J) sont nuls.
+Autrement dit, (C, 2), <r) appartient à A si et seulement si C et D appar-
+tiennent à C' et 0'\ i.e. si et seulement si (C, D^ o") appartient à ^ | | ^ ' '
+B
+Ceci achève la preuve du lemme.
+Soit de nouveau (^T, (9;c) un préschéma nœthérien. Si R est la réunion
+d'une famille de parties fermées de ^T, nous désignons par Cat R la sous-

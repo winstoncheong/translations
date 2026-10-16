@@ -1,0 +1,42 @@
+4l6
+P. GABRIEL.
+Si s appartient à In.S, u ( s ) est de la forme/? (m), où mç.M\ de plus,
+m.a est nul si s. a est nul. On posera donc m =s.A et v{s.a) === m.a.
+L'exactitude du fondeur M' ^-> Ms entraîne que u^(s) est inversible à
+droite pour tout sçS (soit en effet gs l'application a^->s.a', comme
+Coker g, est /^négligeable, ^ induit un épimorphisme de As sur As). Il
+en résulte que u^(s). ( s ' . u^(s) — i) est nul si s' est tel qu'on ait^(^).^=i.
+Comme u^(s) est un élément régulier à droite et à gauche [condition ( ^-^ )],
+on a s' .u^{s) == i.
+(c)=>(a) : C'est clair, de même que l'unicité de l'anneau des fractions.
+La dernière assertion résulte du corollaire 2 de la proposition h".
+REMARQUE 1. — Les conditions (*) et (**) sont toujours vérifiées
+lorsque S est contenu dans le centre de-.4. On retrouve alors la localisation
+par rapport au centre (chap. III, § 5).
+REMARQUE 2. — Si les conditions (^ ) et ( içiç ) de la proposition 5 sont
+satisfaites, on peut exhiber une construction de Ms plus proche des traditions
+établies : pour cela, on convient de dire que deux éléments (m, s) et (n, t)
+de MX S sont équivalents s'il existe deux éléments u et v de A tels qu'on
+ait s.u =z t.^çS et m.u =n.c. L'ensemble sous-jacent à Ms est alors choisi
+égal au quotient de M x S pour la relation d'équivalence que nous venons
+de définir. La définition des lois d'addition et de multiplication est aisée.
+REMARQUE 3. — Nous laissons au lecteur le soin de prouver que, si A est
+commutatif, Ap est commutatif pour tout ensemble d'idéaux topologisant et
+idempotent F\ de plus, l'application p ^-^pp est une bijection de l'ensemble
+des idéaux premiers de A n'appartenant pas à F sur l'ensemble des idéaux
+premiers de Ap n'appartenant pas à F ' .
+3. Le théorème de Goldie ([9], [15]). — Ce paragraphe est consacré à
+un théorème de GOLDIE que nous prouverons par nos méthodes. Soit A un
+anneau et soit F l'ensemble des idéaux à droite de A dont Ad est extension
+essentielle. Pour qu'un idéal à droite I appartienne à F, il faut et il suffit que
+la condition suivante soit réalisée : pout tout élément non nul a de A, il
+existe bç.A tel que a.b ne soit pas nul et appartienne à I. 11 résulte facilement
+de cette condition que l'ensemble F est topologisant. Nous pouvons donc
+parler du plus grand idéal à droites-négligeable; cet idéal est un sous-module
+caractéristique de Aa-, c'est-à-dire un idéal bilatère de A. Dans ce paragraphe,
+nous supposons que cet idéal bilatère est nul; autrement dit, nous supposons
+que l'assertion suivante est vraie :
+(-k) Si A est extension essentielle de V idéal à droite 1 et si x .\ est nul,
+xç,A, alors x est nul,
+LEMME 1. — Si la condition^) est vérifiée, l'ensemble F des idéaux à
+droite dont Ad est extension essentielle, est topologisant et idempotent.

@@ -1,0 +1,43 @@
+CATÉGORIES ABÉLIENNES.
+3y9
+LEMME 1. — Pour tout objet M de A, l'application F (M, I) de Hom^ (A/, /)
+dans }îompc^(FI, FM) est une bijection.
+Soit en effet / un morphisme de A/dans /. L'image de/par l'application
+F(M^ I ) n'est autre que Hom^ (/, /) ; celle dernière application associe à
+tout élément a de Homj (/, /) l'élément ao/de Honij (A/, /). Or les mor-
+phismes de A = FI dans FM sont de la forme a --^aof. Ceci prouve le
+lemme.
+LEMME 2. — Soient M un objet de A^ (Ij)jç,E une famille d'objets iso-
+morphes à 1 et J la somme directe de la famille { I j ) j ç E - ^application
+F {M, J) de Hom^ (M, J) dans iîompc<^(FJ, FM) est bijective.
+Nous considérons d'abord le cas où l'objet M est de longueur finie. On
+sait qu'alors l'application canonique u de la somme directe des groupes
+Homj(A/, /y) dans Homj (M^ J ) est une bijection (corollaire 1 du théo-
+rème 1, chap. Il); il en va de même de Tapplicatiou canonique v de la
+somme directe des Hompç^ (Fï/, FM) dans Hompc^ÇFJ, FM). En outre,
+F(M^ Ij) est une bijection pour tout j. L'assertion résulte donc de l'égalité
+^(YF(M^I^=F(M^J)ou.
+Dans le cas général, Homj(A/, J ) est la limite projective des groupes
+Honij(7y, J ) lorsque N parcourt les sous-objets de longueur finie de M.
+De même, }ÎOÏÏ\PC(^)(FJ^ FM) est la limite projeclive des groupes
+î{ompc(^)(FJ^ FN). On a de plus le diagramme commutatif suivant :
+îîom^(M,J) --^î^^ ïîompc^(FJ, FM)
+l
+l
+^'
+}imF(N J)
+^
+limHom^ (TV, J) ^-——>\ïm îîompc^ÇFJ, FN)
+<—
+"
+<—
+Comme F ( N ^ J ) est un isomorphisme pour tout N^ il en va de même
+pour F {M, Y), ce qui démontre le lemme 2.
+Si la catégorie Ker77' est nulle, désignons par / la sous-catégorie pleine
+de A dont les objets sont isomorphes à la somme directe d'une famille
+d'objets égaux à /. De même, soit L la sous-catégorie pleine de PC (A) dont
+les objets sont isomorphes au produit direct d'une famille de modules
+pseudo-compacts égaux à A. Le lemme 2 montre que le foncteur ^induit
+une équivalence entre / et la catégorie L° duale de Z. Le corollaire 3 de la
+proposition 14 (chap. I) montre que F définit une équivalence entre A et la
+catégorie PC(Â)°.

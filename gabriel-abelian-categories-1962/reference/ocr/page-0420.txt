@@ -1,0 +1,45 @@
+420
+P. GABRIEL.
+gauche de A. Pour que la démonstration soit complète, il suffît de montrer
+qu'avec les notations du paragraphe 2, F est égal à Fs [proposition 5, (c)].
+Pour cela, nous prouvons qu'un idéal à droite l appartient à F si et seule-
+ment si I contient un sç.S :
+Si s est un élément régulier de A, l'idéal s.Ap est égal à A p. II en résulte
+que s. A appartient à F.
+Réciproquement, soit 1 un élément de F. Nous allons construire deux
+suites (^i, . .., Cn) et (<2i, . . ., a,^), formées d'éléments de Ap et satisfaisant
+aux conditions suivantes : pour tout ?', Ci est un idempotent primitif de Ap\
+Ap est la somme directe des idéaux indécomposables €i.Ap\ pour tout î,
+Ci.di n'est pas nul et appartient a i ; si fi désigne l'homothétie x^->ei.ai.x^
+on a l'égalité Ker/i n . . . nKer/^==o. Si nous posons s=e^,a^-^-.. .+^.a^,
+il résultera de ces conditions que 1 image de Ap par l'homothétie x^->s.x
+rencontrera tous les idéaux êi.Ap (car s.x appartient à ei.Ap si x appartient
+à l'intersection de Ker^- pour j -^ i)\ celte image étant ^-fermée, elle
+coïncidera avec Ap et l'homothétie sera bijective. L'élément s sera donc
+régulier et appartiendra à I.
+Prenons pour e^ uu idempotent primitif quelconque de Ap. Soit Tîti un
+élément de F tel que <?i.îîîi soit contenu dans I. Comme ^i.îTti n'est pas
+niipotent, il existe Oiemi tel que e^.a^.e^ ne soit pas nul. On tire de là la
+formule
+Ap^e,.Ap@^Tf,.
+Prenons pour e^ un idempotent primitif appartenant à Ker^i. Soit Hîs un
+élément de F tel que e^.m^ soit contenu dans Ï. Comme ^.THs n'est pas
+niipotent, il existe agents tel que e^.a^.e^ ne soit pas nul. On tire de là la
+formule
+^== (?i.^® <?2..^© Ker/inKer/2.
+Prenons pour e:>, un idempotent primitif appartenant à Ker/iHKer/^, ....
+La construction s'arrête lorsque n est égal à la longueur du ^/.-module à
+droite sous-jacent à Ap. On a alors les formules
+Ap^ei.Ap-^-. ..+ en-Ap
+et
+Ker/iU .. . nKer//,== o.
+COROLLAIRE 1. — Soit A un anneau satisfaisant aux conditions (b) et (c)
+du théorème 2 et dont 0 est un idéal bilatère premier (i. e. si a et b sont
+deux idéaux bilatères non nuls de A^ le produit û.b n^est pas nul). Si S
+est la partie multiplicative formée des éléments réguliers de A, il existe un
+anneau de fractions à droite de A pour S. Cet anneau de fractions est
+simple.
+La condition {a) du théorème 2 est en eflet satisfaite. Si A p n'était pas
+simple, ^contiendrait des idéaux bilatères non nuls û et b dont le produit
+serait nul. Les intersections ar\ A et br\A seraient alors des idéaux bilatères
+de A et le produit de ces idéaux serait nul. Ceci est absurde.

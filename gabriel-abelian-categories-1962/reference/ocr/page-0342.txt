@@ -1,0 +1,49 @@
+342
+P. GABRIEL.
+PKOPOSITION 12. — Si T est un fondeur de A dans B les assertions
+suivantes sont équivalentes :
+a. Il existe un fondeur S : B-> A et des isomorphismes W : lu —>- S o T
+et <D' : IQ—^ T o S tels que ( 77, S^ W, <Ï>') soit une équivalence entre A et B.
+b. Le fondeur T satisfait aux conditions (a) et (b) du lemme 1.
+c. Il existe un fondeur S : B->A tel que S o T soit isomorphe au fonc-
+teur IM et que T o S soit isomorphe à In.
+Nous dirons dorénavant que deux catégories A et B sont équivalentes s'il
+existe un foncteur T satisfaisant aux assertions de la proposition précédente.
+Dans ce cas nous dirons aussi que T définit une équivalence entre A et B.
+Nous notons enfin que l'assertion (c) s'insère de façon commode dans le
+formalisme suivant :
+Si 3Î est un univers dont l'univers U est un élément, nous pouvons
+construire une nouvelle catégorie E : les objets de E sont les catégories dont
+l'ensemble des morphismes appartient à S3 (un identifie les objets aux mor-
+phismes identiques); si A et B sont deux objets de £, Hom(>l, B) est
+l'ensemble des classes d'isomorphisme de fondeurs de A dans B, la compo-
+sition se faisant de façon évidente. On remarquera que E n'est pas une
+U-catégorie. L'assertion (c) affirme que la classe des fondeurs isomorphes
+à T est un isomorphisme de la catégorie E.
+Pour finir, nous proposons au lecteur quelques exercices faciles, dont nous
+utiliserons librement les résultats : soit ( 7\ S^ ^F, <D') une équivalence entre
+A et B. Si y est un monomorphisme (resp. un épimorphisme), Tf est un
+monomorphisme (resp. un épimorphisme). Si M est un générateur de A
+(resp. un objet projedif de A ), TM est un générateur de B (resp. un objet
+projedif de ff). Si P est le produit fibre du diagramme (i), TP est le produit
+fibre du diagramme ( 2 ) ; on dit aussi que T commute avec les produits fibres.
+Le fondeur T « commute » aussi avec les sommes fibrées, les limites induc-
+tives.... D'une façon générale, les propriétés « homologiques » de deux caté-
+gories équivalentes sont les « mêmes ».
+M
+TM
+\f
+\Tf
+(i)
+)L
+(2)
+^TL
+/.
+/T,
+N
+7W
+Les exercices précédents et la proposition 3 ont la conséquence qui suit :
+PROPOSITION 13. — Soit T un fondeur définissant une équivalence entre
+deux catégories addilives A et B. Alors T est un fondeur additif. Si A et B
+sont deux catégories abéliennes^ T est de plus un fondeur exact.
+La dernière assertion résulte de la proposition 11.

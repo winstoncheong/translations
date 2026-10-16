@@ -1,0 +1,47 @@
+CATÉGORIES ABÉLIENNES.
+43l
+Soit en effet C (resp. D) la sous-catégorie localisante de mod A (resp. de
+mod/?) qui est engendrée par M (resp. par ^M). On sait que C peut être
+engendrée par des modules A / ^ , où ^} est un idéal bilatère premier de A.
+De même, 0 peut être engendrée par les /?-modules p (A/^5), où ^ parcourt
+les idéaux bilatères premiers de A tels qu'on ait A/^ÇçC. On tire de là
+les formules suivantes :
+KdimAf== sup Kdim/4/^},
+KdimpM== sup Kdimp(y4/^}).
+Ai^ç.C
+^/^ç.C
+Autrement dit, il suffit de démontrer le corollaire 2 lorsque M est de la
+forme A/^^ où ^ est un idéal bilatère premier de A. Dans ce cas, l'annu-
+lateur du 7?-module nœthérien Ç ) ( A / ^ ) est p == ^ n/?. On sait qu'il en résulte
+l'égalité Kdimp(.4/^)=Kdim/?/p.
+D'après le corollaire 3 de la proposition 7, il reste clone à prouver l'équi-
+valence des assertions suivantes :
+— Toute chaîne d'idéaux bilatères premiers de A contenant ^ a au plus
+n + i éléments.
+— Toute chaîne d'idéaux premiers de R contenant p a au plus n -h i
+éléments.
+L'équivalence de ces assertions résulte du corollaire 1 et de l'assertion (b)
+de la proposition 11.
+Nous dirons désormais que l'application ^—>^}rt/? est l'application
+canonique de Spec (A ) == Sp(modA) sur Spec(/?) == Sp(mod/?). Si D est
+une sous-catégorie localisante de mod/?, nous désignons par p~1 ( D ) la sous-
+catégorie localisante de mod A qui suit : un ^l-module ^appartient à p~1 (û)
+si et seulement si pAf appartient à D. Le spectre de la catégorie p~1 (D) est
+évidemment l'image réciproque de S p ( D ) pour l'application canonique de
+Sp(mod^4) sur Sp(mod/?). Le lecteur vérifiera la réciproque : une sous-
+catégorie localisante C de mod.4 est de la forme p~1 ( D ) si et seulement si
+Sp(C) est l'image réciproque d'une partie de Sp(mod7?).
+PROPOSITION 12. — Soit A une extension finie d'un anneau /?, commu-
+tatif et nœthérien. Soient 0 une sous-catégorie localisante de mod/? et p le
+fondeur qui associe à tout A-module M le R-module sous-jacent à M. La
+sous-catégorie localisante
+p~~
+1 (0) de mod A est stable par enveloppes
+injectwes.
+La preuve est analogue à celle de la proposition 10; nous n'en donnons
+qu'une esquisse : si ^î est un idéal bilatère premier de A^ on montre que
+l'enveloppe injective de A/^ appartient à la sous-catégorie localisante
+engendrée par les modules ^4/Q, où Q parcourt les idéaux bilatères premiers
+tels qu'on ait JQn^?==^pn^. Un A -module M appartient à cette sous-
+catégorie si et seulement si a^ est presque-niipotent pour tout élément a de
+^P C\ fi. Finalement on montre que si /est un injectif indécomposable et a un

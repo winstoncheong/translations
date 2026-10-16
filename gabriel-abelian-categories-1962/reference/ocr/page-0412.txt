@@ -1,0 +1,43 @@
+4l2
+P. GABRIEL.
+idéal à droite appartenant à F. Si F est la sous-catégorie pleine de mod A
+dont les objets sont les ^4-modules ^-négligeables, F est une sous-catégorie
+fermée (cf. chap. IV, § ^).
+LEMME 1. — ^application F—^F est une bijection de V ensemble des
+ensembles d idéaux à droite topologisants sur F ensemble des sous-catégories
+fermées de mod A.
+Si l'on connaît /', on peut en effet retrouver F : un idéal à droite 1 appar-
+tient à F si et seulement si A/\ est un objet de F.
+Si F et G sont deux ensembles d'idéaux à droite topologisants, F. G dési-
+gnera l'ensemble topologisant associé au produit F.G (chap. IV, § 4). Il
+revient au même de dire qu'un idéal à droite m appartient à F. G si, pour
+tout açA^ il existe un élément 1 de F tel que (^.I+m)/m soit G-négli-
+geable. En particulier, si p est un élément de F et C( un élément de G, alors
+p.q appartient à F. G. Avec ces conventions, la sous-catégorie fermée F est
+localisante si et seulement si F.F est égal à F. Les sous-catégories localisantes
+de mod A correspondent donc biuiwoquement aux ensembles d'idéaux à
+droite qui sont topologisants et idempotents.
+Soit maintenant F un ensemble d'idéaux à droite, topologisant et idem-
+potent. Pour tout ^-module Af, nous choisissons une F-enveloppe que nous
+notons UM
+'• M—^Mp {cf. chap. III). Comme Mp est un A -module, tout
+élément m de Mp définit une application A -linéaire de Ad dans Mp '- a —> m. a.
+Cette application se prolonge d'une manière et d'une seule en une application
+^-linéaire de Ap==. (A,/)? dans Mp\ on définit ainsi une application bilinéaire
+MpX Ap-^Mp.
+Nous laissons au lecteur le soin de vérifier que, si M est égal à A^ cette
+application bilinéaire fait de Ap un anneau. Si M est arbitraire, cette appli-
+cation fait de Mp un ^-module. En particulier, si 1 est un idéal à droite de
+A^ nous pouvons supposer qu'on a choisi pour \p un idéal à droite de Ap.
+Dans la suite, nous munissons toujours Ap et Mp des structures que nous
+venons d'expliciter. Nous employons aussi les notations suivantes : T est le
+fondeur canonique de mod A dans mod A / F ' ; S' est le foncteur de mod A / F
+dans mod Ap qui est induit par le foncteur localisation; p est le foncteur qui
+associe à tout /4^-module N le ^-module sous-jacent (pour la structure de
+A-module définie par u^). Avec ces notations, p o S' est un foncteur adjoint
+à T.
+LEMME 2. — Soient M un A-module^ N un Ap-module. L'application
+p(7V, Mp) de Hom^(./y, Mp) dans Hom^(pA", ^Mp) est bijective.
+Il est clair en effet que p(^Y, Mp) est une injection. Soit donc /une appli-
+cation ^4-linéaire de N dans Mp. Si n est un élément de TV, nous voulons
+montrer qu'on a f(n.a) z=if(n).a pour tout a de A p. Or les applications

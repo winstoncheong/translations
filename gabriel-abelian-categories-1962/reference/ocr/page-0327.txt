@@ -1,0 +1,39 @@
+CATÉGORIES ABÉLIENNES.
+827
+de W. Nous désignons par A l'anneau dont les éléments sont les séries
+formelles de la forme
+a==w+^a,.^+^^.F^'
+r=i
+s==l
+où w, a,, et bs parcourent l'anneau W \ la multiplication est définie par les
+règles suivantes :
+V.F=F. V==.p,
+F.w=(7(w).F
+et
+w. V=V.a(w)
+si wç.W.
+L'anneau A est nœthérien (à droite et à gauche). Si nous notons A la
+catégorie des .A-modules à droite, on a :
+— Tout objet simple de A est isomorphe à A / ( F . A 4- V'.A).
+— Si AQ est la plus petite sous-catégorie localisante de A qui contienne
+A / ( F . A +V.A), tout objet simple deA/Ao est de l'un des types suivants :
+A/F. A, A/V.A oviA/ÇV'^—F^.A avec (r, ç)==i.
+— Si Ai est la plus petite sous-catégorie localisante de A qui contienne
+les modules ci-dessus, tout objet simple de A/A^ est isomorphe à A.
+Ce travail a déjà été présenté dans trois exposés :
+— Objets injectifs dans les catégories abéliennes, Séminaire Dubreil-
+Pisot^ t. 12, 1958-1959, n° t7, 82 pages.
+— La localisation dans les anneaux non commutatifs, Séminaire Dubreil-
+Pisot^ t. 13, 1959-1960, n° 2, 35 pages.
+— Sur les catégories localement nœthériennes et leurs applications aux
+algèbres étudiées par Dieudonné (Groupes formels), Séminaire J.-P. Serre,
+1959-1960.
+CHAPITRE I.
+Quelques rappels sur les catégories.
+L'objet de ce chapitre est de rappeler quelques définitions et notations sur
+les catégories. Nous supposons que le lecteur a pris connaissance des cha-
+pitres 1 et II de [10]. Cependant, comme le temps a fait son œuvre depuis 1957,
+nous ajoutons quelques compléments à l'article de GROTHENDIECK ; ces complé-
+ments sont dus pour une grande part à GROTHENDIECK lui-même et ils seront
+exposés dans un prochain Ouvrage [7]. C'est pourquoi nous nous permettons
+d'omettre la plupart des démonstrations.

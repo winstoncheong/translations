@@ -1,0 +1,48 @@
+CATÉGORIES ABÉLIENNES.
+307
+objet X de D le fondeur exact à gauche y—^Homn(y, X) de C0 dans ^6;
+ceci définit un foncteur T : X—^Homn(., X) de 0 dans Sex(C°, ^A). On
+achève la preuve en montrant que T définit une équivalence :
+— Pour cela, on montre d'abord que tout objet F de Sex(C°, Ah) est
+isomorphe à un foncteur du type TA ==: Hom»(., A ) : ceci est évidemment
+vrai lorsque F est nœthérien; dans le cas général, l'ensemble des sous-objets
+nœthériens de F peut être indexé par un ensemble appartenant à U. Il
+en résulte l'existence d'un système inductif d'objets nœthériens de
+D^
+soit (X^ U]'i)ijç.j tel que ./soit élément de U, que les Uji soient des mono-
+morphismes, et que F soit isomorphe à la limite inductive des fonc-
+teurs TXi. Si X est la limite inductive des X^ l'égalité
+T/sup Xi\ •=.-- sup TXi
+( lemme 2 )
+\
+i
+)
+i
+montre que F est isomorphe à TX'.
+— On démontre ensuite l'égalité Homn(^T, Z ) == Hom ( TX^ TZ) : si X
+et Z sont nœthériens, cela résulte du corollaire 1 de la proposition 1 (chap. I).
+On passe de là au cas où X est nœthérien et Z quelconque : si Z ' est un
+sous-objet nœthérien de Z, on a le diagramme
+ïï.mïfX,^, )
+Hom^(^, Z ' ) -—————-> Hom^(^,Z)
+T[X,Z'}
+r{x,z)^
+^
+ïiomfrx,^,)
+Y
+Hom(7^, TZ')-—-——^Hon^rjr, TZ)
+L'application T^X^ Z ' ) est un isomorphisme. Par passage à la limite
+inductive sur les sous-objets nœihériens de Z, on voit que T(X^ Z) est
+bijectif (lemme 2). Le cas général se prouve alors par un argument de même
+type [si X et Z sont arbitraires, considérer le système projectif formé
+de Hoiï^JT7, Z) où X' parcourt les sous-objets nœthériens de X\
+LEMME h'. — Un foncteur F de Sex(C°, Ah) est exact si et seulement si F
+est un objet injectif de Se\(C°,Ab). (On suppose toujours la catégorie C
+nœthérienne.)
+Le corollaire 2 de la proposition 6 prouve une moitié du lemme. Récipro-
+quement, supposons F exact. Nous avons vu que les foncteurs X forment
+une famille de générateurs et que tout sous-objet de X est représentable
+(C est une catégorie nœihérienne). Tout monomorphisme i: G—^X induit
+donc une surjection de T^JTr^Hom^r, F ) sur Hom(6r, F ) . L'assertion
+résulte par conséquent d'un lernme de GROTHENDIECK ([10], lemme 1 du
+théorème 1.10.1).

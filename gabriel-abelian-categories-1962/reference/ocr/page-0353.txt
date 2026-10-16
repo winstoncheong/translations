@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+353
+Nous sommes maintenant en mesure de prouver la proposition ^ : soient A
+un objet de C et a- un morphisme fonctoriel de F dans un fondeur exact
+à gauche G. Pour toute suite exacte
+S={o-^A-u>M^>N-^o),
+on a le diagramme commutatif
+FM-^->FN
+n[M) \
+(T(!\) [
+•J/-
+~^-
+o —-> GA -GU-> GM-°^-> G7V
+Soit Ç p ( A ^ S) le morphisme de FA dans FS qui est induit par Fu. Il
+existe un morphisme T//(/4, S) et un seul dont le composé avec 0/7 (A, xS) est
+égal à a (A ). Par passage à la limite inductive on voit qu'il y a un morphisme
+TF (A) et un seul de (RF)A dans GA dont le composé avec p^(^4)==limoy,-(^4, S)
+s
+est égal à Œ (A). Si le fondeur RF est exact à gauche, la proposition est
+prouvée. Dans le cas contraire on recommence l'opération. Les lemmes ^
+et 5 montrent que le fondeur R(RF) est exact à gauche. Dans tous les cas
+on peut donc choisir R° F égal à R{RF)^ p étant égal à p/^o p^.
+PROPOSITION 5. — Supposons vérifiées les hypothèses de la proposition h'.
+La catégorie Sex (C, D) des fondeurs exacts à gauche de C dans 0 est une
+catégorie abélienne avec limites inductives exactes. Si 0 est une catégorie
+avec limites projectiles^ il en va de même de Sex (C, û).
+Il est clair que Sex(C, D) est une catégorie additive. Si ^\F—>G est un
+morphisme de fondeurs exacts à gauche, Kercp est le fondeur exact à gauche
+M —-> Ker ^(M). De même, si H est le fondeur M^--> Coker cp(A/), le fonc-
+teur exact à gauche Cokercp n'est autre que R° I I . Ceci démontre que l'axiome
+C Ab 1 est vérifié.
+Montrons que l'axiome CAb2 est vérifié : pour cela, nous notons K et L
+les fondeurs Af-^Coimcp(Af) et M-^-^ïm^(M). Les morphismes cano-
+niques ^(M) de Coimcp(A/) dans ïm^(M) définissent un isomorphisme
+fonctoriel Sr de K sur L. En outre, on a des suites exactes de fondeurs :
+o-> Ker^—^F->K—^o^
+o—>L —^ G—^H—^o.
+Comme R°'= R o R est un fondeur exact à gauche, on a les suites exactes :
+o -> Ker 9 ->F-> R° K,
+o -^ R°L -. G-> R°H.
+La deuxième suite exacte montre que R°L n'est autre que Imcp; de plus,
+7?° K est égal Coimcp et 7?°Sr est le morphisme canonique de Coim<p
+dans Imçp : c'est bien un isomorphisme.
+Le reste de la proposition est clair.

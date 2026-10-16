@@ -1,0 +1,42 @@
+CATÉGORIES ABÉLIENNES.
+421
+COROLLAIRE 2. — Soit A un anneau intègre nœthérien à droite. Si S est
+la partie multiplicative formée des éléments non nuls de A^ il existe un
+anneau de fractions à droite de A pour S. Cet anneau est un corps.
+L'existence de l'anneau de fractions As résulte du théorème 2. Si As n'est
+pas un corps, As contient un idempotent e distinct de i. Il existe donc
+un sç, S tel que e.s appartienne à A. Comme e .s n'est pas inversible dans As-,
+les XÇ.AS tels que e.s.x soit nul forment un idéal à droite I. Il en résulte
+que A (\\ n'est pas nul et est annulé par e.s : ceci est absurde.
+^. Injectifs indécomposables et idéaux bilatères premiers. — Soit A
+un anneau nœthérien à droite. Si M est un ^4-module, AnnA/ désignera
+l'idéal bilatère formé des a tels qu'on ait M.a=o. De même, si m est un
+élément de M^ Annm désignera l'idéal à droite formé des a tels qu'on
+ait m.a == o.
+Soit / un ^-module injectif indécomposable. Si M et A sont deux sous-
+modules non nuls de 7, Mr\N n'est pas nul et l'on a
+Ann(Afn^Y) ^AnnAf-h AnnTV.
+Les annulateurs de sous-modules non nuls de / forment donc une famille
+filtrante croissante d'idéaux bilalères de A. Cette famille a un élément
+maximal qu'on notera A (/).
+On voit d'abord que A ( I ) est un idéal bilatère premier; autrement dit,
+A ( I ) n'est pas égal à A et l'on a a.A .b cA ( I ) => aç.A (7) ou b ç A ( I ) .
+Ceci résulte du lemme suivant dont la preuve est laissée au lecteur :
+LEMME 1. — Si d est un idéal bilatère d\in anneau A, les assertions
+suivantes sont équivalentes :
+a. a est un idéal bilatère premier.
+b. Il existe un A-module non nul M tel qu^on ait Ann/V == û pour tout
+sous-module non nul N de M.
+Je dis aussi que tout idéal bilatère premier p est du type A (/), où / est
+un -4-module injectif indécomposable : en effet, soit @klk une décomposition
+de l'enveloppe injective de A / p en injectifs indécomposables; soit Mk un
+sous-module de I/c dont l'annulateur est A(Ik). Alors MkC\A/p est différent
+de 0 et a pour annulateur à la fois p et A (Ij,) ; d'où p == A (I/,) pour tout /,
+et le résultat.
+Il est facile de voir que A / p est en réalité un ^4-module isotypique
+(chap. IV, § 2), c'est-à-dire que les injectifs Ik sont tous isomorphes. En
+effet, le corollaire 1 du théorème 2 s'applique à l'anneau A / p . Cet anneau
+est donc contenu dans un anneau simple B qui est l'enveloppe injective
+de A / p comme (A/p)-modu\e à droite. L'enveloppe injective / de A / p
+considéré comme .4-module contient Z?, et B coïncide avec l'ensemble des
+éléments de /qui sont annulés par p. L'assertion résulte donc de ce que B

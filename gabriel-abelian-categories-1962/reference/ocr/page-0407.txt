@@ -1,0 +1,42 @@
+CATÉGORIES ABÉLIENNES.
+407
+b. Le fondeur /V-^Hom^/, TV) définit une équivalence entre mod£
+et modA.
+c. UB (resp. ^U) est un B-module (resp. un A-module à gauche),
+projectif et de type fini; l'application a —> a^ (resp. b—>bu) est un
+isomorphisme de A (resp. de Panneau opposé à B) sur Vanneau des endo-
+morphismes de UB (resp. de ^U).
+L'équivalence de (a) et de (b) résulte de ce que le foncteur
+S:N^ï{omB(U, N)
+est adjoint au foncteur T : M—-> M(g)^ U.
+(a)=^(c) : On a en effet TAa= U et l'application a —> au coïncide
+avec T(Ad, A^). Il résulte de la démonstration du corollaire 1 que UB est
+un J?-module de type fini et que a —> au est une bijection de A sur Panneau
+des endomorphismes de UB.
+D'après le corollaire 2, il existe d'autre part un 2?-^4-bimodule V tel que T
+soit isomorphe au foncteur M'—>• Hom^( F, M). De plus, V^ est projectif,
+de type fini et l'application b —> by est un isomorphisme de B sur l'anneau
+des endomorphismes de V^.
+L'anneau B opère à droite sur le groupe abélien Hom^( V, Aa) ; Panneau
+des endomorphismes de Ad opère à gauche sur Hom^( V^ Ad)\ ce groupe se
+trouve ainsi muni d'une structure de ^4-7?-bimodule. Gomme U s'identifie
+à TAd, les .4-/?-bi modules U et Hom^( F\ A^) sont isomorphes. Les pro-
+priétés de V^ et le lemme suivant entraînent donc que ^U est projectif, de
+type fini et que l'application &—>^est un isomorphisme de l'anneau B0,
+opposé à 7?, sur l'anneau des endomorphismes de ^U.
+LEMME 1. — Si M est un A-module à droite projectif et de type fini^ le
+A-module à gauche Hom^(^f, A,i) est projectif et de type fini. Le fonc-
+teur M—^Hom^(Af, Ad) définit une dualité entre les A-modules à droite^
+projectifs et de type fini et les A-modules à gauche, projectifs et de type
+fini.
+La structure de /^-module à gauche de VLom^(M, Au) est évidemment
+définie de la façon suivante : si a appartient à A et / à Hom^(M, A^),
+a.f est tel qu'on ait (a.f) (x) == a.f(x) si xç:M. Le lemme 1 est bien
+connu et nous nous passerons de démonstration.
+(c) ==> (b) : D'après le corollaire 2, il suffit de prouver que UB est un géné-
+rateur de la catégorie mod£. Pour cela nous allons montrer que Ba est
+facteur direct d'un produit US
+'•
+Considérons d'abord deux ^-modules à gauche P et Q et soit sA le
+^-module à gauche sous-jacent à A. Le groupe abélien Hom^(P, sA) est
+muni de façon naturelle d'une structure de A -module à droite, de sorte qu'il

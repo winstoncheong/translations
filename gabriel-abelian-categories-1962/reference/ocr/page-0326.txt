@@ -1,0 +1,46 @@
+326
+P. GABRIEL.
+nœthériens. Nous montrons que toute catégorie nœthérienne A est équi-
+valente à la catégorie des objets nœthériens d'une catégorie localement
+nœthérienne B. Réciproquement, la catégorie B est équivalente à la catégorie
+des fondeurs additifs, contravariants et exacts à gauche de A dans la caté-
+gorie des groupes abéliens. La catégorie B est donc équivalente à une catégorie
+quotient de la catégorie de tous les fondeurs additifs et contravariants de A
+dans les groupes abéliens ; il s'ensuit que B est « presque » une catégorie de
+modules (c/. chap. 1T, § 1).
+Dans le chapitre III, nous nous intéressons au « langage modulo C »
+de SERRE : soient A et B deux catégories abéliennes, T et S deux fondeurs
+additifs, T : A ->B, S : B-^A. Nous supposons que T est exact, que S est
+adjoint à T et que T o S est isomorphe au fondeur identique de B. Dans ces
+conditions, la catégorie Ker 77, qui est formée des objets A de A tel que TA
+soit nul, est épaisse [10]; de plus, T définit par passage au quotient une
+équivalence entre la catégorie quotient de A par Ker 77 [10], et la catégoriel.
+Réciproquement, soient C une sous-catégorie épaisse de A, et 77 le fondeur
+canonique de A dans A/C [10]. Nous disons que C est une sous-catégorie
+localisante de A s'il existe un fondeur adjoint à T.
+Lorsque A est la catégorie des modules sur un anneau commutatif.4, nous
+pouvons donner l'exemple qui suit : soient Z une partie multiplicative de A^
+B la catégorie des modules sur l'anneau A^ et T le fondeur qui associe à
+tout ^4-module M le « localisé » M^. Le fondeur T définit par passage au
+quotient une équivalence entre >l/Ker T et B.
+Le chapitre IV contient quelques résultats sur les catégories localement
+nœthériennes : nous prouvons qu'un objet injedif d'une telle catégorie A
+est la somme directe d'une famille d'objets injectifs indécomposables. Nous
+nous occupons aussi de la dimension de Krull de A ; pour cela, nous
+« filtrons » A à l'aide de sous-catégories localisantes ^oC^iC^C . . . telles
+que les quotients A^/A^ soient des catégories localement finies (c'est-à-dire
+que A^/Ai est localement nœthérienne et que tout objet est limite indudive
+d'objets de longueur finie); nous associons à ces catégories localement finies
+des anneaux topologiques complets qui jouent le même rôle que les anneaux
+locaux complets en algèbre commutative.
+Le chapitre V traite des applications à la théorie des modules. Lorsque A
+contient dans son centre un anneau commutatif nœthérien /?, et est un
+7?-module de type fini, nous explicitons les constructions proposées au cha-
+pitre IV. Nous montrons, en particulier, que l'étude des catégories A^/Ai
+est équivalente à l'étude des complétés de A pour certaines topologies.
+Ce chapitre propose un plan pour attaquer les anneaux nœthériens non
+commutatifs. Il reste à savoir si les méthodes envisagées sont praticables
+dans l'étude des anneaux usuels. Signalons à cet égard un anneau que
+DIEUDONNÉ a introduit dans l'étude des groupes formels :
+Soient k un corps algébriquement clos de caradérisque p > o, W l'anneau
+des vecteurs de Witt à coefficients dans k et (T l'automorphisme de Frobenius

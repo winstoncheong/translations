@@ -1,0 +1,43 @@
+430
+P. GABRIEL.
+LEMME 2. — Les hypothèses et les notations sont celles de la proposition 11.
+Pour tout idéal premier p de /?, Ap/p.Ap est une algèbre finie non nulle
+sur le corps commutatif /?p/p.7?p. En outre^ l'application ^ —^^pp/p.^pp
+définit une bijection de l'ensemble des idéaux bilatères premiers ^R de A
+satisfaisant à ^pn^P^p, sur l'ensemble des idéaux bilatères premiers
+de .4p/p.^4p.
+Il est clair que A p / l p . A p est une algèbre finie sur 7?p/p./?p. Comme p.7?p
+est le radical de Jacobson de 7?p et que Ap est un /?p-module de type fini, le
+quotient A p / p . A p n'est pas nul (lemme de .Nakayama).
+D'autre part, les idéaux bilatères premiers de A p / p . A p sont en correspon-
+dance biunivoque avec les idéaux bilatères premiers de Ap qui contiennent
+p.y4p, Le lemme 1 montre que ces derniers correspondent biunivoquement
+aux idéaux bilatères premiers ^ tels qu'on ait ^}n^==p. Ceci prouve le
+lemme 2.
+L'assertion (a) de la proposition résulte de ce que A p / p . A p est un
+anneau artinien non nul; les idéaux bilatères premiers de cet anneau sont les
+idéaux bilatères maximaux. L'anertion (b) de la proposition résulte de ce
+que A p / p . A p ne contient pas d'idéaux bilatères premiers « emboîtés » et
+distincts. Soient enfin x^ . . ., Xn des générateurs du /?-rnodûle sous-jacent
+à A ; les images de ces générateurs dans A p / p . A p engendrent le (jRp/p.Bp)-
+modulesous-jacentà^p/p.^p; il en résulte la formule [A p/p.Ap'.Rp/p.Rp\^n\
+ceci prouve (c).
+COROLLAIRE 1. — Les notations et les hypothèses sont celles de la propo-
+sition 11. Soient poC...Cp/z une chaîne d'idéaux premiers de R et
+^Po C . . . C ^i une chaîne d'idéaux bilatères premiers de A tels qu'on ait
+îî, r\ R == p,, o ^j^ i <1 n. Il existe une chaîne ^ C ^Pn-i C .. . C ^n
+formée d'idéaux bilatères premiers de A tels qu'on ait ^ n 7? := py^ pour
+i^k^n.
+Il résulte en effet de l'égalité ^n/?==p^ que A/^i contient TP/p^ et en est
+une extension finie. D'après l'assertion (a) de la proposition 11, il existe
+donc un idéal bilatère premier Qz+i de A/^i tel qu'on ait
+Qz+in(^/p0=pn-i/p..
+L'image réciproque ^+1 de Qi+i dans A est un idéal bilatère premier de A
+et satisfait à l'égalité ^î;-n r\R= Pz+i-
+On construit ^.4-2 à partir de ^Pz+i comme on a construit ^-1-1 à partir
+de ^};; la construction se poursuit par récurrence.. ..
+COROLLAIRE 2. — Les notations et les hypothèses sont celles de la propo-
+sition 11. Si M est un A-module, nous désignons par ^M le R-module
+sous-jacent à M. La dimension de Krull de M est finie si et seulement si la
+dimension de Krull de p M est finie. Dans ce dernier cas^ ces deux dimen-
+sions sont égales.

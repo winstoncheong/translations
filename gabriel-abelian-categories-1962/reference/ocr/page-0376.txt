@@ -1,0 +1,37 @@
+376
+P. GABRIEL.
+en injectifs, on sait [10] que les fondeurs dérivés ^ ( F o T) s'identifient aux
+fondeurs {RnF)oT. Cela est vrai en particulier si F est le fondeur
+7V—^Hom^,^(7W, 7V'). On en déduit les corollaires h et 5 :
+COROLLAIRE k. — Les hypothèses sont celles du corollaire 3. Le fondeur
+7V—>Ext^ç( TM, 7W) (?^ isomorphe au n-ième fondeur dérivé du
+fondeur N —^ Hom^ (M, STN).
+COROLLAIRE 5. — Les hypothèses so?it celles du corollaire 3. La dimension
+homologique de A/C est inférieure ou égale à la dimension homologique de A.
+On rappelle que la dimension homologique d'une catégorie A est le plus
+petit entier n tel que Ext^1 {M, N) soit nul pour tout couple {M, N )
+d'objets de A.
+Le calcul des groupes Ext^/ç(Jf, N) peut se faire d'une autre manière
+lorsque le fondeur section est exact : en effet, S transforme les objets
+injectifs de A/C en objets injeclifs de A. Par conséquent, si G est un fondeur
+de A dans une catégorie abélienne D, les fondeurs (^G) o S et / ^ ( G o S )
+sont encore isomorphes. Cela est vrai en particulier si G est le fondeur
+^—^Hom^(Af, JT).
+COROLLAIRE 6. — Les hypothèses sont celles du corollaire 2. On suppose en
+outre que le fondeur section est exact. Les fondeurs 7V —> Extjfl in ( 7W, N)
+et /V—^ExtJj (M, *S7V) sont alors isomorphes.
+La proposition suivante examine le cas où le fondeur section est exact :
+PROPOSITION 7. — Soit C une sous-catégorie localisante dune catégorie
+avec enveloppes injectées A. Les assertions suivantes sont équivalentes :
+a. Le fondeur localisation (ou le fondeur section) est exact.
+b. Si N est un sous-objet de M et si N et M sont C-fermés^ alors M/N
+est C-fermé.
+c. Si 1 est un injectif ne contenant aucun sous-objet non nul de C, et si
+N est un sous-objet C-fermé de 7, alors I/N est C-fermé.
+(a) => (b) => (c) : Clair.
+(c)=> (a) : Si L est le fondeur localisation S o T, on va montrer que le
+premier fondeur dérivé R^L de L est nul.
+Supposons d'abord que M est un objet de C; soient i : M ^ lune enveloppe
+injective de / etp : I->N\e conojau de ;. Comme Lp est un isomorphisme,
+la suite exacte o->o=LM-Ll>LI-LP>LN—^filLM—^o montre que R^LM
+est nul.

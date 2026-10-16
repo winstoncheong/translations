@@ -1,0 +1,42 @@
+372
+P. GABRIEL.
+de STM. Comme toiit sous-objet de STM appartenant à C est nul,
+Co}ïerW(M) est nul; ceci prouve le corollaire.
+Nous dirons dorénavant qu'une sous-catégorie épaisse C de A est une sous-
+catégorie localisante de A s'il existe un foncteur -S' adjoint à T. Dans ce cas,
+le foncteur exact à gauche So T est appelé fondeur localisation. Ce foncteur
+localisation est exact si et seulement si S est exact (corollaire 3 de la propo-
+sition 1).
+PROPOSITION 4. — Si C est une sous-catégorie épaisse de A^ les assertions
+suivantes sont équivalentes :
+a. C est une sous-catégorie localisante de A.
+b. Tout objet M de A contient un sous-objet qui est maximal parmi les
+sous-objets de M appartenant à C; de plus, si tout sous-objet de M appar-
+tenant à C est nul^ il existe un monomorphisme de M dans un objet C-fermé.
+(a) => (b) : Avec les notations habituelles il est en effet clair que KerW(M)
+est maximal parmi les sous-objets de M appartenant à C. Si KerW (M) est
+nul, W (M) est un monomorphisme de M dans un objet C-fermé.
+(b) =>(a) : Soit u : M-> N un morphisme de A. Nous disons que u est
+une C-enveloppe de M si /Y est C-fermé et si Keru et Coker^ sont des objets
+de C. Nous allons d'abord montrer que tout objet M possède une C-enve-
+loppe :
+Soit en effet M' le plus grand sous-objet de M appartenant à C et soit i un
+monomorphisme de M / M ' dans un objet C-fermé /?. Soit d'autre part N
+l'image réciproque dans R du plus grand sous-objet de Coken appartenant
+à C. La condition (a) du lemme 1 montre que N est C-fermé. Si y est le
+morphisme de M/M' dans N qui est induit par /, alors j o p ^ i / M ' est une
+C-enveloppe de M.
+Nous sommes maintenant en mesure de construire un foncteur adjoint à T:
+tout objet N de A/C peut être considéré comme un objet de A ; nous choisis-
+sons une C-enveloppe de cet objet, soit u ( N ) : N—>SN. Tout objet M
+de A donne alors naissance aux applications suivantes :
+Hom^( TM, N) = Hom^( TM\ TN) H^7^7^ Hom^( TM, TSN)
+< T[MÏSN}
+Hom^ (M\ SA7).
+Ces applications sont bijectives et elles déunissent un isomorphisme fonc-
+toriel de Hom^(7\, N ) sur Homj ( ., SN). Autrement dit, Homn ( T., 7V)
+est un foncteur représentable et la proposition résulte de la proposition 10
+(chap.I).
+Supposons maintenant que C est une sous-catégorie localisante de A et
+considérons un morphisme u : M—^N de A. Soit M' (resp. N ' ) le plus
+grand sous-objet de M (resp. de N ' ) appartenant à C. Comme u { M ' ) est

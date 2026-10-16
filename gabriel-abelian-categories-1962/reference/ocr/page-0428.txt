@@ -1,0 +1,42 @@
+4^8
+P. GABRIEL.
+complété de M pour la topologie TçM, ce complété Af est la limite projec-
+tive des modules M/M' ^ quand M' parcourt les sous-modules de M tels
+qu'on ait KdimM/M'^o. Si M est nœthérien, les quotients M / M ' sont de
+longueur finie. En particulier, A est un anneau pseudo-compact à droite;
+si M est nœthérien, M est un module pseudo-compact à droite sur À.
+Il est clair que (moàA)o s'identifie à la catégorie des /f-modules à droite
+topologiques et discrets. De plus, on a le
+COROLLAIRE 2. — Soit A un anneau nœthérien à droite. Le foncteur qui
+associe à tout A-module nœthérien à droite M le A-module à droite
+pseudo-compact M^ est exact à droite. Ce foncteur est exact si l'enveloppe
+injective d^un A-module de dimension de Krull nulle a une dimension
+de Krull nulle.
+Ce corollaire résulte facilement de la proposition 11 et du lemme 1, § 3,
+chap.IV.
+PROPOSITION 10. — Si A est un anneau commutatif nœthérien^ toute
+sous-catégorie localisante de modA est stable par enveloppes injeclives.
+Soit en effet C une telle sous-catégorie localisante et soit M un ^4-module
+appartenant à C. Si l'idéal premier p est associé à Af, le module A / p appar-
+tient à C (proposition 7). Nous allons montrer que, pour tout idéal premier?,
+l'enveloppe injective de A / p appartient à la sous-catégorie localisante engen-
+drée par A / p , si M est un ^-module et si a est un élément de A^ nous
+désignons par a^Thomothétie x—>x .a de M. Nous disons que OM estpresque-
+niipolent si tout sous-module nœthérien de M est annulé par une puissance
+de a M.
+LEMME 1. — Soient p un idéal premier d\m anneau commutatif nœthé-
+rien A et M un A-module. Les assertions suivantes sont équivalentes :
+a. M appartient à la sous-catégorie localisante de modA qui est engen-
+drée par A /p.
+b. Pour tout élément a de p, a M est presque-niipotent.
+Si 1 est un idéal de A^ le quotient.4/1 appartient en effet à la sous-catégorie
+localisante engendrée par A / p si et seulement si I contient une puissance
+de p (corollaire 1 de la proposition 7). Il s'ensuit que M appartient à la
+sous-catégorie localisante engendrée par A / p si et seulement si tout élément
+de M est annulé par une puissance de p.
+LEMME 2. — Soient A un anneau commutatif nœthérien et 1 un A-module
+in jectif indécomposable. Pour tout élément a de A^ Vhomothétie aj est soit
+bijective^ soit presque-niipotente.
+Soit en effet M un sous-module nœthérien non nul de /. Comme M est
+nœthérien, l'égalité suivante est vraie pour n assez grand :
+Kera^nlmaîy==: o.

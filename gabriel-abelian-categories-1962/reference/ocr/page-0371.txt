@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+371
+Nous dirons dorénavant que l'objet M est C-fermé s'il satisfait aux condi-
+tions équivalentes du lemme précédent. Notre objet est de prouver que M
+est C-fermé si et seulement si le morphisme ^F (M) de M dans STM est un
+isomorphisme. Pour cela, nous aurons besoin du
+LEMME 2. — Pour tout objet N de A / C ^ S/Y est C-fermé.
+Vérifions en effet l'assertion (a) du lemme 1 ; on a le diagramme commu-
+tatif suivant :
+Hom^i (P, SN) cw-^ Hom^( TP, N)
+4
+^
+Hom ( u, SN)
+Hom ( Tu, N)
+Horn^ ( Ç, SN) ?K^ Hom^rÇ, N)
+Les applications cp(-P, N) et îp(Ç, ^V) sont bijectives. Il en résulte que
+Hom (M, SN) est une bijection si Tu est un isomorphisme.
+PROPOSITION 3 :
+a. Le morphisme fonctoriel ^ est un isomorphisme de T o S sur in.
+b. Pour tout objet M de A, KerW(M) et CokerW (M) appartiennent à C.
+Horn^ (Jf, SN) ?w? Hom^ ( TM, N)
+\
+/
+T(M, SN)\
+/Hom ( TM, «Ï> (AQ)
+Hom^(7W, TSN)
+Prouvons (a) : soient en effet M un objet de A, N un objet de A / B . On a
+le diagramme commutatif ci-dessus.
+L'application îp(^/, N ) est une bijection ainsi que T^Af, SN) (lemmes 1
+et 2). Il s'ensuit que Hom ( TM\ ^(M)) est une bijection pour tout M'.
+L'assertion Ça) résulte de ce que tout objet de A/C est de la forme TM
+(corollaire 2 de la proposition 1, chap. I).
+Prouvons maintenant (b) en montrant que TW(M) est un isomorphisme
+pour tout M. Or le composé de TW (M) et de 0(7W) est le morphisme
+identique de TM (proposition 8, chap. I). Comme (D est un isomorphisme
+fonctoriel, le résultat est démontré.
+COROLLAIRE. — Un objet M de A est C-fermé si et seulement si W (M) est
+un isomorphisme de M sur STM.
+Nous savons déjà que STM est C-fermé. Supposons donc que M est
+C-fermé : comme tout sous-objet de M appartenant à C est nul, KerW (M)
+est nul; ceci prouve que W(M) est un monomorphisme. L'assertion (b) du
+lemme 1 montre alors que Colvert (M) est isomorphe à un facteur direct
+BULL. SOC. MATH. — T. 90. FASC. 3.
+27

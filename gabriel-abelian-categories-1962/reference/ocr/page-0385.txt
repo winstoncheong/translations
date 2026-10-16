@@ -1,0 +1,39 @@
+CATÉGORIES ABÉLIENNES.
+385
+c. TaAa est un objet semi-simple de A/A a.
+û?. Ze morphisme f de ^ TVa ^a/z^ M qui est dé fini par la famille (/a)
+a
+^ (me extension essentielle de ^ TVa-
+a
+Po^r toute famille (/a) satisfaisant à (a), (À), (c) ^ (à?), Ta/a ^ ^
+isomorphisme de Ty^Ny, sur le socle de Ty^M.
+Désignons en effet par My, le plus grand sous-objet de M appartenant à Ay,
+(a<Kdim^). Soit Ça un complément de A/a dans J^aTo (chap. II, § 5);
+soit <a le monomorphisme canonique de Ça dans M.
+LEMME 1. — Le morphisme j de ^. Ça dans M qui est défini par la
+a
+famille (/a) est une extension essentielle de ^ Ça.
+a
+Cela est clair si Kdim^ est égal à — i ; nous supposerons donc la pro-
+priété démontrée pour toutes les catégories B telles que Kdim B <^ Kdim A ;
+nous prouvons qu'alors la propriété est vraie pour^. Deux cas sont possibles
+en effet :
+— L'ordinal Kdim A a un prédécesseur (3 : on sait qu'alors le morphisme h
+de M^Q) Çp dans M qui est défini par les morphismes canoniques de M^
+et Çp dans M^ est une extension essentielle. D'autre part, y est composé d'un
+morphisme i de V Ça dans /Vp® Çp et de À; comme i est une extension
+a
+essentielle d'après l'hypothèse de récurrence et le lemme 2 (§ 5, chap. II),
+il s'ensuit que j est une extension essentielle (lemme 1, § 5, chap. II).
+— Kdim A est un ordinal limite : M est alors la borne supérieure des A/p,
+pour (3<<Kdim^. Soit y'g le morphisme de ^. Ç^ dans M^ qui est défini
+ï<f3
+par les morphismes îy. Comme JQ est une extension essentielle d'après
+l'hypothèse de récurrence, l'assertion résulte de la proposition 13 (chap. II).
+Le lemme étant démontré, la construction d'une famille (/a) est simple :
+soit en effet Ny. un sous-objet de Ça et soit gy, le morphisme canonique
+de TVa dans Ça; nous supposerons que Ta^a est un isomorphisme de Ty^Ny,
+sur le socle de 7^ Ça. Si P est un sous-objet non nul de Ça, Ty,P contient
+un sous-objet simple et T^Pç\ Ta/Va n'est pas nul. Il s'ensuit que Pc\Ny,
+n'est pas nul. Ceci prouve que gy, est une extension essentielle. Si nous
+posons/a==/a°^a, les conditions (a), (6), (c) et ( d ) sont vérifiées.

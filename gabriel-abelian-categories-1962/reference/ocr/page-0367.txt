@@ -1,0 +1,48 @@
+CATÉGORIES ABÉLIENNES.
+867
+Nous savons déjà que Ti est un monomorphisme. Soit donc / un mor-
+phisme de TX dans TM tel que Tu of soit nul : nous devons prouver
+l'existence d'un morphisme ~g : TX—> TK tel qu'on ait Tio^=f.
+Or /est Fimage d'un élément / de Hom^ { X ' , M / M ' ) où X / X ' et M
+appartiennent à C. Nous sommes donc en présence du diagramme commutatif
+suivant :
+o——>
+K
+——>. M -u->
+N
+^
+'[
+o —> K/Kr\ M' -^-> M/M' -^-> N/u{M' )
+où/?, q et r sont les morphismes canoniques. Comme Tuofest nul, l'image
+de X' par u'o f appartient à C. Si X" désigne l'image réciproque /-^Inu7),
+il s'ensuit que X ' / X " et X / X " appartiennent à C. De plus, la restriction de/
+à X" est composée d'un morphisme g : X" -> K / K r\M' et de //. Si §• est
+l'image de g dans Hom^/^(^T, K), on a l'égalité cherchée Tio^==f.
+La deuxième partie du lemme se prouve de façon « duale ».
+LEMME h'. — Soit u : M —>N un morphisme de A. Alors Tu est un isomor-
+phisme si et seulement si Keru et Coker^ appartiennent à C.
+Si Tu est un isomorphisme, Tu est à la fois un monomorphisme et un
+épimorphisme. D'après le lemme 2, il en résulte que Keru et Coker^ sont
+des objets de C. Réciproquement, supposons cette dernière condition satis-
+faite; soient q l'épimorphisme canonique de M sur Coinu/, /le morphisme
+canonique de îmu dans /V, S" l'isomorphisme canonique de Coirnu sur \mu.
+Le morphisme identique de Coim^ est un élément de Homj(CoimM,
+M / i ( K ) ) (les notations sont celles du lemme 3). Cet élément a une image q
+dans Hom^/^(CoimM, M) et il est clair que q est un morphisme inverse
+de T q. Ceci montre que T q est un isomorphisme. De la même manière Tj
+est un isomorphisme. Il s'ensuit que Tu= Tjo T^ o Tq est un isomor-
+phisme.
+PROPOSITION 1. — Si C est une sous-catégorie épaisse de A^ la catégorie
+A/C est abélienne. En outre le foncteur canonique de A dans A/C est exact.
+Soit en effet/ : TM—^ TN un morphisme de A/C. Montrons que/possède
+noyau, conoyau, coimage, image et que le morphisme canonique de la coimage
+dans l'image est un isomorphisme.
+Or/est l'image d'un élément/de Hom^ {M', N / N ' ) , où M/M' et N ' sont
+des objets de C. On déduit de là le diagramme commutatif
+TM -/-^
+TN
+T.M f
+| T,_A'
+11 M'
+^ ^ N / N '
+T M ' - ^ ^ T ^ N / N ' )

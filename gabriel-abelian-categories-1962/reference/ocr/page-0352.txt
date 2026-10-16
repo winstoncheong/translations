@@ -1,0 +1,47 @@
+352
+P. GABRIEL.
+LEMME 5. — Nous supposons que pour tout monomorphisme g de C, F g
+est un monomorphisme. Alors :
+a. Les morphismes F(S'^ S) sont des monomorphismes.
+b. Le foncteur RF est exact à gauche.
+Pour prouver (a) nous utilisons les notations du lemme i. Si ^^5', la
+suite exacte
+8"= (o -^ A IM^ M1^M'-> Cokery^o u -> o)
+« domine » à la fois S et S ' (i. e. ^^<S', *S^^) ; en outre F (S\ S) est
+induit par le morphisme Fj^. On en tire que F ( S ' , S) ==F(S\ S ' ) o F ( S ' , S)
+et F ( S ' ^ S) sont des monomorphismes.
+Prouvons (b) : soient o —^A'—^A -^> A"—> o une suite exacte de C et
+S = (o —> A -> M—^ N—^ o) un élément de S^. On a le diagramme commu-
+tatif et exact suivant :
+o
+o
+^
+.
+^
+o —-> A' -L^ A ———^ A" ———-> o
+<J
+.
+1
+Y
+/.
+Y /„
+Y
+o —^ A' - ' - > M—^ M Î ^ A " —-. o
+N——^—->N
+Y
+Y
+0
+0
+Avec des notations déjà utilisées, on tire de là le diagramme exact
+o ——> F(f-1 S) —^ FS ——-^ F (g-S)
+l
+.
+i
+o ——> F(f-1 S) —^ FM—-> F (Mî^ A " )
+Par passage à la limite, il en résulte une suite exacte
+o -> (BF) A'-> (JRF) A -> }imF(^S).
+'—-^
+^
+De plus, l'assertion (a) montre que le morphisme canonique de lim.F(^)
+A'
+dans ( B F ) A ' f est un monomorphisme; ceci termine la preuve.

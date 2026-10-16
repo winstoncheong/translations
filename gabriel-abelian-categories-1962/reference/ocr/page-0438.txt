@@ -1,0 +1,43 @@
+438
+P. GABRIEL.
+de degré ^n. Dans ce cas, l'anneau sous-jacent à l'anneau gradué G(B)
+peut être identifié à /?, G-n(B) étant identifié à l'ensemble des monômes de
+degré n(n^o). Modulo cette identification, les idéaux à droite homogènes a
+de G(B) sont de la forme
+aoeT.ai® ^.a.œ^.aa®...®^.^
+où di est un idéal à droite de A tel qu'on ait
+... ^cr-^û^D . .. Do-'^aODûo.
+Si A est nœthérien à droite, il en résulte que 0—^(0;) est égal à o- /-1 (a/+i)
+pour i assez grand. Il existe donc un entier n tel qu'on ait o'(a;) == (X^i pour
+z^/î; il s'ensuit que a est engendré par un nombre fini d'éléments homo-
+gènes de degré inférieur ou égal à n. Par conséquent, l'anneau gradué G(B)
+est nœthérien à droite et B est nœthérien à droite.
+Supposons maintenant qu'on ait KdimA=n. Si M est un ^-module,
+nous munissons le ^(Z?)-module M0^G(B} de la graduation évidente : les
+éléments de degré r de M(^)^G(B) sont de la forme m (g) / T'\ mçM. Nous
+prouvons d'abord le
+LEMME h-. — Soit M un A-module non nul de dimension de Krull finie n.
+La dimension de Krull du G (B)-module gradué MÇ)^G{B) est alors égale
+à n -h i.
+Nous démontrons ce lemme par récurrence sur n. Comme A est supposé
+nœthérien à droite, il suffît d'établir la preuve lorsque M est nœthérien.
+Nous désignons par A la catégorie des G(B)-mod\i\es gradués et nous utilisons
+les notations du chapitre IV (§ 1) :
+Si M est simple et si x est un élément non nul de M^ les seuls sous-modules
+gradués de M(^)^G(B) sont engendrés par les x 0^ T'\ r^o. Il s'ensuit
+que l'image de MÇ^^G(B) dans la catégorie quotient A/AQ est un objet
+simple. Si M est de longueur finie, soit o == A/oC^i C . . • cMs== M une
+suite de Jordan-Hôlder de M. Les modules gradués Mi(^)jG(B) définissent
+alors une suite de composition de M(^)^G{B) dont les quotients ont i pour
+dimension de Krull. Il en résulte que M(^)^G{B) a i pour dimension de
+Krull.
+Supposons maintenant le lemme démontré lorsqu^on a n << m et prou-
+vons-le lorsque n est égal à m : pour cela nous considérons M(^)^G(B)
+comme un objet de la catégorie quotient A/A^-i- SI M est un objet simple de
+la catégorie quotient mod A/(mod A)rn—\^ les seuls sous-objets de MÇQ^G(B)
+dans A/A^_[ sont les sous-modules gradués qui sont engendrés par M (^) 4 7^,
+r^ o. Il en résulte que Fimage de M(^)^fG(B) dans A/A,,^ est simple. Enfin,
+si M est un ^4-module nœthérien tel qu'on ait Kdim M==7z, l'image de M
+dans mod A / (mod A ) n-ï est de longueur finie. En utilisant des suites de
+composition de M^ on montre comme plus haut que la dimension de Krull
+de M(^)^G(B) vaut n 4- i.

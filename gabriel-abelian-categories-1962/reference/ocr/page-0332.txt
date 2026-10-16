@@ -1,0 +1,41 @@
+332
+P. GABRIEL.
+Ceci résulte du diagramme commutatif
+Hom(^, Y)-W>FY
+A
+^
+îlom(X,f)\
+Ff\
+Hom(.T, X)-^>FX
+et du fait que ^r== cp(^T) (ix)-
+COROLLAIRE 1 [11]. — Si X et A'' sont deux objets de C, l'applica-
+tion /—^Hom(/, .) de Hon^^T7, X ) dans l'ensemble des morphismes
+fonctoriels de Hom(JT, . ) dans îîom(^¥' . ) est bijedive.
+On prouve le corollaire en remplaçant F par X ' dans la proposition 1.
+COROLLAIRE 2. — Tout isomorphisme du fondeur Hom(^T, .) sur le
+fondeur Hon^^T7, . ) est induit par un isomorphisme de X ' sur X.
+Nous dirons dans la suite qu'un fondeur F de C dans Ens est représen-
+table [11] si F est isomorphe à un fondeur IIom(JT, .). On dit aussi que X
+est un représentant de F. Un tel représentant est évidemment défini à un
+isomorphisme près.
+En particulier, si le foncteur F qui associe à tout objet l'ensemble j 0 j est
+représentable, nous choisissons une fois pour toutes un représentant 0 de F.
+Ce représentant sera appelé Vobjet initial de C. Pour tout objet Y de C,
+nous désignons alors par Yîy le seul morphisme de 0 dans Y.
+De façon duale, Vobjet final 0' de C, s'il existe, est tel que Hom(J^, 0')
+contienne un et un seul élément s y pour tout objet Y.
+On dit que 0 est nul s'il est initial et final. Si M et N sont alors deux
+objets de C, nous notons OM,N ou simplement o au lieu de YÎM ° s^v.
+Donnons un autre exemple : on rappelle qu'une somme directe de deux
+objets M et N est un triple! (jP, ^, v) formé d'un objet P et de deux mor-
+phismes, u : M—> P et v '. N—>P\ de plus, on suppose que les applica-
+tions Hom(M, X} et Hom (^, X) définissent pour tout objet X un isomor-
+phisme de Hom(P, X) sur le produit cartésien Hom(^f, X) x Hom (7V, X).
+L'objet P est donc un représentant du foncteur
+^—>ïlom(M, X } x Hom(7y, X ) .
+S'il existe des sommes directes de M et TV, nous en choisissons une que nous
+notons (Af^/V, JM-> J N ) ' Nous disons alors que M^LN est « la » somme
+directe de M et de N et quey^ et/y sont « les » morphismes canoniques.
+La notion duale est la notion de produit direct de M et de N : s'il existe,
+nous notons « le » produit M\tN\ « les » morphismes canoniques sont
+notés OM et q^'

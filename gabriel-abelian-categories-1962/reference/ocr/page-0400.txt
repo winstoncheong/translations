@@ -1,0 +1,42 @@
+4û0
+P. GABRIEL.
+COROLLAIRE 1. — Les hypothèses et les notations sont celles du théorème h'.
+Si 1 contient un injectif indécomposable de chaque type, le fondeur F
+définit une équivalence entre A et la catégorie duale de PC (A).
+Nous supposerons à partir de maintenant que / contient un injectif indé-
+composable de chaque type. Si Mest un sous-objet quelconque de 7, nous
+désignons par \{M) l'idéal à gauche de A formé des endomorphismes de 1
+dont le noyau contient M.
+COROLLAIRE 2. — Les hypothèses et les notations sont celles du corollaire 1.
+L'application M-—>\{M) est une bijection de l'ensemble des sous-objets
+de 1 sur l'ensemble des idéaux à gauche 'fermés de A, U idéal \(M) est
+bilatère si et seulement si le sous-objet M de 1 est caractéristique [i. e. f(M)
+est contenu dans J^pour tout endomorphisme/de /].
+La démonstration du corollaire 2 est laissée au lecteur. Nous associons
+à toute sous-catégorie fermée C de A le plus grand sous-objet C I de / qui
+appartienne à C. Si/est un endomorphisme de 7,/(C7) est contenu dans C l .
+Autrement dit, CI est un sous-objet caractéristique de /.
+Réciproquement, soit J un sous-objet caractéristique de 7. Les objets M
+pour lesquels l'application canonique de Hom(^f, J ) dans Hom(7lf, 7) est
+bijective, forment une sous-catégorie fermée J A de A. De plus, si 7 contient
+un injectif indécomposable de chaque type, les applications C —> CI et J—> JA
+définissent une correspondance biunivoque entre l'ensemble des sous-
+catégories fermées de A et l'ensemble des sous-objets caractéristiques de 7.
+Autrement dit, l'application C—^\(CI) est une bijection de l'ensemble des
+sous-catégories fermées de A sur l'ensemble des idéaux bilatères fermés de A.
+Dans le corollaire qui suit, nous notons I(C) au lieu de \{CI).
+COROLLAIRE 3. — Les hypothèses et les notations sont celles du corol-
+laire 1. Si C et D sont deux sous-catégories fermées de A^ F idéal bilatère
+l(C.D) est l'adhérence du produit l(C).Ï(0).
+La preuve du corollaire 3 est laissée au lecteur. Il en résulte qu'avec les
+notations de la proposition 12, r^ est l'adhérence du produit r71.
+Si l'injectif 7 contient un et un seul injectif indécomposable de chaque
+type, le socle Iy de 7 contient un et un seul objet simple de chaque type. On
+dit alors que l'anneau A des endomorphismes de 7 est Vanneau pseudo-
+compact associé à A. Cet anneau est déterminé à un isomorphisme près par
+la donnée de la catégorie A. Deux catégories localement finies équivalentes
+ont des anneaux pseudo-compacts associés qui sont isomorphes.
+Nous disons qu'un anneau pseudo-compact A est sobre si le quotient de A
+par son radical de Jacobson est un produit de corps. Nous disons que deux
+anneaux pseudo-compacts A et B sont équivalents si les catégories PC (A)
+et PC{B) sont équivalentes. On a alors les résultats suivants : l'anneau

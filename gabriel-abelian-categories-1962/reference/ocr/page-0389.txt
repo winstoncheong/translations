@@ -1,0 +1,41 @@
+CATÉGORIES ABÉLIENNES.
+889
+(BRAUER appelle une telle classe un bloc ; pour être précis disons que BRAUER
+considère les modules projectifs indécomposables sur un anneau artinien A ;
+il dit que deux projectifs indécomposables P et Q appartiennent au même
+bloc s'il existe une suite P^ = P, P^, . . ., Pk= Ç formée de projectifs indé-
+composables tels que les groupes Hom^(P/, Pi+i) et Hom^(P/^i, Pi) ne
+soient jamais nuls tous les deux; nous verrons au paragraphe 3 que la théorie
+de BRAUER est un cas particulier de celle que nous développons ici). Si n est
+une telle classe, soit In la sous-catégorie pleine de / qui est définie par les
+sommes directes d'injectifs indécomposables de n. Il est clair que la caté-
+gorie / est équivalente au produit des catégories /„; de plus, In n'est pas
+équivalente au produit de deux catégories additives non nulles ; d'où
+l'assertion.
+Soit^ la sous-catégorie localisante de A qui est déunie par les objets M
+tels que Hom(Af, /) soit nul pour tout injectif indécomposable n'apparte-
+nant pas à n. Il est clair que les catégories An et KIn sont équivalentes. La
+catégorie A est donc équivalente au produit des catégories connexes An. iNous
+dirons que An est une composante connexe de A.
+Nous terminons ce paragraphe sur une généralisation de la décomposition
+primaire de Lasker-Nœther. Pour tout élément s du spectre de A^ nous
+choisissons un injectif indécomposable Is de type s. Si M est un objet de A^
+nous disons que s est associé à M si l'enveloppe injective de M contient un
+sous-objet isomorphe à /,. L'ensemble des éléments s de Sp(>ï) qui sont
+associés à M sera noté ass(Af). Nous disons que M est isotypique de type s
+si ass(A^) a s pour seul élément.
+PROPOSITION 9. — Soit M un objet nœthérien d'une catégorie localement
+nœthérienne A. Il existe une application s—->Ns d'une partie finie L
+de Sp(^) dans l'ensemble des sous-objets de M qui remplit les conditions
+suivantes : M/Ns est isotypique de type s; l'intersection des Ns est nulle;
+si P est une partie de L qui est distincte de L, l'intersection /^\ Ns n'est pas
+SÇ.P
+nulle. Si ces conditions sont remplies^ L est égal à ass(A/).
+Soit en effet /: M—^I une enveloppe injective de M. Nous supposons pour
+simplifier que M est un sous-objet de / et que (' est le morphisme canonique
+de M dans /. Nous supposons aussi que / est la somme directe d'une somme
+directe d'une famille (fi)içi d'injectifs indécomposables. Les sous-objets
+MÇ\II de M sont alors différents de 0 pour tout / et leur somme est directe.
+Comme M est nœthérien, l'ensemble L est fini. Si s est un élément de ass (Af),
+désignons par J,^ la somme directe des // isomorphes à Is. Dans ces condi-
+tions, il suffit de choisir L égal à ass (M) et N, égal à Mr\( V Jt\

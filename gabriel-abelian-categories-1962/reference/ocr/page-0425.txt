@@ -1,0 +1,43 @@
+CATÉGORIES ABÉL1ENNES.
+425
+de A par un élément 1 de F^ il s'ensuit que I contient le produit p^.p,-__i...po.
+La proposition 7 entraîne donc le
+COROLLAIRE 1. — Soient A un anneau nœthérien à droite ayant assez
+d'idéaux bilatères et E un ensemble d'idéaux bilatères premiers de A.
+L'ensemble F des idéaux à droite qui contiennent un produit de la
+forme p,..p^_i...po, où piçE, est topologisant et idempotent. Récipro-
+guement^ tout ensemble d'idéaux à droite topologisant et idempotent est
+de ce type.
+Si l'anneau A possède assez d'idéaux bilatères, le spectre premier de A
+coïncide avec le spectre de la catégorie modA. Ce dernier se trouve donc
+muni d'une structure d'ensemble ordonné nœtliérien. De plus, pour toute
+sous-catégorie localisante C de mod.4, Sp(C) coïncide avec l'ensemble des
+idéaux bilatères premiers p tels que A / p appartienne à C. Si a est un ordinal,
+nous désignons en particulier par Ey, l'ensemble des idéaux premiers tels
+qu'on ait Kdim^/p^a (voir chap. ^, § 1). On a alors le
+COROLLAIRE 2. — Soit A un anneau nœtliérien à droite ayant assez
+d'idéaux bilatères. Avec les notations ci-dessus^ les ensembles Ey, peuvent
+être définis de la façon suivante :
+— 77—! est vide.
+— Si l'ordinal a a un prédécesseur (3, Ey, est formé des idéaux bilatères
+premiers p tels que tout idéal bilatère premier contenant p et distinct de p
+appartienne à EQ.
+— Si a est un ordinal limite. Ey, est la réunion des EQ pour (3 < a.
+Il est clair que jE_i est vide. Soit donc y un ordinal quelconque et suppo-
+sons que les énoncés du corollaire 2 sont vérifiés pour lout ordinal a <; y.
+Si y est un ordinal limite, ces énoncés restent manifestement vériHés lorsque y.
+est égal à y. Examinons le cas où Y a un prédécesseur p et soit 7g le fondeur
+canonique de modA -=.A dans A/AQ (les notations sont celles du chapitre IV) :
+Soit p un idéal bilatère premier tel qu'on ait Kdim.4/p ==: y. D'autre part,
+soit q un idéal bilatère premier contenant p et distinct de p. Il est clair que
+Kdim^/q est inférieur ou égal à Kdim^/p; si l'égalité avait lieu, les quo-
+tients de Jordan-Hôlder de T f i ( A / p ' ) ne seraient pas tous isomorphes. Il en
+résulterait l'existence d'un sous-module non nul N de A / p qui n'engen-
+drerait pas la même sous-catégorie localisante de mod-4 que A / p . Comme il
+existe une injection ^-linéaire de A / p dans une somme directe de modules
+isomorphes à A (cf. la preuve de la proposition 7), cela est impossible. On
+a donc l'inégalité KdimA/q << KdimA/p.
+Réciproquement, supposons que A/ç\ appartienne à AQ pour tout idéal
+premier q contenant p et distinct de p. Soit 1 un idéal à droite de A / p qui
+est maximal parmi les idéaux à droite m tels que A/m n'appartienne pas
+à ^Q. Alors T^{A/\) est un objet simple; il s'ensuit qu'il existe un idéal

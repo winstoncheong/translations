@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+897
+égalité montre que les idéaux à gauche \{M) forment une base de voisinages
+de 0 pour une topologie qui fait de A un groupe topologique. Nous muni-
+rons toujours A de cette topologie que nous qualifierons de naturelle.
+PROPOSITION 13 :
+a. Soient A une catégorie localement fînie^ 1 un injectif de A et A
+Vanneau des endomorphismes de I. Muni de la topologie naturelle^ A est
+un anneau pseudo-compact,
+b. Réciproquement^ tout anneau pseudo-compact A est isomorphe à
+l'anneau des endomorphismes d'un injectif d'une catégorie localement
+finie. En particulier^ le radical de Jacobson r de A est l'intersection des
+idéaux à gauche ouverts maximaux; l'intersection des ï'1 est nulle et A/Y.
+est isomorphe au produit des anneaux des endomorphismes d'une famille
+d'espaces vectoriels.
+a. Montrons d'abord que A est un anneau topologique. Comme il existe
+une base de voisinages de 0 formée d'idéaux à gauche, il suffit de prouver
+la chose suivante : pour tout sous-objet de longueur finie M de / et pour
+tout élément a de A^ il existe un sous-objet de longueur finie N tel que
+\{N).a soit contenu dans \{M). Or il suffit de choisir 7V égal à a(M).
+On a d'autre part les « égalités »
+y4=Hom(/, I)=zîîom(\imM, I\ = limHom(^, I)=\imA/l(M).
+\—>
+/
+<-—
+<-—
+Ces égalités montrent à la fois que A est séparé et que A est complet.
+Il reste à prouver que les yl-modules A/\(M) sont de longueur finie : pour
+cela, nous étudions d'abord le ^1-module Hom(»S', /) lorsque S est un objet
+simple de A ; nous désignons par Is la composante isotypique de type S de /o
+et par B l'anneau des endomorphismes de Is-
+Pour tout endomorphisme / de /, f(Is) est contenu dans Is-, il s'ensuit
+que /induit un endomorphisme g de Is et que l'application p : f—->g de A
+dans B est un épimorphisme d'anneaux. Cet épimorphisme est compatible
+avec la bijection canonique du ^-module Hom(^, /) sur le /^-module
+Hom(*S, Is)- II en résulte que Hom(^, /) est nul ou est un .4-module simple
+suivant que Is est nul ou non.
+Soit maintenant M un sous-objet de longueur finie de / et soit
+ocM^cM^C .. . cMnCM
+une suite de Jordan-Hôlder de M. Le .4-module A/l(M) est isomorphe à
+Hom(Jf, /) et les modules îîom(M/Mi, I ) définissent une suite de composi-
+tion de Hom(J^, 7). Le quotient de ïiomÇM/Mf, 1} par îlomÇM/M^, I )
+est isomorphe à Hom(7^_n/^/f, I). 11 en résulte que la longueur de A/\ (M}
+est inférieure ou égale à la longueur de M. Ceci prouve (a).

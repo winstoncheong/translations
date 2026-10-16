@@ -1,0 +1,39 @@
+328
+p. GABRIEL.
+1. Les univers de Grothendieck. — Un ensemble U est un univers si les
+axiomes suivants sont vérifiés :
+Ui : Si (yti)içi est une famille d'ensembles appartenant à U, et si 1 est un
+élément de U, alors la réunion U Xi est un élément de U.
+i
+Ua : Si x appartient à U, alors l'ensemble { x \ à un élément appartient à U.
+Ug : Si x appartient à X et si X appartient à U, alors x appartient à U.
+Û4 : Si X est un ensemble appartenant à U, l'ensemble ^{X) des parties
+de X est un élément de U.
+Ug : Le couple (œ, y ) est élément de U si et seulement si x et y sont des
+éléments de U.
+Il convient d'ajouter aux axiomes habituels de la théorie des ensembles un
+axiome assurant que tout ensemble appartient à un univers. Dans ce cas il
+existe un plus petit univers contenant un ensemble donné. Nous choisissons
+une fois pour toutes un univers tt qui ne « variera » pas dans tout ce qui
+suit. Bien entendu, nous supposons U assez grand pour que l'ensemble Z
+des entiers et éventuellement d'autres ensembles soient des éléments de U.
+Le lecteur pourra s'exercer à prouver les corollaires suivants des axiomes :
+— Si Y est contenu dans JT, et si X appartient à ÎI, alors Y appartient à U.
+— Si X et Y sont deux ensembles appartenant à U, la réunion X\J Y et
+le produit cartésien X x Y sont des éléments de U.
+— Si .3? et j appartiennent à U, l'ensemble ( x^ y \ appartient à U.
+— Si (^-)/e/est une famille d'ensembles appartenant à U, et si / appar-
+tient à U, alors le produit | \Xi appartient à U.
+iç.1
+— Si X est un ensemble appartenant à U, le cardinal de X est stricte-
+ment inférieur au cardinal de U.
+2. Définition des catégories. — Une catégorie C est constituée par les
+données suivantes :
+— Un ensemble OC dont les éléments s'appellent les objets de C.
+— Pour tout couple (Af, N ) d'objets de C, on se donne un ensemble
+noté Homp(^f, N) dont les éléments sont appelés morphismes de M dans N
+on écrira souvent / : M->N OVL M-j^ N au lieu de fçïîomp(M, 7V) j.
+— Pour tout triplet (Af, TV, P) d'objets de C, on se donne une applica-
+tion pi du produit Hom^(Jf, TV) x Homp(7V, P) dans Homp(Af, P) ("on
+notera g o / ou g oc/au lieu de pi(/, g)\ on dira que |JL est V application de
+composition^.

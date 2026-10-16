@@ -1,0 +1,41 @@
+CATÉGORIES ABÉLIENNES.
+3;7
+Supposons maintenant que M ne contient pas (Tobjet non nul de C et
+conservons les notations précédentes. Comme Lp est un épimorphisme,
+7?'Z^fest nul.
+Dans le cas général, soit M' le plus grand sous-objet de M appartenant à C
+et soit M"=.M/M'. La suite exacte R^ LM'-^ R^ LM--> 7?' LM" prouve la
+nullité de R^LM.
+COROLLAIRE. — Soit C une sous-catégorie localisante d'une catégorie avec
+enveloppes injectives A. Si la dimension Jiomologique de A vaut o ou i, le
+joncteur localisation est exact.
+^. U-catégories avec générateurs et limites inductives exactes. — Nous
+utilisons toujours les notations des paragraphes précédents.
+PROPOSITION 8. — Si C est une sous-catégorie épaisse d'une Vi-catégorie
+abélienne avec générateurs et limites inductives exactes A, les assertions
+suivantes sont équivalentes :
+a. C est une sous-catégorie localisante de A.
+b. La limite inductive (dans A) d'un système inductif d'objets de C
+appartient à C.
+(a) ==> (b) : Soit en effet (A/;, cpyz) un système inductif d'objets de C, l'en-
+semble d'indexation appartenant à l'univers U. Soient M la limite inductive de
+ce système et cp; le morphisme canonique de Mi dans M. D'après le corollaire 1
+de la proposition 6, M contient un sous-objet M' qui appartient à C et qui
+contient tous les sous-objets de M appartenant à C; en particulier, M'
+contient Im ç^ pour tout i et est donc égal à M.
+( b ) =^ ( a ) : Soit en effet M un objet de A. Si P et N sont deux sous-objets
+de M appartenant à C, P + N est isomorphe à un quotient de P Q) N. Il
+s'ensuit que P 4- N appartient à C et que les sous-objets de M appartenant
+à C forment un ensemble filtrant croissant de sous-objets de M. D'après (^),
+la borne supérieure de ces sous-objets appartient à C et elle est le plus grand
+sous-objet de ^appartenant à C; d'où le résultat, grâce au corollaire 1 de la
+proposition 6.
+COROLLAIRE. — Soient A une Vi-catégorie abélienne avec générateurs et
+limites inductives exactes, et (I/) une famille d'objets injectifs de A. Les
+objets M de A tels que Hom ( M, I j ) soit nul pour tout j sont les objets dune
+sous-catégorie localisante de A. Réciproquement, toute sous-catégorie loca-
+lisante de A peut être définie ainsi.
+Soit en effet C la sous-catégorie pleine de A dont les objets M sont tels que
+Hom(J^, //) soit nul pour tout y. Si o -> M' --> M -^ M" -> o est une suite
+exacte de A, on a aussi les suites exactes
+o->Hom(Jr, /;)-^Hom(Af, /y) -^Hom(J^, I/)->o.

@@ -1,0 +1,44 @@
+35o
+P. GABRIEL.
+on a (m1— m) o u==o', d'où l'existence d'un w\N—^M' tel que m'—m==w o v.
+11 s'ensuit que F m' est égal à F m 4- ( F w ) o ( F v ) . Le lemme résulte de ce
+que { F w ) o ( F v ) s'annule sur Ker(Fv).
+Nous notons désormais FS l'objet Ker(Fv) et F(S\ S ) le morphisme/
+de Ker(T^) dans Ker(/ < T^ /). Si S ' ^ Sel S ' ' ^ S^ le lemme précédent montre
+que F(S^ S) est un isomorphisme dont l'inverse est F ( S ^ S ' ) . Il est donc
+licite de poser la définition
+(BF) A == lim FS.
+^es^
+Donnons-nous en plus un morphisme g\ A —> A'. Pour toute suite
+S== (o -^ A -^M-^ N-> o)
+on a le diagramme commutatif et exact qui suit (fin du § 6, chap. I) :
+o —-> A ——u—> M———-> N—-> o
+f\
+/M
+iJ
+•^
+^
+^
+o —.^ A' ——^ A' I^M—-> N—^ o
+SoilfS la suite de la deuxième ligne. Le morphisme F J ' M induit évidem-
+ment un morphisme de FS dans F(fS). Nous désignons par F(f^ S) le
+composé de ce morphisme et du morphisme canonique de F ( f S ) dans
+( R F ) A ' . Le lecteur vérifiera les relations F(f, S)=F(f, S ' ) o F ( S ' , S)
+si S'^ S. Par passage à la limite, les morphismes F(f^ S) définissent donc
+un morphisme (BF) /de (JRF) A dans (BF)A1.
+LEMME 3 :
+a. Les applications A --> (JRF) A etf-> {RF) f définissent un fondeur RF
+de C dans 0.
+b. fi F est nul si et seulement si F vérifie la condition suivante : pour
+tout objet A de C, FA est le sup des Ker (Fi) lorsque i parcourt les mono-
+morphismes de source A.
+c. Le fondeur F -^-> BF est exact à gauche.
+d. Si cp : F-> G est un morphisme fondoriel et si 7?(Cokercp) est nul^
+alors 7?(Coker7?cp) est nul.
+e. Le fondeur F—-^ RF commute avec les limites indudives.
+Nous laissons au lecteur la vérification de (a), (6), (e). Prouvons (c) :
+Ç
+'11
+pour cela soit o -> F' -> F -> F"—^ o une suite exacte de foncteurs de C dans D.
+Pour tout objet A de C et tout élément S de S^,
+S=:{o->A-^M-^N->o\

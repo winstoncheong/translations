@@ -1,0 +1,32 @@
+# Build artefacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.xdv
+
+# Never commit the scanned originals: they are large and are re-fetchable
+# from the URL recorded in each translation's README.
+*.pdf
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/

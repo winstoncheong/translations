@@ -1,0 +1,43 @@
+CATÉGORIES ABÉLIENNES.
+4l3
+g : a^->f(n.a) et h : a^-> f(n).a sont A-linéaires, et on a l'égalité
+g o u^=^ h o u^. On en lire l'égalité de g et de h ( définition des objets F-fermés,
+lemme 1, § 2, chap. III),
+C.Q.F.D.
+Soit F ' l'ensemble des idéaux à droite I de Ap tels que p(A^/I) soit
+.F-négligeable. Il est clair que F ' est topologisant et idempotent, et qu'un
+A ^-module N est F '-négligeable si et seulement si pTV est 7^-négligeable.
+Nous pouvons donc parler du foncteur canonique T ' de mod Ap dans la
+catégorie quotient m o d A y / F ' .
+PROPOSITION 3. — Soient A un anneau et F un ensemble d'idéaux à
+droite^ topologisant et idempotent. Avec les notations ci-dessus^ le foncteur
+Top définit par passage au quotient une équivalence entre mod Ap/F' et
+mod A/F.
+Soit en effet B la catégorie quotient mod A / F ; montrons que le foncteur AS'
+est adjoint à Top : si M est un objet de B^ N un objet de mod Ap^ le groupe
+abélien Hom^^pTy, M) s'identifie à Hom^(p7V, ^ S ' M ) , car p o S' est adjoint
+à T. D'après le lemme 2, Hom^(p7V, ^ S ' M) « s'identifie )> à Hom^,(7y, S ' ' M ) .
+Ceci prouve que S' est adjoint à Top. La proposition résulte donc de la
+proposition 5 (chap. III).
+COROLLAIRE. — Un Ap-module N est F-fermé (resp. F'-fermé et injeclif)
+si et seulement si p7V est F-fermé (resp. F-fermé et inj'ectif).
+Ce corollaire résulte de la proposition précédente et du corollaire de la
+proposition 3 (chap. III).
+Si M est un
+A-module, nous désignons par FM le plus grand
+sous-module T^-négligeable de M. Le groupe abélien sous-jacent à Mp
+s'identifie à Hoin^(A^, Mp) ; ce dernier groupe est lui-même isomorphe à
+Hom^^/r(A^, M), c'est-à-dire à la limite inductive lim Hom^(I, M/FM).
+IÇF
+II est aisé de munir cette limite inductive d'une structure de A-module telle
+que l'isomorphisme précédent de Mp sur lim Hom^(I, M I F M) soit un
+isomorphisme de A-modules. La proposition qui suit en résulte :
+PROPOSITION h>. — Soient A un anneau et F un ensemble d'idéaux à
+droite^ topologisant et idempotent. Le foncteur localisation défini par F
+est isomorphe au foncteur M—>\ïm Hom^(I, M/FM).
+l^F
+COROLLAIRE 1. — Les hypothèses sont celles de la proposition. On
+suppose en outre que l'enveloppe injective d'un objet de F appartient à F.
+Le foncteur localisation défini par F est alors isomorphe au fondeur
+Jf—^lim Hom^(I, M).
+\ç.F

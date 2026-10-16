@@ -1,0 +1,42 @@
+CATÉGORIES ABÉLIENNES.
+33 1
+il nous arrivera de ne pas expliciter les applications F (M, N ) , mais seule-
+ment l'application de OC dans 00 qui est associée à F. Le symbole M--^-^ F'M
+désignera alors le fondeur F.
+Les fondeurs de C dans 0 sont les objets d'une catégorie que nous note-
+rons HomÇC^ 0) et dont les morphismes sont définis de la façon suivante :
+soient F et G deux fondeurs de C dans 0\ un morphisme (ou morphisme
+« fondoriel ») cp de F dans G consiste en la donnée, pour tout objet M de C,
+d'un morphisme cp(A/) : FM->GM. On suppose en outre que, pour tout
+morphisme y: M —> N de C, le diagramme suivant est commutatif :
+FM^GM
+\Ff
+\ Gf
+FN^ GN
+Si
+cp : F-> G et
+L? : G—>H sont deux morphismes fondoriels, le
+composé ip o cp est défini par la formule
+^o^)(M)=^(M)o^(M).
+Il en résulte en particulier que cp est un isomorphisme de Hom(C^ 0) si et
+seulement si cp (M) est un isomorphisme pour tout objet M àe,C\ on dit alors
+que cp est un isomorphisme fondoriel.
+Considérons maintenant deux objets ^T et Y de C; comme nous supposons
+que C est une U-catégorie, Homp(^T, Y ) est un élément de U. Nous dési-
+gnons par ^T, Homp(^T, .) ou Hom(^T, .) le fondeur y—^Hom(^T, Y )
+de C dans Ens. Si f : JT—>- X ' est un morphisme de C, nous désignons par f ou
+par Hom(/, .) le morphisme fondoriel qui applique l'élément g de
+^r^Hon^JT, Y) surrélément^o/deJrr=Hom(.r, Y).
+Les applications X ^-^ X et f^->f; définissent évidemment un fondeur
+de C° dans Hom(C^ Ah). Nous allons examiner ce fondeur d'un peu plus près :
+pour cela, soit F un fondeur quelconque de C dans Ah ; tout élément Ç de FX
+définit alors un morphisme fondoriel £ de X dans F : pour tout objet Y
+de C, '^(Y) est l'application f—>(Ff) (^) de ^rr==Hom(^r, Y) dans .FF.
+PROPOSITION 1. — Pour tout objet X de C ^application i;^>£ de FX
+dans Hom(^r, F ) est bijective.
+En effet, soit cp un morphisme fondoriel de X dans F\ soit © l'image de ijc
+par l'application cp(^) de Hom(^, JT ) dans .F^T. Dans le cas où cp est égal
+à ^, <p n'est autre que H. Il reste donc à prouver que 9 == Ç si ^==<p. Autre-
+ment dit, nous devons montrer que pour tout objet Y de C et pour tout
+morphisme / : X—>Y^ on a l'égalité
+cp(r)(/)^(jy)(o.

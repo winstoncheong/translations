@@ -1,0 +1,58 @@
+%@ pages 328
+%@ status translated
+% Chapter I, section 1: Grothendieck universes (p. 328).
+
+\chapter{A Few Recalls on Categories}
+\markboth{Chapter I. A Few Recalls on Categories}{}
+
+The purpose of this chapter is to recall a few definitions and notations
+concerning categories. We suppose that the reader is acquainted with
+Chapters~I and~II of [10]. However, since time has done its work since 1957,
+we add a few supplements to Grothendieck's article; these supplements are due
+in large part to Grothendieck himself, and they will be expounded in a
+forthcoming work [7]. This is why we allow ourselves to omit most of the
+proofs.
+
+\section{Grothendieck universes}
+--- A set $\Univ$ is a \emph{universe} if the following axioms hold:
+
+\begin{description}
+\item[$\mathrm{U}_1$] If $(X_i)_{i\in I}$ is a family of sets belonging to
+$\Univ$, and if $I$ is an element of $\Univ$, then the union $\bigcup_i X_i$
+is an element of $\Univ$.
+
+\item[$\mathrm{U}_2$] If $x$ belongs to $\Univ$, then the set $\{x\}$ is an
+element belonging to $\Univ$.
+
+\item[$\mathrm{U}_3$] If $x$ belongs to $X$ and if $X$ belongs to $\Univ$,
+then $x$ belongs to $\Univ$.
+
+\item[$\mathrm{U}_4$] If $X$ is a set belonging to $\Univ$, the set
+$\Powerset(X)$ of parts of $X$ is an element of $\Univ$.
+
+\item[$\mathrm{U}_5$] The pair $(x,y)$ is an element of $\Univ$ if and only
+if $x$ and $y$ are elements of $\Univ$.
+\end{description}
+
+It is convenient to add to the usual axioms of set theory an axiom ensuring
+that every set belongs to a universe. In that case there exists a smallest
+universe containing a given set. We choose once and for all a universe $\Univ$
+which will not ``vary'' throughout what follows. Of course, we suppose $\Univ$
+large enough that the set $\mathbf{Z}$ of integers, and possibly other sets,
+are elements of $\Univ$. The reader may exercise himself in proving the
+following corollaries of the axioms:
+
+\begin{itemize}
+\item If $Y$ is contained in $X$, and if $X$ belongs to $\Univ$, then $Y$
+      belongs to $\Univ$.
+\item If $X$ and $Y$ are two sets belonging to $\Univ$, then the union
+      $X \cup Y$ and the Cartesian product $X \times Y$ are elements of
+      $\Univ$.
+\item If $x$ and $y$ belong to $\Univ$, then the set $\{x,y\}$ belongs to
+      $\Univ$.
+\item If $(X_i)_{i\in I}$ is a family of sets belonging to $\Univ$, and if
+      $I$ belongs to $\Univ$, then the product $\prod_{i\in I} X_i$ belongs
+      to $\Univ$.
+\item If $X$ is a set belonging to $\Univ$, then the cardinality of $X$ is
+      strictly smaller than the cardinality of $\Univ$.
+\end{itemize}

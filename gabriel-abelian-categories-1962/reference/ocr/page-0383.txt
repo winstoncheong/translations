@@ -1,0 +1,44 @@
+CATÉGORIES ABÉLIENNES.
+383
+Nous supposons dans toute la suite de ce paragraphe que la dimension de
+Krull de A est définie, c'est-à-dire que A^ coïncide avec A. Pour tout ordinal
+a < Kdim^, la catégorie ^aTo/^a est alors de dimension nulle.
+Si M est un objet de A, le type de cet objet sera l'ensemble des objets
+de A isomorphes à M. Nous désignons par Sp(A) (spectre de A) l'ensemble
+des types d'objets injectifs indécomposables de A. Pour tout ordinal
+a < Kdim^, nous désignons par Spa(^) l'ensemble des types qui sont formés
+d'objets injectifs indécomposables Affermés et contenant un sous-objet non
+nul de ^aTo- II est clair que les ensembles Spa(^) sont disjoints deux à deux
+et que leur réunion est égale à Sp(>l).
+Si T est un objet injectif indécomposable dont le type appartient à Spa(^),
+Ta/contient un sous-objet de longueur finie de A/A^. Il en résulte que le
+socle de T'a/n'est pas nul et est un objet simple de ^aTo/^a. Nous notons
+s ( I ) le plus petit sous-objet non nul et ^à-fermé de /. Le morphisme cano-
+nique de s ( I ) dans T induit alors un isomorphisme de T ^ s ( I ) sur le socle
+de Ty^I. Par abus de langage, nous dirons que s ( I ) est le socle de T. Nous
+traiterons s ( I ) indifféremment comme un objet de A ou comme un objet
+d e A / A ^ .
+PROPOSITION 2. — Soit A une catégorie dont la dimension de Krull est
+définie. Pour tout ordinal a<Kdim^, l'application I-^s(I) induit une
+bijection de Spa(^) sur l'ensemble des types d'objets simples de A/A^.
+Soient en effet / et J deux injectifs indécomposables dont les types appar-
+tiennent à Spa(^). Le corollaire de Ja proposition 11 (chap. II), entraîne
+que / et J sont isomorphes si et seulement s'il en va de même de s ( I ) et
+s (J). Soit d'autre part M un objet simple de A^jo/Ay_ et soit u : M—>EM
+une enveloppe injective de M dans A/A^. Si S^ est un foncteur adjoint à Ta,
+Sy.EM est un injectif indécomposable dont le socle est isomorphe à M
+(comme objet de A/A^). Ceci termine la preuve.
+Si l'on rapproche la proposition 2 de la proposition 11 (chap. II) on voit
+comment sont liées les notions de spectre, d'objet simple et d'objet
+coirréductible.
+Soit maintenante une sous-catégorie localisante de A, soit T le foncteur
+canonique de A dans A/C et soit S un foncteur adjoint à T. Si Test un injectif
+indécomposable de C et si El est une enveloppe injective de T dans A, il est
+immédiat que El est encore indécomposable. L'application I—>EI induit
+donc une injection de Sp(C) dans Sp(^); nous identifierons toujours Sp(C)
+avec l'image de cette injection. De même, si J est un injectif indécomposable
+de A/C, SJ est un injectif indécomposable de A. L'application J — ^ S J induit
+une injection de S p ( A / C ) dans Sp(^) ; nous identifions toujours S p ( A / C ) avec
+l'image de cette injection. Le corollaire 2 de la proposition 6 (chap. III),
+montre alors que S p ( A / C ) est le complémentaire de Sp(C) dans Sp(^). En
+outre la proposition 2 entraîne le

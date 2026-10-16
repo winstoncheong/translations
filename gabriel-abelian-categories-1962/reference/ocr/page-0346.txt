@@ -1,0 +1,38 @@
+346
+P. GABRIEL.
+Fonct(C, 0), et nous appelons catégorie des foncteurs de C dans D la sous-
+catégorie pleine de HomÇC, D) dont les objets sont les fondeurs additifs
+de C dans D (cf. chap. I, § 3).
+PROPOSITION 1. — Avec les hypothèses que nous avons faites ci-dessus^
+Fonct(C, D) est une catégorie additive, Si 0 est une catégorie abélienne^ il
+en va de même pour Fonct(C, D). Si 0 est une catégorie avec limites induc-
+tives (resp. avec limites indue fives exactes^ resp. avec limites projectives)^
+Fonct(C, D) est une catégorie avec limites inductives (resp. avec limites
+inductives exactes^ resp. avec limites projectiv es).
+Si E et F sont deux objets de Fonct(C, D)^ Hom(7^, F) est évidemment
+un sous-ensemble du produit || Hom(7^Af, FM). Ceci montre que
+M^OC
+Fonct(C, 0) est une U-catégorie. Le reste est à peu près clair.
+La suite de ce paragraphe est consacrée à V étude de Fonct(C,^A)
+quand C est une catégorie additive dont V ensemble des objets et l'ensemble
+des morphismes appartiennent à U. Nous désignons par Z[Cj l'anneau qui
+suit et qui n'a pas d'élément unité en général :
+— Le groupe abélien sous-jacent à Z[C] est la somme directe des groupes
+ïîomp(M^ N) lorsque M el N parcourent les objets de C.
+— Soient fGlîomp(M, N) et^eHomp(P, Ç) deux éléments de Z[C].
+Le produit f. g est le morphisme composé fog quand 0 coïncide avec M.
+Dans le cas contraire f .g est égalé à zéro.
+Pour tout objet X de C, le morphisme identique ïx de X est un idempotent
+de Z[C]. Si X et Y sont deux objets distincts de C, les idempotents ij^ et ly
+sont orthogonaux : ï^. iy== Î Y ' ix^ o- 11 s'ensuit que, pour tout Z[C]-module
+à gauche M^ l'élément i/\- définit une projection de M sur un facteur direct
+ï^(M). Déplus, la somme des sous-groupes abéliens ï^{M) est directe et
+elle est égale à Z[C].M\
+LEMME 1. — Si N est un sous-module de M (resp. Ç un quotient de M)^
+et siZ[C].M est égal à M, alors Z[C].N est égal à N {resp. Z[C].Ç est
+égal à Ç).
+Lîn élément m de M appartient en effet à Z[C].M si et seulement s'il
+existe un nombre fini d'objets de C, soient ^T, Y^ .. ., Z tels qu'on ait
+m := i x. m -+-1 y. m-{-. . . -+-1 z. m.
+Lorsque cette condition est satisfaite pour tout élément de M^ il en va de
+même pour N et Q.

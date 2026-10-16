@@ -1,0 +1,194 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: "Fail if French leftovers or TODO markers are found"
+        type: boolean
+        default: false
+      publish:
+        description: "Force (or skip) the GitHub Pages deployment"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# GitHub Pages refuses concurrent deployments and prefers the newer run.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # Current TeX Live, with latexmk, pdflatex, xelatex and lualatex.
+  # Override here to pin a specific release when a package update breaks a build.
+  TEXLIVE_IMAGE: texlive/texlive:latest
+
+jobs:
+  # ------------------------------------------------------------------
+  # Every directory holding a src/main.tex is one document to build.
+  # ------------------------------------------------------------------
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      documents: ${{ steps.find.outputs.documents }}
+      count: ${{ steps.find.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: find
+        run: |
+          docs=$(find . -mindepth 2 -maxdepth 3 -type f -path '*/src/main.tex' \
+                 -not -path './.git/*' | sed 's#/src/main.tex##; s#^\./##' | sort)
+          echo "Found documents:"
+          echo "$docs" | sed 's/^/  - /'
+          count=$(echo "$docs" | grep -c . || true)
+          echo "Total: $count"
+          if [ "$count" -eq 0 ]; then
+            echo "::error::No documents found (expected */src/main.tex)"
+            exit 1
+          fi
+          {
+            echo "documents<<EOF"
+            echo "$docs"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+  # ------------------------------------------------------------------
+  # Translation status: progress table + untranslated-passage detection.
+  # ------------------------------------------------------------------
+  report:
+    runs-on: ubuntu-latest
+    needs: discover
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Translation report
+        run: python tools/translation_report.py . --format text | tee report.txt
+
+      - name: Write job summary
+        run: |
+          {
+            echo "# Translation status"
+            echo
+            python tools/translation_report.py . --format markdown
+            echo
+            echo 'Full output: `report.txt` in this run'"'"'s logs.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Every file must declare pages and status
+        run: |
+          python tools/translation_report.py . --format json > report.json
+          python - <<'PY' >> "$GITHUB_ENV"
+          import json
+          d = json.load(open("report.json"))
+          print(f"REPORT_METADATA={d['missing_metadata']}")
+          print(f"REPORT_LEFTOVERS={d['leftovers']}")
+          print(f"REPORT_MARKERS={d['markers']}")
+          PY
+
+      - name: Fail on missing metadata
+        run: |
+          if [ "$REPORT_METADATA" != "0" ]; then
+            echo "::error::$REPORT_METADATA .tex file(s) lack %@ pages / %@ status metadata"
+            exit 1
+          fi
+          echo "OK. $REPORT_LEFTOVERS French leftover(s), $REPORT_MARKERS TODO marker(s)."
+
+      - name: Fail on leftovers or markers (manual strict runs)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.strict }}
+        run: python tools/translation_report.py . --strict
+
+  # ------------------------------------------------------------------
+  # Compile every document inside a current TeX Live container.
+  # ------------------------------------------------------------------
+  build:
+    needs: discover
+    runs-on: ubuntu-latest
+    container: ${{ env.TEXLIVE_IMAGE }}
+    strategy:
+      fail-fast: false
+      matrix:
+        document: ${{ fromJSON(needs.discover.outputs.documents) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show the TeX installation
+        run: |
+          pdflatex --version | head -2
+          latexmk --version | head -1
+
+      - name: Compile ${{ matrix.document }}
+        run: |
+          cd "${{ matrix.document }}/src"
+          latexmk \
+            -pdf \
+            -interaction=nonstopmode \
+            -halt-on-error \
+            -file-line-error \
+            -outdir=../build \
+            main.tex
+          # Give the PDF a stable, self-describing name for the website.
+          mv ../build/main.pdf "../build/${{ matrix.document }}.pdf"
+          pdfinfo "../build/${{ matrix.document }}.pdf" | grep -E '^(Pages|File size)'
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-${{ matrix.document }}
+          path: ${{ matrix.document }}/build/${{ matrix.document }}.pdf
+          if-no-files-found: error
+
+  # ------------------------------------------------------------------
+  # Assemble the static site and hand it to GitHub Pages.
+  # ------------------------------------------------------------------
+  site:
+    needs: [discover, report, build]
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect built PDFs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pdf-*
+          path: _site/pdfs
+          merge-multiple: true
+
+      - name: Build the landing page
+        run: python tools/make_site.py --site _site --root .
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: site
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

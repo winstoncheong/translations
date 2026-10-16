@@ -1,0 +1,41 @@
+CATÉGORIES ABÉLIENNES.
+4 17
+Montrons que F est idempotent : Soient m un élément de F . F et a un
+élément non nul de A ; il existe un élément I de F tel que (a.I -4- în)/m soit
+^-négligeable (cf. § 2). D'après (*), le produit a.\ n'est pas nul. Il existe
+donc un /€ I tel que a. l ne soit pas nul et tel que a. /.n soit contenu dans m
+pour au moins un \\ç.F. Ceci montre que m appartient déjà à F.
+L'ensemble /^définit donc une localisation. La condition (^) entraîne que
+l'application canonique de A dans Ap est injective. De plus, on a le lemme :
+LEMME 2. — Ap est un A-module injectif.
+Soit en effet/ : 1 —> Ap une application ^-linéaire d'un idéal à droite de A
+dans A y- Si 1 est un élément de F^ f se prolonge évidemment à A (chap. III,
+§ 2). Si 1 est un idéal à droite quelconque, soit Ht un complément de l dans
+Ad (chap. II, § 5); alors 1 + m est isomorphe à la somme directe I Q) m et
+/se prolonge en une application A -linéaire g : Ï-}-m—^Ap. Comme A est
+extension essentielle de 1 + m, 1 + îîî appartient à F et g se prolonge à A.
+LEMME 3. — Tout A-module F-fer me M contenu dans Ap est un facteur
+direct de A p.
+Identifions A à son image dans Ap et soit N un complément de MC\A
+dans A. Le module Aa est alors extension essentielle de Mr\Â 4- N-, et le
+quotient A p / ( M -\- N) est T^-négligeable. Il en résulte que Pinjection cano-
+nique de M + N dans Ap est une T^-enveloppe. Le lemme résulte donc de
+la formule
+Ap= (M@ N)p= Mp@ Np= M@ Np.
+LEMME ^. — L'anneau Ap est régulier au sens de von NEUMANN ([4], § 6,
+exercice 15) (on dit aussi « absolument plat » au lieu de régulier, [5]y
+chap. I, § 2, exercices).
+Nous voulons montrer que tout idéal monogène a. Ap est engendré par
+un idempotent. Pour cela, nous désignons par/a Pendomorphisme b —>a.b
+de Ap. L^application a^->fa est un isomorphisme de Panneau Ap sur
+Panneau des endomorphismes du ^4-module Ap. Comme Ap est F-fermé,
+Ker fa est F-fermé et est un facteur direct de Ap (lemme 3). Si M est un
+supplémentaire de Ker/a, M est injectif (lemme 2) et/a induit un isomor-
+phisme de M sur un facteur direct de Ap. Le lemme ^ résulte donc du
+lemme 5 :
+LEMME 5. — Soient A un anneau^ M un A-module^ B Vanneau des
+endomorphismes de M. Si b est un élément de B^ les assertions suivantes
+sont équivalentes :
+a. L'idéal à droite b. B est un facteur direct de B^.
+b. U idéal à gauche B .b est un facteur direct de sB.
+c. Ker b et 1m b sont des facteurs directs de M.

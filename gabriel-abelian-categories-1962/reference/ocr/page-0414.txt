@@ -1,0 +1,40 @@
+4l4
+P. GABRIEL.
+Considérons en effet la suite exacte qui suit :
+o-^limHom^(I, FM)^limïîom^(\, M) ^lim Hom^(Ï, M/FM)
+^limExt^(I, /-W).
+On vérifie tout de suite que lim Hom^(I, 7Y) est nul si TV est /^-négligeable. Il
+—->
+en résulte que^est une injection. D'autre part, le fondeur yV —> lim Ext^(I, A7)
+—>
+est le satellite du fondeur VV — > lim Hom^(I, YY). Si -/Y est jF-négligeable, il
+existe une suite exacte
+o-^/Y-^/-4A^o,
+où /est un y^-module injectif/^-négligeable. On en tire que limExt^(I, N )
+est nul si N est /^-négligeable. En particulier, l'application d est surjective.
+COROLLAIRE 2. — Soient A un anneau et F un ensemble d'idéaux à
+droite^ topologisant et idempotent. Supposons qu^il existe un sous-ensemble
+G de F^ cofinal et formé d'idéaux à droite de type fini. Si le fondeur
+localisation défini par F est exacte ce foncteur est isomorphe au foncteur
+M —-^M Ç)^AF: de plus^ les catégories mod A/F et mod Ap sont alors
+équivalentes.
+Montrons d'abord que le foncteur M—^\im Hom^(l, M/FM) commute
+IçG
+avec les sommes directes. Cela est évidemment vrai pour les fondeurs
+M - -^ FM et M —>M/FM'\ si A'est un --[-module de type fini, le fondeur
+Hom^(A, . ) commute avec les sommes directes. Il s'ensuit que le fondeur
+M—>îîom^(\^ M/FM) commute avec les sommes directes si 1 est un élé-
+ment de G. La première assertion du corollaire en résulte (voir la propo-
+sition 1 bis et la remarque qui la précède).
+Soit d'autre part B la catégorie quotient mod A / F ^ soit T le fondeur
+canonique de mod A dans B et soit *S' un fondeur adjoint à T. Le fondeur
+Homn(.4^, . ) est isomorphe au fondeur IÏom^(y4, S. ) ; comme S est exact,
+A^ est un objet projedif de B\ comme S commute avec les sommes directes,
+il en va de même pour ïlom«(y4^, . ). La dernière assertion résulte donc du
+corollaire 1 de la proposition 1.
+Voici une application du corollaire 2 : Soit *S une partie multiplicative
+de A (sous-ensemble de A tel que a.bçS si açS et bçS). La donnée de S
+permet de définir un ensemble d'idéaux à droite /^, topologisant et idem-
+potent : un idéal à droite Ï appartient à F s si, pour tout aç.A^ il existe un
+sç. S tel que a.s appartienne à I. Il revient au même de dire qu'un ^-module
+M est /^ç-négligeable si tout élément m de -If est annulé par un élément .y de S.

@@ -1,0 +1,43 @@
+4û8
+P. GABRIEL.
+est licite de parler du produit tensoriel Hom^P, sA)(^)^Ç. Si q est un
+élément de Ç et / un élément de Hom^(jP, ^A), nous désignons par Vqj'
+l'application A -linéaire p -^^f(p)'^- Lorsque q et f varient, la fonction
+(^, /) ^->^qj définit une application linéaire v(P', Ç) de Hom^(/^ sA)0^Ç
+dans Hom^P, Ç). Lorsque P et Ç varient, les applications v(P^ Ç) défi-
+nissent un morphisme du fondeur (P, Ç) ^-> Hom^(.P, .^)®^Ç dans le
+foncteur (P, ^-—^Hom^.P, Ç). Il s'ensuit en particulier que v ( P ^ Q )
+est un morphisme de modules à gauche sur l'anneau C des endomorphismes
+de Ç.
+Lorsque P est égal à sA^ ^(P-i Ç) ^st une bijection. On en déduit facile-
+ment que ^ ( P - ) Ç) est une bijection chaque fois que P est un ^-module
+à gauche projectif et de type fini. Si cela est vrai, le C-module à gauche
+Hom^(P, Ç) est isomorphe au C-module à gauche Hom^(P, s^) ®^Q qui
+est facteur direct d'un produit Ç".
+On obtient le résultat cherché en choisissant P et Ç égaux à ^U. L'anneau C
+s'identifie alors à l'anneau opposé à B.
+COROLLAIRE h'. — Soient A et B deux anneaux et U un A-B-bimodule
+(A à gauche^ B à droite). Les assertions suivantes sont équivalentes :
+a. UB est un B-module projectif de type fini; c'est un générateur de la
+catégorie mod 7?; de plus', Inapplication a—>au est un isomorphisme de A
+sur l^ anneau des endomorphismes de UB-
+b. Usatisfait à F assertion (b) du corollaire 3.
+c. ^U est un A-module à gauche projectif et de type fini; c'est un géné-
+rateur de la catégorie des A-modules à gauche; de plus^ l'application
+b—>bu est un isomorphisme de Panneau opposé à B sur Vanneau des
+endomorphismes de ^U.
+L'équivalence entre (a) et (b) résulte des corollaires 2 et 3. Il en va de
+même pour l'équivalence de (b) et de (c) à condition de remplacer A et B
+respectivement par 2?° et A°.
+Nous donnons maintenant quelques applications de ce qui précède :
+a. Soit tout d'abord 93 un univers tel que lie 33, U étant l'univers que
+nous avons choisi une fois pour toutes au début de ce travail. Soit d'autre
+part £ la catégorie dont les objets sont les catégories C telles que MC ç. 93 et
+OC ç93, les morphismes de £ étant les classes d'isomorphisme de fondeurs
+(cf. chap. I, § 8). Si A est un anneau dont l'ensemble sous-jacent appartient
+à U, la catégorie mod A est un objet de £; ce qui précède permet de déter-
+miner le groupe G (A) des automorphismes de cet objet :
+D'après les corollaires 2 et 3 de la proposition 1, un fondeur
+T : mod A —>-TnodA définit une équivalence s'il est isomorphe à un fondeur
+M—->M(^)^U^ où U est un ^4-^4-bimodule satisfaisant à l'assertion (c) du
+corollaire 3. Nous pouvons donc identifier les éléments de G (A) aux types

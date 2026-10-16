@@ -1,0 +1,178 @@
+%@ pages 324-327
+%@ status translated
+% Introduction (pp. 324-327).
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Abelian Categories}{Introduction}
+
+This work contains some general theorems on abelian categories and some
+applications of these theorems to the study of modules. We have devoted a
+good deal of space to recalls and to the statement of elementary properties
+of abelian categories; there are two reasons for this: the first is that the
+subject is recent enough and that we want to give the statements the form
+that suits us.
+
+The second reason is that we should like to convince the non-specialists and
+to offer them an overall exposition: let us say therefore to this group of
+readers that abelian categories were introduced by \textsc{Buchsbaum} and
+\textsc{Grothendieck} in order to generalise the homological methods of
+\textsc{Cartan} and \textsc{Eilenberg} [6]. A comparison will immediately
+show the interest of this notion: let $\{M_i\}_{i\in I}$ be a family of
+modules over a ring $A$, let $T_i$ be the lattice of submodules of $M_i$
+($i\in I$) and $\operatorname{Hom}_A(M_i,M_j)$ the abelian group formed by
+the $A$-linear maps of $M_i$ into $M_j$ ($i,j\in I$). One of the aims of
+lattice theory is to study the family of the modules $M_i$ by means of the
+family of the lattices $T_i$ [7]; likewise, the aim of homological algebra is
+the study of the $M_i$ by means of the groups
+$\operatorname{Hom}_A(M_i,M_j)$ and of the laws of composition which connect
+these groups. For a suitable choice of the family $(M_i)_{i\in I}$, the
+datum of the $\operatorname{Hom}_A(M_i,M_j)$ together with the laws of
+composition permits one to reconstruct the lattices $T_i$ ($T_i$ is the
+lattice of the ``subobjects'' of $M_i$). The data are therefore richer in
+homological algebra; it follows that the results are more precise.
+
+The results to which we are led apply principally to the following special
+cases:
+
+\begin{description}
+\item[\normalfont a.] \emph{Category of right modules over a right noetherian
+ring.} --- Our statements are then translated into the classical language of
+module theory; we make this translation in part in order to conform to
+established traditions. There is nevertheless no doubt that the study of
+module categories brings more general abelian categories into play (see the
+notion of quotient category).
+
+\item[\normalfont b.] \emph{Category of quasi-coherent sheaves on a noetherian
+prescheme} (this application is treated in Chapter VI).
+
+\item[\normalfont c.] \emph{Category of commutative algebraic groups} (see
+[19]; this application will be the subject of a later publication).
+
+\item[\normalfont d.] \emph{Category of Hopf algebras over a field,
+connected, with associative and commutative multiplication and diagonal}
+(this application does not deserve a publication).
+\end{description}
+
+Chapter~I consists of recalls and supplements to the literature published up
+to the present day. We insist especially on the notion of \emph{equivalence}
+of two categories: two categories $\mathbf{A}$ and $\mathbf{B}$ are
+equivalent if they are isomorphic when the morphisms are defined as follows: a
+morphism of $\mathbf{A}$ into $\mathbf{B}$ is the class of the functors of
+$\mathbf{A}$ into $\mathbf{B}$ which are isomorphic to a given functor. If
+one adopts this point of view, one obtains, for example, the following result:
+let $A$ be a ring with identity such that every unitary right $A$-module which
+is projective and of finite type is free; let $\mathbf{A}$ (resp.\
+$\mathbf{B}$) be the category of unitary right modules over $A$ [resp.\ over
+the ring $\mathbf{M}_n(A)$ formed of the $(n,n)$ matrices with coefficients in
+$A$]; the group of automorphisms of $\mathbf{A}$ (resp.\ of $\mathbf{B}$) is
+the quotient of the group of automorphisms of the ring $A$ [resp.\ of the
+ring $\mathbf{M}_n(A)$] by the subgroup of inner automorphisms. Since the
+categories $\mathbf{A}$ and $\mathbf{B}$ are equivalent (cf.\ Chapter~V,
+\S1), we recover that the quotients in question are isomorphic.
+
+Chapter~II presents the material which we work with in what follows: let us
+say, roughly, that an abelian category is \emph{noetherian} if all the objects
+of that category are noetherian, that an abelian category is \emph{locally
+noetherian} if there are inductive limits, if the inductive limit functor is
+exact and if every object is an inductive limit of noetherian objects. We
+show that every noetherian category $\mathbf{A}$ is equivalent to the category
+of noetherian objects of a locally noetherian category $\mathbf{B}$.
+Conversely, $\mathbf{B}$ is equivalent to the category of additive,
+contravariant, left exact functors of $\mathbf{A}$ into the category of abelian
+groups. The category $\mathbf{B}$ is therefore equivalent to a quotient
+category of the category of all additive contravariant functors of
+$\mathbf{A}$ into abelian groups; it follows that $\mathbf{B}$ is
+``almost'' a category of modules (cf.\ Chapter~II, \S1).
+
+In Chapter~III we are interested in the ``language modulo $\mathcal{C}$'' of
+\textsc{Serre}: let $\mathbf{A}$ and $\mathbf{B}$ be two abelian categories,
+$T$ and $S$ two additive functors, $T:\mathbf{A}\to\mathbf{B}$,
+$S:\mathbf{B}\to\mathbf{A}$. We suppose that $T$ is exact, that $S$ is
+adjoint to $T$ and that $T\circ S$ is isomorphic to the identity functor of
+$\mathbf{B}$. Under these conditions the category $\operatorname{Ker} T$,
+which is formed of the objects $M$ of $\mathbf{A}$ such that $TM$ is zero, is
+thick [10]; moreover, $T$, defined by passing to the quotient, induces an
+equivalence between the quotient category of $\mathbf{A}$ by
+$\operatorname{Ker} T$ [10] and the category $\mathbf{B}$. Conversely, let
+$\mathbf{C}$ be a thick subcategory of $\mathbf{A}$ and $T$ the canonical
+functor from $\mathbf{A}$ into $\mathbf{A}/\mathbf{C}$ [10]. We say that
+$\mathbf{C}$ is a \emph{localizing subcategory} of $\mathbf{A}$ if there
+exists a functor adjoint to $T$.
+
+When $\mathbf{A}$ is the category of modules over a commutative ring $A$, we
+can give the following example: let $\Sigma$ be a multiplicatively closed subset
+of $A$, $\mathbf{B}$ the category of modules over the ring $A_\Sigma$ and $T$
+the functor which associates to every $A$-module $M$ its ``localised''
+$M_\Sigma$. The functor $T$, defined by passing to the quotient, induces an
+equivalence between $\mathbf{A}/\operatorname{Ker} T$ and $\mathbf{B}$.
+
+Chapter~IV contains a few results on locally noetherian categories: we prove
+that an injective object of such a category $\mathbf{A}$ is a direct sum of a
+family of indecomposable injective objects. We also deal with the Krull
+dimension of $\mathbf{A}$; for this we ``filter'' $\mathbf{A}$ by means of
+localizing subcategories $\mathbf{A}_0\subset\mathbf{A}_1\subset\mathbf{A}_2\subset\cdots$
+such that the quotients $\mathbf{A}_{i+1}/\mathbf{A}_i$ are locally finite
+categories (that is to say, $\mathbf{A}_{i+1}/\mathbf{A}_i$ is locally
+noetherian and every object is an inductive limit of objects of finite
+length); we associate to these locally finite categories complete topological
+rings, playing the same role as complete local rings do in commutative
+algebra.
+
+Chapter~V deals with applications to module theory. When $\mathbf{A}$ contains
+in its centre a commutative noetherian ring $R$ and $M$ is a finitely
+generated $R$-module, we make explicit the constructions proposed in
+Chapter~IV. We show, in particular, that the study of the categories
+$\mathbf{A}_{i+1}/\mathbf{A}_i$ is equivalent to the study of the completions
+of $A$ for certain topologies. This chapter sets out a plan for attacking
+non-commutative noetherian rings. It remains to be seen whether the methods
+envisaged are practicable in the study of usual rings. In this connection let
+us point out a ring which \textsc{Dieudonn\'e} has introduced into the study of
+formal groups:
+
+\begin{quote}
+Let $k$ be an algebraically closed field of characteristic $p>0$, $W$ the ring
+of Witt vectors with coefficients in $k$ and $\sigma$ the Frobenius
+automorphism of $W$. We denote by $A$ the ring whose elements are the formal
+series of the form
+\[
+  a = w + \sum_{r\geq 1} a_r\, F^{r} + \sum_{s\geq 1} b_s\, V^{s},
+\]
+where $w$, $a_r$ and $b_s$ range over the ring $W$; multiplication is defined
+by the following rules:
+\[
+  V \cdot F = F \cdot V = p, \qquad
+  F \cdot w = \sigma(w) \cdot F \qquad\text{and}\qquad
+  w \cdot V = V \cdot \sigma(w)
+  \quad\text{if } w \in W.
+\]
+\end{quote}
+
+The ring $A$ is noetherian (on the right and on the left). If we denote by
+$\mathbf{A}$ the category of right $A$-modules, then:
+
+\begin{itemize}
+\item Every simple object of $\mathbf{A}$ is isomorphic to
+      $A/(F \cdot A + V \cdot A)$.
+\item If $\mathbf{A}_0$ is the smallest localizing subcategory of
+      $\mathbf{A}$ which contains $A/(F \cdot A + V \cdot A)$, then every
+      simple object of $\mathbf{A}/\mathbf{A}_0$ is of one of the following
+      types: $A/F \cdot A$, $A/V \cdot A$ or $A/\big((V^{r} - F^{q})\cdot
+      A\big)$ with $(r,q) = 1$.
+\item If $\mathbf{A}_1$ is the smallest localizing subcategory of
+      $\mathbf{A}$ which contains the above modules, then every simple object
+      of $\mathbf{A}/\mathbf{A}_1$ is isomorphic to $A$.
+\end{itemize}
+
+This work has already been presented in three lectures:
+
+\begin{itemize}
+\item \emph{Injective objects in abelian categories},
+      \emph{S\'eminaire Dubreil--Pisot}, t.~12, 1958--1959, n\textsuperscript{o}~17,
+      32 pages.
+\item \emph{Localisation in non-commutative rings}, \emph{S\'eminaire
+      Dubreil--Pisot}, t.~13, 1959--1960, n\textsuperscript{o}~2, 35 pages.
+\item \emph{On locally noetherian categories and their applications to the
+      algebras studied by Dieudonn\'e} (formal groups), \emph{S\'eminaire
+      J.-P. Serre}, 1959--1960.
+\end{itemize}

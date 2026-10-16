@@ -1,0 +1,44 @@
+340
+P. GABRIEL.
+PROPOSITION 8. — Pour que le morphisme fonctoriel composé cp o ^ soit
+le morphisme identique du fondeur Homn( T., . ), // faut et il suffit que
+le morphisme composé
+T II'
+(t) T
+T—^ TST—> T
+soit le morphisme identique du fondeur T.
+S'il existe deux morphismes fonctoriels cp et ^ tels que ^ o cp et cp o ip soient
+des morphismes identiques, nous dirons que le foncteur S est adjoint a T.
+Dans cette terminologie, S pourra être adjoint à Tsans que T soit adjoint à -5.
+Si S et S' sont deux fondeurs adjoints à 77, il existe un isomorphisme fonc-
+toriel de H o m ^ ( . , S. ) sur Hom.i(., S ' . ) . Cet isomorphisme définit pour
+tout objet B de B un isomorphisme du foncteur Homj ( . , SB} sur le fonc-
+teur Homj (., S ' B ) . Le corollaire de la proposition 1 entraîne la proposition
+qui suit :
+PROPOSITION 9. — Si S et S' sont deux fondeurs adjoints à 77, il existe
+un isomorphisme fonctoriel de S sur S'. De même si S est un fondeur
+adjoint à deux fondeurs T et T\ il existe un isomorphisme fonctoriel
+de T sur T ' .
+PROPOSITION 10. — Si T est un fondeur de A dans ff, les assertions
+suivantes sont équivalentes '.
+a. Il existe un fondeur adjoint à T.
+b. Pour tout objet B de B^ le fondeur A —^Homo(7L^, B) est repré-
+sentable.
+Il est clair que (a) entraîne (b). Réciproquement, choisissons pour tout
+objet B de B un représentant SB du foncteur A —> Hom» ( TA, B) et un
+isomorphisme fonctoriel ^ ( B ) : Hom^(., SB) ^-^ Hom^( T., B). Si
+f : B—> B' est un morphisme de B^ il existe un et un seul morphisme
+Sf : S B — ^ S B ' tel que le diagramme suivant soit commutatif
+Hom^ (., SB) _!^ Hom^( T., B)
+II.m .(.,Sf)\
+II.m
+(77.,/)
+" 4 '
+-
+^
+IIom^ (., S B ' ) ^-> Hom^ ( T., B ' )
+On voit sans peine que les applications B -^-> SB et f —-> Sf déunissent un
+foncteur adjoint à T.
+Lorsque A et B sont deux catégories additives^ nous supposerons, confor-
+mément à nos conventions, que S et T sont des fondeurs additifs. Ce qui
+précède reste alors valable si l'on veut bien considérer que les fondeurs

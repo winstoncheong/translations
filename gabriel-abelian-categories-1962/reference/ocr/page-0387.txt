@@ -1,0 +1,43 @@
+CATÉGORIES ABÉLIENNES.
+387
+ont même socle; autrement dit, les sommes directes V s(Ii) et V s(Jn)
+l^L.
+nç^
+sont isomorphes dans A/Ay^. Les propriétés des objets semi-simples entraînent
+l'existence d'une bijection hy, de la sur N^ telle que s(Ii) soit isomorphe
+à s(Jhy.[i)). Alors // est isomorphe à Aa(/).
+PROPOSITION 5 (théorème d'échange). — Supposons vérifiées les hypo-
+thèses du théorème 1. Soient (fi)^ une famille d'injectifs indécomposables
+et u : ^ Ii—>I une enveloppe injective. Si J est un facteur direct de 7, //
+iç.L
+existe une partie N de L qui satisfait à la condition suivante : toute extension
+essentielle maximale de u^ V 7/ ^ dans 1 est un supplémentaire de J.
+\ieN
+)
+Soit en effet N un élément maximal de l'ensemble des parties M de L qui
+satisfont à la condition suivante : J et u^ ^ Ii\ ont une intersection nulle.
+\^M
+)
+Nous allons prouver que 7 est une extension essentielle de la somme
+J -\- u ^ ^, Ii ^ : soit en effet L une extension essentielle maximale de cette
+\1^
+J
+somme dans 7. Comme N est maximal, L « coupe » tous les u(Ii)\ autrement
+dit, u(Ii) est extension essentielle de Lr\u(.fi) pour tout I ç L . Il en résulte
+que 7 est extension essentielle de Z. D'où l'égalité L = 7. Ceci achève la
+preuve.
+2. La structure des objets injectifs dans une catégorie localement
+nœthérienne. — Les énoncés du paragraphe précédent se simplifient quand A
+est une catégorie localement nœthérienne. Le corollaire 1 du théorème 1
+(chap. II) a en effet la conséquence qui suit :
+PROPOSITION 6. — Soient A une catégorie localement nœthérienne
+et {Ii)içi_ une famille d'objets injectifs de A. La somme directe V 7/ est
+tç.L
+alors un objet injectif de A.
+PROPOSITION "7. — Pour toute catégorie localement nœthérienne A^ la
+sous-catégorie localisante A^ coïncide avec A ; déplus^ les catégories A ^^/A ^
+sont localement finies.
+Nous savons en effet que A / A ^ ne possède aucun objet simple. Comme A
+est une catégorie localement nœthérienne, il en va de même pourA/A^. SiA^
+BULL. SOC. MATH. — T. 90, FASC. 3.
+28

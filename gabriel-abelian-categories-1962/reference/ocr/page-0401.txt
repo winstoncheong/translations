@@ -1,0 +1,43 @@
+CATÉGORIES ABÉLIENNES.
+4oi
+pseudo-compact associé à une catégorie localement finie-est sobre. Tout
+anneau pseudo-compact est équivalent à un anneau pseudo-compact sobre.
+Deux anneaux pseudo-compacts sobres sont équivalents si et seulement si ils
+sont isomorphes.
+Si A est un anneau pseudo-compact, le théorème ^ s'applique en parti-
+culier à la catégorie dis ( A ) des ^4-modules topologiques discrets. Si A" est
+l'anneau pseudo-compact associé à dis (^4), les catégories dis(.4) et PCÇA")
+sont duales [i. e. les catégories dis(y4) et PC(A*)° sont équivalentes].
+Il s'ensuit que les catégories T ( A ) et T(Ak), formées des modules discrets
+de longueur Unie sur A et A\ sont duales. D'après le théorème 1 (chap. II)
+enfin, toute dualité entre T (A) et T ( A * ) se prolonge en une dualité entre
+PC ( A ) et dis ( A * ) . Si A est sobre, A est donc isomorphe à (A*)* et l'on
+pourra dire que A* est l'anneau pseudo-compact dual de A.
+Le corollaire 1 a la conséquence suivante :
+COROLLAIRE ^. — Si A est une catégorie localement finie et si A est Vanneau
+pseudo-compact associé à A^ alors A est équivalente à la catégorie des
+modules topologiques discrets sur l'anneau A* dual de A.
+COROLLAIRE 5. — Soient I un objet injectif d'une catégorie localement
+finie A et A Panneau des endomorphismes de I. Si 1 contient un injectif
+indécomposable de chaque type, le centre Z\A\ de la catégorie A (chap. III,
+§ 5 ] est isomorphe au centre de Vanneau A.
+Un élément z de ^[^] est en effet un morphisme du foncteur identique I »
+dans lui-même. En particulier, z définit un endomorphisme z ( I ) : I — > I .
+Comme z ( I ) commute avec tous les endomorphismes de /, z ( I ) appartient
+au centre de A. Nous laissons au lecteur le soin de vérifier que l'application
+z --^z (7) est une bijection de Z [ A ] sur le centre de A.
+COROLLAIRE 6. — Tout anneau pseudo-compact commutatif A est iso-
+morphe à ranneau dual A*. En particulier^ la catégorie T(A) des
+A-modules topologiques discrets de longueur finie est équivalente à la caté-
+gorie duale T(A)°.
+Comme A est un anneau pseudo-compact sobre, il suffît en effet de montrer
+que les anneaux pseudo-compacts A et A* sont équivalents, c'est-à-dire que
+les catégories T ( A ) et T (A)0 sont équivalentes. Nous allons exhiber un
+foncteur contravariant de T ( A ) dans T ( A ) qui définit une équivalence entre
+T ( A ) et T ( A ) ^ .
+Lorsque Ht parcourt les idéaux ouverts maximaux de ^4, les quotients A/m
+parcourent des objets simples de chaque type de la catégorie dis (A). Nous
+désignons par E une enveloppe injective [dans dis (A)] de la somme directe
+de ces quotients.
+Pour tout ^4-module Af, le groupe abélien Hom^(Af, E) se trouve alors
+muni d'une structure de ^4-module : si îp est un élément de Hom^(A/, E) et

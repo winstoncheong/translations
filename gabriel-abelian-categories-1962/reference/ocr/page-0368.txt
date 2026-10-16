@@ -1,0 +1,51 @@
+368
+P. GABRIEL.
+où TIM' et Tq^i^' sont des isomorphismes. Ce diagramme montre que/^a un
+noyau, conoyau. . ., si et seulement si il en va de même de Tf. Autrement
+dit, il est loisible de supposer que / est de la forme Tf.
+Dans ce cas le lemme 3 montre que / possède noyau, conoyau, coimage,
+image. Nous désignons par ^, /, et ^ respectivement les morphismes cano-
+niques de M dans Coim/ de Im/ dans N et de Coim/dans Im/. Le lemme 3
+montre que Tq induit un isomorphisme q^ de Coim Tf sur T^Coim/); de
+même, Tj induit un isomorphisme j\ de T (Im/) sur Im Tf. Enfin, il est
+facile de vérifier que le morphisme canonique de Coim Tf dans 1m Tf est le
+composé j\o T^ o q^ ce morphisme est donc un isomorphisme.
+La dernière assertion de la proposition 5 résulte directement du lemme 3.
+COROLLAIRE 1. — Soient C une sous-catégorie épaisse de A et
+o^M-^N-^P-^o
+une suite exacte de A/C. Il existe alors un diagramme de la forme (i),
+commutatif^ exact et satisfaisant aux conditions suivantes : M, v et w sont
+des isomorphismes de A/C; de plus^ o -> Mi -^ N^ -^ Pi -> o est une suite
+exacte de A.
+o—-> M -f->
+N —^ P —^o
+(i)
+^
+p
+Y
+T F
+Y
+T.
+^
+o —-> TM, —'-'-> TN, —^ TP, —> o
+Le morphisme /est en effet l'image d'un élément f'ç. Homj (A/7, N / N ' ) ^
+où M/M' et N ' appartiennent à C. Comme Tf est un monomorphisme, Ke^fr
+appartient à C. Si q désigne le morphisme canonique de M' sur Coim/7, il
+est donc possible de faire les choix suivants : M^ == Coirnf ; 7V"i =: N / N 1 ;
+/i = morphisme induit par //; P^ == Coker/i ; g^ = morphisme canonique^
+u == ( Tq) o ( TiJ!p)~^ ; v = Tq%/^, ; w == morphisme induit par (Tg'i) o v.
+COROLLAIRE 2. — Soient C une sous-catégorie épaisse de A et G un fondeur
+exact de A dans une catégorie abélienne D. Si G M est nul pour tout objet M
+de C, il existe un et un seulfoncteur H de A/C dans 0 tel qu^on ait G •== Ho T.
+Soient en effet M et N deux objets de A^ M' et N ' des sous-objets de M
+et N tels que M/M' et 7V' appartiennent à C. Considérons le diagramme
+commutatif suivant, où cp et ^ désignent respectivement les applications
+ÏIom^(^,^/) et îîom^Gi^ Gp^) :
+îîom^(M, N)
+G(J1/?A)-»
+Hom^(GAf, GN)
+j ?
+^
+Y
+'V
+Hoin, {M\ N/J\') ^'•^ Hom^( GM', G(N/N') )

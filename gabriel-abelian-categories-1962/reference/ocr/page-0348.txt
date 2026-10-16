@@ -1,0 +1,40 @@
+348
+P. GABRIEL
+La somme directe ^ FÂ se trouve ainsi munie d'une structure de module
+xçOC
+à gauche sur l'anneau Z[C]. Nous noterons SF ce module qui est évidem-
+ment un objet de A. De même, si ^ : F-> G est un morphisme fondoriel,
+nous noterons S^ l'application linéaire
+^W: ^r-^&r.
+x
+x
+x
+LEMME ^. — Les applications F -> SF^ ^ -> S^ définissent un fondeur S
+de Fond (C, Ab) dans A.
+Il est clair que T et S satisfont aux conditions demandées. Ceci termine la
+preuve de la proposition 2. Le lemme 2 entraîne donc la proposition qui
+suit :
+PROPOSITION 3. — La catégorie Fond(C, Ah) possède un générateur
+projectif.
+En effet, Z[C] est un générateur projectif de A. Il en résulte que TZ[C]
+est un générateur projectif de Fonct(<?, Ab). Ce foncteur n'est d'ailleurs autre
+que le foncteur Y ^-> ^V Homp(^T, V).
+\çOC
+2. Foncteurs exacts à gauche à valeurs dans une catégorie abélienne. —
+Nous supposons maintenant que C est une catégorie abélienne dont l'ensemble
+des morphismes et l'ensemble des objets appartiennent à U. Si D est une
+catégorie abélienne, nous voulons étudier ici la sous-catégorie pleine de
+Fonct(^, 0) dont les objets sont les fondeurs exacts à gauche de C dans 0.
+Cette sous-catégorie pleine sera notée Sex(C, 0) (S comme sinister, ex comme
+exact).
+PROPOSITION h>. — Soit C une Vi-catégorie abélienne dont l^ ensemble des
+morphismes et P ensemble des objets appartiennent à U. Soit D ime Vi-caté-
+gorie abélienne avec générateurs et limites indudives exactes. Pour tout
+foncteur F de C dans 0 il existe un fondeur R° F et un morphisme
+p : F—>fi0 F qui satisfont aux conditions suivantes :
+Le foncteur R° F est exact à gauche; de plus^ si Œ\F —> G est un mor-
+phisme de F dans un fondeur exact à gauche G^ il existe un morphisme
+T : R^F->G
+et un seul tel guon ait a = T o p.
+Nous avons déjà prouvé la proposition 4 lorsque C possède assez d'objets
+injedifs (cf. chap. I, proposition 15). Il est bien connu d'autre part qu'on

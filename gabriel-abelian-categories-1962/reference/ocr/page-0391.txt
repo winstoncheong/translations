@@ -1,0 +1,53 @@
+CATÉGORIES ABÉLIENNES.
+891
+Si M et N sont deiix ^4 -modules pseudo-compacts, un morphisme de M
+dans N sera une application ^4-linéaire continue de M dans N\ la composi-
+tion des morphismes sera la composition usuelle des applications. Nous
+avons ainsi défini une nouvelle catégorie que nous noterons PC(A). Il est
+clair que PC(A) est une catégorie additive. Nous allons voir que PC(A) est
+même une catégorie abélienne. La preuve de ce fait s'appuie sur un lemme
+d'algèbre bien connu (BOURBAKI, Topologie, 1 Appendice, 3e éd.) :
+LEMME 1. — Soient B un anneau^
+1 un ensemble ordonné filtrante
+(M^ fji) et (7V^ g j i ) deux systèmes projectifs^ indexés par 1 et formés
+de B-modules à gauche. Soit (hi) un morphisme du premier système dans
+le seconde et supposons hi surjectif et de noyau artinien pour tout i.
+Alors lim À; est une application surjective de VimMi sur lim 7V;.
+Ce lemme a pour conséquence les deux propositions suivantes :
+PROPOSITION 10. — Soient M un A-module pseudo-compacte {Mi) une
+famille filtrante décroissante de sous-modules fermés de M. L'application
+canonique de M dans la limite projectile \\mM I Mi est surjective et a pour
+noyau inîMi.
+Soit en effet (TVy) la famille filtrante décroissante des sous-modules ouverts
+de M. Dans le diagramme suivant, toutes les flèches représentent des appli-
+cations « évidentes » :
+o —————————> M———p-——> lim M I N ]
+\
+\
+<—
+
+1
+7
+ï A
+^
+Y
+V
+o ——-> lim ( M, -+- N ] )/Mi——> lim M/Mi~-^-> lim M/( M, + TVy )
+i,]
+i
+i,f
+Comme M est complet, p est un isomorphisme; d'après le lemme 1, s est
+surjectif. Il s'ensuit que r est surjectif. On a d'autre part les égalités
+lim (X+ Nj)/Mi= lim lim (7^-+- 7V/)/X-= limX-/X-= o,
+\/
+i
+]
+T"
+car Mf est fermé et est l'intersection des Mi-\- Nj. Il en résulte que r est un
+isomorphisme et que q est surjectif. Enfin, le noyau de q est la limite pro-
+jective des M^ c'est-à-dire infy^.
+PROPOSITION 11. — Soient M un A-module pseudo-compacte N un sous-
+module fermé de M et (Mi) une famille filtrante décroissante de sous-
+modules fermés de M. Alors les sous-modules TV+inf^/; et inf(7V+J^-)
+;
+coïncident.

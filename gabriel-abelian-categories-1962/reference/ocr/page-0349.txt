@@ -1,0 +1,46 @@
+CATÉGORIES ABÉLIENNES.
+34g
+peut définir les fondeurs dérivés de F sous les hypothèses de la proposition h-.
+Dans cette étude, nous nous intéressons seulement au o101110 fondeur dérivé
+de F; nous utilisons une méthode dont BUCHSBAUM se sert dans la construction
+des fondeurs satellites.
+Quelques lemmes vont précéder la preuve de la proposition ^ : pour tout
+objet A de C^ nous considérons l'ensemble S^ des suites exactes de la forme
+S : o-^A-^M-^N-^o.
+Si
+Szzz.Ço-.A-^M-^N-^o)
+et
+S' = (o -> A -^ M' 4 N'^ o)
+sont deux éléments de S^, on conviendra d'écrire S ^ S ' s'il existe un dia-
+gramme du type
+o—-^A-^ M -^—> N——>o
+(*)
+1./
+Y
+^
+^
+o —-> A -"^Af—^ N'—-> o
+LEMME 1. — La relation S^S' est une relation de préordre, filtrante
+à droite.
+Il est clair qu'on a affaire à une relation de préordre. Soient donc
+S=(o->A-^M-'>N->o)
+et
+S ' == (o -> A ^ M' -*> N ' -> o)
+deux éléments de S /. Nous considérons le diagramme commutatif
+A-!-——M'
+ii I
+1 I'M'
+^
+•
+4"
+M --^-.MI^M'
+D'après la fin du paragraphe 7 (chap. I), J M et /jy sont des monomor-
+phismes. On en déduit que la suite
+S"= {o-> A /M^ MÎ^M'-^Coker (/yo u)-> 0}
+appartient à S^/ et qu'on a -S^^ S^ S"^ S ' .
+Si F est un fondeur de C dans D, et si S ^S\ le diagramme ( * ) entraîne
+l'égalité (Fn) o ( F v ) = ( F v ' ) o ( F m ) . Il en résulte que Fm induit un mor-
+phisme/de Ker(F^) dans K e r ( F ^ ' ) .
+LEMME 2. — Le morphisme f ne dépend pas du choix de m et de n.
+Soient en effet m'\ M—^M' un autre morphisme tel qu'on ait u'zzijn' ou\
+soit n ' \ N — ^ N ' l'unique morphisme tel que n' o v soit égal à v' o m''. Alors

@@ -1,0 +1,50 @@
+CATÉGORIES ABÉLIENNES.
+355
+COROLLAIRE 2. — Dans la catégorie Sex(^, Ab) tout sous-objet d^un fonc-
+teur représentable est borne supérieure de fondeurs représentables.
+Soient en effet Y un objet de C^ et i : F -> Y un monomorphisme non nul
+de Sex(C, Ab). D'après la proposition 6, il existe un morphisme non
+nul ^\X—>F\ de plus Imcp ==: ïmio çp est représentable, ce qui prouve
+que ^contient des sous-objets représentables non nuls. Je dis que la borne
+supérieure G de ces sous-objets est F : dans le cas contraire on pourrait en
+effet choisir cp de telle façon que Imcp ne soit pas sous-objet de G', ceci est
+absurde.
+h'. Catégories nœthériennes. — Soit C une catégorie abélienne. Un
+objet M de C est dit nœthérien (resp. artinien) si toute suite croissante
+(resp. décroissante) de sous-objets de M est stationnaire. Le lemme suivant
+est facile à prouver :
+LEMME 1. — Soient M un objet de C, N un sous-objet de M. Alors M est
+nœthérien {resp. artinien) si et seulement si N et M/N sont nœthériens
+{resp. a r fini eus).
+LEMME 2. — Soient C une catégorie avec générateurs et limites inductives
+exactes^ M un objet nœthérien de C, (Pi) ici une famille filtrante crois-
+sante de sous-objets d^un objet P(IçVi). Alors Inapplication
+^M '•
+supHom(^/5 P^-^Hom/Af, supPA
+i
+\
+i
+)
+est bijective.
+Il suffît de montrer que <p y est surjeclif. Soit donc u un morphisme de M
+dans supPf. L'égalité u-1 /supPA = supu^ÇPi) montre que u~i(Pi) est
+i
+\ i
+)
+i
+égal à M pour i assez grand. Ceci prouve le lemme.
+On démontre de la même manière l'énoncé dual :
+LEMME 3. — Soient C une catégorie avec cogénérateurs et limites projec-
+tives exactes^ M un objet artinien de C, (Pi)içi une famille filtrante
+décroissante de sous-objets d'un objet P(/€tt). Alors l'application
+^M
+''
+sup Hom (P/Pi, M) -> Hom /P/InfP^ M\
+est bijective.
+Nous dirons désormais qu^une catégorie abélienne C est nœthérienne
+(resp. artinienne) si les conditions suivantes sont réalisées :
+— Tout objet de C est nœthérien (resp. artinien).
+— Il existe une famille (Mi)fçj d'objets de C telle que I soit élément de U
+et que tout objet de C soit isomorphe à un objet de la famille.
+BULL. SOC. MATH. — T. 90, FASC. 3.
+26

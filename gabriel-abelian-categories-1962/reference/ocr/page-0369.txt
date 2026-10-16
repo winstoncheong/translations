@@ -1,0 +1,39 @@
+CATÉGORIES ABÉLIENNES.
+869
+II est clair que ^ est une application bijective; les applications
+^o G (M^ N / N ' ) définissent donc une application H(M^ N) de
+limHom^^, N / N ' )
+dans Hom^^Af, GN). Lorsque M et N parcourent les objets de A (ou de
+A / C ) les applications H{M^ N) déterminent un fondeur // de A/C dans 0\
+ce fondeur associe à tout objet M de A/C l'objet GM de 0\ il satisfait à
+l'égalité G=--Ho T.
+La preuve de l'unicité de // est laissée au lecteur.
+COROLLAIRE 3. — Soient C une sous-catégorie épaisse de A et H un fonc-
+teur de A/C dans une catégorie abélienne D. Le fondeur H est exact si et
+seulement si le foncteur Ho T est exact.
+11 est clair que H o T est exact si H est exact. Réciproquement, supposons
+f
+"
+H oT exact. Si o -> M-> N —> P —> o est âne suite exacte de A/C^ nous consi-
+dérons un diagramme de la forme (i). Comme la suite
+o —> HT M, HT-^ HTN, ^TS> HTF, —-> o
+est exacte, il en va de même de la suite
+o — ^ H M ^ ^ H N ^ - ^ H P — - > o .
+2. Propriétés du foncteur section. — Soient A une catégorie abélienne,
+C une sous-catégorie épaisse de A^ B la catégorie quotient A/C et T le fonc-
+teur canonique de A dans B.
+Les raisonnements du paragraphe précédent étaient « autoduaux » : ils
+s'appliquaient aussi bien à la catégorie A qu'à la catégorie duale A°. Nous
+allons supposer au début de ce paragraphe qu'il existe un foncteur S
+adjoint à T. Cette condition n'est pas autoduale; nous laissons au lecteur le
+soin de formuler les énoncés duaux des énoncés qui vont suivre.
+Ln fondeur adjoint à T est défini à un isomorphe près. Nous choisissons
+une fois pour toutes un tel fondeur S et nous l'appelons foncteur section.
+Nous utilisons aussi les notations du chapitre I, § 6; en particulier, les lettres
+cp, ^, <Ï>, W auront les significations suivantes : cp est un isomorphisme fonc-
+toriel de Homj (., S.) sur Homn(7 7., . ) et ^ est l'isomorphisme inverse
+de cp ; la lettre C> (resp. la lettre W) désigne le morphisme fondoriel de T o S
+dans in ^resp. de ij dans *S'o T\ qui est associé à cp (resp. à ^p).
+PROPOSITION 2. — Le foncteur section est exact à gauche.
+L'assertion est en effet vérifiée pour tout fondeur adjoint (proposition 11,
+chap. I).
