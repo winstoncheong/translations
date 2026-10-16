@@ -15,9 +15,12 @@
 *.ilg
 *.xdv
 
-# Never commit the scanned originals: they are large and are re-fetchable
-# from the URL recorded in each translation's README.
+# Reference material is not kept in the repository: the scanned original is
+# large, and the per-page OCR text is derived from it.  Fetch both with
+#   python tools/fetch_reference.py <document>
+# which reads the URL from the document's meta.json.
 *.pdf
+**/reference/ocr/
 
 # Editors / OS
 .vscode/

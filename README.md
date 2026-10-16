@@ -46,6 +46,28 @@ Each section file carries its own status in comments:
 numbers, the website progress bars and the CI job summary. Nothing else needs
 updating when a section is finished.
 
+## Getting started
+
+The reference material is **not** in the repository. The scanned original is
+large and the per-page OCR text is derived from it, so both are fetched on
+demand from the URL recorded in each document's `meta.json`:
+
+```bash
+pip install pymupdf
+python tools/fetch_reference.py gabriel-abelian-categories-1962
+```
+
+That downloads `reference/source.pdf` and splits its OCR text layer into
+`reference/ocr/page-NNNN.txt`, one file per printed page. The script is
+idempotent — it skips the download if the scan is already there, and
+`--force` refetches.
+
+Then build:
+
+```bash
+cd gabriel-abelian-categories-1962 && make     # -> build/main.pdf
+```
+
 ## Building
 
 Locally, with any current TeX Live (2023 or later is fine):
@@ -83,11 +105,13 @@ it fail the build.
 
 | Tool | Purpose |
 | --- | --- |
+| `tools/fetch_reference.py` | downloads a document's scan and extracts its OCR text (one command, from `meta.json`) |
 | `tools/extract_ocr.py` | splits a scanned PDF's OCR text layer into one file per printed page |
 | `tools/translation_report.py` | progress, leftover detection, metadata validation |
 | `tools/make_site.py` | builds the GitHub Pages landing page from the compiled PDFs |
 
-All three are dependency-free Python 3 (`extract_ocr.py` needs PyMuPDF).
+The first needs PyMuPDF (`pip install pymupdf`); the others are
+dependency-free Python 3.
 
 ## Working on a translation
 

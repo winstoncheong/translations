@@ -26,6 +26,23 @@ except ImportError:  # pragma: no cover
     sys.exit("PyMuPDF is required: pip install pymupdf")
 
 
+def extract(pdf: pathlib.Path, outdir: pathlib.Path, first_page: int = 1) -> int:
+    """Write one .txt per page of ``pdf`` into ``outdir``; return the count."""
+    doc = fitz.open(pdf)
+    outdir.mkdir(parents=True, exist_ok=True)
+    for index in range(doc.page_count):
+        printed = first_page + index
+        text = doc[index].get_text("text")
+        # Normalise the whitespace that OCR leaves between words/symbols but
+        # keep the line structure: it carries the display-math layout.
+        lines = [line.rstrip() for line in text.splitlines()]
+        body = "\n".join(lines).strip() + "\n"
+        (outdir / f"page-{printed:04d}.txt").write_text(body, encoding="utf-8")
+    pages = doc.page_count
+    doc.close()
+    return pages
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("pdf", type=pathlib.Path)
@@ -41,20 +58,10 @@ def main() -> int:
     if not args.pdf.is_file():
         sys.exit(f"no such file: {args.pdf}")
 
-    doc = fitz.open(args.pdf)
-    outdir: pathlib.Path = args.outdir
-    outdir.mkdir(parents=True, exist_ok=True)
-
-    for index in range(doc.page_count):
-        printed = args.first_page + index
-        text = doc[index].get_text("text")
-        # Normalise the whitespace that OCR leaves between words/symbols but
-        # keep the line structure: it carries the display-math layout.
-        lines = [line.rstrip() for line in text.splitlines()]
-        body = "\n".join(lines).strip() + "\n"
-        (outdir / f"page-{printed:04d}.txt").write_text(body, encoding="utf-8")
-
-    print(f"wrote {doc.page_count} pages to {outdir} (pages {args.first_page}..{args.first_page + doc.page_count - 1})")
+    pages = extract(args.pdf, args.outdir, args.first_page)
+    last = args.first_page + pages - 1
+    print(f"wrote {pages} pages to {args.outdir} "
+          f"(pages {args.first_page}..{last})")
     return 0
 
 

@@ -23,11 +23,6 @@ concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: false
 
-env:
-  # Current TeX Live, with latexmk, pdflatex, xelatex and lualatex.
-  # Override here to pin a specific release when a package update breaks a build.
-  TEXLIVE_IMAGE: texlive/texlive:latest
-
 jobs:
   # ------------------------------------------------------------------
   # Every directory holding a src/main.tex is one document to build.
@@ -112,7 +107,12 @@ jobs:
   build:
     needs: discover
     runs-on: ubuntu-latest
-    container: ${{ env.TEXLIVE_IMAGE }}
+    # Current TeX Live, with latexmk, pdflatex, xelatex and lualatex.
+    # To pin a specific release (if a TeX Live update ever breaks a build),
+    # replace this with an explicit tag, e.g. texlive/texlive:TL2024-historic.
+    # NOTE: this field does not accept the `env` context, so the image cannot
+    # be factored out into a workflow-level `env:` variable.
+    container: texlive/texlive:latest
     strategy:
       fail-fast: false
       matrix:

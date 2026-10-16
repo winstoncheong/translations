@@ -1,9 +1,211 @@
-%@ pages 374-376
-%@ status todo
-% Original: pp. 374--376.  French title: see reference/ocr/page-0374.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Categories with Injective Envelopes}
+%@ pages 374-377
+%@ status translated
+% Chapter III, section 3: Categories with injective envelopes
+% (pp. 374--377).  The section heading stands about two thirds down
+% p. 374, just below Proposition 5 (the last result of section 2); the
+% text runs on to the top of p. 377, where it ends with the unnumbered
+% corollary that precedes the heading of section 4.  The `%@ pages'
+% line of the stub said 374--376; it is corrected here, because the
+% section really does run past p. 376 (the proof of Proposition 7 and
+% its last corollary are on p. 377).
+% Transcribed from the page images in reference/source.pdf (pp.
+% 374--377), not from the OCR text layer.
+%
+% Numbering is automatic (see src/preamble.tex).  This section prints
+% Proposition 6 and Proposition 7 --- the chapter's run of propositions
+% reaches Proposition 5 on p. 374 --- and Corollary 1 to Corollary 6
+% (the corollary counter restarts at every section), followed by one
+% further corollary which Gabriel prints without a number, hence
+% `unnumberedcorollary'.  No lemma is stated in this section; the
+% lemmas cited (1 (b) and 3, both in section 2) belong to that section.
+%
+% Points to note for anyone editing around here:
+%   * Gabriel writes the zero object as an italic `o'; it is rendered
+%     0 throughout, as in the rest of this translation.
+%   * `C-ferme' is translated "\mathbf{C}-closed", `localisante' as
+%     "localizing" (the term fixed by src/terminology.tex).
+%   * EMENDATION.  The proof of Proposition 6 prints "i : M -> I an
+%     injective envelope of I".  The types make that impossible, and
+%     the rest of the proof requires the envelope of M; we print "of M".
+%     There is an \ednote at that point.
+%   * The same proof prints "$I/I'$ and $M'$ belong to C" and then uses
+%     $Tp^{M}_{M/M'}$ as an isomorphism, which would require $M/M'$ to
+%     belong to C.  The text is left as printed and the difficulty is
+%     recorded in an \ednote.
 
-\notyet{pp. 374--376 of the original French edition.}
+\section{Categories with Injective Envelopes}
+--- We shall use the notations of the preceding paragraph.
+
+\begin{proposition}
+Let $\mathbf{C}$ be a thick subcategory of an abelian category
+$\mathbf{A}$. Let $i\colon M\to I$ be an injective envelope of an object
+$M$ of $\mathbf{A}$ which contains no nonzero object of $\mathbf{C}$. Then
+$I$ is $\mathbf{C}$-closed and the morphism $Ti$ is an injective envelope
+of $TM$.
+\end{proposition}
+
+Let us take in fact $N$ a subobject of $I$ belonging to $\mathbf{C}$; then
+$i^{-1}(N)$ belongs to $\mathbf{C}$ and is therefore zero; since $i$ is an
+essential extension, it follows that $N$ is zero. This proves that $I$ is
+$\mathbf{C}$-closed [lemma~1 (b), \S~2].
+
+An argument already used in the proof of lemma~3 (\S~2) shows that $Ti$ is
+an essential extension. It remains therefore to show that $TI$ is
+injective: let us give ourselves for this purpose a monomorphism
+$f'\colon TI\to TM$; this monomorphism is the image of a morphism
+$f\colon I'\to M/M'$, where $I'$ and $M'$ are subobjects of $I$ and of
+$M$ such that $I/I'$ and $M'$ belong to $\mathbf{C}$\ednote{The next
+sentence uses $Tp^{M}_{M/M'}$ as an isomorphism, and that holds exactly
+when $M/M'$ --- not $M'$ --- belongs to $\mathbf{C}$; the original may
+well be meant to print $M/M'$. We leave the text as printed, since the
+surrounding argument does not decide between the two readings.}
+Since $Tf$ is a monomorphism, $\operatorname{Ker}f$ belongs to $\mathbf{C}$
+and is therefore zero. In other words, $f$ is a monomorphism and the
+canonical morphism $i$ of $I'$ into $I$ is the composite of $f$ and of a
+morphism $g\colon M/M'\to I$. We thus arrive at the following commutative
+diagram:
+
+% The primes inside the labels are written \prime, and the slashes too:
+% pgfkeys splits tikz-cd options on top-level commas and chokes on the
+% bare apostrophe, so both are made explicit here.
+\begin{center}
+\begin{tikzcd}
+TI\prime \arrow[r, "Tf"] \arrow[d, "Ti"'] &
+T(M/M\prime) \arrow[ll, "Tg"'] \arrow[u, "Tp^{M}_{M/M\prime}"] \\
+TI \arrow[r, "f\prime"'] & TM
+\end{tikzcd}
+\end{center}
+
+Since $Ti$ and $Tp^{M}_{M/M'}$ are isomorphisms, $f'$ is an isomorphism of
+$TI$ onto a direct factor of $TM$.\hfill C.Q.F.D.
+
+\begin{corollary}
+If $\mathbf{C}$ is a thick subcategory of a category with injective
+envelopes $\mathbf{A}$, the following assertions are equivalent:
+\begin{enumerate}
+\item[a.] $\mathbf{C}$ is a localizing subcategory of $\mathbf{A}$.
+\item[b.] Every object $M$ of $\mathbf{A}$ contains a subobject which is
+      maximal among the subobjects of $M$ belonging to $\mathbf{C}$.
+\end{enumerate}
+\end{corollary}
+
+The corollary follows from Propositions~6 and 4.
+
+\begin{corollary}
+Let $\mathbf{C}$ be a localizing subcategory of a category with injective
+envelopes $\mathbf{A}$. Then $\mathbf{A}/\mathbf{C}$ is a category with
+injective envelopes; every injective object of $\mathbf{A}/\mathbf{C}$ is
+isomorphic to an object $TI$, where $I$ is an injective object of
+$\mathbf{A}$ containing no nonzero subobject of $\mathbf{C}$.
+Conversely, every injective object $J$ of $\mathbf{A}$ is isomorphic to a
+direct sum $J_1\oplus SJ_2$, where $J_1$ is the injective envelope of an
+object of $\mathbf{C}$ and where $J_2$ is an injective object of
+$\mathbf{A}/\mathbf{C}$. Moreover, these conditions determine $J_1$ and
+$J_2$ up to isomorphism.
+\end{corollary}
+
+According to Corollary~1, every object of $\mathbf{A}/\mathbf{C}$ is
+indeed isomorphic to an object $TM$, where $M$ contains no nonzero
+subobject of $\mathbf{C}$. The first two assertions therefore follow
+directly from Proposition~6. To prove the rest, we shall take for $J_1$
+the injective envelope of the largest subobject of $J$ belonging to
+$\mathbf{C}$.
+
+\begin{corollary}
+The hypotheses are those of Corollary~2. Let us suppose in addition that
+the injective envelope (in $\mathbf{A}$) of an object of $\mathbf{C}$
+belongs to $\mathbf{C}$. Then $TJ$ is an injective object of
+$\mathbf{A}/\mathbf{C}$ if $J$ is an injective object of $\mathbf{A}$.
+\end{corollary}
+
+With the notations of Corollary~2, $TJ$ indeed reduces to $TSJ_2$.
+
+Corollary~3 is often used in the following way: let
+$F\colon\mathbf{A}/\mathbf{C}\to\mathbf{D}$ be a functor of
+$\mathbf{A}/\mathbf{C}$ into an abelian category $\mathbf{D}$, with
+$\mathbf{C}$ satisfying the conditions of Corollary~3. Since the functor
+$T$ is exact and transforms injectives into injectives, we know from [10]
+that the derived functors $R^{n}(F\circ T)$ are identified with the
+functors $(R^{n}F)\circ T$. This is true in particular if $F$ is the
+functor $N\leadsto\operatorname{Hom}_{\mathbf{A}/\mathbf{C}}(TM,N)$. We
+deduce Corollaries~4 and 5:
+
+\begin{corollary}
+The hypotheses are those of Corollary~3. The functor
+$N\leadsto\operatorname{Ext}^{n}_{\mathbf{A}/\mathbf{C}}(TM,TN)$ is
+isomorphic to the $n$th derived functor of the functor
+$N\leadsto\operatorname{Hom}_{\mathbf{A}}(M,STN)$.
+\end{corollary}
+
+\begin{corollary}
+The hypotheses are those of Corollary~3. The homological dimension of
+$\mathbf{A}/\mathbf{C}$ is less than or equal to the homological dimension
+of $\mathbf{A}$.
+\end{corollary}
+
+Let us recall that the homological dimension of a category $\mathbf{A}$ is
+the smallest integer $n$ such that
+$\operatorname{Ext}^{n+1}_{\mathbf{A}}(M,N)$ is zero for every pair
+$(M,N)$ of objects of $\mathbf{A}$.
+
+The groups $\operatorname{Ext}^{n}_{\mathbf{A}/\mathbf{C}}(M,N)$ can be
+computed in another way when the section functor is exact: indeed $S$
+transforms the injective objects of $\mathbf{A}/\mathbf{C}$ into injective
+objects of $\mathbf{A}$. Consequently, if $G$ is a functor of $\mathbf{A}$
+into an abelian category $\mathbf{D}$, the functors $(R^{n}G)\circ S$ and
+$R^{n}(G\circ S)$ are still isomorphic. This is true in particular if $G$
+is the functor $X\leadsto\operatorname{Hom}_{\mathbf{A}}(M,X)$.
+
+\begin{corollary}
+The hypotheses are those of Corollary~2. Let us suppose in addition that
+the section functor is exact. Then the functors
+$N\leadsto\operatorname{Ext}^{n}_{\mathbf{A}/\mathbf{C}}(TM,N)$ and
+$N\leadsto\operatorname{Ext}^{n}_{\mathbf{A}}(M,SN)$ are then
+isomorphic.
+\end{corollary}
+
+The following proposition examines the case in which the section functor
+is exact:
+
+\begin{proposition}
+Let $\mathbf{C}$ be a localizing subcategory of a category with injective
+envelopes $\mathbf{A}$. The following assertions are equivalent:
+\begin{enumerate}
+\item[a.] The localization functor (or the section functor) is exact.
+\item[b.] If $N$ is a subobject of $M$ and if $N$ and $M$ are
+      $\mathbf{C}$-closed, then $M/N$ is $\mathbf{C}$-closed.
+\item[c.] If $I$ is an injective containing no nonzero subobject of
+      $\mathbf{C}$, and if $N$ is a $\mathbf{C}$-closed subobject of $I$,
+      then $I/N$ is $\mathbf{C}$-closed.
+\end{enumerate}
+\end{proposition}
+
+$(a)\Rightarrow(b)\Rightarrow(c)$: clear.
+
+$(c)\Rightarrow(a)$: if $L$ is the localization functor $S\circ T$, we
+are going to show that the first derived functor $R^{1}L$ of $L$ is zero.
+
+Let us first suppose that $M$ is an object of $\mathbf{C}$; let
+$i\colon M\to I$ be an injective envelope of $M$\ednote{The original
+prints ``an injective envelope of $I$'', which is impossible for a
+morphism with source $M$; we print ``of $M$'', which is what the rest of
+the argument requires.} and let $p\colon I\to N$ be the cokernel of $i$.
+Since $Lp$ is an isomorphism, the exact sequence
+\[
+  0\to 0=LM \xrightarrow{Li} LI \xrightarrow{Lp} LN \to R^{1}LM \to 0
+\]
+shows that $R^{1}LM$ is zero.
+
+Let us now suppose that $M$ contains no nonzero object of $\mathbf{C}$,
+and let us keep the preceding notations. Since $Lp$ is an epimorphism,
+$R^{1}LM$ is zero.
+
+In the general case, let $M'$ be the largest subobject of $M$ belonging
+to $\mathbf{C}$ and let $M''=M/M'$. The exact sequence
+$R^{1}LM'\to R^{1}LM\to R^{1}LM''$ proves that $R^{1}LM$ is zero.
+
+\begin{unnumberedcorollary}
+Let $\mathbf{C}$ be a localizing subcategory of a category with injective
+envelopes $\mathbf{A}$. If the homological dimension of $\mathbf{A}$ is
+$0$ or $1$, the localization functor is exact.
+\end{unnumberedcorollary}
