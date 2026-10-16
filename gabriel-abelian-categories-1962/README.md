@@ -144,7 +144,8 @@ Emendations made so far:
 | p. 354, Lemma 2 (§4) | italic *C* for the category | $\mathbf{C}$ |
 | p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$ | $f_i\circ u_{ji} = v_{ji}\circ f_j$ |
 | p. 350 | $\lim_{F\in\mathbf{S}_A} FS$ | $\lim_{S\in\mathbf{S}_A} FS$ |
-| p. 350 | $S''\succeq S$, $S''\succeq S'$ | $S\succeq S''\succeq S'$ |
+| p. 358, Lemma 1 (§5) | "monomorphisme de source $Q$" | "morphisme"; footnoted |
+| p. 361, complement | "$M\cap Q = 0$" | "$N\cap Q = 0$"; footnoted |
 
 Two constraints on this, both stated in `AGENTS.md`:
 
@@ -169,6 +170,10 @@ Recorded so that nobody "fixes" them later:
   $N \oplus P$ into $M$. The bare `+` is not a mis-typed `\oplus`.
 - **Proposition 4's "$\sigma = \tau\circ\rho$" (p. 348)** is correct:
   $\sigma\colon F\to G$ is the morphism being factored through $R^0F$.
+- **Lemma 1's "$S''\geq S$, $S''\geq S'$" (p. 349)** is correct as
+  printed: $S''$ is a common upper bound of $S$ and $S'$ (right
+  filtering), not a link in a chain. An earlier draft "corrected" this
+  to a chain and was reverted.
 
 ### Notation decided here
 

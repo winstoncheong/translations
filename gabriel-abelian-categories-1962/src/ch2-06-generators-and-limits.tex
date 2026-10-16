@@ -21,14 +21,14 @@ $\Cat$.
 Every subobject $M$ of an object $N$ has a complement $Q$ in $N$.
 \end{lemma}
 
-Let $E$ be the set of the subobjects $P$ of $N$ such that $M \cap P = o$. It
+Let $E$ be the set of the subobjects $P$ of $N$ such that $M \cap P = 0$. It
 is enough to show that $E$ is an inductively ordered set; for this, let $F$ be
 a totally ordered sub-set of $E$. Since there exists a set belonging to the
 universe $\Univ$ and having the same cardinality as $F$, the supremum $S$ of
 the elements $P$ of $F$ is defined. Moreover we have the formulas
 \[
   S \cap M = \left(\sup_{P \in F} P\right) \cap M
-           = \sup_{P \in F}\left(P \cap M\right) = o,
+           = \sup_{P \in F}\left(P \cap M\right) = 0,
 \]
 This proves the lemma.
 
@@ -108,7 +108,7 @@ the commutative and exact diagram ($\bigstar$).
   & A \arrow[r, "u"] \arrow[d, "a"']
   & B \arrow[r, "v"] \arrow[d, "b"']
   & C \arrow[d, "c"'] \\
-o \arrow[r]
+0 \arrow[r]
   & A' \arrow[r, "u'"]
   & B' \arrow[r, "v'"]
   & C'
@@ -143,7 +143,7 @@ from ($\bigstar$); it is therefore enough to prove our assertion when
   & FA \arrow[r, "Fu"] \arrow[d, "Fa"']
   & FB \arrow[r, "Fv"] \arrow[d, "Fb"']
   & FC \arrow[d, "Fc"'] \\
-o \arrow[r]
+0 \arrow[r]
   & FA' \arrow[r, "Fu'"]
   & FB' \arrow[r, "Fv'"]
   & FC'

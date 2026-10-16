@@ -1,13 +1,18 @@
-%@ pages 358-361
+%@ pages 358-362
 %@ status translated
 % Chapter II, section 5: Injective envelopes in abelian categories
-% (original pp. 358-361).
+% (original pp. 358-362).  The section ends at the top of p. 362 (end of
+% the duals paragraph); section 6 begins mid-p. 362.
 %
 % Numbering is automatic (see src/preamble.tex): this section carries
 % Lemme 1, 2, 3; Proposition 8, 9, 10, 11, 12; and the two corollaries
 % Gabriel prints without a number, which use `unnumberedcorollary'.
-% Proposition 12 runs over onto p. 362; its continuation belongs to
-% section 6 (ch2-06) and is not repeated here.
+%
+% Emendations (each with an \ednote at the point):
+%   * Lemma 1 proof prints "monomorphisme de source Q"; we print
+%     "morphism" (as the definition above requires).
+%   * The complement definition prints "M cap Q = 0"; we print
+%     "N cap Q = 0" (Q being a subobject of M, the print forces Q = 0).
 \section{Injective Envelopes in Abelian Categories [8]}
 --- Let $\Cat$ be an abelian category and let $M$ be an object of $\Cat$.
 An \emph{essential extension} of $M$ is a monomorphism
@@ -28,7 +33,10 @@ $M$.
 \end{lemma}
 
 Suppose in fact that $j\circ i$ is an essential extension of $M$: if
-$f$ is a monomorphism with source $Q$ and if $f\circ j$ is a
+$f$ is a morphism with source $Q$\ednote{The original prints
+``monomorphisme de source $Q$'', which would make the conclusion
+tautological; the definition above quantifies over morphisms. We print
+``morphism''.} and if $f\circ j$ is a
 monomorphism, then $f\circ i$ is a monomorphism; from this we deduce
 that $f$ is a monomorphism and that $j$ is an essential extension of
 $P$.
@@ -42,7 +50,7 @@ The converse is clear.
 
 \begin{lemma}
 Let $i\colon M\to P$, $j\colon N\to Q$ be two essential extensions. The
-morphism $i\oplus j'\colon M\oplus N\to P\oplus Q$ is an essential
+morphism $i\oplus j\colon M\oplus N\to P\oplus Q$ is an essential
 extension of $M\oplus N$.
 \end{lemma}
 
@@ -51,9 +59,9 @@ of $P$ and $Q$, with $i = i_M^P$, $j = i_N^Q$. Let $R$ be a nonzero
 subobject of $P\oplus Q$. Then at least one of the objects $q_P(R)$
 and $q'_Q(R)$ is not zero. If $q_P(R)$ is not zero, the same is true of
 $q_P(R)\cap M$ and of $R_1 = q_P^{-1}(M)\cap R$. If $R_1$ is contained
-in $q_Q^{-1}(N)$, we have shown that $R\cap (M\oplus N)$ is not zero.
+in $q_Q^{\prime-1}(N)$, we have shown that $R\cap (M\oplus N)$ is not zero.
 In the other case, $q'_Q(R_1)$ is not zero and ``cuts'' $N$; the
-subobject $R_2 = q_Q^{-1}(N)\cap R_1$ therefore cannot be zero. In every
+subobject $R_2 = q_Q^{\prime-1}(N)\cap R_1$ therefore cannot be zero. In every
 case a nonzero subobject of $P\oplus Q$ ``cuts'' $M\oplus N$, which is
 what we had to prove.
 
@@ -125,7 +133,7 @@ essential extension of $I$, hence an isomorphism. It follows that $l$ is
 an epimorphism.
 
 Conversely, $(c)$ implies $(a)$: for every morphism $v$ of $I$ into $J$
-such that $j = v\circ i$ is necessarily an isomorphism.
+with $j = v\circ i$, $v$ is necessarily an isomorphism.
 
 The last assertion has been proved on the way.
 
@@ -234,7 +242,10 @@ between them from the text.}
 \end{unnumberedcorollary}
 
 If $N$ is a subobject of $M$, one sometimes calls any subobject $Q$ of
-$M$ which is maximal for the equality $M\cap Q = 0$ a \emph{complement
+$M$ which is maximal for the equality $N\cap Q = 0$\ednote{The original
+prints $M\cap Q = 0$; since $Q$ is a subobject of $M$ this would force
+$Q$ itself to be zero. We print $N\cap Q = 0$, the only reading under
+which the complements below (which contain $N$) make sense.} a \emph{complement
 of $N$ in $M$}. If such a $Q$ exists, the complements of $Q$ which
 contain $N$ are the maximal elements of the set of subobjects of $M$
 which are essential extensions of $N$. This situation is often put to
@@ -246,8 +257,33 @@ are a complement of one of their complements''.
 Let $\Cat$ be an abelian category with injective envelopes, $M$ an
 object of $\Cat$, $N$ a subobject of $M$. Two complements of $N$ in
 $M$ have the same injective envelope. If $Q$ is a complement of $N$
-% ---- the statement of this proposition continues on p. 362, which
-% belongs to section 6 (ch2-06-generators-and-limits.tex):
-%   "dans M, l'enveloppe injective de M est isomorphe a la somme directe
-%   de l'enveloppe injective de N et de l'enveloppe injective de Q."
+in $M$, the injective envelope of $M$ is isomorphic to the direct sum
+of the injective envelope of $N$ and the injective envelope of $Q$.
 \end{proposition}
+
+Let $Q$ and $Q'$ indeed be two complements of $N$ in $M$, and let $P$
+be a maximal element of the set of subobjects of $M$ which are
+essential extensions of $N$. Then $P$ is a complement of both $Q$ and
+$Q'$. It follows that $Q$ and $Q'$ have the same injective envelope as
+$M/P$, which proves the first assertion. Moreover $N + Q$ is
+isomorphic to the direct sum $N\oplus Q$ and $M$ is an essential
+extension of $N + Q$. It follows that $M$ has the same injective
+envelope as $N\oplus Q$; whence the proof by Proposition~9.
+
+We leave to the reader the search for the dual statements of the
+preceding statements. Let us say simply that an essential covering
+(\emph{revêtement essentiel}) of $M$ is an epimorphism
+$p\colon P\to M$ satisfying the following condition: if $f$ is a
+morphism with target $P$, and if $p\circ f$ is an epimorphism, then
+$f$ is an epimorphism. It amounts to the same to say that a subobject
+$Q'$ of $P$ is equal to $P$ provided $Q' + \operatorname{Ker}p$ is
+equal to $P$.
+
+The notion dual to that of injective envelope is the notion of
+projective envelope (\emph{enveloppe projective}). Likewise, if $M$
+is the quotient of $P$ by a subobject $M'$, a dual complement
+(\emph{complément}) of $M$ is a quotient $P/Q'$ such that
+$Q' + M'$ is equal to $P$ and such that $Q'$ is minimal among the
+objects of $P$ satisfying this condition.
+% The original prints here "les objets de $P$" (not "sous-objets");
+% kept literally as printed.
