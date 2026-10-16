@@ -133,3 +133,42 @@ way that the laws of composition are bilinear maps.
 
 The implication $(a)\Rightarrow(b)$ follows from the preceding lemmas. The
 implication $(b)\Rightarrow(a)$ is classical; it is proved in [10].
+
+We call a category \emph{additive} if it satisfies the axioms $\mathbf{C}$
+Ad~1, 2, 3 and 4.
+
+\begin{proposition}\label{prop:additive-functor}
+Let $\Cat$ and $\mathbf{D}$ be two additive categories and let $F$ be a
+functor of $\Cat$ into $\mathbf{D}$. The following assertions are equivalent:
+
+\begin{description}
+\item[\normalfont a.] For every pair $(M,N)$ of objects of $\Cat$, the map
+$F(M,N)$ of $\operatorname{Hom}_{\Cat}(M,N)$ into
+$\operatorname{Hom}_{\mathbf{D}}(FM,FN)$ is linear.
+
+\item[\normalfont b.] For every pair $(M,N)$ of objects of $\Cat$, the triple
+\[
+  \bigl(F(M \oplus N),\, Fj_M,\, Fj'_N\bigr)
+\]
+is a direct sum of $FM$ and $FN$.
+\end{description}
+\end{proposition}
+
+If the equivalent conditions of Proposition~\ref{prop:additive-functor} are
+satisfied, we say that $F$ is an \emph{additive functor}. Condition (b) is
+expressed by saying that an additive functor commutes with direct sums. Of
+course, an additive functor commutes with direct products as well.
+
+Unless expressly stated to the contrary, throughout what follows, the
+\emph{functors from one additive category into another are assumed to be
+additive}. Let, for example, $\Cat$ be an additive category. We have seen
+that, for every pair $(M,N)$ of objects of $\Cat$, the set
+$\operatorname{Hom}_{\Cat}(M,N)$ is endowed with a ``natural'' structure of
+abelian group. We denote this abelian group again by
+$\operatorname{Hom}_{\Cat}(M,N)$. Lemma~4 then shows that the functor
+$Y\leadsto \operatorname{Hom}_{\Cat}(M,Y)$ of $\Cat$ into $\Ab$ is additive
+for every $M$.
+
+We shall also observe that the dual category of an additive category $\Cat$
+is additive. Thus $X\leadsto \operatorname{Hom}_{\Cat}(X,N)$ is an additive
+functor of $\Cat^{\circ}$ into $\Ab$.

@@ -1,7 +1,15 @@
-%@ pages 338-340
+%@ pages 338-341
 %@ status translated
 % Chapter I, section 7: Adjoint functors (pp. 338--340; the section runs
 % on to p. 341, where Prop. 11 and its proof are finished).
+% Results printed here, and what the preamble's counters must produce:
+%   lemmas   1, 2 of this section (the `lem' counter resets at each section);
+%   props    7--11, continuing the chapter's run (Prop. 1--6 are in 3--6).
+% Points to note for anyone editing around here:
+%   * the exact sequence on p. 341 prints the zero object as the italic
+%     letter o; throughout this translation it is rendered 0;
+%   * "The corollary to Proposition 1" refers to Cor. 1 of section 3, and
+%     the cross-reference is left as a literal, as Gabriel prints it.
 
 \section{Adjoint Functors}
 --- The reader will find in [20] the proof of the following results:
@@ -38,7 +46,7 @@ $\Psi(A)\colon A\to STA$.
 \begin{lemma}
 The morphisms $\Psi(A)$ define a natural transformation $\Psi$ from the
 identity functor $I_{\mathbf{A}}$ of $\mathbf{A}$ to the functor
-$S\circ T$. The map $\psi\rightsquigarrow\Psi$ is bijective.
+$S\circ T$. The map $\psi\leadsto\Psi$ is bijective.
 \end{lemma}
 
 We recall only how one can reconstruct $\psi$ knowing $\Psi$: the functor
@@ -60,7 +68,7 @@ $\mathbf{B}$, a morphism $\Phi(B)\colon TSB\to B$.
 \begin{lemma}
 The morphisms $\Phi(B)$ define a natural transformation $\Phi$ from the
 functor $T\circ S$ to the identity functor $I_{\mathbf{B}}$ of
-$\mathbf{B}$. The map $\varphi\rightsquigarrow\Phi$ is bijective.
+$\mathbf{B}$. The map $\varphi\leadsto\Phi$ is bijective.
 \end{lemma}
 
 With the preceding notations, suppose that natural transformations $\psi$
@@ -161,7 +169,7 @@ $T$. Then $S$ is left exact and $T$ is right exact.
 
 Let indeed
 \[
-  o\longrightarrow B'\xrightarrow{f}B\xrightarrow{g}B''\longrightarrow o
+  0\longrightarrow B'\xrightarrow{f}B\xrightarrow{g}B''\longrightarrow 0
 \]
 be an exact sequence of $\mathbf{B}$. We have the following commutative
 diagram ($A$ is an arbitrary object of $\mathbf{A}$):
@@ -170,14 +178,14 @@ diagram ($A$ is an arbitrary object of $\mathbf{A}$):
 % written \prime: pgfkeys splits tikz-cd options on top-level commas before
 % the quotes library sees them.
 \begin{tikzcd}[column sep=small]
-o \arrow[r] &
+0 \arrow[r] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB')
   \arrow[r] \arrow[d, "\natt{\varphi}(A{,}B\prime)"] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB)
   \arrow[r] \arrow[d, "\natt{\varphi}(A{,}B)"] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB'')
   \arrow[d, "\natt{\varphi}(A{,}B\prime\prime)"] \\
-o \arrow[r] &
+0 \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B') \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B) \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B'')
