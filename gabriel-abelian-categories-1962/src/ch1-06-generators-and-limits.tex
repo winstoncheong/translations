@@ -6,8 +6,8 @@
 % Transcribed from the page images; the OCR text layer in reference/ocr/ was
 % not trusted.  In the definition of a morphism of inductive systems the
 % original prints "f_j o u_ji = v_ji o f_i" with "o" for the composition sign
-% (p. 337); the indices are transposed with respect to the usual condition.
-% It is reproduced as printed.  Proposition 6 carries a label because p. 338
+% (p. 337); both sides go from M_i to N_j, so this is correct as printed and
+% is reproduced unchanged.  Proposition 6 carries a label because p. 338
 % refers back to it.
 
 \section{Categories with Generators and Exact Inductive Limits}
@@ -44,10 +44,7 @@ Let $I$ be a filtered ordered set, and let $(M_i, u_{ji})$ and $(N_i, v_{ji})$
 be two inductive systems of morphisms of $\Cat$ indexed by $I$
 ($I\in\Univ$). A morphism of the first into the second is, by definition, a
 family $(f_i)_{i\in I}$ of morphisms with source $M_i$ and target $N_i$ such
-that $f_i\circ u_{ji} = v_{ji}\circ f_j$ if $j > i$.\ednote{The original
-prints $f_j\circ u_{ji} = v_{ji}\circ f_i$, with the indices transposed; we
-print the order in which this is a morphism of inductive systems.} Thus the
-category of
+that $f_j\circ u_{ji} = v_{ji}\circ f_i$ if $j > i$. Thus the category of
 inductive systems indexed by $I$ is defined, and this category is abelian.
 Moreover, the functor $(M_i,u_{ji})\mapsto \lim\limits_{\to} M_i$ is right
 exact. If this last functor is exact for every $I\in\Univ$, we say that $\Cat$

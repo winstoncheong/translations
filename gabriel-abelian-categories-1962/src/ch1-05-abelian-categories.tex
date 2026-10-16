@@ -10,6 +10,11 @@
 % ampersand, nor a harpoon), so it is reproduced literally here rather than
 % silently replaced by the join symbol.  Same for the Fraktur S standing for
 % the canonical morphism Coim f -> Im f.
+%
+% Emendations (each with an \ednote at the point):
+%   * The kernel is N cap P (p. 336 prints M cap N).
+%   * Proposition 4 gives a fibred sum (resp. fibred product); "fibre" was
+%     dropped in an earlier draft.
 
 \section{Abelian Categories}
 --- Let $\Cat$ be an additive category and let $f\colon M\to N$ be a morphism
@@ -43,8 +48,10 @@ To increase this resemblance, we constantly use the following notations: if
 $N$ is a subobject of $M$, $M/N$ denotes the cokernel of $i_N^M$; if $N$ and
 $P$ are two subobjects of $M$, $N + P$ denotes the image of the morphism of
 $N \oplus P$ into $M$ which is defined by $i_N^M$ and $i_P^M$; likewise
-$M \cap N$ denotes the kernel of the morphism of $M$ into $M/N \oplus M/P$
-which is defined by the canonical epimorphisms of $M$ onto $M/N$ and $M/P$.
+$N \cap P$ denotes the kernel of the morphism of $M$ into $M/N \oplus M/P$
+which is defined by the canonical epimorphisms of $M$ onto $M/N$ and $M/P$.\ednote{The
+original prints $M\cap N$ here; the kernel of $M\to M/N\oplus M/P$ is
+$N\cap P$. We print $N\cap P$.}
 If $f\colon M\to N$ is a morphism of an abelian category and $P$ a subobject
 of $M$, $f(P)$ denotes the image of $f\circ i_P^M$; likewise, if $Q$ is a
 subobject of $N$, $f^{-1}(Q)$ denotes the kernel of the composite of $f$
@@ -58,8 +65,8 @@ functors exact on the left or on the right, direct factors and injective
 objects.
 
 \begin{proposition}
-If $\Cat$ is an abelian category, there exists a coproduct (resp.\ a product)
-for diagram~(1) of \S~3 [resp.\ diagram~(2) of \S~3].
+If $\Cat$ is an abelian category, there exists a fibred sum (resp.\ a fibred
+product) for diagram~(1) of \S~3 [resp.\ diagram~(2) of \S~3].
 \end{proposition}
 
 We recall only the construction of $B\Sigma_A C$: if $j_B$ and $j'_C$ are the

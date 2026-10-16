@@ -5,6 +5,10 @@
 % Draft from the OCR text in reference/ocr/, but check every formula,
 % index and symbol against the page image in reference/source.pdf: the
 % text layer mangles subscripts, fractions and page numbers.
+%
+% Emendation (with an \ednote at the point): the print's $Gf_M$ (p. 345)
+% names an $f_M$ defined nowhere; the map $GM\to\ker(Gg_M)$ comes from
+% $Gj_M$, which is what we print.
 \section{Abelian Categories with Enough Injectives}
 --- This paragraph is devoted to a few results about the injective objects
 of an abelian category $\mathbf{B}$. These results are connected with the
@@ -18,10 +22,12 @@ objects of $\mathbf{M}$, then $\operatorname{Hom}_{\mathbf{M}}(d,d')$ is the
 set of pairs $(\alpha,\beta)$, $\alpha\in\operatorname{Hom}_{\mathbf{I}}(M,M')$,
 $\beta\in\operatorname{Hom}_{\mathbf{I}}(N,N')$, such that the following diagram
 is commutative:
+\[
 \begin{tikzcd}
 M \arrow[r, "d"] \arrow[d, "\alpha"'] & N \arrow[d, "\beta"] \\
 M' \arrow[r, "d'"'] & N'
 \end{tikzcd}
+\]
 
 It is well known that by defining the composition of morphisms in the obvious
 way, one makes $\mathbf{M}$ into an additive category.
@@ -84,12 +90,14 @@ For every object $M$ of $\mathbf{B}$, we choose an exact sequence
 where $I_0M$ and $I_1M$ are objects belonging to $\mathbf{I}$. For every
 morphism $u\colon M\to N$, we choose morphisms $u_0$ and $u_1$ which make the
 following diagram commutative
+\[
 \begin{tikzcd}[column sep=small]
 0 \arrow[r] & M \arrow[r, "{j_M}"] \arrow[d, "u"'] &
 I_0M \arrow[r, "{g_M}"] \arrow[d, "u_0"'] & I_1M \arrow[d, "u_1"] \\
 0 \arrow[r] & N \arrow[r, "{j_N}"'] &
 I_0N \arrow[r, "{g_N}"] & I_1N
 \end{tikzcd}
+\]
 
 One sees easily that the image of $(u_0,u_1)$ in
 $\operatorname{Hom}_{\mathbf{KI}}(g_M,g_N)$ depends only on $u$. If this image
@@ -150,8 +158,11 @@ injective objects of $\mathbf{B}$ (cf.\ Chapter~IV).
 Let us return to the hypotheses of Corollary~2. With the notations used in the
 proof of Proposition~14, we see that $(G')'$ is nothing but the functor
 $M\mapsto\operatorname{Ker}(Gg_M)$. It follows that $(G')'$ is the zeroth
-derived functor of $G$ [6]. Moreover, the morphisms $Gf_M$ define a natural
-transformation $\rho\colon G\to (G')'\cong R^{0}G$, and the pair
+derived functor of $G$ [6]. Moreover, the morphisms $Gj_M$ define a natural
+transformation $\rho\colon G\to (G')' = R^{0}G$, and the pair\ednote{The
+original prints $Gf_M$ here; no $f_M$ is defined — the resolution above
+provides $j_M\colon M\to I_0M$ and $g_M\colon I_0M\to I_1M$, and
+$GM\to\ker(Gg_M)$ comes from $Gj_M$. We print $Gj_M$.}
 $(R^{0}G,\rho)$ satisfies the conditions of Proposition~15:
 
 \begin{proposition}

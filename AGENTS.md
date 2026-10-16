@@ -105,11 +105,15 @@ hypothesis — do all three of these:
 2. **Add an editorial footnote at that point** recording what the original
    actually printed and that it has been corrected. Use the `\ednote` macro:
    ```latex
-   that $f_i\circ u_{ji} = v_{ji}\circ f_j$\ednote{The original prints
-   $f_j\circ u_{ji} = v_{ji}\circ f_i$, with the indices transposed; we
-   print the indices in the order that makes this a morphism of inductive
-   systems.}
+   maximal for the equality $N\cap Q = 0$\ednote{The original prints
+   $M\cap Q = 0$; since $Q$ is a subobject of $M$ this would force $Q$
+   itself to be zero. We print $N\cap Q = 0$, the only reading under
+   which the complements below make sense.}
    ```
+   (An earlier version of these instructions used a p.~337 index
+   "transposition" as its example; the scan shows the original is
+   type-correct there and the "correction" was the error. Examples in
+   this file must themselves be checked against the page image.)
 3. **Note it in the file header comment** as well, so the next agent sees it.
 
 The footnote is a record of an emendation, not an apology: it must say what

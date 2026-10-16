@@ -10,6 +10,8 @@
 %     letter o; throughout this translation it is rendered 0;
 %   * "The corollary to Proposition 1" refers to Cor. 1 of section 3, and
 %     the cross-reference is left as a literal, as Gabriel prints it.
+%   * The bifunctor is Hom(.,S,.) with both slots marked (pp. 338--339
+%     print "(.,S,.)"); an earlier draft dropped the second comma.
 
 \section{Adjoint Functors}
 --- The reader will find in [20] the proof of the following results:
@@ -31,7 +33,7 @@ These functors are defined in the product category
 $\mathbf{A}^{\circ}\prod\mathbf{B}$ and they take their values in the
 category $\Ens$ of sets. A natural transformation
 $\psi\colon\operatorname{Hom}_{\mathbf{B}}(T,.,.)\to
-\operatorname{Hom}_{\mathbf{A}}(.,S.)$ defines, for every pair $(A,B)$ of
+\operatorname{Hom}_{\mathbf{A}}(.,S,.)$ defines, for every pair $(A,B)$ of
 objects of $\mathbf{A}$ and of $\mathbf{B}$, a map
 \[
   \psi(A,B)\colon
@@ -61,7 +63,7 @@ $\operatorname{Hom}_{\mathbf{A}}(STA,SB)$ to
 $\operatorname{Hom}_{\mathbf{A}}(A,SB)$ which is defined by $\Psi(A)$.
 
 Similarly, a natural transformation
-$\varphi\colon\operatorname{Hom}_{\mathbf{A}}(.,S.)\to
+$\varphi\colon\operatorname{Hom}_{\mathbf{A}}(.,S,.)\to
 \operatorname{Hom}_{\mathbf{B}}(T,.,.)$ defines, for every object $B$ of
 $\mathbf{B}$, a morphism $\Phi(B)\colon TSB\to B$.
 
@@ -77,12 +79,14 @@ associated to $\psi$ and $\varphi$ by the preceding lemmas:
 
 \begin{proposition}
 For the composite natural transformation $\psi\circ\varphi$ to be the
-identity morphism of the functor $\operatorname{Hom}_{\mathbf{A}}(.,S.)$,
+identity morphism of the functor $\operatorname{Hom}_{\mathbf{A}}(.,S,.)$,
 it is necessary and sufficient that the composite morphism
 
+\[
 \begin{tikzcd}
 S \arrow[r, "\Psi S"] & STS \arrow[r, "S\Phi"] & S
 \end{tikzcd}
+\]
 
 be the identity morphism of the functor $S$.
 \end{proposition}
@@ -92,9 +96,11 @@ For the composite natural transformation $\varphi\circ\psi$ to be the
 identity morphism of the functor $\operatorname{Hom}_{\mathbf{B}}(T.,.)$,
 it is necessary and sufficient that the composite morphism
 
+\[
 \begin{tikzcd}
 T \arrow[r, "T\Psi"] & TST \arrow[r, "\Phi T"] & T
 \end{tikzcd}
+\]
 
 be the identity morphism of the functor $T$.
 \end{proposition}
@@ -104,7 +110,7 @@ $\psi\circ\varphi$ and $\varphi\circ\psi$ are identity morphisms, we say
 that the functor $S$ is \emph{adjoint} to $T$. In this terminology $S$
 may be adjoint to $T$ without $T$ being adjoint to $S$. If $S$ and $S'$
 are two functors adjoint to $T$, there exists a natural isomorphism of
-$\operatorname{Hom}_{\mathbf{A}}(.,S.)$ onto
+$\operatorname{Hom}_{\mathbf{A}}(.,S,.)$ onto
 $\operatorname{Hom}_{\mathbf{A}}(.,S'.)$. This isomorphism defines, for
 every object $B$ of $\mathbf{B}$, an isomorphism of the functor
 $\operatorname{Hom}_{\mathbf{A}}(.,SB)$ onto the functor
@@ -139,6 +145,7 @@ $Sf\colon SB\to SB'$ such that the following diagram is commutative:
 % The commas in the two vertical labels are braced: pgfkeys splits tikz-cd
 % options on top-level commas before the quotes library sees them.  Primes
 % inside a label are written \prime for the same reason.
+\[
 \begin{tikzcd}
 \operatorname{Hom}_{\mathbf{A}}(.,SB)
   \arrow[r, "\natt{\varphi}(B)"]
@@ -149,6 +156,7 @@ $Sf\colon SB\to SB'$ such that the following diagram is commutative:
   \arrow[r, "\natt{\varphi}(B\prime)"] &
 \operatorname{Hom}_{\mathbf{B}}(T.,B\prime)
 \end{tikzcd}
+\]
 
 One sees without difficulty that the maps $B\mapsto SB$ and $f\mapsto Sf$
 define a functor adjoint to $T$.
@@ -177,6 +185,7 @@ diagram ($A$ is an arbitrary object of $\mathbf{A}$):
 % The commas in the three vertical labels are braced, and their primes are
 % written \prime: pgfkeys splits tikz-cd options on top-level commas before
 % the quotes library sees them.
+\[
 \begin{tikzcd}[column sep=small]
 0 \arrow[r] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB')
@@ -188,8 +197,9 @@ diagram ($A$ is an arbitrary object of $\mathbf{A}$):
 0 \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B') \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B) \arrow[r] &
-\operatorname{Hom}_{\mathbf{B}}(TA,B'')
+\operatorname{Hom}_{\mathbf{B}}(TA,B'') 
 \end{tikzcd}
+\]
 
 The second row is exact and the vertical arrows represent bijections. It
 follows that the first row is exact and that $S$ is left exact. One

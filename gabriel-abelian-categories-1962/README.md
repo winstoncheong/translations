@@ -142,10 +142,16 @@ Emendations made so far:
 | p. 345, Prop. 15 | $R'F$ onto $R^0F$ | $R'G$ onto $R^0G$ |
 | p. 361, Corollaire | "$N'$ *of* $N$" | left as printed; footnoted |
 | p. 354, Lemma 2 (§4) | italic *C* for the category | $\mathbf{C}$ |
-| p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$ | $f_i\circ u_{ji} = v_{ji}\circ f_j$ |
 | p. 350 | $\lim_{F\in\mathbf{S}_A} FS$ | $\lim_{S\in\mathbf{S}_A} FS$ |
 | p. 358, Lemma 1 (§5) | "monomorphisme de source $Q$" | "morphisme"; footnoted |
 | p. 361, complement | "$M\cap Q = 0$" | "$N\cap Q = 0$"; footnoted |
+| p. 332 | $O_{M,N} = \eta_M\circ\varepsilon_N$ | $0_{M,N} = \eta_N\circ\varepsilon_M$; footnoted |
+| p. 332 | $q'_M$ (second $M\Pi N$ projection) | $q'_N$; footnoted |
+| p. 331 | $\operatorname{Hom}(\Cat,\Ab)$ for $X\mapsto\dot X$ | $\operatorname{Hom}(\Cat,\Ens)$; footnoted |
+| p. 334 | $o_{N,M}$ neutral in $\operatorname{Hom}(M,N)$ | $0_{M,N}$; footnoted |
+| p. 334 | $c(M)$ opposite in $\operatorname{Hom}(M,N)$ | $\operatorname{Hom}(M,M)$; footnoted |
+| p. 336 | $M\cap N = \ker(M\to M/N\oplus M/P)$ | $N\cap P$; footnoted |
+| p. 345 | $Gf_M$ ($f_M$ undefined) | $Gj_M$; footnoted |
 
 Two constraints on this, both stated in `AGENTS.md`:
 
@@ -174,6 +180,11 @@ Recorded so that nobody "fixes" them later:
   printed: $S''$ is a common upper bound of $S$ and $S'$ (right
   filtering), not a link in a chain. An earlier draft "corrected" this
   to a chain and was reverted.
+- **The inductive-system morphism condition "$f_j\circ u_{ji} =
+  v_{ji}\circ f_i$, $j > i$" (p. 337)** is correct as printed either:
+  both sides go $M_i\to N_j$. An earlier draft transposed the indices
+  (following the worked example that used to stand in `AGENTS.md`) and
+  was reverted as ill-typed.
 
 ### Notation decided here
 

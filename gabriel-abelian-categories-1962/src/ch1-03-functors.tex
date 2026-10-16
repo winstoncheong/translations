@@ -1,10 +1,20 @@
-%@ pages 330-332
+%@ pages 330-333
 %@ status translated
-% Chapter I, section 3: Functors (pp. 330-332; the section runs on into the
+% Chapter I, section 3: Functors (pp. 330-333; the section runs on into the
 % top of p. 333, up to the heading of section 4).
 % Transcribed from the page images in reference/source.pdf (pages 330--333),
 % not from the OCR text layer, which mangles the dotted objects, the
 % capital Sigma/Pi of sums and products, and the small-cap result headers.
+%
+% Emendations (each with an \ednote at the point):
+%   * The Yoneda embedding lands in Hom(C,Ens), not Hom(C,Ab) (p. 331).
+%   * The direct-product projections are q_M, q'_N (p. 332 prints q'_M;
+%     Lemma 1 on p. 333 uses q'_N).
+%   * The zero morphism is 0_{M,N} = eta_N circ varepsilon_M (p. 332 prints
+%     O_{M,N} = eta_M circ varepsilon_N, indices transposed).
+% The dots live only on the representable functors (dot X) and the maps
+% induced by Yoneda (dot f, dot xi); the objects and Homs in the
+% Proposition 1 proof carry none.
 
 \section{Functors}
 --- Let $\Cat$ and $\mathbf{D}$ be two categories. A \emph{functor} $F$ from
@@ -44,12 +54,12 @@ consists in the datum, for every object $M$ of $\Cat$, of a morphism
 $\varphi(M)\colon FM\to GM$. We suppose in addition that, for every morphism
 $f\colon M\to N$ of $\Cat$, the following diagram is commutative:
 
-\begin{center}
+\[
 \begin{tikzcd}
 FM \arrow[r, "\varphi^{(M)}"] \arrow[d, "Ff"'] & GM \arrow[d, "Gf"] \\
 FN \arrow[r, "\varphi^{(N)}"'] & GN
 \end{tikzcd}
-\end{center}
+\]
 
 If $\varphi\colon F\to G$ and $\psi\colon G\to H$ are two natural
 transformations, the composite $\psi\circ\varphi$ is defined by the formula
@@ -64,15 +74,18 @@ isomorphism for every object $M$ of $\Cat$; we then say that $\varphi$ is
 
 Let us now consider two objects $X$ and $Y$ of $\Cat$; since we suppose that
 $\Cat$ is a $\Univ$-category, $\operatorname{Hom}_{\Cat}(X,Y)$ is an element of
-$\Univ$. We denote by $\dot X$, $\operatorname{Hom}_{\Cat}(\dot X,.)$ or
-$\operatorname{Hom}(\dot X,.)$ the functor $Y\leadsto\operatorname{Hom}(X,Y)$
+$\Univ$. We denote by $\dot X$, $\operatorname{Hom}_{\Cat}(X,.)$ or
+$\operatorname{Hom}(X,.)$ the functor $Y\leadsto\operatorname{Hom}(X,Y)$
 of $\Cat$ into $\Ens$. If $f\colon X\to X'$ is a morphism of $\Cat$, we denote
 by $\dot f$ or by $\operatorname{Hom}(f,.)$ the natural transformation which
-applies the element $g$ of $\dot X Y = \operatorname{Hom}(X',Y)$ to the
+applies the element $g$ of $\dot X' Y = \operatorname{Hom}(X',Y)$ to the
 element $g\circ f$ of $\dot X Y = \operatorname{Hom}(X,Y)$.
 
 The maps $X\leadsto\dot X$ and $f\leadsto\dot f$ obviously define a functor of
-$\Cat^{\circ}$ into $\operatorname{Hom}(\Cat,\Ab)$. We are going to examine
+$\Cat^{\circ}$ into $\operatorname{Hom}(\Cat,\Ens)$.\ednote{The original
+prints $\operatorname{Hom}(\Cat,\Ab)$ here; the values
+$\dot XY = \operatorname{Hom}(X,Y)$ are sets, so we print
+$\operatorname{Hom}(\Cat,\Ens)$.} We are going to examine
 this functor a little more closely: for this, let $F$ be an arbitrary functor
 of $\Cat$ into $\Ab$; every element $\xi$ of $FX$ then defines a natural
 transformation $\dot\xi$ of $\dot X$ into $F$: for every object $Y$ of $\Cat$,
@@ -82,13 +95,11 @@ $\dot X Y = \operatorname{Hom}(X,Y)$ into $FY$.
 \begin{proposition}
 For every object $X$ of $\Cat$ the map $\xi\leadsto\dot\xi$ of $FX$ into
 $\operatorname{Hom}(\dot X,F)$ is bijective.
-% The original prints Hom(dot X, F) here, although the proof below makes the
-% codomain F(dot X) = Hom(dot X, dot F); we reproduce the original as printed.
 \end{proposition}
 
 In fact, let $\varphi$ be a natural transformation of $\dot X$ into $F$; let
-$\dot\varphi$ be the image of $1_X$ under the map $\varphi(\dot X)$ of
-$\operatorname{Hom}(\dot X,\dot X)$ into $F\dot X$. In the case where
+$\dot\varphi$ be the image of $1_X$ under the map $\varphi(X)$ of
+$\operatorname{Hom}(X,X)$ into $FX$. In the case where
 $\varphi$ is equal to $\dot\xi$, $\dot\varphi$ is none other than $\xi$. It
 remains therefore to prove that $\varphi = \dot\xi$ if
 $\xi = \dot\varphi$. In other words, we must show that for every object $Y$ of
@@ -100,14 +111,14 @@ $\Cat$ and every morphism $f\colon X\to Y$ we have the equality
 This follows from the commutative diagram
 % The label of the left arrow needs its comma braced: tikz-cd splits the
 % arrow options on top-level commas before it sees the quotes.
-\begin{center}
+\[
 \begin{tikzcd}
-\operatorname{Hom}(\dot X,Y) \arrow[r, "\varphi(Y)"] & FY \\
-\operatorname{Hom}(\dot X,\dot X) \arrow[r, "\varphi(\dot X)"]
-  \arrow[u, "\operatorname{Hom}(\dot X{,}f)"] & F\dot X \arrow[u, "F\dot f"']
+\operatorname{Hom}(X,Y) \arrow[r, "\varphi(Y)"] & FY \\
+\operatorname{Hom}(X,X) \arrow[r, "\varphi(X)"]
+  \arrow[u, "\operatorname{Hom}(X{,}f)"] & FX \arrow[u, "Ff"']
 \end{tikzcd}
-\end{center}
-and from the fact that $\dot\xi = \varphi(\dot X)(1_X)$.
+\]
+and from the fact that $\dot\xi = \varphi(X)(1_X)$.
 
 \begin{corollary}[11]
 If $X$ and $X'$ are two objects of $\Cat$, the map
@@ -125,23 +136,27 @@ $\operatorname{Hom}(X',.)$ is induced by an isomorphism of $X'$ onto $X$.
 
 We shall henceforth say that a functor $F$ of $\Cat$ into $\Ens$ is
 \emph{representable} [11] if $F$ is isomorphic to a functor
-$\operatorname{Hom}(\dot X,.)$. We also say that $X$ is \emph{a
+$\operatorname{Hom}(X,.)$. We also say that $X$ is \emph{a
 representative} of $F$. Such a representative is obviously defined up to an
 isomorphism.
 
 In particular, if the functor $F$ which associates to every object the set
 $\{\emptyset\}$ is representable, we choose once and for all a representative
-$O$ of $F$. This representative will be called \emph{the initial object} of
+$0$ of $F$. This representative will be called \emph{the initial object} of
 $\Cat$. For every object $Y$ of $\Cat$, we then denote by $\eta_Y$ the unique
-morphism of $O$ into $Y$.
+morphism of $0$ into $Y$.
 
-Dually, \emph{the final object} $O'$ of $\Cat$, if it exists, is such that
-$\operatorname{Hom}(Y,O')$ contains one and only one element $\varepsilon_Y$
+Dually, \emph{the final object} $0'$ of $\Cat$, if it exists, is such that
+$\operatorname{Hom}(Y,0')$ contains one and only one element $\varepsilon_Y$
 for every object $Y$.
 
-We say that $O$ is \emph{zero} if it is both initial and final. If $M$ and
-$N$ are then two objects of $\Cat$, we denote by $O_{M,N}$ or simply $O$ in
-place of $\eta_M\circ\varepsilon_N$.
+We say that $0$ is \emph{zero} if it is both initial and final. If $M$ and
+$N$ are then two objects of $\Cat$, we denote by $0_{M,N}$ or simply $0$ in
+place of $\eta_N\circ\varepsilon_M$.\ednote{The original prints
+$O_{M,N}$ (and $\eta_M\circ\varepsilon_N$), with the indices transposed;
+we print $0_{M,N}$ (and $\eta_N\circ\varepsilon_M$), the composite
+$M\to 0\to N$. The $O/o$ itself is rendered $0$ throughout, per the
+house convention.}
 
 Let us give another example: we recall that a \emph{direct sum} of two objects
 $M$ and $N$ is a triple $(P,u,v)$ made up of an object $P$ and of two
@@ -162,11 +177,15 @@ $j_M$ and $j'_N$ are \emph{the} canonical morphisms.
 
 The dual notion is the notion of direct product of $M$ and $N$: if it exists,
 we denote \emph{the} product $M\boldsymbol{\Pi}N$; \emph{the} canonical
-morphisms are denoted $q_M$ and $q'_M$.
+morphisms are denoted $q_M$ and $q'_N$.\ednote{The original prints $q'_M$
+here; the parallel notations $(M\boldsymbol{\Sigma}N,j_M,j'_N)$ above and
+$(B\boldsymbol{\Pi}C,q_B,q'_C)$ on p.~333, confirmed by Lemma~1's
+$q'_N\circ h(M,N)$ on the same page, show the second projection belongs to
+$N$. We print $q'_N$.}
 
 Let us now consider the diagrams (1) and (2):
 
-\begin{center}
+\[
 \begin{tikzcd}[row sep=2.6em, column sep=3.4em]
 & B \\
 (1)\quad A \arrow[ur, "h"] \arrow[dr, "k"'] & \\
@@ -178,7 +197,7 @@ Let us now consider the diagrams (1) and (2):
 (2)\quad A & \\
 & C \arrow[ul, "g"']
 \end{tikzcd}
-\end{center}
+\]
 
 A \emph{fibred sum} (\emph{somme fibrée}) of the diagram (1) is a triple
 $(P,u,v)$ made up of an object $P$ and of two morphisms, $u\colon B\to P$,

@@ -1,10 +1,18 @@
-%@ pages 333-334
+%@ pages 333-335
 %@ status translated
-% Chapter I, section 4: Additive categories (pp. 333-334).  The section opens
-% in the middle of p. 333, just below the last paragraph of section 3.
-% Transcribed from the page images in reference/source.pdf (pages 333--334),
+% Chapter I, section 4: Additive categories (pp. 333-335).  The section opens
+% in the middle of p. 333, just below the last paragraph of section 3, and
+% runs past p. 334: Proposition 3 (additive functors) and the paragraphs
+% following it stand at the top of p. 335, above the heading of section 5.
+% Transcribed from the page images in reference/source.pdf (pages 333--335),
 % not from the OCR text layer, which loses the subscripts of the canonical
 % morphisms and misreads the bold Sigma and Pi as ordinary capitals.
+%
+% Emendations (each with an \ednote at the point):
+%   * The neutral element is 0_{M,N} (p. 334 prints o_{N,M}, transposed).
+%   * c(M) is inverse to 1_M in Hom(M,M) (p. 334 prints Hom(M,N)).
+% The zero object and zero morphisms are rendered 0 throughout, per the
+% house convention.
 %
 % The original prints the section heading as
 %   "4. Catégories additives (d'après Grothendieck)"
@@ -14,7 +22,7 @@
 --- Let $\Cat$ be a category satisfying the following axioms:
 
 \begin{description}
-\item[$\mathbf{C}$ Ad 1] There exists a zero object $O$.
+\item[$\mathbf{C}$ Ad 1] There exists a zero object $0$.
 
 \item[$\mathbf{C}$ Ad 2] For every pair $(M,N)$ of objects of $\Cat$, the
 direct product of $M$ and $N$, and likewise the direct sum of $M$ and $N$,
@@ -72,7 +80,7 @@ $\boldsymbol{\Sigma}_M$) the morphism, called \emph{diagonal}, of $M$ into
 $M\oplus M$ (resp.\ of $M\oplus M$ into $M$) which is defined by the
 equalities $q_M\circ\Delta_M = 1_M$, $q'_M\circ\Delta_M = 1_M$ (resp.\
 $\boldsymbol{\Sigma}_M\circ j_M = 1_M$,
-$\boldsymbol{\Sigma}'_M\circ j'_M = 1_M$). If $f$ and $g$ are two morphisms
+$\boldsymbol{\Sigma}_M\circ j'_M = 1_M$). If $f$ and $g$ are two morphisms
 with the same source $M$ and the same target $N$, we denote by $f+g$ the
 composite of the following morphisms:
 \[
@@ -83,7 +91,10 @@ composite of the following morphisms:
 
 \begin{lemma}
 The internal law $(f,g)\mapsto f+g$ is commutative and associative. The
-morphism $o_{N,M}$ is a neutral element for this law.
+morphism $0_{M,N}$ is a neutral element for this law.\ednote{The original
+prints $o_{N,M}$, with the indices transposed; the neutral element of
+$\operatorname{Hom}(M,N)$ is the zero morphism $M\to N$. We print
+$0_{M,N}$.}
 \end{lemma}
 
 \begin{lemma}
@@ -101,17 +112,17 @@ cannot happen if the category $\Cat$ satisfies the axiom $\mathbf{C}$ Ad 4:
 $c(M)\colon M\to M$ such that the following diagram is commutative:
 \end{description}
 
-\begin{center}
+\[
 \begin{tikzcd}
 M \arrow[r, "0"] \arrow[d, "\Delta_M"'] & M \\
 M \oplus M \arrow[r, "1_M \oplus c(M)"] & M \oplus M \arrow[u, "\boldsymbol{\Sigma}_M"']
 \end{tikzcd}
-\end{center}
+\]
 
 The commutativity of the diagram means that $c(M)$ is an inverse of $1_M$ in
-$\operatorname{Hom}(M,N)$.
-% The original prints Hom(M, N) here, although c(M) and 1_M are both
-% endomorphisms of M; we reproduce the original as printed.
+$\operatorname{Hom}(M,M)$.\ednote{The original prints
+$\operatorname{Hom}(M,N)$; $c(M)$ and $1_M$ are endomorphisms of $M$. We
+print $\operatorname{Hom}(M,M)$.}
 It follows that a morphism $f\colon M\to N$ has for its inverse the composite
 \[
   c(N)\circ f = f\circ c(M).
