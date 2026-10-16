@@ -101,10 +101,12 @@ cannot happen if the category $\Cat$ satisfies the axiom $\mathbf{C}$ Ad 4:
 $c(M)\colon M\to M$ such that the following diagram is commutative:
 \end{description}
 
+\begin{center}
 \begin{tikzcd}
-M \arrow[r, "0"] \arrow[d, "\Delta_M"'] & M \arrow[u, "\boldsymbol{\Sigma}_M"'] \\
-M \oplus M \arrow[r, {1_M \oplus c(M)}] & M \oplus M
+M \arrow[r, "0"] \arrow[d, "\Delta_M"'] & M \\
+M \oplus M \arrow[r, "1_M \oplus c(M)"] & M \oplus M \arrow[u, "\boldsymbol{\Sigma}_M"']
 \end{tikzcd}
+\end{center}
 
 The commutativity of the diagram means that $c(M)$ is an inverse of $1_M$ in
 $\operatorname{Hom}(M,N)$.

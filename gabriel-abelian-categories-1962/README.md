@@ -125,20 +125,44 @@ One file per section of the original, in `src/`, in the original's order:
 Added as sections are translated. Recorded here because section files are not
 allowed to touch this file.
 
-### Typos and slips in the original are reproduced, not corrected
+### Mathematical mistakes in the original are emended, and the emendation is footnoted
 
-Where Gabriel prints something that is plainly a slip, the translation
-follows the print and the file header records it. Known cases so far:
+Where Gabriel prints something that is wrong as mathematics — a transposed
+index, a letter that must be another letter, an obviously vacuous
+hypothesis — the translation **prints the corrected mathematics**, and an
+editorial footnote records what the original said and what we print instead.
+The `\ednote` macro in `preamble.tex` produces these, numbered per chapter
+and prefixed "Translator's note" so they are distinguishable from the
+original's own footnotes (of which there are none).
 
-| Place | What's printed | Handling |
+Emendations made so far:
+
+| Place | Original prints | We print |
 | --- | --- | --- |
-| p. 345, Prop. 15 | "$F$" where the context demands "$G$" | reproduced |
-| p. 361, Corollaire | "$N'$ *of* $N$" where "$M$" is meant | reproduced |
-| p. 354, Lemma 2 (§4) | "*C*" in italics where **C** is meant | reproduced |
-| p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$, indices transposed | reproduced |
+| p. 345, Prop. 15 | $R'F$ onto $R^0F$ | $R'G$ onto $R^0G$ |
+| p. 361, Corollaire | "$N'$ *of* $N$" | see note in file; the subobject must be of $M$ |
+| p. 354, Lemma 2 (§4) | italic *C* for the category | $\mathbf{C}$ |
+| p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$ | $f_i\circ u_{ji} = v_{ji}\circ f_j$ |
+| p. 350 | $\lim_{F\in\mathbf{S}_A} FS$ | $\lim_{S\in\mathbf{S}_A} FS$ |
+| p. 350 | $S''\succeq S$, $S''\succeq S'$ | $S\succeq S''\succeq S'$ |
 
-Each is noted in the comment header of its own file. Nothing has been silently
-corrected; if a reader prefers emendations, they belong in footnotes.
+Two constraints on this, both stated in `AGENTS.md`:
+
+- **Only emend what is unambiguously wrong.** Where two readings are possible,
+  the choice is surfaced rather than made silently.
+- **Stylistic quirks are left completely alone**, with no footnote. Archaic
+  vocabulary, odd word order, "les sorties habituels" on p. 336, and
+  inconsistent terminology are the author's voice, not errors.
+
+### Some candidates were checked and are *not* errors
+
+Recorded so that nobody "fixes" them later:
+
+- **"$N + P$" (p. 336)** is correct as printed. The sentence contains both
+  symbols side by side: $N + P$ is defined as the image of the morphism of
+  $N \oplus P$ into $M$. The bare `+` is not a mis-typed `\oplus`.
+- **Proposition 4's "$\sigma = \tau\circ\rho$" (p. 348)** is correct:
+  $\sigma\colon F\to G$ is the morphism being factored through $R^0F$.
 
 ### Notation decided here
 

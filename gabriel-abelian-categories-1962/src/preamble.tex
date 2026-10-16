@@ -76,6 +76,7 @@
 \@addtoreset{corollary}{section}
 \@addtoreset{definition}{section}
 \@addtoreset{remark}{section}
+\@addtoreset{footnote}{chapter}
 \makeatother
 
 % ------------------------------------------------------------------ headings
@@ -119,6 +120,12 @@
 \newcommand{\natt}[1]{\dot{#1}}
 
 % ------------------------------------------------------------------ editorial
+% An editorial footnote.  Used where Gabriel's text contains a
+% mathematical mistake or an obvious slip: the translation follows the
+% print, and the note says so at the point where it bites.  Numbering is
+% per chapter, like the theorem counters.
+\newcommand{\ednote}[1]{\footnote{\emph{Translator's note.} #1}}
+
 % Placeholder printed in place of a passage that has not been translated yet.
 \newcommand{\notyet}[1]{%
   \par\noindent

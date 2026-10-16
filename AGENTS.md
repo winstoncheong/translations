@@ -94,10 +94,59 @@ just "Corollaire.", it is not.
 Never insert a `\setcounter` to make numbers line up. If the numbering looks
 wrong, the transcription is wrong, not the counter.
 
+## Mistakes and typos in the original
+
+Gabriel prints a fair number of slips. When you meet one — a transposed
+index, a letter that must be another letter, an obviously vacuous
+hypothesis — do all three of these:
+
+1. **Print the corrected mathematics in the translation.** The reader wants
+   the right statement, not a faithful copy of a wrong one.
+2. **Add an editorial footnote at that point** recording what the original
+   actually printed and that it has been corrected. Use the `\ednote` macro:
+   ```latex
+   that $f_i\circ u_{ji} = v_{ji}\circ f_j$\ednote{The original prints
+   $f_j\circ u_{ji} = v_{ji}\circ f_i$, with the indices transposed; we
+   print the indices in the order that makes this a morphism of inductive
+   systems.}
+   ```
+3. **Note it in the file header comment** as well, so the next agent sees it.
+
+The footnote is a record of an emendation, not an apology: it must say what
+was printed and what we print instead. `\ednote` prints "Translator's note."
+so emendations are distinguishable from Gabriel's own footnotes (there are
+none). Footnote numbers restart with each chapter.
+
+Two rules of judgement:
+
+- **Only emend what is unambiguously wrong.** If you are confident the
+  intended reading is unique, correct it. If two readings are possible, do
+  not pick one silently — either leave the print and note the difficulty, or
+  ask.
+- **Stylistic quirks are not mistakes.** Odd phrasing, unusual word order,
+  inconsistent terminology and archaic vocabulary are the author's voice.
+  Leave them completely alone, with no note. Reserve `\ednote` for things
+  that are wrong as mathematics.
+
 ## Diagrams
 
 Use `tikz-cd` (already loaded in the preamble), not `xy`/`picture`. Match the
-original's arrow labels and direction. Example:
+original's arrow labels and direction.
+
+**Two tikz-cd gotchas in this TeX Live**, both of which have already cost time:
+
+- The braces-only label form does **not** work: `\arrow[r, {a,b}]` is passed
+  straight to `pgfkeys` and fails with "I do not know the key `/tikz/abc`".
+  Use the quoted form: `\arrow[r, "a,b"]`.
+- With the quoted form, any comma *inside* the label must be braced, because
+  `pgfkeys` splits the options on top-level commas before the quotes library
+  sees them:
+  ```latex
+  \arrow[r, "\operatorname{Hom}(\dot X{,}f)"]   % works
+  \arrow[r, "\operatorname{Hom}(\dot X,f)"]    % fails
+  ```
+  A braced comma is visually identical, so this costs nothing typographically.
+  Leave a short `%` comment at any diagram where you had to do this.
 
 ```latex
 \begin{tikzcd}

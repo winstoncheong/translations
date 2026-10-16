@@ -71,9 +71,11 @@ associated to $\psi$ and $\varphi$ by the preceding lemmas:
 For the composite natural transformation $\psi\circ\varphi$ to be the
 identity morphism of the functor $\operatorname{Hom}_{\mathbf{A}}(.,S.)$,
 it is necessary and sufficient that the composite morphism
+
 \begin{tikzcd}
 S \arrow[r, "\Psi S"] & STS \arrow[r, "S\Phi"] & S
 \end{tikzcd}
+
 be the identity morphism of the functor $S$.
 \end{proposition}
 
@@ -81,9 +83,11 @@ be the identity morphism of the functor $S$.
 For the composite natural transformation $\varphi\circ\psi$ to be the
 identity morphism of the functor $\operatorname{Hom}_{\mathbf{B}}(T.,.)$,
 it is necessary and sufficient that the composite morphism
+
 \begin{tikzcd}
 T \arrow[r, "T\Psi"] & TST \arrow[r, "\Phi T"] & T
 \end{tikzcd}
+
 be the identity morphism of the functor $T$.
 \end{proposition}
 
@@ -119,16 +123,19 @@ assertions are equivalent:
 It is clear that (a) entails (b). Conversely, for every object $B$ of
 $\mathbf{B}$ choose a representing object $SB$ for the functor
 $A\mapsto\operatorname{Hom}_{\mathbf{B}}(TA,B)$ and a natural isomorphism
-$\varphi(B)\colon\operatorname{Hom}_{\mathbf{A}}(.,SB)\simeq
+$\varphi(B)\colon\operatorname{Hom}_{\mathbf{A}}(.,SB)\xrightarrow{\sim}
 \operatorname{Hom}_{\mathbf{B}}(T.,B)$. If $f\colon B\to B'$ is a
 morphism of $\mathbf{B}$, there is one and only one morphism
 $Sf\colon SB\to SB'$ such that the following diagram is commutative:
+
+% The commas in the two vertical labels are braced: pgfkeys splits
+% tikz-cd options on top-level commas before the quotes library sees them.
 \begin{tikzcd}
 \operatorname{Hom}_{\mathbf{A}}(.,SB)
   \arrow[r, "\natt{\varphi}(B)"]
-  \arrow[d, "{\operatorname{Hom}_{\mathbf{A}}(.,Sf)}"'] &
+  \arrow[d, "\operatorname{Hom}_{\mathbf{A}}(.{,}Sf)"'] &
 \operatorname{Hom}_{\mathbf{B}}(T.,B)
-  \arrow[d, "{\operatorname{Hom}_{\mathbf{B}}(T.,f)}"'] \\
+  \arrow[d, "\operatorname{Hom}_{\mathbf{B}}(T.{,}f)"'] \\
 \operatorname{Hom}_{\mathbf{A}}(.,SB')
   \arrow[r, "\natt{\varphi}(B')"] &
 \operatorname{Hom}_{\mathbf{B}}(T.,B')
@@ -157,14 +164,17 @@ Let indeed
 \]
 be an exact sequence of $\mathbf{B}$. We have the following commutative
 diagram ($A$ is an arbitrary object of $\mathbf{A}$):
+
+% The commas in the three vertical labels are braced: pgfkeys splits
+% tikz-cd options on top-level commas before the quotes library sees them.
 \begin{tikzcd}[column sep=small]
 o \arrow[r] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB')
-  \arrow[r] \arrow[d, "{\natt{\varphi}(A,B')}"] &
+  \arrow[r] \arrow[d, "\natt{\varphi}(A{,}B')}"] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB)
-  \arrow[r] \arrow[d, "{\natt{\varphi}(A,B)}"] &
+  \arrow[r] \arrow[d, "\natt{\varphi}(A{,}B)"] &
 \operatorname{Hom}_{\mathbf{A}}(A,SB'')
-  \arrow[d, "{\natt{\varphi}(A,B'')}"] \\
+  \arrow[d, "\natt{\varphi}(A{,}B'')}"] \\
 o \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B') \arrow[r] &
 \operatorname{Hom}_{\mathbf{B}}(TA,B) \arrow[r] &

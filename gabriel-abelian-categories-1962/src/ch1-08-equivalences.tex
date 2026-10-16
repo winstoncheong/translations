@@ -32,8 +32,9 @@ Let $(T,S,\Psi,\Phi')$ be an equivalence between $\mathbf{A}$ and
 $\mathbf{B}$:
 \begin{description}
 \item[\normalfont a.] For every pair $(M,N)$ of objects of $\mathbf{A}$,
-      the map $T(M,N)$ of $\operatorname{Hom}_{\mathbf{A}}(M,N)$ into
-      $\operatorname{Hom}_{\mathbf{B}}(TM,TN)$ is bijective.
+      the map $T(M,N)$ is a bijection from
+      $\operatorname{Hom}_{\mathbf{A}}(M,N)$ onto
+      $\operatorname{Hom}_{\mathbf{B}}(TM,TN)$.
 \item[\normalfont b.] Every object $P$ of $\mathbf{B}$ is isomorphic to
       an object of the form $TM$.
 \end{description}
@@ -86,10 +87,11 @@ fibre product of diagram (2); one also says that $T$ commutes with
 fibre products. The functor $T$ ``commutes'' also with fibre sums,
 inductive limits\ldots More generally, the ``homological'' properties of
 two equivalent categories are the ``same''.
-\begin{tikzcd}[column sep=large]
-    & M \arrow[rd, "f"] & &    & TM \arrow[rd, "Tf"] & \\
+
+\begin{tikzcd}[column sep=large, row sep=large]
+    & M \arrow[rd, "f"] &     &     & TM \arrow[rd, "Tf"] & \\
 (1) &                 & L & (2) &                  & TL \\
-    & N \arrow[ru, "g"'] & &    & TN \arrow[ru, "Tg"'] &
+    & N \arrow[ru, "g"] &     &     & TN \arrow[ru, "Tg"] &
 \end{tikzcd}
 
 The preceding exercises and Proposition~3 have the following

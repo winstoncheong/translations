@@ -44,10 +44,12 @@ consists in the datum, for every object $M$ of $\Cat$, of a morphism
 $\varphi(M)\colon FM\to GM$. We suppose in addition that, for every morphism
 $f\colon M\to N$ of $\Cat$, the following diagram is commutative:
 
+\begin{center}
 \begin{tikzcd}
 FM \arrow[r, "\varphi^{(M)}"] \arrow[d, "Ff"'] & GM \arrow[d, "Gf"] \\
 FN \arrow[r, "\varphi^{(N)}"'] & GN
 \end{tikzcd}
+\end{center}
 
 If $\varphi\colon F\to G$ and $\psi\colon G\to H$ are two natural
 transformations, the composite $\psi\circ\varphi$ is defined by the formula
@@ -62,13 +64,12 @@ isomorphism for every object $M$ of $\Cat$; we then say that $\varphi$ is
 
 Let us now consider two objects $X$ and $Y$ of $\Cat$; since we suppose that
 $\Cat$ is a $\Univ$-category, $\operatorname{Hom}_{\Cat}(X,Y)$ is an element of
-$\Univ$. We denote by $\dot X$, $\operatorname{Hom}_{\Cat}(\dot X,.) $ or
-$\operatorname{Hom}(\dot X,.)$ the functor
-$Y\leadsto\operatorname{Hom}(X,Y)$ of $\Cat$ into $\Ens$. If
-$f\colon X\to X'$ is a morphism of $\Cat$, we denote by $\dot f$ or by
-$\operatorname{Hom}(f,.)$ the natural transformation which applies the element
-$g$ of $\dot X Y = \operatorname{Hom}(X',Y)$ to the element $g\circ f$ of
-$\dot X Y = \operatorname{Hom}(X,Y)$.
+$\Univ$. We denote by $\dot X$, $\operatorname{Hom}_{\Cat}(\dot X,.)$ or
+$\operatorname{Hom}(\dot X,.)$ the functor $Y\leadsto\operatorname{Hom}(X,Y)$
+of $\Cat$ into $\Ens$. If $f\colon X\to X'$ is a morphism of $\Cat$, we denote
+by $\dot f$ or by $\operatorname{Hom}(f,.)$ the natural transformation which
+applies the element $g$ of $\dot X Y = \operatorname{Hom}(X',Y)$ to the
+element $g\circ f$ of $\dot X Y = \operatorname{Hom}(X,Y)$.
 
 The maps $X\leadsto\dot X$ and $f\leadsto\dot f$ obviously define a functor of
 $\Cat^{\circ}$ into $\operatorname{Hom}(\Cat,\Ab)$. We are going to examine
@@ -97,11 +98,15 @@ $\Cat$ and every morphism $f\colon X\to Y$ we have the equality
 \]
 
 This follows from the commutative diagram
+% The label of the left arrow needs its comma braced: tikz-cd splits the
+% arrow options on top-level commas before it sees the quotes.
+\begin{center}
 \begin{tikzcd}
-\operatorname{Hom}(\dot X,Y) \arrow[r, "\varphi(Y)"]
-  \arrow[u, {\operatorname{Hom}(\dot X,f)}] & FY \arrow[u, "F\dot f"'] \\
-\operatorname{Hom}(\dot X,\dot X) \arrow[r, "\varphi(\dot X)"] & F\dot X
+\operatorname{Hom}(\dot X,Y) \arrow[r, "\varphi(Y)"] & FY \\
+\operatorname{Hom}(\dot X,\dot X) \arrow[r, "\varphi(\dot X)"]
+  \arrow[u, "\operatorname{Hom}(\dot X{,}f)"] & F\dot X \arrow[u, "F\dot f"']
 \end{tikzcd}
+\end{center}
 and from the fact that $\dot\xi = \varphi(\dot X)(1_X)$.
 
 \begin{corollary}[11]
@@ -163,13 +168,15 @@ Let us now consider the diagrams (1) and (2):
 
 \begin{center}
 \begin{tikzcd}[row sep=2.6em, column sep=3.4em]
-(1)\quad A \arrow[ur, "h"] \arrow[dr, "k"'] & B \\
+& B \\
+(1)\quad A \arrow[ur, "h"] \arrow[dr, "k"'] & \\
 & C
 \end{tikzcd}
 \qquad\qquad\qquad
 \begin{tikzcd}[row sep=2.6em, column sep=3.4em]
-(2)\quad A & B \arrow[dl, "f"] \arrow[ul, "g"'] \\
-& C
+& B \arrow[dl, "f"] \\
+(2)\quad A & \\
+& C \arrow[ul, "g"']
 \end{tikzcd}
 \end{center}
 
