@@ -185,7 +185,7 @@ def main() -> int:
                 journal=journal, volume=volume, year=year, pages=pages,
                 language=language, doi=doi_html,
                 download=f'<a class="pdf" href="pdfs/{html.escape(name)}.pdf">Download PDF</a>',
-                width=max(pct, 0.5), done=done, total=total, pct=pct,
+                width=f"{max(pct, 0.5):.1f}", done=done, total=total, pct=pct,
             )
         )
 
