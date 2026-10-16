@@ -1,9 +1,148 @@
 %@ pages 379-381
-%@ status todo
-% Original: pp. 379--447.  French title: see reference/ocr/page-0379.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ status translated
+% Chapter III, section 5: A few examples of localizing subcategories
+% (original pp. 379--381).  French title: "Quelques exemples de
+% sous-catégories localisantes".  Transcribed from the page images in
+% reference/source.pdf, not from the OCR text layer.
+%
+% Numbering is automatic (src/preamble.tex).  This section prints
+% Proposition 11 and Proposition 12 (continuing the chapter's run, which
+% reached Proposition 10 at the end of \S4) and one corollary which Gabriel
+% prints without a number ("Corollaire.", p. 381), hence
+% `unnumberedcorollary'.  No lemma is stated in this section.
+%
+% No emendations.
+
 \section{A Few Examples of Localizing Subcategories}
 
-\notyet{pp. 379--447 of the original French edition.}
+--- \emph{a. Sheaves of modules.} --- Let $E$ be a topological space, $A$
+a sheaf of rings on $E$ and $\mathbf{A}$ the category of sheaves of
+$A$-modules (or $A$-modules). If $F$ is a closed subset of $E$, $U$ the
+open complement of $F$ in $E$, we shall use the following notations:
+\begin{itemize}
+\item If $M$ is an $A$-module, $M|U$ denotes its restriction to $U$;
+\item $T_1$ denotes the functor $M\leadsto M|U$;
+\item $\mathbf{B}$ denotes the category of $A|U$-modules;
+\item $S_1$ denotes the direct image functor: if $N$ is an $A|U$-module,
+$S_1N$ is the direct image of $N$ in $E$.
+\end{itemize}
+
+It is clear that $T_1$ is an exact functor and that
+$\operatorname{Ker}T_1$ consists of the $A$-modules whose restriction to
+$U$ is zero. Since $S_1$ is a functor adjoint to $T_1$ and
+$T_1\circ S_1$ is isomorphic to $1_{\mathbf{B}}$, Proposition~5 shows that
+the categories $\mathbf{B}$ and $\mathbf{A}/\operatorname{Ker}T_1$ are
+equivalent.
+
+--- \emph{b. Left exact functors.} --- The hypotheses and the notations
+are those of Proposition~4 (Chapter~II). Let $\mathbf{A}$ be the category
+$\operatorname{Fonct}(\mathbf{C},\mathbf{D})$, $\mathbf{B}$ the category
+$\operatorname{Sex}(\mathbf{C},\mathbf{D})$, $T_1$ the functor $R^{0}$,
+$S_1$ the canonical functor from
+$\operatorname{Sex}(\mathbf{C},\mathbf{D})$ into
+$\operatorname{Fonct}(\mathbf{C},\mathbf{D})$. Proposition~4 (Chapter~II)
+says that $S_1$ is adjoint to $T_1$. Every injective object of
+$\operatorname{Sex}(\mathbf{C},\mathbf{D})$ is therefore injective in
+$\operatorname{Fonct}(\mathbf{C},\mathbf{D})$.
+
+--- \emph{c. Satellite functors~[6].} --- Let $\mathbf{C}$ and
+$\mathbf{D}$ be two abelian categories. We suppose, to simplify, that the
+category $\mathbf{C}$ ``has enough projective objects''. Let $\mathbf{A}$
+then be the following category:
+\begin{itemize}
+\item an object of $\mathbf{A}$ is a ``connected sequence of functors''
+$(F_n)$ from $\mathbf{C}$ into $\mathbf{D}$, $n\geq 0$;
+\item if $(F_n)$ and $(G_n)$ are two objects of $\mathbf{A}$, a morphism
+from the first into the second is a sequence of natural transformations
+$f_n\colon F_n\to G_n$; it is moreover supposed that the morphisms $f_n$
+commute with the boundary operators (``connecting homomorphisms'');
+\item the composition of morphisms is defined in the obvious way.
+\end{itemize}
+
+The objects $(F_n)$ whose first component $F_0$ is zero form a thick
+subcategory $\mathbf{B}$ of the abelian category $\mathbf{A}$. Moreover,
+the reader will easily verify that the functor
+$(F_n)\leadsto F_0$ defines an equivalence between $\mathbf{A}/\mathbf{B}$
+and $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$.
+
+Conversely, let $F$ be a functor from $\mathbf{C}$ into $\mathbf{D}$ and
+denote by $S_nF$ the $n$th satellite functor of $F$: the functor
+$F\leadsto (S_nF)$ is then adjoint to the functor $(F_n)\leadsto F_0$.
+
+The reader will find an analogous interpretation of the right satellite
+functors $S^nF$ once he has stated the propositions dual to the
+propositions of this chapter.
+
+--- \emph{d. Localisation at the centre.} --- If $\mathbf{A}$ is an
+additive category, the \emph{centre} of $\mathbf{A}$ is the set of natural
+transformations from the identity functor $I_{\mathbf{A}}$ of
+$\mathbf{A}$ into itself. Addition and composition of natural
+transformations define a ring structure on this set. This ring will be
+denoted $Z(\mathbf{A})$; the reader will verify that $Z(\mathbf{A})$ is a
+commutative ring.
+
+We now suppose that $\mathbf{A}$ is a $\Univ$-category with generators and
+exact inductive limits. If $\Sigma$ is a multiplicative subset of
+$Z(\mathbf{A})$, we denote by $\mathbf{A}_{\Sigma}$ the full subcategory
+of $\mathbf{A}$ defined as follows: an object $M$ belongs to
+$\mathbf{A}_{\Sigma}$ if $M$ is the supremum of the subobjects $N$ such
+that $s(N)$ is zero for at least one element $s$ of $\Sigma$. It is clear
+that $\mathbf{A}_{\Sigma}$ is a thick and closed subcategory of
+$\mathbf{A}$. For every object $M$ of $\mathbf{A}$ we may therefore choose
+an $\mathbf{A}_{\Sigma}$-envelope $j_M\colon M\to M_{\Sigma}$.
+
+\begin{proposition}
+Under the hypotheses above, the following assertions are equivalent:
+\begin{description}
+\item[\normalfont a.] $M$ is an $\mathbf{A}_{\Sigma}$-closed object.
+\item[\normalfont b.] For every element $s$ of $\Sigma$, $s(M)$ is an
+automorphism of $M$.
+\end{description}
+\end{proposition}
+
+$(a)\Rightarrow(b)$: it is indeed clear that $s(M)$ is a monomorphism of
+$M$ into $M$. It follows that $\operatorname{Im}s(M)$ is
+$\mathbf{A}_{\Sigma}$-closed. By Lemma~1~$(b)$, \S2,
+$\operatorname{Im}s(M)$ is therefore a direct factor of $M$, and every
+complement of $\operatorname{Im}s(M)$ belongs to $\mathbf{A}_{\Sigma}$.
+This is only possible if $\operatorname{Im}s(M) = M$.
+
+$(b)\Rightarrow(a)$: it is indeed clear that $M$ contains no nonzero
+subobject belonging to $\mathbf{A}_{\Sigma}$. We suppose, to simplify,
+that $M$ is a subobject of $M_{\Sigma}$ and that $j_M$ is the canonical
+morphism from $M$ into $M_{\Sigma}$. Let then $N$ be a subobject of
+$M_{\Sigma}$, containing $M$ and such that $\operatorname{Im}s(N)$ is
+contained in $M$ for at least one element $s$ of $\Sigma$. If $i$ denotes
+the canonical monomorphism from $M$ into $N$, we have the equality
+$1_M = s(M)^{-1}\circ s(N)\circ i$. This equality shows that $M$ is a
+direct factor of $N$; it follows that $M$ is equal to $N$, hence to
+$M_{\Sigma}$.
+
+\begin{unnumberedcorollary}
+The localisation functor $M\leadsto M_{\Sigma}$ is exact.
+\end{unnumberedcorollary}
+
+This follows from Proposition~11 and Proposition~7~$(b)$.
+
+\begin{proposition}
+The hypotheses and the notations are those of Proposition~11. It is
+moreover supposed that $\mathbf{A}$ is a locally noetherian category. The
+injective envelope of an object of $\mathbf{A}_{\Sigma}$ belongs to
+$\mathbf{A}_{\Sigma}$.
+\end{proposition}
+
+Suppose indeed that $N$ is an essential extension of a subobject $M$
+belonging to $\mathbf{A}_{\Sigma}$. We want to show that $N$ belongs to
+$\mathbf{A}_{\Sigma}$; for this it suffices to prove that every noetherian
+subobject $N'$ of $N$ belongs to $\mathbf{A}_{\Sigma}$; since $N'$ is an
+essential extension of $M\cap N'$, we may thus reduce to the case where
+$N$ is noetherian.
+
+In this case, there exists an element $s$ of $\Sigma$ such that $s(M)$ is
+zero. Since $N$ is noetherian, $\operatorname{Ker}(s(N))^n$ is equal to
+$\operatorname{Ker}(s(N))^{n+1}$ for $n$ large enough. From this we deduce
+the equality
+$\operatorname{Ker}(s(N))^n\cap\operatorname{Im}(s(N))^n = 0$. Since
+$\operatorname{Ker}(s(N))^n$ contains $M$ and $N$ is an essential extension
+of $M$, $\operatorname{Im}(s(N))^n$ is zero. In other words $s^n(N)$ is
+zero and $N$ belongs to $\mathbf{A}_{\Sigma}$.
