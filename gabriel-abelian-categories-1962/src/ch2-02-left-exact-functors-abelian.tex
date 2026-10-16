@@ -146,7 +146,7 @@ $\operatorname{Ker}(Fv')$. If $S'\leq S$ and $S\geq S'$, the
 preceding lemma shows that $F(S',S)$ is an isomorphism whose inverse is
 $F(S,S')$. It is therefore legitimate to give the definition
 \begin{equation*}
-  (RF)A = \lim_{\overline{\longrightarrow}\,S\in\mathbf{S}_A} FS.\ednote{The index
+  (RF)A = \varinjlim_{S\in\mathbf{S}_A} FS.\ednote{The index
   set is printed $F\in\mathbf{S}_A$; the elements of $\mathbf{S}_A$ are the
   sequences $S$, not the functors $F$. We print $S\in\mathbf{S}_A$.}
 \end{equation*}
@@ -279,7 +279,7 @@ N' \arrow[r] \arrow[u] &
 where $N'$ is the cokernel of $u\circ g$. If $g^{-1}S$ denotes the
 sequence of the second row, it is clear that the sequences $g^{-1}S$
 form a cofinal subset of $\mathbf{S}_{A'}$. We deduce from this that $(RF)A'$
-is equal to $\lim_{\overline{\longrightarrow}\,S}F(g^{-1}S)$ and that
+is equal to $\varinjlim_SF(g^{-1}S)$ and that
 $(RF)g$ is the inductive limit of the canonical monomorphisms of
 $F(g^{-1}S)$ into $FS$. This proves the lemma.
 
@@ -313,21 +313,22 @@ be an element of $\mathbf{S}_A$. There is the following commutative exact
 diagram:
 \begin{equation*}
 \begin{tikzcd}[column sep=large, row sep=1.1em]
-& 0 & & 0 & \\
-& & \downarrow & & \downarrow & \\
 0 \arrow[r] &
 A' \arrow[r, "f"] \arrow[d, "1_{A'}"'] &
 A \arrow[r, "g"] \arrow[d, "u"'] &
 A'' \arrow[r] \arrow[d] &
 0 \\
 0 \arrow[r] &
-A' \arrow[r, "u\circ f"] &
-M \arrow[r, "i_M"] \arrow[d, "v"'] &
+A' \arrow[r, "u\circ f"'] &
+M \arrow[r] \arrow[d, "v"'] &
 M\,\Sigma_A\,A'' \arrow[r] \arrow[d] &
 0 \\
-& & N \arrow[r, "1_N"] & N & \\
-& & \downarrow & & \downarrow & \\
-& & 0 & & 0 &
+& &
+N \arrow[r, "1_N"] \arrow[d] &
+N \arrow[d] \\
+& &
+0 &
+0
 \end{tikzcd}
 \end{equation*}
 Using notation already employed, we deduce from it the exact diagram
@@ -346,10 +347,10 @@ F(M\,\Sigma_A\,A'')
 By passing to the limit it follows that there is an exact sequence
 \[
   0\to (RF)A'\to (RF)A\to
-  \lim_{\overline{\longrightarrow}\,S}F(gS).
+  \varinjlim_SF(gS).
 \]
 Moreover, assertion (a) shows that the canonical morphism of
-$\lim_{\overline{\longrightarrow}\,S}F(gS)$ into $(RF)A''$ is a
+$\varinjlim_SF(gS)$ into $(RF)A''$ is a
 monomorphism; this completes the proof.
 
 We are now in a position to prove Proposition~4: let $A$ be an object of
@@ -374,7 +375,7 @@ $Fu$. There exists a unique morphism $\tau_F(A,S)$ whose composite with
 $\rho_F(A,S)$ is equal to $\sigma(A)$. By passing to the inductive limit we
 see that there exists a unique morphism $\tau_F(A)$ of $(RF)A$ into $GA$
 whose composite with
-$\rho_F(A) = \lim_{\overline{\longrightarrow}\,S}\rho_F(A,S)$ is equal to
+$\rho_F(A) = \varinjlim_S\rho_F(A,S)$ is equal to
 $\sigma(A)$. If the functor $RF$ is left exact, the proposition is
 proved. In the contrary case we start the operation again. Lemmas~4 and
 ~5 show that the functor $R(RF)$ is left exact. In every case we may

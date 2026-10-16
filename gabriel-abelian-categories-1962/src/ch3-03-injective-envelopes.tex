@@ -68,13 +68,13 @@ diagram:
 % The primes inside the labels are written \prime, and the slashes too:
 % pgfkeys splits tikz-cd options on top-level commas and chokes on the
 % bare apostrophe, so both are made explicit here.
-\begin{center}
+\[
 \begin{tikzcd}
 TI\prime \arrow[r, "Tf"] \arrow[d, "Ti"'] &
 T(M/M\prime) \arrow[ld, "Tg"] \\
 TI \arrow[r, "f\prime"'] & TM \arrow[u, "Tp^{M}_{M/M\prime}"]
 \end{tikzcd}
-\end{center}
+\]
 
 Since $Ti$ and $Tp^{M}_{M/M'}$ are isomorphisms, $f'$ is an isomorphism of
 $TI$ onto a direct factor of $TM$.\hfill Q.E.D.

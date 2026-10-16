@@ -160,7 +160,7 @@ that $T$ defines an equivalence:
       Proposition 1 (Chapter~I). We pass from there to the case where $X$ is
       noetherian and $Z$ arbitrary: if $Z'$ is a noetherian subobject of
       $Z$, we have the diagram
-      \begin{center}
+      \[
       \begin{tikzcd}[column sep=7em]
       \operatorname{Hom}_{\mathbf{D}}(X,Z')
         \arrow[r, "{\operatorname{Hom}(X,i^{Z}_{Z'})}"]
@@ -171,7 +171,7 @@ that $T$ defines an equivalence:
         \arrow[r, "{\operatorname{Hom}(TX,T i^{Z}_{Z'})}"] &
       \operatorname{Hom}(TX,TZ)
       \end{tikzcd}
-      \end{center}
+      \]
       The map $T(X,Z')$ is an isomorphism. By passing to the inductive limit
       over the noetherian subobjects of $Z$, we see that $T(X,Z)$ is bijective
       (lemma 2). The general case is then proved by an argument of the same
@@ -206,8 +206,8 @@ object. If $(X_i,u_{ji})_{i,j\in J}$ is an inductive system of $\mathbf{D}$
 and if $Y$ is a noetherian object, we have the equality
 \[
   \operatorname{Hom}_{\mathbf{D}}\Bigl(Y,
-    \lim_{\substack{\longrightarrow\\ i}} X_i\Bigr)
-  = \lim_{\substack{\longrightarrow\\ i}}
+    \varinjlim_i X_i\Bigr)
+  = \varprojlim_i
     \operatorname{Hom}_{\mathbf{D}}(Y,X_i).
 \]
 \end{corollary}
