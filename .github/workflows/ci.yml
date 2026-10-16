@@ -48,7 +48,7 @@ jobs:
           fi
           {
             echo "documents<<EOF"
-            echo "$docs"
+            echo "$docs" | jq -R -s -c 'split("\n") | map(select(length > 0))'
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
           echo "count=$count" >> "$GITHUB_OUTPUT"
