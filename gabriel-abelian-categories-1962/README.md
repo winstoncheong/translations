@@ -140,7 +140,7 @@ Emendations made so far:
 | Place | Original prints | We print |
 | --- | --- | --- |
 | p. 345, Prop. 15 | $R'F$ onto $R^0F$ | $R'G$ onto $R^0G$ |
-| p. 361, Corollaire | "$N'$ *of* $N$" | see note in file; the subobject must be of $M$ |
+| p. 361, Corollaire | "$N'$ *of* $N$" | left as printed; footnoted |
 | p. 354, Lemma 2 (§4) | italic *C* for the category | $\mathbf{C}$ |
 | p. 337 | $f_j\circ u_{ji} = v_{ji}\circ f_i$ | $f_i\circ u_{ji} = v_{ji}\circ f_j$ |
 | p. 350 | $\lim_{F\in\mathbf{S}_A} FS$ | $\lim_{S\in\mathbf{S}_A} FS$ |
@@ -153,6 +153,12 @@ Two constraints on this, both stated in `AGENTS.md`:
 - **Stylistic quirks are left completely alone**, with no footnote. Archaic
   vocabulary, odd word order, "les sorties habituels" on p. 336, and
   inconsistent terminology are the author's voice, not errors.
+
+The corollary on p. 361 is the worked example of the first constraint. Its
+condition is vacuous as printed — both $M'$ and $N'$ are subobjects of $N$ —
+but two emendations ("$N'$ de $M$" or "$M$ contient") are equivalent and the
+text does not decide between them, so it is left as printed with a footnote
+giving the likely intended reading.
 
 ### Some candidates were checked and are *not* errors
 
