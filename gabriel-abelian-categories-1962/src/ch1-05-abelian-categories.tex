@@ -1,9 +1,78 @@
-%@ pages 335
-%@ status todo
-% Original: p. 335.  French title: see reference/ocr/page-0335.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Abelian Categories}
+%@ pages 335-336
+%@ status translated
+% Chapter I, section 5: Abelian categories (pp. 335-336).  The section
+% heading stands half way down p. 335 and the text runs on to the top of
+% p. 336, where it stops at the heading of section 6.  Transcribed from the
+% page images; the OCR text layer in reference/ocr/ was not trusted.
+% Note: the notation "N + P" for the image of N (+) P in M is printed in
+% the original as a bare cross (verified pixel by pixel against p. 336); it
+% is reproduced literally here rather than silently replaced by the join
+% symbol v.
 
-\notyet{p. 335 of the original French edition.}
+\section{Abelian Categories}
+--- Let $\Cat$ be an additive category and let $f\colon M\to N$ be a morphism
+of $\Cat$. We suppose that $f$ has a kernel, a cokernel, an image and a
+coimage [10]. Let $i$ and $j$ (resp.\ $p$ and $q$) be the canonical morphisms
+from the kernel $\operatorname{Ker} f$ into $M$ and from the image
+$\operatorname{Im} f$ into $N$ (resp.\ from $N$ into the cokernel
+$\operatorname{Coker} f$ and from $M$ into the coimage $\operatorname{Coim}
+f$). We know that there exists a morphism $\mathfrak{S}$ of $\operatorname{Coim}
+f$ into $\operatorname{Im} f$, and one only, such that
+$f = j\circ\mathfrak{S}\circ q$. We shall say that $\mathfrak{S}$ is the
+\emph{canonical morphism} of $\operatorname{Coim} f$ into $\operatorname{Im} f$.
+
+An additive category $\Cat$ is \emph{abelian} if the following axioms hold:
+
+\begin{description}
+\item[$\mathrm{CAb}\,1$] For every morphism $f$, the kernel and the cokernel
+      of $f$ exist.
+
+\item[$\mathrm{CAb}\,2$] For every morphism $f$, the canonical morphism of
+      $\operatorname{Coim} f$ into $\operatorname{Im} f$ is an isomorphism.
+\end{description}
+
+The dual category of an abelian category is abelian.
+
+We assume the reader to be familiar with the elementary reasoning of abelian
+categories. When only a finite number of objects and morphisms is considered,
+the arguments used are those of abelian groups.
+
+To increase this resemblance, we constantly use the following notations: if
+$N$ is a subobject of $M$, $M/N$ denotes the cokernel of $i_N^M$; if $N$ and
+$P$ are two subobjects of $M$, $N + P$ denotes the image of the morphism of
+$N \oplus P$ into $M$ which is defined by $i_N^M$ and $i_P^M$; likewise
+$M \cap N$ denotes the kernel of the morphism of $M$ into $M/N \oplus M/P$
+which is defined by the canonical epimorphisms of $M$ onto $M/N$ and $M/P$.
+If $f\colon M\to N$ is a morphism of an abelian category and $P$ a subobject
+of $M$, $f(P)$ denotes the image of $f\circ i_P^M$; likewise, if $Q$ is a
+subobject of $N$, $f^{-1}(Q)$ denotes the kernel of the composite of $f$
+with the canonical morphism of $N$ into $N/Q$.
+
+Noether's isomorphism theorems remain valid in an abelian category. The same
+is true of the results on the composition series of an object, on the
+Jordan--Hölder series and on the length of an object. Likewise, we refer the
+reader to [6] for the customary remarks on exact sequences, exact functors,
+functors exact on the left or on the right, direct factors and injective
+objects.
+
+\begin{proposition}
+If $\Cat$ is an abelian category, there exists a coproduct (resp.\ a product)
+for diagram~(1) of \S~3 [resp.\ diagram~(2) of \S~3].
+\end{proposition}
+
+We recall only the construction of $B\Sigma_A C$: if $j_B$ and $j'_C$ are the
+canonical morphisms of $B$ and $C$ into $B \oplus C$, then $B\Sigma_A C$ is
+the cokernel of the morphism $j_B\circ h - j'_C\circ k$. The canonical
+morphism $j$ of $B$ into $B\Sigma_A C$ is the composite of $j_B$ and of the
+canonical morphism of $B \oplus C$ onto $B\Sigma_A C$. The kernel of $j$ is
+the image by $h$ of $\operatorname{Ker} k$; the canonical morphism of $C$
+into $B\Sigma_A C$ induces an isomorphism of $\operatorname{Coker} k$ onto
+$\operatorname{Coker} j$.
+
+Let us also recall the construction of $B\Pi_A C$: if $q_B$ and $q'_C$ are the
+canonical morphisms of $B \oplus C$ into $B$ and $C$, then $B\Pi_A C$ is the
+kernel of the morphism $f\circ q_B - g\circ q'_C$. The canonical morphism $q$
+of $B\Pi_A C$ into $B$ is the composite of the canonical morphism of
+$B\Pi_A C$ into $B \oplus C$ and of $q_B$. The cokernel of $q$ is the
+quotient of $B$ by $f^{-1}(g(C))$; the canonical morphism of $B\Pi_A C$ into
+$C$ induces an isomorphism of $\operatorname{Ker} q$ onto $\operatorname{Ker} g$.

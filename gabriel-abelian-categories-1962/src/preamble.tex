@@ -38,30 +38,51 @@
 % Chapters are numbered with Roman numerals (I--VI), as in the original.
 \renewcommand{\thechapter}{\Roman{chapter}.}
 % Sections carry a trailing point, as in the original table of contents.
-\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesection}{\arabic{section}}
 
 % ------------------------------------------------------------------ theorems
-% Gabriel numbers every result (theorem, lemma, proposition, corollary)
-% with a single running counter; we reproduce that.
-\newcounter{thm}
-\newcounter{defn}
-\newtheorem{theorem}{Theorem}[thm]
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{proposition}[thm]{Proposition}
-\newtheorem{corollary}[thm]{Corollary}
+% Gabriel does NOT use one running counter.  Verified against the scan:
+%   * propositions run continuously across the SECTIONS of a chapter, and
+%     restart at each chapter   (Ch. I ends at Proposition 15 on p. 345;
+%     Ch. II opens at Proposition 1 on p. 346);
+%   * theorems restart at each chapter;
+%   * lemmas and corollaries restart at each SECTION (Ch. II §2 opens with
+%     "Lemme 1" on p. 349, after §1 has run to "Lemme 4" on p. 348);
+%   * and some corollaries are printed with no number at all ("Corollaire."
+%     on p. 360, between Proposition 9 and Proposition 10).
+% The counters below reproduce that exactly; do not "simplify" them.
+% NOTE ON SYNTAX.  With amsthm loaded the counter must be created by
+% \newtheorem itself.  Declaring \newcounter{prop} and then writing
+% \newtheorem{proposition}{Proposition}[prop] makes amsthm print the number as
+% "<parent>.<counter>", i.e. "Proposition 0.1."  So: declare the environments
+% without the optional [counter] argument, and reset them afterwards.
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}[defn]{Definition}
-\newtheorem{remark}[defn]{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
 
-% Note: these counters deliberately do NOT reset at each chapter.  Gabriel
-% numbers every theorem, lemma, proposition and corollary with a single
-% running counter across the whole article, and the translation follows him.
+% For the corollaries Gabriel states without a number.
+\newtheorem*{unnumberedcorollary}{Corollary}
+
+% The resets themselves.  These must come AFTER the \newtheorem calls,
+% so that the counters exist by now.
+\makeatletter
+\@addtoreset{theorem}{chapter}
+\@addtoreset{proposition}{chapter}
+\@addtoreset{lemma}{section}
+\@addtoreset{corollary}{section}
+\@addtoreset{definition}{section}
+\@addtoreset{remark}{section}
+\makeatother
 
 % ------------------------------------------------------------------ headings
 % The original prints section headings in bold, numbered, run in with a dash
 % into the first paragraph.  emulating that keeps the running text close to
 % the original, which matters when reading the two side by side.
-\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{0.6em}{}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{0.6em}{}
 \titlespacing*{\section}{0pt}{1.2\baselineskip}{0.6\baselineskip}
 
 % ------------------------------------------------------------------ headers

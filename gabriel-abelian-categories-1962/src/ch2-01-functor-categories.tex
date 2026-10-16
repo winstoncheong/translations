@@ -1,12 +1,162 @@
-%@ pages 345-347
-%@ status todo
-% Original: pp. 345--347.  French title: see reference/ocr/page-0345.txt.
+%@ pages 345-348
+%@ status translated
+% Original: pp. 345--348 (Lemma 4 and Proposition 3 sit at the foot of
+% p. 348, just above the "2." heading; p. 348 is shared with ch2-02).
 % Draft from the OCR text in reference/ocr/, but check every formula,
 % index and symbol against the page image in reference/source.pdf: the
 % text layer mangles subscripts, fractions and page numbers.
 \chapter{Left Exact Functors and Injective Envelopes}
 \markboth{Chapter II. Left Exact Functors and Injective Envelopes}{}
 
-\section{Functor Categories}
+According to a result of \textsc{Grothendieck} [10], every abelian category
+with generators and exact inductive limits has enough injective objects. We
+begin here the study of these injective objects. We show also how one can
+reduce the study of certain categories to the study of a category with
+generators and exact inductive limits.
 
-\notyet{pp. 345--347 of the original French edition.}
+\section{Functor Categories}
+--- Let $\mathbf{C}$ and $\mathbf{D}$ be two additive categories; we suppose
+that the set of objects and the set of morphisms of $\mathbf{C}$ are elements
+of the universe $\Univ$. Under these conditions we denote by
+$\operatorname{Fonct}(\mathbf{C},\mathbf{D})$, and we call the
+\emph{category of functors} of $\mathbf{C}$ into $\mathbf{D}$ the full
+subcategory of $\operatorname{Hom}(\mathbf{C},\mathbf{D})$ whose objects are
+the additive functors of $\mathbf{C}$ into $\mathbf{D}$ (cf.\
+Chapter~I, \S3).
+
+\begin{proposition}
+Under the hypotheses we have made above, $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$
+is an additive category. If $\mathbf{D}$ is an abelian category, it is the same
+for $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$. If $\mathbf{D}$ is a category
+with inductive limits (resp.\ with exact inductive limits, resp.\ with
+projective limits), then $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$ is a
+category with inductive limits (resp.\ with exact inductive limits, resp.\
+with projective limits).
+\end{proposition}
+
+If $E$ and $F$ are two objects of $\operatorname{Fonct}(\mathbf{C},\mathbf{D})$,
+then $\operatorname{Hom}(E,F)$ is obviously a subset of the product
+$\prod_{M\in\mathbf{OC}}\operatorname{Hom}(EM,FM)$. This shows that
+$\operatorname{Fonct}(\mathbf{C},\mathbf{D})$ is a $\Univ$-category. The rest
+is fairly clear.
+
+{\itshape
+The rest of this paragraph is devoted to the study of
+$\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$ when $\mathbf{C}$ is an
+additive category whose set of objects and set of morphisms belong to $\Univ$.
+We denote by $\mathbf{Z}[C]$ the following ring, which in general has no unit
+element:
+\par}
+
+\begin{itemize}
+\item The abelian group underlying $\mathbf{Z}[C]$ is the direct sum of the
+      groups $\operatorname{Hom}_{\mathbf{C}}(M,N)$ as $M$ and $N$ range over
+      the objects of $\mathbf{C}$.
+
+\item Let $f\in\operatorname{Hom}_{\mathbf{C}}(M,N)$ and
+      $g\in\operatorname{Hom}_{\mathbf{C}}(P,Q)$ be two elements of
+      $\mathbf{Z}[C]$. The product $f.g$ is the composite morphism $f\circ g$
+      when $Q$ coincides with $M$. In the contrary case $f.g$ is zero.
+\end{itemize}
+
+For every object $X$ of $\mathbf{C}$, the identity morphism
+$\mathbf{\iota}_X$ of $X$ is an idempotent of $\mathbf{Z}[C]$. If $X$ and $Y$
+are two distinct objects of $\mathbf{C}$, the idempotents
+$\mathbf{\iota}_X$ and $\mathbf{\iota}_Y$ are orthogonal:
+$\mathbf{\iota}_X.\mathbf{\iota}_Y = \mathbf{\iota}_Y.\mathbf{\iota}_X = 0$.
+It follows that, for every left $\mathbf{Z}[C]$-module $M$, the element
+$\mathbf{\iota}_X$ defines a projection of $M$ onto a direct factor
+$\mathbf{\iota}_X(M)$. Moreover, the sum of the abelian subgroups
+$\mathbf{\iota}_X(M)$ is direct and it is equal to $\mathbf{Z}[C].M$.
+
+\begin{lemma}
+If $N$ is a submodule of $M$ (resp.\ $Q$ a quotient of $M$) and if
+$\mathbf{Z}[C].M$ is equal to $M$, then $\mathbf{Z}[C].N$ is equal to $N$
+(resp.\ $\mathbf{Z}[C].Q$ is equal to $Q$).
+\end{lemma}
+
+An element $m$ of $M$ belongs in fact to $\mathbf{Z}[C].M$ if and only if
+there is a finite number of objects of $\mathbf{C}$, say $X, Y, \dots, Z$,
+such that
+\[
+  m = \mathbf{\iota}_X.m + \mathbf{\iota}_Y.m + \dots + \mathbf{\iota}_Z.m.
+\]
+When this condition is satisfied for every element of $M$, it is so for $N$
+and $Q$ as well.
+
+The preceding lemma allows us to define a new \emph{abelian category}
+$\mathbf{A}$:
+
+\begin{itemize}
+\item The objects of $\mathbf{A}$ are the left modules $M$ over
+      $\mathbf{Z}[C]$ such that $\mathbf{Z}[C].M$ is equal to $M$, and whose
+      underlying set belongs to $\Univ$.
+
+\item If $M$ and $N$ are two objects of $\mathbf{A}$,
+      $\operatorname{Hom}_{\mathbf{A}}(M,N)$ is the set of
+      $\mathbf{Z}[C]$-linear maps of $M$ into $N$; the composition of the
+      morphisms is done in the usual way.
+\end{itemize}
+
+In particular, the left module underlying $\mathbf{Z}[C]$ and the left ideals
+$\mathbf{Z}[C].\mathbf{\iota}_X$ are objects of $\mathbf{A}$. A morphism
+$\varphi$ of $\mathbf{Z}[C].\mathbf{\iota}_X$ into an object $M$ of
+$\mathbf{A}$ is determined by the datum of the element
+$\varphi(\mathbf{\iota}_X)$ of $\mathbf{\iota}_X(M)$. The abelian group
+$\operatorname{Hom}_{\mathbf{A}}(\mathbf{Z}[C].\mathbf{\iota}_X,M)$ is therefore
+identified with $\mathbf{\iota}_X(M)$, and
+$\mathbf{Z}[C].\mathbf{\iota}_X$ is a projective object of $\mathbf{A}$. It is
+the same for $\mathbf{Z}[C]$, which is the direct sum of the
+$\mathbf{Z}[C].\mathbf{\iota}_X$. Hence:
+
+\begin{lemma}
+The left module underlying $\mathbf{Z}[C]$ is a projective generator of
+$\mathbf{A}$.
+\end{lemma}
+
+\begin{proposition}
+The categories $\mathbf{A}$ and $\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$
+are equivalent.
+\end{proposition}
+
+We are going to construct functors
+\[
+  T\colon \mathbf{A}\longrightarrow
+  \operatorname{Fonct}(\mathbf{C},\mathbf{Ab})
+  \qquad\text{and}\qquad
+  S\colon \operatorname{Fonct}(\mathbf{C},\mathbf{Ab})\longrightarrow\mathbf{A}
+\]
+such that $S\circ T$ and $T\circ S$ are isomorphic respectively to the
+identity maps of $\mathbf{A}$ and of $\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$.
+
+For this purpose let $M$ be an object of $\mathbf{A}$. For every object $X$ of
+$\mathbf{C}$, we denote by $(TM)X$ the abelian group
+$\mathbf{\iota}_X(M)$. For every morphism $f\colon X\to Y$, we denote by
+$(TM)(f)$ the $\mathbf{Z}$-linear map of $\mathbf{\iota}_X(M)$ into
+$\mathbf{\iota}_Y(M)$ which is induced by the homothety of $M$ defined by
+$f$. We have thus defined a functor $TM$ of $\mathbf{C}$ into $\mathbf{Ab}$.
+Moreover, if $\varphi\colon M\to N$ is a $\mathbf{Z}[C]$-linear map,
+$\varphi$ maps $\mathbf{\iota}_X(M)$ into $\mathbf{\iota}_X(N)$. We shall denote
+by $(T\varphi)X$ the map of $\mathbf{\iota}_X(M)$ into
+$\mathbf{\iota}_X(N)$ thus defined. As $X$ ranges over the objects of
+$\mathbf{C}$, the maps $(T\varphi)X$ obviously define a natural
+transformation of $TM$ into $TN$. The verification of the following lemma is
+left to the reader:
+
+\begin{lemma}
+The maps $M\mapsto TM$, $\varphi\mapsto T\varphi$ define a functor $T$ of
+the category $\mathbf{A}$ into $\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$.
+\end{lemma}
+
+Conversely, let $F$ be an object of
+$\operatorname{Fonct}(\mathbf{C},\mathbf{Ab})$. If $f\colon X\to Y$ is a
+morphism of $\mathbf{C}$ and $m = (m_X)$ an element of
+$\sum_{X\in\mathbf{OC}}FX$, we define a product $f.m$ by means of the formula
+\[
+  \text{projection of } f.m \text{ onto } FZ
+  \;=\;
+  \begin{cases}
+    0            & \text{if } Z \neq Y,\\
+    (Ff)(m_X)    & \text{if } Z = Y.
+  \end{cases}
+\]

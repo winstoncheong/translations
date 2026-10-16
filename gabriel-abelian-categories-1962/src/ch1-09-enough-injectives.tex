@@ -1,9 +1,173 @@
-%@ pages 343-344
-%@ status todo
-% Original: pp. 343--447.  French title: see reference/ocr/page-0343.txt.
+%@ pages 343-345
+%@ status translated
+% Original: pp. 343--345 (Corollary 3, Proposition 15 and their proofs run
+% on to p. 345; p. 345 also carries the Chapter II head).
 % Draft from the OCR text in reference/ocr/, but check every formula,
 % index and symbol against the page image in reference/source.pdf: the
 % text layer mangles subscripts, fractions and page numbers.
 \section{Abelian Categories with Enough Injectives}
+--- This paragraph is devoted to a few results about the injective objects
+of an abelian category $\mathbf{B}$. These results are connected with the
+notion of \emph{derived category}, which is due to \textsc{Cartier} and of
+which we present here a ``piece'':
 
-\notyet{pp. 343--447 of the original French edition.}
+Let $\mathbf{I}$ be an additive category and let $\mathbf{M}$ be the
+\emph{category of morphisms} of $\mathbf{I}$: an object of $\mathbf{M}$ is a
+morphism of $\mathbf{I}$; if $d\colon M\to N$ and $d'\colon M'\to N'$ are two
+objects of $\mathbf{M}$, then $\operatorname{Hom}_{\mathbf{M}}(d,d')$ is the
+set of pairs $(\alpha,\beta)$, $\alpha\in\operatorname{Hom}_{\mathbf{I}}(M,M')$,
+$\beta\in\operatorname{Hom}_{\mathbf{I}}(N,N')$, such that the following diagram
+is commutative:
+\begin{tikzcd}
+M \arrow[r, "d"] \arrow[d, "\alpha"'] & N \arrow[d, "\beta"] \\
+M' \arrow[r, "d'"'] & N'
+\end{tikzcd}
+
+It is well known that by defining the composition of morphisms in the obvious
+way, one makes $\mathbf{M}$ into an additive category.
+
+With the above notations, we shall say that $(\alpha,\beta)$ is
+\emph{homotopic to zero} if there is an element $h$ of
+$\operatorname{Hom}_{\mathbf{I}}(N,M')$ such that $\alpha = h\circ d$. The
+morphisms homotopic to zero form a subgroup of
+$\operatorname{Hom}_{\mathbf{M}}(d,d')$, and we denote by
+$\operatorname{Hom}_{\mathbf{K}}(d,d')$ the quotient of
+$\operatorname{Hom}_{\mathbf{M}}(d,d')$ by this subgroup. It is then clear that
+the bilinear maps
+\[
+  \operatorname{Hom}_{\mathbf{M}}(d,d') \times
+  \operatorname{Hom}_{\mathbf{M}}(d',d'') \longrightarrow
+  \operatorname{Hom}_{\mathbf{M}}(d,d'')
+\]
+define, by passing to the quotient, the bilinear maps
+\[
+  \operatorname{Hom}_{\mathbf{K}}(d,d') \times
+  \operatorname{Hom}_{\mathbf{K}}(d',d'') \longrightarrow
+  \operatorname{Hom}_{\mathbf{K}}(d,d'').
+\]
+
+We can therefore define a new additive category $\mathbf{KI}$: the objects of
+$\mathbf{KI}$ coincide with the morphisms of $\mathbf{I}$ (hence with the
+objects of $\mathbf{M}$); if $d$ and $d'$ are such morphisms,
+$\operatorname{Hom}_{\mathbf{KI}}(d,d')$ is chosen equal to
+$\operatorname{Hom}_{\mathbf{K}}(d,d')$; the laws of composition, finally, are
+defined by passing to the quotient from the laws of composition of
+$\mathbf{M}$.
+
+In the case which interests us, $\mathbf{I}$ is a full subcategory of
+$\mathbf{B}$ whose objects are injectives of $\mathbf{B}$. We denote by
+$\operatorname{Ker}$ the functor $d\mapsto\operatorname{Ker}d$ of $\mathbf{M}$
+into $\mathbf{B}$. If $d$ and $d'$ are two objects of $\mathbf{M}$, it is clear
+that the maps $\operatorname{Ker}(d,d')$ from
+$\operatorname{Hom}_{\mathbf{M}}(d,d')$ into
+$\operatorname{Hom}_{\mathbf{B}}(\operatorname{Ker}d,\operatorname{Ker}d')$
+define, by passing to the quotient, maps from
+$\operatorname{Hom}_{\mathbf{K}}(d,d')$ into
+$\operatorname{Hom}_{\mathbf{B}}(\operatorname{Ker}d,\operatorname{Ker}d')$.
+These maps define in fact a functor (still denoted $\operatorname{Ker}$!) of
+$\mathbf{KI}$ into $\mathbf{B}$.
+
+\begin{proposition}
+Let $\mathbf{B}$ be an abelian category, and let $\mathbf{I}$ be a full
+subcategory of $\mathbf{B}$ whose objects are injectives of $\mathbf{B}$.
+Suppose the following condition is satisfied: for every object $M$ of
+$\mathbf{B}$, there exists a monomorphism of $M$ into an object of
+$\mathbf{I}$. Then the functor $\operatorname{Ker}$ defines an equivalence
+between $\mathbf{KI}$ and $\mathbf{B}$.
+\end{proposition}
+
+Let us say quickly how to construct a functor $S$ adjoint to $\operatorname{Ker}$.
+For every object $M$ of $\mathbf{B}$, we choose an exact sequence
+\[
+  0 \longrightarrow M \xrightarrow{j_M} I_0M \xrightarrow{g_M} I_1M,
+\]
+where $I_0M$ and $I_1M$ are objects belonging to $\mathbf{I}$. For every
+morphism $u\colon M\to N$, we choose morphisms $u_0$ and $u_1$ which make the
+following diagram commutative
+\begin{tikzcd}[column sep=small]
+0 \arrow[r] & M \arrow[r, "{j_M}"] \arrow[d, "u"'] &
+I_0M \arrow[r, "{g_M}"] \arrow[d, "u_0"'] & I_1M \arrow[d, "u_1"] \\
+0 \arrow[r] & N \arrow[r, "{j_N}"'] &
+I_0N \arrow[r, "{g_N}"] & I_1N
+\end{tikzcd}
+
+One sees easily that the image of $(u_0,u_1)$ in
+$\operatorname{Hom}_{\mathbf{KI}}(g_M,g_N)$ depends only on $u$. If this image
+is denoted $Su$ and if $SM$ denotes the morphism $g_M$, the maps
+$M\mapsto SM$ and $u\mapsto Su$ define a functor adjoint to
+$\operatorname{Ker}$.
+
+\begin{corollary}
+Suppose that the hypotheses of the preceding proposition are satisfied. If
+the category $\mathbf{I}$ is equivalent to the product of a family
+$(\mathbf{I}_n)_{n\in E}$ of additive categories, then the category
+$\mathbf{B}$ is equivalent to the product of the family
+$(\mathbf{KI}_n)_{n\in E}$.
+\end{corollary}
+
+Let $\mathbf{C}$ now be another abelian category. Every additive functor $F$
+of $\mathbf{I}$ into $\mathbf{C}$ extends in an obvious way to a functor $KF$
+of $\mathbf{KI}$ into $\mathbf{KC}$. By composition, we obtain a left exact
+functor $F'$ of $\mathbf{B}$ into $\mathbf{C}$:
+\[
+  \mathbf{B} \xrightarrow{S} \mathbf{KI} \xrightarrow{KF} \mathbf{KC}
+  \xrightarrow{\operatorname{Ker}} \mathbf{C}.
+\]
+Conversely, if $G$ is a functor of $\mathbf{B}$ into $\mathbf{C}$, we denote by
+$G'$ the composite of the canonical functor of $\mathbf{I}$ into $\mathbf{B}$
+and of $G$.
+
+\begin{corollary}
+Suppose that the hypotheses of the preceding proposition are satisfied. A
+functor $G$ of $\mathbf{B}$ into $\mathbf{C}$ is left exact if and only if it
+is isomorphic to $(G')'$. Every functor $F$ of $\mathbf{I}$ into $\mathbf{C}$
+is isomorphic to $(F')'$.
+\end{corollary}
+
+Corollary~2 shows that the study of the left exact functors of $\mathbf{B}$
+into $\mathbf{C}$ is equivalent to the study of all the additive functors of
+$\mathbf{I}$ into $\mathbf{C}$. We shall make use of this fact in
+Corollary~3 and at the beginning of Chapter~II.
+
+\begin{corollary}
+Let $\mathbf{B}$ (resp.\ $\mathbf{C}$) be an abelian category, $\mathbf{I}$
+(resp.\ $\mathbf{J}$) a full subcategory of $\mathbf{B}$ (resp.\ of
+$\mathbf{C}$) satisfying the conditions of Proposition~14. A functor $G$ of
+$\mathbf{B}$ into $\mathbf{C}$ defines an equivalence between these two
+categories if the following conditions are satisfied: $G$ is left exact;
+$GI$ is an object of $\mathbf{J}$ for every object $I$ of $\mathbf{I}$; the
+functor $I\mapsto GI$ defines an equivalence between $\mathbf{I}$ and
+$\mathbf{J}$.
+\end{corollary}
+
+We shall henceforth say that $\mathbf{B}$ has enough injective objects if the
+full subcategory of $\mathbf{B}$ which is formed by the injective objects
+satisfies the condition of Proposition~14. When this holds, Proposition~14
+shows that the datum of this full subcategory defines $\mathbf{B}$ up to an
+equivalence. Proposition~14 is therefore useful each time that we know the
+injective objects of $\mathbf{B}$ (cf.\ Chapter~IV).
+
+Let us return to the hypotheses of Corollary~2. With the notations used in the
+proof of Proposition~14, we see that $(G')'$ is nothing but the functor
+$M\mapsto\operatorname{Ker}(Gg_M)$. It follows that $(G')'$ is the zeroth
+derived functor of $G$ [6]. Moreover, the morphisms $Gf_M$ define a natural
+transformation $\rho\colon G\to (G')'\cong R^{0}G$, and the pair
+$(R^{0}G,\rho)$ satisfies the conditions of Proposition~15:
+
+\begin{proposition}
+Let $\mathbf{B}$ be an abelian category having enough injective objects. For
+every functor $G\colon\mathbf{B}\to\mathbf{C}$ of $\mathbf{B}$ into an abelian
+category $\mathbf{C}$, there exist a functor $R^{0}G$ and a morphism
+$\rho\colon G\to R^{0}G$ satisfying the following conditions:
+
+The functor $R^{0}G$ is left exact; moreover, if $\sigma\colon G\to H$ is a
+morphism of $G$ into a left exact functor $H$, there exists a unique morphism
+$\tau\colon R^{0}G\to H$ such that $\sigma = \tau\circ\rho$.
+\end{proposition}
+
+Let $\rho'\colon G\to R'G$ be a natural transformation satisfying the same
+universal problem as $\rho\colon G\to R^{0}G$; it is then clear that there
+exists a unique isomorphism $u$ of $R'F$ onto $R^{0}F$ such that
+$\rho = u\circ\rho'$. Proposition~15 therefore determines $R^{0}G$ up to a
+natural isomorphism. We shall try to extend these results when $\mathbf{B}$
+does not have enough injective objects.

@@ -1,9 +1,70 @@
-%@ pages 354
-%@ status todo
-% Original: p. 354.  French title: see reference/ocr/page-0354.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Left Exact Functors with Values in Abelian Groups}
+%@ pages 354-355
+%@ status translated
+% Chapter II, section 3: left exact functors with values in abelian groups
+% (original pp. 354--355).  French title: "Foncteurs exacts à gauche à
+% valeurs dans les groupes abéliens".  Transcribed from the page images.
+% The page range recorded above was originally given as 354, but §3 runs on
+% into p. 355: its second corollary stands there, above the heading of §4.
+% It is a result of §3 and is therefore translated here.
+%
+% Numbering.  Gabriel numbers the results per kind: propositions run
+% continuously across the sections of a chapter and restart at each chapter,
+% while lemmas and corollaries restart at each section.  §3 therefore carries
+% Proposition 6 (the sixth of Chapter II, §3 following the propositions 4 and
+% 5 of §2) and Corollaries 1 and 2, both of which are numbered in the
+% original.  The environments of preamble.tex already do this; do not add
+% \setcounter.
 
-\notyet{p. 354 of the original French edition.}
+\section{Left Exact Functors with Values in Abelian Groups}
+--- In this paragraph, $\Cat$ is still a category whose set of morphisms and
+set of objects belong to $\Univ$. We shall complete the study of the
+preceding paragraph when $\mathbf{D}$ is the category $\Ab$ of abelian groups.
+
+If $X$ is an object of $\Cat$, $\operatorname{Hom}_{\Cat}(X,\cdot)$ is a left
+exact functor of $\Cat$ into $\Ab$, which we shall also denote by $\dot{X}$.
+With these notations, the functor $X\longmapsto \dot{X}$ of $\Cat^{\circ}$
+into $\operatorname{Fonct}(\Cat,\Ab)$ is itself left exact.
+
+\begin{proposition}
+--- The functor $X\longmapsto \dot{X}$ is an exact functor of $\Cat^{\circ}$
+into $\operatorname{Sex}(\Cat,\Ab)$. The functors $\dot{X}$ form a family of
+generators of $\operatorname{Sex}(\Cat,\Ab)$.
+\end{proposition}
+
+We already know that $X\longmapsto \dot{X}$ is a left exact functor of
+$\Cat^{\circ}$ into $\operatorname{Fonct}(\Cat,\Ab)$. It remains to prove
+that every monomorphism $u\colon X\to X'$ induces an epimorphism
+$\dot{u}\colon \dot{X}'\to \dot{X}$. This means that
+$R^{0}(\operatorname{Coker}\dot{u})$ or $R(\operatorname{Coker}\dot{u})$ are
+null, which can be stated as follows: for every object $A$ of $\Cat$ and
+every $a\in \dot{X}A$, there exists a monomorphism $i\colon A\to B$ and
+$b\in \dot{X}'B$ such that
+\[
+  (\dot{X}i)(a) = \dot{u}(B)(b).
+\]
+This last assertion is more or less clear. Finally, the second part of the
+proposition presents no difficulty, for the $\dot{X}$ already form a family
+of generators of $\operatorname{Fonct}(\Cat,\Ab)$.
+
+\begin{corollary}
+--- Every injective object $F$ of $\operatorname{Sex}(\Cat,\Ab)$ is an exact
+functor of $\Cat$ into $\Ab$.
+\end{corollary}
+
+Indeed, if $F$ is an injective object, the functor $X\longmapsto FX$ is the
+composite of two exact functors $X\longmapsto \dot{X}$ and
+$G\longmapsto \operatorname{Hom}(G,F)$.
+
+\begin{corollary}
+--- In the category $\operatorname{Sex}(\Cat,\Ab)$ every subobject of a
+representable functor is an upper bound of representable functors.
+\end{corollary}
+
+Let then $Y$ be an object of $\Cat$, and let $i\colon F\to \dot{Y}$ be a
+nonzero monomorphism of $\operatorname{Sex}(\Cat,\Ab)$. By Proposition 6
+there exists a nonzero morphism $\varphi\colon \dot{X}\to F$; moreover
+$\operatorname{Im}\varphi = \operatorname{Im}i\circ\varphi$ is
+representable, which proves that $F$ contains nonzero representable
+subobjects. I say that the upper bound $G$ of these subobjects is $F$: in
+the contrary case one could indeed choose $\varphi$ in such a way that
+$\operatorname{Im}\varphi$ is not a subobject of $G$; this is absurd.

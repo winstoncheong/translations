@@ -62,8 +62,15 @@ useful.
 of axioms — so that the translation can be checked against the French clause by
 clause. This is why Chapter I §2 reads as verbosely as it does.
 
-**Theorem numbering runs continuously** across all six chapters, as in the
-original; it is not reset per chapter.
+**Result numbering follows the original's irregular scheme, not a single
+running counter.** Gabriel numbers propositions continuously across the
+sections of a chapter and restarts them at each chapter (Chapter I ends at
+Proposition 15 on p. 345; Chapter II opens at Proposition 1 on p. 346);
+theorems restart per chapter; lemmas and corollaries restart per *section*;
+and some corollaries are printed with no number at all (p. 360). The preamble
+encodes this with four separate counters, and those corollaries use the
+`unnumberedcorollary` environment. This was established by reading the page
+images — the obvious assumption (one counter throughout) is wrong.
 
 **Bibliography titles are given in English** with the printed title in
 parentheses. Front matter carries the copyright notice of the Société

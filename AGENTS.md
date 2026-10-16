@@ -67,6 +67,33 @@ The authoritative table is `src/terminology.tex`. Policy:
 - New shared macros go in `src/preamble.tex`; document each in a comment.
 - Record any decision you are unsure about in the document's `README.md`.
 
+## Numbering of results — check the original, do not assume
+
+Gabriel does **not** number his results with one counter. This is verified
+against the scan, and getting it wrong makes every reference in the
+translation wrong:
+
+| Result | Restarts | Evidence |
+| --- | --- | --- |
+| Proposition | each **chapter**, continuous across its sections | Ch. I ends at Prop. 15 (p. 345); Ch. II opens at Prop. 1 (p. 346); §2 continues at Prop. 4 (p. 348) |
+| Theorem | each **chapter** | "Théorème 1" on p. 338 and again on p. 356 |
+| Lemma | each **section** | §1 of Ch. II runs to "Lemme 4" (p. 348), §2 opens with "Lemme 1" (p. 349) |
+| Corollary | each **section** | p. 332, 344, 355, 358 each open a run at "Corollaire 1" |
+| Definition / Remark | each **section** | — |
+
+The environments in `preamble.tex` already do this: `theorem`, `proposition`,
+`lemma`, `corollary`, `definition`, `remark`. Use them and never write a
+literal number.
+
+**Some corollaries carry no number.** The original prints a bare "Corollaire."
+with a full stop and no figure (p. 360, between Proposition 9 and
+Proposition 10). For those use the `unnumberedcorollary` environment. Check
+the page: if the printed header has a number, it is numbered; if it reads
+just "Corollaire.", it is not.
+
+Never insert a `\setcounter` to make numbers line up. If the numbering looks
+wrong, the transcription is wrong, not the counter.
+
 ## Diagrams
 
 Use `tikz-cd` (already loaded in the preamble), not `xy`/`picture`. Match the

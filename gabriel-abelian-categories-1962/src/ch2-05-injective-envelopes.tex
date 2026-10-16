@@ -1,9 +1,246 @@
 %@ pages 358-361
-%@ status todo
-% Original: pp. 358--361.  French title: see reference/ocr/page-0358.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Injective Envelopes in Abelian Categories}
+%@ status translated
+% Chapter II, section 5: Injective envelopes in abelian categories
+% (original pp. 358-361).
+%
+% Numbering is automatic (see src/preamble.tex): this section carries
+% Lemme 1, 2, 3; Proposition 8, 9, 10, 11, 12; and the two corollaries
+% Gabriel prints without a number, which use `unnumberedcorollary'.
+% Proposition 12 runs over onto p. 362; its continuation belongs to
+% section 6 (ch2-06) and is not repeated here.
+\section{Injective Envelopes in Abelian Categories [8]}
+--- Let $\Cat$ be an abelian category and let $M$ be an object of $\Cat$.
+An \emph{essential extension} of $M$ is a monomorphism
+$i\colon M\to P$ satisfying the following condition: if $f$ is a
+morphism with source $P$ and if $f\circ i$ is a monomorphism, then $f$
+is a monomorphism.
 
-\notyet{pp. 358--361 of the original French edition.}
+It amounts to the same to say that a subobject $Q$ of $P$ is zero if
+$Q\cap i(M)$ is zero. If $M$ is a subobject of $P$, and if $i$ is the
+canonical monomorphism of $M$ into $P$, we shall say that $P$ is an
+essential extension of $M$.
+
+\begin{lemma}
+Let $i$ and $j$ be two monomorphisms, $i\colon M\to P$, $j\colon P\to
+Q$. Then $j\circ i$ is an essential extension of $M$ if and only if
+$j$ is an essential extension of $P$ and $i$ an essential extension of
+$M$.
+\end{lemma}
+
+Suppose in fact that $j\circ i$ is an essential extension of $M$: if
+$f$ is a monomorphism with source $Q$ and if $f\circ j$ is a
+monomorphism, then $f\circ i$ is a monomorphism; from this we deduce
+that $f$ is a monomorphism and that $j$ is an essential extension of
+$P$.
+
+Let now $R$ be a subobject of $P$ such that $R\cap i(M) = 0$; let $f$
+be the canonical morphism from $Q$ onto $Q/j(R)$. Under these
+conditions, $f\circ j\circ i$ is a monomorphism and $R$ is zero. This
+shows that $i$ is an essential extension of $M$.
+
+The converse is clear.
+
+\begin{lemma}
+Let $i\colon M\to P$, $j\colon N\to Q$ be two essential extensions. The
+morphism $i\oplus j'\colon M\oplus N\to P\oplus Q$ is an essential
+extension of $M\oplus N$.
+\end{lemma}
+
+We may suppose, in order to simplify, that $M$ and $N$ are subobjects
+of $P$ and $Q$, with $i = i_M^P$, $j = i_N^Q$. Let $R$ be a nonzero
+subobject of $P\oplus Q$. Then at least one of the objects $q_P(R)$
+and $q'_Q(R)$ is not zero. If $q_P(R)$ is not zero, the same is true of
+$q_P(R)\cap M$ and of $R_1 = q_P^{-1}(M)\cap R$. If $R_1$ is contained
+in $q_Q^{-1}(N)$, we have shown that $R\cap (M\oplus N)$ is not zero.
+In the other case, $q'_Q(R_1)$ is not zero and ``cuts'' $N$; the
+subobject $R_2 = q_Q^{-1}(N)\cap R_1$ therefore cannot be zero. In every
+case a nonzero subobject of $P\oplus Q$ ``cuts'' $M\oplus N$, which is
+what we had to prove.
+
+A subobject $N$ of $M$ is said to be \emph{irreducible in $M$} if $N$
+is different from $M$ and if, for every pair $(P,Q)$ of subobjects of
+$M$ containing $N$, the relation $P\cap Q = N$ implies $P = N$ or
+$Q = N$. It amounts to the same to say that $M/N$ is an essential
+extension of every nonzero subobject. If $0$ is irreducible in $M$, we
+also say that $M$ is \emph{coreducible}.
+
+Let us consider an object $M$ of $\Cat$ and $r$ subobjects
+$N_1, N_2, \ldots, N_r$. Let $p_l$ be the canonical epimorphism from
+$M$ onto $M/N_l$ and $q_l$ the canonical projection of
+$M/N_1\oplus M/N_2\oplus\cdots\oplus M/N_r$ onto the $l$th factor
+$M/N_l$. There exists a morphism $u$ from $M$ into
+$M/N_1\oplus\cdots\oplus M/N_r$, and only one, such that $q_l\circ u$
+is equal to $p_l$ for every $l$.
+
+\begin{lemma}
+If the subobjects $N_l$ are irreducible in $M$, if $0$ is the
+intersection of the $N_l$ and is not the intersection of fewer than $r$
+of the $N_l$, then $u$ is an essential extension of $M$.
+\end{lemma}
+
+Let in fact $P_l$ be the intersection of the $N_m$ for $m \neq l$. The
+morphisms $q_m\circ u$ ``annihilate'' $P_l$ if $m \neq l$, and
+$q_l\circ u$ induces a monomorphism $u_l$ of $P_l$ into $M/N_l$. The
+canonical monomorphisms of $P_l$ into $M$ induce a morphism $v$ from
+the direct sum $\bigoplus_l P_l$ into $M$; moreover, it is clear that
+$u\circ v$ is nothing but the morphism $\bigoplus_l u_l$ of
+$\bigoplus_l P_l$ into $\bigoplus_l M/N_l$. Since $u_l$ is an essential
+extension of $P_l$ for every $l$, the preceding lemmas show that
+$\bigoplus_l u_l$, $u$ and $v$ are essential extensions.
+
+If $I$ is an injective object of $\Cat$, every monomorphism
+$u\colon I\to P$ induces an isomorphism of $I$ onto a direct factor of
+$P$. If $Q$ is a complement of $u(I)$, the intersection $Q\cap u(I)$ is
+zero. It follows that $u$ can be an essential extension of $I$ only if
+$u$ is an isomorphism. We shall henceforth say that a monomorphism
+$i\colon M\to I$ is an \emph{injective envelope} of $M$ if $i$ is an
+essential extension of $M$ and if $I$ is an injective object of $\Cat$.
+
+\begin{proposition}
+Let $i\colon M\to I$ be an injective envelope of $M$ and let
+$j\colon M\to J$ be a monomorphism. The following conditions are
+equivalent:
+\begin{enumerate}
+\item[a.] The morphism $j$ is an injective envelope of $M$.
+\item[b.] The morphism $j$ is an essential extension of $M$ and every
+      essential extension of $J$ is an isomorphism.
+\item[c.] The object $J$ is injective; moreover, for every monomorphism
+      $h$ of $M$ into an injective $H$ and every morphism $l$ of $H$
+      into $J$ such that $l\circ h = j$, $l$ is an epimorphism.
+\end{enumerate}
+If these conditions are satisfied, there exists an isomorphism $u$ of
+$J$ onto $I$ such that $u\circ j = i$.
+\end{proposition}
+
+The implication $(a)\Rightarrow(b)$ is clear. Let us prove that $(b)$
+implies $(a)$: since $I$ is injective, there exists a morphism $u$ of
+$J$ into $I$ such that $u\circ j = i$; since $j$ is an essential
+extension, $u$ is a monomorphism, hence an essential extension by
+lemma~1; it follows that $u$ is an isomorphism.
+
+Let us prove that $(a)$ implies $(c)$: since $H$ is injective, there
+exists a morphism $v$ of $I$ into $H$ such that $v\circ i = h$. The
+morphism $l\circ v$ is a monomorphism of $I$ into $J$, hence an
+essential extension of $I$, hence an isomorphism. It follows that $l$ is
+an epimorphism.
+
+Conversely, $(c)$ implies $(a)$: for every morphism $v$ of $I$ into $J$
+such that $j = v\circ i$ is necessarily an isomorphism.
+
+The last assertion has been proved on the way.
+
+If $i\colon M\to I$ is an injective envelope of $M$, the preceding
+proposition shows that the object $I$ is determined up to an
+isomorphism. Although in general this isomorphism is not unique, we
+shall sometimes say, loosely, that $I$ is \emph{the} injective envelope
+of $M$. If $j\colon N\to J$ is a second injective envelope, we shall
+say that $M$ and $N$ have the same injective envelope if $I$ is
+isomorphic to $J$.
+
+\begin{proposition}
+Let $M_1,\ldots,M_r$, $r$ objects of $\Cat$; for every integer $i$
+between $1$ and $r$, let $u_i\colon M_i\to I_i$ be an injective
+envelope of $M_i$. Then the morphism $\bigoplus_i u_i$ of
+$\bigoplus_i M_i$ into $\bigoplus_i I_i$ is an injective envelope of
+$\bigoplus_i M_i$.
+\end{proposition}
+
+In fact, every direct product of injective objects is an injective
+object: this shows that $\bigoplus_i I_i$ is an injective object.
+Moreover, lemma~2 shows that $\bigoplus_i u_i$ is an essential
+extension.
+
+In the following corollary we use the notations of lemma~3.
+
+\begin{unnumberedcorollary}
+Suppose that the hypotheses of lemma~3 are satisfied and let, for
+every $i$, $u_i$ be an injective envelope of $M/N_i$. Then
+$(\bigoplus_i u_i)\circ u$ is an injective envelope of $M$.
+\end{unnumberedcorollary}
+
+The preceding corollary discloses the connection there is between the
+notion of injective envelope and the decomposition of $0$ as the
+intersection of irreducible submodules in $M$.
+
+We shall henceforth say that $\Cat$ is \emph{a category with injective
+envelopes} if, for every object $M$, there exists an injective envelope
+of $M$.
+
+\begin{proposition}
+The following two assertions are equivalent:
+\begin{enumerate}
+\item[a.] $\Cat$ is a category with injective envelopes.
+\item[b.] For every object $M$ of $\Cat$, there exists a monomorphism
+      of $M$ into an injective object; moreover, if $M$ is a subobject
+      of an object $N$, there exists a subobject $Q$ of $N$ such that
+      $M\cap Q$ is zero, and which is maximal among the subobjects of
+      $N$ satisfying this condition.
+\end{enumerate}
+\end{proposition}
+
+$(a)\Rightarrow(b)$: for if $M$ is a subobject of $N$ and if
+$i\colon M\to I$ is an injective envelope of $M$, there exists a
+morphism $\varphi$ of $N$ into $I$ such that $i = \varphi\circ i_M^N$.
+It then suffices to put $Q = \operatorname{Ker}\varphi$.
+
+$(b)\Rightarrow(a)$: let in fact $j$ be a monomorphism of $M$ into an
+injective $J$, and let $Q$ be a subobject of $J$ which is maximal for
+the equality $Q\cap j(M) = 0$. Likewise, let $I$ be a subobject of $J$,
+containing $M$ and maximal for the equality $I\cap Q = 0$ (to see that
+such an $I$ exists, consider the quotient $J/M$). If $p$ is the
+canonical epimorphism from $J$ onto $J/Q$, then $p\circ j$ is an
+essential extension of $M$ and $p$ induces an isomorphism of $I$ onto
+$p(I)$; the inverse isomorphism extends to a monomorphism $h$ of
+$J/Q$ into $J$; then $h(J/Q)$ is an essential extension of $I$. Hence
+$I$ is equal to $h(J/Q)$; we have $I + Q = J$, $I\cap Q = 0$, and the
+monomorphism of $M$ into $I$ induced by $j$ is an injective envelope of
+$M$.
+
+\begin{proposition}[17]
+Let $\Cat$ be an abelian category with injective envelopes, $M$ a
+nonzero object of $\Cat$ and $i\colon M\to I$ an injective envelope of
+$M$. The following assertions are equivalent:
+\begin{enumerate}
+\item[a.] $M$ is coreducible.
+\item[b.] $I$ is indecomposable.
+\item[c.] $I$ is the injective envelope of every nonzero subobject of
+      $I$.
+\item[d.] The ring of endomorphisms of $I$ is a local ring.
+\end{enumerate}
+\end{proposition}
+
+The equivalence of the assertions $(a)$, $(b)$, $(c)$ is clear. Let us
+prove simply that $(b)$ and $(c)$ imply $(d)$; for if
+$u\colon I\to I$ is a monomorphism, $u(I)$ is a direct factor of $I$;
+assertion $(b)$ therefore implies that $u$ is an automorphism. It
+suffices consequently to show that
+$\operatorname{Ker}u \neq 0$ and $\operatorname{Ker}v \neq 0$ imply
+$\operatorname{Ker}(u + v) \neq 0$: but
+$\operatorname{Ker}u\cap\operatorname{Ker}v \neq 0$ by $(c)$ and
+$\operatorname{Ker}(u + v)$ contains this intersection.
+
+\begin{unnumberedcorollary}
+Let $M$ and $N$ be two coreducible objects of a category with injective
+envelopes. Then $M$ and $N$ have the same injective envelope if and only
+if $N$ contains a subobject $M'$, nonzero and isomorphic to a subobject
+$N'$ of $N$.
+\end{unnumberedcorollary}
+
+If $N$ is a subobject of $M$, one sometimes calls any subobject $Q$ of
+$M$ which is maximal for the equality $M\cap Q = 0$ a \emph{complement
+of $N$ in $M$}. If such a $Q$ exists, the complements of $Q$ which
+contain $N$ are the maximal elements of the set of subobjects of $M$
+which are essential extensions of $N$. This situation is often put to
+good use. In particular the reader will verify that the direct factors
+of an injective object $I$ coincide with the subobjects of $I$ ``which
+are a complement of one of their complements''.
+
+\begin{proposition}
+Let $\Cat$ be an abelian category with injective envelopes, $M$ an
+object of $\Cat$, $N$ a subobject of $M$. Two complements of $N$ in
+$M$ have the same injective envelope. If $Q$ is a complement of $N$
+% ---- the statement of this proposition continues on p. 362, which
+% belongs to section 6 (ch2-06-generators-and-limits.tex):
+%   "dans M, l'enveloppe injective de M est isomorphe a la somme directe
+%   de l'enveloppe injective de N et de l'enveloppe injective de Q."
+\end{proposition}

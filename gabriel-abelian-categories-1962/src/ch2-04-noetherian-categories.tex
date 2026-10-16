@@ -1,9 +1,220 @@
-%@ pages 355-357
-%@ status todo
-% Original: pp. 355--357.  French title: see reference/ocr/page-0355.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
-\section{Noetherian Categories}
+%@ pages 355-358
+%@ status translated
+% Chapter II, section 4: noetherian categories (original pp. 355--358).
+% French title: "Catégories noethériennes".  Transcribed from the page images.
+% The page range recorded above was originally given as 355--357, but §4 runs
+% on into p. 358: its last two corollaries stand there, above the heading of
+% §5.  They belong to this section and are translated here.
+%
+% Numbering.  Gabriel numbers the results per kind: propositions run
+% continuously across the sections of a chapter and restart at each chapter,
+% while lemmas and corollaries restart at each section.  §4 therefore carries
+% Lemmas 1--4, Proposition 7 (the seventh of Chapter II) and Theorem 1, and
+% then Corollaries 1--2.  Every corollary printed in §§3--4 carries a
+% number, so `corollary' is right throughout and `unnumberedcorollary' is
+% not used.  The environments of preamble.tex already produce these numbers.
 
-\notyet{pp. 355--357 of the original French edition.}
+\section{Noetherian Categories}
+--- Let $\Cat$ be an abelian category. An object $M$ of $\Cat$ is called
+\emph{noetherian} (resp.\ \emph{artinian}) if every increasing (resp.\
+decreasing) sequence of subobjects of $M$ is stationary. The following lemma
+is easy to prove:
+
+\begin{lemma}
+--- Let $M$ be an object of $\Cat$, $N$ a subobject of $M$. Then $M$ is
+noetherian (resp.\ artinian) if and only if $N$ and $M/N$ are noetherian
+(resp.\ artinian).
+\end{lemma}
+
+\begin{lemma}
+--- Let $\Cat$ be a category with generators and exact inductive limits,
+$M$ a noetherian object of $C$, $(P_i)_{i\in I}$ a filtered increasing
+family of subobjects of an object $P$ ($I\in\Univ$). Then the application
+\[
+  \varphi_M\colon \sup_i \operatorname{Hom}(M,P_i)
+    \longrightarrow \operatorname{Hom}\Bigl(M,\sup_i P_i\Bigr)
+\]
+is bijective.
+\end{lemma}
+
+It suffices to show that $\varphi_M$ is surjective. Let then $u$ be a
+morphism from $M$ into $\sup_i P_i$. The equality
+$u^{-1}(\sup_i P_i) = \sup_i u^{-1}(P_i)$ shows that $u^{-1}(P_i)$ is equal
+to $M$ for $i$ large enough. This proves the lemma.
+
+One proves the dual statement in the same way:
+
+\begin{lemma}
+--- Let $\Cat$ be a category with cogenerators and exact projective limits,
+$M$ an artinian object of $\Cat$, $(P_i)_{i\in I}$ a filtered decreasing
+family of subobjects of an object $P$ ($I\in\Univ$). Then the application
+\[
+  \varphi_M\colon \sup_i \operatorname{Hom}(P/P_i,M)
+    \longrightarrow \operatorname{Hom}\Bigl(P/\operatorname*{Inf}_i
+    P_i,M\Bigr)
+\]
+is bijective.
+\end{lemma}
+
+We shall henceforth say that an abelian category $\Cat$ is \emph{noetherian}
+(resp.\ \emph{artinian}) if the following conditions are satisfied:
+
+\begin{itemize}
+\item[---] Every object of $\Cat$ is noetherian (resp.\ artinian).
+\item[---] There exists a family $(M_i)_{i\in I}$ of objects of $\Cat$ such
+      that $I$ is an element of $\Univ$ and that every object of $\Cat$ is
+      isomorphic to an object of the family.
+\end{itemize}
+
+The second condition merely ensures that the universe $\Univ$ has been chosen
+large enough. It follows that every noetherian (resp.\ artinian) category is
+equivalent to a noetherian (resp.\ artinian) category whose set of objects
+belongs to $\Univ$.
+
+An abelian category which is both noetherian and artinian will be called
+\emph{finite}: all the objects of such a category are of finite length.
+
+We shall say that an abelian category $\Cat$ is \emph{locally noetherian} if
+the following conditions are satisfied:
+
+\begin{itemize}
+\item[---] $\Cat$ is a category with exact inductive limits.
+\item[---] There exists a family $(M_i)_{i\in I}$ of noetherian generators
+      of $\Cat$ whose set of indices $I$ is an element of $\Univ$.
+\end{itemize}
+
+The second condition means that the noetherian objects of $\Cat$ form a
+noetherian category, and that every object $M$ is an upper bound of its
+noetherian subobjects. If there exists a family $(M_i)_{i\in I}$ of
+generators of finite length, we shall say that $\Cat$ is \emph{locally
+finite}.
+
+Now let $\Cat$ be an artinian category and suppose, to simplify, that the
+set $\mathbf{OC}$ of the objects of $\Cat$ is an element of $\Univ$. If $X$
+is an object of $\Cat$, every filtered increasing family of representable
+subobjects of $\dot{X}$ contains a maximal element. Corollary 2 of
+Proposition 6 implies that every subobject of $\dot{X}$ belonging to
+$\operatorname{Sex}(\Cat,\Ab)$ is representable. Then every quotient of a
+representable functor is representable, every representable functor is
+noetherian, every functor is an upper bound of representable functors, every
+noetherian functor is representable.
+
+\begin{proposition}
+--- If $\Cat$ is an artinian category, $\operatorname{Sex}(\Cat,\Ab)$ is a
+locally noetherian category.
+\end{proposition}
+
+We have already established the proposition when the set $\mathbf{OC}$
+belongs to $\Univ$. In the general case $\Cat$ is equivalent to an artinian
+category $\Cat'$ such that $\mathbf{OC}'$ belongs to $\Univ$. Moreover the
+category $\operatorname{Sex}(\Cat,\Ab)$ is equivalent to
+$\operatorname{Sex}(\Cat',\Ab)$. The proposition follows.
+
+\begin{theorem}
+--- (cf.\ [11], [19].) Let $\Cat$ be a noetherian category. There exists a
+locally noetherian category $\mathbf{D}$ such that $\Cat$ is equivalent to
+the category of noetherian objects of $\mathbf{D}$. Moreover this condition
+determines $\mathbf{D}$ up to an equivalence.
+\end{theorem}
+
+Indeed, the dual category $\Cat^{\circ}$ is artinian. It follows from the
+preceding remarks that $\operatorname{Sex}(\Cat^{\circ},\Ab)$ is a locally
+noetherian category and that the functor
+$X\longmapsto \operatorname{Hom}_{\Cat}(.,X)$ defines an equivalence of
+$\Cat$ with the category formed of the noetherian objects of
+$\operatorname{Sex}(\Cat^{\circ},\Ab)$.
+
+It remains to prove the uniqueness of $\mathbf{D}$ by showing that $\mathbf{D}$
+is necessarily equivalent to the category
+$\operatorname{Sex}(\Cat^{\circ},\Ab)$. We shall suppose, to simplify, that
+$\Cat$ is the category of the noetherian objects of $\mathbf{D}$. We then
+associate to every object $X$ of $\mathbf{D}$ the left exact functor
+$Y\longmapsto \operatorname{Hom}_{\mathbf{D}}(Y,X)$ of $\Cat^{\circ}$ into
+$\Ab$; this defines a functor $T\colon
+X\longmapsto \operatorname{Hom}_{\mathbf{D}}(.,X)$ of $\mathbf{D}$ into
+$\operatorname{Sex}(\Cat^{\circ},\Ab)$. We complete the proof by showing
+that $T$ defines an equivalence:
+
+\begin{itemize}
+\item[---] For this, we first show that every object $F$ of
+      $\operatorname{Sex}(\Cat^{\circ},\Ab)$ is isomorphic to a functor of
+      the type $TX = \operatorname{Hom}_{\mathbf{D}}(.,X)$: this is
+      obviously true when $F$ is noetherian; in the general case, the set
+      of noetherian subobjects of $F$ can be indexed by a set belonging to
+      $\Univ$. It follows that there exists an inductive system of
+      noetherian objects of $\mathbf{D}$, say $(X_i,u_{ji})_{i,j\in J}$,
+      such that $J$ is an element of $\Univ$, that the $u_{ji}$ are
+      monomorphisms, and that $F$ is isomorphic to the inductive limit of
+      the functors $TX_i$. If $X$ is the inductive limit of the $X_i$, the
+      equality
+      \[
+        T\Bigl(\sup_i X_i\Bigr) = \sup_i TX_i \quad\text{(lemma 2)}
+      \]
+      shows that $F$ is isomorphic to $TX$.
+
+\item[---] We next prove the equality
+      $\operatorname{Hom}_{\mathbf{D}}(X,Z) = \operatorname{Hom}(TX,TZ)$:
+      if $X$ and $Z$ are noetherian, this follows from Corollary 1 of
+      Proposition 1 (Chapter~I). We pass from there to the case where $X$ is
+      noetherian and $Z$ arbitrary: if $Z'$ is a noetherian subobject of
+      $Z$, we have the diagram
+      \begin{center}
+      \begin{tikzcd}
+      \operatorname{Hom}_{\mathbf{D}}(X,Z')
+        \arrow[r, "{\operatorname{Hom}(X,i^{Z}_{Z'})}"]
+        \arrow[d, "{T(X,Z')}"]' &
+      \operatorname{Hom}_{\mathbf{D}}(X,Z)
+        \arrow[d, "{T(X,Z)}"]' \\
+      \operatorname{Hom}(TX,TZ')
+        \arrow[r, "{\operatorname{Hom}(TX,T i^{Z}_{Z'})}"] &
+      \operatorname{Hom}(TX,TZ)
+      \end{tikzcd}
+      \end{center}
+      The map $T(X,Z')$ is an isomorphism. By passing to the inductive limit
+      over the noetherian subobjects of $Z$, we see that $T(X,Z)$ is bijective
+      (lemma 2). The general case is then proved by an argument of the same
+      type [if $X$ and $Z$ are arbitrary, consider the projective system
+      formed by $\operatorname{Hom}(X',Z)$ where $X'$ runs through the
+      noetherian subobjects of $X$].
+\end{itemize}
+
+\begin{lemma}
+--- A functor $F$ of $\operatorname{Sex}(\Cat^{\circ},\Ab)$ is exact if and
+only if $F$ is an injective object of $\operatorname{Sex}(\Cat^{\circ},\Ab)$.
+(We always suppose the category $\Cat$ to be noetherian.)
+\end{lemma}
+
+Corollary 2 of Proposition 6 proves one half of the lemma. Conversely,
+suppose $F$ exact. We have seen that the functors $\dot{X}$ form a family of
+generators and that every subobject of $\dot{X}$ is representable ($\Cat$ is
+a noetherian category). Every monomorphism $i\colon G\to \dot{X}$ therefore
+induces a surjection of $FX = \operatorname{Hom}(\dot{X},F)$ onto
+$\operatorname{Hom}(G,F)$. The assertion follows consequently from a lemma
+of \textsc{Grothendieck} ([10], lemma 1 of theorem 1.10.1).
+
+In the equivalence between $\mathbf{D}$ and
+$\operatorname{Sex}(\Cat^{\circ},\Ab)$, the injective objects of
+$\mathbf{D}$ correspond to the exact functors and the inductive limits of
+$\mathbf{D}$ correspond to the inductive limits of functors. We deduce the
+following corollary.
+
+\begin{corollary}
+--- Every inductive limit of injective objects of $\mathbf{D}$ is an injective
+object. If $(X_i,u_{ji})_{i,j\in J}$ is an inductive system of $\mathbf{D}$
+and if $Y$ is a noetherian object, we have the equality
+\[
+  \operatorname{Hom}_{\mathbf{D}}\Bigl(Y,
+    \lim_{\substack{\longrightarrow\\ i}} X_i\Bigr)
+  = \lim_{\substack{\longrightarrow\\ i}}
+    \operatorname{Hom}_{\mathbf{D}}(Y,X_i).
+\]
+\end{corollary}
+
+\begin{corollary}
+--- Every locally noetherian category is a category with projective limits.
+\end{corollary}
+
+This is so for the category $\operatorname{Sex}(\Cat^{\circ},\Ab)$.
+
+We leave to the reader the task of formulating the dual statements of the
+preceding statements.

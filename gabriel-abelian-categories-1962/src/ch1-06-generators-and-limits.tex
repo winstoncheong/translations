@@ -1,9 +1,129 @@
-%@ pages 336-337
-%@ status todo
-% Original: pp. 336--337.  French title: see reference/ocr/page-0336.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ pages 336-338
+%@ status translated
+% Chapter I, section 6: Categories with generators and exact inductive
+% limits (pp. 336-338).  The section heading stands half way down p. 336; the
+% text runs on to the top of p. 338 and stops at the heading of section 7.
+% Transcribed from the page images; the OCR text layer in reference/ocr/ was
+% not trusted.  In the definition of a morphism of inductive systems the
+% original prints "f_j o u_ji = v_ji o f_i" (p. 337), where the indices are
+% transposed with respect to the usual condition; it is reproduced as
+% printed.  Proposition~6 carries a label because p. 338 refers back to it.
+
 \section{Categories with Generators and Exact Inductive Limits}
 
-\notyet{pp. 336--337 of the original French edition.}
+\begin{proposition}
+If $\Cat$ is an abelian category with generators and $X$ an object of $\Cat$,
+there exists a set belonging to $\Univ$ and having the same cardinality as
+the set of subobjects of $X$.
+\end{proposition}
+
+Let $(X_i)_{i\in I}$ indeed be a family of generators of $\Cat$, the set $I$
+belonging to $\Univ$. We know that the sum $E$ of the sets
+$\operatorname{Hom}(X_i, X)$ is an element of $\Univ$. We associate to every
+subobject $Y$ of $X$ the part $EY$ of $E$ which is formed of the morphisms
+whose image is contained in $Y$. If $Y'$ is a subobject of $X$ not
+containing $Y$, there exists an element of $E$ not belonging to
+$E(Y \cap Y')$, for $(X_i)_{i\in I}$ is a family of generators of $\Cat$.
+
+In other words, the map $Y\mapsto EY$ is an injective map from the set of
+subobjects of $X$ into the set of parts of $E$. This proves the proposition.
+
+Let us now suppose --- and this for the rest of the paragraph --- that $\Cat$
+is a category with generators and inductive limits. According to [10], it
+comes to the same thing to say that $\Cat$ is a category with generators and
+that there exists a direct sum for every family of objects indexed by a set
+belonging to $\Univ$. If these conditions are realised, every increasing
+filtered family $(M_n)_{n\in E}$ of subobjects of an object $M$ has a least
+upper bound: according to the preceding proposition, one may indeed suppose
+that $E$ belongs to $\Univ$; the canonical morphisms of $M_n$ into $M$ then
+define a morphism of the direct sum $\sum_{n\in E} M_n$ into $M$. The image
+of this last morphism is the least upper bound of the $M_n$.
+
+Let $I$ be a filtered ordered set, and let $(M_i, u_{ji})$ and $(N_i, v_{ji})$
+be two inductive systems of morphisms of $\Cat$ indexed by $I$
+($I\in\Univ$). A morphism of the first into the second is, by definition, a
+family $(f_i)_{i\in I}$ of morphisms with source $M_i$ and target $N_i$ such
+that $f_j\circ u_{ji} = v_{ji}\circ f_i$ if $j > i$. Thus the category of
+inductive systems indexed by $I$ is defined, and this category is abelian.
+Moreover, the functor $(M_i,u_{ji})\mapsto \lim\limits_{\to} M_i$ is right
+exact. If this last functor is exact for every $I\in\Univ$, we say that $\Cat$
+is a \emph{category with exact inductive limits}.
+
+\begin{proposition}\label{prop:exact-inductive-limits}
+If $\Cat$ is a category with generators and inductive limits, the following
+assertions are equivalent:
+\begin{enumerate}[label=\alph*.]
+\item $\Cat$ is a category with exact inductive limits.
+
+\item If $(P_i)_{i\in I}$ is an increasing filtered family of subobjects of
+      $P$, the canonical morphism of $\lim\limits_{\to} P_i$ into $P$ is an
+      isomorphism of $\lim\limits_{\to} P_i$ onto the least upper bound
+      $\sup\limits_{i\in I} P_i$.
+
+\item If $(P_i)_{i\in I}$ is an increasing filtered family of subobjects of
+      $P$, and if $Q$ is a subobject of $P$, then
+      \[
+        (\sup P_i) \cap Q = \sup(P_i \cap Q).
+      \]
+\end{enumerate}
+\end{proposition}
+
+The inductive systems of an abelian category $\Cat$ with generators and exact
+inductive limits are dealt with ``in the same way'' as the inductive systems
+of abelian groups. We shall make much use, in what follows, of the theory of
+the semisimple objects of such a category: an object $S$ of $\Cat$ is called
+\emph{simple} if it is nonzero and if it contains no subobject distinct from
+$S$ or from $0$. An object is called \emph{semisimple} if it is isomorphic to
+a direct sum of simple objects. The theory is in every point analogous to
+the theory of semisimple modules [4]. Let us recall only a few results:
+
+Let $\mathbf{S}$ be the full subcategory of $\Cat$ whose objects are the
+semisimple objects of $\Cat$; let $\mathfrak{E}$ be the set of isomorphism
+classes of simple objects. If $M$ is an object of $\mathbf{S}$ and if
+$\lambda$ belongs to $\mathfrak{E}$, we denote by $M_\lambda$ the isotypic
+component of type $\lambda$ of $M$: it is the sum of the simple subobjects of
+$M$ belonging to $\lambda$. We also denote by $\mathbf{S}_\lambda$ the full
+subcategory of $\mathbf{S}$ whose objects $M$ are those such that
+$M = M_\lambda$. In these conditions we have the following results:
+
+\begin{itemize}
+\item If $f\colon M\to N$ is a morphism of $\mathbf{S}$, then $f(M_\lambda)$
+      is contained in $N_\lambda$.
+
+\item The functor $M\mapsto (M_\lambda)_{\lambda\in\mathfrak{E}}$ defines
+      an equivalence between $\mathbf{S}$ and the product category
+      $\prod\limits_\lambda \mathbf{S}_\lambda$ (see \S~8 for the
+      definition of equivalences).
+
+\item If $S$ is a simple object of $\mathbf{S}_\lambda$, the functor
+      $M\mapsto \operatorname{Hom}(S, M)$ defines an equivalence between
+      $\mathbf{S}_\lambda$ and the category of vector spaces [over the field
+      $\operatorname{Hom}(S,S)$] whose underlying set belongs to $\Univ$.
+\end{itemize}
+
+Let us point out, to finish, that Krull--Remak--Schmidt's theorem is true in
+an abelian category with generators and exact inductive limits. More
+precisely, let us say that an object $M$ is \emph{indecomposable} if it is
+nonzero and if every direct factor of $M$ is equal to $0$ or to $M$. We then
+prove the following theorem:
+
+\begin{theorem}
+Let $\Cat$ be an abelian category with generators and exact inductive limits.
+Let $(M_i)_{i\in I}$ and $(N_j)_{j\in J}$ be two families of indecomposable
+objects whose ring of endomorphisms is local ($I\in\Univ$, $J\in\Univ$). If
+the direct sums
+\[
+  \sum_{i\in I} M_i \quad\text{and}\quad \sum_{j\in J} N_j
+\]
+are isomorphic, there is a bijection $h$ of $I$ onto $J$ such that $M_i$ is
+isomorphic to $N_{h(i)}$.
+\end{theorem}
+
+Let us recall that a ring $A$, commutative or not, is called \emph{local} if
+it possesses a nonzero unit element and if the quotient of $A$ by its
+Jacobson radical is a field.
+
+\textsc{Azumaya} has proved this theorem ``in the case of modules'' [2]. The
+reader is invited to take up this proof again, making use of
+Proposition~\ref{prop:exact-inductive-limits} in order to avoid the reasonings
+in which \textsc{Azumaya} speaks of the elements of a module.

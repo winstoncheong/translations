@@ -1,9 +1,150 @@
 %@ pages 362-364
-%@ status todo
-% Original: pp. 362--447.  French title: see reference/ocr/page-0362.txt.
-% Draft from the OCR text in reference/ocr/, but check every formula,
-% index and symbol against the page image in reference/source.pdf: the
-% text layer mangles subscripts, fractions and page numbers.
+%@ status translated
+% Chapter II, section 6: Categories with generators and exact inductive
+% limits (pp. 362-364).
+%
+% Numbering follows the scan: this section prints LEMME 1 (the first lemma of
+% the section), THEOREME 2 and THEOREME 3 (continuing THEOREME 1 of p. 356),
+% PROPOSITION 13 (continuing PROPOSITION 12 of p. 361), and one corollary with
+% no number at all --- hence the `unnumberedcorollary' environment.
+%
+% Gabriel writes the zero object as an italic `o'; it is reproduced as $o$.
+
 \section{Categories with Generators and Exact Inductive Limits}
 
-\notyet{pp. 362--447 of the original French edition.}
+--- In this section we suppose that $\Cat$ is an abelian category with
+generators and exact inductive limits; the letter $U$ denotes a generator of
+$\Cat$.
+
+\begin{lemma}
+Every subobject $M$ of an object $N$ has a complement $Q$ in $N$.
+\end{lemma}
+
+Let $E$ be the set of the subobjects $P$ of $N$ such that $M \cap P = o$. It
+is enough to show that $E$ is an inductively ordered set; for this, let $F$ be
+a totally ordered sub-set of $E$. Since there exists a set belonging to the
+universe $\Univ$ and having the same cardinality as $F$, the supremum $S$ of
+the elements $P$ of $F$ is defined. Moreover we have the formulas
+\[
+  S \cap M = \left(\sup_{P \in F} P\right) \cap M
+           = \sup_{P \in F}\left(P \cap M\right) = o,
+\]
+This proves the lemma.
+
+\begin{theorem}
+Every abelian category with generators and exact inductive limits is a category
+with injective envelopes.
+\end{theorem}
+
+For every object $M$ of $\Cat$ there is indeed a monomorphism from $M$ into an
+injective object: this fact is proved in [10], Theorem~1.10.1. It remains valid
+under our hypotheses. The theorem therefore follows from Proposition~10 and
+Lemma~1.
+
+\begin{proposition}
+Let $I$ be an ordered set belonging to the universe $\Univ$; let us give
+ourselves two increasing maps, $\alpha \mapsto M_\alpha$,
+$\alpha \mapsto N_\alpha$, from $I$ into the set of the subobjects of an object
+$P$; suppose that $M_\alpha$ is a subobject of $N_\alpha$ for every $\alpha$,
+and that $N_\alpha$ is an essential extension of $M_\alpha$. Then
+$\sup_\alpha N_\alpha$ is an essential extension of $\sup_\alpha M_\alpha$.
+\end{proposition}
+
+Let $Q$ be a non-zero subobject of $\sup_\alpha N_\alpha$. The formula
+\[
+  Q = Q \cap \sup_\alpha N_\alpha = \sup_\alpha\left(Q \cap N_\alpha\right)
+\]
+shows that $Q \cap N_\alpha$ is non-zero for at least one $\alpha$. It follows
+that
+\[
+  Q \cap M_\alpha = \left(Q \cap N_\alpha\right) \cap M_\alpha
+\]
+is non-zero. The subobject $Q$ therefore meets $\sup_\alpha M_\alpha$ in a
+non-zero subobject.
+
+\begin{unnumberedcorollary}
+If $J$ is a set belonging to $\Univ$, and if $(u_i)_{i \in J}$ is a family of
+essential extensions, then $\Sigma_i u_i$ is an essential extension.
+\end{unnumberedcorollary}
+
+The corollary has already been proved when $J$ is finite. From there we pass
+to the general case thanks to Proposition~13.
+
+We end this section with an application of the preceding theorem, or rather of
+Theorem~1.10.1 of [10]. The statement and its proof are due to students of
+\textsc{Eilenberg}.
+
+\begin{theorem}
+Let $\Cat$ be an abelian category whose set of objects is an element of
+$\Univ$. There exists an exact and faithful functor $F$ from $\Cat$ into the
+category $\Ab$ of abelian groups.
+\end{theorem}
+
+Recall that an exact functor $F$ is said to be \emph{faithful} if $Ff$ is
+non-zero for every non-zero morphism $f$. It comes to the same to say that $FX$
+is non-zero if $X$ is a non-zero object.
+
+We have seen that $\operatorname{Sex}(\Cat, \Ab)$ is an abelian category with
+exact inductive limits. Moreover, the functor
+\[
+  Y \mapsto \sum_{X \in \mathbf{OC}} \operatorname{Hom}(X, Y)
+\]
+is a projective generator $U$ of $\operatorname{Sex}(\Cat, \Ab)$. If
+$i\colon U \to F$ is a monomorphism from $U$ into an injective $F$,
+Corollary~1 to Proposition~6 shows that $F$ is an exact functor. Moreover
+$i(Y)$ is, for every object $Y$ of $\Cat$, an injective map from $UY$ into
+$FY$; since $UY$ is non-zero, it is the same for $FY$. This proves that $F$ is
+faithful.
+
+Theorem~3 is often used to extend to abelian categories results which have
+been proved for abelian groups; we give an example: let us consider in $\Cat$
+the commutative and exact diagram ($\bigstar$).
+
+\[
+\tag{$\bigstar$}
+\begin{tikzcd}
+\phantom{A}
+  & A \arrow[r, "u"] \arrow[d, "a"']
+  & B \arrow[r, "v"] \arrow[d, "b"']
+  & C \arrow[d, "c"'] \\
+o \arrow[r]
+  & A' \arrow[r, "u'"]
+  & B' \arrow[r, "v'"]
+  & C'
+\end{tikzcd}
+\]
+
+The morphisms $u$ and $v$ induce morphisms
+$u''\colon \operatorname{Ker}a \to \operatorname{Ker}b$ and
+$v''\colon \operatorname{Ker}b \to \operatorname{Ker}c$. I say that the
+sequence ($\bigstar\bigstar$) is exact:
+\[
+\tag{$\bigstar\bigstar$}
+  \operatorname{Ker}a \xrightarrow{u''} \operatorname{Ker}b
+  \xrightarrow{v''} \operatorname{Ker}c .
+\]
+Since $F$ is an exact and faithful functor, it is enough to verify the
+exactness of the sequence ($\bigstar\bigstar\bigstar$):
+\[
+\tag{$\bigstar\bigstar\bigstar$}
+  F\operatorname{Ker}a \xrightarrow{Fu''} F\operatorname{Ker}b
+  \xrightarrow{Fv''} F\operatorname{Ker}c .
+\]
+Now the sequence ($\bigstar\bigstar\bigstar$) can be constructed from
+($\bigstar\bigstar\bigstar\bigstar$) as ($\bigstar\bigstar$) was constructed
+from ($\bigstar$); it is therefore enough to prove our assertion when
+($\bigstar$) is a diagram of abelian groups, which is easy.
+
+\[
+\tag{$\bigstar\bigstar\bigstar\bigstar$}
+\begin{tikzcd}
+\phantom{FA}
+  & FA \arrow[r, "Fu"] \arrow[d, "Fa"']
+  & FB \arrow[r, "Fv"] \arrow[d, "Fb"']
+  & FC \arrow[d, "Fc"'] \\
+o \arrow[r]
+  & FA' \arrow[r, "Fu'"]
+  & FB' \arrow[r, "Fv'"]
+  & FC'
+\end{tikzcd}
+\]
