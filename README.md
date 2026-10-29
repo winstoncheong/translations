@@ -89,13 +89,15 @@ reproducible and independent of the runner. Pin the image in
 | Job | What it does |
 | --- | --- |
 | `discover` | finds every directory containing `src/main.tex` |
+| `changes` | maps changed paths to document directories; manual runs and `.github/` changes build everything, a push that only touches `AGENTS.md` or `tools/` builds nothing |
 | `report` | translation progress, plus detection of untranslated French text and TODO markers; **fails** if a section file has no `%@` metadata |
-| `build` | compiles every document in the TeX Live container and uploads the PDF as an artifact |
-| `site` | assembles the PDFs and an index page (on the default branch) |
+| `build` | compiles the **changed** documents in the TeX Live container and uploads each PDF as an artifact |
+| `site` | assembles fresh PDFs plus previously deployed ones (fetched from the live site) and an index page, on the default branch |
 | `deploy` | publishes that site to GitHub Pages |
 
-To enable the site: **Settings → Pages → Source: GitHub Actions**. Every
-push to the default branch then rebuilds the PDFs and redeploys them.
+To enable the site: **Settings → Pages → Source: GitHub Actions**. A push
+that changes a document rebuilds that document and redeploys the site;
+unchanged PDFs are reused from the current deployment rather than rebuilt.
 
 The `report` job's French-leftover check is a safety net against passages that
 were copied over instead of translated. It is a warning by default (a word list

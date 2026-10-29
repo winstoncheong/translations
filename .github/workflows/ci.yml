@@ -54,6 +54,90 @@ jobs:
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
   # ------------------------------------------------------------------
+  # Work out which document directories actually changed.  A push that
+  # only touches AGENTS.md or tools/ must not rebuild every paper.
+  # Manual runs build everything; CI changes also build everything so a
+  # workflow edit is exercised on the spot.
+  # ------------------------------------------------------------------
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.dirs.outputs.matrix }}
+      count: ${{ steps.dirs.outputs.count }}
+      site: ${{ steps.dirs.outputs.site }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: dirs
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess
+
+          docs = sorted(str(p.parent.parent) for p in pathlib.Path(".").glob("*/src/main.tex"))
+          event = os.environ["EVENT"]
+          before = os.environ.get("BEFORE") or ""
+          base = os.environ.get("PR_BASE") or ""
+          sha = os.environ["SHA"]
+
+          def all_docs():
+              return docs
+
+          build = None
+          site = event == "workflow_dispatch"
+          if event != "workflow_dispatch":
+              cmp_base = base if event == "pull_request" else before
+              if cmp_base and set(cmp_base) != {"0"}:
+                  try:
+                      subprocess.run(
+                          ["git", "cat-file", "-e", f"{cmp_base}^{{commit}}"],
+                          check=True, capture_output=True,
+                      )
+                      names = subprocess.run(
+                          ["git", "diff", "--name-only", cmp_base, sha],
+                          check=True, capture_output=True, text=True,
+                      ).stdout.splitlines()
+                  except subprocess.CalledProcessError:
+                      names = None
+              else:
+                  names = None
+
+              if names is None:
+                  # New branch or shallow/rebased history: be safe.
+                  build = all_docs()
+              else:
+                  selected = set()
+                  force_all = False
+                  for name in names:
+                      top = name.split("/", 1)[0]
+                      if top in docs:
+                          selected.add(top)
+                      elif top == ".github":
+                          # A workflow change must be exercised end to end.
+                          force_all = True
+                      elif name in ("tools/make_site.py", "tools/translation_report.py"):
+                          # These change the landing page, not the PDFs.
+                          site = True
+                  build = all_docs() if force_all else sorted(selected)
+
+          if build is None:
+              build = all_docs()
+
+          site = site or bool(build)
+          print("Documents to build:", build or "(none)")
+          print("Rebuild site:", site)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"matrix={json.dumps(build)}\n")
+              f.write(f"count={len(build)}\n")
+              f.write(f"site={'true' if site else 'false'}\n")
+          PY
+
+  # ------------------------------------------------------------------
   # Translation status: progress table + untranslated-passage detection.
   # ------------------------------------------------------------------
   report:
@@ -102,10 +186,11 @@ jobs:
         run: python tools/translation_report.py . --strict
 
   # ------------------------------------------------------------------
-  # Compile every document inside a current TeX Live container.
+  # Compile the changed documents inside a current TeX Live container.
   # ------------------------------------------------------------------
   build:
-    needs: discover
+    needs: [discover, changes]
+    if: needs.changes.outputs.count != '0'
     runs-on: ubuntu-latest
     # Current TeX Live, with latexmk, pdflatex, xelatex and lualatex.
     # To pin a specific release (if a TeX Live update ever breaks a build),
@@ -116,7 +201,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        document: ${{ fromJSON(needs.discover.outputs.documents) }}
+        document: ${{ fromJSON(needs.changes.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -154,10 +239,16 @@ jobs:
   # Assemble the static site and hand it to GitHub Pages.
   # ------------------------------------------------------------------
   site:
-    needs: [discover, report, build]
+    needs: [discover, changes, report, build]
     if: >-
-      github.event_name == 'workflow_dispatch' ||
-      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+      always() &&
+      needs.changes.result == 'success' &&
+      needs.report.result == 'success' &&
+      (needs.build.result == 'success' || needs.build.result == 'failure' ||
+       needs.build.result == 'skipped') &&
+      (needs.changes.outputs.site == 'true') &&
+      (github.event_name == 'workflow_dispatch' ||
+       github.ref == format('refs/heads/{0}', github.event.repository.default_branch))
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -166,12 +257,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Collect built PDFs
+      - name: Collect freshly built PDFs
+        if: >-
+          needs.changes.outputs.count != '0' &&
+          (needs.build.result == 'success' || needs.build.result == 'failure')
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           pattern: pdf-*
           path: _site/pdfs
           merge-multiple: true
+
+      - name: Reuse previously deployed PDFs
+        env:
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, sys, urllib.request
+
+          out = pathlib.Path("_site/pdfs")
+          out.mkdir(parents=True, exist_ok=True)
+          docs = sorted(str(p.parent.parent) for p in pathlib.Path(".").glob("*/src/main.tex"))
+          missing = []
+          for doc in docs:
+              dest = out / f"{doc}.pdf"
+              if dest.exists():
+                  continue
+              url = f"{os.environ['SITE_URL'].rstrip('/')}/pdfs/{doc}.pdf"
+              try:
+                  with urllib.request.urlopen(url, timeout=60) as r:
+                      dest.write_bytes(r.read())
+                  print(f"reused {url}")
+              except Exception as exc:
+                  print(f"MISSING {doc}: {exc}", file=sys.stderr)
+                  missing.append(doc)
+          if missing:
+              print(f"::warning::{len(missing)} PDF(s) unavailable from build and live site: {', '.join(missing)}")
+          PY
 
       - name: Build the landing page
         run: python tools/make_site.py --site _site --root .
