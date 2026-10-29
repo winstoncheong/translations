@@ -186,9 +186,27 @@ This catches every LaTeX error except those that depend on cross-references.
 - Accents: UTF-8 directly (`géométrie`), not `\'e` — the escapes are error-prone.
 - Do not reformat code you are not otherwise touching; keep diffs reviewable.
 
+## PDF conventions
+
+- **Bibliographical back-references are wanted.** Load `hyperref` with
+  `pagebackref`, e.g. `\usepackage[pagebackref]{hyperref}`, so each
+  bibliography entry ends with the pages on which it is cited. This is the
+  preference for new and touched documents; do not convert an existing
+  document solely to add it.
+- Keep `hyperref` colour links on (`colorlinks`), as in the existing
+  preambles.
+- `pagebackref` writes a `.brf` file. It is a build artefact: never commit
+  it. The repository `.gitignore` covers `*.brf`.
+
 ## Commit discipline
 
 - One logical unit per commit: one section, or one infrastructure change.
 - Say what was translated and from which pages, e.g.
   `Translate Ch. I §3 (Functors), original pp. 330-332`.
 - Never commit `build/` output or the source PDFs; `.gitignore` covers both.
+- **Pushing is authorised once a translation is complete and committed.**
+  Finish the job first: all sections translated, the full build green
+  (exit 0, no `^!` errors, no undefined references), the report at 100%,
+  and `git status` clean apart from intended files. Then commit and
+  `git push origin <branch>`. Do not push a half-translated or broken
+  tree, and re-fetch/rebase before pushing if the remote has moved.
