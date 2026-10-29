@@ -12,7 +12,7 @@
   "source": "https://arxiv.org/e-print/math/9807049v3",
   "language": "French",
   "status": "translated",
-  "note": "The source is a single gzipped TeX file. The English abstract is the authors' own; the body is translated from the French. The translation follows the modernized source prepared in arxiv-fixes/math_9807049v3 (v3, 2001), which preserves the authors' v2/v3 errata. The build produces 182 pages against the original's 250; %@ pages always refers to the original PDF.",
+  "note": "The source is a single gzipped TeX file. The English abstract is the authors' own; the body is translated from the French. The translation follows the modernized source prepared in arxiv-fixes/math_9807049v3 (v3, 2001), which preserves the authors' v2/v3 errata. The build produces 183 pages against the original's 250; %@ pages always refers to the original PDF.",
   "license": "arXiv.org perpetual, non-exclusive licence (original); translation prepared for this repository.",
   "warnings": [
     "Translation in progress; see the per-file %@ status comments in src/.",

@@ -33,7 +33,7 @@ corresponding places.
 **Translated in full** (250/250 pages of the original). The per-file
 `%@ status` comments in `src/` are the single source of truth;
 `python tools/translation_report.py .` from the repository root reads them.
-The build produces 182 pages, because the English is set in 11pt Latin
+The build produces 183 pages, because the English is set in 11pt Latin
 Modern on A4 with narrower margins than the authors' 12pt layout and because
 the translation is more compact than the French; the page range in
 `%@ pages` always refers to the original PDF, not to this translation.

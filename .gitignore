@@ -8,6 +8,7 @@
 *.toc
 *.bbl
 *.blg
+*.brf
 *.lof
 *.lot
 *.idx
