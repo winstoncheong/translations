@@ -210,3 +210,8 @@ This catches every LaTeX error except those that depend on cross-references.
   and `git status` clean apart from intended files. Then commit and
   `git push origin <branch>`. Do not push a half-translated or broken
   tree, and re-fetch/rebase before pushing if the remote has moved.
+- CI builds only the documents whose directory changed. A push that touches
+  only this file, `tools/`, or the root `README.md` rebuilds nothing; touch a
+  document directory to rebuild that document. A `.github/` change is the
+  exception: it builds every document so the workflow itself is exercised.
+  Manual dispatch always builds everything.
