@@ -15,6 +15,7 @@ against the French original page by page.
 | Document | Original | Progress |
 | --- | --- | --- |
 | [Abelian Categories](gabriel-abelian-categories-1962/) | P. Gabriel, *Des catégories abéliennes*, Bull. Soc. Math. France **90** (1962), 323–448 | 11/126 pp. |
+| [Descent for n-Stacks](hirschowitz-simpson-descent-n-stacks-1998/) | A. Hirschowitz, C. Simpson, *Descente pour les n-champs*, arXiv:math/9807049v3 (2001) | 250/250 pp. |
 
 Run `python tools/translation_report.py .` for current figures.
 

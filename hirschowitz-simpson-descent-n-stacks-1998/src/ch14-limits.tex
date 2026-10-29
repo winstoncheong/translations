@@ -1,0 +1,160 @@
+%@ pages 144-146
+%@ status translated
+% Original section 14, "Limites", pp. 144--146.
+
+\clearpage
+\section{Limits}
+\label{limitespage}
+
+In this section we recall a few facts concerning limits. In \cite{limits} one
+defines the notions of limit and colimit in an $n$-category. One can give the
+same definitions, {\em mutatis mutandis}, in a Segal $n$-category. We refer the
+reader to \cite{limits}, 3.1 and 3.2 for these definitions. Transcribing the
+proofs of \cite{limits} into the framework of Segal $n$-categories, one
+obtains:
+
+\begin{theorem}
+The Segal $(n+1)$-category $nSeCAT'$ admits all limits and colimits indexed by
+(small) Segal $(n+1)$-categories.
+\end{theorem}
+
+Let us recall how to compute a limit concretely (this is the construction used
+in \cite{limits} 4.1). If $\Yy$ is an $(n+1)$-category equipped with a
+morphism $F: \Yy \rightarrow nSeCAT'$, then one has (\cite{limits} 4.1.2)
+$$
+\lim _{\leftarrow , \Yy} F
+= \underline{Hom}(\Yy , nSeCAT')_{1/}(\ast _{\Yy}, F).
+$$
+
+On the other hand, one has at one's disposal the notions of homotopy limit and
+colimit ($holim$ and $hocolim$) for diagrams (indexed by a small
+$1$-category) in an essentially arbitrary cmc. These notions are due to
+Bousfield and Kan \cite{BousfieldKan}; see also
+%%%%%% added in v3 : %%%%%%
+Vogt \cite{Vogt}, Edwards and Hastings \cite{EH},
+Cordier and Porter \cite{CordierPorter2},
+%%%%%%%%%%
+Hirschhorn \cite{Hirschhorn},
+Dwyer--Hirschhorn--Kan \cite{DHK}.
+
+Normally we shall use the notation $holim$ for constructions of
+Bousfield--Kan type, and the notation $\lim$ for limits in the sense of
+\cite{limits}. Fortunately, the two notions coincide for limits of Segal
+$n$-categories indexed by $1$-categories. This is essentially a consequence of
+the following proposition. We leave it to the reader to make the analogous
+comparison with the $holim$ of \cite{Hirschhorn} for the cmc $nSePC$.
+
+\begin{proposition}
+\label{calclim}
+Suppose that $\Yy$ is a category and $F$ a Segal $n$-prestack over $\Yy$,
+which one can also regard as a morphism $\Yy ^o\rightarrow nSeCAT$. Let
+$F\rightarrow F'$ be an object-by-object weak equivalence to a Segal
+$n$-prestack that is fibrant for the coarse topology. Then one has
+equivalences of Segal $n$-categories
+$$
+\Gamma (\Yy , F')
+\stackrel{\cong}{\rightarrow}
+$$
+$$
+\lim _{\leftarrow , \Yy ^o} F' \cong
+\lim _{\leftarrow , \Yy ^o} F .
+$$
+Here the limits are those defined following \cite{limits}.
+\end{proposition}
+{\em Proof:}
+One has the equality
+$\Gamma (\Yy , F')=\Gamma \underline{Hom}(\ast _{\Yy}, F')$ because the two
+sides represent the same functor on the category of Segal $n$-precategories.
+In particular, one has
+$$
+\Gamma (\Yy , F')= nSeCHAMP (\Yy )_{1/}(\ast, F').
+$$
+On the other hand, by (\cite{limits} 4.0.1 and 4.1.2), one has
+$$
+\lim _{\leftarrow , \Yy ^o} F' = \underline{Hom}(\Yy ^o, nSeCAT')_{1/} (\ast
+_{\Yy}, F').
+$$
+Now the fact that the functor $\Phi$ of Theorem \ref{correlation} is fully
+faithful (cf.\ Proposition \ref{pleinfidele}) means exactly that
+$$
+nSeCHAMP (\Yy )_{1/}(\ast, F')\rightarrow
+\underline{Hom}(\Yy ^o, nSeCAT')_{1/} (\ast
+_{\Yy}, F')
+$$
+is an equivalence. Finally the equivalence between the limits of $F$ and $F'$
+follows from the invariance properties of the notion of limit
+\cite{limits}.
+\eop
+
+There is a similar characterisation for colimits, which uses the HBKQ-type
+structure (\S5). We state it below although we shall not need it. This
+proposition can also be regarded as a compatibility statement between the
+definition of $hocolim$ of Bousfield--Kan and the construction of
+\cite{limits}.
+
+\begin{proposition}
+\label{calccolim}
+Let $\Yy$ be a category and $F$ a Segal $n$-prestack over $\Yy$, also regarded
+as a morphism $\Yy ^o\rightarrow nSeCAT$. Let $F'\rightarrow F$ be an
+object-by-object weak equivalence with $F'$ cofibrant for the cmc structure of
+HBKQ type, for the coarse topology. Then one has equivalences of Segal
+$n$-categories
+$$
+colim_{nSePC}(F')
+\stackrel{\cong}{\rightarrow}
+$$
+$$
+\lim _{\rightarrow , \Yy ^o} F' \stackrel{\cong}{\rightarrow}
+\lim _{\rightarrow , \Yy ^o} F
+$$
+where $colim_{nSePC}(F')$ is the standard colimit of the functor
+$\Yy \rightarrow nSePC$ from $\Yy$ to the category of Segal $n$-precategories,
+while the other colimits are the colimits defined following \cite{limits}.
+\end{proposition}
+\eop
+
+Thanks to Proposition \ref{calclim} one obtains a version of our criteria
+which uses the limits of \cite{limits}. This version of the definition of
+stacks was suggested in \cite{limits}.
+
+\begin{corollary}
+\label{critereaveclim}
+Let $A$ be a Segal $n$-prestack on $\Xx$ whose values are Segal
+$(n+1)$-categories, corresponding to a morphism $\Xx \rightarrow nSeCAT$.
+Then for $A$ to be a Segal $n$-stack it is necessary and sufficient that:
+\newline
+(a)\,\, for every $X\in \Xx$ and every $x,y\in A_0(X)$ the Segal
+$(n-1)$-prestack $A_{1/}(x,y)$ on $\Xx /X$ be a Segal $(n-1)$-stack
+(resp.\ $Path^{x,y}A$ be a Segal $0$-stack, in the case $n=0$); and
+\newline
+(b)\,\, for every $X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ of the
+topology, the morphism
+$$
+A(X)\rightarrow \lim _{\leftarrow , \Bb ^o} A|_{\Bb}
+$$
+be essentially surjective.
+
+%%%% the following is changed in v3 %%%%%%
+Or again, for a (non-Segal) $n$-prestack $A$ to be an $n$-stack it is
+necessary and sufficient that:
+\newline
+(c)\,\, for every $X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ of the
+topology, the morphism
+$$
+A(X)\rightarrow \lim _{\leftarrow , \Bb ^o} A|_{\Bb}
+$$
+be an equivalence of Segal $n$-categories.
+\end{corollary}
+{\em Proof:}
+In view of Proposition \ref{calclim}, condition (b) is equivalent to that of
+\ref{critere} or \ref{0critere} (the conditions (a) are identical). Likewise
+condition (c) is equivalent to that of \ref{newcritere} (which, according to
+the {\tt v3} correction, works only for non-Segal $n$-prestacks).
+\eop
+
+{\em Proof of the second part of Theorem \ref{correlation}:} if the essential
+surjectivity of $\Phi$ is known for the first part of \ref{correlation} (which
+will be proved in \ref{strictif3} below), the second part of \ref{correlation}
+now follows from condition (c) of the corollary above.
+
+\bigskip

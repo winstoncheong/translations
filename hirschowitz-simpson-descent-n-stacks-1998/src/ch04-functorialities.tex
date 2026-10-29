@@ -1,0 +1,216 @@
+%@ pages 50-53
+%@ status translated
+% Original section 4, "Les fonctorialités p*, p_*, p_!", pp. 50--53.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * "n-précat" is the authors' shorthand for "n-précatégorie" (Segal
+%    n-precategory), not a slip for "n-préchamp": nSePC is the category of
+%    Segal n-precategories.  Rendered "Segal n-precategory".
+%  * The category of prestacks is printed nSePC twice and nSePCh once (in
+%    the composition formula); both spellings are kept.
+%  * "si A est fibrant sur X alors p_*(A) est fibrant sur X" is printed with
+%    X for both, although A lives on Z; left as printed, not emended.
+%  * The opening "Corollaire \ref{Gfibrestrict}" refers to a label defined
+%    later in the paper, not to \ref{fibrestrict} below.
+
+\clearpage
+\section{The functorialities \texorpdfstring{$p^{*}$, $p_{*}$, $p_{!}$}{p*, p*, p!}}
+\label{fonctorialitepage}
+
+We shall treat the functorialities in the case of categories with the coarse
+topology. Compatibility with a Grothendieck topology will be treated later
+(see Corollary~\ref{Gfibrestrict}).
+
+It is appropriate (at least for the authors!) to recall the distinction
+between left adjoint and right adjoint (we are concerned with two functors $L$
+and $R$ in opposite directions between two categories): one will have a
+formula of the form
+$$
+\{ LX \rightarrow Y \} \cong \{ X \rightarrow RY\},
+$$
+and {\bf the left adjoint} is the functor $L$ which appears in the formula on
+the left of the arrow; and
+\newline
+{\bf the right adjoint} is the functor $R$ which appears in the formula on
+the right of the arrow.
+\newline
+One has the adjunction morphisms
+$$
+X \rightarrow RL X, \;\;\; \mbox{and} \;\;\; LRY \rightarrow Y.
+$$
+
+We recall the notion of {\em Quillen functor} \cite{Quillen}
+\cite{DHK} \cite{HoveyBook} \cite{JardineGoerssBook}. If $M,M'$ are two
+closed model categories, a functor $f: M\rightarrow M'$ is said to be a {\em
+left Quillen functor} if it preserves cofibrations and trivial cofibrations (in
+particular, one does not necessarily require that $f$ preserve all weak
+equivalences, though sometimes this is the case all the same); and if $f$
+admits a right adjoint. The notion of {\em right Quillen functor} follows
+from it by duality: it is a functor which preserves fibrations and trivial
+fibrations, and which admits a left adjoint.
+It is a fact (not completely trivial) \cite{Quillen} that if $f$ is a left
+Quillen functor then its right adjoint is a right Quillen functor and
+vice-versa.
+We also recall that a left Quillen functor preserves weak equivalences
+between cofibrant objects \cite{JardineGoerssBook} \cite{DHK} \cite{HoveyBook}.
+
+
+Let $p: \Zz \rightarrow \Xx$ be a functor between $1$-categories equipped with
+the coarse topology. The Segal $n$-prestacks are presheaves of objects with
+values in a category admitting all limits, with all the necessary commutations
+(indeed the category $nSePC$ of the Segal $n$-precategories in question is
+itself a category of presheaves of sets).
+Consequently one has at one's disposal the operations $p^{\ast}$,
+$p_{\ast}$, $p_!$ (and $p^!$, of which we shall have no need). We spell them
+out for convenience.
+
+First, if $B$ is a Segal $n$-prestack on $\Xx$ then $p^{\ast}(B)$ is the
+pullback of $B$ to $\Zz$, i.e.\ the composite
+$$
+\Zz ^o \rightarrow \Xx ^o \rightarrow nSePC.
+$$
+
+This functor admits right and left adjoints. If $A$ is a Segal $n$-prestack on
+$\Zz$ we set
+$$
+p_{\ast}(A)(X) := \lim _{\leftarrow , p(Z)\rightarrow X}A(Z)
+$$
+the limit being taken over the category of pairs $(Z, f)$ with
+$f: p(Z)\rightarrow X$. On the other hand we set
+$$
+p_!(A)(X) := \lim _{\rightarrow , X\rightarrow p(Z)}A(Z),
+$$
+the limit being taken over the category of pairs $(Z, i)$ with
+$i: X\rightarrow p(Z)$. One has the adjunction formulae:
+$$
+\{ p_!A\rightarrow B\} = \{ A\rightarrow p^{\ast} B\}
+$$
+and
+$$
+\{ B\rightarrow p_{\ast}A\} = \{ p^{\ast}B \rightarrow A\} .
+$$
+
+It is clear that the functor $p^{\ast}$ preserves cofibrations and trivial
+cofibrations. It is therefore a {\em left Quillen functor} and its right
+adjoint $p_{\ast}$ sends fibrations (resp.\ trivial fibrations) to fibrations
+(resp.\ trivial fibrations).
+
+We denote by $A\mapsto \Gamma (\Zz , A)$ the particular case of the functor
+$p_{\ast}$ obtained by taking $\Xx = \ast$. One says that this is the functor
+of ``global sections''.
+It
+sends fibrations (resp.\ trivial fibrations) to fibrations (resp.\ trivial
+fibrations).
+It is sometimes worth remarking that $\Gamma (\Zz , A)$ can be defined as the
+Segal $n$-precategory which represents the functor
+$E\mapsto Hom _{nPC}(\underline{E}, A)$ from $nSePC$ to $Ens$, where
+$\underline{E} = p^{\ast}(E)$ is the constant Segal $n$-prestack with values
+$E$.
+
+
+One has the composition formula $(pq)_{\ast} = p_{\ast} q_{\ast}$ (as
+always, we neglect the possible coherence problems between natural
+isomorphisms in strict $1$-categories such as $nSePCh$). In terms of $\Gamma$
+one obtains
+$$
+\Gamma (\Xx , p_{\ast}(A))=\Gamma (\Zz , A).
+$$
+Let us recall, in order to give a homotopical meaning to this formula, that if
+$A$ is fibrant over $\Xx$ then $p_{\ast}(A)$ is fibrant over $\Xx$.
+
+In the other direction the situation is not so easy. One would like to be able
+to say that if $B$ is fibrant over $\Xx$ then $p^{\ast}B$ is fibrant over
+$\Zz$. This is not always the case (even for $p: \Zz \rightarrow \ast$ for
+example). We have the following lemma.
+
+\begin{lemma}
+\label{shriek}
+Suppose that $p: \Zz \rightarrow \Xx$ has the property that for every
+$X\in \Xx$, the operation
+$$
+A\mapsto {\rm colim}_{ X\rightarrow p(Z)}A(Z)
+$$
+preserves cofibrations and trivial cofibrations. Then $p^{\ast}$
+preserves
+fibrant objects, fibrations and trivial fibrations (i.e.\ it is a right
+Quillen functor).
+\end{lemma}
+{\em Proof:}
+The hypothesis amounts exactly to saying that the functor $p_!$ preserves
+cofibrations and trivial cofibrations; in that case its right adjoint
+$p^{\ast}$ preserves fibrations and trivial fibrations.
+\eop
+
+{\em Remark:} For $X\in \Xx$ one usually denotes by $X/p$ the category of
+pairs $(Z,f)$ where $Z\in \Zz$ and $f: X\rightarrow p(Z)$. The limit in the
+hypothesis of the lemma is taken over $X/p$. Since we are speaking of
+presheaves, everything is contravariant. In particular, if $X/p$ is a
+cofiltering category (and notably if it has an initial object) then the
+hypothesis is satisfied.
+
+The case that interests us is that in which $\Zz$ is the category $\Xx /Y$
+for some object $Y\in \Xx$. In this case, for $X\in \Xx$, the category
+$$
+X/p = \{  X\rightarrow Z \rightarrow Y\}
+$$
+is the category of diagrams. It decomposes as a disjoint union of categories
+$(X/p)_{\varphi}$ indexed by the arrows $\varphi : X\rightarrow Y$. And the
+category
+$$
+(X/p)_{\varphi} = (X\stackrel{\varphi}{\rightarrow} Y) / (\Xx / Y)
+$$
+is the category of objects under $(X,\varphi )$ in the category of objects
+above $Y$. In particular, $(X/p)_{\varphi}$ admits $(X,\varphi )$ as initial
+object. Thus the operation
+$$
+{\rm co}\lim _{X/p} A(Z) = \coprod _{\varphi : X\rightarrow Y} A(X)
+$$
+viewed as a functor in $A$ preserves cofibrations and trivial cofibrations,
+hence for
+$$
+p: \Xx /Y\rightarrow \Xx ,
+$$
+$p_!$ is a left Quillen functor and its adjoint $p^{\ast}$ is a right Quillen
+functor. One has the formula
+$$
+p_!(A) (X) = \coprod _{\varphi : X\rightarrow Y} A(X).
+$$
+
+\begin{corollary}
+\label{fibrestrict}
+If $\Xx$ is a category equipped with the coarse topology then for every
+$X\in
+\Xx$ the restriction of Segal $n$-prestacks
+$$
+A\mapsto A|_{\Xx /X}
+$$
+preserves fibrations (hence fibrant objects), cofibrations, and weak
+equivalences; it is a Quillen functor both on the left and on the right for
+the coarse topology.
+\end{corollary}
+\eop
+
+We shall see later (Lemma \ref{grest}) that the restriction to $\Xx /X$
+preserves
+the $\Gg$-fibrations as well (it is obvious from the definition that it
+preserves the $\Gg$-weak equivalences).
+
+Another example that interests us is that in which $\Zz \subset \Xx$ is a {\em
+sieve}, i.e.\ a full subcategory such that if $X\rightarrow Y$ is a morphism
+of $\Xx$ and if $Y\in \Zz$, then $X\in \Zz$. In this case, the colimit in
+\ref{shriek} is either empty if $X\not \in \Zz$, or equal to $A(X)$ if $X\in
+\Zz$. This construction preserves cofibrations and trivial cofibrations. One
+obtains
+
+\begin{corollary}
+\label{crible}
+Let $i:\Zz \hookrightarrow \Xx$ be a sieve (the two categories considered
+being equipped with their coarse topologies). Then $i_{!}$ is a left Quillen
+functor and $i^{\ast}$ a right Quillen functor, i.e.\ $i^{\ast}$ preserves
+fibrant objects and weak equivalences between them.
+\end{corollary}
+\eop
+
+One can also spell out $i_{!}$ in this corollary: if $A$ is a Segal
+$n$-prestack on $\Zz$ then $i_!(A)(X) = A(X)$ for $X\in \Zz$, and
+$i_!(A)(X) = \emptyset$ for $X\not \in \Zz$.

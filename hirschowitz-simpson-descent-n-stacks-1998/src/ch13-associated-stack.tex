@@ -1,0 +1,506 @@
+%@ pages 136-143
+%@ status translated
+% Original section 13, "Le champ associé à un préchamp", pp. 136--143.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * "n-précat (de Segal)" is rendered "Segal n-precategory", as in §2 and §3.
+%  * The French prints "sous-$n+1$-cat'egorie de Segal" with a broken accent
+%    command; read as "catégorie" and translated "Segal $n+1$-subcategory".
+%  * The French prints "préfaiceaux" for "préfaisceaux"; translated
+%    "presheaves".
+
+\clearpage
+\section{The stack associated to a prestack}
+\label{associepage}
+
+The construction of the sheaf associated to a presheaf plays a central role
+in the theory of sheaves. The associated sheaf is defined by a universal
+property. We begin by doing the same thing for the stack associated to a
+prestack. In reading this section one must bear in mind that the analogue of
+the sheaf/presheaf distinction is the distinction between the Segal
+$n$-stacks for the topology $\Gg$ and the Segal $n$-stacks for the coarse
+topology. The latter are simply the presheaves of Segal $n$-categories (the
+only one of the conditions of \S9 that comes into play for the coarse
+topology is the condition that each fibre be an $n$-category).
+
+\begin{lemma}
+\label{propuniv1}
+Let $A$ be a Segal $n$-prestack and $A\rightarrow A'$ a choice of associated
+stack. If $B$ is a $\Gg$-fibrant Segal $n$-prestack, then the morphism
+$$
+\underline{Hom}(A', B)\rightarrow \underline{Hom}(A,B)
+$$
+is an equivalence.
+\end{lemma}
+{\em Proof:} This follows from Proposition \ref{interne} for the internal
+model category \newline
+$nSePSh(\Xx ^{\Gg})$, since
+$A\rightarrow A'$ is a $\Gg$-weak equivalence (by definition).
+\eop
+
+Recall that the objects of $nSeCHAMP (\Xx ^{\rm gro})$
+are the Segal $n$-stacks
+fibrant for the coarse topology, and that
+$$
+nSeCHAMP (\Xx ^{\Gg })\subset nSeCHAMP (\Xx ^{\rm gro})
+$$
+is the full enriched subcategory of the objects which are $\Gg$-fibrant,
+which is
+(by \ref{grofibchampimplfib}) also the full enriched subcategory
+of the objects
+which are stacks. In this context,
+if $A\in nSeCHAMP (\Xx ^{\rm gro})_0$ is an object,
+an {\em associated stack to $A$} is an
+$\Gg$-fibrant replacement $A\rightarrow A'$ (one thus requires that $A'$ be
+$\Gg$-fibrant, and not merely a stack, because one wants $A'$ to lie in
+the subcategory above).
+In other words, such an associated stack
+is a morphism from $A$ to $A'$ in
+$nSeCHAMP (\Xx ^{\rm gro})$, i.e. an object of the Segal
+$n$-category $nSeCHAMP (\Xx ^{\rm gro})_{1/}(A,A')$.
+In this framework we have the following universal property:
+
+\begin{lemma}
+\label{propuniv2}
+Let $u:A\rightarrow A'$ be an associated stack in the sense of the preceding
+paragraph.
+For every $B\in nSeCHAMP (\Xx ^{\Gg})$, composition with
+$u$ induces an equivalence
+$$
+nSeCHAMP (\Xx ^{\Gg})_{1/}(A',B)
+\stackrel{\cong}{\rightarrow}
+nSeCHAMP (\Xx ^{\rm gro})_{1/}(A,B).
+$$
+\end{lemma}
+{\em Proof:}
+In view of the definitions of the
+$nPC$-enriched categories $nSeCHAMP(\ldots )$
+and of the equality
+$$
+nSeCHAMP (\Xx ^{\Gg})_{1/}(A',B)=
+nSeCHAMP (\Xx ^{\rm gro})_{1/}(A',B),
+$$
+this is a simple transcription of Lemma \ref{propuniv1}.
+\eop
+
+
+
+Consider now weak families of Segal $n$-categories over $\Xx ^o$,
+which we regard as morphisms
+$\Xx ^o\rightarrow nSeCAT'$ or as objects of
+$\underline{Hom}(\Xx ^o, nSeCAT')$.
+Recall that we have the equivalence
+of Theorem \ref{correlation}
+$$
+nSeCHAMP(\Xx ^{\rm gro}) \cong \underline{Hom}(\Xx ^o, nSeCAT').
+$$
+If $F:\Xx ^o\rightarrow nSeCAT'$ we shall call {\em stack associated to
+$F$} any pair $(F^{\rm ch}, f)$ where
+$F^{\rm ch}:\Xx ^o\rightarrow nSeCAT'$ is a stack, i.e. satisfies the condition
+of the second paragraph of \ref{correlation}, and where
+$f: F \rightarrow F^{\rm ch}$ is, in the Segal $n+1$-category
+$\underline{Hom}(\Xx ^o, nSeCAT')$, a
+$1$-morphism
+equivalent, via the equivalence of \ref{correlation} recalled
+above, to a $\Gg$-weak equivalence $A\rightarrow A'$.
+Under these conditions $F$ is equivalent to $A$ and $F^{\rm ch}$ is equivalent
+to $A'$ (as objects of $\underline{Hom}(\Xx ^o, nSeCAT')$).
+Moreover $A\rightarrow A'$ is an ``associated stack'' in the sense of the
+preceding paragraph. This
+allows us, starting from \ref{propuniv2}, to prove the
+universal property of the following lemma.
+
+Before stating it, recall that a $1$-morphism $f$ of
+$\underline{Hom}(\Xx ^o, nSeCAT')$ is a morphism
+$$
+I=\Upsilon (\ast )\rightarrow \underline{Hom}(\Xx ^o, nSeCAT'),
+$$
+in other words, a morphism
+$$
+f:I\times \Xx ^o\rightarrow nSeCAT'.
+$$
+Its source is the restriction $f|_{\{ 0\} \times \Xx ^o}$ and its target
+is the restriction $f|_{\{ 1\} \times \Xx ^o}$. If $f$ is a morphism with
+source $F$ and target $F^{\rm ch}$ and if $G:\Xx ^o\rightarrow nSeCAT'$ is
+another family, one can construct
+an essentially well-defined morphism ``composition with $f$''
+$$
+-\circ f : \underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F^{\rm ch}, G)
+\rightarrow \underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F, G).
+$$
+To give a precise definition of it, we denote by
+$$
+\underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch}, G;f)
+$$
+the fibre of
+$$
+r_{01}:\underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch}, G)
+\rightarrow \underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F,F^{\rm ch})
+$$
+over $f$; this fibre comes with two morphisms
+(the first of which is an equivalence)
+$$
+r_{12}:\underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch}, G;f)
+\stackrel{\cong}{\rightarrow}
+\underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F^{\rm ch}, G)
+$$
+and
+$$
+r_{02}:\underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch}, G;f)
+\rightarrow
+\underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F, G).
+$$
+One obtains the morphism $-\circ f$ by choosing an inverse of $r_{12}$
+up to equivalence (this is possible because all the Segal $n$-categories
+considered are fibrant) and by composing it with $r_{02}$.
+
+\begin{lemma}
+\label{propuniv3}
+Let $F\in \underline{Hom}(\Xx ^o, nSeCAT')_0$ and let $(F^{\rm ch}, f)$
+be an associated stack in the sense defined above. Then for every stack
+$G$, i.e. every object of $\underline{Hom}(\Xx ^o, nSeCAT')_0$ satisfying the
+property of the second paragraph of \ref{correlation}, the morphism
+``composition with $f$'' defined above is an equivalence of
+Segal $n$-categories
+$$
+-\circ f : \underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F^{\rm ch}, G)
+\stackrel{\cong}{\rightarrow} \underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F, G).
+$$
+\end{lemma}
+{\em Proof:}
+By definition, $f$ is equivalent to a morphism $u: A\rightarrow A'$
+in the Segal $n+1$-category $nSeCHAMP(\Xx ^{\rm gro})$ which is an
+associated stack for the topology $\Gg$, i.e. a $\Gg$-weak equivalence towards
+a $\Gg$-fibrant object. One may also suppose, by \ref{correlation}, that $G$
+comes from an object of $nSeCHAMP(\Xx ^{\Gg})$. The morphism ``composition with
+$f$'' is then equivalent, via the equivalence of \ref{correlation}
+$$
+\underline{Hom}(\Xx ^o, nSeCAT')\cong
+nSeCHAMP(\Xx ^{\rm gro}),
+$$
+to the morphism ``composition with $u$'' (the latter being well defined since
+$nSeCHAMP(\Xx ^{\rm gro})$ is a category enriched over $nSeCat$). Lemma
+\ref{propuniv2} allows us to conclude.
+\eop
+
+If $(F^{\rm ch,1}, f^1)$ and $(F^{\rm ch,2}, f^2)$ are two stacks associated
+to $F$, let
+$$
+\underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch,1}, F^{\rm ch,2}; f^1, f^2)
+:= (r_{01}, r_{02})^{-1}(f^1,f^2)
+$$
+be the fibre of
+$$
+(r_{01}, r_{02}): \underline{Hom}(\Xx ^o, nSeCAT')_{2/}(F,F^{\rm ch,1}, F^{\rm
+ch,2}) \rightarrow
+$$
+$$
+\underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F,F^{\rm ch,1})
+\times
+\underline{Hom}(\Xx ^o, nSeCAT')_{1/}(F, F^{\rm ch,2})
+$$
+over $(f^1,f^2)$. One sees thanks to Lemma \ref{propuniv3} that
+this fibre $(r_{01}, r_{02})^{-1}(f^1,f^2)$ is contractible, i.e. equivalent
+(as a Segal $n$-category) to $\ast$. For this
+one must observe that the
+morphism $(r_{01}, r_{02})$ is a fibration of Segal $n$-precategories.
+One thus obtains an essentially well-defined morphism between
+$(F^{\rm ch,1}, f^1)$ and $(F^{\rm ch,2}, f^2)$.
+One can show the same thing in the other direction
+(and also the same thing for the two-dimensional diagrams
+between $F^{\rm ch,1}$, $F^{\rm ch,2}$, $F^{\rm ch,1}$ or
+$F^{\rm ch,2}$, $F^{\rm ch,1}$, $F^{\rm ch,2}$), which shows that the morphism
+we have constructed
+is an equivalence. This gives the essential uniqueness of the ``stack
+associated to $F$''.
+
+We now want to glue these associated stacks together into a ``weak''
+functor
+$$
+nSeCHAMP(\Xx ^{\rm gro})\rightarrow nSeCHAMP(\Xx ^{\Gg}),
+$$
+in other words a functor to the fibrant replacement
+$nSeCHAMP(\Xx ^{\Gg})'$. In fact, we shall construct a diagram
+$$
+\underline{Hom}(\Xx ^o, nSeCAT')\leftarrow C\rightarrow
+\underline{Hom}(\Xx ^o, nSeCAT'),
+$$
+where the first morphism is an equivalence, and the second
+takes its values in the
+full Segal $n+1$-subcategory of stacks. This will give (by
+\ref{correlation} and the usual arguments) a genuine morphism,
+essentially well defined, to the desired fibrant replacement.
+We shall use freely the notations $Diag$, cf.\ \S12, and $\Upsilon ^k$, cf.\
+\cite{limits}.
+
+We define $C$ as follows. The objects of $C$ are the objects of
+\newline
+$nSeCHAMP(\Xx ^{\rm gro})$, i.e. the Segal $n$-prestacks fibrant
+for the coarse topology. For each object $F\in C_0$ we choose a
+morphism
+$\eta _F: F\rightarrow F'$ to a $\Gg$-fibrant replacement.
+Then if $F_0,\ldots ,
+F_p$ are objects, we define (with the notations of \S12)
+$$
+C_{p/}(F_0,\ldots , F_p):= Diag(\Xx ^o\times I^{(k)}\times I,
+\Xx ^o\times \{ 0,\ldots , p\}
+\times I;  \eta _{F_0}\sqcup \ldots \sqcup \eta _{F_p}; nSeCAT').
+$$
+This is the Segal $n$-category of diagrams in $nSeCAT'$ which have the shape
+of a $p\times 1$ rectangle, restricting, for every $i$, to $\{ i\} \times I$
+in the morphism $\eta _{F_i}: F_i\rightarrow F'_i$ regarded as a
+morphism $I\rightarrow nSeCAT'$.
+
+By dividing the rectangle, up to trivial cofibration, into a coproduct of
+$1\times 1$ squares, and by using the fact that
+$nSeCAT'$
+is fibrant, one obtains that the Segal map
+$$
+C_{p/}(F_0,\ldots , F_p)\rightarrow
+C_{1/}(F_0,F_1)\times \ldots \times C_{1/}(F_{p-1}, F_p)
+$$
+is an equivalence; hence $C$ is a Segal $n+1$-category.
+Then, by dividing a $1\times 1$ square into two triangles,
+one sees that a morphism
+$$
+E\rightarrow Diag(\Xx ^o\times I\times I,
+\Xx ^o\times \{ 0,1\}\times I; \eta _{F_0}\sqcup \eta _{F_1};
+nSeCAT')
+$$
+is nothing other than a pair of morphisms
+$$
+u: \Xx ^o\times \Upsilon ^2(\ast ,E)\rightarrow nSeCAT', \;\;\;
+v: \Xx ^o\times \Upsilon  ^2(E,\ast )\rightarrow nSeCAT',
+$$
+with
+$$
+r_{01}(u)=\eta _{F_0},\;\; r_{12}(v)= \eta _{F_1}, \;\; r_{02}(u)=r_{02}(v).
+$$
+If we denote, for example, by $\underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F'_0, F'_1;
+\eta _{F_0},-)$ the fibre of
+$$
+r_{01}:\underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F'_0, F'_1)\rightarrow
+\underline{Hom}(\Xx ^o,nSeCAT')_{1/}(F_0, F'_0)
+$$
+over $\eta _{F_0}$, then we obtain
+$$
+Diag(\Xx ^o\times I\times I,
+\Xx ^o\times \{ 0,1\}\times I; \eta _{F_0}\sqcup \eta _{F_1};
+nSeCAT') =
+$$
+$$
+\underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F'_0, F'_1; \eta _{F_0},-)\times _{
+\underline{Hom}(\Xx ^o,nSeCAT')_{1/}(F_0,  F'_1)}
+$$
+$$
+\underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F_1, F'_1; -,\eta _{F_1}).
+$$
+
+The universal property for the morphism $\eta _{F_0}$, and the fact that
+$F'_1$ is $\Gg$-fibrant (i.e. a stack), imply that
+the morphism
+$$
+u\mapsto r_{02}(u)
+$$
+is a trivial fibration of Segal $n$-precategories,
+$$
+r_{02}: \underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F'_0, F'_1; \eta _{F_0},-)
+\rightarrow \underline{Hom}(\Xx ^o,nSeCAT')_{1/}(F_0,  F'_1).
+$$
+On the other hand, the fact that
+$$
+\Upsilon (E)\sqcup ^{\{ 1\} }\Upsilon (\ast )
+\rightarrow \Upsilon ^2(E,\ast )
+$$
+is a trivial cofibration implies that the morphism
+$$
+\underline{Hom}(\Xx ^o,nSeCAT')_{2/}(F_0, F_1, F'_1; -,\eta _{F_1})
+\rightarrow
+\underline{Hom}(\Xx ^o,nSeCAT')_{1/}(F_0, F_1)
+$$
+is an equivalence. One obtains that the morphism
+$$
+C_{1/}(F_0,F_1)=
+Diag(\Xx ^o\times I\times I, \Xx ^o \times \{ 0,1\}\times I; \eta _{F_0}\sqcup
+\eta _{F_1}; nSeCAT')
+$$
+$$
+\rightarrow \underline{Hom}(\Xx ^o,nSeCAT')_{1/}(F_0,F_1)
+$$
+is an equivalence.
+
+The restriction of the diagrams of $I^{(p)}\times I$ to
+$I^{(p)}\times \{ 0\}$ provides a morphism
+$$
+C_{p/}(F_0,\ldots , F_p)\rightarrow\underline{Hom}(\Xx
+^o,nSeCAT')_{p/}(F_0,\ldots , F_p),
+$$
+hence a morphism of Segal $n+1$-categories
+$$
+R_0: C\rightarrow \underline{Hom}(\Xx ^o,nSeCAT').
+$$
+We have shown that this morphism is fully faithful;
+and it is essentially surjective by construction, thanks to
+\ref{correlation}.
+
+On the other hand, the restriction of the diagrams of $I^{(p)}\times I$ to
+$I^{(p)}\times \{ 1\}$ provides a morphism
+$$
+C_{p/}(F_0,\ldots , F_p)\rightarrow\underline{Hom}(\Xx
+^o,nSeCAT')_{p/}(F_0,\ldots , F_p),
+$$
+whence a morphism
+$$
+R_1: C\rightarrow \underline{Hom}(\Xx ^o,nSeCAT').
+$$
+These two morphisms form the desired diagram:
+$$
+\underline{Hom}(\Xx ^o,nSeCAT')
+\stackrel{R_0}{\leftarrow}C
+\stackrel{R_1}{\rightarrow}\underline{Hom}(\Xx ^o,nSeCAT').
+$$
+
+
+Observe that we have $R_0(F)=F$ and $R_1(F)=F'$.
+We shall say that this diagram is the ``associated stack functor'',
+also denoted ${\bf ch}$,
+and we shall also write $F'= {\bf ch}(F)$.
+
+
+It remains now to construct a natural transformation
+between the identity and the functor constructed above. It
+must be a diagram
+$$
+nSeCHAMP(\Xx ^{\rm gro})\stackrel{T_0}{\leftarrow} C\times I
+\stackrel{T_1}{\rightarrow}
+nSeCHAMP(\Xx ^{\rm gro}).
+$$
+We take $T_0:= R_0\circ pr_1$ and we want to construct a morphism $T_1$
+which gives $R_0$ on $C\times \{ 0\}$ and $R_1$ on $C\times \{ 1\}$.
+For this,
+recall that the objects of $C\times I$ are the pairs $(F,\epsilon
+)$ where $F$ is an object of $C$ and $\epsilon$ is $0$ or $1$. One
+observes that
+$$
+(C\times I)_{p/}((F_0,\epsilon _0),\ldots , (F_p, \epsilon _p))
+$$
+is empty unless $\epsilon _0,\ldots , \epsilon _p$ is a
+non-decreasing sequence, in which case it is simply
+$C_{p/}(F_0,\ldots , F_p)$. To every non-decreasing sequence $\epsilon
+_0,\ldots , \epsilon _p$ one associates the morphism
+$$
+i_{\epsilon} :I^{(p)}\rightarrow I^{(p)}\times I
+$$
+defined by $ i_{\epsilon}(k):= (k, \epsilon _k)$.
+
+The inverse image under this morphism
+therefore provides, for each sequence $\epsilon$, a morphism
+$$
+i_{\epsilon}^{\ast}: C_{p/}(F_0,\ldots , F_p)\rightarrow \underline{Hom}(\Xx
+^o,nSeCAT')_{p/}(F_0^{(\epsilon _0)},\ldots , F_p^{(\epsilon _p)} ).
+$$
+Here $F^{(0)}$ and $F^{(1)}$ denote
+$F$ and $F'$ respectively.
+
+For $\epsilon = (0,\ldots , 0)$,
+one recovers the restriction morphism that we
+used to define $R_0$, while
+for $\epsilon =(1,\ldots , 1)$ one recovers the one that we
+used to define $R_1$. For every sequence
+of objects $(F_0,\epsilon _0),\ldots , (F_p, \epsilon _p)$ one
+defines, with the help
+of $i_{\epsilon}^{\ast}$, the morphism
+$$
+(C\times I)_{p/}((F_0,\epsilon _0),\ldots , (F_p, \epsilon _p))\rightarrow
+\underline{Hom}(\Xx
+^o,nSeCAT')_{p/}(F_0^{(\epsilon _0)},\ldots , F_p^{(\epsilon _p)} );
+$$
+which allows one to define the desired morphism
+$$
+T_1: C\times I \rightarrow \underline{Hom}(\Xx
+^o,nSeCAT').
+$$
+
+One can check that $T_1|_{\{ F\} \times I}$ is indeed
+the morphism $F\rightarrow F'$.
+The diagram $(T_0,T_1)$ therefore indeed constitutes a natural transformation
+$$
+1\rightarrow {\bf ch}
+$$
+between a prestack and its associated stack.
+
+\begin{theorem}
+\label{cestadjoint}
+With this natural transformation, the ``associated stack'' functor
+${\bf ch}$ is homotopically adjoint to the inclusion
+$$
+nSeCHAMP(\Xx ^{\Gg})\subset nSeCHAMP(\Xx ^{\rm gro}).
+$$
+\end{theorem}
+{\em Proof:}
+The necessary equivalence is a consequence of the universal property
+of ${\bf ch}(F)$, \ref{propuniv2} for example.
+\eop
+
+\subnumero{Computing the morphisms in the associated stack}
+
+We have the following formula:
+
+\begin{lemma}
+\label{formule}
+For a Segal $n$-prestack $F$ whose
+values are Segal $n$-categories ($n\geq 1$), and for $x,y\in F(X)$,
+there is an object-by-object equivalence over $\Xx /X$,
+$$
+({\bf ch}(F))_{1/}(x,y) \cong {\bf ch}(F_{1/}(x,y)).
+$$
+\end{lemma}
+{\em Proof:}
+Note that
+$({\bf ch}(F))_{1/}(x,y)$ is a Segal $n-1$-stack by \ref{critere}.
+Since $F\rightarrow {\bf ch}(F)$ is a $\Gg$-weak equivalence, by
+definition (\S3)
+$$
+F_{1/}(x,y)\rightarrow ({\bf ch}(F))_{1/}(x,y)
+$$
+is a $\Gg$-weak equivalence. Then by definition (\S9)
+$({\bf ch}(F))_{1/}(x,y)$ is the Segal $n-1$-stack associated to
+$F_{1/}(x,y)$.
+\eop
+
+
+
+\subnumero{Elementary version}
+It seems difficult to obtain the functor ${\bf ch}$ directly by using the
+structure of internal model category, because the ``$\Gg$-fibrant
+replacement'' functor is not strictly compatible with direct products.
+One can however remark that the Dwyer--Kan localisation theory
+immediately gives
+$$
+L(nSePCh , W^{\rm gro}) \rightarrow L(nSePCh, W^{\Gg}),
+$$
+where $W^{\rm gro}\subset nSePCh$ is the subcategory
+of weak equivalences for the coarse topology, and
+$W^{\Gg}\subset W^{\rm gro}$ is its subcategory of $\Gg$-weak
+equivalences.
+The fact that $W^{\rm gro}$ is contained in $W^{\Gg}$ gives directly the
+morphism above.
+Now the result of Theorem
+\ref{intereqloc}
+shows that the preceding morphism is equivalent to a morphism
+$$
+nSeCHAMP(\Xx ^{\rm gro})^{int, 1}\rightarrow
+nSeCHAMP'(\Xx ^{\Gg})^{int, 1}
+$$
+(we have taken a fibrant replacement denoted $nSeCHAMP'$ at the target).
+This morphism is the restriction of ${\bf ch}$ to the $1$-groupic interior.
+In the case $n=0$, i.e. of simplicial presheaves, one has
+$$
+0SeCHAMP(\Xx ^{\rm gro})^{int, 1}=0SeCHAMP(\Xx ^{\rm gro})
+$$
+and
+$$
+0SeCHAMP(\Xx ^{\Gg})^{int, 1}=0SeCHAMP(\Xx ^{\Gg})
+$$
+and one thus obtains (i.e. with the Dwyer--Kan localised category) an elementary
+definition of the functor ${\bf ch}$.

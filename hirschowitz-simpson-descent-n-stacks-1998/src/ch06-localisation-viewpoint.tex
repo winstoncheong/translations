@@ -1,0 +1,446 @@
+%@ pages 61-67
+%@ status translated
+% Original section 6, "Le point de vue de la localisation", pp. 61--67.
+% The authors' v3 remarks on the error in v1/v2 are part of the text and are
+% kept in place, as are the %%% markers delimiting the passages revised in v3.
+% The French prints the abbreviation "n-précats" (for "n-précatégories") and
+% writes "$q: \Xx /Y\rightarrow X$" and "au-dessus de $X$" in the
+% counterexample; these are rendered as printed, without emendation.
+
+\clearpage
+\section{The localisation viewpoint}
+\label{localisationpage}
+
+%%%%%%%%%%% most of this section is changed in v3 and we don't
+%%%%%%%%%%% explicitly comment many of the changes %%%%%%%%%%%%%%%%%%%%%%
+
+The passage from the closed model category structure for the coarse topology
+to that for the topology $\Gg$ is a \emph{Bousfield localisation}, an operation
+which is very well explained in Hirschhorn \cite{Hirschhorn}; see also
+Goerss-Jardine \cite{JardineGoerssLoc}, and which of course goes back to
+Bousfield-Kan \cite{BousfieldKan}. The operation of passing from the coarse
+topology to the topology $\Gg$ preserves the notion of cofibration (both in the
+setting of \ref{cmf} and in the setting of \ref{cmfHirschho}), so it is a left
+Bousfield localisation in the terminology of \cite{Hirschhorn}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v3ah
+There was an error in our proof (of {\tt v1, v2}) of Lemma \ref{pourloc}
+below. We thank D. Dugger for finding this mistake, and B. Toen for
+communicating it to us. Lemma \ref{pourloc}, and therefore
+Proposition \ref{naqualocaliser}, are not true in the setting of Segal
+$n$-prestacks (and not even for simplicial sets, i.e. Segal $0$-prestacks). The
+problem comes from the interaction between homotopy in arbitrarily large degree
+and cohomology in arbitrarily large degree. As Dugger shows in his recent paper
+\cite{Dugger}, one obtains correct statements by replacing ``covering sieve''
+everywhere by ``hypercovering''. We do not wish to enter into the details here
+and refer to \cite{Dugger} for this. We therefore restrict ourselves, for this
+version {\tt v3}, to stating Proposition \ref{naqualocaliser} and
+Lemma \ref{pourloc} in the setting of non-Segal $n$-prestacks (in other words,
+in the ``$n$-truncated'' case, in which there is homotopy only in degree
+$\leq n$).
+
+This modification propagates to the following results:
+\newline
+---the proof of Corollary \ref{Gfibrestrict} has to be redone;
+\newline
+---the statements of the criteria \ref{newcritere}, \ref{critereaveclim}
+and \ref{critere7} have to be modified;
+\ref{newcritere} and the parts (c) of these last two now apply only to the
+$n$-truncated case;
+\newline
+---the characterisation of the essential image in \ref{correlation} has to be
+modified;
+\newline
+---a hypothesis (5) has to be added in the statement of Theorem
+\ref{dansleschamps};
+\newline
+---the proof of \ref{descente} is slightly modified but the result remains the
+same;
+\newline
+---and finally, the descent result for complexes \ref{cestunchamp} is from now
+on stated only for complexes bounded below.
+
+To return to the results \ref{naqualocaliser} and \ref{pourloc} of this version
+{\tt v3} we therefore restrict ourselves to considering the cmc of non-Segal
+$n$-precategories or $n$-prestacks. Note that one defines in a way analogous to
+Theorem \ref{cmf} (resp. \ref{cmfHirschho}) a cmc of (non-Segal) $n$-prestacks;
+for the case of \ref{cmf} we shall denote it $nPCh$.
+
+If $p:\Yy \rightarrow \Xx$ is a functor and $U$ an $n$-precategory, then one
+denotes by $U_{\Yy}$ the $n$-prestack $p_!(\underline{U})$, where
+$\underline{U}$ is the constant $n$-prestack on $\Yy$ with value $U$.
+
+We shall consider cofibrations of the following type: let $X\in \Xx$ and let
+$\Bb \subset \Xx /X$ be a sieve; and let $U\hookrightarrow U'$ be a cofibration
+of $n$-precategories. One denotes by
+$$
+cof(U\hookrightarrow U'; \Bb \subset
+\Xx /X)
+$$
+the cofibration
+$$
+U_{\Xx /X} \cup ^{U_{\Bb}}U'_{\Bb} \rightarrow U'_{\Xx /X}.
+$$
+
+
+%%%%% holds only for n-truncated case in v3 %%%
+\begin{proposition}
+\label{naqualocaliser}
+The
+closed model category $nPCh$ of \ref{cmf} (resp. of \ref{cmfHirschho}) for
+the topology $\Gg$, but for non-Segal $n$-prestacks,
+is the \emph{left Bousfield localisation}
+(\cite{Hirschhorn} Definition 3.3.1) of the closed model category
+for
+the coarse topology, with respect to the morphisms
+$cof(U\hookrightarrow U'; \Bb \subset \Xx /X)$, with $\Bb$ a
+sieve covering $X$ for $\Gg$.
+\end{proposition}
+{\em Proof:} One treats the structure of \ref{cmf}, the other case being
+analogous.
+We shall just show the key step, which is the following lemma.
+This lemma
+will imply the proposition, by Hirschhorn's theory \cite{Hirschhorn} \S 3.
+\eop
+%%% in v3 this holds only in the n-truncated case
+%%%%
+\begin{lemma}
+\label{pourloc}
+If $E\hookrightarrow E'$ is a $\Gg$-trivial cofibration of
+(non-Segal) $n$-prestacks,
+then there
+exists a
+sequence (possibly transfinite; see the discussion of
+\cite{Hirschhorn}
+\cite{DHK}
+\cite{HoveyBook}) of cofibrations
+$$
+E=E_{-1} \hookrightarrow E_0
+\hookrightarrow \ldots \hookrightarrow E_k \hookrightarrow \ldots
+$$
+with colimit denoted $E_{\infty}$, and a trivial cofibration for
+the coarse topology $E_{\infty} \hookrightarrow E''$ such that
+$E\rightarrow E'$ is a retraction of $E\rightarrow E''$; and such that the
+cofibrations $E_i \hookrightarrow E_{i+1}$ are either coproducts of
+cofibrations of the form $cof(U\hookrightarrow U'; \Bb \subset \Xx /X)$,
+or
+trivial cofibrations for the coarse topology.
+\end{lemma}
+{\em Proof:}
+We shall call an \emph{adequate sequence} any sequence of cofibrations as in
+the statement of the lemma, and the \emph{composite} of this sequence the
+corresponding colimit
+$E_{\infty}$. We shall prove that if $f:E\rightarrow E'$ is a $\Gg$-trivial
+fibration then there exists an adequate sequence, together with a morphism
+defined on the composite
+$E_{\infty}\rightarrow E'$ which extends $f$ and which is an equivalence
+for the coarse topology. This will imply the lemma (an exercise left to the
+reader).
+
+One proves this result by induction on $n$. One shows
+first the induction step
+and then the case $n=0$. Let $n\geq 1$ and suppose therefore the result true
+for $n-1$. One may without loss suppose that $E$ and $E'$ are fibrant for the
+coarse topology. For every $X\in \Xx$ and every
+pair of objects $x,y\in E(X)$,
+the morphism $E_{1/} (x,y)\rightarrow E'_{1/}(x,y)$ is a $\Gg$-trivial
+fibration of $(n-1)$-prestacks above $\Xx /X$; it is therefore
+equivalent (for the coarse topology) to the composite of an adequate
+sequence. One remarks that for every coproduct of $E_{1/}(x,y)$ with a
+cofibration of $(n-1)$-prestacks $V\rightarrow V'$ above $\Xx
+/X$, one can define a corresponding coproduct of $E$ with $p_!\Upsilon
+(V)\rightarrow p_!\Upsilon (V')$, where $p: \Xx /X \rightarrow \Xx$
+(here we use the notation $\Upsilon$ introduced in \cite{limits}).
+
+On the other hand, if $\Bb \subset \Xx /Y$ is a sieve covering $Y\in \Xx /X$
+and $U\hookrightarrow U'$ a cofibration of $(n-1)$-precategories, then
+$$
+p_! \Upsilon (cof(U\hookrightarrow U'; \Bb \subset (\Xx /X) / Y))
+$$
+is identical to
+$$
+cof(\Upsilon (U)\hookrightarrow \Upsilon (U'); \Bb \subset \Xx /Y);
+$$
+so, by applying $p_!\Upsilon $ to an adequate sequence
+of $(n-1)$-prestacks on $\Xx /X$, one obtains an adequate sequence
+of
+$n$-prestacks on $\Xx$.
+
+Therefore, starting from the sequence of
+cofibrations for $E_{1/} (x,y)\rightarrow E'_{1/}(x,y)$ one will obtain an
+adequate sequence of cofibrations for
+$$
+E\cup ^{p_! \Upsilon (E_{1/} (x,y))}p_! \Upsilon (E'_{1/} (x,y)).
+$$
+One can then add
+the coproducts with a cofibration $\ast _{\Bb} \rightarrow \ast
+_{\Xx}$ (which has the right form
+$cof (\emptyset \hookrightarrow \ast , \Bb \subset \Xx /X )$)
+for each morphism $u:\ast _{\Bb} \rightarrow E$ extending to
+$u':\ast _{\Xx /X}\rightarrow E'$.
+Note that the result obtained admits a morphism to $E'$ which is
+(thanks to ``three for the price of two'') a $\Gg$-weak equivalence.
+
+If one iterates this construction for
+every $(X,x,y)$ and every $(X,\Bb ,u,u')$, and that a countable infinity of
+times, one
+obtains a factorisation
+$$
+E\rightarrow E'' \rightarrow E'
+$$
+where the first morphism is a composite of cofibrations of the
+desired form; and
+the second is a $\Gg$ weak equivalence which induces an
+equivalence for the coarse topology on all
+the $E'' _{1/}(x,y)\rightarrow
+E'_{1/}(x,y)$; moreover $E''\rightarrow E'$ has the lifting property
+for morphisms of the form $\ast _{\Bb} \rightarrow \ast _{\Xx /X}$. This
+implies that $E'' \rightarrow E'$ is an equivalence for the coarse
+topology, which gives the desired result.
+
+It remains to treat the case $n=0$, i.e. the case of presheaves of sets.
+For this, one applies essentially twice more the induction step
+above. In this case one could write it explicitly in a more
+elementary way. We leave this to the reader.
+\eop
+
+
+Rezk shows in \cite{Rezk} that
+the cmc of presheaves for sheaf theory is obtained,
+starting from the cmc
+of presheaves without topology, by the localisation above
+(i.e. Rezk treats the case of non-Segal $0$-stacks). Moreover he suggests
+at the end of his letter that the same thing should be true for the
+Jardine structure.
+
+The proposition also remains true for the closed model category structure of
+type HBKQ. In fact, the results of
+\cite{Hirschhorn} would allow one to define a notion of \emph{$M$-stack}
+and a
+corresponding closed model category, for every closed model
+category $M$ which is cellular and left proper (cf the terminology of
+\cite{Hirschhorn}). One would take the closed model category of
+diagrams $M^{\Xx ^o}$ and localise with respect to all the morphisms
+$cof(U\hookrightarrow U', \Bb \subset \Xx /X)$ (which unfortunately are no
+longer cofibrations for this structure) obtained by letting
+$U\hookrightarrow U'$ vary in the class of
+cofibrations of $M$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v3ah
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+One can now do the analogue of
+\ref{fibrestrict}, for the
+topology $\Gg$.
+One would like to obtain this even for Segal $n$-prestacks,
+in spite of the restriction to the $n$-truncated case for the lemma
+\ref{pourloc} in this {\tt v3}.
+
+One denotes by $\Upsilon ^{\langle k \rangle }$ the
+$k$-th iterate of the operation $\Upsilon$ introduced in
+\cite{limits} (but applied this time to Segal $n$-precategories);
+if $A$ is an $(n-k)$-(pre)category
+(of Segal) then $\Upsilon ^{\langle k\rangle } A$ is an $n$-(pre)category
+(of Segal) and this extends in an obvious way to prestacks.
+
+Let $p: \Yy \rightarrow \Xx$ be a functor, and $A\rightarrow B$ a cofibration
+of Segal $n$-prestacks above $\Yy$. One then obtains a cartesian
+square
+$$
+\begin{array}{ccc}
+p_!\Upsilon A & \rightarrow & p_!\Upsilon B \\
+\downarrow && \downarrow \\
+\Upsilon p_!A & \rightarrow & \Upsilon p_!B
+\end{array}
+$$
+and by induction one obtains for every $k$ the cartesian square
+$$
+\begin{array}{ccc}
+p_!\Upsilon ^{\langle k \rangle }
+A & \rightarrow & p_!\Upsilon ^{\langle k \rangle }B \\
+\downarrow && \downarrow \\
+\Upsilon ^{\langle k \rangle }p_!A & \rightarrow
+& \Upsilon ^{\langle k \rangle } p_!B
+\end{array} .
+$$
+
+In particular, every coproduct with a cofibration of the form
+$$
+\Upsilon ^{\langle k \rangle }p_!A  \rightarrow
+\Upsilon ^{\langle k \rangle } p_!B
+$$
+can also be interpreted as a coproduct with a cofibration
+of the form
+$$
+p_!\Upsilon ^{\langle k \rangle}
+A \rightarrow  p_!\Upsilon ^{\langle k \rangle}B .
+$$
+
+%%%%% the following holds in general but the proof had
+%%%%% to be modified in v3
+%%%%%
+\begin{corollary}
+\label{Gfibrestrict}
+Let $\Xx$ be a site and $X\in \Xx$ with $p: \Xx /X\rightarrow \Xx$ the forgetful
+functor. Let $\Gg$ be the topology on $\Xx$ which induces a topology (also
+denoted $\Gg$) on $\Xx /X$. Then $p_!$ takes the $\Gg$-trivial cofibrations
+of Segal $n$-prestacks
+on $\Xx$ to $\Gg$-trivial cofibrations on $\Xx $.
+In other words, $p_!$ is a left Quillen functor and $p^{\ast}$ a
+right Quillen functor with respect to the structures of \ref{SeCmf} for the
+topology $\Gg$. Thus $p^{\ast}$ preserves fibrant objects and
+fibrations.
+\end{corollary}
+{\em Proof:}
+One first treats the case $n=0$. Let $f:A\rightarrow B$ be an Illusie weak
+equivalence of simplicial presheaves on $\Xx /X$. We claim that $p_!f$ is
+an Illusie weak equivalence on $\Xx$. Let $Y\in \Xx$ and
+$a\in (p_!A)Y$. Recall that this means that one has a morphism
+$g: Y\rightarrow X$ and $a\in A(Y,g)$. Let (for $i\geq 1$)
+$$
+\eta \in \pi _i((p_!B )Y, fa) = \pi _i(B(Y,g), fa).
+$$
+By Illusie's property of $f$ on $\Xx / X$,
+there exists an open covering of $(Y,g)$ by $(Y_j,g_j)$ such that
+the restrictions of $\eta$ to the $Y_j$ come from elements of
+$\pi _i (A(Y_j,g_j), fa|_{Y_j})$. This gives the same thing for when one
+considers Illusie's property on $\Xx$. In the same way
+if
+$$
+\phi ,\phi  '\in \pi _i((p_!A)Y, a) = \pi _i(A(Y,g), a)
+$$
+and if $f\phi = f\phi '$ in
+$\pi _i((p_!B )Y, fa) = \pi _i(B(Y,g), fa)$ then
+one has a covering of $(Y,g)$ by $(Y_j,g_j)$ such that
+$f\phi |_{Y_j} = f\phi '|_{Y_j}$.  Moreover this covering for $\Xx / X$ is
+also a covering of $Y$ in $\Xx$ and one obtains this property
+for $f$ on $\Xx$. It only remains to treat the case of $\pi _0$. Let
+$$
+\eta \in \pi _0((p_!B)Y) = \coprod _{Y\rightarrow X}\pi _0(B Y).
+$$
+There exists therefore $g: Y\rightarrow X$ such that $\eta $ comes from an
+element
+$u$ of $\pi _0(B(Y,g))$. There exists therefore a covering of $(Y,g)$ such that
+the
+$u|_{Y_j}$ come from $A(Y_j,g_j)$ and in particular $\eta|_{Y_j}$ comes
+from $p_!A(Y_j)$ since it comes from the component $A(Y_j,g_j)$.
+If
+$$
+\phi , \phi '\in \pi _0((p_!A)Y) = \coprod _{Y\rightarrow X}\pi _0(A Y)
+$$
+and $f\phi =f\phi '$ then in particular $f\phi$ and $f\phi '$ are in the same
+component $\pi _0(B Y)$ of $(p_!B)Y$, which implies that $\phi$ and $\phi'$
+are in the same component $\pi _0(AY)$ of $\pi _0(p_!A)(Y)$. The same argument
+as above still allows one to conclude.
+
+Now note that the procedure of the proof of \ref{pourloc} allows, in the
+case of Segal $n$-prestacks, to decompose a morphism $E\rightarrow E'$
+which is a $\Gg$-weak equivalence into a sequence of coproducts with
+cofibrations of the form
+$$
+q_!\Upsilon ^{\langle k \rangle } (F\hookrightarrow F')
+$$
+with $q: \Xx /Y\rightarrow X$ and
+where the $F\hookrightarrow F'$ are either of the form
+$$
+F = \ast _{\Bb} \hookrightarrow \ast _{\Xx /Y} = F'
+$$
+where $\Bb$ is a sieve covering $Y$, or
+trivial Illusie cofibrations
+of simplicial presheaves in the case $k=n$. For this
+one uses the principle of
+commutation of $q_!$ with $\Upsilon$ for coproducts established before the
+present statement.
+On the other hand, every cofibration of this form
+$q_!\Upsilon ^{\langle k \rangle } (F\hookrightarrow F')$ is a
+$\Gg$-equivalence on $\Xx$.
+
+If $f:E\rightarrow E'$ is a $\Gg$-equivalence above $\Xx / X$ then
+let us decompose it as in the preceding paragraph (on the site $\Xx /X$).
+If $p: \Xx /X\rightarrow \Xx$ is the projection then for $q: Y\rightarrow X$
+one obtains $p_! q_! = (pq)_!$. The image of the decomposition of
+$f$ under $p_!$ is therefore a decomposition of the same form for $p_!f$.
+A morphism which decomposes in this way is a $\Gg$-equivalence, so
+$p_!f$ is a $\Gg$-equivalence on $\Xx$.
+
+This proves that $p_!$ is a left
+Quillen functor. It follows that its adjoint $p^{\ast}$ is a right
+Quillen functor, i.e. preserves fibrations.
+\eop
+
+{\em Remark:} This corollary is valid also for the HBKQ structure.
+
+In the HBKQ structure one also has a converse
+(we think that this result
+remains true for the case of Segal $n$-prestacks, but ({\tt v3})
+we state it
+only for the $n$-truncated case):
+
+\begin{corollary}
+\label{restrpourhbkq}
+A morphism $f: A\rightarrow B$ of non-Segal $n$-prestacks
+is $\Gg$-fibrant for the HBKQ structure
+if and only if $A|_{\Xx /X} \rightarrow B|_{\Xx /X}$ is $\Gg$-fibrant for
+HBKQ for every $X\in \Xx$.
+\end{corollary}
+{\em Proof:}
+One direction is provided by the preceding corollary (for the
+HBKQ structure). For the other direction, suppose that $f|_{\Xx /X}$ is a
+$\Gg$-fibration of HBKQ for all $X$. Then $f$ has the lifting
+property for the cofibrations which are trivial object by object
+(in fact, according to Hirschhorn's construction
+\cite{Hirschhorn}, the trivial cofibrations
+for the coarse topology are retracts of composites of sequences
+of cofibrations obtained by free addition of cells corresponding
+to
+trivial cofibrations in the base cmc $M$); and $f$ satisfies the
+lifting property for the cofibrations
+$cof_{\Xx }(U\hookrightarrow U'; \Bb \subset \Xx /Y)$. By the analogue of
+Lemma \ref{pourloc} for the HBKQ structure, one obtains that $f$ is a
+$\Gg$-fibration of HBKQ.
+\eop
+
+{\bf Counterexample:} Corollary \ref{restrpourhbkq} is not true for the
+structure of \ref{cmf} (for the Segal case at least),
+if the category $\Xx$ has no final object; and this
+even for the coarse topology. We give a counterexample with $n=0$,
+i.e. for simplicial presheaves. The underlying category $\Xx$
+will be the
+category with a single object $x$, and a group $\zz$ of automorphisms of
+$x$. A simplicial presheaf over $X$ is just a simplicial
+set with an action of $\zz$, i.e. a pair $(B,t)$ where $B$ is a simplicial
+set and $t$ an automorphism of $B$. Suppose that $t$ acts without
+fixed point at each level $B_k$. If $(A,s)$ is another object, and if
+the automorphism $s$ has a fixed point in some $A_k$, then there exists no
+morphism $(A,s)\rightarrow (B,t)$. This leads to a contradiction with
+the property of Corollary \ref{restrpourhbkq}. Indeed,
+the category $\Xx /x$ is the disjoint union of copies of the
+trivial category,
+so $(B,t)|_{\Xx /x}$ is fibrant if and only if $B$ is a Kan-fibrant
+simplicial set. Now there exists such a $B$
+with $t$ acting without
+fixed point---for example one takes the total singular complex $Sing(\rr )$
+with the translation which acts on $\rr$ by $t: b\mapsto b+1$. Now one can
+manufacture a trivial cofibration
+$$
+g:(B,t)\hookrightarrow (A,s)
+$$
+such that $(A,s)$ has fixed points, to complete the example. One takes
+$A=Sing (\rr ^2)$ with the automorphism $s: (a,b)\mapsto (a,b+a)$ and the
+morphism
+$B\rightarrow A$ defined by $g:b\mapsto (1,b)$. Note that $A$ and $B$ are
+contractile, so $g$ is a trivial cofibration for the structure \ref{cmf}
+(the condition for being a cofibration is just being injective).
+Now the fixed locus of $A$ is the subcomplex $Sing(\{ 0\} \times \rr
+)\subset Sing
+(\rr ^2)$. In particular there exists no map $(A,s)\rightarrow (B,t)$
+which induces the identity on $(B,t)$. This shows that $(B,t)$ is not fibrant
+for the structure of \ref{cmf}.
+
+\subnumero{Boolean localisation}
+
+Let us mention the existence of Jardine's paper on
+``Boolean localisation'' \cite{JardineBool}: it is probable that one could
+give a treatment of the cmc of \ref{cmf} with the technique of
+\cite{JardineBool} but we have not explored this route.
+
+%%%%%%%%%%%%%%%%%%%%%%%v3ah
+%%%%%%%%%%%%%%%%%%%%

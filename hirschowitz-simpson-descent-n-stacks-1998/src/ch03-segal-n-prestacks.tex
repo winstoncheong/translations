@@ -1,0 +1,947 @@
+%@ pages 36-49
+%@ status translated
+% Original section 3, "Les n-préchamps de Segal", pp. 36--49.
+
+\clearpage
+\section{Segal \texorpdfstring{$n$}{n}-prestacks}
+\label{nchampsegpage}
+
+Let $\Xx$ now be a site, i.e. a category equipped with a Grothendieck topology.
+Recall that this means a collection of sieves $\Bb
+\subset \Xx /X$, with $X$ varying, satisfying certain axioms
+(see \cite{SGA4} \cite{MacLaneMoerdijk} \cite{Rezk}).
+
+
+An {\em $n$-Segal prestack over $\Xx$} is a functor from
+$\Xx ^o$ to the category $nSePC$ of Segal $n$-precategories, in other words
+it is a presheaf of Segal $n$-precategories on $\Xx$. For example, for
+$n=0$ it is simply a
+presheaf of simplicial sets on $\Xx$.
+
+We denote by $nSePCh(\Xx )$ or simply $nSePCh$ the category of
+Segal $n$-prestacks over $\Xx$ with the morphisms strictly respecting the
+structure (i.e. the morphisms of presheaves with values in
+$nSePC$).
+
+Let us insist on the fact that these are strict functors from $\Xx ^o$ to
+the $1$-category $nSePC$ in which the morphisms are the morphisms of
+Segal $n$-precategories strictly respecting the structure; in particular
+we {\em
+do not consider for the moment} any ``weak presheaves'' or
+``lax'' ones.
+This will be justified later by Theorem \ref{correlation}
+and in
+particular by its ``strictification'' part, which is in fact Corollary
+\ref{strictif3}.
+
+One may apply the operation $\tau _{\leq m}$ to a Segal $n$-prestack
+$A$:
+first
+one replaces each $A(X)$ by the Segal $n$-category $SeCat(A(X))$ and
+then one applies object by object the truncation $\tau _{\leq m}$ described
+in the previous section.
+
+
+For $n=0$ one has at one's disposal Jardine's closed model category \cite{Jardine}
+of simplicial presheaves: the cofibrations are the
+injections, the weak equivalences are Illusie's \cite{Illusie},
+and the fibrations are determined by the lifting property.
+Jardine shows in \cite{Jardine} that these three classes give a
+structure of
+closed model category.
+
+
+
+For $n>0$ we shall
+follow the thread of Jardine's argument \cite{Jardine} (which is in some sense
+summarised in Lemma \ref{dhklemme}).
+To begin with, we impose---as Jardine does---that the {\em cofibrations} of
+Segal $n$-prestacks be the injections,
+i.e. the morphisms $A\rightarrow B$ such that $A(X)\rightarrow B(X)$ is a
+cofibration for every $X\in \Xx$.
+
+The main difference with \cite{Jardine}
+is that one must give a recursive definition (in $n>0$) of
+weak equivalence. We shall say that a morphism $A\rightarrow B$ of Segal
+$n$-prestacks,
+where all
+the $A(X)$ and $B(X)$ are Segal $n$-categories, is
+a {\em weak equivalence} if:
+\newline
+---for every $X\in \Xx$ and all $x,y\in A_0(X)$ the morphism
+$$
+A_{1/}(x,y)\rightarrow B_{1/}(x,y)
+$$
+is a weak equivalence of Segal $n-1$-prestacks over
+$\Xx /X$;
+and
+\newline
+---the morphism of presheaves of sets
+$\tau _{\leq 0} A\rightarrow \tau _{\leq 0}B$ on $\Xx$
+induces a surjection on the associated sheaves.
+
+We shall say that a morphism $A\rightarrow B$ of Segal $n$-prestacks is
+a {\em
+weak equivalence} if the morphism $SeCat(A)\rightarrow SeCat(B)$ is a
+weak equivalence in the sense of the definition above.
+
+Recall that for $n=0$ we have taken Illusie's equivalence as the notion
+of weak
+equivalence (the definitions above not really making sense).
+One may observe that this choice is compatible with the construction $\Pi
+_{m,Se}\circ A$ and with the truncation operation, see Lemma \ref{compatible}
+and Corollary \ref{compPin} below.
+
+
+A morphism of Segal $n$-prestacks is a {\em fibration} if it has
+the lifting property with respect to
+trivial cofibrations.
+
+
+{\em Comparison with the coarse topology:}
+Let us denote by $\Gg$ the Grothendieck topology given on $\Xx$ in order
+to distinguish it from the
+coarse topology.
+Recall that the coarse topology is the one in which the only sieve
+covering $X\in \Xx$ is
+$\Bb = X/\Xx$ (in other words, for a family to cover $X$ it must
+contain $X$).
+We shall often use this topology, so it is worth comparing the main
+notions for
+$\Gg$ and for the coarse topology.  The class of cofibrations does
+not depend on
+$\Gg$. Let $f:A\rightarrow
+B$ be a morphism of Segal $n$-prestacks. Then:
+\newline
+---$f$ is a
+weak equivalence for the coarse topology if and only if for every
+$X\in \Xx$, $A(X)\rightarrow B(X)$ is a weak equivalence of Segal $n$-precategories;
+\newline
+---if $f$ is a weak equivalence for the coarse topology then $f$
+is a $\Gg$-weak equivalence;
+\newline
+---if $f$ is a $\Gg$-fibration then $f$ is a fibration for the coarse
+topology;
+\newline
+---if $f$ is a fibration for the coarse topology then each $f_X:
+A(X)\rightarrow B(X)$ is a fibration of Segal $n$-precategories;
+\newline
+---(here we use Theorem \ref{cmf} below) $f$ is a
+trivial $\Gg$-fibration
+if and only if $f$ is a trivial fibration for the coarse topology.
+
+We now return to the consideration of our site $\Xx$ with its
+topology $\Gg$.
+
+\begin{theorem}
+\label{cmf}
+The category $nSePCh(\Xx )$ of Segal $n$-prestacks, with the three
+classes of morphisms
+(cofibrations, $\Gg$-equivalences and $\Gg$-fibrations), is a
+closed model category.
+\end{theorem}
+
+For $n=0$ this is the theorem of
+Jardine \cite{Jardine}, Joyal \cite{Joyal}, K.
+Brown \cite{KBrown}. We
+may therefore assume $n\geq 1$ and assume by induction
+that the result is true for $n-1$.
+
+For the proof of Theorem \ref{cmf} we shall need
+the following notion. Let $f: A\rightarrow B$ be a morphism of
+Segal $n$-prestacks.
+We shall say that $f$ is a {\em preliminary equivalence} if:
+\newline
+---the morphism of presheaves of sets $A_0\rightarrow B_0$ induces an
+isomorphism between the associated sheaves; and
+\newline
+---for every $X\in \Xx$ and for each sequence of objects $x_0,\ldots , x_m\in
+A_0(X)$
+the morphism
+$$
+A_{m/} (x_0,\ldots , x_m)\rightarrow B_{m/}(f(x_0),\ldots ,f(x_m))
+$$
+is a weak equivalence of Segal $n-1$-prestacks on $\Xx /X$.
+
+\begin{lemma}
+Let
+$$
+\begin{array}{ccc}
+A & \stackrel{p}{\rightarrow} & B \\
+\downarrow && \downarrow \\
+A' & \stackrel{q}{\rightarrow} &B'
+\end{array}
+$$
+be a commutative diagram of morphisms of Segal $n-1$-prestacks, where $B$ and
+$B'$ are presheaves of sets. Suppose that the right-hand vertical morphism
+(which we denote by $g$) induces an isomorphism between the associated
+sheaves. Then
+the morphism $A\rightarrow A'$ is a
+weak equivalence of Segal $n-1$-prestacks if and only if
+for every $X\in \Xx$ and $x\in B(X)$ the morphism
+$p^{-1}(x)\rightarrow q^{-1}(g(x))$ is a weak equivalence of
+Segal $n-1$-prestacks.
+\end{lemma}
+This is a direct consequence of the definition of weak equivalence.
+\eop
+
+\begin{corollary}
+\label{etape}
+A morphism $A\rightarrow B$ of Segal $n$-prestacks is a preliminary
+equivalence if and only if for every $m\in \Delta$ the morphism
+$A_{m/} \rightarrow B_{m/}$ of Segal $n-1$-prestacks is a weak
+equivalence. In that case the morphisms
+$$
+A_{1/} \times _{A_0}\ldots \times _{A_0} A_{1/}\rightarrow
+B_{1/} \times _{B_0}\ldots \times _{B_0} B_{1/}
+$$
+are also weak equivalences.
+\end{corollary}
+One notes that for $m=0$ this is the first condition for a
+preliminary equivalence;  for the second condition one applies the
+preceding lemma.
+\eop
+
+\begin{lemma}
+\label{etape2}
+Let $f: A\rightarrow B$ be a preliminary equivalence of Segal
+$n$-prestacks.
+Then $f$ is a weak equivalence of Segal $n$-prestacks.
+\end{lemma}
+{\em Proof:}
+The case where the $A(X)$ and $B(X)$ are
+Segal $n$-categories is immediate. It
+therefore suffices to prove that if $f$ is a preliminary equivalence then
+so is $SeCat(f): SeCat(A)\rightarrow SeCat(B)$. For this we shall
+analyse the steps described in \cite{nCAT} for passing from $A$ to
+$SeCat(A)$ (the discussion of \cite{nCAT} for the operation $Cat$ adapts
+directly to the operation $SeCat$, as we recalled in \S 2).
+Moreover, what is at issue here
+is presheaves of Segal $n$-precategories on $\Xx$;
+the operation $SeCat$ is performed object by object (it is functorial). The
+construction $SeCat$ is obtained by iterating the constructions denoted
+$Fix$ and
+$Gen[m]$ in \cite{nCAT} and in \S 2 above.
+The operation $Fix$ preserves the
+type of weak equivalence of the $A_{m/}$, so it is clear that it
+preserves the condition
+of being a
+preliminary equivalence. It therefore remains to deal with $Gen[m]$.
+
+The operation $Gen[m]$ first comprises a step denoted $A\mapsto A'$ in
+\cite{nCAT}, which preserves the type of weak equivalence of the $A_{p/}$. We
+may therefore ignore this operation and again denote by $A$ (resp. $B$) its
+result.
+
+Next one considers a diagram of the form
+$$
+A_{m/} \rightarrow \Gg [m](A) \stackrel{g}{\rightarrow }
+A_{1/}\times _{A_0} \ldots \times _{A_0} A_{1/}
+$$
+where $g$ is a trivial cofibration of Segal $n$-prestacks
+object by object (i.e. for the coarse topology). (NB the notation
+$\Gg [m]$ has no connection with the notation $\Gg$ for the Grothendieck
+topology; we keep $\Gg [m]$ only in order to respect the
+notations of \cite{nCAT}.) Now $Gen[m](A)_{p/}$ is the coproduct of
+$A_{p/}$ and $A_{m/}\rightarrow \Gg [m](A)$ for various morphisms
+$A_{m/}\rightarrow A_{p/}$ induced by various morphisms $p\rightarrow
+m$.
+The stability of $\Gg$-trivial cofibrations under
+coproduct with cofibrant objects, for Segal $n-1$-prestacks,
+is a
+consequence of Theorem \ref{cmf} for $n-1$, via Reedy's lemma
+\cite{Reedy}.
+Hence the fact that the morphisms
+$$
+\Gg [m](A)\rightarrow \Gg [m](B)
+$$
+and
+$$
+A_{p/} \rightarrow B_{p/}
+$$
+are weak equivalences of Segal $n-1$-prestacks implies
+that the same holds
+for $Gen[m](A)_{p/}\rightarrow Gen[m](B)_{p/}$. We obtain from
+Corollary \ref{etape} that $Gen[m](A)\rightarrow Gen[m](B)$ is a
+preliminary equivalence. Observing that the weak equivalence of
+Segal $n-1$-prestacks, and hence the preliminary equivalence of
+Segal $n$-prestacks, is preserved by filtered colimits,
+we obtain that
+$SeCat(A)\rightarrow SeCat(B)$ is a preliminary equivalence,
+hence a
+weak equivalence.
+\eop
+
+\begin{lemma}
+\label{locale}
+The property of being a weak equivalence is local: if
+$f:A\rightarrow
+B$ is a morphism of $n$-prestacks on $\Xx /X$ and if $\Bb \subset
+\Xx /X$
+is a sieve covering $X$
+then $f$ is a weak equivalence if and only if for every $Y\in
+\Bb$, $f|_{\Xx /Y}$ is a weak equivalence.
+\end{lemma}
+{\em Proof:}
+We argue by induction on $n$. For $n=0$ this is a direct consequence
+of Illusie's definition. If we suppose that this is true for $n-1$
+then it suffices (in view of the definition of weak equivalence) to observe
+that the fact that $\tau _{\leq 0}SeCat(A)\rightarrow \tau
+_{\leq 0} SeCat(B)$ induces
+a surjection on the associated sheaves is a local property;
+which is evident
+(we use here the axioms of a Grothendieck topology).
+\eop
+
+
+
+{\em Proof of Theorem \ref{cmf}:}
+Our proof is modelled on Jardine's argument \cite{Jardine}
+and we therefore apply
+our Lemma \ref{dhklemme}.
+
+Property (0) is immediate.
+
+It is easy to see that weak equivalences are stable under
+retracts, by induction on $n$ (the case $n=0$ is a direct
+consequence of Illusie's definition of weak equivalence).
+The stability of cofibrations under retracts is immediate, which gives
+condition (1) of
+\ref{dhklemme}.
+
+
+
+For the ``three for the price of two'' property ((2) of \ref{dhklemme}),
+let $f: A\rightarrow B$ and $g: B\rightarrow C$ be two morphisms. It is
+immediate that if $f$ and $g$ are
+weak equivalences then so is $gf$; and that if $gf$ and $g$ are
+weak equivalences then so is $f$ (one remarks that the first
+condition for $g$ entails that the morphism $\tau _{\leq 0}B\rightarrow \tau
+_{\leq 0}C$ induces an injection between the associated sheaves, so the
+essential surjectivity of $gf$ implies that of $f$). It remains to show
+that if $gf$
+and $f$
+are weak equivalences then $g$ is a weak equivalence.
+The essential surjectivity condition is evident; the problem is the
+first condition (see the analogous proof in \cite{nCAT}, Lemma
+3.8). This condition is easy to verify for objects
+$x,y\in B_0(X)$ of the form
+$x=f(u)$ and $y=f(v)$ with $u,v\in A_0(X)$. For the general case, let
+$x,y\in
+B_0(X)$. Then for every $Y$ in a covering family of $X$ one can
+find
+objects $u_Y$ and $v_Y$ in $A_0(Y)$ with equivalences
+$$
+i: f(u_Y)\cong x|_Y, \;\;\; j: f(v_Y)\cong y|_Y
+$$
+(these are $1$-morphisms in $B(Y)$). One may say that ``composition with
+$i$ and $j$'' induces an object-by-object equivalence between
+$B_{1/}(f(u_Y), f(v_Y))|_{\Xx /Y}$ and
+$B_{1/}(x,y)|_{\Xx /Y}$ (to make this precise one needs a discussion
+analogous to that preceding Lemma 3.8 in \cite{nCAT}). The fact that
+$$
+B_{1/}(f(u_Y), f(v_Y))|_{\Xx /Y}\stackrel{\cong}{\rightarrow}
+C_{1/}(gf(u_Y), gf(v_Y))|_{\Xx /Y}
+$$
+is an equivalence
+implies that
+$$
+B_{1/}(x, y)|_{\Xx /Y}\rightarrow
+C_{1/}(g(x), g(y))|_{\Xx /Y}
+$$
+is an equivalence. This for every $Y$ in the family covering $X$.
+Since the condition of being a weak equivalence is local
+(Lemma \ref{locale})
+we obtain that
+$$
+B_{1/}(x, y)|_{\Xx /X}\rightarrow
+C_{1/}(g(x), g(y))|_{\Xx /X}
+$$
+is an equivalence, which is the condition sought.
+
+If $B'\rightarrow B$ is a morphism which has the lifting
+property for every cofibration $A\rightarrow A'$, then one obtains in
+particular the lifting property with respect to cofibrations of the form
+$C_X\rightarrow C'_X$ where $C_X$ is the Segal $n$-prestack freely
+generated by a Segal $n$-precategory $C$ over an object $X\in \Xx$;
+and this morphism arises by the same construction from a cofibration
+$C\rightarrow C'$. A morphism $C_X\rightarrow B'$ is identified with a
+morphism $C\rightarrow B'(X)$, and hence for every $X\in \Xx$, $B'(X)\rightarrow
+B(X)$ has the lifting property with respect to the cofibrations
+of Segal $n$-precategories. This implies (by \ref{SeCmf}) that $B'(X)\rightarrow
+B(X)$ is a weak equivalence, hence $B'\rightarrow B$ is a
+weak equivalence object by object, i.e. for the coarse topology. One
+thus obtains condition (3) of \ref{dhklemme}.
+
+As usual we leave to the reader the set-theoretic questions
+(4) and (5) of \ref{dhklemme}.
+
+
+The stability of cofibrations under
+coproduct ((6) of \ref{dhklemme}) is immediate.
+It therefore only remains to prove the stability of trivial cofibrations
+under coproduct, condition (7) of \ref{dhklemme}, which will occupy the rest of the
+proof (we leave it to the reader to verify the stability of
+trivial cofibrations under sequential limits).
+
+Let $A\rightarrow B$ be a $\Gg$-trivial cofibration
+and $A\rightarrow C$ a morphism of
+Segal $n$-prestacks. Let $P:= B\cup ^AC$. We want to show that
+$C\rightarrow P$ is a $\Gg$-trivial cofibration. It suffices to show
+that $SeCat(C)\rightarrow SeCat(P)$ is a $\Gg$-weak equivalence; now we
+know (Theorem \ref{SeCmf}) that the morphism
+$$
+SeCat(B)\cup ^{SeCat(A)}SeCat(C) \rightarrow SeCat(P)
+$$
+is a weak equivalence object by object. The morphism $SeCat(A)\rightarrow
+SeCat(B)$ is still a $\Gg$-trivial cofibration. Up to replacing
+$A$, $B$ and $C$ by $SeCat(A)$, $SeCat(B)$ and $SeCat(C)$ respectively, we may
+therefore suppose that, for every $X$, $A(X)$, $B(X)$ and $C(X)$ are
+Segal
+$n$-categories.
+
+We first treat a few particular cases.
+
+\noindent
+{\em Case 1.}\, We suppose that $A_0\rightarrow B_0$ induces an isomorphism
+on the
+associated sheaves. In this case it is easy to see that $A\rightarrow
+B$ is
+a preliminary equivalence. The result we are in the process of
+proving,
+applied to Segal $n-1$-prestacks and combined with Corollary
+\ref{etape},
+implies that $C\rightarrow B\cup ^AC$ is a preliminary equivalence.
+Lemma \ref{etape2} then implies that it is a weak equivalence.
+
+
+\noindent
+{\em Case 2.}\, We suppose that $A\rightarrow B$ is a weak
+equivalence and that for every
+$X\in \Xx$ the morphism $A(X)\rightarrow B(X)$ is essentially
+surjective.
+We begin by remarking that the present Theorem \ref{cmf} is
+immediate
+in the case of the coarse
+topology.
+It follows that there exists a factorisation
+$$
+A\rightarrow B' \rightarrow B
+$$
+in which, for the coarse topology,
+the first morphism is a cofibration and the second
+is a trivial fibration.
+Let $B'' \subset B'$ be defined by the condition that for every
+$X\in \Xx$, $B''(X) \subset B'(X)$ is the full sub-Segal-$n$-category
+whose objects are those in the image of $A_0$. The morphism
+$B'' (X)\rightarrow B(X)$ is still essentially surjective and
+fully faithful (since $B'(X)\rightarrow B(X)$ is an
+equivalence of Segal $n$-categories). Hence $B'' \rightarrow B$ is
+an equivalence for the coarse topology.
+Our morphism factors
+through a cofibration $A\rightarrow B''$.
+Reedy's lemma \cite{Reedy}
+(cf \cite{Hirschhorn} \cite{DHK} \cite{HoveyBook} \cite{JardineGoerssBook}),
+which applies here since all objects are cofibrant, implies that the
+morphism
+$$
+B'' \cup ^A C \rightarrow B\cup ^AC
+$$
+is an equivalence for the coarse topology. It then suffices to know
+that
+$$
+C \rightarrow B'' \cup ^A C
+$$
+is a weak equivalence. The morphism $A_0\rightarrow B''_0$ is an
+isomorphism (and $A\rightarrow B''$ is a weak equivalence since $B''$ is
+object-by-object equivalent to $B$), so our Case 1 applies.
+
+\medskip
+
+\noindent
+{\em End of the proof:}\,
+We now treat the general case (with the same notation
+$B\leftarrow A\rightarrow C$). Let $U_0\subset B_0$ be the image of $A_0$. Let
+$U\subset B$ be the full sub-Segal-$n$-prestack having $U_0$ as
+set of objects. Moreover,
+for $X\in \Xx$, let $V_0(X)$ be the subset of the objects of $B_0(X)$
+which are equivalent to an object of $U_0(X)$, and let $V\subset B$ be the
+corresponding full sub-Segal-$n$-prestack. Object by object, the morphism
+$U\rightarrow V$ is essentially surjective and fully
+faithful, so our Case 2 applies.
+
+The morphism $A\rightarrow U$ is a weak equivalence and it is bijective
+on objects; hence Case 1 applies.
+
+Finally the morphism of presheaves of sets $V_0\rightarrow B_0$ induces an
+isomorphism between the associated sheaves: injectivity follows from the
+fact that the
+morphism of presheaves is injective; and surjectivity follows from the
+fact that
+every object of $B_0(X)$ is locally equivalent to an object which comes from
+$A_0$, hence also from $V_0$. And so Case 1 applies once more.
+
+We thus have a sequence of cofibrations
+$$
+A\rightarrow U \rightarrow V\rightarrow B
+$$
+along which the coproducts induce weak equivalences, by Cases 1, 2 and 1
+respectively. This proves that the
+coproduct along
+$A\rightarrow B$ also induces a weak equivalence.
+\eop
+
+
+
+\subnumero{Compatibility with truncations}
+
+Let $A$ be a Segal $m$-prestack, and $A\rightarrow A'$
+an object-by-object equivalent replacement such that the $A'(X)$ are
+Segal $m$-categories (e.g. $A'$ is a fibrant replacement for the
+coarse
+topology). One considers the $n$-prestack on $\Xx$:
+$$
+\tau _{\leq n} A := X\mapsto \tau _{\leq n}(A'(X)).
+$$
+We use here the word ``$n$-precategory'' in the sense of
+\cite{nCAT} and ``$n$-prestack'' for presheaf of $n$-precategories.
+
+
+
+{\em Remark:} this construction was denoted $\tau _{\leq n}^{\rm
+pre}$ by the
+second author in other papers; indeed, in those papers the notation
+$\tau _{\leq n}$ had been reserved
+for the stack associated (cf \S 9 and \S 13 below) to $\tau
+_{\leq n}^{\rm
+pre}$; but from the point of view adopted here, a prestack is weakly
+equivalent to its associated stack, and one has no need to make this
+distinction of notation.
+One must however be careful that if $A$ is a stack (cf \S 9) then
+$\tau _{\leq n}A$
+is no longer necessarily a stack.
+
+
+
+\begin{lemma}
+\label{compatible}
+Let $f:A\rightarrow B$ be a morphism of Segal $m$-prestacks. Then
+$f$ is a weak equivalence for the topology $\Gg$ if and only if,
+for every $n$,
+$$
+\tau _{\leq n} (A)\rightarrow
+\tau _{\leq n} (B)
+$$
+is a $\Gg$-weak equivalence of $n$-prestacks.
+\end{lemma}
+{\em Proof:}
+One first verifies that if $A$ and $B$ are $n$-prestacks of
+$n$-groupoids
+then $f:A\rightarrow B$ is a weak equivalence (using our
+definition for Segal $n$-prestacks) if and only if $\Re
+_{\geq 0} A
+\rightarrow \Re _{\geq 0}B$ is an Illusie weak equivalence of
+simplicial presheaves. We show this by induction on $n$, so we may
+therefore suppose that it is true for $n-1$. For $x,y\in A_0(X)$ one has
+$$
+Path ^{x,y} \Re _{\geq 0} A \cong \Re _{\geq 0} (A_{1/}(x,y))
+$$
+(object by object one deduces this from \cite{Tamsamani}), and the same for
+$B$. Thanks to the induction hypothesis we obtain that
+$$
+A_{1/}(x,y) \rightarrow B_{1/}(fx,fy)
+$$
+is a weak equivalence if and only if
+$$
+Path ^{x,y} \Re _{\geq 0} A \rightarrow Path ^{fx,fy} \Re _{\geq 0} B
+$$
+is an Illusie weak equivalence. On the other hand the presheaf
+of sets
+$\tau _{\leq 0} A$ is isomorphic to the presheaf of sets $\pi _0\circ
+\Re _{\geq 0} A$, so we obtain that
+$$
+\tau _{\leq 0} A\rightarrow \tau _{\leq 0} B
+$$
+induces a surjection between the associated sheaves if and only if
+$$
+\pi _0\circ
+\Re _{\geq 0} A\rightarrow \pi _0\circ
+\Re _{\geq 0} B
+$$
+induces a surjection between the associated sheaves.
+We conclude this part by remarking that a morphism $f:U\rightarrow V$ of
+simplicial presheaves is an Illusie weak equivalence if and only
+if (a) for every $x,y\in U_0(X)$, $Path ^{x,y}(U)\rightarrow Path^{fx,fy}(V)$
+is an Illusie weak equivalence, and (b) the morphism $\pi _0\circ
+U\rightarrow \pi _0\circ V$ induces a surjection between the associated sheaves
+(the argument justifying this remark is immediate).
+
+Now we treat the lemma for $m=0$: let $f: U\rightarrow V$ be a morphism
+of simplicial presheaves. We know that the Postnikov truncation
+$F \rightarrow\Re \tau _{\leq n}F$ respects
+the $\pi _i$ for $i\leq n$. It follows that $f$ is an Illusie weak
+equivalence if and only if
+$$
+\Re \tau _{\leq n}U\rightarrow \Re \tau _{\leq n}V
+$$
+is an Illusie weak equivalence for every $n$. Applying the
+result of the preceding paragraph, we obtain that $f$ is
+an Illusie weak equivalence
+if and only if
+$$
+\tau _{\leq n}(f):\tau _{\leq n}U\rightarrow  \tau _{\leq
+n}V
+$$
+is a weak equivalence for every $n$, which gives the lemma for $m=0$.
+
+We now treat the general case by induction on $m\geq 1$; we
+suppose
+that the result is true for $m-1$.
+For $f: A\rightarrow B$ and $x,y\in A(X)$ one has
+$$
+(\tau _{\leq n}A)_{1/}(x,y) \cong \tau _{\leq n-1}(A_{1/}(x,y))
+$$
+and likewise for $B$ (these equivalences entering into a commutative
+diagram of naturality for $f$). The $A_{1/}(x,y)$ are
+Segal $m-1$-prestacks. Using the induction
+hypothesis, we obtain
+that
+$$
+A_{1/}(x,y)\rightarrow B_{1/}(fx,fy)
+$$
+is an equivalence if and only if
+$$
+(\tau _{\leq n}A)_{1/}(x,y)\rightarrow (\tau _{\leq n}B)_{1/}(fx,fy)
+$$
+is an equivalence for every $n$.
+On the other hand one has the natural isomorphism
+$$
+\tau _{\leq 0}A \cong \tau _{\leq 0}(\tau _{\leq n}A).
+$$
+Hence $\tau _{\leq 0}A\rightarrow \tau _{\leq 0}B$ induces a
+surjection between the
+associated sheaves if and only if
+$$
+\tau _{\leq 0}(\tau _{\leq n}A)\rightarrow \tau _{\leq 0}(\tau _{\leq n}B)
+$$
+induces a surjection between the associated sheaves for every $n$.
+This completes the proof of the lemma.
+\eop
+
+\begin{corollary}
+\label{compPin}
+Let $m$ and $n$ be fixed. A morphism $f: A\rightarrow B$ of
+Segal $m$-prestacks is
+a $\Gg$-equivalence if and only if
+$$
+\Pi _{n,Se}\circ f: \Pi _{n,Se}\circ A\rightarrow \Pi _{n,Se}\circ A
+$$
+is a $\Gg$-equivalence of Segal $n+m$-prestacks.
+\end{corollary}
+\eop
+
+\subnumero{Compatibility with the homotopy fibre product}
+
+The closed model category above is almost proper. The only
+problem is that $nSePC$ itself is not proper (for a counterexample,
+see \cite{nCAT}). The $\Gg$-equivalences
+are preserved
+by fibre product with a fibration provided that the values
+of the Segal $n$-prestacks considered are Segal
+$n$-categories.
+For $n=0$ (in which case there is no condition) the fact that the cmc of
+simplicial presheaves is proper is proved by Jardine in
+\cite{JardineBool}.
+
+In fact one has a slightly stronger statement, namely the stability of
+$\Gg$-equivalences under fibre product with a fibration for the coarse
+topology. In other words, the homotopy fibre product for the coarse
+topology preserves $\Gg$-equivalences. This statement was
+conjectured for $n=0$ by C. Rezk in
+an electronic letter to P. Hirschhorn \cite{Rezk}. Rezk
+shows the analogous property
+for presheaves of sets (i.e. the case of
+$0$-stacks not of Segal). Even more interestingly, Rezk shows, in the framework
+of localisation by an arbitrary pre-topology (i.e. collection of sieves),
+that this property for ``local equivalences'' is
+equivalent to the fact that the pre-topology is a topology, i.e.
+satisfies the
+axioms for a Grothendieck topology. The following lemma was therefore
+inspired by this letter of Rezk and we thank P. Hirschhorn for
+forwarding it to us.
+
+\begin{lemma}
+\label{proper}
+If $A\rightarrow B$ is a cofibration and $A\rightarrow C$ a
+$\Gg$-weak equivalence then $B\rightarrow B\cup ^AC$ is a
+$\Gg$-weak
+equivalence. On the other hand, if $f:F\rightarrow E$ is a fibration (even only
+for the coarse topology) and $g:G\rightarrow E$ is a $\Gg$-weak
+equivalence, and if $G(X)$ and $E(X)$ are Segal $n$-categories for every
+$X\in
+\Xx$ then $F\times _EG\rightarrow F$ is a $\Gg$-weak equivalence.
+\end{lemma}
+{\em Proof:}
+The first part is immediate (it is the ``Reedy lemma''
+\cite{Reedy} \cite{DHK} \cite{Hirschhorn}) since all objects are cofibrant.
+
+For the second part, in general, we shall denote by
+$F\times ^h_EG$ the object-by-object homotopy fibre product; it
+is identified (object by object)
+with the ordinary fibre product in the case where
+$F\rightarrow E$ is a fibration for the
+coarse topology and the $G(X)$ and $E(X)$ are Segal $n$-categories (see
+\cite{nCAT} Theorem 6.7).
+The truncation operation preserves---almost---the
+homotopy fibre product, in the sense that one has an object-by-object
+equivalence
+$$
+\tau _{\leq n-1} (F\times ^h _EG) \cong
+\tau _{\leq n-1}\left( \tau _{\leq n}F\times ^h _{\tau _{\leq n}E}\tau
+_{\leq n}G
+\right) .
+$$
+This formula is proved for Segal $0$-prestacks
+with the help of the exact sequence
+of homotopy groups for the homotopy fibre product of spaces. One
+then obtains it for Segal $n$-prestacks by induction on
+$n$ (it is the
+same argument as below).
+
+
+Using this formula and Lemma
+\ref{compatible}, one reduces to the case where $E$, $F$
+and $G$ are $n$-truncated Segal $n$-prestacks whose values
+are
+Segal $n$-categories (they in fact correspond to $n$-prestacks not of
+Segal). And we shall treat this case by induction on $n$. For example, if at the
+outset one was in the case of simplicial presheaves, one reduces to the
+case of simplicial presheaves which are object-by-object $n$-truncated.
+
+
+We therefore suppose that $E,F,G$ are $n$-truncated Segal $n$-prestacks,
+and that the values $E(X)$, $F(X)$ and $G(X)$ are Segal $n$-categories;
+with a morphism $f: F\rightarrow E$ fibrant for the coarse topology,
+and a morphism $g: G\rightarrow E$ which is a $\Gg$-weak equivalence.
+The object-by-object homotopy fibre product is computed as the usual fibre
+product $F\times _EG$. (Here we use Theorem 6.7 of
+\cite{nCAT}
+in its version adapted to Segal $n$-categories.)
+
+If $(u,v)$ and $(u',v')$ are in $(F\times _EG)_0(X)$ then one has
+(denoting by $w$ and $w'$ their images in $E_0(X)$):
+$$
+(F\times _EG)_{1/}((u,v), (u',v')) =
+F_{1/}(u,u')\times _{E_{1/} (w,w')}G_{1/}(v,v').
+$$
+In this formula, on the right, the three terms are
+$n-1$-truncated Segal $n-1$-prestacks on $\Xx /X$.
+The structural morphisms are, on the one hand a fibration for the coarse
+topology, and on the other hand a $\Gg$-weak equivalence.
+
+ By induction
+on $n$ we may suppose that the first projection
+$$
+(F\times _EG)_{1/}((u,v), (u',v'))
+\rightarrow F_{1/}(u,u')
+$$
+is a $\Gg$-weak equivalence. On the other hand
+$$
+\tau _{\leq 0} (F\times ^h_EG) \rightarrow
+(\tau _{\leq 0} F)\times _{\tau _{\leq 0} E} (\tau _{\leq 0} G)
+$$
+is a surjection of presheaves of sets.
+The property in question for
+presheaves of sets (see \cite{Rezk}) implies that the morphism
+$$
+(\tau _{\leq 0} F)\times _{\tau _{\leq 0} E} (\tau _{\leq 0} G)\rightarrow
+\tau _{\leq 0} F
+$$
+induces a surjection on the associated sheaves; hence
+$$
+\tau _{\leq 0} (F\times ^h_EG)\rightarrow \tau _{\leq 0} F
+$$
+also induces
+a surjection on the associated sheaves. We have verified everything
+needed
+to assert that $F\times ^h_EG\rightarrow F$ is a $\Gg$-weak
+equivalence. \eop
+
+\begin{corollary}
+\label{cordereedy}
+Let
+$$
+\begin{array}{ccccc}
+F&\rightarrow & E & \leftarrow & G\\
+\downarrow &&\downarrow && \downarrow \\
+F'&\rightarrow & E' & \leftarrow & G'
+\end{array}
+$$
+be a diagram in which the vertical morphisms are $\Gg$-weak
+equivalences.
+Then the morphism induced on the object-by-object homotopy product
+$$
+F\times ^h_EG\rightarrow F'\times ^h_{E'}G'
+$$
+is a $\Gg$-weak equivalence.
+\end{corollary}
+{\em  Proof:}
+This is proved by a standard Reedy argument.
+\eop
+
+In \S 9 (Corollary \ref{rezkQ}) we shall see that the preceding corollary
+implies that the
+object-by-object homotopy fibre product is stable under the operation of
+passage to the ``associated stack''. Rezk's question was in fact posed in this
+form.
+
+\subnumero{Descent data}
+
+
+
+Let $Ho(nSePCh(\Xx ^{\rm gro}))$ denote the homotopy category
+of the closed model category $nSePCh$ for $\Xx^{\rm gro}$.
+Recall (\cite{Quillen}) that it may be defined as the Gabriel--Zisman
+localisation \cite{GabrielZisman} of $nSePCh$ with respect to the
+weak equivalences (for the coarse topology) or also as the
+category whose objects are the Segal $n$-prestacks fibrant for the
+coarse topology (and automatically cofibrant) and whose morphisms
+are the equivalence classes of morphisms. In fact one has at one's disposal
+the interval
+$\overline{I}$ (the category with two isomorphic objects $0,1$) and, since all
+objects are cofibrant, two morphisms $f,g:A\rightarrow B$ with $B$
+fibrant are homotopic if and only if there exists $h: A\times
+\overline{I}\rightarrow B$ with $h|_{A\times \{ 0\} }=f$ and
+$h|_{A\times \{ 1\} }=g$.
+
+Let $A, B\in nSePCh$. We denote by
+$$
+[A,B]_{\Xx ^{\rm gro}}
+$$
+the set of morphisms from $A$ to $B$ in $Ho(nSePCh(\Xx ^{\rm gro}))$.
+
+In the same way one defines the homotopy category
+ $Ho(nSePCh(\Xx ^{\Gg}))$ for the
+topology $\Gg$,  either as the Gabriel--Zisman localisation of $nSePCh$ by
+the $\Gg$-weak equivalences, or as the category of $\Gg$-fibrant objects
+and homotopy classes of morphisms. We denote by
+$$
+[A,B]_{\Xx ^{\Gg}}
+$$
+the set of morphisms from $A$ to $B$ in $Ho(nSePCh(\Xx ^{\Gg}))$.
+
+Let $X\in \Xx$ and $\Bb \subset \Xx /X$ a sieve covering $X$.
+Let $A$ be a Segal $n$-prestack on $\Xx$. Let $\ast _{\Bb}$ be the
+$n$-prestack on $\Bb$ with values the final Segal $n$-precategory
+$\ast$. A {\em
+descent datum for $A$ with respect to the sieve $\Bb$} is an element of
+the set
+$$
+[\ast _{\Bb},A|_{\Bb}]_{\Bb ^{\rm gro}}.
+$$
+One may compute this set in the following way. Let $A\rightarrow A'$
+be a fibrant replacement for the coarse topology. We shall see in the
+next section that $A|_{\Bb}\rightarrow A'|_{\Bb}$ is a fibrant replacement
+for $\Bb ^{\rm gro}$. Hence a descent datum, i.e.
+an element of
+$[\ast _{\Bb},A|_{\Bb}]_{\Bb ^{\rm gro}}$, is a morphism $\ast
+_{\Bb}\rightarrow A'|_{\Bb}$, up to equivalence (the equivalence being
+the homotopy relation with the interval $\overline{I}$, for example).
+By a slight abuse of notation we shall say that a descent datum is a
+morphism $\ast _{\Bb}\rightarrow A'|_{\Bb}$.
+
+With the functor $p: \Bb \rightarrow \Xx$ and the construction $p_!$ (see \S 4
+below) one may identify a morphism
+$\ast _{\Bb}\rightarrow A'|_{\Bb}$ with a morphism
+$p_!\ast _{\Bb}\rightarrow A'$. The Segal $n$-precategory $p_!\ast
+_{\Bb}$
+on $\Xx$ (which is in fact a presheaf of sets on $\Xx$) will
+also often
+be denoted
+$\ast _{\Bb}$, and with this notation a descent datum for $A$ with
+respect to $\Bb$ is a morphism $\ast _{\Bb} \rightarrow A'$ up to
+homotopy equivalence.
+
+
+
+
+For the question of ``the effectivity of descent data'' one is
+interested
+in descent data up to homotopy; that is why one uses
+the homotopy category here to give the definition of
+``the set of descent data''. One could also
+envisage defining the {\em Segal $n$-category of descent
+data}
+of which the present set is the
+$\tau _{\leq 0}$
+%
+%
+\footnote{
+The Segal $n$-category of descent
+data would be $\underline{Hom}(\ast _{\Bb}, A')$ with the
+notations of \S 11, which is equivalent
+to  $\lim _{\leftarrow , \Bb}
+A|_{\Bb}$ by \ref{calclim}.
+The set of descent data
+may then be expressed as
+$$
+[\ast _{\Bb},A|_{\Bb}]_{\Bb ^{\rm gro}}=\tau _{\leq 0} \lim _{\leftarrow , \Bb}
+A|_{\Bb}.
+$$};
+%
+%
+in which case the term ``descent datum''
+introduced here should be replaced by ``descent datum up to
+homotopy''. However, for the use that will be made of it
+in the present paper, the terminology given here is well suited.
+
+One now has the equality
+$$
+[\ast _{\Xx /X},A|_{\Xx /X}]_{(\Xx /X) ^{\rm gro}}
+= [\ast , A(X)],
+$$
+where the notation on the right means the set of homotopy classes of
+morphisms $\ast
+\rightarrow A(X)$ in $nSePC$; and the restriction of $\Xx /X$ to $\Bb$
+therefore induces a morphism
+$$
+[\ast , A(X)]\rightarrow
+[\ast _{\Bb},A|_{\Bb}]_{\Bb ^{\rm gro}}.
+$$
+We shall say that a descent datum for $A$ with respect to $\Bb$
+is {\em effective} if it lies in the image of this morphism, i.e. if it
+comes from an element of $[\ast , A(X)]$.
+The notion of {\em effectivity of descent data} will enter into our
+criterion for being a stack, \ref{critere} below.
+
+In principle, descent data may arrive in the form of a diagram
+$$
+\ast _{\Bb} \leftarrow D \rightarrow A'\leftarrow A
+$$
+where the first and the last arrow are object-by-object weak equivalences.
+In fact, descent data will most often come from diagrams of the form
+$$
+\ast _{\Bb} \leftarrow D \rightarrow A.
+$$
+In \S 5 below we shall construct a single arrow $D\rightarrow \ast
+_{\Bb}$ independent of $A$, such that for every $n$-prestack $A$ whose
+values $A(X)$ are fibrant Segal $n$-categories, the descent data for
+$A$ come uniformly from diagrams
+$\ast _{\Bb} \leftarrow D \rightarrow
+A$.
+
+One could also consider {\em generalised descent
+data}, which one would define as elements of
+$[\ast _{\Xx
+/X}, A|_{\Xx /X}]_{\Xx ^{\Gg}}$.
+In this optic such data may come, for example, from a diagram
+$$
+\ast _{\Xx /X} \leftarrow D \rightarrow A
+$$
+where the first arrow is a $\Gg$-weak equivalence. Such is
+certainly the case if $D$ is object-by-object equivalent to $\ast_{\Bb}$
+for a sieve $\Bb \subset \Xx /X$ covering $X$; but such a diagram
+might also arrive from a {\em hypercovering} of $X$
+(cf Verdier's exposé in \cite{SGA4b}).
+We leave it to the reader to spell out the construction of an adequate $D$
+from a hypercovering.

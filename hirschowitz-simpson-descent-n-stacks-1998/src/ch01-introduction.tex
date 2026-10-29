@@ -1,0 +1,630 @@
+%@ pages 4-16
+%@ status translated
+% Introduction (original section 1).
+% Translated from the French of arXiv:math/9807049v3.
+% The v2/v3 remarks are the authors' own and are kept in place.
+
+\clearpage
+\section{Introduction}
+\label{intropage}
+
+\subsection*{Descent: from modules to complexes}
+
+To give an idea of the content of the present work, one may approach it, as a
+first approximation, as a contribution to the theory of complexes of sheaves
+of modules. To put it in perspective, we begin by summarising the theory of
+sheaves of locally free modules (of fixed rank $r$):
+
+There exists a stack $BG$, equipped with a universal module $U$ and a
+universal bundle of which $U$ is the module of sections. This stack
+``classifies'' locally free modules of rank $r$ on schemes, in the sense that
+the stack of modules $Fib_{X,r}$ of such modules on a scheme $X$ is identified
+with the stack of morphisms from $X$ to $BG$. The stack $BG$ is algebraic, and
+if $X$ is projective then so is $Fib_{X,r}$. The stack $BG$ is an open subset
+of (at least) two more general stacks $Coh$ and $Qcoh$, which classify
+coherent and quasi-coherent sheaves respectively (we do not enter here into
+the details, in particular those concerning the topology chosen). The fact
+that $Qcoh$ is a stack means, more concretely, that descent data for a
+quasi-coherent module (or for a morphism between two quasi-coherent modules)
+are effective. One may observe that $Coh$ is not algebraic, which is a little
+annoying.
+
+We propose to generalise this theory to the case of complexes. The crucial
+point is that we want to speak of gluing complexes together by means not of
+isomorphisms but of \emph{quasi-isomorphisms} (compatible in a suitable
+sense), so that this work belongs to a large extent to homotopy theory.
+
+The stacks just mentioned are stacks of categories, and when one sets about
+extending the preceding to the case of complexes, one must sooner or later
+organise these complexes into categories equipped with suitable structures.
+
+The solution that first comes to mind is to consider \emph{derived
+categories}. One can indeed form, for example, the prestack $D_{Qcoh}$ which
+to an affine scheme $Spec A$ associates the derived category $D_{Qcoh}(A)$ of
+that of quasi-coherent $A$-modules. Asking whether this prestack is a stack
+is the sophisticated way of asking whether one can glue complexes together by
+means of ``compatible'' quasi-isomorphisms (i.e.\ satisfying a cocycle
+condition that is otherwise rather technical). This question was recognised
+very early on as misguided, the objects of these derived categories being
+``essentially non-glueable in nature''\footnote{For the reader who is not
+convinced that this route through derived categories is a dead end, let us
+point out that the (full) subprestack $Parf^{\{0,1\}}$ of $D_{Qcoh}$ of
+perfect complexes with cohomological support in $[0,1]$ is indeed a stack, but
+that it is not locally algebraic (in the sense of Artin): in fact, as will be
+seen later, the ``right'' object is a locally algebraic $2$-stack (in the
+sense of \cite{geometricN}).} (\cite{SGA6} Exposé 0, p.~11).
+
+\subsection*{Higher homotopies}
+
+To formulate the problems of gluing complexes defined up to
+quasi-isomorphism, one must consider higher homotopies, which complicates the
+picture considerably. In ordinary topology, the prototype of such a problem
+consists for example in gluing over $U_1 \cup U_2 \cup U_3 \cup U_4$ data of
+the following kind: for $1 \leq i\leq 4$, $C_i$ is a complex on $U_i$; for
+$1 \leq i\leq j \leq 4$, $f_{ij}$ is a homotopy equivalence between the
+restrictions $C_{ij}$ and $C_{ji}$ of $C_i$ and $C_j$ to
+$U_{ij}:=U_i \cap U_j$; for $1 \leq i\leq j \leq k\leq 4$, $h_{ijk}$ is a
+homotopy equivalence between the restrictions of $f_{jk}\circ f_{ij}$ and
+$f_{ik}$ to $U_{ijk}:=U_i \cap U_j \cap U_k$; and the $h_{ijk}$ must
+moreover satisfy a compatibility condition on $U_1 \cap U_2 \cap U_3 \cap
+U_4$, a condition whose very formulation is not immediate. One easily
+conceives how, for more complex coverings (in the étale topology for
+example), the combinatorics of this kind of descent data can become
+intractable. The definition we give of descent data goes beyond (or avoids)
+combinatorial considerations.
+
+In the preceding situation the $f_{ij}$ are arrows between complexes, the
+$h_{ijk}$ must be regarded as $2$-arrows, and the data on $U_1 \cap U_2 \cap
+U_3 \cap U_4$ will be $3$-arrows. Concretely, $h_{ijk}$ for example is a
+morphism of graded objects of degree $-1$ between $C_i$ and $C_k$ on
+$U_{ijk}$, establishing a homotopy between $f_{jk}\circ f_{ij}$ and $f_{ik}$.
+Likewise, the crucial information in a $3$-arrow is a morphism of graded
+objects of degree $-2$ establishing a homotopy between morphisms of degree
+$-1$, and so on. One therefore genuinely needs a notion of
+\emph{$\infty$-category} as advocated by Grothendieck \cite{Grothendieck},
+with $n$-arrows for every $n$ and the appropriate composition laws.
+
+\subsection*{Simplicial or Segal categories}
+
+In fact, a rudimentary form of $\infty$-category suited to our complexes has
+been known for thirty years: it is the notion of a simplicial category.
+Introduced in homotopy theory by Kan and Quillen (see \cite{Quillen}), this
+notion was taken up by Dwyer and Kan \cite{DwyerKan1} \cite{DwyerKan2}
+\cite{DwyerKan3}: in particular, to every category $M$ equipped with a
+subcategory $W$, these authors associate a ``localised'' simplicial category
+$L(M,W)$. The latter captures well the homotopy information concerning the
+pair $(M,W)$, in the sense that if $M$ is a simplicial closed model category
+(cmc) in Quillen's sense, and $W$ its subcategory of equivalences, then
+$L(M,W)$ is equivalent to the simplicial category of cofibrant and fibrant
+objects of $M$. This shows for example that the simplicial structure on a cmc
+is unique up to equivalence, and indeed depends (again up to equivalence)
+only on the subcategory of equivalences.
+
+More particularly, in the situation of complexes, if $Ch$ denotes the
+category of complexes and $qis$ the subcategory of weak equivalences, then
+the simplicial category $L(Ch, qis)$ adequately represents the homotopy
+theory of complexes.\footnote{This means that if $A^{\cdot}$ and $B^{\cdot}$
+are complexes, then the simplicial set of morphisms in $L$ between
+$A^{\cdot}$ and $B^{\cdot}$ is equivalent to the set obtained by applying the
+Dold--Puppe construction to the truncated complex
+$\tau ^{\leq 0}{\rm Hom}^{\cdot}(A^{\cdot}, B^{\cdot})$. One may note that a
+simplicial category $L$ gives rise (following Grothendieck's idea
+\cite{Grothendieck}) to an $\infty$-category $\Pi _{\infty}\circ L$ by
+applying the ``Poincaré $\infty$-groupoid'' construction $\Pi _{\infty}$ to
+each of the simplicial sets $Hom _L(x,y)$. In this $\infty$-category for
+complexes, the $\infty$-category of morphisms between two complexes is
+equivalent to $\gamma {\rm Hom}^{\cdot}(A^{\cdot}, B^{\cdot})$, where
+$\gamma$ is the well-known construction which to a complex of abelian groups
+$F^{\cdot}$ associates the strict $\infty$-category $\gamma (F^{\cdot})$
+whose objects are the $x\in F^0$ with $d(x)=0$, whose morphisms between
+$x,y$ are the $f\in F^{-1}$ with $d(f)=y-x$, whose $2$-morphisms between $f$
+and $g$ are the $u\in F^{-2}$ with $d(u)=g-f$, and so on.}
+
+For technical reasons, we systematically use the slightly more general
+notion of a Segal category: a Segal category is a ``wide'' simplicial
+category, in the sense that composition is not required to be strictly
+associative. Every simplicial category is a Segal category and, conversely,
+one shows that every Segal category is equivalent to a simplicial category
+(\S7).
+
+\subsection*{The problems posed}
+
+Thus complexes of sheaves of modules organise themselves (for example over
+the étale site) into presheaves of Segal categories. Among other things, one
+can define ${\cal D}^+$ by ${\cal D}^+(Spec A)= L(Ch^+(A), qis)$, where
+$Ch^+(A)$ is the category of complexes of $A$-modules bounded on the left and
+$qis$ its subcategory of quasi-isomorphisms. One can now express as follows
+the problems to which the present work is devoted:
+\begin{itemize}
+\item
+identify the relevant descent problems concerning such presheaves;
+\item
+formulate these problems in the framework of a theory of (generalised)
+stacks (in this introduction we shall say $\infty$-stacks) suited to Segal
+categories; in this theory it will of course be necessary that the stacks are
+the prestacks in which descent data glue together;
+\item
+identify a class of such presheaves, containing our presheaves of complexes,
+in which these descent problems admit a solution.
+\end{itemize}
+
+Among the descent problems we want to treat there must figure the
+``concrete'' gluing problems concerning complexes, of which we now give
+examples. Let us point out however that we do not address these problems
+directly in the present work---our aim being first of all to set up the
+framework in which such questions should naturally be considered---and we
+therefore formulate them only by way of motivation.
+
+\begin{itemize}
+\item
+Let $k$ be a field, $X$ a regular $k$-scheme, and $\Ff$ a coherent sheaf on
+$X$. It is known that $\Ff$ admits locally finite projective resolutions.
+Can one glue these resolutions together into a global object?
+\item
+In \cite{SGA6} 0.4.4, for a morphism $f:X \rightarrow Y$ of schemes, one
+constructs locally in $X$ a cotangent complex well defined up to
+quasi-isomorphism. Can one glue these local constructions together?
+\footnote{In loc.\ cit.\ it is considered that ``it is not possible to
+proceed by simple gluing'', and the authors get around it differently.}
+
+\item
+Still in \cite{SGA6} (e.g.\ 0.4.2), one poses the problem (subsequently
+solved by Deligne and Illusie, see \cite{Illusie} I.4.2) of defining the
+exterior powers of a perfect complex, which we reformulate in our own way:
+knowing that one can define, on bounded complexes of free modules of finite
+type, a symmetric power functor $\Lambda^i$ which transforms
+quasi-isomorphisms into quasi-isomorphisms, and knowing that perfect
+complexes are those which are locally quasi-isomorphic to bounded complexes
+of free sheaves of finite type, how is one to define the symmetric power of a
+perfect complex?
+
+\item
+In the work of O'Brian, Toledo and Tong \cite{ObrianToledoTong1},
+\cite{ObrianToledoTong2}, \cite{Toledo1}, \cite{Toledo2}, \cite{Toledo3}
+devoted to another question arising from SGA 6, that of \emph{Riemann--Roch
+formulas}, one finds \v{C}ech computations which are certainly an example of
+a descent situation for complexes. A better general framework for these
+computations could contribute to our understanding of Riemann--Roch formulas.
+
+\item
+There are certainly other potential applications than those concerning
+complexes; see for example the work of Hinich \cite{Hinich1}, which treats a
+descent problem for $1$-groupoids in relation to a corresponding descent
+problem for presheaves of differential graded Lie algebras.
+\end{itemize}
+
+\subsection*{The \texorpdfstring{$\infty$}{infinity}-stacks}
+
+Before presenting our view of descent data, we must explain our theory of
+$\infty$-stacks. It has been understood above that we need---at a
+minimum---a theory of stacks of simplicial (or Segal) categories, just as one
+has a theory of stacks of sets (sheaves) and a theory of stacks of categories
+(``classical'' stacks). And in a theory of stacks of simplicial categories,
+the stack of morphisms between two objects (i.e.\ sections over an open
+subset) will have to be a stack of simplicial sets. We would therefore like a
+theory of $\Gamma$-stacks, where $\Gamma$ could indifferently be the category
+of sets, or that of categories, or that of simplicial categories, or indeed
+that of simplicial sets. A $\Gamma$-prestack on a site $\Xx$ is then a
+presheaf on $\Xx$ with values in $\Gamma$ (we take strict presheaves for
+simplicity, and because we hope that in the end it comes to the same thing).
+And the (naïve) idea for expressing that a $\Gamma$-prestack $F$ is a
+$\Gamma$-stack would consist in requiring that for every $X \in \Xx$ and
+every sieve $\Bb$ covering $X$, $F(X)$ be the limit (in $\Gamma$) of the
+restriction of $F$ to the category $\Bb$. If $\Gamma$ is the category of
+sets one recovers of course the notion of sheaf, but if $\Gamma$ is the
+category of categories, this no longer works. To rectify the situation and
+fall back in this case on the usual stacks, it suffices to equip $\Gamma$
+with its $2$-category structure and to require that $F(X)$ be the $2$-limit
+(in $\Gamma$) of the restriction of $F$ to $\Bb$. To generalise this
+situation, we shall therefore consider that $\Gamma$ is an $\infty$-category
+\footnote{We do not take the trouble here to give a definition of
+$\infty$-category: we simply regard Tamsamani's $n$-categories
+\cite{Tamsamani}, as well as their variants introduced below, the Segal
+$n$-categories, as $\infty$-categories.} in which one knows how to specify
+homotopy limits (it is not necessary that they exist). One can then,
+following a suggestion formulated by the second author in \cite{limits} 6.4,
+say that a $\Gamma$-stack is a $\Gamma$-prestack $F$ such that for every
+$X \in \Xx$ and every sieve $\Bb$ covering $X$, $F(X)$ is the limit (in
+$\Gamma$) of the restriction of $F$ to the category $\Bb$.
+
+\subsection*{The \texorpdfstring{$0$}{0}-stacks of Segal}
+
+In the case where $\Gamma$ is the $\infty$-category (technically: the Segal
+$1$-category) of simplicial sets, we confront successfully\footnote{Somewhat
+tempered in the present version v3\ldots} this point of view with the
+existing theory of simplicial presheaves, developed by K.~Brown
+\cite{KBrown}, Illusie \cite{Illusie}, Joyal in a letter to Grothendieck
+\cite{Joyal}, Jardine \cite{Jardine}, and Thomason \cite{Thomason}.\footnote{We
+even have the $\infty$-category (a simplicial category here) of weak functors
+from $\Xx ^o$ to $\Gamma$ thanks to the work of Cordier and Porter
+\cite{CordierPorter}.} In this case one has at one's disposal the notion of
+homotopy limit introduced by Bousfield and Kan \cite{BousfieldKan}, and our
+$\Gamma$-stacks, which we call $0$-stacks of Segal, constitute a class of
+simplicial presheaves already considered by Jardine (the presheaves flasque
+with respect to every object of the site \cite{Jardine}) and, in the very
+close framework of presheaves of spectra, by Thomason \cite{Thomason}. To
+every simplicial presheaf (or Segal $0$-prestack) one knows how to associate
+naturally a Segal $0$-stack having the same homotopy sheaves (and not
+presheaves).
+
+\subsection*{The \texorpdfstring{$n$}{n}-stacks of Segal}
+
+It is therefore natural to extend this approach to the case of simplicial or
+Segal categories. For this, we must equip the class $\Gamma$ of Segal
+categories with an $\infty$-category structure (technically, it is a Segal
+$2$-category) in which one can define the notion of (homotopy) limit. To
+allow some room, we define the Segal $n$-categories outright (\S2): their
+construction follows closely that of Tamsamani's $n$-categories
+\cite{Tamsamani}. The Segal $0$-categories are the simplicial sets, and the
+Segal $(n+1)$-categories are simplicial objects in the category of Segal
+$n$-categories satisfying the (Segal) conditions which express that
+composition, failing to be well defined and associative, is defined and
+associative up to homotopy. The advantage of Segal $n$-categories over
+simplicial sets lies in the fact that one can find in them non-invertible
+$i$-morphisms, at least for $i \leq n$. Thanks to the notion of
+\emph{internal} cmc (\S11), one shows that, up to set-theoretic
+considerations, the Segal $n$-categories organise themselves into a Segal
+$(n+1)$-category $nSeCAT$ (\S11), in which one knows how to define homotopy
+limits (\S14). One can therefore introduce the ($\Gamma$-)stacks of Segal
+$n$-categories, which we call Segal $n$-stacks. Technically, one begins by
+giving a Jardine-style definition of Segal $n$-stacks (\S9), and it is only
+in \S14 that one recovers the beautiful definition mentioned above. The
+problem of descent for complexes then takes the following form: is the Segal
+$1$-prestack of complexes a Segal $1$-stack?
+
+\subsection*{Generalised descent data}
+
+This formulation is not totally satisfactory, insofar as one does not see
+clearly enough how it covers the concrete examples mentioned above.
+Fortunately, we know how to introduce a notion of descent data (and also, of
+course, of effective descent data) with values in a Segal $n$-prestack, which
+plays the role expected of it. In fact, we explain here what is called
+\emph{generalised descent data} (gdd), and we begin with the more familiar
+case of simplicial presheaves: a gdd with values in the simplicial presheaf
+$A$ on the site $\Xx$ is a morphism of simplicial presheaves
+$\delta: D \rightarrow A$ where $D$ is \emph{contractible}, in the sense that
+the Segal $0$-stack associated to $D$ is equivalent to the terminal object
+$*_{\Xx}$. (Such a $D$ is essentially the same thing as a
+\emph{hypercovering} in Verdier's sense \cite{SGA4b}.) Such data $\delta$ is
+said to be \emph{effective} if it is equivalent to data
+$\delta': D \rightarrow A$ which factors through $*_{\Xx}$. These definitions
+extend without change to the case where $A$ is a Segal $n$-prestack, since
+simplicial presheaves can also be regarded as Segal $n$-prestacks (\S2).
+
+It is worth observing that the question of the effectivity of gdd in a Segal
+$n$-prestack $A$ concerns only the \emph{interior} $A^{int}$ of $A$: the
+interior of a Segal $n$-category $S$ is the simplicial set obtained from $S$
+roughly by retaining only the morphisms (of all orders) which are invertible
+up to homotopy, and this construction obviously extends to Segal
+$n$-prestacks.
+
+The preceding definition accounts well for the ``concrete'' examples
+mentioned above. Thus, for the first example, one can take the (contractible)
+simplicial presheaf $D$ such that $D(U)$ is the simplicial set\footnote{Here
+as elsewhere in this work, we do not pay too much attention to questions
+related to the difference between sets and classes.} of finite projective
+resolutions of the restriction of $\Ff$ to $U$: the $1$-simplices are the
+quasi-isomorphisms between resolutions (compatible with the augmentation)\ldots.
+
+\subsection*{Characterisation of the \texorpdfstring{$n$}{n}-stacks of Segal by descent}
+
+To explain in what way our notions of stacks are in turn suited to these
+notions of descent data, we must introduce some notation. If $A$ is a Segal
+$n$-category, the ($1$-)morphisms of $A$ organise themselves into a new Segal
+$(n-1)$-category which we denote $Fl(A)$. If $x$ and $y$ are two objects of
+$A$, we denote by $Fl(A)(x,y)$ the sub-Segal-$(n-1)$-category of $Fl(A)$ of
+morphisms with source $x$ and target $y$. More generally, if $x$ and $y$ are
+two objects of $Fl^{i-1}(A)$, we denote by $Fl^{i}(A)(x,y)$ the
+sub-Segal-$(n-i)$-category of $Fl^i(A)$ of morphisms with source $x$ and
+target $y$.\footnote{We adopt the convention that, for a given $i$, we
+replace our Segal $n$-categories by equivalent Segal $n'$-categories, with
+$n'>i$.} These notations extend to the case where $A$ is a Segal $n$-prestack
+on a site $\Xx$: $Fl^i(A)$ is then a new Segal $(n-i)$-prestack on $\Xx$,
+and if $x$ and $y$ are sections of $Fl^{i-1}(A)$ over an object $U$ of
+$\Xx$, then $Fl^{i}(A)(x,y)$ is a Segal $(n-i)$-prestack on the site
+$\Xx/U$. With these notations, one proves the following result:
+\begin{theorem}
+Let $A$ be a Segal $n$-prestack on the site $\Xx$. Suppose that the values of
+$A$ are Segal $n$-categories (this condition is vacuous for $n=0$). Then the
+following conditions are equivalent:
+\newline
+$(i)$ $A$ is a Segal $n$-stack;
+\newline
+$(ii)$
+(a)\,\, for every $X\in \Xx$ and every $x,y\in A_0(X)$ the Segal
+$n$-prestack $Fl(A)(x,y)$ on $\Xx /X$ is a Segal $n$-stack; and
+\newline
+(b) \,\, the descent data for $A$ are effective.
+\newline
+$(iii)$ (valid only for non-Segal $n$-stacks)\newline
+(a')\,\, for every $i \ge 1$, for every $X\in \Xx$ and for all
+$x,y\in Fl^{i-1}(A)(X)$ the descent data with values in the
+$(n-i)$-prestack $Fl^{i}(A)(x,y)$ are effective; and
+\newline
+(b) \,\, the descent data with values in $A$ are effective.
+\end{theorem}
+
+This theorem formalises the idea (which emerges among other places from Giraud
+\cite{GiraudThese} and Laumon--Moret-Bailly \cite{LaumonMB}) that a stack is a
+prestack in which descent data are effective, and since the effectivity of
+descent data concerns only the interior, it characterises our Segal
+$n$-stacks in terms proper to the theory of simplicial presheaves.
+
+\subsection*{Descent data and the coarse topology}
+
+However, the very definition of (generalised) descent data formulated above
+involved the notion of Segal $0$-stack, and it is therefore time to give our
+definition of (true) descent data with values in a simplicial presheaf, since
+it remains true that this case suffices. Let $\Xx$ be a site equipped with a
+covering sieve $\Bb$ and with a simplicial presheaf $A$. Descent data on
+$\Bb$ with values in $A$ is a diagram $\delta$ of simplicial presheaves:
+$$
+*_{\Bb} \leftarrow D \rightarrow A
+$$
+where the left-hand arrow is what we call an \emph{object-by-object
+equivalence}, that is to say it induces a weak equivalence of simplicial sets
+on each object $U \in \Xx$ (here, of course, only the objects of $\Bb$ are
+really concerned). This implies that $D$ is contractible, and one is indeed
+in the presence of descent data in the generalised sense given above. One may
+observe that giving the diagram $\delta$ is equivalent to giving descent data
+(generalised or not, it is the same) with values in the restriction of $A$ to
+the category $\Bb$ equipped with the coarse topology. This is a thoroughly
+typical example of the way the coarse topology intervenes systematically
+throughout our work. Another typical example is the way we describe in two
+stages the model category structure for our prestacks, by Bousfield
+localisation from the structure corresponding to the coarse topology (\S6).
+
+Descent data is said to be effective if it is equivalent to descent data
+which factors through $*_{\Xx}$. And when in the theorem above we say that
+the descent data with values in $A$ are effective, we mean that for every
+object $X$ of $\Xx$ and every sieve $\Bb$ covering $\Xx/X$, every descent
+datum on $\Bb$ with values in $A|_{\Xx/X}$ is effective.\ednote{The original
+prints $A*{|\Xx/X}$; we read this as the restriction of $A$ to $\Xx/X$.}
+
+\subsection*{The two stages of descent and Grothendieck's constructions}
+
+The problem of the effectivity of descent data in a Segal $n$-prestack $A$ on
+a site $\Xx$ (admitting a terminal object) decomposes naturally into two
+stages. Indeed, descent data $\delta$ as above fits into a diagram:
+$$
+*_{\Xx} \leftarrow *_{\Bb} \leftarrow D \rightarrow A,
+$$
+Since the point is to factor, up to equivalence, the given morphism
+$D \rightarrow A$ through $*_{\Xx}$, one may first look for such a
+factorisation through $*_{\Bb}$. If therefore one calls strict the descent
+data with $D=*_{\Bb}$, one can formulate on the one hand the problem of the
+strictification of descent data, which consists in showing that every descent
+datum is equivalent to a strict descent datum, and on the other hand that of
+the effectivity of strict descent data.
+
+Technically, things present themselves a little differently. To show that a
+Segal prestack $A$ on $\Xx$ is a Segal stack, one uses the definition by
+limits. One must therefore compare $A(X)$ with the homotopy limit mentioned
+above, say $\Gamma(\Bb, A)$. To identify this limit, one follows the path
+traced in \cite{SGA1}: one constructs a Segal category $\int _{\Bb} A$ over
+$\Bb^o$ in the hope of identifying $\Gamma(\Bb, A)$ with a category of
+sections of $\int _{\Bb} A \rightarrow \Bb^o$. In fact, one finds (\S16) that
+$\Gamma(\Bb, A)$ is equivalent to the Segal category of ``balanced'' sections
+(or eq-sections), not of $\int _{\Bb} A \rightarrow \Bb^o$ but of its fibrant
+replacement $\int '_{\Bb} A \rightarrow \Bb^o$.\ednote{The French is
+\emph{sections équilibrées}, abbreviated \emph{eq-sections}; this is the
+authors' own term, not an established English one. The \emph{eq} abbreviates
+\emph{équilibrée} (``balanced''), not ``equi-free'' or ``equivariant''. In
+\S16 an eq-section is defined as a section $\sigma$ for which the maps
+$\sigma^r(f)$ are equivalences. We keep the authors' abbreviation
+\emph{eq-section} throughout and use ``balanced'' only here, at the first
+occurrence.} This replacement refers to a
+cmc structure for Segal categories (\S2). One therefore wants to show that a
+composite morphism
+$$
+A(X) \rightarrow
+Sect^{eq}(\int _{\Bb} A) \rightarrow
+Sect^{eq}(\int' _{\Bb} A)
+$$
+is an equivalence. One may regard the right-hand term as a category of
+descent data (on the right?) and the middle one as the subcategory of strict
+descent data (we have not sought to establish a correspondence between these
+new notions of descent data and the old ones), and the problem of effectivity
+decomposes again into two stages.
+
+These two stages will be treated each in turn in our \S18 and \S19. To remain
+strictly in conformity with what happens in the paper, one should say that
+this situation of ``strictification'' of descent data takes place not over
+$\Bb$ but over the category $\Delta$ via a functor
+$\rho (U):\Delta \rightarrow \Bb$, in the case where $\Bb$ is the sieve
+generated by an object $U$ covering $X$. In a way $\Delta$ approximates
+$\Bb$ via the functor $\rho (U)$, and for technical reasons it is more
+convenient for us to work over $\Delta$.
+
+It so happens that the problem of the effectivity of strict descent data has
+already been solved for our complexes of modules on a ringed topos in
+Exposé Vbis of SGA 4 II \cite{SGA4} by Saint-Donat (after ``succinct notes''
+of Deligne). In \S19 we give a more general result for this ``strict'' stage.
+
+\subsection*{Quillen presheaves}
+
+We have thus set up this formalism of Segal stacks which constitutes a
+natural framework for relative homotopy theory (over a site), in which we can
+reformulate the problem of descent: to find conditions for a Segal prestack
+to be a (Segal) stack. As Jardine writes in \cite{Jardine}, the organisational
+structure for homotopy theory is that of a closed model category (cmc) in
+Quillen's sense \cite{Quillen}. The theory of Segal stacks that we have set
+up is the natural framework of relative homotopy theory (over a site), and
+the corresponding organisational structure is quite naturally a structure of
+presheaf of cmc's: we call Quillen presheaf any presheaf of cmc's in which
+the restrictions are what are called (left) Quillen functors. If ${\bf M}$ is
+such a Quillen presheaf on a site $\Xx$, one can associate to it the Segal
+$1$-prestack $L({\bf M})$ on $\Xx$ obtained by taking for $L({\bf M})(X)$ the
+simplicial category obtained by inverting (in the sense of Dwyer--Kan) the
+equivalences in ${\bf M}(X)$. One therefore seeks sufficient conditions for
+the Segal prestack thus associated to a Quillen presheaf to be a Segal stack.
+
+\subsection*{A descent theorem}
+
+We therefore propose a theorem (\ref {dansleschamps}) giving sufficient
+conditions for the prestack $L({\bf M})$ to be a Segal stack. It is of course
+starting from the case of complexes that we found such a general formulation.
+The conditions we impose are of three kinds.
+
+First, we restrict ourselves to sites where, roughly speaking, one can reduce
+to considering only descent data defined on coverings with a single object
+(and satisfying the appropriate compatibility conditions on the \v{C}ech
+complex of the covering).
+
+The main restriction that we impose on the Quillen presheaf is the existence,
+in the values taken (which are cmc's), of arbitrary small limits and
+colimits. Thus for example our theorem does not concern complexes of sheaves
+of finite type. We also impose on it other more or less natural conditions,
+namely: the fact that, in the values taken, all objects are cofibrant; the
+existence of functorial factorisations; compatibility with fibre products;
+the local character of equivalences; and compatibility with disjoint unions.
+
+Finally we impose a very technical condition allowing the use of Quillen's
+so-called ``small object'' argument for the construction of an auxiliary cmc.
+
+The most delicate part of the proof consists in the strictification of
+descent data (\S18).
+
+\noindent
+--------
+\newline
+In version 2 of the paper we had to add hypothesis (4), that the restriction
+morphisms for $L(\mm )$ are exact on both sides (and not only on the side
+corresponding to the fact that $\mm$ is left Quillen). Indeed, the first
+version contained an error in one line of the proof, where we commuted a
+restriction morphism with a limit; we add this commutation as a hypothesis
+since it is not a consequence of the others. This condition seems to be
+primordial; fortunately it is verified in the applications in \S20 and \S21.
+
+\subsection*{Stacks of stacks}
+
+It was in studying our descent problem for complexes that we realised there
+was an analogous result for $n$-stacks themselves: the $n+1$-prestack
+$n\underline{CHAMP}$ defined by
+$$
+n\underline{CHAMP}(X):= nCHAMP (\Xx /X)
+$$
+is an $n$-stack (see Theorems \ref{descente} and \ref{descenteNdS}). This is a
+``gluing'' result for $n$-stacks. For example, given stacks $\Ff _U$ and
+$\Ff _V$ on two open subsets $U,V$ of a topological space, with an
+equivalence
+$$
+\Ff _U |_{U\cap V} \cong
+\Ff _V |_{U\cap V}
+$$
+there then exists a stack $\Ff $ on $U\cup V$ with $\Ff |_U \cong \Ff _U$ and
+$\Ff |_V \cong \Ff _V$. One can regard \ref{descente} and \ref{descenteNdS}
+as generalisations to $n$-stacks of the classical result which says that the
+$1$-prestack which to each open subset $U$ associates the category of sheaves
+of sets (i.e.\ $0$-stacks) on $U$ is a $1$-stack. The case $n=1$ of this
+generalisation is already in SGA 1 \cite{SGA1} \cite{GiraudThese}, where it is
+shown that the $2$-prestack $1\underline{CHAMP}$ of $1$-stacks is a
+$2$-stack.
+
+This result for $n=2$ (which says that $2\underline{CHAMP}$ is a $3$-stack)
+was used, without proof, by Breen \cite{Breen}. One may say that our result
+generalises approximately half of what Breen does in \cite{Breen} (the other
+half being the expression of descent data in terms of cocycles, something we
+have not managed to do in a completely satisfactory way for arbitrary $n$).
+
+In fact, at the beginning of this work, the only thing we could prove about
+complexes was that the prestack of complexes of $\qq$-vector spaces, of fixed
+length $n$, was an $n+1$-stack. To prove this, we had used the result saying
+that the $n+1$-prestack of $n$-stacks is a stack: with this and an elementary
+version of the notion of ``spectrum'' (consisting just in making a translation
+so that everything happens between degrees $N$ and $N+n$ with $N\geq n+2$)
+one could obtain (thanks to the fact that stable rational homotopy is
+trivial) the fact that the complexes of $\qq$-vector spaces of length $n$
+form an $n+1$-stack.
+
+It is only with the contribution of state-of-the-art techniques in cmc theory
+(\cite{DwyerKan1} \cite{DwyerKan2} \cite{DwyerKan3} \cite{DwyerKanDiags},
+\cite{Hirschhorn},\cite{DHK}, \cite{JardineGoerssBook}, \cite{HoveyMonMod}
+\cite{HoveyBook}) that we have been able to formulate the more general result
+\ref{dansleschamps}, which allows us to treat the case of complexes of
+$\Oo$-modules.
+
+\subsection*{Algebraicity}
+
+The more detailed study of stacks of complexes on sites of algebraic geometry
+will be the subject of another work. We simply state in \S21 our main
+algebraicity result.
+
+\subsection*{History, related work and techniques used}
+
+The notion of $1$-stack is today well established in algebraic geometry,
+notably since the work of Artin \cite{ArtinInventiones}, of
+Deligne--Mumford \cite{Deligne-Mumford}, of Laumon--Moret-Bailly
+\cite{LaumonMB}, extended by numerous current works. A similar notion plays
+an important role in differential geometry (e.g.\ in the geometry of
+foliations), see for example \cite{Ehresmann} \cite{Morita} \cite{Pradines}
+\cite{Haefliger} \cite{Haefliger2} \cite{Molino} \cite{Moerdijk}.
+%
+\footnote{One may cite Moerdijk (\cite{Moerdijk} Example 1.1 (f)):
+``Effective etale groupoids are well-known to be basically equivalent to
+pseudogroups\ldots'' followed by a reference to Molino \cite{Molino}. In view
+of this remark, the work of Ehresmann \emph{et al} concerns essentially
+étale groupoids, i.e.\ Deligne--Mumford $1$-stacks in the differential
+setting. It is not clear to our eyes whether this connection was known to
+Ehresmann at the time; in any case, this point of view is already present in
+the papers of Pradines \cite{Pradines}; and according to Pradines (oral
+communication to the second author), this point of view was presented by
+Ehresmann in his talk at the international congress of 1956.}
+%
+Building on the notion of stack, Giraud developed non-abelian cohomology in
+low degrees \cite{Giraud}.
+
+A precursor work on descent for the $\infty$-stack of complexes is that on
+``cohomological descent'' by B.~Saint-Donat and Deligne in SGA 4
+\cite{SGA4b}.
+
+In \cite{Grothendieck}, A.~Grothendieck proposes as a generalisation the
+notion of \emph{$n$-stack} or even of \emph{$\infty$-stack}, without however
+giving a precise definition. In fact, one may say that the theory of
+$\infty$-stacks of groupoids is already available at the time of
+\cite{Grothendieck} by way of the theory of simplicial presheaves, thanks to
+the work of K.~Brown \cite{KBrown}, Illusie \cite{Illusie}, Joyal in a letter
+to Grothendieck \cite{Joyal}, Jardine \cite{Jardine}, and Thomason
+\cite{Thomason}. The way in question passes through the equivalence between
+the theory of $\infty$-groupoids and that of topological spaces or simplicial
+sets---an equivalence for which only the definition of $\infty$-groupoid was
+missing!
+
+More recently, the theory of $n$-categories for small values of $n$ has been
+recognised as important in a wide range of situations linked for example to
+new knot invariants, to quantum groups, to quantum field theory, and even to
+computer science\ldots. This has led to a better understanding in particular
+of the role played by the non-associativity of composition. The first paper
+of Baez--Dolan \cite{BaezDolan} provides an interesting summary of these
+developments.
+
+Tamsamani's thesis \cite{Tamsamani} provides a definition of $n$-category, as
+well as the equivalence between $n$-groupoids and $n$-truncated topological
+spaces, for every $n$. This definition makes it possible to approach the
+theory of $n$-stacks, not necessarily of groupoids, using the techniques due
+to Quillen which underlie the work of Brown, Illusie, Joyal, Jardine and
+Thomason. Let us also point out that other definitions of $n$-category have
+been proposed, see Baez--Dolan (\cite{BaezDolanLetter} \cite{BaezDolanIII},
+which was independent of \cite{Tamsamani} and simultaneous) or Batanin
+(\cite{Batanin}, a little later). For the moment a comparison between these
+different definitions is missing, and as explained above, we use a slight
+variant of Tamsamani's definition.
+
+Our basic technique is that of cmc's, and our work has been deeply influenced
+by recent work in cmc theory, that of Hirschhorn \cite{Hirschhorn}, of
+Dwyer--Hirschhorn--Kan \cite{DHK}, also that of Goerss--Jardine
+\cite{JardineGoerssBook} and of Hovey \cite{HoveyMonMod} \cite{HoveyBook}, as
+well as by the less recent work of Dwyer--Kan on localisation \cite{DwyerKan1}
+\cite{DwyerKan2} \cite{DwyerKan3} \cite{DwyerKanDiags}.
+
+\subsection*{Acknowledgements}
+
+We thank C.~Walter, N.~Mestrano, Z.~Tamsamani, P.~Hirschhorn, B.~Toën,
+R.~Brown, A.~Bruguières, T.~Goodwillie, L.~Katzarkov, M.~Kontsevich,
+G.~Maltsiniotis, H.~Miller, S.~Mochizuki, T.~Pantev, J.~Pradines, C.~Rezk,
+J.~Tapia, C.~Teleman, D.~Toledo for discussions, correspondence, courses,
+theses and books which have influenced the present work. The second author
+thanks the University of California at Irvine for its hospitality at the end
+of the preparation of this paper.
+
+We thank our families for their support during this work.

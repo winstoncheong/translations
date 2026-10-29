@@ -1,0 +1,829 @@
+%@ pages 94-107
+%@ status translated
+% Original section 10, "Critères pour qu'un préchamp soit un champ", pp. 94--107.
+%
+% Translation notes:
+%  * The French abbreviates "n-préchamp" as "n-précat" in two places
+%    (proof of Lemma \ref{grest} and proof of Proposition \ref{newcritere});
+%    we read it as "n-prestack".
+%  * In the paragraph defining \underline{Fl}^i(A;x,y) the original prints
+%    "$s(x)=s(x)$ and $b(x)=b(y)$"; we reproduce the print (see the %
+%    comment at that point).
+
+\clearpage
+\section{Criteria for a prestack to be a stack}
+\label{caracterisationpage}
+
+We begin by introducing several equivalent notions of {\em effectivity of
+descent data}. Subsequently we shall use only version (ii) below; the others
+are there to illuminate the definition---the reader may therefore skip the
+proof.
+
+The interest of conditions (vii) and (viii) below lies in their elementary
+character: indeed, they refer neither to the model structure \ref{cmf}, nor to
+the operation $SeCat$. However, without the cmf structure these conditions
+would be practically unusable. We have included them to facilitate, if need
+be, an exposition of the notion of stack without proofs.
+
+\begin{lemmedefinition}
+\label{lemmedef}
+Let $A$ be a Segal $n$-prestack on a site $\Xx$. Let $X\in \Xx$ and let
+$\Bb \subset \Xx /X$ be a sieve covering $X$. We shall say that {\em the
+descent data for $A$ on $\Bb$ are effective} if one of the following
+equivalent conditions is satisfied.
+\newline
+(i)\, Every morphism from $\ast _{\Bb}$ to $A|_{\Bb}$ in the homotopy
+category $Ho(nSePCh(\Bb ^{\rm gro}))$ of Segal $n$-prestacks with respect to
+object-by-object equivalences extends to a morphism from $\ast$ to $A(X)$ in
+$Ho(nSePC)$. In other words, the natural map
+$$
+[\ast , A(X)]\rightarrow [\ast _{\Bb} , A|_{\Bb}]_{\Bb ^{\rm gro}}
+$$
+is surjective;
+\newline
+(ii)\, For every fibrant replacement $A\rightarrow A'$ for the coarse
+topology, every morphism $\ast _{\Bb}\rightarrow A'$ extends to a morphism
+$\ast _{\Xx /X}\rightarrow A'$;
+\newline
+(ii')\, There exists a fibrant replacement $A\rightarrow A'$ for the coarse
+topology such that every morphism $\ast _{\Bb}\rightarrow A'$ extends to a
+morphism $\ast _{\Xx /X}\rightarrow A'$;
+\newline
+(iii)\, For every fibrant replacement $A\rightarrow A'$ for the coarse
+topology, the morphism of Segal $n$-categories
+$$
+A'(X)=\Gamma (\Xx /X , A'|_{\Xx /X})\rightarrow \Gamma (\Bb , A'|_{\Bb})
+$$
+is essentially surjective;
+\newline
+(iii')\, There exists a fibrant replacement $A\rightarrow A'$ for the coarse
+topology such that the morphism of Segal $n$-categories
+$$
+A'(X)=\Gamma (\Xx /X , A'|_{\Xx /X})\rightarrow \Gamma (\Bb , A'|_{\Bb})
+$$
+is essentially surjective;
+\newline
+(iv)\, The morphism
+$$
+A(X)\rightarrow \lim _{\leftarrow , \Bb ^o} A|_{\Bb }
+$$
+is essentially surjective;
+\newline
+(v)\, For every fibrant replacement $A\rightarrow A'$ for the structure HBKQ
+(\ref{cmfHirschho}), i.e. an object-by-object equivalence with each $A'(X)$
+fibrant, and for every morphism
+$$
+\eta : D_{\Bb}\rightarrow A'
+$$
+there exists a homotopy $h: D_{\Bb}\times \overline{I}\rightarrow A'$ with
+$h(0)=\eta$ and such that $h(1)$ comes from a morphism $\ast\rightarrow
+A(X)$. Here $D_{\Bb}\rightarrow \ast _{\Bb}$ is the HBKQ-cofibrant
+replacement constructed at the end of \S 5.
+\newline
+(v')\, There exists a fibrant replacement $A\rightarrow A'$ for the structure
+HBKQ (\ref{cmfHirschho}) such that for every morphism
+$$
+\eta : D_{\Bb}\rightarrow A'
+$$
+there exists a homotopy $h: D_{\Bb}\times \overline{I}\rightarrow A'$ with
+$h(0)=\eta$ and such that $h(1)$ comes from a morphism $\ast\rightarrow
+A(X)$.
+
+If we assume, moreover, that $A(Y)$ is a Segal $n$-category for every
+$Y\in \Xx$, then these conditions are equivalent to the following conditions:
+\newline
+(vi)\, For every diagram of presheaves of Segal $n$-categories
+$$
+\ast _{\Bb } \leftarrow C \rightarrow A
+$$
+in which the first morphism is an object-by-object equivalence, there exists
+$\ast \rightarrow A(X)$ such that the composite
+$$
+C\rightarrow \ast _{\Bb} \rightarrow \ast _{\Xx /X} \rightarrow A
+$$
+is homotopic (in Quillen's sense) to the original morphism $C\rightarrow A$;
+\newline
+(vii) \, Every diagram of presheaves of Segal $n$-categories
+$$
+\ast _{\Bb } \leftarrow C \rightarrow A
+$$
+in which the first morphism is an object-by-object equivalence can be
+completed into a diagram
+$$
+\begin{array}{ccccc}
+\ast _{\Bb }& \leftarrow &C &\rightarrow &A\\
+\downarrow &&\downarrow && \parallel \\
+\ast _{\Xx /X }& \leftarrow &C' &\rightarrow &A
+\end{array}
+$$
+in which the morphism $C'\rightarrow \ast _{\Xx /X}$ is an object-by-object
+equivalence; and
+\newline
+(viii)\, Let $nSeCat^{\Bb^o}$ be the category of presheaves of Segal
+$n$-categories on $\Bb$; and let $Ho( nSeCat^{\Bb^o})$ be its Gabriel--Zisman
+localisation, obtained by inverting the object-by-object equivalences. Then
+every morphism $\ast _{\Bb}\rightarrow A$ in $Ho( nSeCat^{\Bb^o})$ comes from a
+morphism $\ast \rightarrow A(X)$.
+\end{lemmedefinition}
+{\em Proof:}
+\newline
+(i)$\Leftrightarrow$(ii)($\Leftrightarrow$(ii'))\,\,
+According to Quillen \cite{Quillen} every element of
+$[\ast _{\Bb}, A|_{\Bb}]_{\Bb ^{\rm gro}}$ comes from a morphism
+$f:\ast _{\Bb}\rightarrow A'|_{\Bb }$ (note that $A'|_{\Bb }$ is fibrant for
+the coarse topology, see \S 4, and that $\ast_{\Bb}$ is automatically
+cofibrant). If $f$ extends to $\ast _{\Xx /X}$ then the class of $f$ obviously
+comes from $[\ast , A(X)]$. Conversely, if $f$ corresponds to an element of
+$[\ast _{\Bb}, A|_{\Bb}]_{\Bb ^{\rm gro}}$ coming from $[\ast , A(X)]$ then
+there exists a morphism $g:\ast _{\Xx /X}\rightarrow A'$ such that
+$g|_{\Bb}$ is homotopic (on the left) to $f$ in Quillen's sense
+\cite{Quillen}. Since $\ast _{\Bb} \times \overline{I}$ is a cylinder object
+for $\ast_{\Bb}$, there exists a morphism $$
+h: \ast _{\Bb} \times \overline{I}\rightarrow A'
+$$
+with $h(0)= f$ and $h(1)= g|_{\Bb}$. Now we have a morphism
+$$
+(\ast _{\Bb} \times \overline{I})\cup^{\ast _{\Bb} \times \{ 1\}}
+(\ast _{\Xx /X} \times \{ 1\}) \rightarrow A'
+$$
+which extends along the trivial cofibration (for the coarse topology)
+$$
+(\ast _{\Bb} \times \overline{I})\cup^{\ast _{\Bb} \times \{ 1\}}
+(\ast _{\Xx /X} \times \{ 1\}) \hookrightarrow
+\ast _{\Xx /X} \times \overline{I},
+$$
+to a morphism whose restriction to $\ast _{\Xx /X} \times \{ 0\}$ provides the
+desired extension of $f$.
+\newline
+(ii)$\Leftrightarrow$(iii)($\Leftrightarrow$(iii')) \, is immediate in view of
+the definition of $\Gamma$.
+\newline
+(iii)$\Leftrightarrow$(iv) \, follows from Proposition \ref{calclim} below.
+\newline
+(i)$\Leftrightarrow$(v)($\Leftrightarrow$(v')) One argues as for
+(i)$\Leftrightarrow$(ii) but with the HBKQ structure; cf. \S 5. Note that the
+notion of homotopy class of maps is independent of the choice of cmf
+structure and depends only on the weak equivalences; in particular in (i) the
+sets in question are the same in the structure of \ref{cmf} and in the HBKQ
+structure \ref{cmfHirschho}.
+
+We now assume that $A$ is a presheaf of Segal $n$-categories. We have the
+equivalence $Ho(nSeCat^{\Bb})\cong Ho(nSePCh(\Bb ^{\rm gro})_f)$ since there is
+a natural ``fibrant replacement'' equivalence from $nSeCat^{\Bb}$ to
+$nSePCh(\Bb ^{\rm gro})_f$. On the other hand we have the equivalence
+$Ho(nSePCh(\Bb ^{\rm gro})_f) \cong Ho(nSePCh(\Bb ^{\rm gro}))$
+(\cite{Quillen}). This gives (i)$\Leftrightarrow$(viii).
+For conditions (vi) and (vii), we choose a fibrant replacement $A\rightarrow
+A'$ for the coarse topology. Every morphism $\ast _{\Bb}\rightarrow A'$
+therefore admits a factorisation
+$$
+\ast _{\Bb}\rightarrow E \rightarrow A'
+$$
+in which the first arrow is a trivial cofibration for the coarse topology and
+the second a fibration for the coarse topology. There exists a (unique)
+retraction $E\rightarrow \ast _{\Bb}$ (one may say that $\ast _{\Bb}$ is
+fibrant for the coarse topology, but in fact it suffices to consider the
+connected components of $C$). Set
+$$
+C:= E\times _{A'} A.
+$$
+The fact that the $A(Y)$ are Segal $n$-categories allows one to apply
+\ref{proper} to obtain that $C\rightarrow E$ is an object-by-object
+equivalence. Note, by \ref{stuff}, that the $C(Y)$ are Segal $n$-categories.
+It follows that every element of $[\ast _{\Bb}, A|_{\Bb }]_{\Bb ^{\rm gro}}$
+comes from a diagram (of presheaves of Segal $n$-categories)
+$$
+\ast _{\Bb}\leftarrow C
+\rightarrow A
+$$
+in which the first morphism is an object-by-object equivalence.
+We leave it to the reader to complete the proof that (vi) and (vii) are
+equivalent to the other conditions, by expressing in the same way the
+condition that such a diagram gives rise to an element of $[\ast _{\Bb},
+A|_{\Bb }]_{\Bb ^{\rm gro}}$ which comes from $[\ast , A(X)]$.
+\eop
+
+\subnumero{Main criterion}
+
+We have the following characterisation of stacks, which is analogous to the
+definition of $1$-stack in Giraud \cite{GiraudThese} and
+Laumon--Moret-Bailly \cite{LaumonMB}. Conditions (a) and (b) are the analogues
+of the two conditions in the definition of a sheaf. Note also that condition
+(a) leads us recursively to condition (b).
+
+
+\begin{proposition}
+\label{critere}
+Let $n\geq 1$.
+Let $A$ be a Segal $n$-prestack on $\Xx$ whose values are Segal $n$-categories.
+Then $A$ is a Segal $n$-stack if and only if:
+\newline
+(a)\,\, for every $X\in \Xx$ and all $x,y\in A_0(X)$ the Segal
+$(n-1)$-prestack $A_{1/}(x,y)$ on $\Xx /X$ is a Segal $(n-1)$-stack; and
+\newline
+(b) \, for every $X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ in a set of
+sieves which generates the topology, the descent data for $A$ with respect to
+$\Bb$ are effective, see Definition \ref{lemmedef} above.
+\end{proposition}
+{\em Proof:}
+Conditions (a) and (b) are obviously necessary (for (b) one uses the fact that
+$A'$ is $\Gg$-fibrant by virtue of Lemma \ref{grofibchampimplfib}).
+Suppose that (a) and (b) are satisfied and let $A'\rightarrow A''$ be a
+$\Gg$-trivial cofibration to a $\Gg$-fibrant Segal $n$-prestack. For every
+$X\in \Xx$ and $x,y\in A_0(X)$, the morphism
+$$
+A_{1/} (x,y)\rightarrow         A''_{1/}(x,y)
+$$
+is a $\Gg_X$-trivial cofibration of Segal $(n-1)$-prestacks on $\Xx /X$ whose
+target is $\Gg _X$-fibrant (Corollary \ref{Gfibrestrict}). Condition (a)
+implies that this morphism is an equivalence for the coarse topology, in
+particular
+$$
+A(X)_{1/} (x,y)\rightarrow      A''(X)_{1/}(x,y)
+$$
+is an equivalence. The same holds for the morphism
+$$
+A'(X)_{1/} (x',y')\rightarrow  A''(X)_{1/}(x',y')
+$$
+for all $x',y'\in A'_0(X)$ since $x'$ and $y'$ are equivalent to objects
+coming from $A_0(X)$. This shows that $A'\rightarrow A''$ is fully faithful
+object-by-object. It remains to see that $A'\rightarrow A''$ is essentially
+surjective object-by-object. For this, one may choose a factorisation
+$$
+A'\rightarrow B \rightarrow A''
+$$
+in which the first morphism is a trivial cofibration for the coarse topology
+and the second a fibration for the coarse topology. Replacing $A'$ by $B$ if
+necessary, we may henceforth assume that $A'\rightarrow A''$ is a fibration
+for the coarse topology.
+
+Let $X\in \Xx$ and $u\in A''_0(X)$, which we regard as a morphism
+$$
+u: \ast _X \rightarrow A'' |_{\Xx /X}.
+$$
+Set
+$$
+C:= (A'|_{\Xx /X})\times _{A'' |_{\Xx /X}}\ast _X .
+$$
+The morphism $C\rightarrow \ast _X$ is a fibration for the coarse topology and
+also an equivalence for the topology $\Gg$. Moreover, since
+$A'\rightarrow A''$ is fully faithful, the morphism $C\rightarrow \ast _X$ is
+fully faithful. In particular, $C$ is $0$-truncated, and equivalent
+object-by-object to a presheaf of subsets of $\ast _X$. Since our morphism is
+an equivalence for the topology $\Gg$, there exists a sieve
+$\Bb \subset \Xx /X$ of the topology (and even of the generating set of sieves
+mentioned in (b)) such that $\ast _{\Bb}$ is contained in this subpresheaf of
+$\ast _X$. In particular, the morphism
+$$
+C\times _{\ast _X}\ast _{\Bb} \rightarrow \ast _{\Bb}
+$$
+is an object-by-object equivalence and, since it is also a fibration for the
+coarse topology, there exists a section $\ast _{\Bb }\rightarrow C$. We thus
+obtain a morphism
+$$
+\ast _{\Bb} \rightarrow A'|_{\Xx /X}
+$$
+which, thanks to (b), extends to a morphism
+$$
+u':\ast _{X} \rightarrow A'|_{\Xx /X}.
+$$
+We thus obtain an element $u'\in A'_0(X)$. By the same type of argument one
+sees that the image of $u'$ in $A''_0(X)$ is equivalent to $u$, which proves
+essential surjectivity.
+\eop
+
+\subnumero{Criterion for Segal \texorpdfstring{$0$}{0}-stacks}
+
+We have a result analogous to \ref{critere} for Segal $0$-prestacks, i.e.
+simplicial presheaves. To obtain it, we use the following lemma.
+
+\begin{lemma}
+\label{pimseg}
+Let $m,n\geq 0$ and let $A$ be a presheaf of Segal $n$-categories.
+Then $A$ is a Segal $n$-stack if and only if $\Pi _{m,Se}\circ A$ is a Segal
+$(n+m)$-stack.
+\end{lemma}
+{\em Proof:}
+First we show that if $A$ is a Segal $n$-stack, then $\Pi _{m,Se}\circ A$ is a
+Segal $(n+m)$-stack. Reasoning by induction on $m$ and applying criterion
+\ref{critere}, we reduce to the case $n=0$ and $m=1$. So let $A$ be a Segal
+$0$-stack. We may assume that $A$ is $\Gg$-fibrant. We shall prove conditions
+(a) and (b) of \ref{critere} for $B=\Pi _{1,Se}\circ A$. Note that $A$ and
+$\Re _{\geq 0}B$ are equivalent (object-by-object). If $X$ is an object of
+$\Xx$ and $\Bb$ a sieve covering $X$, every morphism $\ast _{\Bb}\rightarrow B$
+induces a morphism $\ast _{\Bb}\rightarrow \Re _{\geq 0}B$ and hence descent
+data for $A$ (i.e. an element of $[\ast _{\Bb}, A|_{\Bb }]_{\Bb ^{\rm gro}}$).
+Now the inclusion $\ast _{\Bb}\rightarrow \ast _{\Xx /X}$ is a
+$\Gg$-equivalence and the fact that $A$ is $\Gg$-fibrant therefore implies the
+existence of an extension of our descent data to an element of
+$[\ast , A(X)]= [\ast , B(X)]$. This proves condition (b) of \ref{critere} for
+$B$. On the other hand, let $a$ and $b$ be in $B_0(X)$. We have the equivalence
+$$
+B_{1/}(a,b) \cong Path ^{a,b}(A):= \ast \times _{A|_{\Xx /X}}\ast ,
+$$
+and this latter prestack is a Segal $0$-stack by \ref{fiprodchamp}. This gives
+condition (a) of \ref{critere}, and hence, by \ref{critere}, $B$ is a Segal
+$1$-stack.
+
+For the other direction, suppose that $\Pi _{m,Se}\circ A$ is a Segal
+$(n+m)$-stack. Choose a $\Gg$-fibrant replacement $A\rightarrow A'$. We obtain
+a morphism
+$$
+\Pi _{m,Se}\circ A\rightarrow \Pi _{m,Se}\circ A',
+$$
+whose target is a Segal $(n+m)$-stack by the first paragraph. By hypothesis the
+source is a Segal $(n+m)$-stack. Since this morphism is a weak
+$\Gg$-equivalence, \ref{morphentrechamps} implies that it is an
+object-by-object equivalence. This in turn implies that $A\rightarrow A'$ is an
+object-by-object equivalence, and hence $A$ is a Segal $n$-stack.
+\eop
+
+
+We now give a version of the criterion adapted to Segal $0$-prestacks (or
+simplicial presheaves). Let us recall here that a simplicial presheaf $U$ is a
+Segal $0$-stack if and only if $U$ is {\em flasque with respect to the objects
+of the site} in Jardine's sense \cite{Jardine}, or {\em of cohomological
+descent} in Thomason's terminology \cite{Thomason} \cite{TravauxThomason}.
+
+\begin{corollary}
+\label{0critere}
+If $U$ is a simplicial presheaf over $\Xx$, then $U$ is a Segal $0$-stack if
+and only if
+\newline
+(a)\,\, for every $X\in \Xx$ and all $x,y\in U_0(X)$ the simplicial presheaf
+\newline
+$Y\mapsto Path ^{x|_Y,y|_Y}(U(Y))$ on $\Xx /X$ is a Segal $0$-stack; and
+\newline
+(b)\,\, for every $X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ (in a family
+of sieves which generates the topology), the descent data for $U$ on $\Bb$ are
+effective.
+\end{corollary}
+{\em Proof:}
+One observes, as in the preceding proof, that if $A:= \Pi _{1,Se}\circ U$ then
+one has
+$$
+\left( Y\mapsto Path ^{x|_Y,y|_Y}(U(Y))\right) \cong A_{1/}(x,y)
+$$
+and on the other hand, the set of descent data (resp. effective descent data)
+for $U$ is isomorphic to the set of descent data (resp. effective descent
+data) for $A$. One concludes with the help of \ref{critere} and \ref{pimseg}.
+\eop
+
+
+In condition (a) of this corollary, $Path ^{x|_Y,y|_Y}(U(Y))$ denotes the
+simplicial set of paths between $x|_Y$ and $y|_Y$ in a Kan replacement of
+$U(Y)$.
+
+
+If $U$ is a $k$-truncated Segal $0$-stack (i.e. the $U(X)$ have vanishing
+homotopy groups in degree $>k$) then the criterion of \ref{0critere} becomes
+recursive, since in condition $(a)'$, $Path ^{x|_Y,y|_Y}(U(Y))$ is
+$k-1$-truncated. One can convert this remark into a version of Proposition
+\ref{critere} adapted to $k$-stacks (plain, and not Segal).
+
+\medskip
+
+\subnumero{Compatibility with restriction to \texorpdfstring{$\Xx /X$}{X/X}}
+
+We return to Segal $n$-stacks; we can now complete the results of \S 4
+concerning the topology $\Gg$.
+
+
+
+\begin{lemma}
+\label{grest}
+Let $\Xx$ be a site whose Grothendieck topology we denote by $\Gg$. A Segal
+$n$-prestack $A$ on $\Xx$ is a stack if and only if $A|_{\Xx /X}$ is a stack
+for every $X\in \Xx$. The restriction of Segal $n$-prestacks
+$$
+p^{\ast}: A\mapsto A|_{\Xx /X}
+$$
+preserves $\Gg$-fibrations and trivial $\Gg$-fibrations; for the topology
+$\Gg$, $p^{\ast}$ is a Quillen functor both on the left and on the right.
+\end{lemma}
+{\em Proof:}
+It is obvious from our criteria (\ref{critere} and \ref{0critere}) that $A$ is
+a stack if and only if $A|_{\Xx /X}$ is a stack for every $X\in \Xx$. In
+particular the restriction $p^{\ast}$ sends $\Gg$-fibrant objects to
+$\Gg$-fibrant objects (cf. Lemma \ref{grofibchampimplfib}). Let
+$f: A\rightarrow B$ be a $\Gg$-fibration between $\Gg$-fibrant objects. Then
+$f|_{\Xx /X}$ is a fibration for the coarse topology (by \ref{shriek}) between
+$\Gg$-fibrant objects. By Lemma \ref{stuff}, $f|_{\Xx /X}$ is $\Gg$-fibrant.
+
+Now we know that $p^{\ast}$ turns fibrations between fibrant objects into
+fibrations. But a cofibration in a cmc is trivial if and only if it satisfies
+the lifting property with respect to all fibrations between fibrant objects.
+This implies that the adjoint $p_!$ of $p^{\ast}$ turns trivial cofibrations
+into trivial cofibrations (and we already knew that $p_!$ preserves
+cofibrations). Hence $p_!$ is a left Quillen functor, and consequently
+$p^{\ast}$ is a right Quillen functor.
+\eop
+
+
+
+\subnumero{Concerning \texorpdfstring{$\emptyset$}{the empty set}}
+% The authors abbreviate "n-précatégorie de Segal" as "n-précat de Segal";
+% "précat" is not a slip for "préchamp".  "n-précat" is translated
+% "Segal n-precategory", "n-préchamp" as "Segal n-prestack".
+Usually in a site $\Xx$ one has an initial object $\iota$ (generally the
+``empty'' object $\iota = \emptyset$), and the stacks on $\Xx$ must satisfy the
+condition $A(\iota )\cong \ast$, at least when the topology $\Gg$ admits the
+empty sieve $\Bb = \emptyset \subset \Xx /\iota$ as a sieve covering $\iota$
+(which will be the case in the geometric examples). Indeed, under this
+hypothesis, if $A$ is $\Gg$-fibrant, then since
+$E'\times \ast _{\iota} \rightarrow E\times \ast _{\iota}$ is a trivial
+cofibration, for every cofibration of Segal $n$-precategories
+$E'\subset E$, every morphism $E'\rightarrow A(\iota )$ extends to
+$E\rightarrow A(\iota )$, which entails that $A(\iota )\rightarrow \ast$ is a
+trivial fibration.
+
+
+Let us see what this gives with our criteria: since
+$\Bb = \emptyset \subset \Xx /\iota$ is a sieve covering $\iota$ ($\Bb$ does
+not even contain $\iota$), the prestack $\ast _{\Bb}$ is equal to the empty
+presheaf $\emptyset$ over $\Xx /\iota$, so there exists a unique morphism
+$\ast _{\Bb}\rightarrow A'|_{\Xx /\iota}$. Condition (b) of our criteria
+therefore implies that $A'(\iota )$ is non-empty. On the other hand, condition
+(a) of our criteria implies (by induction on $n$) that for each pair of
+objects of $A(\iota )$ the corresponding $(n-1)$-category of morphisms is
+$\ast$. Hence $A(\iota )=\ast$.
+For $n=0$ the same argument (replacing $A$ each time by its
+$\Pi _{1,Se}\circ A$) shows by induction that all the homotopy groups of the
+simplicial set $A(\iota )$ vanish; this is the initial case of the induction
+for $n>0$.
+On the other hand, for what is called the ``coarse topology'', one does not
+admit the empty sieve $\emptyset \rightarrow \Xx /\iota$ as a covering sieve.
+In that case one does not have the condition $A(\iota )\cong \ast$.
+
+
+\subnumero{Dévissage}
+
+
+
+For $n>0$ one can break up the condition for being a stack in terms of the
+$k<n$, thanks to the following corollary. Let us recall once again that a
+simplicial presheaf $U$ is a Segal $0$-stack if and only if $U$ is flasque with
+respect to the objects of the site (Jardine \cite{Jardine}), or of
+cohomological descent (Thomason \cite{Thomason} \cite{TravauxThomason}). This
+condition is therefore well known.
+
+We recall (cf. \S 2) that if $A$ is a Segal $n$-category, for $k\leq n$ one
+has at one's disposal the {\em $k$-groupic interior} $A^{int, k}$, which is a
+Segal $k$-category. Essentially this construction consists in keeping only the
+$i$-arrows which are invertible up to equivalence ($i>k$) and in regarding the
+result as a Segal $k$-category. For $k=0$, $A^{int, 0}$ is therefore a
+simplicial set with $\Pi _{n,Se}\circ A^{int, 0}$ equivalent to the largest
+Segal $n$-groupoid contained in $A$. These constructions extend in the
+obvious way to presheaves of Segal $n$-categories.
+
+The following corollary allows one to break up the condition for a Segal
+$n$-prestack $A$ to be a Segal $n$-stack in terms of the condition for a
+simplicial presheaf to be a Segal $0$-stack.
+
+
+
+\begin{corollary}
+\label{devissage}
+Let $A$ be a Segal $n$-prestack ($n\geq 1$) such that $A(X)$ is a Segal
+$n$-category for every $X\in \Xx$. Then $A$ is a Segal $n$-stack if and only
+if:
+\newline
+(a) \, for every $X\in \Xx$ and every pair of objects $x,y\in A_0(X)$, the
+Segal $(n-1)$-prestack $A_{1/}(x,y)$ is a Segal $(n-1)$-stack over
+$\Xx /X$; and
+\newline
+(b) \, $A^{int, 0}$ is a Segal $0$-stack.
+\end{corollary}
+{\em Proof:}
+One has
+$$
+[\ast _{\Bb}, A|_{\Bb}]_{\Bb ^{\rm gro}} =
+[\ast _{\Bb}, A^{int, 0}|_{\Bb}]_{\Bb ^{\rm gro}} ,
+$$
+and one applies \ref{critere} and \ref{0critere}.
+\eop
+
+
+\begin{corollary}
+If $A$ is a Segal $n$-stack then for $0\leq k < n$, $A^{int,k}$ is a Segal
+$k$-stack.
+\end{corollary}
+\eop
+
+
+In fact, the reader may convince themselves that the present dévissage reduces
+us to an infinite number of effectivity conditions for descent data, one for
+the $i$-arrows for each $i\geq 0$. To state this more precisely, let us
+introduce some notation. Let us first recall a notation of Tamsamani
+\cite{Tamsamani}: the set of $i$-arrows of an $n$-category $A$, denoted
+$Fl^i(A)$, is the set $A_{1^i}$ where $1^i = (1,\ldots , 1)\in \Theta ^n$ is
+the class of $(1,\ldots , 1,0,\ldots , 0)\in \Delta ^n$. One has the maps $s$
+(``source'') and $b$ (``target'') from $Fl^i(A)$ to $Fl^{i-1}(A)$. In our
+situation, if $A$ is a Segal $n$-category, we shall agree to call the
+$i$-arrows for $i>n$ the $i$-arrows of $\Pi _{m,Se}\circ A$ for $m> i-n$. More
+systematically one could define (in view of our definition of $\tau _{\leq m}$,
+see \S 2)
+$$
+Fl^i(A):= Fl^i(\tau _{\leq i+1}A).
+$$
+Let $i\geq 1$ and let $x,y\in Fl^{i-1}(A)$ with $s(x)=s(x)$ and $b(x)=b(y)$.
+% the original prints "$s(x)=s(x)$" here; the same condition is printed
+% correctly, as $s(x)=s(y)$, at the two later occurrences below. We reproduce
+% the print.
+One then defines the Segal $(n-i)$-category
+$\underline{Fl}^i(A; x,y)$ as the sub-Segal-$(n-i)$-category of $A_{1^i/}$
+consisting of the objects whose source is $x$ and whose target is $y$ (here, if
+$n-i$ is negative, one replaces it by $0$).
+\footnote{
+This inelegance should eventually disappear when one can speak of the
+{\em $\infty$-categories}.}
+
+If $A$ is a Segal $n$-prestack whose values $A(X)$ are Segal $n$-categories,
+then for every $X\in \Xx$ and $x,y\in Fl^{i-1}(A(X))$ with $s(x)=s(y)$ and
+$b(x)=b(y)$, one has at one's disposal the Segal $(n-i)$-prestack
+$\underline{Fl}^i(A|_{\Xx /X}; x,y)$ which to $Y\rightarrow X$ associates the
+$(n-i)$-category $\underline{Fl}^i(A(Y); x|_Y,y|_Y)$.
+
+\begin{proposition}
+\label{conditiond}
+Let $A$ be a Segal $n$-prestack on $\Xx$ such that the $A(X)$ are Segal
+$n$-categories. Then $A$ is a Segal $n$-stack if and only if for every
+$X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ (in a family of sieves which
+generates the topology), one has:
+\newline
+---the descent data for $A$ with respect to $\Bb$ are effective; and
+\newline
+---for every $1\leq i < \infty$, for all $x,y\in Fl^{i-1}(A(X))$ with
+$s(x)=s(y)$ and $b(x)=b(y)$, the descent data for
+$\underline{Fl}^i(A|_{\Xx /X}, x,y)$ on $\Bb$ are effective.
+\end{proposition}
+The proof is left as an exercise to the reader. {\em Hint:} combine Lemma
+\ref{pourloc}, with the remark that it suffices, in order
+to obtain all trivial cofibrations, to consider adequate sequences composed of
+trivial cofibrations for the coarse topology, as well as cofibrations of the
+form $cof(U\hookrightarrow U'; \Bb \subset \Xx /X)$ where $U'= h(1^i)$
+represents the $i$-arrows, and $U$ is its ``boundary'' which represents the
+pairs of $i-1$-arrows with the same source and target.
+\eop
+
+
+
+\subnumero{The case of Segal \texorpdfstring{$1$}{1}-prestacks and presheaves of
+simplicial categories}
+
+In the last part of the paper we shall be mainly interested in the case $n=1$;
+for this reason we copy out \ref{devissage} for Segal $1$-categories as well as
+for presheaves of simplicial categories. Let us recall once again that the
+Segal $0$-stacks are exactly the simplicial presheaves flasque with respect to
+the objects of the site \cite{Jardine}, or equivalently satisfying the
+cohomological descent condition of \cite{Thomason} \cite{TravauxThomason}.
+
+\begin{corollary}
+Let $A$ be a Segal $1$-prestack such that $A(X)$ is a Segal category for every
+$X\in \Xx$. Then $A$ is a Segal $1$-stack ($\infty$-stack) if and only if:
+\newline
+(a) \, for every $X\in \Xx$ and every pair of objects $x,y\in A_0(X)$, the
+simplicial presheaf $A_{1/}(x,y)$ over $\Xx /X$ is a Segal $0$-stack; and
+\newline
+(b) \, the simplicial presheaf $A^{int, 0}$ is a Segal $0$-stack.
+\end{corollary}
+\eop
+
+If $B$ is a simplicial category, one can compute the simplicial set
+$B^{int, 0}$ in the following way: let $WB$ be the simplicial subcategory in
+which one keeps only the arrows which are invertible up to homotopy; let
+$\nu WB$ be its ``nerve'', i.e. the associated bisimplicial set (it is also
+the associated Segal $1$-precategory). Then, if $d(\nu WB)$ is the corresponding
+diagonal simplicial set, one has $d(\nu WB)\cong B^{int, 0}$.
+This discussion extends in the obvious way to presheaves of simplicial
+categories (which give rise to Segal $1$-prestacks denoted by the same
+letter).
+
+\begin{corollary}
+Let $B$ be a presheaf of simplicial categories. Then $B$ is a Segal $1$-stack
+if and only if:
+\newline
+(a) \, for every $X\in \Xx$ and every pair of objects $x,y\in Ob (B)(X)$, the
+simplicial presheaf $Mor_B(x,y)$ over $\Xx /X$ is a Segal $0$-stack, and
+\newline (b) \, the simplicial presheaf
+$d(\nu WB)= B^{int,0}$ is a Segal $0$-stack.
+\end{corollary}
+\eop
+
+
+
+
+
+\subnumero{A variant of the criterion}
+
+%%%%%% this subsection modified in v3 including the comments at the end %%%%
+
+We give here a statement very slightly different from \ref{critere}.
+We remark first that if $A'$ is a Segal $n$-prestack fibrant for the coarse
+topology, then $A'|_{\Xx /X}$ is also fibrant for the coarse topology, as is
+$A'|_{\Bb}$ for every sieve $\Bb$ covering $\Xx /X$ (see \S 4). Moreover, we
+observe that the morphism
+$$
+\Gamma (\Xx /X , A'|_{\Xx /X}) \rightarrow A'(X)
+$$
+is an isomorphism of Segal $n$-categories, since $X$ is the final object of the
+category $\Xx /X$ and $\Gamma$ is simply the functor of global sections for
+presheaves.
+
+The following statement is probably not true for Segal $n$-prestacks, even for
+$n=0$; this is due to the fact that Lemma \ref{pourloc} (corrected in {\tt v3})
+is true only for the $n$-truncated case. It would seem that one obtains a
+counterexample to \ref{newcritere} by considering a topological space $X$
+having two non-empty open subsets $U$ and $V$ and no others apart from the
+open subsets of $U\cap V$ introduced by the recurrence condition
+$U\cap V \cong X$.
+
+%%%% in v3 the following only applies to the truncated case %%%
+%%%%
+\begin{proposition}
+\label{newcritere}
+Let $A$ be an $n$-prestack (not Segal) on $\Xx$ whose values are $n$-categories.
+Fix a trivial cofibration for the coarse topology $A\rightarrow A'$ with $A'$
+fibrant for the coarse topology.
+Then $A$ is an $n$-stack if and only if:
+\newline
+(c)\,\,
+for every $X\in \Xx$ and every sieve $\Bb \subset \Xx /X$ of the topology,
+the morphism
+$$
+A'(X)=\Gamma (\Xx /X, A'|_{\Xx /X}) \rightarrow \Gamma (\Bb , A'|_{\Bb})
+$$
+is an equivalence of $n$-categories.
+\end{proposition}
+{\em Proof:}
+Suppose that $A$ is an $n$-stack. Replacing $A$ by $A'$ if necessary, we may
+also assume that $A$ is fibrant for the coarse topology, and hence even
+$\Gg$-fibrant (see \ref{stuff}). We shall show that, in this case, the morphism
+of (c) is a trivial fibration; for this we shall show that it has the lifting
+property with respect to every cofibration $E\rightarrow E'$ of $n$-precategories.
+
+We begin by observing that if a morphism $U\rightarrow V$ of $n$-prestacks over
+$\Xx /X$ is an equivalence over each object of a sieve $\Bb \subset \Xx /X$
+covering $X$, then it is a weak $\Gg$-equivalence. Indeed, this is easy to see
+for $n=0$ and for $n>0$ one may proceed by induction on $n$ using directly the
+definition of weak $\Gg$-equivalence (\S 3). We apply this to the morphism
+$$
+j:E'_{\Bb} \cup ^{E_{\Bb}} E_{\Xx /X} \rightarrow E'_{\Xx /X},
+$$
+where $E\hookrightarrow E'$ is the given trivial cofibration of Segal
+$n$-precategories, and $E_{\Bb}$ is the $n$-prestack obtained by applying $p_{!}$
+to the constant $n$-prestack with values $E$ on $\Bb$, $p$ denoting the
+inclusion $\Bb \rightarrow \Xx /X$. % the original abbreviates "n-préchamp"
+% as "n-précat" here
+We thus obtain that $j$ is a $\Gg$-trivial cofibration. The lifting property of
+$A\rightarrow \ast$ for the morphism $j$ translates into the lifting property
+of the morphism
+$$
+\Gamma (\Xx /X, A|_{\Xx /X}) \rightarrow \Gamma (\Bb , A|_{\Bb})
+$$
+with respect to the cofibration $E\rightarrow E'$. This proves that the
+morphism in question is a trivial fibration, which gives condition (c) for $A$.
+
+For the other direction, suppose that $A$ satisfies condition (c).
+Note that if $A$ is fibrant for the coarse topology, condition (c) implies that
+$A$ has the lifting property with respect to every cofibration of the form
+$cof(U\hookrightarrow U', \Bb \subset \Xx /X)$ (see the definition just before
+Proposition \ref{naqualocaliser}). By Lemma \ref{pourloc}, this implies that
+$A$ has the lifting property with respect to every $\Gg$-trivial cofibration,
+i.e. that $A$ is $\Gg$-fibrant. Condition (c) therefore implies that $A$ is an
+$n$-stack.
+\eop
+
+
+%%%%%%%%%%%%%%%%%%
+{\em Remarks:} We indicate here an alternative argument of induction on $n$
+which allows one easily to reduce the proposition to the case $n=0$. Suppose
+that $n\geq 1$ and that one has already proved the proposition for Segal
+$(n-1)$-prestacks. If $\Bb$ is a sieve covering $\Xx /X$, then for all
+$x,y\in A'_0(X)$ one has
+$$
+\Gamma (\Bb  , A'_{1/}(x,y)|_{\Bb})= \Gamma (\Bb , A'|_{\Bb})_{1/}(x,y).
+$$
+In view of the definition of the equivalence between Segal $n$-categories,
+condition (c) for $A'$ is manifestly equivalent to the conjunction of condition
+(b) of \ref{critere} with condition (c) for the $A'_{1/}(x,y)$. By the
+induction hypothesis, the latter is equivalent to condition (a) of
+\ref{critere}. One thus obtains indeed that condition (c) is equivalent to
+conditions (a) plus (b) of \ref{critere}.
+For $n=0$, i.e. for presheaves of sets, there is an easy argument.
+
+
+In the case of simplicial presheaves, the fact that condition (c) is necessary
+was the subject of a note by Toën \cite{ToenDescente}.
+For every $n$ the condition is necessary for Segal $n$-prestacks.
+
+It is probable that, replacing Lemma \ref{pourloc} by the version in terms of
+hypercoverings proved recently by Dugger \cite{Dugger},
+one would obtain a necessary and sufficient version of this criterion (c) in
+terms of hypercoverings. We leave this interesting question open.
+
+
+
+
+\subnumero{The proto-stacks}
+
+For ordinary (non-Segal) $1$-stacks, there appears in Giraud \cite{GiraudThese}
+and Laumon--Moret-Bailly \cite{LaumonMB} a notion of ``prestack'': in their
+sense, a prestack is one of our prestacks which moreover satisfies condition
+(a) of \ref{critere}. In the case of presheaves, this corresponds to requiring
+the first of the two conditions of the usual definition of sheaves (Houzel
+called these semi-sheaves, but ``semi-stack'' does not sound good) and the
+terminology of \cite{GiraudThese} \cite{LaumonMB} is therefore not compatible
+with the usual terminology concerning presheaves; this is why we have
+preferred to keep the term ``prestack'' for objects devoid of any relation with
+the topology $\Gg$. However, the notion of a prestack satisfying condition (a)
+of \ref{critere} is useful, and we adopt the following definition:
+
+\begin{definition}
+Let $n\geq 1$.
+A Segal $n$-prestack $A$ will be called a {\em protostack} if the $A(X)$ are
+Segal $n$-categories, and if $A$ satisfies condition (a) of \ref{critere},
+namely that for every $X\in \Xx$ and all $x,y\in A(X)_0$, the Segal
+$(n-1)$-prestack $A_{1/}(x,y)$ is a Segal $(n-1)$-stack on $\Xx /X$.
+\end{definition}
+
+
+\begin{lemma}
+Let $A$ be a Segal $n$-prestack whose values $A(X)$ are Segal
+$n$-ca\-te\-go\-ries. Let $f:A\rightarrow A'$ be an associated stack
+(\S 9). Then $A$ is a protostack if and only if the morphism $f$ is fully
+faithful (object-by-object).
+\end{lemma}
+{\em Proof:}
+If $f$ is fully faithful then, since the $A'_{1/}(fx,fy)$ are Segal
+$(n-1)$-stacks, the same holds for the $A_{1/}(x,y)$. Conversely, suppose that
+$A$ is a protostack, and let $x,y\in A(X)_0$.
+Then the morphism $A_{1/}(x,y)\rightarrow A'_{1/}(fx,fy)$ is a
+$\Gg_X$-weak equivalence between Segal $(n-1)$-stacks on $\Xx /X$, hence by
+\ref{morphentrechamps} it is an object-by-object equivalence.
+Hence $f$ is fully faithful.
+\eop
+
+The next proposition is the analogue of a result of \cite{flexible}. We leave
+the proof as an ``exercise'' to the reader.
+
+\begin{proposition}
+\label{exo}
+Let $F$ be a Segal $n$-protostack on $\Xx$, and define a Segal $n$-prestack $G$
+by
+$$
+G(X):= {\rm colim} _{\Bb \subset \Xx /X}\left( \lim _{\leftarrow , \Bb ^o}
+F|_{\Bb} \right)
+$$
+(here one uses the limits and colimits of \cite{limits}, see \S 14 for how to
+compute them; the colimit is taken over the filtered set of sieves covering
+$X$). Then $F\rightarrow G$ is the associated stack.
+\end{proposition}
+\eop
+
+Recall that one may regard an $n$-category as a Segal $n$-category by
+regarding the sets of $n$-morphisms as $0$-truncated simplicial sets. The Segal
+$n$-categories which correspond in this way to $n$-categories are exactly those
+which are {\em $n$-truncated}, i.e. for which one has
+$A\cong A^{int, n}\cong \tau _{\leq n}A$. The following lemma indicates that one
+may use this correspondence to translate the results on Segal $n$-prestacks
+into results on (non-Segal) $n$-prestacks.
+In this lemma, the hypothesis that the $A(X)$ must be Segal $n$-categories is
+indeed necessary (since the operation $SeCat$ does not preserve the property of
+being truncated).
+
+
+\begin{corollary}
+\label{preservetronque}
+If $A$ is a presheaf of Segal $n$-categories which is $n$-truncated (i.e.
+$A\cong \tau _{\leq n}A$) and if $A\rightarrow A'$ is an associated stack, then
+$A'$ is also $n$-truncated.
+\end{corollary}
+{\em Proof:} This would be an immediate consequence of
+Proposition \ref{exo}.
+Since we have not provided a proof of that proposition, we indicate here an
+alternative proof of the corollary.
+One may suppose that, in parallel with our discussion of Segal $n$-prestacks,
+one has developed an analogous discussion for non-Segal $n$-prestacks.
+For example, for a non-Segal $n$-prestack $T$, one can define the associated
+$n$-stack $f:T\rightarrow T'$. This morphism is a weak $\Gg$-equivalence of
+$n$-prestacks. Let $Ind(T)$ (resp. $Ind(T')$) denote the induced Segal
+$n$-prestacks.
+Suppose that the $T(X)$ are $n$-categories.
+The fact that $f$ is a $\Gg$-equivalence of $n$-prestacks implies that
+$Ind(f)$ is a $\Gg$-equivalence of Segal $n$-prestacks. On the other hand, by
+\ref{critere} and its analogue for non-Segal $n$-prestacks, $Ind(A')$ is a
+Segal $n$-stack. Indeed, with condition (a) one reduces by induction to the
+case $n=0$; for that case, the question is whether a sheaf of sets is a Segal
+$0$-stack, which it is (one can see this by applying \ref{0critere} twice
+more). This proves that $Ind(A')$ is a Segal $n$-stack. Then by definition it is
+the Segal $n$-stack associated to $Ind(A)$. In the situation of the corollary,
+one starts from a Segal $n$-prestack $A$ which is object-by-object
+$n$-truncated. It follows that $A$ is equivalent to a prestack $Ind(T)$ where
+$T$ is a non-Segal $n$-prestack (and whose values are $n$-categories) and the
+preceding discussion proves the corollary.
+\eop
+
+{\em Exercise:} If $A$ is a non-Segal $n$-prestack (or a Segal one but
+$n$-truncated) then one obtains the associated stack $A'$ from $A$ by applying
+the construction of Proposition \ref{exo} $n+2$ times.

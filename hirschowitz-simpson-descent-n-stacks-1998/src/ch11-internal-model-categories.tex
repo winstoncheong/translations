@@ -1,0 +1,1095 @@
+%@ pages 108-124
+%@ status translated
+% Original section 11, "Catégories de modèles internes", pp. 108--124.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * The authors' "cmf" (catégorie de modèles fermée) is rendered "cmc"
+%    (closed model category), following the terminology table.
+%  * "n-précat (de Segal)" is rendered "Segal n-precategory", as in \S2.
+%  * "libre addition de cellules" is rendered "free addition of cells", as
+%    in \S5.
+%  * "k-groupique" is rendered "k-groupic", as in \S2.
+%  * The authors abbreviate "compatible aux changements de base" as "ccb";
+%    the translation writes "compatible with base change (cbc)" and uses
+%    "cbc" throughout.  The labels \label{ccb1} and \label{cestccb} are the
+%    original's and are left unchanged.
+%  * In the last paragraph the French sentence breaks off ("...satisfaisant
+%    à la propriété universelle homotopique voulue, est obstruée"); the final
+%    clause has no subject and is read as saying that the construction is
+%    obstructed.  The mathematics is untouched.
+
+\clearpage
+\section{Internal model categories}
+\label{cmipage}
+
+
+We want to construct the Segal $(n+1)$-prestack of modules of Segal
+$n$-stacks. For this we use the following notion of an {\em internal closed
+model category}. Let $M$ be a closed model category. We shall say that $M$ is
+{\em internal} if it satisfies the following axioms:
+\newline
+IM(a)---$M$ admits an internal $Hom$, i.e. the functor $X\mapsto M_1(X\times A,
+B)$ is representable by an object $\underline{Hom} (A,B)$;
+\newline
+IM(b)---the direct product commutes with finite colimits, in particular
+$A\times \emptyset = \emptyset$ for the initial object $\emptyset$;
+\newline
+IM(c)---if $A\rightarrow A'$ and $B\rightarrow B'$ are cofibrations then the
+natural morphism
+$$
+{\rm colim} \left(
+\begin{array}{ccc}
+A\times B & \rightarrow & A'\times B \\
+\downarrow &&  \\
+A\times B' & &
+\end{array}
+\right) \rightarrow A'\times B'
+$$
+is also a cofibration; and
+\newline
+IM(d)---weak equivalence is stable under direct product.
+
+These axioms are very close to the axioms of a {\em monoidal closed model
+category} in Hovey's sense \cite{HoveyMonMod}. Essentially, one asks that the
+direct product define a monoidal structure in the sense of
+\cite{HoveyMonMod}, and one asks in addition that the internal $\underline{Hom}$
+exist. This last condition is more or less equivalent to the existence of a
+certain colimit, but this colimit is perhaps not ``small'' (i.e. indexed by a
+set and not a class) and we do not know whether the simple condition of
+existence of (small) colimits suffices to guarantee IM(a).
+
+The following proposition recovers the axioms IM1--IM4 of \cite{nCAT} \S 11,
+and we regard the axioms IM(a)--IM(d) from now on as constituting the
+``official'' version of the notion of internal cmc.
+
+\begin{proposition}
+\label{interne}
+Let $M$ be an internal closed model category.
+\newline
+(1) \,\, If $A$ is cofibrant and $B$ fibrant then $\underline{Hom}(A,B)$ is
+fibrant; \newline
+(2)\,\, If $A\rightarrow A'$ is a cofibration (resp. trivial cofibration) of
+cofibrant objects, and if $B'\rightarrow B$ is a fibration (resp. trivial
+fibration) between fibrant objects, then the morphism
+$$
+\underline{Hom}(A',B')\rightarrow
+\underline{Hom}(A',B) \times _{\underline{Hom}(A,B) }\underline{Hom}(A,B')
+$$
+is a fibration (resp. trivial fibration);
+\newline
+(3)\,\, The internal $\underline{Hom}$ turns every cofibrant coproduct in its
+first argument (resp. fibrant fibre product in its second argument) into a
+fibrant fibre product.
+\end{proposition}
+The proof is easy and left to the reader (the arguments are to be found in \S 7
+of \cite{nCAT}).
+\eop
+
+There is a ``homotopy'' version of the notion of internal $Hom$. Let $A$ be a
+simplicial category, and let $x,y\in A$. Suppose that $A$ admits homotopy
+direct products; let $h\in A$ and $f: h\times x\rightarrow y$ be a morphism
+(i.e. one chooses an object $h\times x$ equipped with morphisms to $h$ and $x$
+representing the direct product). One says that $(h,f)$ is a homotopy internal
+$Hom$ of $x$ to $y$, if the morphism (essentially well defined)
+$$
+A_{1/}(u,h)\rightarrow A_{1/}(u\times x, y)
+$$
+is an equivalence (here again one chooses an object $u\times x$).
+
+\begin{proposition}
+\label{hominterne}
+Let $M$ be an internal closed model category. Then the simplicial category
+$L(M)$ admits an internal $Hom$ in the homotopical sense above.
+\end{proposition}
+{\em Proof:}
+One uses the technique of cofibrant cosimplicial resolutions to compute the
+function complexes
+(cf \cite{Hirschhorn} \cite{DHK} \cite{DwyerKan3}
+\cite{JardineGoerssBook} \cite{Reedy}).
+Let us fix $x,y\in M$ with $x$ cofibrant and $y$ fibrant, and denote by
+$h:=\underline{Hom}(x,y)$ the internal $\underline{Hom}$ of $M$ (IM(a)). There
+is a morphism $h\times x\rightarrow y$. Here and below it is worth remarking
+that the direct product of objects of $M$ is also the homotopy direct product
+in $L(M)$, by IM(d). Let us fix $u\in M$ and choose a cofibrant Reedy
+cosimplicial resolution ${\bf u}\rightarrow u$
+(cf \cite{Hirschhorn} \cite{DHK} \cite{DwyerKan3} \cite{JardineGoerssBook}
+\cite{Reedy}). One then has the equality between simplicial sets
+$$
+M_{1/} ({\bf u}, h)= M_{1/}(x\times {\bf u}, y).
+$$
+Now, since $h$ is fibrant (Proposition \ref{interne} (1)), one also has
+(by {\em loc cit.})
+$$
+M_{1/} ({\bf u}, h)\cong L(M)_{1/}(u,h).
+$$
+On the other hand, axioms IM(b) and IM(c) imply that $x\times {\bf u}$ is a
+cofibrant Reedy cosimplicial resolution of $x\times u$, hence (again by
+{\em loc cit.}) one has the equivalence
+$$
+M_{1/} (x\times {\bf u}, y)\cong L(M)_{1/}(x\times u, y).
+$$
+These two equivalences imply by definition that $h$ is a homotopy internal
+$Hom$ of $x$ to $y$.
+\eop
+
+\subnumero{The associated \texorpdfstring{$M_f$}{M\_f}-enriched category}
+
+Let $M$ be an internal closed model category. Let us denote by $\ast$ its
+terminal object. One obtains a functor $\sigma : M\rightarrow Sets$ by setting
+$\sigma (X):= M_1(\ast , X)$. This construction commutes with direct products.
+One has the tautological formula
+$$
+M_1(A,B) = \sigma \underline{Hom} (A,B).
+$$
+The internal $\underline{Hom}$ makes it possible to equip $M_{cf}$ with a
+structure of category enriched in $M_f$, via the functor $\sigma$. In other
+words, for all $A,B\in M_{cf}$ one has $\underline{Hom} (A,B)\in M_f$ and
+$M_{cf}(A,B)=\sigma (\underline{Hom} (A,B))$;
+for all $A,B,C$ one has a composition
+$$
+\underline{Hom} (A,B)\times \underline{Hom} (B,C)\rightarrow
+\underline{Hom}(A,C)
+$$
+which is associative (we neglect here the problems connected with the
+associativity constraints, which are natural isomorphisms). This composition
+is transformed by $\sigma$ into the composition of $M_{cf}$.
+
+If one knows in addition that the $\underline{Hom} (A,B)$ are cofibrant (this
+is for example the case when the cofibrations of $M$ are the injections), then
+$M_{cf}$ is self-enriched by its internal $Hom$. In particular, the structure
+$INT(M_{cf})$ depends only on the category $M_{cf}$ in this case.
+
+
+One also obtains what one could call a {\em strict $M_f$-Segal category}, and
+which we shall denote by $INT(M_{cf})$, by setting
+$$
+INT(M_{cf})_{p/}(A_0,\ldots , A_p):=
+\underline{Hom}(A_0,A_1)\times \ldots \times \underline{Hom}(A_{p-1}, A_p).
+$$
+More precisely, this object consists of a set $INT(M_{cf})_0$ of objects, and
+for every sequence $A_0,\ldots , A_p$ of objects, an object
+$INT(M_{cf})_{p/}(A_0,\ldots , A_p)$ of $M_f$ (with the usual morphisms of
+functoriality) such that the Segal morphisms are isomorphisms. This is of
+course equivalent to the data of an $M_f$-enriched category, and we shall use
+the notation $INT(M_{cf})$ indifferently for the $M_f$-enriched category or
+for the strict $M_f$-Segal category.
+
+
+
+\subnumero{Internal structure for Segal \texorpdfstring{$n$}{n}-categories}
+
+
+
+In the case where $M$ is a category of presheaves of sets on some category, and
+if the cofibrations are the injective morphisms (or even only injective over a
+subset of objects of the base category) then axioms IM(a), IM(b) and IM(c) are
+automatically satisfied.
+Such is the case for the closed model category of $n$-precategories of
+\cite{nCAT} or its variant for Segal $n$-precategories defined earlier in the
+present work \ref{cmf}. Such is also the case for the closed model category
+of Segal $n$-prestacks \ref{SeCmf}, since a Segal $n$-prestack is nothing other
+than a presheaf of sets on $\Theta ^{n+1} \times \Xx$ (and the cofibrations are
+the injections of presheaves).
+The only difficulty in these examples consists in verifying IM(d).
+
+This has been done
+for $n$-precategories in \cite{nCAT} Theorem 5.1. As for the existence of the
+closed model category structure, one can either copy the proof, or use this
+result via $A\mapsto \Pi _m \circ A$, to obtain the same result for Segal
+$n$-precategories. One obtains:
+
+\begin{lemma}
+The cmc $nSePC$ of Segal $n$-precategories of \ref{cmf} is
+internal.
+\end{lemma}
+\eop
+
+
+
+
+
+If one applies the preceding discussion to the closed model category $nSePC$
+of Segal $n$-precategories one obtains a strict $1$-category
+$INT(nSePC_{cf})$ enriched over $nSePC_f$; and by taking the nerve of this one
+obtains an $nSePC_f$-Segal category, i.e. a Segal $n+1$-category which we
+denote
+$$
+nSeCAT:= INT(nSePC_{cf}).
+$$
+Let us insist on the fact that the objects of $nSeCAT$ are the fibrant Segal
+$n$-categories, and for every sequence of objects $A_0,\ldots , A_p$ one has
+$$
+nSeCAT_{p/}(A_0,\ldots , A_p):= \underline{Hom}(A_0, A_1)\times \ldots
+\times \underline{Hom}(A_{p-1}, A_p).
+$$
+The same construction for the $n+1$-category $nCAT$ of fibrant $n$-categories
+was given in \cite{nCAT} \S 7.
+
+We observe that $nSeCAT$ (resp. $nCAT$) is not fibrant, and one will often use
+a fibrant replacement which we shall denote $nSeCAT'$ (resp. $nCAT'$).
+
+{\em Set-theoretic remark:}
+The objects of $(nSeCAT)_0$ form a class, and technically speaking, $nSeCAT$ is
+not an $n+1$-category. To get around this problem, we agree to fix a set (a
+very large one!) and to retain as objects of $nSeCAT$ only those $n$-categories
+whose underlying set (i.e. union of the $A_M$) is contained in this set. With
+this convention, the fibrant replacement $nSeCAT'$ exists. The reader will
+verify that our constructions do not take us outside this framework: when one
+speaks of limits or colimits, for example, they are always taken along a set of
+indices whose cardinality one can bound in advance; it therefore suffices to
+choose our initial set large enough for all the limits and colimits that we are
+going to take to exist; similarly, when one uses the small object argument, one
+always knows in advance a transfinite bound on the number of steps required.
+
+
+
+
+\subnumero{Internal structure for Segal \texorpdfstring{$n$}{n}-stacks}
+
+We shall now adapt to Segal $n$-stacks the construction seen for Segal
+$n$-categories.
+
+
+\begin{lemma}
+The cmc $nSePCh$ of Segal $n$-prestacks on a site $\Xx$, is internal.
+\end{lemma}
+{\em Proof:} as remarked above, the only
+difficulty concerns IM(d),
+which one proves by induction on $n$. For $n=0$ the property in question
+follows easily from the definition of Illusie's equivalence (noting that
+passage to the associated sheaf is compatible with the direct product of
+presheaves of sets, see for example \cite{Rezk}). We therefore suppose
+$n\geq 1$ and the result known for $n-1$. Let $f:A\rightarrow A'$ be a
+$\Gg$-equivalence of Segal $n$-prestacks, and let $B$ be a Segal $n$-prestack.
+One may suppose (thanks to the corresponding result for Segal $n$-precategories)
+that $A(X)$, $A'(X)$ and $B(X)$ are Segal $n$-categories. One has
+$$
+\tau _{\leq 0} (A\times B)= \tau _{\leq 0}(A)\times \tau _{\leq 0} (B)
+$$
+(and likewise for $A'$)
+hence the morphism
+$$
+\tau _{\leq 0} (A\times B)\rightarrow \tau _{\leq 0} (A'\times B)
+$$
+induces a surjection on the associated sheaves of sets. On the other hand,
+for $(x,a)$ and $(y,b)$ in $(A\times B)_0(X)$, one has
+$$
+(A\times B)_{1/}((x,a), (y,b))= A_{1/}(x,y)\times B_{1/}(a,b)
+$$
+and likewise for $A'$; one therefore obtains (from the result for $n-1$) that
+the morphism induced by $f$
+$$
+(A\times B)_{1/}((x,a), (y,b))\rightarrow
+(A'\times B)_{1/}((fx,a), (fy,b))
+$$
+is a $\Gg$-equivalence. By definition (see \S 3) this means that $f$ is a
+$\Gg$-equivalence. This gives IM(d).
+\eop
+
+
+
+Now,
+starting from $M=nSePCh$, one can construct the Segal $n+1$-prestack of fibrant
+Segal $n$-stacks, denoted
+$$
+nSe\underline{CHAMP}(\Xx ):= INT(nSePCh_{cf}).
+$$
+The objects of $nSe\underline{CHAMP}(\Xx )$ over $X\in \Xx$ are the fibrant
+Segal $n$-prestacks on $\Xx /X$. If $A_0,\ldots , A_p$ are such objects, then
+one defines on $\Xx /X$ the Segal $n$-prestack
+$$
+nSe\underline{CHAMP}(\Xx )_{p/}(A_0,\ldots , A_p)=
+\underline{Hom}(A_0,A_1)\times \ldots \times \underline{Hom}(A_{p-1}, A_p).
+$$
+
+By applying the global sections functor $\Gamma$ to
+$nSe\underline{CHAMP}(\Xx )$, one obtains {\em the Segal $n+1$-category of
+Segal $n$-stacks on $\Xx$}, which one could denote
+$$
+nSeCHAMP(\Xx ).
+$$
+In fact, if one analyses the preceding sentence, one finds that
+the objects of $nSeCHAMP(\Xx )$
+are the Segal $n$-prestacks $A$ such that $A|_{\Xx /X}$ is
+fibrant for all $X\in \Xx$. If $\Xx$ has no terminal object, this condition
+may be different from the (stronger) condition that $A$ be fibrant
+(note the counterexample in \S 6),
+and we shall modify the definition slightly so as to retain in
+$nSeCHAMP(\Xx )$ only those objects which are fibrant over $\Xx$.
+
+In conclusion, one prefers to denote by
+$nSeCHAMP(\Xx )$
+the $n+1$-category whose objects
+are the $\Gg$-fibrant Segal $n$-prestacks on the site
+$\Xx$. If $A_0,\ldots , A_p$ are
+such objects, then one takes as previously for
+$nSeCHAMP(\Xx )_{p/}(A_0,\ldots , A_p)$
+the product of $n$-precategories
+$\Gamma \underline{Hom}(A_0,A_1)\times \ldots \times
+\Gamma \underline{Hom}(A_{p-1}, A_p).$
+
+It is worth recalling, in order to understand this definition, that
+$\Gamma \underline{Hom}(A,B)$ can be defined as the representative of the
+functor
+$nSePC\rightarrow Ens$
+$$
+E\mapsto Hom _{nSePCh}(A\times \underline{E},B),
+$$
+where $\underline{E}$ is the constant Segal $n$-prestack with values $E$.
+
+
+It is immediate that for every $X\in \Xx$, one has
+$$
+nSe\underline{CHAMP}(\Xx )(X) = nSeCHAMP(\Xx /X),
+$$
+and this could serve as a definition of $nSe\underline{CHAMP}(\Xx )$.
+
+Finally, one can make here the same ``set-theoretic remark''
+as above (which explains
+why one allows oneself to take fibrant replacements
+$nSe\underline{CHAMP}(\Xx )'$).
+
+\subnumero{Computation with the HBKQ-type structure}
+
+We indicate here how to use the structure of theorem
+\ref{cmfHirschho} to compute $\Gamma \underline{Hom}$ and
+$\underline{Hom}$ (the latter in the case where $\Xx$ admits fibre
+products).
+
+\begin{lemma}
+\label{hbkqinterne}
+If the site $\Xx$ admits direct products, then the cmc of HBKQ type of
+\ref{cmfHirschho} is internal.
+\end{lemma}
+{\em Proof:} It suffices to remark
+that the product of two free additions of cells over $X$
+and over $Y$, is a free addition over $X\times Y$.
+\eop
+
+{\em Remark:} If one wishes to apply this lemma on the sites $\Xx /X$ then
+these must admit direct products, i.e. $\Xx$ must admit fibre products.
+
+In view of this lemma, one could, in the case where $\Xx$ admits direct
+products, define an HBKQ version of $nSeCHAMP(\Xx )$ and
+$nSe\underline{CHAMP}(\Xx )$. We point out now that one would obtain
+essentially the same objects as above.
+
+We shall begin by showing a property valid even if $\Xx$ does not admit
+all direct products.
+
+
+Let $E$ be a Segal $n$-precategory, and denote by
+$\underline{E}$ the constant Segal $n$-prestack on $\Xx$ with value $E$.
+If $A\rightarrow A'$ is the cofibration freely generated by the addition
+of a cell over $X\in \Xx$ (i.e. generated by a cofibration of
+Segal $n$-precategories $A(X)\rightarrow C$) then $A\times
+\underline{E}\rightarrow A'\times \underline{E}$ is also freely generated
+by addition of the cell $A(X)\times E \rightarrow C\times E$.
+It follows (from the fact that the direct product with $\underline{E}$ preserves
+transfinite compositions and retractions) that if
+$$
+A\rightarrow A'
+$$
+is a cofibration for the structure of HBKQ, then
+the same is true of
+$$
+A\times
+\underline{E}\rightarrow A'\times \underline{E}.
+$$
+Let now $A$ be cofibrant and $B$ fibrant for the structure of
+HBKQ (Theorem \ref{cmfHirschho}). The Segal $n$-precategory
+$\Gamma \underline{Hom}(A,B)$ represents the functor $nSePC\rightarrow Ens$
+$$
+E\mapsto Hom _{nSePCh}(A\times \underline{E}, B).
+$$
+The fact that the $A\times \underline{E}$ are cofibrant (for
+\ref{cmfHirschho})
+implies that if $B\rightarrow B'$ is an equivalence between two
+Segal $n$-prestacks fibrant for \ref{cmfHirschho}, then the induced
+morphism
+$$
+\Gamma \underline{Hom}(A,B)\rightarrow \Gamma \underline{Hom}(A,B')
+$$
+is an equivalence of Segal $n$-precategories (both are fibrant
+Segal $n$-precategories). In particular
+one may choose $B'$
+fibrant with respect to the structure of theorem \ref{cmf},
+in which case one obtains the
+``right'' Segal $n$-category of morphisms from $A$ to $B$. The conclusion
+is the following lemma, which says that $A$ and $B$ may be used to
+compute the Segal $n$-categories of morphisms in $nSeCHAMP (\Xx )$.
+
+Let us note, before stating the lemma, that $B$ is fibrant for the structure
+\ref{cmfHirschho} if and only if for all $X\in \Xx$, $B(X)$ is fibrant.
+This is therefore a pointwise condition (satisfied for example by every
+functor $\Xx ^o \rightarrow nSeCAT$).
+
+\begin{lemma}
+\label{bonhomHirschho}
+Let $A$ be cofibrant and $B$ fibrant for the structure of
+HBKQ (Theorem \ref{cmfHirschho}). Let $A'$ and $B'$ be
+their fibrant replacements for the structure of \ref{cmf}. Then
+there is an equivalence of Segal $n$-categories
+$$
+nSeCHAMP(\Xx )_{1/}(A',B')=\Gamma \underline{Hom}(A',B')\cong
+\Gamma \underline{Hom}(A,B).
+$$
+\end{lemma}
+\eop
+
+We point out that one can compute in the same way the Segal $n$-prestacks
+of morphisms in $nSe\underline{CHAMP}(\Xx )$, {\em provided
+that $\Xx$ admits fibre products}; thanks to lemma
+\ref{hbkqinterne}:
+
+\begin{lemma}
+\label{bonhomHirschho2}
+Suppose that the site $\Xx$ admits fibre products.
+Let $A$ be cofibrant and $B$ fibrant for the structure of
+HBKQ (Theorem \ref{cmfHirschho}). Let $A'$ and $B'$ be
+their fibrant replacements for the structure of \ref{cmf}. Then
+there is an equivalence of Segal $n$-categories
+$$
+nSe\underline{CHAMP}(\Xx )_{1/}(A',B')=\underline{Hom}(A',B')\cong
+\underline{Hom}(A,B).
+$$
+\end{lemma}
+\eop
+
+Lemma \ref{bonhomHirschho} helps us to make explicit the notion of ``descent
+data''. Let $X\in \Xx$ and let $\Bb \subset \Xx /X$ be a sieve
+covering $X$. Let
+$$
+{\cal D}_{\Bb} \rightarrow \ast _{\Bb}
+$$
+be the morphism of Segal $n$-prestacks (which may be regarded as
+being over $\Xx /X$ or $\Bb$) constructed in \S 5.
+Let $A$ be a Segal $n$-prestack on $\Xx$ fibrant for the structure
+\ref{cmfHirschho}, i.e. a presheaf on $\Xx$ with values in the
+category
+$nSePC_f$ of fibrant Segal $n$-categories.
+Let $A\rightarrow A'$ be a fibrant replacement for the structure of \ref{cmf}
+for the coarse topology. Then one has the equivalence
+$$
+\Gamma \underline{Hom} (\ast _{\Bb}, A'|_{\Bb})
+\cong \Gamma \underline{Hom}({\cal D}_{\Bb}, A|_{\Bb}).
+$$
+In particular, taking $\tau _{\leq 0}$,
+one obtains
+the following corollary.
+
+\begin{corollary}
+\label{calculDescente}
+Let $A$ be a Segal $n$-prestack on $\Xx$ fibrant for the structure
+\ref{cmfHirschho}, i.e. a presheaf on $\Xx$ with values in the
+category
+$nSePC_f$ of fibrant Segal $n$-categories.
+Let $X\in \Xx$ and  $\Bb \subset \Xx /X$ a sieve covering $X$, and let
+$$
+{\cal D}_{\Bb} \rightarrow \ast _{\Bb}
+$$
+be the ``resolution'' constructed in \S 5. Then the set
+``of descent data''
+$$
+[\ast _{\Bb}, A|_{\Bb}]_{\Bb ^{\rm
+gro}}
+$$
+is computed as the set of morphisms (in $nSePCh$) from ${\cal
+D}_{\Bb}$ to
+$A$, modulo the relation which
+identifies two morphisms if they are linked by a
+morphism ${\cal D}_{\Bb} \times \underline{\overline{I}}\rightarrow A$.
+\end{corollary}
+{\em Proof:}
+Let $A\rightarrow A'$ be a fibrant replacement for the structure of \ref{cmf}
+for $\Xx ^{\rm gro}$.
+The set of descent data is computed as
+$$
+[\ast _{\Bb}, A|_{\Bb}]_{\Bb ^{\rm
+gro}}
+=\tau _{\leq 0}\Gamma \underline{Hom} (\ast _{\Bb}, A'|_{\Bb}).
+$$
+By the equivalence above this is isomorphic to
+$$
+\tau _{\leq 0}\Gamma \underline{Hom} ({\cal D}_{\Bb}, A|_{\Bb}).
+$$
+Since
+$\Gamma \underline{Hom} ({\cal D}_{\Bb}, A|_{\Bb})$ is a fibrant Segal
+$n$-precategory, its truncation $\tau _{\leq 0}$ is computed as the set of
+objects
+modulo the relation which identifies
+two objects linked by a morphism with source $\overline{I}$.
+\eop
+
+\subnumero{Relation with the simplicial structure}
+
+According to Dwyer--Kan \cite{DwyerKan3}, the ``simplicial structure'' of a
+closed model category is well defined up to homotopy, and one would like to
+compare it with the internal structure when the latter exists.
+It would be possible to formulate this question in full generality but
+for convenience (and because it suffices for our applications) we shall
+only look at the case of an internal closed model category with
+compatible simplicial structure. We begin with the
+definition: if $M$ is an internal closed model category, a
+{\em compatible simplicial structure} is a functor $R: \Delta \rightarrow M$
+such that the simplicial category $M_{\ast}$
+defined by
+$$
+Hom _{M_k}(x,y):= Hom _M(R(k) \times x, y)
+$$
+is a simplicial model category in Quillen's sense.
+One can also write
+$$
+Hom_{M_{\ast}}(x,y) = \left( k\mapsto Hom _M(R(k)\times x, y) \right) .
+$$
+
+The functor
+$R$ extends, by passage to finite limits, to a functor (which we shall still
+denote by $R$) from the category
+of simplicial sets having only a finite number of non-degenerate simplices
+to $M$. In the notation introduced by Quillen for the simplicial
+structure, one has
+$$
+K\otimes x = R(K)\times x,
+$$
+and
+$$
+Hom (K, y) = \underline{Hom}(R(K), y)
+$$
+($\underline{Hom}$ is the internal $Hom$
+of $M$). One can also take these formulas as
+an alternative definition of the simplicial structure associated with $R$
+(this point of view corresponds to
+the definition of simplicial model category
+given by Goerss--Jardine \cite{JardineGoerssBook}).
+
+If $(M,R)$ is an internal closed model category with compatible simplicial
+structure, one obtains a functor $\Xi : M\rightarrow EnsSpl$
+from $M$ to simplicial sets, by setting for $x\in M$,
+$$
+\Xi (x)_p := Hom _M(R(p), x),
+$$
+or in terms of representable functors,
+$$
+Hom _{EnsSpl}(K, \Xi (x)):= Hom _M(R(K), x).
+$$
+In other words $\Xi (x)$ is the simplicial set
+$Hom_{M_{\ast}}(\ast , x)$ where $\ast$ is the terminal object of $M$.
+The functor $\Xi$ is compatible with direct products. Consequently,
+starting from an $M$-enriched category $C$, one can manufacture the
+category $\Xi \circ  C$ which is
+enriched over simplicial sets.
+
+\begin{lemma}
+\label{splinterne}
+Let $(M,R)$ be an internal closed model category with compatible
+simplicial structure, and let $INT(M_{cf})$ be the $M_f$-enriched category
+constructed above. On the other hand, let $M_{cf,\ast}$ be the simplicial
+category of cofibrant and fibrant objects with its simplicial structure
+determined by $R$. Then one has an isomorphism of simplicial categories
+$$
+M_{cf, \ast} = \Xi \circ  INT(M_{cf}).
+$$
+Consequently, if $L(M)$ is the Dwyer--Kan localisation of $M$ with respect to
+the weak equivalences, one has an equivalence of simplicial categories
+$$
+L(M)\cong \Xi \circ INT(M_{cf}).
+$$
+\end{lemma}
+{\em Proof:}
+The objects of $M_{cf, \ast}$ and of $INT(M_{cf})$ are the cofibrant and
+fibrant objects of $M$. For two such objects $x,y$, one has by definition
+$$
+INT(M_{cf})_{1/}(x,y):= \underline{Hom}(x,y),
+$$
+and therefore
+$$
+(\Xi \circ INT(M_{cf}))_{1/}(x,y):= \Xi (INT(M_{cf})_{1/}(x,y))
+= \left( p\mapsto Hom (R(p), \underline{Hom}(x,y)) \right)
+$$
+$$
+= \left( p\mapsto Hom (R(p)\times x,y) \right)
+= Hom _{M_{cf, \ast}}(x,y).
+$$
+This gives the desired isomorphism. The second part is a consequence
+of the equivalence $L(M) \cong M_{cf, \ast}$ see \cite{DwyerKan2}.
+\eop
+
+We shall apply all this to Segal $n$-categories and $n$-stacks.
+One verifies easily that one can equip the
+internal closed model category $nSePC$ of Segal $n$-precategories
+with a compatible simplicial structure by taking for $R(p)$
+the category $\overline{I}^{(p)}$
+having $p+1$ objects $0',\ldots , p'$
+and a single isomorphism between each pair of objects. Let
+$\Xi : nSePC \rightarrow EnsSpl$ be the corresponding functor.
+% The French prints "cat'egorie" here (backslash missing); we print
+% "category".
+
+\begin{lemma}
+\label{sigma}
+If $A$ is a fibrant (and automatically cofibrant) Segal $n$-category then
+there is a natural equivalence of simplicial sets
+$$
+\Xi (A) \stackrel{\cong}{\rightarrow} A^{int, 0}.
+$$
+\end{lemma}
+{\em Proof:}
+One has a morphism of Segal $n$-precategories
+$$
+R\Xi (A) \rightarrow A.
+$$
+Noting that $SeCat(R\Xi (A))$ is a Segal $n$-groupoid (as a
+homotopy colimit of Segal $n$-groupoids), and
+using the notation $A^{int, 0'}$ of \S 2, one obtains the equivalence
+$$
+R\Xi (A)\stackrel{\cong}{\rightarrow}
+SeCat(R\Xi (A))^{int, 0'} \rightarrow A^{int, 0'}
+$$
+(one must choose a retraction $SeCat(A)\rightarrow A$,
+which is possible because $A$ is
+fibrant). The composite is the morphism above. If $\Re$ is the
+realisation as a
+simplicial set, one has by definition $A^{int, 0}:= \Re A^{int, 0'}$,
+whence a morphism $$
+\Re (R\Xi (A)) \rightarrow A^{int, 0}.
+$$
+If one denotes by $I^{(p)}$ the category with $p+1$ objects $0',\ldots , p'$
+and a morphism $i'\rightarrow j'$ for all $i\leq j$, then
+the simplicial set
+$$
+\Re (I^{(p)})= h(p)
+$$
+is the standard $p$-simplex, and the inclusion
+$I^{(p)} \subset \overline{I}^{(p)}$ therefore provides a morphism
+$$
+h(p)\rightarrow \Re (R(p))
+$$
+which extends by passage to
+colimits to a morphism $K\rightarrow \Re (R(K))$ for every
+simplicial set $K$. In particular, one has a morphism
+$$
+\Xi (A)\rightarrow \Re(R\Xi (A)),
+$$
+which composed with the morphism above gives
+$$
+\Xi (A)\rightarrow A^{int, 0}.
+$$
+We need this to be an equivalence.
+
+The construction $\Xi$ respects the equivalences between fibrant objects.
+Using the equality $\Xi (A) = \Xi
+(A^{int, 0'})$, one may---after replacing $A$ by $A^{int, 0'}$--
+suppose that $A$ is a Segal $n$-groupoid. The
+latter corresponds to a
+topological space according to the work of
+Tamsamani \cite{Tamsamani} (Tamsamani's techniques
+apply directly to the ``Segal'' framework because he works in fact
+in this framework, and only performs the truncation at the end of the
+argument).
+One may therefore
+suppose that there exists a topological space $Y$ with $A= \Pi _{n,Se}(Y)$. One
+notes that the latter is automatically fibrant. One has a weak equivalence of
+spaces $|\Re (A)|\rightarrow Y$ (again thanks to \cite{Tamsamani}).
+Moreover, the simplicial set
+$\Xi (A)$ is a variant of the ``singular complex'' of $Y$, corresponding
+to the functor $\Delta \rightarrow Top$ which to $p\in
+\Delta$ associates $\Re (R(p))$. It follows that $| \Xi (A)| \rightarrow Y$ is
+a weak equivalence.  One obtains that the morphism of topological
+spaces
+$$
+| \Xi (A)|\rightarrow |\Re (A)|
+$$
+is a weak equivalence, which implies that
+$$
+\Xi (A)\rightarrow \Re (A) = A^{int, 0}
+$$
+is an equivalence of simplicial sets.
+\eop
+
+
+
+
+\begin{theorem}
+\label{intereqloc}
+There is a natural equivalence of Segal $1$-categories
+$$
+nSeCAT ^{int,1} \cong L(nSePC ).
+$$
+Moreover,
+if $\Xx$ is a site, there is a natural equivalence (and functorial in
+$\Xx$)
+$$
+nSeCHAMP (\Xx )^{int, 1} \cong L(nSePCh(\Xx )).
+$$
+Here the $L(\, )$ are the Dwyer--Kan localisations of the model
+categories with respect to the weak equivalences.
+\end{theorem}
+{\em Proof:}
+First $nSeCAT ^{int,1}$ is obtained from $nSeCAT$ by taking
+the interior $(\, )^{int, 0}$ of the Segal $n$-categories $nSeCAT _{1/}(A,B)$
+which are fibrant.
+By lemma \ref{sigma}, one obtains the interior of an object
+by applying the construction $\Xi$. One therefore has an equivalence
+$$
+nSeCAT ^{int,1}\cong \Xi \circ nSeCAT,
+$$
+and lemma \ref{splinterne} gives the equivalence with
+$L(nSePC)$.
+
+The functor $\underline{R}: \Delta \rightarrow nSePCh$ which to $p$
+associates the constant presheaf with value $R(p)\in nSePC$,
+defines a compatible
+simplicial structure on the internal closed model category
+$nSePCh$. If one denotes by $\Xi _{\underline{R}}$ the construction $\Xi$
+associated with this structure (and by $\Xi _R$ that associated with the
+structure $R$ on $nSePC$), one has, for every fibrant Segal $n$-prestack $A$,
+$$
+\Xi _{\underline{R}}(A) = \Xi _R (\Gamma (\Xx , A)).
+$$
+Recall that we have set
+$$
+nSe\underline{CHAMP} := INT (nSePCh_{cf}),
+$$
+and
+$$
+nSeCHAMP _{1/} (A, B) := \Gamma (\Xx , nSe\underline{CHAMP}_{1/}(A,B)).
+$$
+One obtains the equality
+$$
+(\Xi _{\underline{R}}\circ nSe\underline{CHAMP})_{1/}(A,B)
+= (\Xi _R \circ nSeCHAMP )_{1/}(A,B),
+$$
+in other words
+$$
+\Xi _{\underline{R}}\circ INT (nSePCh_{cf} )=
+\Xi _{\underline{R}}\circ nSe\underline{CHAMP}=
+\Xi _R \circ nSeCHAMP.
+$$
+Lemma \ref{splinterne} then gives the equivalence
+$$
+L(nSePCh )\cong \Xi _R \circ nSeCHAMP.
+$$
+As for the first part of the theorem, by
+using that the $nSeCHAMP
+_{1/}(A,B)$ are fibrant and by applying lemma \ref{sigma} to them, one
+obtains the equivalence
+$$
+\Xi _R \circ nSeCHAMP\cong  nSeCHAMP ^{int, 1}.
+$$
+These two equivalences give the second part of the theorem.
+\eop
+
+
+\subnumero{The relative internal \texorpdfstring{$\underline{Hom}$}{Hom}}
+
+We present here an often useful extension of the notion of
+internal $\underline{Hom}$: it is the ``fibre-by-fibre'' $\underline{Hom}$ for a morphism
+$f:A\rightarrow B$, which we shall denote $\underline{Hom}(A/B, C)\rightarrow B$. It
+will exist only under certain conditions on the morphism $f$.
+
+Let $M$ be a category of presheaves (i.e. suppose that there
+exists another category $\Yy$ such that $M$ is equivalent to the
+category of presheaves of sets on $\Yy$). Let
+$A,B,C\in M$ with
+an arrow $f:A\rightarrow B$. Let us set, for $E\in M$,
+$$
+H(E):= \{ E\rightarrow B, \, \, E\times _BA\rightarrow C\} .
+$$
+We claim that this functor is represented by an object
+$\underline{Hom}(A/B,
+C)$ of $M$. Indeed, $H(-)$ turns colimits into limits,
+which suffices
+to guarantee its representability.
+
+Suppose moreover that $M$ is an internal cmc. We shall say that a fibration
+$f:A\rightarrow B$ is {\em compatible with base change (cbc)}
+if, for
+every diagram
+$$
+B'\stackrel{a}{\rightarrow} B'' \rightarrow B
+$$
+where $a$ is a weak equivalence, one has that
+$$
+A\times _BB'\rightarrow A\times _BB''
+$$
+is also a weak equivalence. One notes that if $M$ is proper
+(e.g. for $M=0SePC$
+or $M=0SePCh$) then every fibration is compatible with base
+change---this is the definition of ``proper''.
+
+\begin{lemma}
+\label{ccb1}
+If
+$$
+\begin{array}{ccc}
+A&\stackrel{f}{\rightarrow}& B\\
+\downarrow && \downarrow \\
+A'&\stackrel{f'}{\rightarrow}& B'
+\end{array}
+$$
+is a diagram with $f$ and $f'$ fibrations and the vertical arrows
+equivalences, then:
+\newline
+---if $f'$ is cbc then $f$ is cbc;
+\newline
+---if $B\rightarrow B'$ is a fibration and $f$ is cbc then $f'$
+is cbc; and
+\newline
+---if $B$ and $B'$ are fibrant and $f$ is cbc then $f'$ is cbc.
+\end{lemma}
+{\em Proof:}
+Left to the reader (in the third case one may choose
+two fibrations $B\leftarrow B'' \rightarrow B'$ and
+apply the second case).
+\eop
+
+The following proposition establishes the relation between the condition
+``cbc''
+and the relative internal $\underline{Hom}$: for the latter to have a
+homotopical meaning the morphism $f:A\rightarrow B$ must be cbc.
+
+\begin{proposition}
+\label{hominternerelatif}
+Let $M$ be an internal cmc which is a category of presheaves.
+Suppose
+moreover that $cof \subset M$ is the category of injections of
+presheaves. Let
+$f:A\rightarrow B$ be a fibration compatible with base change. Then the
+functor
+$$
+C\mapsto \underline{Hom}(A/B, C)
+$$
+turns fibrations into
+fibrations, in particular if $C$ is fibrant then the structure morphism
+$\underline{Hom}(A/B, C)\rightarrow B$ is a fibration. This construction
+is---up to equivalence---invariant under equivalence in the
+variables $A$ and $C$ (these invariances are subject to the condition that the
+arrow $f$ remain a cbc fibration and that $C$ remain fibrant).
+If
+$$
+\begin{array}{ccc}
+A' &\rightarrow & A \\
+\downarrow && \downarrow \\
+B'&\rightarrow &B
+\end{array}
+$$
+is a cartesian diagram
+then one has the formula
+$$
+\underline{Hom}(A'/B', C) = \underline{Hom}(A/B,C)\times _BB'.
+$$
+If the vertical arrows are cbc fibrations and the morphism
+$B\rightarrow
+B'$ is either a trivial fibration or an equivalence between two
+fibrant objects, then the induced morphism
+$$
+\underline{Hom}(A'/B', C) \rightarrow  \underline{Hom}(A/B,C)
+$$
+is an equivalence.
+\end{proposition}
+{\em Proof:} Let $g:C'\rightarrow C$ be a fibration; let us show that
+the arrow
+$\underline{Hom}(A/B,g)$ satisfies the lifting property for a
+trivial cofibration $E\rightarrow E'$. This property amounts to the
+lifting property for $g$ with respect to the morphism
+$$
+j:A\times _BE\rightarrow A\times _BE' .
+$$
+The fact that $cof$ is compatible with fibre products implies that $j$
+is a cofibration; and the cbc property for $f$ implies that $j$
+is a
+weak equivalence; whence the desired lifting property.
+
+One notes in the same way that if $g:C'\rightarrow C$ is a trivial
+fibration then $g$ induces a trivial fibration $\underline{Hom}(A/B,g)$.
+This
+implies the invariance of the construction under
+equivalence in the fibrant argument
+$C$ (indeed every equivalence fits into a
+triangle---commutative up to a retraction---in which the other two
+sides
+are trivial fibrations).
+
+Let $A\stackrel{\cong}{\hookrightarrow}A'\rightarrow B$ be a diagram
+where the
+two morphisms $f:A\rightarrow B$ and $f':A'\rightarrow B$ are
+cbc fibrations. In this case, for $C$ fibrant, the morphism
+$$
+\underline{Hom}(A'/B,C)\rightarrow \underline{Hom}(A/B, C)
+$$
+is a trivial fibration: for a cofibration $E\rightarrow E'$ it
+is a matter of seeing that
+$$
+A\times _B E'
+\cup ^{A\times _BE} A'\times _B E \rightarrow A'\times _BE'
+$$
+is a trivial cofibration, which is the case thanks to the fact that
+$$
+A\times _BE\rightarrow A'\times _BE \;\;\; and \;\;\;
+A\times _BE' \rightarrow A'\times _BE'
+$$
+are trivial cofibrations (for this one does not need the
+cbc property). It follows that the formation of $\underline{Hom}(A/B, C)$ is
+invariant
+up to
+equivalence under equivalence in the variable $A$ (provided that
+$f$ remain fibrant and cbc and that $C$ be fibrant).
+
+Finally, the formula in the case of a base change $B\rightarrow B'$
+is an immediate consequence of the definition of the relative internal
+$\underline{Hom}$
+as a representable functor. If the morphism $B'\rightarrow B$
+is a trivial fibration,
+the fibre product with it still induces a
+trivial fibration. If this arrow is an equivalence between fibrant objects
+one may reduce (by introducing a $B"$ as at the beginning of the
+proof) to the case of a trivial fibration, which gives the statement
+of invariance under change of $B$.
+\eop
+
+{\em Question:} If $f:A\rightarrow B$ is cbc, is the same true of
+$\underline{Hom}(A/B,C)\rightarrow B$?
+
+\begin{lemma}
+\label{propunivHominterne}
+Let $M$ be a cmc as in the proposition above. Let $f:A\rightarrow B$
+be a fibration compatible with base change and let $C$ be a fibrant object.
+For every morphism $B'\rightarrow B$, one has
+$$
+Sect (B', \underline{Hom}(A/B, C)\times _BB') =
+\underline{Hom}(A\times _BB',C).
+$$
+Here $Sect(U,V)$ denotes,
+for a given
+morphism $V\rightarrow U$,
+the fibre of
+$\underline{Hom}(U,V)$ over $1_U\in \underline{Hom}(U,U)$.
+\end{lemma}
+{\em Proof:}
+Use the defining property of $\underline{Hom}(A/B, C)$.
+A morphism
+$$
+E\rightarrow Sect (B', \underline{Hom}(A/B, C)\times _BB')
+$$
+is a morphism $E\times B'\rightarrow \underline{Hom}(A/B, C)$
+whose composite to $B$ factors through $B'$. Or again a
+morphism
+$$
+E\times (B'\times _BA)= (E\times B')\times _B A\rightarrow C,
+$$
+i.e. a morphism $E\rightarrow \underline{Hom}(A\times _BB',C)$.
+\eop
+
+
+If the answer to the preceding question is affirmative,
+or else if $B$
+and $B'$ are fibrant, or else if every fibration with base $B$
+is cbc (cf. the lemma below for example), then the universal
+property
+of this lemma is also a homotopy universal property because
+the morphisms entering into the fibre
+products are fibrant,
+the fibre products in question are invariant under equivalence,
+and the sections are taken along a fibrant morphism.
+
+We now apply this discussion to our examples $M=nSePC$ and
+$M=nSePCh$. In fact it will suffice to treat the example of Segal
+$n$-prestacks $M=nSePCh$ because one recovers the case of Segal
+$n$-precategories ($M=nSePC$)
+as the ``pointwise'' case i.e. the case where the underlying site is
+$\Xx =\ast$.
+
+One notes first that if $n=0$ (i.e. in the case of simplicial presheaves)
+then $M$ is proper and every fibration $f$ is cbc. For $n>0$ one
+obtains that
+the objects which are essentially Segal $0$-prestacks, i.e. the
+$0$-groupic objects or Segal $n$-groupoids, behave
+like
+simplicial presheaves. One obtains moreover a small improvement,
+namely that it
+suffices for the base $B$ to be $0$-groupic.
+
+\begin{lemma}
+\label{cestccb}
+In the cmc $M=nSePCh$ of Segal $n$-prestacks \ref{SeCmf}, a
+fibration
+$f:A\rightarrow B$ with base $B$ such that each $B(X)$ is a
+$0$-groupic Segal $n$-category (i.e. a Segal $n$-groupoid), is compatible with
+base change.
+\end{lemma}
+{\em Proof:}
+One may suppose that $B$ is fibrant (because of the invariance under
+change
+of $A$).  In view of the partial statement of property \ref{proper},
+it suffices
+to see the compatibility with base changes of the form
+$$
+B'\rightarrow SeCat(B')\rightarrow B.
+$$
+For this it suffices to see the compatibility under the same
+base
+changes over each object $X\in \Xx$. One is therefore reduced to the pointwise
+case
+$\Xx =\ast$. Recall that in this case the operation $SeCat$ may be viewed
+as a transfinite composite of coproducts with standard cofibrations
+denoted $\Sigma \rightarrow h(M)$ in \cite{nCAT} (here $h(M)$ is the
+Segal $n$-precategory represented by $M\in \Theta^{n+1}$). One may therefore
+reduce
+to the case of a base change of the form
+$$
+\Sigma \rightarrow h(M) \rightarrow B.
+$$
+Let $\overline{h(M)}$ be the ``$0$-groupic completion'' of $h(M)$,
+obtained for
+example by taking the $\Pi _{n,Se}$ of the topological realisation
+of $h(M)$.
+The fact that $B$ is $0$-groupic and fibrant implies the existence of a
+factorisation of the form
+$$
+\Sigma \rightarrow h(M) \rightarrow \overline{h(M)} \rightarrow B.
+$$
+One may therefore reduce to the case $B= \overline{h(M)}$. Now the
+morphism
+$B\rightarrow \ast$ is a trivial fibration so that, if
+$$
+\begin{array}{ccc}
+A&\rightarrow &A'\\
+\downarrow &&\downarrow \\
+B&\rightarrow &\ast
+\end{array}
+$$
+is a factorisation of $A\rightarrow \ast$ with $A'$ fibrant,
+the cbc
+property for $A\rightarrow B$ is equivalent to this property for
+$A'\rightarrow \ast$. But the cbc property for $A'\rightarrow \ast$
+follows
+from the stability of weak equivalences under direct
+product, which is none other than IM(d) for $M=nSePC$ (recall that we referred,
+for its proof, to the same property for
+non-Segal $n$-precategories, which in turn was one of the
+main steps of \cite{nCAT}).
+\eop
+
+As a consequence of this lemma, for every fibration $f:A\rightarrow B$
+of Segal $n$-prestacks with $B$ $0$-groupic, and for
+every
+fibrant Segal $n$-prestack $C$, the morphism
+$$
+\underline{Hom}(A/B,C)\rightarrow B
+$$
+is a fibration possessing
+property \ref{propunivHominterne} which is a homotopy universal property.
+
+The counterexample to properness given in \cite{nCAT} is the
+morphism
+$$
+a_{02}: A=I\rightarrow I^{(2)}=B
+$$
+where $B$ is the category with three objects $0,1,2$ and arrows
+$0\rightarrow 1\rightarrow 2$, and $a_{02}$ is the inclusion of the arrow
+$0\rightarrow 2$. This morphism is a fibration but is not compatible with
+base change. This example shows that a relative internal
+$\underline{Hom}$ of the form $\underline{Hom}(A/B,C)$
+satisfying the desired homotopy universal property does not always exist;
+the construction is obstructed.

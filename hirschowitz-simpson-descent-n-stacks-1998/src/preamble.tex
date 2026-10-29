@@ -1,0 +1,297 @@
+% =====================================================================
+%  A. Hirschowitz, C. Simpson, "Descente pour les n-champs",
+%  arXiv:math/9807049v3 (2001).  English translation.
+%
+%  Build:  latexmk -pdf -outdir=build src/main.tex
+%          (or simply: make, from this directory)
+%
+%  main.tex carries no page metadata of its own; every content file does.
+%  Page numbers in %@ pages are those of the original PDF (1--250).
+%
+%  The mathematics, notation, labels and numbering of results are the
+%  original's.  Only the prose is translated.  Do not "improve" a formula:
+%  the translation must remain checkable against the French source.
+% =====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------------ packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black!70!blue,
+  citecolor=black!70!blue,
+  urlcolor=black!70!blue,
+  pdftitle={Descent for n-Stacks},
+  pdfauthor={André Hirschowitz and Carlos Simpson},
+  pdfsubject={English translation of Descente pour les n-champs, arXiv:math/9807049v3},
+}
+
+% ------------------------------------------------------------------ numbering
+% The original is an article with 21 numbered sections and unnumbered
+% subsection headings (\subnumero).  Sections and equations keep the
+% original's numbers.
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{2}
+
+% ------------------------------------------------------------------ theorems
+% The original declares one counter, `lemma', numbered within the section,
+% and makes theorem, proposition, corollary, definition, problem, conjecture,
+% convention and remark share it:
+%
+%   \newtheorem{lemma}{Lemma}[section]
+%   \newtheorem{theorem}[lemma]{Theorem}
+%   ...
+%
+% Because the French and English environment names were mixed in the source,
+% the original body sometimes reads "Définition 2.3" and sometimes
+% "Definition 2.3", but the number is always the shared section counter.
+% The translation prints every environment in English while keeping the
+% exact same counter and therefore the exact same numbers.
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{problem}[lemma]{Problem}
+\newtheorem{conjecture}[lemma]{Conjecture}
+\newtheorem{convention}[lemma]{Convention}
+\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{lemmedefinition}[lemma]{Lemma-Definition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{remark}[lemma]{Remark}
+
+% French environment names, kept as aliases so that a source file that has
+% not yet been converted still compiles and still prints an English label.
+\newtheorem{lemme}[lemma]{Lemma}
+\newtheorem{theoreme}[lemma]{Theorem}
+\newtheorem{corollaire}[lemma]{Corollary}
+\newtheorem{probleme}[lemma]{Problem}
+\newtheorem{remarque}[lemma]{Remark}
+
+% The original's unnumbered corollary environment (if any survive).
+\newtheorem*{unnumberedcorollary}{Corollary}
+
+% ------------------------------------------------------------------ headings
+% Section headings are numbered; the original's \subnumero headings are
+% unnumbered but appear in the bookmarks.
+\newcommand{\numero}[1]{\clearpage\section{#1}}
+\newcommand{\subnumero}[1]{%
+  \subsection*{#1}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}}
+
+% Bold run-in paragraph heading, as in the original.
+\newcommand{\paragraf}[1]{\vspace{.1in}\par\noindent
+  {\bf #1.}\hspace*{.12in}}
+
+% End-of-proof box.
+\newcommand{\eop}{\hfill $\Box$\vspace{.1in}}
+
+% The original numbers displayed equations with a private counter that is
+% printed as (section.n).  Reproduce that exactly.
+\newcommand{\equanum}{\vspace{.1in} \newline
+  \addtocounter{subsection}{1}(\thesubsection )
+  \vspace{-.21in}}
+
+\newcommand{\subequanum}{\vspace{.1in} \newline
+  \addtocounter{subsubsection}{1}(\thesubsubsection )
+  \vspace{-.21in}}
+
+\newcommand{\numeroOut}[2]{
+  \vspace{.5in}\par\noindent\addtocounter{subsection}{1}(\thesubsection
+  )\,\, {\em #2}\,\,\, {\tt (#1)}\newline}
+
+\newenvironment{inset}{
+  \begin{list}{}{\setlength{\rightmargin}{.1in}
+    \setlength{\leftmargin}{.2in}\setlength{\topsep}{.08in}
+    \setlength{\listparindent}{.13in}\setlength{\itemindent}{.13in}}
+  \small\item}{
+  \end{list}\normalsize}
+
+\newenvironment{smallset}{
+  \begin{list}{}{\setlength{\rightmargin}{0in}
+    \setlength{\leftmargin}{0in}\setlength{\topsep}{.08in}
+    \setlength{\listparindent}{.2in}\setlength{\itemindent}{.2in}}
+  \small\item}{
+  \end{list}\normalsize}
+
+% The original's capitalised Theorem environment.
+\newenvironment{Theorem}{\vspace{.05in} \par
+  \noindent {\bf Theorem} \hspace*{.05in} \em }{
+  \vspace{.05in}\newline }
+
+% ------------------------------------------------------------------ notation
+% Copied verbatim from the modernized source: the mathematics must not move.
+\renewcommand{\boxtimes}{\mbox{\hspace*{.05
+cm}$\times$\hspace*{-.33
+cm}\raisebox{-.04cm}{$\Box$}}}
+
+\newcommand{\semidirect}{\mbox{\hspace*{.12
+cm}$\times$\hspace*{-.38
+cm}\raisebox{0cm}{$\triangleright$}\hspace*{.28cm}}}
+
+\newcommand{\cc}{{\bf C}}
+\newcommand{\rr}{{\bf R}}
+\newcommand{\qq}{{\bf Q}}
+\newcommand{\hh}{{\bf H}}
+\newcommand{\qbar}{\overline{\bf Q}}
+\newcommand{\zz}{{\bf Z}}
+\newcommand{\pp}{{\bf P}}
+\newcommand{\AAA}{{\bf A}}
+
+\newcommand{\mm}{{\bf M}}
+\newcommand{\nn}{{\bf N}}
+
+\newcommand{\Ox}{{\cal O}_X}
+\newcommand{\Dx}{{\cal D}_X}
+
+\newcommand{\Cc}{{\cal C}}
+\newcommand{\Ee}{{\cal E}}
+\newcommand{\Ff}{{\cal F}}
+\newcommand{\Gg}{{\cal G}}
+\newcommand{\Qq}{{\cal Q}}
+\newcommand{\Tt}{{\cal T}}
+\newcommand{\Oo}{{\cal O}}
+\newcommand{\Dd}{{\cal D}}
+\newcommand{\Aa}{{\cal A}}
+\newcommand{\Bb}{{\cal B}}
+\newcommand{\Mm}{{\cal M}}
+\newcommand{\Ww}{{\cal W}}
+\newcommand{\Kk}{{\cal K}}
+\newcommand{\Vv}{{\cal V}}
+\newcommand{\Uu}{{\cal U}}
+\newcommand{\Ll}{{\cal L}}
+\newcommand{\Hh}{{\cal H}}
+\newcommand{\Ii}{{\cal I}}
+\newcommand{\Jj}{{\cal J}}
+\newcommand{\Nn}{{\cal N}}
+\newcommand{\Pp}{{\cal P}}
+\newcommand{\Rr}{{\cal R}}
+\newcommand{\Ss}{{\cal S}}
+\newcommand{\Xx}{{\cal X}}
+\newcommand{\Yy}{{\cal Y}}
+\newcommand{\Zz}{{\cal Z}}
+
+\newcommand{\Hilb}{\mbox{\bf Hilb}}
+\newcommand{\Grass}{\mbox{\bf Grass}}
+\newcommand{\Mod}{{\bf M}}
+\newcommand{\VHS}{{\bf V}}
+\newcommand{\Gm}{{\bf G}_m}
+\newcommand{\Rep}{{\bf R}}
+\newcommand{\Def}{{\bf D}}
+\newcommand{\Alg}{\mbox{\bf Alg}}
+\newcommand{\Inf}{\mbox{\bf Inf}}
+
+\newcommand{\DD}{{\cal D}^+}
+\newcommand{\Dbc}{{\cal D}^b_c}
+
+\newcommand{\Cchi}{\begin{array}{c} \rule[-.12in]{0in}{.2in}
+{\bf \chi}
+\end{array}\!}
+
+\newcommand{\gera}{{\bf a}}
+\newcommand{\gerb}{{\bf b}}
+\newcommand{\gerc}{{\bf c}}
+\newcommand{\gerd}{{\bf d}}
+\newcommand{\gere}{{\bf e}}
+\newcommand{\gerf}{{\bf f}}
+\newcommand{\gerg}{{\bf g}}
+\newcommand{\gerh}{{\bf h}}
+\newcommand{\geri}{{\bf i}}
+\newcommand{\gerj}{{\bf j}}
+\newcommand{\gerk}{{\bf k}}
+\newcommand{\gerl}{{\bf l}}
+\newcommand{\germ}{{\bf m}}
+\newcommand{\gern}{{\bf n}}
+\newcommand{\gero}{{\bf o}}
+\newcommand{\gerp}{{\bf p}}
+\newcommand{\gerq}{{\bf q}}
+\newcommand{\gerr}{{\bf r}}
+\newcommand{\gers}{{\bf s}}
+\newcommand{\gert}{{\bf t}}
+\newcommand{\geru}{{\bf u}}
+\newcommand{\gerv}{{\bf v}}
+\newcommand{\gerw}{{\bf w}}
+\newcommand{\gerx}{{\bf x}}
+\newcommand{\gery}{{\bf y}}
+\newcommand{\gerz}{{\bf z}}
+
+\newcommand{\delbar}{\overline{\partial}}
+\newcommand{\Fperp}{F^{\perp}}
+\newcommand{\thetbar}{\overline{\theta}}
+
+\newcommand{\dnu}{\frac{\partial}{\partial\nu}}
+\newcommand{\Xphi}{X_{\varphi}}
+\newcommand{\Yphi}{Y_{\varphi}}
+\newcommand{\Hphi}{H_{\varphi}}
+\newcommand{\Hphit}{H_{\varphi ,t}}
+
+\newcommand{\Choose}[2]{\left(\begin{array}{c} #1 \\ #2
+\end{array}\right)}
+
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+
+\newcommand{\AutT}{Aut^{\otimes}}
+\newcommand{\autT}{\gera\geru\gert ^{\otimes}}
+
+\newcommand{\Cbar}{\overline{\cal C}}
+\newcommand{\Chat}{\hat{\cal C}}
+\newcommand{\dhat}{\hat{d}}
+
+\newcommand{\CDR}{{\cal C}_{DR}}
+\newcommand{\CDol}{{\cal C}_{Dol}}
+\newcommand{\CHH}{{\cal C}_{H}}
+\newcommand{\CDp}{{\cal C}_{D'}}
+
+\newcommand{\gap}{{\rm gap}}
+
+% The source's French connectors inside formulas.  Kept only so that an
+% unconverted passage compiles; translators replace them by English prose.
+\newcommand{\remplacant}{replacing\,\, }
+\newcommand{\ca}{this\,\, }
+\newcommand{\facon}{way\,\, }
+
+\newcommand{\tworightarrows}{\stackrel{\displaystyle \rightarrow}{\rightarrow}}
+
+% Reedy-category notation.
+\newcommand{\direct}[1]{\stackrel{\rightarrow}{#1}}
+\newcommand{\inverse}[1]{\stackrel{\leftarrow}{#1}}
+
+% ------------------------------------------------------------------ editorial
+% Translator's note: used for an emendation where the French prints
+% something that is wrong as mathematics.  The note says what was printed
+% and what we print instead.  See ../../AGENTS.md.
+\newcommand{\ednote}[1]{\footnote{\emph{Translator's note.} #1}}
+
+% Placeholder printed in place of a passage that has not been translated yet.
+\newcommand{\notyet}[1]{%
+  \par\noindent
+  \begingroup
+  \setlength{\fboxsep}{6pt}%
+  \fcolorbox{black!40}{black!4}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \small\itshape
+      Not yet translated --- #1\par}}%
+  \endgroup\par}
+
+% Long formulas inside lists otherwise overfull.
+\setlength{\emergencystretch}{3em}
+
+% ------------------------------------------------------------------ metadata
+\title{Descent for $n$-Stacks}
+\author{Andr\'e Hirschowitz \and Carlos Simpson}
+\date{1998; revised 2001}

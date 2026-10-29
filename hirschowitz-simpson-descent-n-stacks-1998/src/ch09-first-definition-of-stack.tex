@@ -1,0 +1,419 @@
+%@ pages 87-93
+%@ status translated
+% Original section 9, "Première définition de champ", pp. 87--93.
+% The authors abbreviate "n-précatégorie de Segal" as "n-précat de Segal";
+% "précat" is not a slip for "préchamp".  So "n-précat" is translated
+% "Segal n-precategory" and "n-préchamp" is translated "Segal n-prestack".
+% In the first of the two arrays of the proof of Lemma \ref{stuff} the source
+% prints $A{p/}$ and $B{p/}$ where the rest of the proof uses $A_{p/}$ and
+% $B_{p/}$; the subscript is restored below.
+% In the proof of Lemma \ref{grofibchampimplfib} the source prints "Comme $A$
+% est $\Gg$-fibrant" at the step where $A'$ is the $\Gg$-fibrant object; the
+% print is kept as it stands.
+\clearpage
+\section{A first definition of stack}
+\label{notionchamppage}
+
+We consider again the closed model category structure of
+Theorem~\ref{cmf}, relative to a site $\Xx$ with
+Grothendieck topology $\Gg$.
+
+Let $A$ be a Segal $n$-prestack.
+Let $A\rightarrow A'$ be a trivial cofibration into a $\Gg$-fibrant Segal
+$n$-prestack.  We shall say that $A$ is a {\em Segal $n$-stack} (or an {\em
+$\infty$-stack}, or indeed just a {\em stack}) if: \newline
+---$A(X)$ is a Segal $n$-category for every $X\in \Xx$; and
+\newline
+---the morphism $A(X)\rightarrow A'(X)$ is an equivalence of
+Segal $n$-categories for every $X\in \Xx$.
+
+One sees easily (see the argument of Corollary~\ref{unique} below) that
+this condition is independent of the choice of $A\rightarrow A'$.
+
+For $n=0$ the simplicial presheaves which are Segal $0$-stacks are
+pre\-cise\-ly those
+which satisfy
+Thomason's condition of {\em cohomological descent} (see
+\cite{TravauxThomason}), or else those which are {\em
+flasque
+with respect to every object $X$ of the site $\Xx$} in Jardine's sense \cite{Jardine}
+(these are also the {\em homotopy sheaves} of
+\cite{kobe}
+or the {\em flexible sheaves} of \cite{flexible}). Thomason's terminology
+``cohomological descent''
+is inspired by the cohomological descent of Deligne--Saint-Donat \cite{SGA4b}
+and \cite{HodgeIII}.
+
+It is interesting to observe that the following lemmas, analogues of the
+classical results on sheaves, are entirely formal consequences of
+Quillen's theory \cite{Quillen}
+(moreover one can run through the theory of sheaves of sets on a site, as an
+essentially easy application of these standard arguments in cmc theory, see
+the work of Rezk \cite{Rezk}).
+
+\begin{lemma}
+\label{morphentrechamps}
+If $f:A\rightarrow B$ is a morphism of Segal $n$-stacks which is a
+$\Gg$-weak equivalence, then $f$ is also an object-by-object weak
+equivalence (i.e.\ for the coarse topology).
+\end{lemma}
+{\em Proof:}
+By the definition of Segal $n$-stacks we may assume that $A$ and $B$ are
+$\Gg$-fibrant. We may factorise the given morphism as
+$$
+A\rightarrow B' \rightarrow B
+$$
+where the first morphism is a $\Gg$-trivial cofibration and the second
+morphism is a $\Gg$-trivial fibration. A $\Gg$-trivial fibration
+possesses the lifting property with respect to all
+cofibrations; in
+particular it is also trivial for the coarse topology. On the other hand,
+since $A$ is $\Gg$-fibrant, there exists a retraction $B'\rightarrow A$
+(induced by the identity on $A$). In particular the morphism $A\rightarrow B'$
+admits a left inverse. We have thus shown that every morphism
+$f:A\rightarrow B$
+between Segal $n$-stacks (for $\Gg$) admits a left inverse $g$, in the
+homotopy category of Segal $n$-prestacks for the equivalence of the
+coarse topology. This applies in
+particular to that inverse $g:B\rightarrow A$ (this is where
+one sees why we assumed that $B$ is a
+stack). We thus obtain a left inverse $h$ of $g$; now $f$ is a right
+inverse of $g$, hence $g$ is invertible, which implies that $f$ is
+invertible. This allows us to conclude since, according to Quillen
+\cite{Quillen}, the only morphisms
+whose class is invertible in the homotopy category
+are the
+equivalences (here, for the coarse topology).
+\eop
+
+\begin{lemma}
+\label{grofibchampimplfib}
+If $A$ is a Segal $n$-prestack then $A$ is $\Gg$-fibrant if and
+only
+if $A$ is a stack, and is fibrant for the coarse topology.
+\end{lemma}
+{\em Proof:}
+If $A$ is $\Gg$-fibrant then $A$ is
+fibrant for the coarse topology, and by definition it is a stack.
+
+Let us therefore suppose that $A$ is fibrant for the coarse topology and
+that it is a stack.
+Let $A\hookrightarrow A'$ be a $\Gg$-fibrant replacement.
+By definition it is a weak equivalence for the coarse topology.
+Since $A$ is fibrant for the coarse topology, there exists a retraction
+$r:A'\rightarrow A$. Let us then show that $A$ possesses the lifting
+property with respect to every $\Gg$-trivial cofibration $X\rightarrow Y$.
+Since $A$ is $\Gg$-fibrant, every morphism $X\rightarrow A$ extends
+to a morphism $Y\rightarrow A'$. Composing with the retraction $r$
+one obtains the desired extension $Y\rightarrow A$.
+\eop
+
+
+{\em Remark:} We have a similar (and even prettier) result for the
+HBKQ structure (Theorem~\ref{cmfHirschho}): if $A$ is a
+Segal $n$-prestack then $A$ is HBKQ-$\Gg$-fibrant if and
+only
+if the $A(X)$ are fibrant for every $X$, and $A$ is a stack. In particular,
+one obtains the same notion of ``stack'' by using
+\ref{cmfHirschho} instead of \ref{cmf}.
+
+
+\begin{lemma}
+\label{stuff}
+If $f: A\rightarrow B$ is a
+$\Gg$-fibration and if $B$ is a Segal $n$-stack, then $A$ is a
+Segal $n$-stack.
+
+If $f: A\rightarrow B$ is a morphism between Segal $n$-stacks
+and if $f$ is fibrant for the coarse topology, then
+$f$ is $\Gg$-fibrant.
+\end{lemma}
+{\em Proof:}
+For the first part, we begin with the pointwise case, for which we shall
+only give a sketch of a proof:
+if $f:A\rightarrow B$ is a fibration of Segal $n$-precategories, and if $B$ is
+a Segal $n$-category, then $A$ is a Segal $n$-category.
+We first remark that the morphisms
+$A_{p/}(x_0,\ldots , x_p)\rightarrow B_{p/}(fx_0,\ldots ,fx_p)$ are
+fibrations of Segal $n-1$-precategories, so by induction on $n$ we may
+assume that the $A_{p/}$ are Segal $n-1$-categories. Now
+we consider the diagram $$
+\begin{array}{ccc}
+A_{p/}&\rightarrow &A_{1/}\times _{A_0}\ldots , \times _{A_0}A_{1/}\\
+\downarrow && \downarrow \\
+B_{p/}&\rightarrow &B_{1/}\times _{B_0}\ldots , \times _{B_0}B_{1/}.
+\end{array}
+$$
+Let $E\rightarrow A_{1/}\times _{A_0}\ldots , \times _{A_0}A_{1/}$
+be a morphism of Segal $n-1$-precategories,
+which corresponds to a morphism $U^p(E)\rightarrow A$
+(where $U^p(\, )$ is the functor left adjoint to
+$A\mapsto A_{1/}\times _{A_0}\ldots , \times
+_{A_0}A_{1/}$, which therefore associates to every Segal $n-1$-precategory
+a Segal $n$-precategory). We have an inclusion $U^p(E)\rightarrow [p]E$, where $[p]$ is
+left adjoint to $A\mapsto A_{p/}$.
+This inclusion is a trivial cofibration
+of Segal $n$-precategories. Now the fact that $B$ is a Segal
+$n$-category implies that there exists an extension of $U^p(E)\rightarrow B$
+to a morphism $([p]E)'\rightarrow B$, where $([p]E)'$ is
+object-by-object equivalent to $[p]E$ over $\Delta$. The fact that $A\rightarrow B$
+is fibrant (combined with the fact that $U^p(E)\rightarrow ([p]E)'$ is a
+trivial cofibration) implies that there is likewise an extension
+$([p]E)'\rightarrow A$. This implies that the morphism $E\rightarrow
+A_{1/}\times _{A_0}\ldots , \times _{A_0}A_{1/}$ lifts, up to homotopy,
+to a morphism $E\rightarrow A_{p/}$. One could also give a
+relative version of this discussion: given $F\rightarrow A_{p/}$,
+$F\hookrightarrow E$ and $E\rightarrow A_{1/}\times _{A_0}\ldots , \times
+_{A_0}A_{1/}$, there exists, up to homotopy, an extension to $E\rightarrow
+A_{p/}$. One obtains that the Segal map is an equivalence, hence $A$
+is a Segal $n$-category.
+
+
+We now treat the first part for $f:A\rightarrow B$ over
+$\Xx$. Let $B\hookrightarrow B'$ be a $\Gg$-fibrant replacement
+(which is an object-by-object equivalence), and let
+$$
+A\hookrightarrow A'\rightarrow B'
+$$
+be a factorisation in which the second arrow is a fibration for the
+coarse
+topology and the first is an object-by-object equivalence.
+We shall show that the second arrow is a $\Gg$-fibration. Let
+$E\rightarrow
+E'$ be a $\Gg$-trivial cofibration with a diagram
+$$
+\begin{array}{ccc}
+E&\rightarrow & A'\\
+\downarrow && \downarrow \\
+E'&\rightarrow & B'.
+\end{array}
+$$
+We may assume that $E\rightarrow A'$ and $E'\rightarrow B'$ are fibrations
+for the coarse topology. With this reduction, we have, by the property,
+cf.\ \ref{proper}, that
+$E\times _{A'}A\rightarrow E$ and $E'\times _{B'}B\rightarrow E'$ are
+object-by-object equivalences (we use the fact that the values $B(X)$ and
+$B'(X)$ are Segal $n$-categories; likewise for $A(X)$ and $A'(X)$,
+for which we use the pointwise version mentioned at the beginning).
+On the other hand,
+we have a diagram
+$$
+\begin{array}{ccc}
+E\times _{A'}A&\rightarrow & A\\
+\downarrow && \downarrow \\
+E'\times _{B'}B&\rightarrow & B,
+\end{array}
+$$
+in which the left-hand vertical arrow is a $\Gg$-trivial cofibration.
+Since by hypothesis the right-hand arrow is a $\Gg$-fibration,
+we obtain a lift $E'\times _{B'}B\rightarrow A$. Now
+$$
+(E'\times _{B'}B)\cup ^{E\times _{A'}A}E\rightarrow E'
+$$
+is an equivalence for the coarse topology.
+We factorise it as
+$$
+(E'\times _{B'}B)\cup ^{E\times _{A'}A}E\rightarrow E''\rightarrow E'
+$$
+where the first arrow is a trivial cofibration for the coarse
+topology and the second is a trivial fibration for the
+coarse topology. We have a morphism coming from our lift
+$$
+(E'\times _{B'}B) \cup ^{E\times _{A'}A}E \rightarrow A'.
+$$
+Since $A'\rightarrow B'$ is a fibration for the
+coarse topology, there exists an extension $E''\rightarrow A'$.
+Now, since $E''\rightarrow E'$ is a trivial fibration for
+the coarse topology, there exists a section $E'\rightarrow E''$
+which agrees on $E$ with the given morphism $E\rightarrow E''$.
+We thus obtain, by composition, a morphism $E'\rightarrow A'$ which provides the
+desired lift.
+
+
+
+For the second part of the lemma,
+we have a morphism between Segal $n$-stacks $f: A\rightarrow B$ which is
+fibrant for the coarse topology. We factorise it as
+$$
+A\stackrel{g}{\rightarrow} A'\stackrel{h}{\rightarrow} B
+$$
+with $g$ a $\Gg$-equivalence and $h$ a $\Gg$-fibration. By the
+first part,
+$A'$ is a stack. By the preceding lemma, $g$ is an equivalence for the
+coarse topology. If $E\rightarrow E'$ is a $\Gg$-trivial cofibration
+with a diagram
+$$
+\begin{array}{ccc}
+E&\rightarrow & A\\
+\downarrow && \downarrow \\
+E'&\rightarrow & B
+\end{array}
+$$
+then there exists an intermediate lift $E'\rightarrow A'$. As
+above, we may assume that the morphism $E'\rightarrow A'$ is a
+fibration
+for the coarse topology. In this case $E'\times _{A'} A\rightarrow E'$
+is an object-by-object equivalence (here we again use the fact that the
+$A(X)$ are Segal $n$-categories, cf.\ the beginning of the
+proof),
+so it is a trivial cofibration for the coarse topology.
+We have the inclusion
+$E\subset E'\times _{A'}A$. We then apply the lifting
+property of $f$ (which is a
+fibration for the coarse topology) to the diagram
+$$
+\begin{array}{ccc}
+E'\times _{A'}A&\rightarrow & A\\
+\downarrow && \downarrow \\
+E'&\rightarrow & B,
+\end{array}
+$$
+to obtain a lift $E'\rightarrow A$ which answers the question.
+\eop
+
+\subnumero{The associated stack}
+
+
+If $A$ is a Segal $n$-prestack on $\Xx$ we shall call an {\em associated
+stack of $A$} any weak
+equivalence
+$A\rightarrow A'$ where $A'$ is a Segal $n$-stack. We note that an associated
+stack always exists: it suffices to take for $A'$ a fibrant replacement of
+$A$.
+
+\begin{corollary}
+\label{unique}
+Let $A$ be an $n$-prestack and let $A\rightarrow A'$ and $A\rightarrow A''$
+be two stacks associated to $A$. Suppose that $A''$ is fibrant for the
+coarse topology. Then there exists an equivalence (for the coarse topology)
+$A'\rightarrow A''$ making the triangle commute up to homotopy.
+If moreover $A\rightarrow A'$ is a cofibration, one may suppose
+the triangle
+strictly commutative.
+\end{corollary}
+{\em Proof:}
+If $A\rightarrow A'$ is a cofibration, then it is a trivial cofibration and
+the fact that $A''$ is fibrant implies the existence of the desired
+extension $A'\rightarrow
+A''$.  If $A\rightarrow A'$ is not a cofibration, we factorise
+$$
+A\rightarrow B \rightarrow A'
+$$
+with a trivial cofibration on the left and a trivial fibration
+on the right. There therefore exists a section $A'\rightarrow B$ as well as an extension
+of the morphism $A\rightarrow A''$ to $B\rightarrow A''$. This gives a morphism
+$A'\rightarrow A''$ and one checks (following the definitions of
+\cite{Quillen})
+that this morphism makes the triangle commute up to homotopy.
+\eop
+
+{\em Improvement:} \,\, With the internal $\underline{Hom}$ of
+fibrant Segal
+$n$-prestacks which will be defined in \S 11 below, we shall be able to formulate a
+better statement of uniqueness of the ``associated stack'' via the following
+universal property. If $A\rightarrow A'$ is
+a stack associated to the prestack $A$, then for every Segal $n$-prestack $B$
+fibrant for the coarse topology and which is a stack, the induced
+morphism
+$$
+\underline{Hom}(A',B)\rightarrow \underline{Hom}(A,B)
+$$
+is an equivalence of (fibrant) Segal $n$-stacks.
+See \S 13.
+
+
+
+\subnumero{Fibre products}
+
+Let $A,B,C$ be Segal $n$-precategories. If $B\rightarrow A$
+and $C\rightarrow A$ are morphisms, we have at our disposal a {\em homotopy
+fibre product} $B\times ^h_AC$, essentially well defined: one may define it as
+$B'\times _{A'}C'$ where
+$$
+\begin{array}{ccccc}
+B&\rightarrow & A & \leftarrow & C \\
+\downarrow && \downarrow && \downarrow \\
+B'&\rightarrow & A' & \leftarrow & C'
+\end{array}
+$$
+is a diagram in which $A',B'$ and $C'$ are Segal
+$n$-categories with
+$B'\rightarrow A'$ fibrant, and in which the vertical arrows are
+weak
+equivalences. It is shown in \cite{limits} Lemma 6.1.2, that this product is a
+limit in the Segal $(n+1)$-category $nSeCAT$ (\cite{limits} treats the case of
+$n$-categories but the case of Segal $n$-categories is identical).
+
+The replacement of $A,B,C$ by
+$A',B',C'$ may be chosen functorially. Hence, if $B\rightarrow
+A\leftarrow C$ is a diagram of Segal $n$-prestacks on a category
+$\Xx$, one may consider their {\em object-by-object homotopy fibre
+product}
+$B\times ^h_AC$. It is an essentially well-defined $n$-prestack on
+$\Xx$ and (with the notations of internal structure which will be introduced in
+\S 11
+below) it is the limit in $nSeCHAMP (\Xx ^{\rm gro})$ of the
+given diagram.
+
+The following lemma is the analogue of the statement in sheaf theory according to which
+the kernel of a morphism of sheaves of groups (or the kernel of a double
+arrow, in the case of sheaves of sets) is again a sheaf.
+
+\begin{lemma}
+\label{fiprodchamp}
+Let $\Xx , \Gg$ be a site and $B\rightarrow A\leftarrow C$ a
+diagram of Segal $n$-stacks on $\Xx$. Then
+the object-by-object homotopy fibre product $B\times ^h_AC$ is a Segal
+$n$-stack (and it is also the limit of the diagram in $nSeCHAMP(\Xx ^{\Gg})$,
+see the
+notation in \S 11).
+\end{lemma}
+{\em Proof:}
+One may choose a replacement of the diagram
+$$
+\begin{array}{ccccc}
+B&\rightarrow & A & \leftarrow & C \\
+\downarrow && \downarrow && \downarrow \\
+B'&\rightarrow & A' & \leftarrow & C'
+\end{array}
+$$
+with $A', B', C'$ $\Gg$-fibrant, and in which the vertical arrows are
+weak equivalences for $\Gg$, and $B'\rightarrow A'$ is a
+$\Gg$-fibration. By Lemma~\ref{morphentrechamps} the vertical
+arrows are object-by-object weak equivalences, and we therefore have
+an adequate replacement for the
+construction of the homotopy fibre product
+$$
+B\times ^h_AC = B'\times _{A'}C'
+$$
+which is $\Gg$-fibrant, in particular it is a Segal $n$-stack. Any
+other construction of $B\times ^h_AC$ will give an $n$-prestack
+object-by-object equivalent to the preceding one; and by definition, it will
+always be a
+Segal $n$-stack.
+\eop
+
+The following corollary answers the question originally posed by C.~Rezk
+in \cite{Rezk} (where he gives the proof for
+$0$-prestacks): passing to the ``associated stack'' is compatible
+with homotopy fibre products.
+
+\begin{corollary}
+\label{rezkQ}
+Let $B\rightarrow A \leftarrow C$ be a diagram of Segal $n$-prestacks.
+Suppose that
+the values $A(X)$, $B(X)$ and $C(X)$ are Segal $n$-categories.
+Let $B'\rightarrow A'\leftarrow C'$ be the diagram obtained by passing
+to the associated $\Gg$-stacks. Then
+$$
+B\times ^h_AC\rightarrow B'\times ^h_{A'}C'
+$$
+is an associated $\Gg$-stack; here the homotopy fibre products on the two
+sides are taken object-by-object over $\Xx$.
+\end{corollary}
+{\em Proof:}
+The arrow in question is a $\Gg$-weak equivalence by Corollary
+\ref{cordereedy}; and by the preceding lemma,
+the target is a $\Gg$-stack. It
+follows by definition that the arrow is an ``associated stack''.
+\eop

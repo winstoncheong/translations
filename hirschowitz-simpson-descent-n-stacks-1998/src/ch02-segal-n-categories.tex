@@ -1,0 +1,1292 @@
+%@ pages 17-35
+%@ status translated
+% Original section 2, "Les n-catégories de Segal", pp. 17--35.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * "n-précat (de Segal)" is rendered "Segal n-precategory" / "n-precategory";
+%    the categories nSePC, nPC, nSePCh and the construction SeCat keep their
+%    printed names.
+%  * "cmf" is rendered "cmc", per the README.
+%  * "catégorie de modèles fermée engendrée par cofibrations" is rendered
+%    "cofibrantly generated closed model category", the standard English term.
+%  * "flèche" is "arrow", "k-groupique" is "k-groupic".
+%  * In the proof of the lemma labelled secatunique the source's array diagram
+%    has its second row identical to its first (F^1(A) -> F^1(F^2(A)) twice,
+%    although the vertical arrow is labelled F^1(f) and F^1(F^2(f))). The
+%    diagram is reproduced as printed; nothing is emended.
+
+\clearpage
+\section{Segal \texorpdfstring{$n$}{n}-categories}
+\label{ncatsegpage}
+
+Let us begin by fixing some notation: the categories of sets, of simplicial
+sets, and of topological spaces are denoted respectively
+$Ens$, $EnsSpl$ and $Top$. A simplicial set is a functor
+$\Delta ^o\rightarrow Ens$ where $\Delta$ is the category whose objects are
+the ordered sets $p:= \{ 0', \ldots , p'\}$ and whose morphisms are the
+increasing maps. If $X$ is a simplicial set we shall denote by
+$X_p$ its value on $p\in \Delta$. If $A: \Delta
+^o\rightarrow \Cc$ is a functor, we shall denote by $A_p$ or sometimes $A_{p/}$
+the value it takes on $p\in \Delta ^o$.
+We shall denote by $|A|$ the topological realisation of the
+simplicial set $A$. If $Y$ is a category (i.e.\ a $1$-category) we shall denote
+its nerve by $\nu Y \in EnsSpl$. We shall use the abbreviation
+``cmc'' for ``closed model category'' of \cite{Quillen}.
+
+The following definitions are generalisations of definitions of
+Tamsamani \cite{Tamsamani} and Dunn \cite{Dunn}, which in turn took up
+ideas of Segal \cite{SegalTopology} \cite{Adams}.
+%%%%%%%
+The notion of Segal $1$-category appears for the first time
+at the end of Dwyer-Kan-Smith \cite{DKS}.
+%%%%%%%% above phrase added in v3 &&&&&&&&
+See the
+comparison below.
+
+We define the notion of {\em Segal $n$-precategory}, and the category $nSePC$
+of these objects, by recursion on $n$. A set may be regarded as a Segal
+$n$-precategory: there will be a (fully faithful) functor
+$Ens\rightarrow nSePC$.
+An object in the image of this functor will be called ``a discrete set''.
+For $n=0$, a {\em Segal $0$-precategory} is by definition a simplicial set;
+and the functor $Ens\rightarrow 0SePC$ associates to a set $S$ the functor
+$\underline{S}:\Delta ^o\rightarrow Ens$ constant with values $S$. For
+$n\geq 1$, a {\em Segal $n$-precategory} is a functor
+$$
+\Delta ^o\rightarrow (n-1)SePC
+$$
+denoted $p\mapsto A_{p/}$, such that $A_{0/}$ is a discrete set which we
+also denote
+$A_0$. A {\em morphism} of Segal $n$-precategories is a natural
+transformation of functors $\Delta ^o\rightarrow (n-1)SePC$, which defines the
+category $nSePC$. The functor $Ens\rightarrow nSePC$ is the one which to a
+set $S$ associates the composite functor
+$$
+\Delta ^o\stackrel{\underline{S}}{\rightarrow} Ens \rightarrow (n-1)SePC.
+$$
+
+One may unravel the recursion in this definition. If one wants to follow the
+notation of Tamsamani \cite{Tamsamani}, a Segal $n$-precategory is therefore an
+$(n+1)$-simplicial set, i.e.\ a functor
+$$
+(\Delta ^o)^{n+1}\rightarrow Ens
+$$
+denoted $(m_1,\ldots , m_{n+1})\mapsto A_{m_1,\ldots , m_{n+1}}$,
+which satisfies the {\em constancy conditions} according to which,
+for $m_i=0$ the
+functor
+is constant in the variables $m_{i+1},\ldots , m_{n+1}$.
+
+These constancy conditions can be taken into account once and for all by
+introducing the category $\Theta ^{n+1}$, a quotient of $\Delta ^{n+1}$
+\cite{nCAT}. We recall that $\Theta ^{n+1}$ is the category whose objects are
+the sequences $(m_1,\ldots , m_i)$ for $i\leq n+1$, with $m_i\in \Delta$ and
+with the identifications
+$$
+(m_1,\ldots , m_j=0, \ldots , m_i) =: (m_1,\ldots , m_{j-1}).
+$$
+The object $(0,\ldots , 0)$ is also equivalent to the sequence of length
+$0$ which is denoted $0$. The morphisms come from the morphisms of
+$\Delta$ with the change induced by these identifications; cf.\ \cite{nCAT}
+or \cite{limits}.
+
+For $k\leq n$ and for $M=(m_1,\ldots , m_k)\in \Delta ^k$ we denote by $A_{M/}$
+the Segal $(n-k)$-precategory
+$$
+(m'_1,\ldots , m'_{n+1-k})\mapsto A_{m_1,\ldots , m_k, m'_1,\ldots ,
+m'_{n+1-k}}.
+$$
+For $k=1$ this agrees with the notation $A_{p/}$ introduced above.
+
+A Segal $n$-precategory may be viewed as a functor
+$$
+(\Theta ^{n+1})^o\rightarrow Ens,
+$$
+with no further condition (the constancy conditions being taken into account by
+the fact that $\Theta ^{n+1}$ is the adequate quotient of $\Delta ^{n+1}$).
+As a result, $nSePC$ appears as the category of presheaves of sets on
+$\Theta ^{n+1}$, and therefore admits all limits and colimits with small
+indexing, as well as an internal $\underline{Hom}$.
+
+In fact, the most useful point of view is a mixture of the two points of view
+of the preceding paragraph: a Segal $n$-precategory may (indeed must) be
+regarded as a functor
+$$
+A: (\Theta ^n)^o\rightarrow EnsSpl
+$$
+denoted $M\mapsto A_M$, such that, for $|M| < n$, the simplicial set $A_M$
+is a discrete set. It is sometimes useful to confuse simplicial sets with
+topological spaces, and one obtains essentially the same notion by considering
+the functors $(\Theta ^n)^o\rightarrow Top$.
+
+We shall say that $A_0$ is {\em the set of objects of $A$}. For two objects
+$x,y\in A_0$
+we shall denote by $A_{1/}(x,y)$ the preimage of $(x,y)\in A_0\times A_0$ under
+the morphism
+$$
+A_{1/}\rightarrow A_0\times A_0
+$$
+induced by the two ``face'' maps of the simplicial structure.
+We shall say that $A_{1/}(x,y)$ is {\em the Segal $(n-1)$-precategory of
+morphisms between $x$
+and $y$}. We shall sometimes use this same notation (which is quite compact)
+for the set of morphisms between two objects of a category or for the
+simplicial set of morphisms between two objects of a simplicial category.
+
+
+We now define the {\em
+Segal $n$-categories}, which are the Segal $n$-precategories satisfying
+certain conditions of ``speciality'' generalising the original condition
+of Segal \cite{Segal}. To formulate these conditions one needs a large
+recursion as in \cite{Tamsamani}, cf.\ also the summary in
+\cite{limits}. We shall define simultaneously by recursion on $n$: the
+condition for a Segal $n$-precategory to be a Segal $n$-category; the
+condition for a morphism between two Segal $n$-categories to be an
+equivalence; and the ``truncated'' set
+$\tau _{\leq 0}(A)$ associated to a
+Segal $n$-category $A$. First for $n=0$, and by definition:
+every Segal $0$-precategory, i.e.\
+simplicial set, is a Segal $0$-category; a morphism is an
+equivalence if it is a weak equivalence of simplicial sets, i.e.\
+if it induces isomorphisms between the homotopy groups (and the $\pi
+_0$) of the
+topological realisations; and the truncation $\tau _{\leq 0}(A)$ of a
+simplicial set $A$ is the set $\pi _0(|A|)$. For the rest, the recursion is
+identical to Tamsamani's \cite{Tamsamani}: let $n\geq 1$ and suppose
+that the definitions are available at level $n-1$. Let $A$ be a
+Segal $n$-precategory, viewed as a functor
+$$
+A: \Delta ^o\rightarrow (n-1)SePC,\;\;\; p\mapsto A_{p/}.
+$$
+We shall say that $A$ is a {\em Segal $n$-category} if the
+$A_{p/}$ are Segal $(n-1)$-categories, and if for every $p$ the morphism
+of Segal $(n-1)$-precategories
+$$
+A_{p/}\rightarrow A_{1/}\times _{A_0} \ldots \times _{A_0}A_{1/}
+$$
+is an equivalence of Segal $(n-1)$-categories. This last
+``Segal morphism'' being the one whose components are the maps
+dual to the inclusions $\{ i,i+1\} \subset \{ 0,\ldots , p\}$ in $\Delta$,
+see \cite{SegalInventiones}, \cite{Adams}, \cite{Dunn}, \cite{Tamsamani}.
+
+
+If $A$ is a Segal $n$-category, then the functor
+$$
+p\mapsto \tau _{\leq 0} (A_{p/}) \;\;\;\; \Delta ^o \rightarrow Ens
+$$
+is the nerve of a category which we denote $\tau _{\leq 1}(A)$. We
+define $\tau _{\leq 0}(A)$ as the set of isomorphism classes of the
+category $\tau _{\leq 1}(A)$. If $A$ and $B$ are Segal $n$-categories
+and $f:A\rightarrow B$ is a morphism (i.e.\ a morphism of $nSePC$) we shall
+say that
+$f$ is an {\em equivalence} if the induced morphism
+$$
+\tau _{\leq 0}(A)\rightarrow \tau _{\leq 0}(B)
+$$
+is surjective (we shall then say that ``$f$ is essentially surjective''), and
+if for
+every pair of objects $x,y\in A_0$, the morphism
+$$
+A_{1/}(x,y)\rightarrow B_{1/}(f(x), f(y))
+$$
+is an equivalence of Segal $(n-1)$-categories (we shall then say that
+``$f$ is
+fully faithful''). Compare with the notion
+of equivalence between simplicial categories of
+\cite{DwyerKanDiags}.
+
+
+It is only for a Segal $n$-category $A$ that it is reasonable to
+consider
+the $(n-1)$-category of morphisms between two objects $A_{1/}(x,y)$.
+A {\em $1$-arrow of $A$} is an object of $A_{1/}(x,y)$.
+By iteration one obtains the notion of $i$-arrow of $A$ \cite{Tamsamani}.
+Let $1^i\in \Theta ^n$ be the object $(1, \ldots , 1)$ ($i$ times), image of
+the object
+$(1, \ldots , 1, 0,\ldots , 0)\in \Delta ^n$. An {\em $i$-arrow of $A$}
+($i<n$) is an element of the set $A_{1^i}$. For $i=n$, $A_{1^n}$ is a
+simplicial set and an {\em $n$-arrow of $A$} is a vertex (i.e.\
+an element of the degree $0$ part) of the simplicial set
+$A_{1^n}$. The face morphisms in the $i$-th simplicial variable
+provide the {\em source} and {\em target} maps which to an $i$-arrow
+associate $(i-1)$-arrows (a $0$-arrow is an object, i.e.\ an element
+of $A_0$).
+
+Let $A$ be a Segal $n$-category.
+Following \cite{Tamsamani}, we shall say that an $i$-arrow ($i\geq 1$) is {\em
+invertible up to equivalence} or {\em up to homotopy} if its image
+as a $1$-arrow in the $1$-category $\tau _{\leq 1}(A_{1^{i-1}/})$ is
+invertible. See \cite{Tamsamani} for more details. We shall say (still
+following \cite{Tamsamani}) that $A$ is a {\em Segal $n$-groupoid}
+if for
+every $1\leq i\leq n$, all the $i$-arrows are invertible up to
+equivalence. More generally, for $0\leq k \leq n$ we shall say that $A$ is
+{\em $k$-groupic} if the $i$-arrows are invertible up to
+equivalence for every $i>k$. In particular, $A$ is always $n$-groupic, and
+$A$ is $0$-groupic if and only if it is a Segal $n$-groupoid.
+
+\subnumero{Comparison with Tamsamani and Dunn}
+We compare with \cite{Tamsamani} and \cite{Dunn}. Tamsamani
+(\cite{Tamsamani}, 1995)
+considers the functors $(\Delta ^o)^n\rightarrow Ens$ and imposes on them the
+constancy conditions as well as the Segal conditions cf.\ below,
+obtaining the notion of {\em (weak) $n$-category}. In \cite{nCAT},
+one introduces the notion of {\em $n$-precategory} by relaxing all but the
+constancy conditions.
+An $n$-precategory (resp.\ $n$-category of Tamsamani),
+which is a functor $\Theta ^n\rightarrow Ens$, may be viewed as a
+Segal $n$-precategory by composing with the inclusion $Ens\rightarrow EnsSpl$.
+
+
+More generally, the Segal $n$-precategories
+(resp.\ Segal $n$-categories)
+such that the values of the functor $\Theta ^n \rightarrow EnsSpl$
+are $0$-truncated simplicial sets (i.e.\ disjoint unions of
+contractible components) correspond to $n$-precategories
+(resp.\ $n$-categories) by composition with $\pi _0: EnsSpl
+\rightarrow Ens$. With this translation, most of our statements on
+Segal $n$-categories remain true {\em mutatis mutandis} for
+$n$-categories (the only exception concerns the descent
+property---not preserved by truncation---for Dwyer-Kan localisations,
+which are not truncated in general). We often formulate
+our
+statements only in the framework of Segal $n$-categories, leaving it to the
+reader to write the corresponding statements for the
+$n$-categories.
+On the other hand, we shall return later to the compatibilities between the
+notions of
+$n$-category and Segal $n$-category (and also to the compatibilities
+between different values of $n$).
+
+Dunn, in \cite{Dunn} (submitted in 1993, published in 1996 but summarising his
+1984 thesis, and which refers to Cobb \cite{Cobb})
+considers---among other ``delooping machines''---the {\em $n$-th
+iterate of the Segal machine} whose underlying category is that of the
+functors
+$$
+A: (\Delta ^o) ^n\rightarrow Top
+$$
+such that $A_{m_1,\ldots , m_n}=\ast$ if $m_i=0$ (cf.\ \cite{Dunn}, beginning of
+\S 3). One may call these objects ``Dunn $n$-precategories''.
+Replacing $Top$ by $EnsSpl$ and passing to the quotient, one obtains
+the Segal $n$-precategories $A$ satisfying $A_M=\ast$ for
+$|M|<n$.
+
+Dunn also imposes on his objects the speciality condition in each simplicial
+variable
+(\cite{Dunn} Definition 3.1) and one could call the objects which satisfy
+this condition the ``Dunn $n$-categories''. One can check that
+this
+condition coincides with the condition of being a Segal $n$-category, in
+the case he considers where $A_M= \ast$ for $|M|< n$.
+In sum, Dunn had looked at the Segal $n$-categories having a
+single $i$-arrow for every $i< n$.
+
+The definitions of Dunn and of Tamsamani
+are based on the idea of iterating the construction of Segal
+\cite{Segal}. They are complementary as the
+Postnikov tower and the Whitehead tower are: with Dunn (as with Whitehead)
+it is a question of homotopy in degrees $\geq n$ whereas with Tamsamani (as
+with Postnikov)
+it is a question of homotopy in degrees $\leq n$. The notion of {\em Segal
+$n$-precategory} makes it possible to integrate these two points of view.
+Moreover, in the ``$n$-categorical'' variables one can have arrows which are
+not (homotopically) invertible. It is therefore a definition which allows one
+to have homotopy in every degree, and non-invertible arrows in degrees $\leq
+n$. It is an avatar of the notion (not yet fully elucidated) of {\em
+$\infty$-precategory} which
+would allow one to have non-invertible arrows in every degree. We have
+decided to do the present writing in the framework of Segal $n$-precategories,
+for the sake of simplicity and also because, in the examples which we have in
+view,
+the non-invertibility of arrows comes into play only for a finite number
+of degrees.
+
+
+\subnumero{The \texorpdfstring{$SeCat$}{SeCat} operation}
+
+One of the basic ideas which made it possible to obtain the structure of
+closed model category for $n$-precategories in \cite{nCAT} was
+the operation $Cat$, which one may sum up very simply by saying that it forces
+the condition of being an $n$-category. This procedure applies in the same
+way in
+our framework of Segal $n$-precategories: we shall have an operation which we
+denote
+$A\mapsto SeCat(A)$ with a natural transformation $i_A: A\rightarrow
+SeCat(A)$, which will transform every Segal $n$-precategory into a
+Segal $n$-category.
+
+In fact, instead of fixing the operation $SeCat$ precisely, we
+give the following definition.
+
+\begin{definition}
+\label{secat}
+One calls {\em operation of type $SeCat$} any pair $(F, i)$ where
+$F:nSePC\rightarrow nSePC$ is a functor and $i_A: A\rightarrow F(A)$ a
+natural transformation, possessing the following properties:
+\newline
+(a)---for every Segal $n$-precategory $A$, $F(A)$ is a Segal
+$n$-category;
+\newline
+(b)---$i_A$ is an isomorphism on the sets of objects, and if $A$ is a
+Segal $n$-category then $i_A$ is an equivalence of Segal
+$n$-categories; and
+\newline
+(c)---for every Segal $n$-precategory $A$, the morphism $F(i_A)$ is an
+equivalence of Segal $n$-categories.
+\end{definition}
+
+\begin{lemma}
+\label{secatunique}
+There exists an operation of type $SeCat$. If $(F^1, i^1)$ and $(F^2, i^2)$
+are two operations of type $SeCat$ then they are equivalent in the
+sense that
+$$
+F^1(i^2_A): F^1(A) \rightarrow F^1(F^2(A))
+$$
+is an equivalence of Segal $n$-categories for every Segal $n$-precategory
+$A$. In particular, if $f:A\rightarrow B$ is a morphism of
+Segal $n$-precategories then $F^1(f)$ is an equivalence of Segal
+$n$-categories if and only if $F^2(f)$ is.
+\end{lemma}
+{\em Proof:}
+For existence, one may use a definition analogous to that of
+\cite{nCAT}, which treats the case of (non-Segal) $n$-precategories (for
+another approach, see the discussion
+further on).
+For the
+simplicial sets of the last degree,
+one must fill all the ``horns'' (anodyne Kan extensions). For uniqueness,
+one uses the same proof as that of
+\cite{nCAT} Proposition 4.2. In fact this proof must be coupled
+with the proof of theorem \ref{cmf} in a recursion on $n$
+as is done in \cite{nCAT}. We note that the case $n=0$ is trivially
+true.
+
+If $f: A\rightarrow B$ and if $F^2(f)$ is an equivalence then in the
+diagram
+$$
+\begin{array}{ccc}
+F^1(A) & \stackrel{F^1(i^2_A)}{\rightarrow} &  F^1(F^2(A))\\
+{\scriptstyle F^1(f)}\downarrow && \downarrow {\scriptstyle F^1(F^2(f))}\\
+F^1(A) & \stackrel{F^1(i^2_A)}{\rightarrow} &  F^1(F^2(A))
+\end{array}
+$$
+the arrow $F^1(F^2(f))$ is an equivalence because $F^1$ transforms
+equivalences of Segal $n$-categories into equivalences by
+\ref{secat} (b). The horizontal arrows are equivalences by the
+uniqueness result above. Hence $F^1(f)$ is an equivalence.
+\eop
+
+
+We shall call $SeCat$ any operation which satisfies the criteria of
+definition \ref{secat}. We now give a convenient variant, already
+present (for $n$-precategories) in \cite{nCAT} and explored
+in \cite{effective} for
+Segal $1$-precategories. For $n=0$ one may take the identity
+functor with the identity natural transformation. Let $n\geq 1$
+and suppose the operation $SeCat$ constructed for Segal $(n-1)$-precategories.
+Let $A$ be a Segal $n$-precategory. We define a Segal $n$-precategory
+$Fix(A)$
+with the same objects as $A$ by setting (for $p\geq 1$) $$
+Fix(A)_{p/}(x_0,\ldots , x_p):= SeCat(A_{p/}(x_0,\ldots , x_p)).
+$$
+This has the effect of transforming the $A_{p/}$ into Segal $n$-categories.
+We have a natural morphism $A\rightarrow Fix(A)$.
+On the other hand, for every $m\geq 2$ we define a Segal $n$-precategory
+$Gen[m](A)$ equipped with a morphism $A\rightarrow Gen[m](A)$ inducing an
+isomorphism on the sets of objects, by
+$$
+Gen[m](A)_{q/} := A_{q/} \cup ^{\coprod_{q\rightarrow m} A_{m/}}
+\coprod _{q\rightarrow m}\Gg [m]
+$$
+where
+$$
+A_{m/}\stackrel{a}{\rightarrow} \Gg [m]
+\stackrel{b}{\rightarrow} A_{1/}\times _{A_0}\ldots
+\times _{A_0} A_{1/}
+$$
+is a factorisation of the Segal morphism, where $a$ is a
+cofibration and $b$ a weak equivalence, (which exists by the theorem
+\ref{SeCmf} which we suppose known for $n-1$). The coproducts in the definition
+of $Gen[m]$ are taken with all the morphisms $q\rightarrow m$ in
+$\Delta$ which
+do not
+factor through a principal edge $1\rightarrow m$. See
+\cite{nCAT} or \cite{effective} for how to define
+the functoriality morphisms $Gen[m](A)_{q/}\rightarrow
+Gen[m](A)_{p/}$ for $p\rightarrow q$.
+Now we define $Gen$ as the composite for every $m\geq 2$ of the
+$Gen[m]$ and $SeCat$ is obtained by iterating a countably infinite
+number $\omega$ of times the composite $Fix \circ Gen$.
+This operation, which appears very ineffective, in reality has quite
+good effectivity properties, see \cite{effective}.
+
+One may view an $n$-precategory $A$ as a {\em system of generators
+and relations} for defining an $n$-category, and $SeCat(A)$ as the
+$n$-category thus generated.
+
+\subnumero{The closed model category structure}
+We now define the closed model category structure on
+$nSePC$.
+
+A morphism $A\rightarrow B$ of Segal $n$-precategories will be a {\em
+cofibration} if $A_M\rightarrow B_M$ is injective for every $M\in \Theta ^{n+1}$
+(this condition is different from the condition for the
+$(n+1)$-precategories of \cite{nCAT} because here we also require
+injectivity for $|M|=n+1$). A cofibration is
+therefore simply an injection of presheaves
+of sets.
+
+We shall say that a morphism $A\rightarrow B$ of Segal $n$-precategories is
+a {\em
+weak equivalence} if the morphism
+$SeCat(A)\rightarrow SeCat(B)$ is an equivalence
+of Segal $n$-categories. This property is independent of the choice of
+the construction $SeCat$ thanks to lemma \ref{secatunique}.
+
+And we shall say that a morphism $A\rightarrow B$ of Segal $n$-precategories
+is a {\em
+fibration} if it possesses the lifting property with respect to
+trivial cofibrations (those which are weak equivalences). Let us
+recall (\cite{Quillen}) that, by definition,
+the lifting property ensures that
+for every trivial cofibration $E\rightarrow E'$, and every pair of morphisms
+$E\rightarrow A$ and $E'\rightarrow B$ which form a commutative square, there
+exists a morphism $E'\rightarrow A$ making commutative the two triangles
+in the square.
+
+\begin{theorem}
+\label{SeCmf}
+The three classes of morphisms
+above
+make the category of Segal $n$-precategories
+a closed model category.
+\end{theorem}
+
+The proof enters the more general framework of the comparison
+between the notions of Segal $n$-category and/or $n$-category, for
+different values of $n$. We broach this discussion before
+the proof of \ref{SeCmf}.
+
+\subnumero{Changing \texorpdfstring{$n$}{n}}
+
+The closed model category of Segal $n$-precategories of
+\ref{SeCmf} is a kind of substitute for the notion of $\infty$-category,
+in which the $i$-arrows are invertible up to equivalence, for
+$i>n$. If one admits the existence of a suitable theory of $\infty$-categories,
+the equivalence
+will pass through the construction $A\mapsto \Pi _{\infty} \circ A$ which
+transforms a
+Segal $n$-precategory into an $\infty$-precategory, with a $\Pi _{\infty}$
+which makes correspond an
+$\infty$-groupoid to every topological space or Kan simplicial set.
+We do not wish to enter into the details of the notion of
+$\infty$-category
+here, because the version ``Segal $n$-categories'' suits our
+applications.
+This choice is all the more reasonable in that one can construct
+functors $A\mapsto \Pi
+_{m,Se}\circ A$ to pass from $n$ to $n+m$.
+
+
+
+
+Let us recall that Tamsamani \cite{Tamsamani} has defined a functor
+``Poincaré
+$n$-groupoid''
+$$
+\Pi _n : Top \rightarrow nCat
+$$
+where $nCat$ is the full subcategory of the category $nPC$ of
+$n$-precategories, formed of the $n$-categories. This functor generalises
+the classical ``Poincaré groupoid'' $\Pi _1(X)$. Tamsamani has shown that
+this functor establishes an equivalence between the homotopy theories
+of $n$-truncated topological spaces (i.e.\ where the $\pi _i$ vanish for
+$i>n$) and of $n$-groupoids (i.e.\ $n$-categories where the arrows are
+invertible up to equivalence). More precisely, he constructed a
+``topological realisation'' functor
+$$
+\Re : nCat \rightarrow Top
+$$
+and equivalences $\Pi _n \circ \Re\cong 1$ and $\Re \circ \Pi _n \cong 1$
+for the restrictions of these functors to the categories $Top _n$ of
+$n$-truncated topological spaces and $nGpd$ of $n$-groupoids. We shall
+therefore adopt the
+point of view that $n$-groupoids may be freely replaced by
+$n$-truncated topological spaces (or simplicial sets).
+
+We make here some remarks which use notions that will be
+treated later in the present work, in order to offer another light
+on this equivalence result of Tamsamani (however,
+the reader may do without it until the symbol ``$\oslash$'').
+Applying the
+Dwyer-Kan theory \cite{DwyerKan3} which will be recalled in \S 8
+below, one can invert the equivalences and obtain
+``localised'' simplicial categories
+$L(Top_n)$ and  $L(nGpd)$.
+Now the functors $\Pi _n$ and $\Re$ and
+Tamsamani's equivalences, in conjunction with proposition 3.5 and
+corollary 3.6 of \cite{DwyerKan2} (cf.\ also our lemma \ref{nonadjoint}),
+give an equivalence
+$$
+L(Top_n)\cong L(nGpd )
+$$
+of simplicial categories. One can push this a little further by using
+our notations of \S 11: we denote by $nCAT$ the $(n+1)$-category of
+$n$-categories (see \cite{nCAT}).
+\footnote{
+The reader will take care to distinguish between the typography in capitals
+$nCAT$
+and the typography which involves lower-case letters $nCat$.
+Indeed, $nCAT$ denotes the $(n+1)$-category of $n$-categories,
+defined with the help of the internal structure cf.\ \S 11 and (\cite{nCAT}
+\S 7); whereas
+$nCat$ denotes
+the strict $1$-category with the same objects and the morphisms which strictly
+respect
+the structure (in particular, it is the latter that Tamsamani had
+considered). One uses this same convention for stacks further on.}
+%
+%
+%
+Let us denote by $nGPD\subset nCAT$ the full sub-$(n+1)$-category of
+$n$-groupoids. Then $nGPD$ is $1$-groupic (i.e.\ its
+$n$-categories of
+$Hom$ are in fact $n$-groupoids) hence equal to its $1$-groupic interior:
+$nGPD^{int, 1}= nGPD$. By theorem \ref{intereqloc} one has
+$$
+L(nPC)\cong L(nPC_f)
+\cong nCAT ^{int, 1}.
+$$
+On the other hand, since we have functorial fibrant replacements, every
+category comprised between $nPC$ and $nPC_f$ gives the same Dwyer-Kan
+localisation; this applies notably to $nPC_f \subset nCat \subset nPC$.
+One thus obtains the equivalence of $(n+1)$-categories
+$$
+L(nCat)\cong nCAT^{int, 1}
+$$
+(more technically, this is here an equivalence which possibly passes through
+morphisms in both directions, since neither of the two $(n+1)$-precategories in
+question is
+fibrant).
+The subcategory $nGpd\subset nCat$ is defined by a condition
+invariant under equivalence, hence (by \ref{stabilite} below) $L(nGpd)$
+is the full subcategory of $L(nCat)$ formed of the objects which are
+$n$-groupoids. By definition the same is true for $nGPD$ and hence
+also for $nGPD^{int, 1}$. One thus obtains the equivalence
+$$
+L(nGpd) \cong nGPD.
+$$
+If one now applies the (immediate) variant
+of Tamsamani's comparison theorem
+which gives the equivalence between Dwyer-Kan localisations,
+one obtains an equivalence of $(n+1)$-categories
+$$
+L(Top_n)\cong nGPD.
+$$
+On the other hand, one can observe that the
+simplicial sets
+$L(Top _n)_{1/}(X,Y)$ have the right homotopy type, namely that
+of the mapping space
+$\underline{Hom}(X,Y)$, as soon as, for example, $X$ is a CW-complex
+(see \cite{DwyerKan3} etc.).
+To put
+things differently, $L(Top_n)$ is equivalent to the simplicial category
+of
+($n$-truncated) fibrant and cofibrant objects for any simplicial closed model
+category structure for topological spaces. Hence
+$L(Top_n)$ is ``the'' $(n+1)$-category of $n$-truncated spaces. This
+equivalence therefore gives precisions on what one means by
+``$n$-groupoids are identified with $n$-truncated topological spaces''.
+
+\noindent $\oslash$
+
+\medskip
+
+In view of the preceding remarks (the short version would have sufficed), we
+are going to
+{\em declare} that an $\infty$-groupoid is nothing other than a topological
+space or simplicial set. This point of view, which already guides us
+in the
+definition of Segal $n$-categories, also guides us in
+comparing these notions for different values of $n$.
+
+
+As explained at the beginning of this chapter, one may view every Segal
+$n$-precategory as a simplicial presheaf over $\Theta ^n$, i.e.\ a
+functor to the category of simplicial sets,
+$$
+A:\Theta ^n \rightarrow EnsSpl,\;\;\;\; M\mapsto A_M
+$$
+such that for $|M| < n$ the simplicial set
+$A_M$ is a discrete set.
+
+From this point of view, one may
+compose with the functor
+$| \; |$ of topological realisation of simplicial sets, then with
+Tamsamani's functor $\Pi _m$ \cite{Tamsamani}. Equivalently
+one may first apply Kan's functor
+$Ex^{\infty}$ to arrive at Kan simplicial sets, then the variant
+of the functor $\Pi _m$ of \cite{Tamsamani} adapted to simplicial
+sets.  By these two (essentially equivalent) procedures, one obtains an
+$(n+m)$-precategory which we denote  $\Pi _m \circ A$.
+
+In the other direction, if one has an $(n+m)$-precategory $B$, one may apply to
+it
+the operation $\Re _{\geq n}$ which consists in taking the topological
+realisation (or rather as a simplicial set) of \cite{Tamsamani} of the
+$m$-precategories $B_{M/}$ for $|M|=n$ (one keeps the discrete sets $B_M$ for
+$|M|<n$). The result is a Segal $n$-precategory
+$\Re _{\geq n}(B)$. If $A$ is a Segal $n$-category having only
+$m$-truncated simplicial sets in the image of the functor
+$$
+(M\mapsto A_{M/}): (\Theta ^n )^o\rightarrow EnsSpl
+$$
+considered above, then $\Re _{\geq n}\Pi _m\circ A$ is
+equivalent to
+$A$. If $A$
+does not satisfy this truncation condition then this construction has
+the effect
+of performing the Postnikov truncation on the simplicial sets.
+On the other hand,
+if $A$ is an $n$-groupic $(n+m)$-category (i.e.\ where the $i$-arrows are
+invertible up to homotopy for $i>n$), then $\Pi _m\circ \Re _{\geq
+n}(A)$
+is equivalent to $A$. In the opposite case one thus obtains the
+{\em $n$-groupic completion of $A$} (i.e.\ the universal morphism
+from $A$ to an $n$-groupic $(n+m)$-category),
+analogous to the ``group-completion'' of a
+simplicial monoid in algebraic topology (which is the case $n=0$).
+
+The construction $A\mapsto \Pi _{m}\circ A$ is compatible up to homotopy
+with coproducts. If $A\rightarrow B$ is a cofibration (i.e.\ injection,
+cf.\ the definition below) and $A\rightarrow C$ a morphism of Segal
+$n$-precategories, the coproduct $B\cup ^AC$ is a coproduct of simplicial sets
+object by object over $\Theta ^n$. One may therefore apply the
+Seifert-Van Kampen theorem for $\Pi _m$ of \cite{nCAT}, object by object over
+$\Theta ^n$, to obtain the equivalence
+$$
+(\Pi _m \circ B)\cup ^{(\Pi _m \circ A)}(\Pi _m \circ C)
+\stackrel{\cong}{\rightarrow}
+\Pi _m \circ (B\cup ^AC).
+$$
+In the same order of ideas one remarks that if $A$ is a Segal $n$-precategory
+then there is a natural equivalence of Segal $m$-categories
+$$
+\Pi _m \circ SeCat(A) \stackrel{\cong}{\rightarrow} Cat(\Pi _m \circ A).
+$$
+
+
+
+One may modify the
+paragraph on the operation $\Pi _m\circ A$ to obtain a
+passage from Segal $n$-categories to Segal $(n+m)$-categories.
+For this, one must
+first define a $\Pi _{m,Se}(X)$ for every topological space $X$,
+which will be a Segal $m$-category.  For $m=0$ it is quite simply the
+simplicial set ``singular complex'' $Sing(X)$. For general $m$ we
+first apply the functor $\underline{\Omega}$ defined by
+Tamsamani
+\cite{Tamsamani}, $m$
+times iterated as in
+\cite{Tamsamani}, which gives a functor
+$$
+\underline{\Omega}^m(X): \Theta ^m\rightarrow Top.
+$$
+Then we compose with the functor $Sing$ to obtain
+$$
+\Pi _{m,Se}(X):= Sing \, \underline{\Omega}^m(X).
+$$
+Now if $A$
+is a Segal $n$-precategory one considers it as
+a functor
+$$
+\Theta ^n\rightarrow EnsSpl
+$$
+which one composes first with the realisation $| \; |$, then with the functor
+$\Pi _{m,Se}$. We shall denote  $\Pi _{m,Se}\circ A$ the result of
+this construction. It is a
+Segal $(n+m)$-precategory. Likewise if $B$ is a Segal $(n+m)$-precategory
+one may
+define its {\em realisation in degrees $\geq n$} $\Re _{\geq n}(B)$.
+One has the equivalence
+$$
+A \cong \Re _{\geq n}(\Pi_{m,Se}\circ A)
+$$
+(this time without truncation condition on $A$).
+If moreover $B$ is $n$-groupic, then
+one has $B\cong \Pi_{m,Se}\circ \Re _{\geq n}(B)$. And again, in the general
+case, $\Pi_{m,Se}\circ \Re _{\geq n}(B)$
+will be the $n$-groupic completion of $B$.
+
+Finally one has the formula
+$$
+(\Pi _{m,Se} \circ B)\cup ^{(\Pi _{m,Se} \circ A)}(\Pi _{m,Se} \circ C)
+\cong
+\Pi _{m,Se} \circ (B\cup ^AC).
+$$
+
+\subnumero{Induction}
+
+A (non-Segal) $n$-precategory $A$ may be regarded as
+a Segal $m$-precategory for every $m\geq n$, which one may denote
+$Ind _n^{m,Se}(A)$ with
+$$
+Ind _n^{m,Se}(A)_{k_1, \ldots , k_{m+1}}:= A_{k_1, \ldots , k_n}
+$$
+for $(k_1,\ldots , k_{m+1})\in \Delta ^{m+1}$.
+
+{\em Warning:} If $A$ is an $n$-precategory then $SeCat(Ind _n^{m,Se}(A))$
+is not in general equivalent to $Ind _n^{m,Se}(Cat(A))$. One has this
+equivalence only if $A$ is already an $n$-category.
+
+
+On the other hand it must be remarked that if  $A$ is a (non-Segal)
+$n$-category
+then $Ind _n^{m,Se}(A)$ is from the outset a Segal $m$-category.
+
+For all these
+reasons, one will use this ``induction'' operation
+most often with an argument $A$ which is already an $n$-category.
+
+The case which one will encounter most is that where $Y$ is a
+$1$-category, which one
+regards as a $1$-precategory by taking its nerve $\nu Y$. Then
+for every $n\geq 1$ one has at one's disposal the Segal $n$-category
+$Ind _n^{m,Se}(\nu Y)$.
+
+In practice one will confuse $Y$ with the
+induced Segal $n$-category.
+
+
+
+\subnumero{Truncation}
+
+In the framework of the above comparisons,
+we now define a {\em truncation} $A\mapsto \tau _{\leq n}(A)$
+for Segal
+$m$-categories. The result is
+a (non-Segal) $n$-category.
+If $n\geq m$ we set
+$$
+\tau _{\leq n} (A) := \Pi _{n-m} \circ A
+$$
+with the notations introduced above. In particular one has
+$$
+\tau _{\leq m}(A)= \pi _0\circ A.
+$$
+For $n<m$ we set
+$$
+\tau _{\leq n}(A):= \tau _{\leq n}(\tau _{\leq m}(A)),
+$$
+where the truncation $\tau _{\leq n}$ on the right is the truncation
+which transforms an $m$-category into an $n$-category (see \cite{Tamsamani}).
+In terms of the preceding definitions, one has
+$$
+\tau _{\leq n}(A)_M = A_M \;\; \mbox{for}\;\; |M|<n, \;\;\;\;
+\tau _{\leq n}(A)_M = \tau _{\leq 0}(A_{M/}) \;\; \mbox{for}\;\; |M|=n.
+$$
+
+This truncation is essentially the ``Postnikov truncation''. If one wants
+to consider that our Segal $m$-categories $A$ are in fact
+$\infty$-categories, one may prefer the notation $\tau _{\leq n}(A)$
+to the notation $\Pi _{n-m}\circ A$.
+
+
+\begin{lemma}
+A morphism $A\rightarrow B$ of Segal $m$-categories is an equivalence
+if and only if $\tau _{\leq n}A\rightarrow \tau _{\leq n}B$ is an
+equivalence of $n$-categories for every $n$.
+\end{lemma}
+{\em Proof:}
+This is true for $m=0$, i.e.\ for simplicial sets, and one obtains the general
+case by an obvious recursion.
+\eop
+
+Let $A$ be a Segal $m$-category. We shall say that $A$ is
+{\em contractible} if the canonical morphism $A\rightarrow \ast$ is an
+equivalence. We shall say that $A$ is {\em $0$-truncated} if $A$ is
+a disjoint union of contractible Segal $m$-categories (here the
+union may possibly be empty). Let $n\leq m$; we shall say that
+$A$ is {\em $n$-truncated} if for every
+$M$ with $|M| = n$, the Segal $(m-n)$-category $A_{M/}$ is $0$-truncated.
+Finally, let $n\geq m$; we shall say that $A$ is {\em $n$-truncated} if for
+every
+$M$ with $|M|=m$, the simplicial set $A_{M/}$ is $(n-m)$-truncated (i.e.\ its
+homotopy groups vanish in every degree $i>n-m$).
+
+For $n\geq m$ one has a natural morphism
+$$
+\Pi _{n-m, Se}\circ A\rightarrow
+\tau _{\leq
+n}(A).
+$$
+On the other hand, for $n<m$ there does not in general exist a morphism
+$A\rightarrow Ind ^{m,Se}_n(\tau _{\leq n}(A))$ (nor in the other direction).
+This results from
+the possible existence of non-invertible $i$-arrows (the notion of interior
+introduced below
+will make it possible to get around this difficulty).  However, if $A$ is
+$n$-truncated then one has a natural equivalence
+$$
+A\stackrel{\cong}{\rightarrow} Ind ^{m,Se}_n(\tau _{\leq n}(A)).
+$$
+In fact, one can check that a Segal $m$-category
+$A$ is equivalent to one of the form $Ind ^{m,Se}_n(B)$,
+where $B$ is an $n$-category, if and only if $A$ is $n$-truncated.
+
+
+
+
+\subnumero{The interior}
+
+The realisation provides a means of passing from a Segal $n$-precategory to a
+simplicial set; this corresponds essentially to inverting all the
+arrows in order to obtain an $\infty$-groupoid which one may view as a
+simplicial set. This operation is rather brutal
+and is hardly compatible
+with questions of descent. We introduce here a dual construction (in a fairly
+weak sense), {\em the interior} of a Segal $n$-precategory, which is much
+better adapted to questions of descent and which will allow us
+to unravel recursively the notion of stack in terms of a notion already well
+known for simplicial presheaves.
+
+If $A$ is a Segal $n$-category, we define {\em the interior of $A$}
+denoted $A^{int, 0'}$ first as the sub-Segal-$n$-category of $A$
+containing only the $i$-arrows invertible up to homotopy.
+More precisely we shall say that an $i$-arrow $a\in A_{1^i}$ is {\em
+invertible
+up to homotopy} if the image of $a$ in $\tau _{\leq i}A$ is an
+invertible $i$-arrow (let us recall that the composition of $i$-arrows in the
+$i$-category $\tau _{\leq i}A$ is well defined, associative, etc.).
+The interior $A^{int, 0'}$ of $A$ is the sub-Segal-$n$-precategory
+defined by the
+condition that $a\in A_M$ is in $A^{int,0'}_M$ if and only if
+$f^{\ast}(a)$ is an $i$-arrow invertible up to homotopy, for
+every morphism $f: 1^i\rightarrow M$ of $\Theta ^{n+1}$, for $i\leq n $.
+One sees that $A^{int, 0'}$ is a Segal $n$-category, and
+more precisely a
+Segal $n$-groupoid.  We now introduce
+$$
+A^{int, 0}:= \Re _{\geq 0} A^{int, 0'},
+$$
+which is a simplicial set.
+This last transformation does not change much because $A^{int, 0'}$
+is already
+a Segal $n$-groupoid, and in particular $\Pi _{n,Se}\circ A^{int,
+0}$ is
+equivalent to $A^{int, 0'}$.
+
+In terms of $\infty$-categories,
+$A^{int, 0}$ is the universal $\infty$-groupoid equipped with a morphism to
+$A$.
+
+
+More generally one defines {\em the $k$-groupic interior}
+$A^{int, k}$ of a Segal $n$-category $A$, for every $k<n$. First one
+defines $A^{int, k'}\subset A$ as the sub-Segal-$n$-precategory with
+$a\in A_M$ contained in $A^{int, k'}_M$ if and only if $f^{\ast}a$
+is an $i$-arrow invertible up to homotopy for every morphism $f:
+1^i\rightarrow M$ with $k<i\leq n$. In other words, it is only
+for $i>k$ that one keeps the
+$i$-arrows invertible up to homotopy. Here again, one checks that
+$A^{int, k'}$ is a $k$-groupic Segal $n$-category (i.e.\ whose
+$i$-arrows are invertible up to homotopy for $i>k$). As
+previously, one introduces
+$$
+A^{int, k}:= \Re _{\geq k} A^{int, k'},
+$$
+which is a Segal $k$-category. One has
+$$
+\Pi _{n-k,Se}\circ A^{int, k} \cong A^{int, k'}.
+$$
+In terms of $\infty$-categories,  $A^{int, k}$ is the
+$k$-groupic $\infty$-category universal with a morphism to $A$.
+
+If one wants to apply these constructions to a Segal $n$-precategory one must
+first apply the operation $SeCat$ to obtain a Segal $n$-category
+(where appropriate, this will be understood in the notation:
+$A^{int, k}:= SeCat(A)^{int, k}$).
+
+For $k<l<n$ one has $(A^{int, l})^{int, k}=A^{int , k}$ up to an
+equivalence---which we shall omit to mention. On the other hand one has
+$$
+\tau _{\leq m}(A^{int, k})=\tau _{\leq m} A
+$$
+for $m\leq k$, and
+$$
+\tau _{\leq m} (A^{int, k})=(\tau _{\leq m})^{int, k}
+$$
+for $k<m$.
+If $A\rightarrow B$ is an equivalence of Segal $n$-categories then so
+is $A^{int, k}\rightarrow B^{int , k}$. Moreover, $A$ is
+$k$-groupic if and only if $A^{int, k}\rightarrow A$ is an
+equivalence.
+
+Finally, one can use these constructions to relate a Segal $n$-category
+$A$ to its truncation $\tau _{\leq k}(A)$. Let us recall that for $k\geq n$
+one already has a morphism $\Pi _{k-n,Se}\circ A\rightarrow \tau _{\leq
+k}(A)$. If moreover $k<n$, one has a pair of morphisms
+$$
+\Pi _{n-k,Se} \circ A^{int, k} \rightarrow A
+$$
+and
+$$
+A^{int, k} \rightarrow \tau _{\leq k}(A).
+$$
+
+
+
+
+\subnumero{How to obtain a closed model category structure}
+
+Before broaching the proof of theorem \ref{SeCmf},
+we extract from \cite{Jardine}, \cite{JardineGoerssBook},
+\cite{Hirschhorn}, and more especially from Dwyer-Hirschhorn-Kan \cite{DHK} a
+statement which expresses exactly what must be proved in order to obtain a
+closed model category structure as in \ref{SeCmf}. A statement of the same
+nature is found in Hovey's book (\cite{HoveyBook}
+Theorem 2.1.11).
+
+
+Let $M$ be a category and $C\subset M$ a subcategory (i.e.\ class of
+morphisms). Let moreover $I\subset C$ be a subset of morphisms. One says
+that {\em $I$ generates $C$} if, for every morphism $f:B\rightarrow B'$ of
+$M$, the lifting property \cite{Quillen} with respect to the morphisms of
+$I$ ensures the lifting property with respect to all the morphisms of
+$C$  ---i.e.\ for every diagram
+$$
+\begin{array}{ccc}
+E&\rightarrow & B \\
+\downarrow && \downarrow \\
+E'&\rightarrow & B'
+\end{array}
+$$
+with $E\rightarrow E'$ in $C$,
+the diagonal morphism exists.
+
+We shall mention, without giving a definition, the property for $I$ of {\em
+permitting the small object argument} (``small object argument''), cf.\
+\cite{Hirschhorn}  \cite{JardineGoerssBook} and particularly \cite{DHK},
+7.3. We note that if $M$ admits a suitable ``underlying set'' functor
+$M\rightarrow Ens$, then every subset $I$ of morphisms
+permits the small object argument (\cite{DHK} 8.5, \cite{Hirschhorn}). This
+will be the case in all the examples we are going to consider. In fact, in
+this
+case one
+will be able to say that every subcategory $C\subset M$ which is defined by
+set-theoretically reasonable conditions will have a generating subset
+$I\subset C$ permitting the small object argument---see for example
+Jardine's argument \cite{Jardine}. In general we shall not
+give a proof for this type of condition.
+
+Let us now explain how we shall speak of ``lifting
+property''.
+There are two cases: either one is given the morphism $B\rightarrow B'$ and
+one wants to have the lifting property in the above diagram for every
+morphism $E\rightarrow E'$ in a certain class; or one is given
+$E\rightarrow E'$ and one wants to have the property for every $B\rightarrow B'$
+in a certain class. Instead of making the distinction by speaking of
+``left lifting'' and ``right lifting'' (as Quillen does
+\cite{Quillen}---but we cannot manage to remember where the left is in
+this business)
+we shall leave it to the reader to deduce from the context what is meant,
+knowing that the ``cofibrations'' are always on the left and the
+``fibrations'' on the right in this kind of diagram.
+
+
+We recall the notion of {\em cofibrantly generated closed model category}
+of Hirschhorn \cite{Hirschhorn} \cite{DHK}: it is a cmc $M$,
+admitting all limits and colimits, and such that the
+subcategories $cof\subset
+M$ and $cof \cap W \subset M$ of cofibrations and of trivial cofibrations
+admit generating sets permitting the small object argument.
+
+We give here a version of the {\em recognition lemma}
+(\cite{DHK} 8.1, which Hirschhorn attributes to Kan cf.\ \cite{Hirschhorn}). Our
+version is not the most general, but on the other hand incorporates some
+key remarks which are found only further on in \cite{DHK}, at the
+moment of the proof of  the cmc structure for simplicial categories (\cite{DHK}
+48.7). The lemma and its proof are contained implicitly
+in Jardine's argument \cite{Jardine} and it is moreover
+more or less in this form that the second author copied
+Jardine's argument in \cite{nCAT}. On the other hand, the argument is found
+(scattered) in \cite{JardineGoerssBook}, or else (with
+an analogous list of axioms) in \cite{JardineGoerssLoc}. See also
+Hovey's statement \cite{HoveyBook} 2.1.11. We advise the reader who
+wants to understand this proof to refer to the references
+\cite{Hirschhorn} \cite{DHK} \cite{Jardine} \cite{JardineGoerssBook}
+\cite{JardineGoerssLoc} \cite{HoveyBook}.
+
+The following lemma is therefore found
+entirely in the above references.
+\begin{lemma}
+\label{dhklemme}
+Let $M$ be a category with two subcategories $W\subset M$ and
+$cof\subset M$
+said to be of weak equivalences and of cofibrations (and $cof \cap W$
+is said to be the
+subcategory of trivial cofibrations). Suppose that:
+\newline
+(0) \,\, $M$ admits all limits and colimits indexed by small
+categories;
+\newline
+(1) \,\, every retract of a morphism of $W$ (resp.\ of $cof$)
+is in $W$ (resp.\ in $cof$);
+\newline
+(2)\,\, $W$ satisfies ``three for the price of two'': if two among $f$, $g$,
+$fg$ are in $W$ then so is the third;
+\newline
+(3)\,\, every morphism which possesses the
+lifting property with respect to the morphisms of
+$cof$, is in $W$;
+\newline
+(4)\,\, $cof$ admits a generating subset $I\subset cof$ permitting
+the small object argument;
+\newline
+(5)\,\, likewise, $cof \cap W$ admits a generating subset
+$J\subset cof\cap W$
+permitting the small object argument;
+\newline
+(6)\,\, $cof$ is stable under coproduct (i.e.\ if $A\rightarrow B$ is
+in $cof$ and $A\rightarrow A'$ is arbitrary, then $A'\rightarrow B\cup ^AA'$
+is in $cof$) and under transfinite sequential colimit (see
+\cite{Hirschhorn} \cite{DHK} for the definition); and
+\newline
+(7)\,\, likewise, $cof \cap W$ is stable under coproduct and transfinite
+sequential
+colimit.
+
+Then, denoting by $fib\subset M$ the subcategory said ``of fibrations''
+equal to the class of morphisms which possess the
+lifting property with respect to
+trivial cofibrations, $(M,W,cof, fib)$ is a cofibrantly generated closed model
+category.
+\end{lemma}
+{\em Proof:}
+We apply the recognition criterion (\cite{DHK} 8.1) (whose notations we adopt
+for the present proof). The fact that $I$ generates $cof$ in our
+sense (4), implies $cof \subset I$-${\bf cof}$.  In the other direction, by
+(\cite{DHK} 7.3 (ii)), the morphisms of  $I$-${\bf cof}$ are retracts of
+sequential limits of coproducts by morphisms of $I$; hence by our
+conditions (1) for $cof$ and (6), one has $I$-${\bf cof}\subset cof$ and hence
+$
+I$-${\bf cof}= cof.
+$
+Likewise, using our properties (5) and (1) for $cof$ $+$ (7), one has
+$
+J$-${\bf cof}= cof \cap W.
+$
+This gives us the first conditions of \cite{DHK} 8.1 (ii) and (iii),
+i.e.\ that $J$-${\bf cof}=I$-${\bf cof}\cap W$.  The conditions of the beginning of
+(\cite{DHK}
+8.1) are our (1) for $W$ and our (2). The condition  (\cite{DHK} 8.1
+(i)) results from
+(4) and (5).  Finally our (3) gives $I$-${\bf inj} \subset W$,
+and as lifting for $I$ (resp.\ $J$) is equivalent to lifting
+for $cof$ (resp.\ $cof \cap W$), it is clear that one has
+$I$-${\bf inj} \subset J$-${\bf inj}$. This gives the second part of
+(\cite{DHK} 8.1 (ii)), namely $I$-${\bf inj} \subset J$-${\bf inj} \cap W$.
+\eop
+
+{\em Remark:} It results immediately from the definition of
+\cite{Hirschhorn}
+\cite{DHK} that if $(M, W, cof)$ is a cofibrantly generated closed model
+category, then properties (0)--(7) are satisfied.
+It may be useful to note that the part of the definition of a cofibrantly
+generated cmc
+which goes beyond
+Quillen's axioms, consists in: (0) for the infinite limits and colimits; (4)
+and (5); and
+(6) and (7) for the sequential limits.
+
+
+{\em Remark:} When we apply this lemma, we shall not verify
+conditions (4) and (5), which will be consequences of the existence of an
+``underlying set'' functor and of the fact that $cof$ and $W$ will be
+(set-theoretically)
+reasonable.
+See in Jardine \cite{Jardine} the technique necessary to obtain a rigorous
+proof
+of (4) and (5) in our type of situation (he treats the case of simplicial
+presheaves
+but his technique is very general).
+On the other hand, the cofibrations will in
+general simply be the morphisms which induce injections on the
+underlying sets; hence (1) for $cof$ and (6) will be obvious.
+The existence of limits and colimits will be an immediate consequence of the
+definition of the category $M$ (generally as a category of
+presheaves of sets on a certain category).  In sum, we shall
+verify only (1) for $W$, (2), (3) and (7). The main difficulty will be
+constituted by (7).
+
+
+
+\subnumero{Proof of \texorpdfstring{Theorem~\ref{SeCmf}}{Theorem}}
+
+One could simply copy the proof of \cite{nCAT}
+replacing ``$n$-precategory'' by ``Segal $n$-precategory''. We shall
+however indicate how to obtain the proof using the lemma
+\ref{dhklemme} and using directly a part of the results of
+\cite{nCAT}, without copying everything. In passing, the present
+proof improves that of \S 6 of \cite{nCAT} by replacing
+the {\em ad hoc} argument for condition  CM5(2) by condition (3) of lemma
+\ref{dhklemme} (plus, implicitly, via this lemma, the small object argument).
+
+As in the preceding remark, conditions (0), (1) for $cof$,
+and (6) are immediate. We shall not treat conditions (4) and (5)
+which are of a set-theoretic nature. It therefore remains to treat (1) for
+$W$, (2), (3), and (7). Let us fix $n$ and treat the category $nSePC$ of
+Segal $n$-precategories.
+
+Let $f:A\rightarrow B$ be a morphism of Segal $n$-precategories.
+Suppose that $f$ is a retract of a weak equivalence $g$.  Then
+$SeCat(f)$ is a retract of $SeCat(g)$ and for every $m$, $\Pi _m \circ
+SeCat(f)$ is a retract of $\Pi _m \circ SeCat(g)$. The latter are
+morphisms of $(n+m)$-categories, hence the closure under retracts of the
+class of equivalences between $(n+m)$-categories  (\cite{nCAT} \S 6) implies
+that $\Pi _m \circ SeCat(f)$ is an equivalence. This fact being true
+for every $m$, it
+follows that $SeCat(f)$ is an equivalence hence, by definition, $f$ is
+a weak equivalence. This proves (1) for $W$.
+
+In the same way property (2) ``three for the price of two''
+is an immediate consequence (via the construction $\Pi _m\circ SeCat$)
+of the same property for $(n+m)$-categories for every $m$
+(\cite{nCAT} Lemma 3.8).
+
+For property (3),
+if $n=0$, property (3) is well known for
+simplicial sets; we therefore suppose $n\geq 1$, and we suppose that (3)
+is known for $n-1$.  Suppose that a morphism $f:A\rightarrow B$
+in $nSePC$ satisfies the lifting property with respect to every
+cofibration $E\hookrightarrow E'$. With the cofibration $\emptyset
+\hookrightarrow \ast$ one
+obtains that $f$ is surjective on objects. We now recall a
+construction of \cite{limits} which will be used often throughout the
+present paper. If $E$ is an $(n-1)$-precategory one defines the $n$-precategory
+$\Upsilon (E)$ with two objects $\Upsilon (E)_0 = \{ 0,1\}$ and with
+$$
+\Upsilon (E)_{p/}(x_0,\ldots , x_p)
+$$
+equal to $E$
+if $x_0=\ldots = x_i=0$ and $x_{i+1}=\ldots = x_p = 1$ ($0\leq i<p$); equal
+to $\ast$
+if $x_0=\ldots = x_p=0$ or $x_0=\ldots = x_p=1$; and equal
+to $\emptyset$
+otherwise. A morphism $\Upsilon (E)\rightarrow A$
+ is nothing other than
+a pair of objects $(x,y)\in A_0\times A_0$ equipped with a morphism
+$E\rightarrow
+A_{1/}(x,y)$. We return to the proof of property (3). The
+lifting property for $f$ with respect to every cofibration
+applies in particular
+to $\Upsilon (E)\rightarrow \Upsilon (E')$ for
+every cofibration $E\rightarrow E'$ of Segal $(n-1)$-precategories. This
+implies
+that if $x,y\in A_0$ then the morphism
+$$
+A_{1/}(x,y)\rightarrow B_{1/}(x,y)
+$$
+of Segal $(n-1)$-precategories has the lifting property for every
+cofibration of Segal $(n-1)$-precategories. Property (3) in degree $n-1$
+implies that $A_{1/} (x,y)\rightarrow B_{1/}(x,y)$ is a weak
+equivalence. The same type of argument (using the variant of
+the construction $\Upsilon (E)$ denoted $[p]E$
+in \cite{limits} 2.4.5) shows that
+$$
+A_{p/}(x_0,\ldots , x_p)\rightarrow B_{p/}(f(x_0),\ldots , f(x_p))
+$$
+is a
+weak equivalence. It results clearly from the description of $SeCat$ as
+composite of operations of the form $Fix$ and $Gen[m]$ (see the remarks
+following lemma \ref{secatunique}), that $SeCat(A)_{1/}(x,y)\rightarrow
+SeCat(B)_{1/}(f(x), f(y))$ is an equivalence. Hence $SeCat(f)$ is fully
+faithful, hence it is an equivalence, and $f$ is a weak equivalence.
+This gives property (3).
+
+For property (7), let
+$$
+B\leftarrow     A\rightarrow C
+$$
+be a diagram where $A\rightarrow B$ is a trivial cofibration. As remarked
+above,  the Seifert-Van Kampen theorem, Theorem 9.1 of
+\cite{nCAT}, gives an equivalence
+$$
+(\Pi _m\circ B) \cup ^{(\Pi _m \circ A)}(\Pi _m \circ C)
+\stackrel{\cong}{\rightarrow} \Pi _m\circ (B\cup ^AC).
+$$
+The property of preservation of trivial cofibrations by coproduct
+in the framework
+of (non-Segal) $(n+m)$-precategories (\cite{nCAT} Lemma 3.2) therefore implies
+that
+$$
+\Pi _m \circ C\rightarrow
+\Pi _m \circ (B\cup ^AC)
+$$
+is a weak equivalence. This fact being true for every $m$, it follows
+that $C\rightarrow
+B\cup ^AC$ is a weak equivalence (it is appropriate to recall here that by
+convention we have precomposed the operation $\Pi_m$ by $SeCat$). This
+gives (7).
+\eop
+
+
+\subnumero{Homotopy classes of morphisms}
+
+We recall (Quillen \cite{Quillen}) that if $M$ is a closed model
+category and if $W\subset M$ is the subcategory whose morphisms are
+the weak equivalences, then the localised category
+$$
+Ho(M):= W^{-1}M
+$$
+in the sense of Gabriel-Zisman \cite{GabrielZisman} possesses other useful
+descriptions. Let $M_c$, $M_f$ and $M_{cf}$ be the categories of cofibrant,
+fibrant, and cofibrant and fibrant objects, respectively. Let $W_c$, $W_f$ and
+$W_{cf}$ be the intersections of $W$ with these. Then the localisations
+$W_c^{-1} M_c$, $W_f^{-1}M_f$ and $W_{cf}^{-1}M_{cf}$ are all three
+equivalent (via
+the functors induced by the inclusions) to $Ho(M)$.
+If one denotes by $\pi M_{cf}$ the category whose objects are the objects of
+$M_{cf}$ and whose sets of morphisms are the sets of {\em homotopy
+classes} of morphisms of $M_{cf}$ \cite{Quillen}, then $\pi M_{cf}$
+is also
+equivalent to $Ho(M)$. More generally, for $A,B\in M$, if one chooses
+weak equivalences $A'\cong A$ and $B\cong B'$ with $A'$ cofibrant and
+$B'$ fibrant, then $Hom _{Ho(M)}(A,B)$ is the set of homotopy classes
+of morphisms $A'\rightarrow B'$. Following Quillen \cite{Quillen}, we shall
+adopt the notation
+$$
+[A,B] := Hom _{Ho(M)}(A,B)
+$$
+for the set of morphisms from $A$ to $B$ in $Ho(M)$, with $A,B\in
+Ob(M)$.
+In summary, if $A$ is cofibrant and $B$ fibrant then every element of
+$[A,B]$ comes from a morphism $A\rightarrow B$ of $M$, and two such morphisms
+give the same element of $[A,B]$ if and only if they are homotopic
+in the sense of \cite{Quillen}.
+
+We apply this with $M= nSePC$. In this case, one has an object
+$\overline{I}$, the category with two objects $0,1$ linked by an
+isomorphism, regarded as a Segal $n$-category (see the heading
+``Induction'' above). This object serves as an {\em interval}, i.e.\ for every
+object
+$A\in nSePC$, $A\times \overline{I}$ is an object ``$A\times I$'' in the sense of
+Quillen \cite{Quillen} and for $B$ fibrant, two morphisms $f,g: A\rightarrow
+B$ are homotopic if and only if there exists a morphism $h: A\times
+\overline{I}\rightarrow B$ with $h|_{A\times \{ 0\} }=f$ and $h|_{A\times \{ 1\}
+}=g$. If $A$ and $B$ are two objects of $nSePC$ then one can compute
+$$
+[A,B]= Hom _{Ho(nSePC)}(A,B)
+$$
+by choosing a weak
+equivalence $B\rightarrow B'$ to a fibrant object and (thanks to the fact that
+$A$ is
+automatically cofibrant) by taking the set of morphisms $A\rightarrow
+B'$ modulo the homotopy relation set out above with the help of
+$\overline{I}$.
+%%%%%%%%
+See Cordier \cite{Cordier} who makes this observation in the framework of
+homotopy-coherent diagrams.
+%%%%%%%% above added in v3 %%%%%%%%%

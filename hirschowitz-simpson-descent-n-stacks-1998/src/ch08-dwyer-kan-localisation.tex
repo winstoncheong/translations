@@ -1,0 +1,961 @@
+%@ pages 73-86
+%@ status translated
+% Original section 8, "Localisation de Dwyer-Kan", pp. 73--86.
+
+\clearpage
+\section{Dwyer--Kan localisation}
+\label{dwyerkanpage}
+
+
+A good source of examples of simplicial categories, and hence of Segal
+$1$-categories, is the theory of simplicial localisations $L(C,W)$
+(and their equivalent variants $L^H(C,W)$) developed in the
+papers of Dwyer and Kan \cite{DwyerKan1}, \cite{DwyerKan2}, \cite{DwyerKan3}.
+If $C$ is a category and $W$ a subcategory one obtains a simplicial
+category $L(C,W)$ ``by homotopically inverting the arrows of $W$''
+(often the subcategory ``of equivalences'' $W$ is understood, in which
+case we shall use the notation $L(C)$, see Convention \ref{convenir}
+below). We refer the reader to the works \cite{DwyerKan1},
+\cite{DwyerKan2}, \cite{DwyerKan3} for more on the notations and
+definitions.
+
+
+Here the term ``localisation'' does not have exactly
+the same meaning as in \S 6 (although there is a relation between the
+two notions). For the rest of the paper we shall use the word
+``localisation'' to speak of the Dwyer--Kan localisation (or of its
+analogue for Segal $n$-categories).
+
+To be historically correct it should be pointed out that Quillen
+\cite{Quillen} had already, with
+his notion of simplicial closed model category, found
+most of the simplicial categories that one constructs with the
+Dwyer--Kan localisation; and in particular, in all our examples, the cmc
+$M$ that one localises already admits a
+simplicial structure, and one could therefore refer to
+\cite{Quillen}.
+However, the observation of Dwyer--Kan that
+the simplicial structure depends,
+up to equivalence, only on $M$ and on its subcategory of weak
+equivalences is a very important improvement on \cite{Quillen}, which makes it
+possible to obtain functorialities easily without having to verify that a
+functor preserves the simplicial structure. It is for this reason
+that we systematically use
+this construction of Dwyer--Kan.
+
+
+We begin with a more or less trivial remark which, however,
+does not appear explicitly in
+\cite{DwyerKan1}, \cite{DwyerKan2}, \cite{DwyerKan3}. It is
+a variant of Corollary 3.6 of \cite{DwyerKan2} in which one
+considers functors that are not necessarily
+adjoint and natural transformations of arbitrary direction.
+To express this observation, let us agree to call a {\em chain of
+natural transformations} between two functors $A$ and $B$ the data
+of a sequence $A_0=A, A_1, \dots, A_n=B$ of functors and of a sequence
+$u_1, \dots, u_n$ where $u_i$ is a natural transformation
+either from $A_{i-1}$ to $A_i$ or from $A_i$ to $A_{i-1}$. Let us also
+agree
+to say that a natural transformation $u$ between two
+functors $F, G: C \rightarrow D$ is with
+values
+in the subcategory $W$ of $D$ if for every object $X$ of $C$,
+$u(X)$ is a morphism of $W$ (likewise for a chain of
+natural transformations).
+
+\begin{lemma}
+\label{nonadjoint}
+Let $C$ and $C'$ be two
+categories equipped with subcategories $W$ and $W'$. Let
+$$
+F: C\rightarrow C' ,\;\;\; G: C' \rightarrow C
+$$
+be two functors with $F(W)\subset W'$ and $G(W')\subset W$.
+Suppose that there exist chains of natural transformations $u:
+GF\leftrightarrow
+1_{C}$
+and $v: FG \leftrightarrow 1_{C'}$
+with values in $W$ and $W'$ respectively.
+Then $F$ induces an equivalence of simplicial
+categories $$
+L(C,W)\stackrel{\cong}{\rightarrow}L(C',W').
+$$
+\end{lemma}
+{\em Proof:} The existence of a chain of natural transformations with
+values in $W$
+implies that the functor induced by
+$GF$ on $L(C,W)$ is an equivalence: it then follows from
+Propositions 3.3 and
+3.5 of \cite{DwyerKan2} that the morphism $L(C,W)(X,Y)\rightarrow
+L(C,W)(GFX,GFY)$ is
+an equivalence, and it is easy to see that $GF:L(C,W)\rightarrow
+L(C,W)$ is
+essentially surjective. Likewise the functor induced by $FG$ is an
+equivalence. Consequently $F$ and $G$ induce equivalences.
+At a stretch, this last step can be seen by using the
+closed model category structure for Segal $1$-precategories:
+a functor is an equivalence if and only if it induces an
+isomorphism in the homotopy category, and, in the latter, one can
+use the fact that the existence of right and left inverses implies
+invertibility; finally, to conclude, one observes that a functor between
+simplicial
+categories is an equivalence if and only if the corresponding functor
+between Segal $1$-categories is an equivalence.
+\eop
+
+The following observation is useful for dealing with subcategories
+defined by homotopy-invariant conditions, for
+example categories of complexes with cohomology supported in an
+interval.
+
+\begin{proposition}
+\label{stabilite}
+Let $C$ be a category and $W$ a subcategory of $C$ admitting a
+homotopy
+calculus of fractions
+(cf \cite{GabrielZisman}).
+Let $B\subset C$ be a full subcategory defined
+by a $W$-invariant property, i.e. the inverse image of a subset
+$B'$ of the set of equivalence classes of objects of $L(C,W)$.
+Then $(B, W\cap B)$ admits a homotopy calculus of fractions and $L(B, W\cap
+B)\rightarrow L(C,W)$ is homotopically fully faithful, with as essential
+image the full subcategory of $L(C,W)$ that is the inverse image of the
+same subset of the set of equivalence classes.
+\end{proposition}
+This is a direct consequence of the Dwyer--Kan definition
+(\cite{DwyerKan2} Definition 6.1).
+\eop
+
+The main application of the Dwyer--Kan construction cf \cite{DwyerKan2}
+provides, starting from a
+closed model category $M$ and from its
+subcategory $W$ of weak equivalences, a simplicial
+category $L(M,W)$.
+
+\begin{convention}
+\label{convenir}
+If $M$ is a closed model category
+(or a subcategory of fibrant objects, cofibrant objects, etc.) we shall denote
+by $L(M)$ the Dwyer--Kan localisation with respect to the subcategory of
+weak equivalences. This convention will extend to every category in
+which there is a natural notion ``of equivalence''. In case of possible
+confusion, e.g. when it is a question of comparing the equivalences for the
+coarse topology and the $\Gg$-equivalences, one will put $W$ back into the
+notation, for example $L(nSePCh, W^{\rm gro})$ or $L(nSePCh, W^{\Gg})$.
+\end{convention}
+
+
+
+Let us now point out some methods for computing the ``function complexes'',
+i.e. the simplicial sets of morphisms in $L(M)$ where $M$
+is a closed model category.
+There is of course the direct definition of \cite{DwyerKan1} by means of a
+resolution of $M$ by free simplicial categories;
+we refer the
+reader to \cite{DwyerKan1} for more details.
+
+The second method is that of
+``hammocks'', due to Dwyer--Kan \cite{DwyerKan2}. This method is suited to any
+localisation but with hammocks of arbitrary length. As is remarked
+in \cite{DwyerKan2}, in the case of a closed model category one
+can restrict to hammocks of length $3$. For $x,y\in M$ we denote
+$$
+{\rm ham}^3(M; x,y)
+$$
+the category of diagrams of the form
+$$
+x\leftarrow a\rightarrow b \leftarrow y
+$$
+where the first and the last arrow are weak equivalences
+i.e. lie in $W$. The morphisms in ${\rm ham}^3(M; x,y)$
+are the diagrams of the form
+$$
+\begin{array}{ccccccc}
+x&\leftarrow &a&\rightarrow &b& \leftarrow &y\\
+\downarrow &&\downarrow &&\downarrow && \downarrow \\
+x&\leftarrow &a&\rightarrow &b& \leftarrow &y
+\end{array}
+$$
+where the vertical arrows at the two ends are the identities of $x$ and
+of $y$.
+Dwyer and Kan give in \cite{DwyerKan2} a natural weak equivalence
+of simplicial sets between the function complex between $x$ and
+$y$, and the nerve of the category of hammocks:
+$$
+L(M)_{1/}(x,y) \cong \nu  {\rm ham}^3(M; x,y).
+$$
+
+The last method is that of ``homotopy function complexes''
+(``homotopy function complexes''), due to Reedy \cite{Reedy}, and to Dwyer,
+Hirschhorn, Kan \cite{DHK} \cite{Hirschhorn} \cite{DwyerKan3}. This is a
+generalisation or weakening of Quillen's method \cite{Quillen}
+of considering a simplicial structure on the closed model
+category.
+In the ``function complexes'' method,
+one does not require as much functoriality, which gives
+more flexibility (at the price of the fact, as remarked in \cite{DHK}, that the
+composition of functions is no longer directly accessible---but this poses
+no problem since one already has the category $L(M)$).
+
+Let $x,y\in M$. A {\em fibrant simplicial resolution} of $y$ is a simplicial
+object of $M$, ${\bf y}\in M^{\Delta ^o}$, equipped with a morphism
+$c^{\ast}y\rightarrow {\bf y}$ where $c^{\ast} y$ is the constant object with
+value $y$, such that $y\rightarrow {\bf y}(p)$ is a weak
+equivalence for every $p\in \Delta$, and such that ${\bf y}$ is fibrant for the
+{\em
+Reedy structure} on $M^{\Delta ^o}$ (see \cite{Reedy} \cite{Hirschhorn}
+\cite{DHK} \cite{JardineGoerssBook} as well as our discussion further below).
+Dually, a {\em cofibrant cosimplicial resolution} of $x$ is a
+cosimplicial object of $M$, ${\bf x}\in M^{\Delta}$ equipped with a
+morphism ${\bf x}\rightarrow
+c^{\ast}x$ such that ${\bf x}(p)\rightarrow x$ is a weak equivalence for
+every $p\in \Delta$, and such that ${\bf x}$ is cofibrant for the
+Reedy structure on $M^{\Delta}$.
+
+With these resolutions, one obtains (see {\em loc cit.}) a
+natural equivalence of simplicial sets
+$$
+L(M)_{1/}(x,y) \cong d^{\ast} M_{1/}({\bf x}, {\bf y})
+$$
+where the right-hand term is the diagonal of the bisimplicial set of
+morphisms between the two resolutions. If $x$ is cofibrant, one has
+$$
+L(M)_{1/}(x,y)\cong M_{1/}(x, {\bf y})
+$$
+while if $y$ is fibrant one has
+$$
+L(M)_{1/}(x,y)\cong M_{1/}({\bf x}, y).
+$$
+This is a direct generalisation of the notion of
+computing function complexes in homological algebra (by means of
+projective and injective resolutions of complexes). This very satisfactory
+framework is (to
+our knowledge) due to Reedy \cite{Reedy}, and to Dwyer,
+Hirschhorn, Kan \cite{DHK} \cite{Hirschhorn} \cite{DwyerKan3}; and it is what
+Quillen had in mind when he entitled his book
+\cite{Quillen} ``homotopical algebra''. Further on we find the origins in the
+theory of
+hypercoverings of Verdier \cite{SGA4b}.
+
+If $M$ is a
+simplicial closed model category (this is the main case
+envisaged by Quillen \cite{Quillen}), one obtains
+resolutions from the simplicial structure, hence the localisation
+$L(M)$ is
+equivalent to
+the simplicial category $M^{\rm spl}_{cf}$ of cofibrant
+and fibrant objects.
+
+In the introduction of \cite{DwyerKan3}, Dwyer--Kan indicate without
+entering into details that $L(M)$ ``captures all the higher homotopy
+information implicit in $M$'' that Quillen \cite{Quillen} had
+sought, and partially reconstituted in the homotopy category of
+$M$---for the non-simplicial case. In fact one can make their assertion more
+precise.
+Indeed, the following lemma and its corollary allow
+the constructions of Gabriel--Zisman that we recalled in \S 7 above
+and, in the pointed case, these induce on
+$Ho(M)=\tau _{\leq 1}
+L(M,W)$
+the ``triangulated structure'' defined by Quillen.
+
+
+\begin{lemma}
+\label{prodfibhom}
+If $M$ is a closed model category, then $L(M)$ admits
+homotopy fibre products and homotopy coproducts in the sense of \S 7
+above.
+\end{lemma}
+{\em Proof:}
+We apply the method of resolutions recalled
+above. Let
+$$
+x\rightarrow y\leftarrow z
+$$
+be a diagram between fibrant objects of $M$, with both arrows fibrant
+(every diagram for a fibre product in $L(M)$ is equivalent to a
+diagram of this form). For $u\in M$, one chooses a cofibrant
+cosimplicial resolution ${\bf u}\rightarrow u$. Then the square
+$$
+\begin{array}{ccc}
+L(M)_{1/}(u, x\times _yz)& \rightarrow & L(M)_{1/}(u, z)\\
+\downarrow && \downarrow \\
+L(M)_{1/}(u, x)& \rightarrow & L(M)_{1/}(u, y)
+\end{array}
+$$
+is equivalent to the
+cartesian square of simplicial sets
+$$
+\begin{array}{ccc}
+M_{1/}({\bf u}, x\times _yz)& \rightarrow & M_{1/}({\bf u}, z)\\
+\downarrow && \downarrow \\
+M_{1/}({\bf u}, x)& \rightarrow & M_{1/}({\bf u}, y) .
+\end{array}
+$$
+The morphisms at the bottom and on the right are Kan fibrations
+(one can verify this by using the fact that ${\bf u}$ is Reedy cofibrant
+and that the morphisms $x\rightarrow y$
+and $z\rightarrow y$ are fibrant). So this square is also
+homotopy cartesian, hence the square of function complexes is
+homotopy cartesian. This shows that $x\times_yz$ is a homotopy fibre
+product of $x$ and $z$ over $y$.
+
+The proof for homotopy coproducts is dual.
+\eop
+
+\begin{corollary}
+\label{gzpourM}
+If $M$ is a closed model category,
+the strict $2$-category $\tau _{\leq 2} L(M)$ satisfies
+properties (A), (B), (C) of Gabriel--Zisman and (in the pointed case) their
+construction of the operations $\Omega$ and $\Sigma$
+applies, and hence gives the ``triangulated structure'' on $Ho\, M=\tau _{\leq
+1} L(M)$.
+\end{corollary}
+The verification is left to the reader.
+\eop
+
+For a more general version of this lemma, which allows one to compute the
+limits indexed by a small category, see Proposition \ref{calclim}
+below (for colimits, see \ref{calccolim}).
+
+
+We now return to general considerations on the
+localisation.
+We shall define the localisation for a Segal $n$-category. So let
+$A$ be a Segal $n$-precategory and $f\in  A_{1^i}$ an $i$-arrow, $1\leq i\leq
+n$. Recall that, with the notations of \cite{limits}, one has
+$$
+A_{1^i} = Mor _{nSePC}(h(1^i),A)
+=Mor _{nSePC}(i\Upsilon (\ast ),A)
+$$
+where $h(1^i)$ is the Segal $n$-precategory represented by $1^i\in \Theta
+^{n+1}$
+and where
+$i\Upsilon$ denotes the operation $\Upsilon$ of \cite{limits} iterated $i$
+times. One has the equality $\Upsilon (\ast )=  I$, where $I$
+is the $1$-category having two objects
+$0,1$ and one morphism $0\rightarrow 1$.
+One may write $i\Upsilon (\ast ) = (i-1)\Upsilon (I)$. Our
+$i$-arrow $f$
+therefore corresponds to a morphism
+$$
+f: (i-1)\Upsilon (I)\rightarrow A.
+$$
+Let $\overline{I}$ be the $1$-category having two
+objects $0,1$ and an isomorphism $0\cong 1$. One has $I\subset \overline{I}$,
+and hence a cofibration
+$$
+(i-1)\Upsilon (I)\hookrightarrow
+(i-1)\Upsilon (\overline{I})
+$$
+which one combines with $f$ to define
+$$
+nSeL(A, f) := A \cup ^{ (i-1)\Upsilon (I)}(i-1)\Upsilon
+(\overline{I}).
+$$
+This is a Segal $n$-precategory (even if $A$ was a Segal $n$-category, it is not
+in general a
+Segal $n$-category). One must apply the operation $SeCat$ (or a
+fibrant replacement) to obtain a Segal $n$-category
+$SeCat(nSeL(A, f))$.
+
+
+If $B$ is a fibrant Segal $n$-category and $u:A\rightarrow B$ a
+morphism, then $u$ extends to a morphism
+$$
+u':  nSeL(A, f) \rightarrow B
+$$
+if and only if the image $u(f)$ is invertible
+up to homotopy in $B$, i.e. if it is invertible as an $i$-arrow
+in $\tau
+_{\leq i}(B)$.
+
+
+One can make this universal property a little more precise; but we must
+call
+on the notations of \S 11 below. The reader is invited
+to read \S 11 (see also \cite{nCAT} and
+\cite{limits}) before tackling what follows
+up to the end of the proof of the next Proposition (marker
+$\oslash$).
+
+For $B$ fibrant, the morphism
+$$
+\underline{Hom}(nSeL(A, f), B)\rightarrow
+\underline{Hom}(A, B)
+$$
+is fully faithful with as essential image the
+full sub-Segal-$n$-category of $\underline{Hom}(A, B)$ whose objects
+are the $u$ such that $u(f)$ is invertible up to homotopy. This result
+(for the proof see the Proposition below) means that
+$SeCat(nSeL(A, f))$ possesses the universal property which makes it a
+localisation of $A$.
+
+In particular we note that if $f$ was already invertible up to
+homotopy in $SeCat(A)$, then the morphism
+$A\rightarrow nSeL(A, f)$ is a weak equivalence.
+
+We now extend this construction to the case of
+subsets of $i$-arrows. Let $A$ be a Segal
+$n$-precategory and let $W=\{ W^i \}$ be a system of subsets of $i$-arrows
+$W^i\subset A_{1^i}$, $1\leq i \leq n$. One then defines $nSeL(A,
+W)$ as the coproduct of $A$ with a copy of $(i-1)\Upsilon
+(\overline{I})$ glued along $(i-1)\Upsilon (I)$, for each $f\in
+W^i$. If one wants to have a Segal $n$-category one may then look
+at $SeCat(nSeL(A, W))$. One has the same universal property, which we
+state in the following form.
+
+\begin{proposition}
+\label{propuniSeL}
+Let $A$ be a Segal $n$-category and
+$W=\{ W^i \}$ a system of subsets of $i$-arrows
+$W^i\subset A_{1^i}$. Then $A\rightarrow nSeL(A, W)$ possesses the
+following universal
+property. If $B$ is a
+fibrant Segal $n$-category then
+$$
+\underline{Hom}(nSeL(A, W), B)\rightarrow \underline{Hom}(A, B)
+$$
+is fully faithful with as essential image
+the full subcategory of the $u: A\rightarrow B$ such that, for every
+$f$ in one of the $W^i$,
+$u(f)$ is invertible
+up to homotopy.
+\end{proposition}
+{\em Proof:}
+In view of the properties of the internal $\underline{Hom}$ cf \ref{interne}
+below, it suffices to see this property for the inclusion
+$$
+(i-1)\Upsilon (I) \rightarrow (i-1)\Upsilon (\overline{I}).
+$$
+A morphism
+$$
+(i-1)\Upsilon (I)
+$$
+is the same thing as a morphism
+$$
+I\rightarrow B_{1^{i-1}/}.
+$$
+Since $B_{1^{i-1}/}$ is fibrant, such a morphism extends to $\overline{I}$
+if and only if the $i$-arrow in question is invertible up to
+equivalence. It remains to prove that the morphism
+$$
+\underline{Hom}((i-1)\Upsilon (\overline{I}),B)_{1/}(f,g)
+\rightarrow
+\underline{Hom}((i-1)\Upsilon (I),B)_{1/}(f,g)
+$$
+is an equivalence; we shall show that it is a trivial fibration by
+showing the
+lifting property for every trivial cofibration
+$E\rightarrow E'$.
+
+For this one must show that the morphism
+$$
+(i-1)\Upsilon (I) \times \Upsilon (E) \cup ^{
+(i-1)\Upsilon (I)\times \{ 0,1\}}
+(i-1)\Upsilon (\overline{I})\times \{ 0,1\}
+\rightarrow
+(i-1)\Upsilon (\overline{I})\times \Upsilon (E)
+$$
+is a trivial cofibration. The argument is the same as in the
+proof of (\cite{limits} Theorem 2.5.1) and we do not reproduce it here.
+
+With this fact, one obtains that for every cofibration $E\rightarrow E'$,
+the cofibration
+$$
+(i-1)\Upsilon (\overline{I})\times \Upsilon (E) \cup ^{
+(i-1)\Upsilon (I)\times \Upsilon (E)}
+(i-1)\Upsilon (I)\times \Upsilon (E')
+$$
+$$
+\rightarrow (i-1)\Upsilon (\overline{I})\times \Upsilon (E')
+$$
+% the original prints this formula as two separate displays
+is trivial, which gives the desired lifting property
+(noting that a morphism
+$$
+E\rightarrow \underline{Hom}((i-1)\Upsilon (\overline{I}),B)_{1/}(f,g)
+$$
+identifies with a morphism
+$$
+(i-1)\Upsilon (\overline{I})\times \Upsilon (E)\rightarrow B
+$$
+restricting to $f,g$ on $(i-1)\Upsilon (\overline{I})\times \{ 0,1\}$
+and likewise for the other morphisms of the square in the lifting
+diagram).
+\eop
+
+
+\noindent
+$\oslash$
+
+We now return to the case of Segal $1$-categories. We have defined a
+localisation $1SeL(A,W)$ by any subset of $1$-arrows $W\subset A_1$.
+In this case one does not need the notation $\Upsilon$ since one simply
+attaches
+copies of $\overline{I}$ along the morphisms $I\rightarrow A$
+corresponding to the arrows of $W$. This construction is compatible
+with
+that of Dwyer--Kan in the following sense.
+
+\begin{proposition}
+\label{dklocsegloc}
+Let $C$ be a category and $W\subset C$ a subcategory.
+Then there is an
+equivalence of Segal $1$-categories (compatible with
+the identity of
+$C$)
+$$
+L(C,W) \stackrel{\cong}{\rightarrow} 1SeL(C,W)'
+$$
+where $1SeL(C,W)'$ is a fibrant replacement of
+$1SeL(C,W)$.
+\end{proposition}
+{\em Proof:}
+Recall (\cite{DwyerKan1}) that a {\em free category} is a category
+freely generated by a set of arrows which we shall call the {\em
+generators}. If one fixes a set $O$ of objects, one has the notion of {\em
+free product} of a collection of $O$-categories
+(i.e. of categories of which $O$ is
+the set of objects). If one fixes a set of generators $\{
+f_{\alpha}\}$ with $f_{\alpha}$ an arrow from $x_{\alpha}\in O$ to
+$y_{\alpha}\in O$, let us denote by $\langle f_{\alpha}\rangle$ the free
+$O$-category generated by $f_{\alpha}$. The free $O$-category generated by
+$\{ f_{\alpha}\}$ is then the free product of the $O$-categories
+$\langle f_{\alpha}\rangle$.
+
+We shall first prove the following result: let $C$ be a free category
+(with set $O$ of objects) and
+let $x,y\in O$. We shall add an arrow $f$ with source
+$x$ and target $y$. Let
+$$
+C':= C\ast \langle f\rangle
+$$
+be the free $O$-category generated by the generators of $C$ plus $f$.
+On the other hand the arrow $f$ of $C'$ corresponds to a morphism
+$I\rightarrow C'$. We shall prove that the morphism of Segal $1$-precategories
+$$
+C\cup ^{\{ x,y\} }I\rightarrow C'
+$$
+is a weak equivalence.
+
+To prove this result, we show that $C'$
+is obtained from $C\cup ^{\{ x,y\} } I$ by a sequence of explicit
+trivial cofibrations. For every $\ell$, let $F_{\ell}C'$ be the simplicial
+subset of $C'$ determined by the simplices involving in total, in all
+their
+principal edges, at most $\ell$ of the generators of $C'$ (i.e. of the
+generators of $C$ plus $f$). Here one counts, on one and the same edge (which
+corresponds to an arrow of $C'$), the number of generators (with
+their multiplicity) that come into play in the arrow in question. Let
+$F_{\ell}C$ be the intersection of $F_{\ell}C'$ with $C$, that is to say the
+simplicial subset of $C$ of simplices involving at most
+$\ell$ generators of $C$ in the above sense. One has the equality
+$$
+F_1C' = F_1C \cup ^{\{ x,y\} } I.
+$$
+We shall show that, for $\ell \geq 2$, $F_{\ell}C'$ is obtained
+from $F_{\ell -1}C'\cup ^{F_{\ell -1}C}F_{\ell}C$ by coproduct with a
+collection of trivial cofibrations. For this, we shall call {\em
+elementary $\ell$-simplex} every element $u\in C'_{\ell}$ whose principal
+edges are generators of $C'$. Recall also (cf.
+\cite{nCAT}) that $h(\ell )$ denotes the simplicial set represented
+by $\ell$
+(considered as a Segal $1$-precategory constant in the second simplicial
+variable).
+The morphism
+$$
+i: h(\ell -1) \cup ^{h(\ell -2)}h(\ell -1)\rightarrow h(\ell )
+$$
+corresponding to the inclusion of the first and the last face, is a
+trivial cofibration of Segal $1$-precategories.
+\footnote{
+It is easy to see by induction that the morphism
+$$
+h(m -1) \cup ^{\ast} h(1) \rightarrow h(m )
+$$
+is a trivial cofibration, and one sees that $i$ is a trivial cofibration
+by combining this result for $m=\ell$ and $m=\ell -1$
+with the ``three for the price of two'' property.}
+If $u$ is an elementary $\ell$-simplex viewed as a
+morphism
+from $h(\ell )$ to $C'$, one has either $u: h(\ell )\rightarrow C$, or
+$$
+u^{-1} (F_{\ell -1}C' \cup ^{F_{\ell -1}C} C) =
+i\left( h(\ell -1) \cup ^{h(\ell -2)}h(\ell -1)\right) .
+$$
+In the first case one does not need to add $u$; in the second case one
+can add to $F_{\ell -1} C'\cup ^{F_{\ell -1}C} F_{\ell}C$ a copy of
+$h(\ell )$ glued along $ h(\ell -1) \cup ^{h(\ell -2)}h(\ell -1)$,
+corresponding to $u$. Let us provisionally call $B$ the result of all these
+coproducts, one for each elementary $\ell$-simplex not contained
+in $C$. There is an obvious morphism $B\rightarrow C'$ and it is easy
+to see
+that this morphism is injective, because an element (i.e. $k$-simplex)
+introduced
+by the cofibration associated with $u$ knows all the generators
+appearing
+in $u$, in particular it cannot come from a
+cofibration associated with a $u'\neq u$. On the other hand the image of this
+morphism is
+visibly $F_{\ell} C'$. So $B=F_{\ell} C'$ and we have proved that
+$$
+F_{\ell -1} C'\cup ^{F_{\ell -1}C} F_{\ell}C\rightarrow
+F_{\ell} C'
+$$
+is a trivial cofibration. The argument also shows that
+$$
+F_{\ell -1} C'\cup ^{F_{\ell -1}C} C\rightarrow
+F_{\ell } C'\cup ^{F_{\ell }C} C
+$$
+is a trivial cofibration. The composition of these
+trivial cofibrations gives the trivial cofibration
+$$
+F_1C'\cup ^{F_1C} C\rightarrow C',
+$$
+that is to say the result sought.
+
+
+Now we continue the proof of the Proposition. Let us denote by
+$A\ast B$ the free product of two $O$-categories, and by $A\cup ^OB$ the
+coproduct as $O$-precategories of Segal (i.e. Segal $1$-precategories having $O$
+as set of objects). The result above implies, by
+induction (plus
+possibly passage to a filtered colimit, which poses no problem), that if $C$
+is the free category generated by $\{
+f_{\alpha}\}$
+then
+$$
+\coprod _{\alpha}^{O} \langle f_{\alpha} \rangle \rightarrow C
+$$
+is a weak equivalence of Segal $1$-precategories. It follows that if
+$A$ and
+$B$ are free $O$-categories, then the morphism
+$$
+A\cup ^OB\rightarrow A\ast B
+$$
+is a weak equivalence of Segal $1$-precategories.
+
+If $A$ is a simplicial $O$-category one may consider it as a
+Segal $1$-category (using the simplicial variable as second
+simplicial variable for the Segal category). The result above
+implies directly that if $A$ and $B$ are simplicial $O$-categories,
+free at each stage, then the morphism
+$$
+A\cup ^OB\rightarrow A\ast B
+$$
+is a weak equivalence. Now, the coproduct (in a cmc) of
+cofibrant objects (and for \ref{SeCmf} every object is cofibrant)
+preserves the equivalence type. Dwyer--Kan show that the free product of
+arbitrary simplicial
+$O$-categories preserves equivalence
+(\cite{DwyerKan1} Proposition 2.7). Using free simplicial
+resolutions (\cite{DwyerKan1}) one obtains that for every pair of simplicial
+categories $A,B$ having the set $O$ as objects,
+the morphism
+$$
+A\cup ^OB\rightarrow A\ast B
+$$
+is a weak equivalence of Segal $1$-precategories.
+
+We now return to the definition of the Dwyer--Kan localisation
+\cite{DwyerKan1}. If $C$ is a category and $W$ a subcategory,
+Dwyer--Kan choose a free resolution of $C$ of the form
+$A\ast B$ with $A$ and $B$ simplicial categories free at
+each level
+(and sharing the same set of objects $O$),
+and such that $B$ is a resolution of $W$. Let us denote by $\overline{B}$
+the simplicial category obtained by inverting the arrows of each level
+of $B$. By definition one has
+$$
+L(C,W):= A\ast \overline{B}
+$$
+while
+$$
+1SeL(A\ast B, B)= (A\ast B)\cup ^{B}1SeL(B,B).
+$$
+Observe moreover that $1SeL(B,B)\rightarrow \overline{B}$ is a weak
+equivalence (for this one may suppose that $B$ is a free category, in which
+case
+$\overline{B}$ is its $0$-groupic completion and $1SeL(B,B)$ as well).
+
+One
+has a sequence of arrows $$
+A\cup ^O \overline{B} = (A\cup ^OB)\cup ^B\overline{B}\rightarrow
+(A\ast B)\cup ^{B}\overline{B}\rightarrow A\ast \overline{B},
+$$
+and by the remarks above,
+the first arrow and the composite are
+weak equivalences of Segal $1$-precategories. By
+``three for the price of
+two'' one obtains that the arrow
+$$
+1SeL(A\ast B, B)= (A\ast B)\cup ^{B}\overline{B}\rightarrow A\ast
+\overline{B}=L(C,W)
+$$
+is an equivalence. On the other hand the localisation $1SeL$
+preserves equivalences, so the arrow
+$$
+1SeL(A\ast B, B)\rightarrow 1SeL(C,W)
+$$
+is a weak equivalence; hence, choosing a fibrant replacement
+$1SeL(L,W)'$ % the French prints $1SeL(L,W)'$ here
+one obtains an equivalence (essentially well defined)
+of Segal $1$-categories
+$$
+L(C,W)\stackrel{\cong}{\rightarrow} 1SeL(C,W)'.
+$$
+This completes the proof.
+\eop
+
+
+\begin{corollary}
+\label{dklocseglocspl}
+Let $C$ be a simplicial category and $W\subset C$ a simplicial subcategory.
+One may suppose that $W$ is saturated in the sense that $W(x,y)$ is
+a union of connected components of $C(x,y)$ (cf \cite{DwyerKan1}).
+The set $W_{1,0}$ of vertices
+of the simplicial set of arrows of $W$ is a subset of
+$1$-arrows of the Segal $1$-category corresponding to $C$. One then has
+an
+equivalence of Segal $1$-categories (compatible with the injections of
+$C$)
+$$
+L(C,W) \stackrel{\cong}{\rightarrow} 1SeL(C,W_{1,0})'.
+$$
+\end{corollary}
+{\em Proof:}
+One supposes $C$ free as in \cite{DwyerKan1}, and one applies the
+Proposition
+at each level. One may note that by \cite{DwyerKan1}, $L(C,W)$ is
+equivalent to $L(C, W_{1,0})$.
+\eop
+
+\begin{corollary}
+\label{propunivM}
+Let $C$ be a simplicial category and $W\subset C$ a simplicial subcategory.
+If $B$ is a fibrant Segal $1$-category, then
+the morphism of Segal $1$-categories
+$$
+\underline{Hom}(L(C,W), B)\rightarrow \underline{Hom}(C,B)
+$$
+is fully faithful with as essential image the
+subcategory of the morphisms $C\rightarrow B$ which send
+the elements of $W$ to
+invertible morphisms (up to equivalence) in $B$.
+\end{corollary}
+{\em Proof:}
+It suffices
+to apply Proposition \ref{propuniSeL} and \ref{dklocseglocspl} (or just
+\ref{dklocsegloc} if $C$ is a non-simplicial $1$-category).
+\eop
+
+This corollary should have a variant formulated in terms of
+simplicial categories with the simplicial categories
+$Coh(\cdot , \cdot )$ of morphisms of Cordier and Porter, see the problems
+\ref{probleme1}--\ref{probleme2} above.
+
+{\em Remark:} Strictly speaking, there does not necessarily exist a morphism
+$C\rightarrow L(C,W)$. On the other hand, if $\widehat{C}\rightarrow C$
+is the standard
+simplicial resolution of $C$ (which is an equivalence of simplicial
+categories) then by construction \cite{DwyerKan1} one has a morphism
+$\widehat{C}\rightarrow L(C,W)$. In the rest of the paper we shall
+neglect
+this technical point (we have already ignored it in the statement of the
+preceding corollary) and {\em pretend} that one has a morphism
+$C\rightarrow L(C,W)$.
+This difficulty does not concern $1SeL(C,W)$,
+which by construction receives
+a morphism with source $C$.
+
+\bigskip
+
+
+
+The following corollary is the analogue, for Segal categories with
+several objects, of a fact well known for topological monoids: every weak
+monoid (i.e. object of the category underlying
+a delooping machine; for example a Segal category with a single
+object, for the Segal machine) is equivalent to a strict topological
+monoid. See the work of
+Fiedorowicz \cite{Fiedorowicz}, or Proposition 1.12 of Dunn
+\cite{Dunn}.
+
+%%% added in v2:
+In fact this corollary is to be found
+in \cite{DKS}, which contains for the first time
+the notion of Segal $1$-category (the present remark
+was added in version 2).
+
+
+\begin{corollary}
+\label{catsimpl}
+If $A$ is a fibrant Segal $1$-category then there exists a simplicial
+category $C$ and an equivalence $C\rightarrow A$.
+\end{corollary}
+{\em Sketch of proof:}
+By considering $A$ as a simplicial presheaf on the category
+$\Delta$, one may apply the ``barycentric subdivision''
+above each object of $\Delta$ (see Lemma \ref{bd} below) so as
+to obtain a presheaf of categories on $\Delta$. Then one
+applies the Grothendieck integration operation (cf \S 16 below), by
+using an analogue of Lemma \ref{bd} for presheaves of categories
+above $\Delta$ instead of simplicial sets. This is the analogue
+for Segal categories of
+the platification (``flattening'') used in
+Dwyer--Kan (\cite{DwyerKanDiags} ``A delocalization theorem'' 2.5). One thus
+obtains a $1$-category $\beta (A)$ equipped with a subset $\delta (A)$ of
+$1$-arrows: one includes in it all the ``vertical'' arrows, i.e. those
+of the fibre categories, as well as the ``horizontal'' arrows which
+enter into the $\delta (A)$ of \ref{bd}. As in \ref{bd},
+one has
+$$
+A\cong 1SeL(\beta (A), \delta (A))'
+$$
+(equivalence in the homotopy category of $1SeCat$).
+Then, by the preceding Proposition, one also has
+$A \cong L(\beta (A), \delta (A))$. And since $A$ is fibrant,
+this equivalence can be realised as an equivalence
+$L(\beta (A), \delta (A))\rightarrow A$.
+\eop
+
+
+
+This proof also shows that there exists a simplicial set $X$
+satisfying
+$$
+SeCat(X) \cong A.
+$$
+Indeed, $\beta (A)$ is a $1$-category which
+corresponds to a simplicial set (its nerve); and the localisation
+$1SeL(\beta (A), W)$ is obtained by gluing copies of
+$\overline{I}$ along the morphisms $I\rightarrow \beta (A)$ of $W$.
+The coproduct stays within simplicial sets (indeed, the
+result stays
+constant in the second simplicial variable of the Segal $1$-precategories).
+One therefore indeed has a simplicial set
+$$
+X:= 1SeL(\beta (A), W)
+$$
+satisfying $A\cong SeCat(X)$.
+
+
+\subnumero{Homotopy adjoints}
+
+The property of adjunction is transmitted to Dwyer--Kan localisations
+and becomes a property of homotopy adjunction. Let $A$ and $B$ be two
+Segal $n$-categories (which one may suppose fibrant), and
+$$
+F: A\rightarrow B,\;\;\;\; G: B\rightarrow A
+$$
+two morphisms. Let also
+$$
+u\in \underline{Hom}(A,A)_{1/}(1_A, GF)
+$$
+be a natural transformation. Then
+for every $x\in A_0$ and every $y\in B_0$, $u$ induces a morphism
+(essentially
+well defined)
+$$
+B_{1/}(Fx,y)\rightarrow A_{1/}(x,Gy).
+$$
+We shall say that $F$ and $G$ are {\em homotopically adjoint via $u$} if
+this morphism is an equivalence of Segal $n-1$-categories for every
+$x$ and every $y$. We shall say that $F$ is {\em the left adjoint} and $G$ {\em
+the right
+adjoint}. One could also construct the definition starting from
+a natural
+transformation
+$$
+v\in \underline{Hom}(B,B)_{1/}(FG,1_B).
+$$
+And to do things properly, one should verify
+that the two definitions coincide, that the adjoint
+$(G,u)$ of a morphism $F$ is essentially unique if it exists, etc.
+
+%%% sentence added in v2 and v3:
+See Cordier--Porter \cite{CordierPorter} for the case $n=1$.
+
+Likewise one could envisage defining the notion of an adjoint pair of
+$1$-arrows in an arbitrary Segal $n$-category (and recover the
+notion above with the $n+1$-category $nSeCAT$). This could correspond
+to what
+Baez--Dolan call a ``dual'' in an $n$-category
+\cite{BaezDolan}.
+
+\begin{lemma}
+\label{adjointh}
+Let $F:M\rightarrow N$ be a left Quillen functor between closed model
+categories, and let $G$ be its right adjoint.
+Then
+$$
+L(F): L(M)\leftrightarrow L(N): L(G)
+$$
+are homotopically adjoint.
+\end{lemma}
+{\em Proof:}
+First one must note that the computation of the $L(M)_{1/}(x,y)$ by
+resolutions is
+compatible with composition as far as possible: if for example
+$y\rightarrow {\bf y}$ is a fibrant simplicial resolution, and if
+$x\rightarrow x'$ is a morphism between cofibrant objects, then
+the induced morphism
+$$
+M_{1/}(x',{\bf y})\rightarrow M_{1/}(x,{\bf y})
+$$
+coincides with the composition morphism
+$$
+L(M)_{1/}(x',y)\rightarrow L(M)_{1/}(x,y)
+$$
+via the equivalence of \cite{DwyerKan2} which was recalled above.
+
+We apply this to the adjunction morphism $x\rightarrow GFx$.
+One obtains that if $x$ is cofibrant and if $y\rightarrow {\bf y}$ is a
+fibrant simplicial resolution, then the morphism
+$$
+L(N)_{1/}(Fx,y)\rightarrow L(M)_{1/}(x,Gy)
+$$
+induced by the adjunction morphism coincides (up to equivalence)
+with the morphism
+$$
+N_{1/}(Fx, {\bf y})\rightarrow M_{1/}(x,G{\bf y})
+$$
+(here the fact that $F$ and $G$ are Quillen functors (left and
+right) implies that $Fx$ is cofibrant, and that $Gy\rightarrow G{\bf y}$ is a
+fibrant simplicial resolution). Now this last morphism is an isomorphism,
+so the adjunction morphism on the localisations is an equivalence.
+\eop
+
+
+
+For another property of a closed model category
+$M$ which can
+be ``amplified''
+into a property of $L(M)$ see Proposition
+\ref{hominterne} on homotopy internal $Hom$'s.
+We conclude by posing the analogous problem for ``derived
+functors''.
+
+\begin{problem}
+\label{derive}
+Define the notion of {\em homotopy derived functor} in the framework of
+simplicial categories or Segal $1$-categories (or possibly Segal
+$n$-categories). Prove that if $M$ and $N$ are closed model
+categories and if $F: M\rightarrow N$ is a Quillen functor (left,
+say), then the composite functor
+$$
+L(M)\cong L(M_c)\rightarrow L(N_c)\cong L(N)
+$$
+is the homotopy derived functor of $M\rightarrow L(N)$ along
+$M\rightarrow L(M)$. Give a statement of essential uniqueness for the
+homotopy derived functor, if it exists.
+\end{problem}
+
+The solution of
+this problem would make it possible to see that the Segal $1$-prestack
+$L(\mm )$ associated with a left Quillen presheaf $\mm$ (see \S 17)
+is essentially well defined independently of the choice of the
+subcategories
+of cofibrations in the $\mm (y)$.

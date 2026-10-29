@@ -1,0 +1,766 @@
+%@ pages 125-135
+%@ status translated
+% Original section 12, "La famille universelle", pp. 125--135.
+% Section 12, "The universal family", original pp. 125--135.
+%
+% Kept as printed, recorded here for the next reader:
+%  * after item (ii) the authors write "si (b) est vrai"; the list above is
+%    numbered (i), (ii), so (b) is the printed form of (ii);
+%  * "$B|_{z/\Zz}$" (four times, original p. 132) where $B$ is a functor on
+%    $\Yy$, so that $z/\Yy$ is meant; printed as is;
+%  * the prose says that a morphism between matching objects "est fibrant"
+%    where "est une fibration" is meant (original p. 134);
+%  * in the recall paragraph, "fibrant over $\Xx$" while the site has just
+%    been renamed $\Yy$; printed as is.
+% One clear typographical slip has been repaired, with a comment at the spot:
+% the stray "\ldots" written as plain "ldots" (original p. 131).
+
+\clearpage
+\section{The universal family}
+\label{universellepage}
+
+For the moment let $\Xx$ be a category equipped with the coarse topology.
+One has a morphism of $n+1$-prestacks
+$$
+\Psi : nSeCHAMP(\Xx ) \times \Xx ^o \rightarrow nSeCAT.
+$$
+This morphism may be seen as the \emph{universal family} of $n$-categories
+over $nSeCHAMP(\Xx ) \times \Xx$. We define $\Psi$ by setting
+$$
+\Psi (A,X):= A(X);
+$$
+and for $f:X\rightarrow Y$ in $\Xx $ we use the natural morphism
+$$
+\Gamma \underline{Hom}(A,B) \times \{ f\} \rightarrow \underline{Hom}(A(Y),
+B(X))
+$$
+to define the action of $\Psi$ on morphisms. On the left, this is the
+internal $\underline{Hom}$ of Segal $n$-prestacks; and, on the right, it is
+the internal $\underline{Hom}$ of Segal $n$-precategories.
+
+Let $nSeCAT'$ be the fibrant replacement of $nSeCAT$. By composition one
+obtains a morphism
+$$
+nSeCHAMP(\Xx ) \times \Xx ^o\rightarrow nSeCAT',
+$$
+which corresponds, by definition of the internal $\underline{Hom}$ (of Segal
+$n+1$-prestacks), to a morphism
+$$
+\Phi : nSeCHAMP(\Xx ) \rightarrow \underline{Hom}(\Xx ^o, nSeCAT').
+$$
+
+The following result makes the link between these definitions and the notions
+of stack proposed in \cite{limits}.
+
+
+\begin{theorem}
+\label{correlation}
+Let $nSeCAT'$ be a fibrant replacement of $nSeCAT$.
+If the topology of $\Xx$ is
+coarse then the morphism
+$\Phi$ induces an equivalence between
+$nSeCHAMP(\Xx )$ and the
+Segal $n+1$-category $\underline{Hom}(\Xx ^o, nSeCAT')$.
+
+If $\Xx$ is equipped with another topology
+$\Gg$ then $\Phi$ induces an equivalence between \newline
+$nSeCHAMP(\Xx )$ and the full subcategory
+of
+$\underline{Hom}(\Xx ^o, nSeCAT')$ consisting of the morphisms
+$F:\Xx ^o\rightarrow nSeCAT'$ which correspond to Segal $n$-stacks.
+
+% modified in v3 (the preceding and the following sentence)
+For the case of non-Segal $n$-stacks this subcategory may be
+identified as that of the morphisms which
+satisfy the descent condition
+of \cite{limits} 6.3, namely that the arrow
+$$
+\lim _{\leftarrow} F|_{\Xx /X} \rightarrow
+\lim _{\leftarrow} F|_{\Bb}
+$$
+be an equivalence for every sieve $\Bb \subset \Xx /X$ of $\Gg$.
+\end{theorem}
+
+In this section (Proposition \ref{pleinfidele} below) we shall
+only
+prove that $\Phi$ is fully faithful. The essential surjectivity of
+$\Phi$ in the first case of the theorem
+will be Theorem \ref{strictif3}
+further down. The second case will then follow
+(once Theorem \ref{strictif3} is granted) from Corollary
+\ref{critereaveclim}.
+
+We note first that if $\Gg$ denotes the
+topology of $\Xx$,
+then the $\Gg$-fibrant $n$-prestacks are in particular fibrant for the
+coarse topology, whereas the definition of the morphisms in
+$nSeCHAMP(\Xx ^{\Gg})$
+does not involve $\Gg$. Hence $nSeCHAMP(\Xx ^{\Gg} )$ is a full
+subcategory
+of $nSeCHAMP(\Xx ^{\rm gro})$, where $\Xx ^{\rm gro}$ is the category
+$\Xx$ with
+the coarse topology. Thus the property that $\Phi$ be fully
+faithful reduces to the case of the coarse topology
+and we may ignore the topology $\Gg$
+for the rest of this
+section.
+
+To emphasise the fact that the topology is not being considered, we change
+the notation for $\Xx$ to $\Yy$: we therefore consider a category $\Yy$ with
+its coarse topology.
+
+Recall that the objects of $nSeCHAMP(\Yy )$ are the Segal $n$-prestacks
+fibrant over $\Xx$, and that if $A$ and $B$ are two such objects, one has,
+$$
+nSeCHAMP (\Yy )_{1/}(A,B) := \Gamma \underline{Hom}(A,B).
+$$
+This fibrant Segal $n$-precategory represents the functor which to a
+Segal $n$-precategory $E$ associates the set $Hom (A\times \underline{E}, B)$.
+On the other hand, if $A$ is fibrant then the values $A(X)$ are fibrant, i.e.
+objects of
+$nSeCAT$. The fibrant Segal $n$-prestack $A$ therefore induces a morphism
+$\Yy ^o \rightarrow  nSeCAT$ which one may compose with the fibrant
+replacement
+to obtain a morphism $\Yy ^o \rightarrow  nSeCAT'$.
+If $E$ is a Segal $n$-precategory $E$, to give a
+morphism
+$$
+E\rightarrow \underline{Hom}(\Yy ^o, nSeCAT')_{1/}(A,B)
+$$
+amounts to giving a morphism
+$$
+F:\Yy ^o\times \Upsilon (E) \rightarrow nSeCAT'
+$$
+with
+$$
+F|_{\Yy ^o \times \{ 0\}} = A,\;\;\;\;
+F|_{\Yy ^o \times \{ 1\} } = B.
+$$
+(See \cite{limits} for the notation $\Upsilon$.)
+Now, the
+data of such a
+strict morphism (i.e. with values in $nSeCAT$ instead of $nSeCAT'$)
+$$
+F: \Yy ^o\times \Upsilon (E) \rightarrow nSeCAT
+$$
+with
+$$
+F|_{\Yy ^o \times \{ 0\}} = A,\;\;\;\;
+F|_{\Yy ^o \times \{ 1\}} = B
+$$
+amounts to the data, for every $y\in \Yy$, of a morphism
+$E\times A(y)\rightarrow B(y)$ such that for $y\rightarrow z$ in $\Yy$, these
+morphisms are strictly compatible with the restrictions in $A$ and $B$.
+In other words, one obtains the equality
+$$
+\underline{Hom}(\Yy ^o, nSeCAT)_{1/}(A,B) = \Gamma \underline{Hom}(A,B).
+$$
+Consequently the inclusion $nSeCAT \rightarrow nSeCAT'$ induces a morphism
+$$
+\Gamma \underline{Hom}(A,B) \rightarrow
+\underline{Hom}(\Yy ^o, nSeCAT')_{1/}(A,B),
+$$
+and the full faithfulness of the functor
+$\Phi$ is equivalent to the following proposition.
+
+\begin{proposition}
+\label{pleinfidele}
+Let $A$ and $B$ be two fibrant Segal $n$-prestacks on $\Yy$. Then the
+morphism
+$$
+\Gamma \underline{Hom}(A,B) \rightarrow
+\underline{Hom}(\Yy ^o, nSeCAT')_{1/}(A,B).
+$$
+is an equivalence of Segal $n$-categories.
+\end{proposition}
+{\em Proof:} We first introduce some notation.
+Let $Y$ be a Segal $n+1$-category and $E$ a Segal $n$-precategory. We
+define the Segal $n+1$-precategory $Y^{\otimes E}$ which has the same objects
+as $Y$ by setting (for $p\geq 1$)
+$$
+Y^{\otimes E}_{p/}(y_0,\ldots , y_p):=
+Y_{p/}(y_0,\ldots , y_p) \times E.
+$$
+We are interested in this construction mainly when $Y$ is
+our base $1$-category $\Yy$, or else for $Y=\Yy \times I$.
+
+
+If $\Zz \subset \Yy$ is an inclusion of $1$-categories having the same
+objects, if $C'$ is a fibrant $n+1$-category, and if $A : \Zz \rightarrow
+C'$ is a
+morphism, we introduce the fibrant Segal $n$-category $Diag (\Yy , \Zz ,
+A; C')$, whose objects are the extensions of $A$ to $\Yy$, and which
+is characterised by the formula
+$$
+Hom _{nSePC}(E,Diag (\Yy , \Zz , A;C'))=\{ f: \Yy ^{\otimes E} \rightarrow C',
+\;\;\; f|_{\Zz ^{\otimes E}} = A|_{\Zz ^{\otimes E}} \} .
+$$
+Indeed, one verifies that the right-hand side defines a functor
+in $E$ which
+transforms colimits into limits. This functor is therefore
+representable by a Segal $n$-precategory which we denote
+$Diag (\Yy , \Zz ,
+A;C')$.
+Since $C'$ is
+fibrant, our functor has the extension property for
+trivial cofibrations $E\subset E'$, and hence $Diag (\Yy , \Zz , A;C')$ is
+fibrant.
+
+Let $\nu (\Zz )\subset \nu (\Yy )$ and $\nu (C')$ be the nerves of these Segal
+$1$- or
+$n+1$-categories, regarded as Segal $n$-prestacks
+over $\Delta$. We note that $\nu (C' )$ is fibrant over
+$\Delta$. One may verify
+that the Segal $n$-category $Diag (\Yy , \Zz , A;C')$  is the fibre of the
+morphism
+$$
+\underline{Hom}(\nu (\Yy ), \nu (C' ))
+\rightarrow
+\underline{Hom}(\nu (\Zz ), \nu (C' ))
+$$
+over $A$. What is involved here are the internal $\underline{Hom}$'s of Segal
+$n$-prestacks over $\Delta$.
+
+Let now $A,B: \Yy \rightarrow C'$ and let us denote by $A\sqcup B$ the
+corresponding morphism
+$$
+A\sqcup B:\Yy \times \{ 0,1\} = \Yy \sqcup \Yy \rightarrow C'.
+$$
+One has the formula
+$$
+\underline{Hom}(\Yy , C')_{1/}(A,B) = Diag (\Yy \times I, \Yy \times \{ 0,1\} ,
+A\sqcup B ; C').
+$$
+To prove full faithfulness, we shall apply this formula
+with
+$C'=nSeCAT'$.
+
+We shall first modify things slightly.
+In the situation of the preceding
+paragraph, let $\Uu$ be the category whose objects are the pairs of
+sequences $(y_0,\ldots , y_p; z_0, \ldots , z_q)$ equipped with morphisms
+$y_i\rightarrow y_{i+1}$,
+$z_i\rightarrow z_{i+1}$ and also $y_p\rightarrow z_0$; and where the
+morphisms
+are the inclusions and the degeneracies of sequences.
+In other words, $\Uu$ is the \emph{category of the simplices of $\Yy \times I$}
+which lie neither in $\Yy \times \{ 0\}$ nor in $\Yy \times
+\{ 1\}$. Let us remark that one has a forgetful functor
+$$
+(y_0,\ldots , y_p; z_0, \ldots , z_q)\mapsto
+[\{ 0,\ldots , p\} , \{ 0,\ldots ,
+q\} ]
+$$
+from
+$\Uu$  to $\Delta \times \Delta$.
+One may define
+an $n$-prestack $F = F(A,B; C')$ on
+$\Uu$ by taking for
+$F(y_0,\ldots , y_p,z_0,\ldots ,z_q)$
+the fibre over
+$(f,g)$ of the morphism
+$$
+C'_{p+q+1/}(A(y_0),\ldots , A(y_p),B(z_0),\ldots , B(z_q))
+\rightarrow
+$$
+$$
+C'_{p/}(A(y_0),\ldots , A(y_p))\times
+C'_{q/}(B(z_0),\ldots , B(z_q))
+$$
+where $f$ (resp. $g$) is the image of the element $(y_0,\ldots , y_p)$
+(resp. $(z_0,\ldots , z_q)$) of the nerve of $\Yy$ under the morphism $A$ (resp. $B$).
+
+
+Let us observe here the following property:
+
+$(\ast ):$ for every $(y_0,\ldots , z_q)$,
+the restriction morphism
+$$
+F(y_0,\ldots , y_p,z_0,\ldots ,z_q)\rightarrow F(y_p,z_0)
+= C'_{1/}(A(y_p), B(z_0))
+$$
+corresponding to the arrow
+$$
+(y_p; z_0)\rightarrow (y_0,\ldots ,y_p; z_0,\ldots , z_q)
+$$
+% The original prints "z_0,ldots , z_q" here; the backslash is missing.
+of $\Uu$, is
+an equivalence of Segal $n$-categories.
+
+To see this, one must use
+the hypothesis that $C'$ is fibrant, which makes the fibre product in the
+definition of $F$ also a homotopy fibre product.
+
+We shall now finish the proof in progress by assuming
+that $F$ is fibrant over $\Uu$, and we shall devote the end of
+the present section to this problem.
+Let us observe now that one has
+$$
+Diag (\Yy \times I, \Yy \times \{ 0,1\} ,
+A\sqcup B ; C') = \Gamma (\Uu , F).
+$$
+Indeed, if $E$ is a
+Segal $n$-precategory, the data of a morphism
+$E\rightarrow \Gamma (\Uu ,F)$
+is equivalent to the data, for every object
+$(y_0,\ldots , y_p,z_0,\ldots ,z_q)$ of $\Uu$, of a morphism
+$$
+E\rightarrow
+C'_{p+q+1/}(A(y_0),\ldots , A(y_p),B(z_0),\ldots , B(z_q))
+$$
+compatible with the restrictions and
+degeneracies of sequences,
+and compatible with the transition morphisms of $A$ and $B$
+over the sequences $(y_0,\ldots , y_p)$ and $(z_0,\ldots , z_q)$. Such
+data is again equivalent to that of a
+morphism $(\Yy \times I)^{\otimes E}\rightarrow C'$
+compatible with $A\sqcup B$, whence the formula.
+
+Let $Arr(\Yy )$ be the category whose objects are the arrows
+$x\rightarrow y$ of $\Yy$ and whose morphisms from
+$x\rightarrow y$ to $x'\rightarrow y'$ are the commutative diagrams
+$$
+\begin{array}{ccc}
+x & \rightarrow & x' \\
+\downarrow && \downarrow \\
+y& \leftarrow & y' .
+\end{array}
+$$
+One has a functor $\varphi : \Uu \rightarrow Arr (\Yy )$ defined by
+$$
+\varphi : (y_0,\ldots , y_p,z_0,\ldots , z_q)\mapsto (y_p\rightarrow z_0).
+$$
+
+We fix from now on $C'=nSeCAT'$, and we suppress the reference to
+$C'$ in
+$Diag$. Moreover we set $F:=F(A,B; nSeCAT')$,
+where $A$ and $B$ are from now on
+strict functors $\Yy \rightarrow nSeCAT$,
+i.e. Segal $n$-prestacks on $\Yy ^o$ with
+$B$
+fibrant as an $n$-prestack on $\Yy^o$.
+
+Let $\overline{hom}(A,B)$ be the $n$-prestack on $Arr (\Yy )$ which to
+$y\rightarrow z$ associates the $n$-category \linebreak
+$\underline{Hom}(A(y),B(z))$ (given our definition of the
+morphisms of $Arr(\Yy )$ this
+is indeed a contravariant functor on $Arr(\Yy )$). We have chosen
+the notation $\overline{hom}$ to suggest
+that this is a kind of ``external $Hom$''.
+
+If we had defined $F$ with $nSeCAT$ instead of $nSeCAT'$
+we would have had
+$$
+F(A,B, nSeCAT) = \varphi ^{\ast} (\overline{hom}(A,B)).
+$$
+Instead of that, with
+$F:= F(A,B; nSeCAT')$
+and the inclusion
+$nSeCAT\rightarrow nSeCAT'$ one has a morphism
+$$
+\varphi ^{\ast} (\overline{hom}(A,B))\rightarrow F,
+$$
+which is, object by object over $\Uu$, an equivalence of
+Segal $n$-categories (thanks to the equivalence $(\ast )$
+seen above). By adjunction one obtains a morphism
+$$
+\overline{hom}(A,B)\rightarrow \varphi _{\ast}(F).
+$$
+On the other hand one has the formulas
+$$
+\underline{Hom}(\Yy , nSeCAT')_{1/}(A,B)=\Gamma (\Uu ,F) = \Gamma (Arr(\Yy ),
+\varphi _{\ast} (F))
+$$
+and
+$$
+\Gamma \underline{Hom}(A,B)= \Gamma (   Arr(\Yy ), \overline{hom}(A,B)),
+$$
+which induce a commutative diagram
+$$
+\begin{array}{ccc}
+\Gamma \underline{Hom}(A,B)&= &\Gamma ( Arr(\Yy ), \overline{hom}(A,B))\\
+\downarrow && \downarrow \\
+\underline{Hom}(\Yy , nSeCAT')_{1/}(A,B)&=& \Gamma (Arr(\Yy ),
+\varphi _{\ast} (F)).
+\end{array}
+$$
+To obtain the proposition,
+i.e. that the left-hand vertical arrow is an equivalence, it suffices to
+show that the right-hand vertical arrow is one. For this, it would
+suffice  (given the fact that $\varphi _{\ast} (F)$ is fibrant
+on $Arr(\Yy )$
+cf \S 4)
+to show the following two things:
+\newline
+(i)\,\, the morphism $\overline{hom}(A,B)\rightarrow \varphi _{\ast}(F)$ is
+an equivalence object by object over $Arr(\Yy )$; and
+\newline
+(ii)\,\, $\overline{hom}(A,B)$ is fibrant on $Arr(\Yy )$.
+
+In fact we do not know whether (b) is true, but we shall show a
+weaker variant:
+\newline
+(ii)'\,\, for every $A$ there exists an equivalence $A'\rightarrow A$ such that
+$\overline{hom}(A',B)$ is fibrant on $Arr(\Yy )$.
+
+The conditions (i)$+$(ii)' suffice to prove the desired
+result. Indeed, they imply
+that in
+the diagram $$
+\begin{array}{ccc}
+\Gamma \underline{Hom}(A,B)&\rightarrow &\underline{Hom}(\Yy ,
+nSeCAT')_{1/}(A,B)\\
+\downarrow & & \downarrow \\
+\Gamma \underline{Hom}(A',B)&\rightarrow &\underline{Hom}(\Yy ,
+nSeCAT')_{1/}(A',B)
+\end{array}
+$$
+the bottom arrow is an equivalence; but we know that the two
+vertical arrows are equivalences and consequently
+the same holds for the top
+arrow.
+
+
+To prove (i) let us fix $\alpha : y\rightarrow z$ in $Arr(\Yy )$
+and denote by
+$\varphi /\alpha $ the category of the $(y_0,\ldots , z_q)$ in $\Uu $
+equipped with a
+morphism
+from $(y_p\rightarrow z_0)$ to $\alpha$ in $Arr(\Yy )$.
+By definition one has
+$$
+\varphi _{\ast}(F)(\alpha ) = \lim _{\leftarrow , (y,z)\in \varphi /\alpha }
+F(y,z).
+$$
+Now we shall see that the category $\varphi /\alpha $ is obtained by the same
+procedure as
+$\Uu $ but with other arguments for $Diag$. Let $\Zz$ be the category which
+contains the disjoint union of $\Yy /y$ and $z/\Yy$ and which, besides the
+arrows of these
+categories, has one and only one arrow from each object of $\Yy
+/y$ to
+each object of $z/\Yy$. One has a morphism of Segal $1$-precategories
+$$
+\Yy /y \sqcup ^{\{ y\} } I \sqcup ^{\{ z \} } z/\Yy \rightarrow \Zz
+$$
+and one may verify that this morphism is a weak equivalence.
+In particular one has the cofibration
+$$
+\Yy /y \sqcup z/\Yy \hookrightarrow \Zz ,
+$$
+and $A|_{\Yy /y}\sqcup B|_{z/\Zz}$ provides a morphism
+$$
+\Yy /y \sqcup z/\Yy\rightarrow nSeCAT'.
+$$
+Now, by an argument
+analogous to the one given above for $\Uu$,
+$Diag (\Zz ,\Yy /y \sqcup z/\Yy, A|_{\Yy /y}\sqcup B|_{z/\Zz})$
+is equal to
+$\Gamma (\varphi /\alpha , F|_{\varphi /\alpha }).$
+By definition of limits, one has
+$$
+\lim _{(y,z)\in \varphi /\alpha }
+F(y,z) = \Gamma (\varphi /\alpha , F|_{\varphi /\alpha }).
+$$
+Hence the equality
+$$
+\varphi _{\ast}(F)(\alpha )=
+Diag (\Zz ,\Yy /y \sqcup z/\Yy, A|_{\Yy /y}\sqcup B|_{z/\Zz}).
+$$
+
+On the other hand, the weak equivalence
+$$
+\Yy /y \sqcup ^{\{ y\} } I \sqcup ^{\{ z \} } z/\Yy \rightarrow \Zz
+$$
+gives us
+$$
+Diag (\Zz ,\Yy /y \sqcup z/\Yy, A|_{\Yy /y}\sqcup B|_{z/\Zz})
+\stackrel{\cong}{\rightarrow}
+Diag(I, \{ 0,1\} , A(y)\sqcup B(z)).
+$$
+This last term is identified with $\overline{hom}(A,B)(\alpha )$ (in a way
+compatible with the morphisms of source $\overline{hom}(A,B)(\alpha
+)$).
+This proves that the morphism
+$$
+\overline{hom}(A,B)(\alpha )\rightarrow
+\varphi _{\ast}(F)(\alpha )
+$$
+is an equivalence of Segal $n$-categories, that is to say (i).
+
+To prove (ii)', we shall show the statement
+\newline
+(ii)'' the functor
+$$
+A\mapsto \overline{hom}(A,B)
+$$
+transforms the cofibrations of the structure of type
+HBKQ into fibrations.
+\newline
+With this result, for an arbitrary $A$,
+one may choose an HBKQ-cofibrant replacement
+$A'\rightarrow A$, and $\overline{hom}(A',B)$ will be fibrant, which
+gives (ii)'. To show (ii)'' it suffices to consider an elementary
+cell, i.e. a cofibration of the form
+$$
+h(X) \times N \rightarrow h(X) \times N'
+$$
+where $N\rightarrow N'$ is a cofibration of Segal $n$-precategories, and
+where $h(X)$ is the functor represented by $X$, namely
+$h(X)(Y)=\{ X\rightarrow Y\}$. One must show that
+$$
+\overline{hom}( h(X) \times N',B)\rightarrow
+\overline{hom}( h(X) \times N,B)
+$$
+is a fibration of Segal $n$-prestacks over $Arr(\Yy )$.
+In other words, one must show that if $U\rightarrow U'$ is a trivial
+cofibration
+of Segal $n$-prestacks over $Arr(\Yy )$,
+and if one has morphisms
+$$
+U\rightarrow \overline{hom}( h(X) \times N',B)
+$$
+and
+$$
+U'\rightarrow \overline{hom}( h(X) \times N,B)
+$$
+which give the same morphism
+$U\rightarrow \overline{hom}( h(X) \times N,B)$, then these morphisms
+factor through
+one and the same lifting: $U'\rightarrow \overline{hom}( h(X) \times N',B)$.
+
+In general, a morphism
+$U\rightarrow \overline{hom}(A,B)$ is the data,
+for every object $x\rightarrow y$ of $Arr (\Yy )$, of a morphism
+$$
+U(x\rightarrow y)\times A(x) \rightarrow B(y),
+$$
+such that, for every morphism
+$(x\rightarrow y)\rightarrow (x'\rightarrow y')$ of $Arr (\Yy
+)$ (cf above), the two induced morphisms
+$$
+U(x'\rightarrow y')\times A(x) \rightarrow B(y),
+$$
+are equal.
+
+Let us denote by $U(X\rightarrow ?)$ the Segal $n$-prestack which is the
+inverse image of $U$ under
+the morphism $(X/\Yy )^o \rightarrow Arr (\Yy )$; it is a Segal
+$n$-prestack on $(X/\Yy )^o$. It follows from the description of the preceding
+paragraph that a morphism
+$$
+U\rightarrow \overline{hom}( h(X) \times N,B)
+$$
+is nothing other than a morphism of Segal $n$-prestacks on
+$(X/\Yy )^o$
+$$
+U(X\rightarrow ?)\times N \rightarrow B|_{(X/\Yy )^o}.
+$$
+Our problem therefore becomes: given two morphisms
+$$
+U(X\rightarrow ?)\times N' \rightarrow B|_{(X/\Yy )^o}
+$$
+and
+$$
+U'(X\rightarrow ?)\times N \rightarrow B|_{(X/\Yy )^o}
+$$
+which coincide on $U(X\rightarrow ?)\times N$,
+do they admit a common lifting
+to $U'(X\rightarrow ?)\times N'$?
+
+The fact that $B$ is fibrant on $\Yy ^o$  implies that
+$B|_{(X/\Yy )^o}$ is fibrant (thanks
+to the equality $(X/\Yy )^o=\Yy ^o /X$ and
+to Corollary \ref{fibrestrict}). Given an arbitrary cofibration
+$N\rightarrow N'$ and a trivial cofibration $U\rightarrow U'$, the
+associated morphism $U(X\rightarrow ?)\rightarrow U'(X\rightarrow ?)$
+is also a trivial cofibration and one
+obtains a trivial cofibration
+$$
+U(X\rightarrow ?)\times N'\cup ^{U(X\rightarrow ?)\times N}
+U'(X\rightarrow ?)\times N \rightarrow U'(X\rightarrow ?)\times N',
+$$
+which (since
+$B|_{(X/\Yy )^o}$ is fibrant) gives the desired lifting property.
+\eop
+
+\subnumero{Analysis of \texorpdfstring{$F(A,B;C')$}{F(A,B;C')} on \texorpdfstring{$\Uu$}{U}}
+In the above proof we left aside the
+problem of
+showing that $F(A,B;C')$ is fibrant on $\Uu$, which we
+treat now. For this we use the
+notion of \emph{Reedy categories},
+for which we shall give (in \S 17) only a very
+brief presentation: the reader must therefore refer to the
+references (Reedy \cite{Reedy}, Bousfield-Kan \cite{BousfieldKan} p. 274,
+Dwyer-Kan \cite{DwyerKan3},
+Jardine-Goerss \cite{JardineGoerssBook}, Dwyer-Hirschhorn-Kan \cite{DHK},
+Hirschhorn \cite{Hirschhorn} Chapter 16). What is given below is
+only a rapid argument and
+this section is therefore addressed rather to the intrepid reader who already
+knows these references.
+
+The category $\Uu$ is a Reedy category for the degree
+defined by
+$$
+deg (y_0,\ldots , y_p; z_0,\ldots , z_q):= p+q;
+$$
+the ``direct'' morphisms
+are
+the ``face'' maps which correspond to inclusions of sequences, and
+the ``inverse'' morphisms are the degeneracy morphisms
+which correspond to surjections in $\Delta \times \Delta$.
+The category
+opposite $\Uu^o$ is a Reedy category with the same degree
+function: the opposite of a direct morphism is inverse
+and vice versa.
+
+In particular, for every cmc $M$ the category $M^{\Uu
+^o}$ of presheaves of objects of $M$ over $\Uu$ admits a
+structure of
+cmc which is called the ``Reedy structure'', see \cite{Hirschhorn}.  The
+Reedy category $\Uu$ (this is essentially Example 16.1.10 of
+\cite{Hirschhorn}) has the following property, analogous to a property of
+$\Delta$ (see \cite{Hirschhorn} Corollary 16.4.7):
+every
+presheaf of sets is cofibrant for the Reedy structure, and in fact
+every injection of presheaves of sets on $\Uu$ is a Reedy cofibration
+(we leave the proof to the reader). It follows that the same
+property holds for the $\Uu$-diagrams in $M$ if $M$ is a cmc of
+presheaves of sets whose cofibrations are the injections.
+Such is in particular the case for $M=nSePC$.  \footnote{
+One could also take an interest in the cmc $nPC$ of non-Segal
+$n$-precategories,
+defined in \cite{nCAT}.
+In that case the cofibrations are the morphisms which are
+injective on the objects of $\Theta ^ n$ of non-maximal length; hence our
+remark applies and every morphism of $\Uu$-diagrams in $nPC$ which is
+an object-by-object cofibration is a Reedy cofibration.}
+
+The category underlying the Reedy cmc $nSePC^{\Uu}$ is
+exactly
+$nSePCh(\Uu )$; and the weak equivalences (object by object) are the
+same. The property stated in the preceding paragraph
+says that the cofibrations are the same; hence (\cite{Quillen}) the fibrations
+are the same and in fact \emph{the Reedy structure on $nSePC^{\Uu}$
+is identified with the cmc structure of \ref{cmf} on $nSePCh(\Uu )$}.
+
+In particular, to verify that $F=F(A,B; C')$ is fibrant
+in $nSePCh(\Uu )$
+it suffices to verify that $F$ is fibrant for the Reedy structure.
+Let us recall what that means (\cite{Hirschhorn} Definition 16.3.2 (3)).
+For an object $(y,z)= (y_0,\ldots , y_p; z_0,\ldots , z_q)$ of $\Uu$,
+one manufactures a (gigantic) fibre product whose principal terms
+(corresponding to sub-sequences of $(y,z)$ of length $p+q-1$)
+are the
+$$
+C'_{p+q-1/}(A(y_0),\ldots , \widehat{A(y_i)},\ldots , A(y_p),
+B(z_0),\ldots , B(z_q))
+$$
+and
+$$
+C'_{p+q-1/}(A(y_0),\ldots , \ldots , A(y_p),
+B(z_0),\ldots ,\widehat{B(z_j)},\ldots , B(z_q)),
+$$
+which one multiplies together
+over the analogous fibre products for the
+sub-sequences of length $p+q-2$ (more precisely, the object in question
+is expressed as a limit over the ``matching
+category'' of $(y,z)\in \Uu $). Let us denote by $Match((y,z); C')$
+this (gigantic) Segal $n$-precategory. One has a natural morphism
+$$
+C'_{p+q/}(A(y_0),\ldots ,  A(y_p),
+B(z_0),\ldots , B(z_q))\rightarrow
+Match ((y,z); C').
+$$
+To say that the object we are interested in, namely
+$$
+(y,z)\mapsto C'_{p+q/}(A(y_0),\ldots ,  A(y_p),
+B(z_0),\ldots , B(z_q)),
+$$
+is fibrant for the Reedy structure,
+amounts exactly to saying that the
+preceding morphism is a fibration.
+
+Let us denote by $O$ the set
+of objects of $C'$ and by $\Delta O$ the category of sequences of objects in
+$O$, i.e.
+of the $(x_0,\ldots , x_k)$ with $x_i\in O$ (this is the category of simplices
+of the category having $O$
+as its set of objects and an isomorphism between each pair of objects).
+The map $$
+\nu _O(C'): (x_0,\ldots , x_k)\mapsto C'_{k/}(x_0,\ldots , x_k)
+$$
+defines a Segal $n$-prestack over $\Delta O$ and it is easy to
+see that if $C'$ is fibrant, then $\nu _O(C')$ is fibrant.
+On the other hand $\Delta O$ is also a Reedy category and (as for $\Uu$)
+the Reedy structure coincides with the structure of \ref{cmf} on
+$nSePCh(\Delta O)$. Hence $\nu _O(C')$ is fibrant for the Reedy structure.
+The object $Match ((y,z); C')$ is essentially the same
+as the matching object for $\nu _O(C')$
+(at least if $p>0$ and
+$q>0$---if $p=0$ or $q=0$ there is a missing face whereas if $p=q=0$ everything
+is trivial), hence the fact that $\nu
+_O(C')$ is fibrant implies that the morphism
+$$
+C'_{p+q/}(A(y_0),\ldots ,  A(y_p),
+B(z_0),\ldots , B(z_q))\rightarrow
+Match ((y,z); C')
+$$
+is fibrant.
+
+Recall that $F$ is defined by the following cartesian diagram
+(where the notation is abbreviated):
+$$
+\begin{array}{ccc}
+F(y,z) & \rightarrow & C'_{p+q/}(Ay,
+Bz)\\
+\downarrow && \downarrow \\
+\ast & \rightarrow & C'_{p/}(Ay)\times
+C'_{q/}(Bz).
+\end{array}
+$$
+To show that
+$F$ is fibrant we must see that the morphism of Segal $n$-prestacks
+over $\Uu$
+$$
+C'_{p+q/}(Ay, Bz)\rightarrow C'_{p/}(Ay)\times
+C'_{q/}(Bz)
+$$
+is a Reedy fibration; for this it is appropriate
+to replace the matching object
+$$
+Match((y,z);C')
+$$
+above by the \emph{relative matching object}
+(\cite{Hirschhorn} Definition 16.2.22),
+which we shall denote (for want of a better notation)
+$$
+Match((y,z);
+C'(Ay,Bz)\rightarrow C'(Ay)\times C'(Bz)).
+$$
+We refer the reader to
+\cite{Hirschhorn} Definition 16.2.22 for the definition, which we
+do not write out more explicitly (it would be too long).
+We remark only that the relative matching map
+$$
+C'(Ay,Bz)\rightarrow Match((y,z);
+C'(Ay,Bz)\rightarrow C'(Ay)\times C'(Bz))
+$$
+is identical to the map
+$$
+C'(Ay,Bz)\rightarrow Match((y,z);C')
+$$
+for $p>0$ and $q>0$; whereas for $p=0$ or $q=0$, in the relative matching
+object one recovers exactly the missing face above and the map
+$$
+C'(Ay,Bz)\rightarrow Match((y,z);
+C'(Ay,Bz)\rightarrow C'(Ay)\times C'(Bz))
+$$
+is equal to the matching map at $(Ay,Bz)$ for $\nu _O(C')$ on
+$\Delta O$. In all cases one obtains that the relative matching map
+for $C'(Ay,Bz)\rightarrow C'(Ay)\times C'(Bz)$ is a fibration. This proves
+that this morphism is a fibration for
+the Reedy structure, hence a fibration for the
+structure \ref{cmf} on $nSePCh(\Uu )$, and hence that its fibre $F$ is
+a fibrant object.

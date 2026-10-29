@@ -1,0 +1,277 @@
+%@ pages 68-72
+%@ status translated
+% Original section 7, "Catégories de Segal et catégories simpliciales", pp. 68--72.
+
+\clearpage
+\section{Segal categories and simplicial categories}
+\label{segsimplpage}
+
+Most of the examples of Segal $n$-stacks concern the case $n=1$. It is worth
+emphasising once again that a Segal $1$-stack is in fact a certain type of
+$\infty$-stack, in which the morphisms in degree $\geq 2$ are invertible. In
+particular, a Segal $1$-stack may be an $n$-stack for $n>1$ (this is the case
+when the simplicial sets of morphisms are $n-1$-truncated).
+
+
+A {\em simplicial category}
+\footnote{We make a slight abuse of notation here: in principle a
+``simplicial category'' should rather be a simplicial object in $Cat$, in
+particular the objects should form a simplicial set. We impose the additional
+condition that the simplicial set of objects be constant, i.e. a discrete
+set.}
+is a category enriched in simplicial sets (see \cite{Kelly}). It is therefore a
+set of objects $Ob(C)$, equipped, for every pair of objects $x,y\in Ob(C)$,
+with a simplicial set $Mor_C(x,y)$ said to be that of morphisms from $x$ to
+$y$, together with a composition law
+$$
+Mor_C(x,y)\times Mor_C(y,z)\rightarrow Mor_C(x,z)
+$$
+which is strictly associative, and with identities $1_x\in (Mor_C(x,x))_0$.
+
+Simplicial categories have for a long time already played a key role in
+homotopy theory, starting with Kan and Quillen; see subsequently
+\cite{DwyerKan1} \cite{DwyerKan2} \cite{DwyerKan3}, particularly the
+introduction of \cite{DwyerKanDiags}, and more recently \cite{DHK}; in the
+same volume as \cite{DwyerKanDiags} one immediately notices other papers that
+use this notion in an essential way, for example that of Waldhausen.
+
+If $C$ is a simplicial category, one defines the {\em associated Segal
+$1$-category}, which is still denoted $C$, as the Segal category defined by
+$$
+C_0:= Ob(C),
+$$
+and, for $x_0,\ldots , x_p\in C_0$,
+$$
+C_{p/}(x_0,\ldots ,x_p):= Mor_C(x_0,x_1)\times Mor _C(x_1,x_2)\times \ldots
+\times Mor_C(x_{p-1},x_p).
+$$
+The morphisms of the simplicial structure are defined (in the obvious way)
+using composition where needed. For example, composition itself becomes the
+face morphism $02$
+$$
+C_{1/}(x,y)\times C_{1/}(y,z)=C_{2/}(x,y,z)\rightarrow C_{1/}(x,z).
+$$
+
+A functor between two simplicial categories is an equivalence if and only if
+the corresponding morphism between Segal $1$-categories is an equivalence. We
+shall show, using the theory of Dwyer--Kan localisation which will be treated
+below, that every Segal $1$-category is equivalent to a simplicial category.
+More precisely, if $A$ is a Segal $1$-category and $A'$ its fibrant
+replacement, then there exist a simplicial category $C$ and an equivalence
+$C\rightarrow A'$.
+
+For our treatment of morphisms, stacks, etc. we systematically use the point
+of view of Segal $1$-categories. Let us point out here that the techniques we
+use are also available, or in the process of being developed, for simplicial
+categories. Dwyer, Hirschhorn and Kan describe a closed model category for
+simplicial categories, in which the cofibrations are the retracts of
+(iterated) free extensions \cite{DHK}. On the other hand, Cordier and Porter
+have developed a theory of ``homotopy coherent'' morphisms between two
+simplicial categories \cite{CordierPorter}. If $C$ and $D$ are two simplicial
+categories, they define a simplicial category $Coh(C,D)$ of ``coherent''
+functors and natural transformations between $C$ and $D$. The notion of
+composition for such functors is a little problematic (because the Segal
+$2$-category $1SeCAT$ is not equivalent to a strict simplicial
+$2$-category), and this is the subject of a large part of the paper
+\cite{CordierPorter}.
+
+There notably remains the task of making the link between these different
+points of view. One can isolate two problems:
+
+
+\begin{problem}
+\label{probleme1}
+Give a (Quillen) equivalence between the cmc of simplicial categories of
+Dwyer--Hirschhorn--Kan \cite{DHK}, and the cmc of Segal $1$-precategories of
+Theorem \ref{SeCmf}; % the French prints "1-pr\'ecats" here
+\end{problem}
+
+%%%%%%% added in v3 %%%%%%
+The problem above is to a large extent
+treated in Dwyer--Kan--Smith \cite{DKS}:
+they give an equivalence between the homotopy categories; it remains to
+verify that their construction gives a Quillen functor.
+%%%%%%%%%%
+
+\begin{problem}
+\label{probleme2}
+Given two simplicial
+categories $C$ and $D$, construct an equivalence of
+Segal $1$-categories
+$$
+Coh (C,D) \cong \underline{Hom}(C',D')
+$$
+where $Coh(C,D)$ is the simplicial category defined by Porter and Cordier
+\cite{CordierPorter},
+$C'$ and $D'$ are fibrant replacements of the
+Segal categories corresponding to $C$ and $D$,
+and $\underline{Hom}(C',D')$ is the internal $Hom$ of Segal $1$-precategories
+(which will be treated in \S 11 below).
+\end{problem}
+
+We take a step towards the first of these problems in Corollary
+\ref{catsimpl} below, where we show that every Segal $1$-category is
+equivalent to a simplicial $1$-category.
+
+{\em Remark:} The closed model category of Dwyer--Hirschhorn--Kan
+cannot be ``internal'' (see \S 11 below) because the cofibrations
+are (iterated) free extensions of categories and are therefore not stable
+under direct product. In particular, the construction of \cite{nCAT}
+(see also \S 11 below) of a strict enriched category for the
+objects in question cannot be adapted to
+this closed model category.
+
+In fact, there cannot
+exist a strict category $SplCAT$ enriched over simplicial
+$1$-categories and having the right homotopy type (i.e.
+equivalent to $1SeCAT$). For if $SplCAT$ existed, one could perform
+the truncation $\tau _{\leq 3}SplCAT$, that is to say a truncation $\leq 2$
+for the simplicial categories of morphisms, or else a truncation
+$\leq 1$ for the
+simplicial sets of $2$-morphisms. Now the truncation $\tau_{\leq 1}$ gives
+a strict $1$-category, and is compatible with direct products. This
+would entail that $\tau _{\leq 3}SplCAT$ would be a strict $3$-category.
+But $1SeCAT$ has non-trivial Whitehead products, which implies
+that $\tau _{\leq 3}(1SeCAT)$
+cannot be equivalent to a strict $3$-category.
+
+
+\subnumero{Homotopy products and coproducts}
+
+In a simplicial category one has a notion of {\em homotopy fibre
+product} and the dual notion of {\em homotopy coproduct}. In fact, these
+notions are available in a Segal $n$-category, cf \cite{limits},
+but we restrict ourselves here to the case $n=1$. This is a particular case
+of the notion of limit (or of
+colimit), see \cite{limits} and \S 14 below.
+
+Let $A$ be a simplicial category, with $X,Y,Z\in A_0$ and
+morphisms (i.e. vertices of the simplicial set $Hom _A(\cdot , \cdot )$)
+$f: X\rightarrow Y$ and $g: Z\rightarrow Y$. If $U\in A_0$ is an object
+equipped with morphisms $p: U\rightarrow X$ and $q: U\rightarrow Z$ and with a
+homotopy
+$\gamma : fp\sim gq$, we shall say that $(U,p,q,\gamma )$ is a {\em homotopy
+fibre product} and we shall write
+$$
+U= X\times ^h_YZ
+$$
+if, for every object $V\in A_0$, the morphism $\mu _{V,U}$ induced by $(p,q,
+\gamma )$
+$$
+Hom _A(V,U)\rightarrow Hom _A(V,X)\times ^h_{Hom _A(V,Y)}Hom _A(V,Z)
+$$
+is a weak equivalence; on the right this is the homotopy fibre product
+of simplicial sets (obtained by replacing one of the morphisms
+by a Kan fibration), and the morphism is defined up to homotopy
+after replacement on the right by a Kan simplicial set. In fact
+the reader might imagine that $fp=gq$ and that $\gamma$ is the constant
+homotopy---this will be the case in particular in our examples coming from
+closed model categories---but if one imposed this condition then
+the notion would not be invariant under an equivalence $A\cong A'$ of
+simplicial categories. If
+$fp$ and $gq$ are equal, the morphism above is well defined with values in the
+usual strict (non-homotopy) fibre product.
+
+ If $(V, p',q',\gamma ')$ happens to be another homotopy fibre product
+(for the same data)
+then the homotopy fibre of $\mu _{V,U}$ over $(p',q',\gamma ')$ is
+contractible, just as that of $\mu _{U,V}$
+over $(p,q,\gamma)$, which
+provides canonical contractible simplicial
+sets of morphisms $U\rightarrow V$ and
+$V\rightarrow U$, and ensures the essential uniqueness of the homotopy fibre
+product $(U,p,q,\gamma )$ if one exists.
+
+We shall say that {\em $A$ admits homotopy fibre products} if there
+exists a
+homotopy fibre product $(U,p,q,\gamma )= X\times ^h_YZ$ for every
+pair of morphisms $X\rightarrow Y\leftarrow Z$ of $A$.
+
+One has a dual notion of {\em homotopy coproduct}: if
+$X\stackrel{f}{\leftarrow} Y\stackrel{g}{\rightarrow} Z$ is a
+diagram in
+$A$, the corresponding homotopy coproduct is a
+quadruple $(U, i,j,\delta )$ with $i: X\rightarrow U$,
+$j: Z\rightarrow U$ and $\delta$ a homotopy $if\sim jg$. We leave it to the
+reader
+to give details analogous to what was said above for the product.
+We shall denote the homotopy coproduct by
+$$
+(U,i,j,\delta ) = X\cup _h^YZ,
+$$
+and we shall say that $A$ {\em admits homotopy coproducts} if there exists
+such a homotopy
+coproduct for every pair of morphisms
+$X\stackrel{f}{\leftarrow} Y\stackrel{g}{\rightarrow} Z$.
+
+These notions are the generalisations to the objects of an arbitrary
+simplicial category of the $holim$ and $hocolim$ of Bousfield--Kan
+\cite{BousfieldKan} {\em et al.}
+
+These notions can be defined in the same way
+for a Segal $1$-category $A$, on condition that one
+chooses a splitting $A_{1/}\times
+_{A_0}A_{1/}\rightarrow A_{2/}$ (such a splitting exists for example
+if $A$ is fibrant)
+providing a composition morphism
+$A_{1/}\times
+_{A_0}A_{1/}\rightarrow A_{1/}$; and one does not need the higher coherence
+relations. We leave this development
+to the reader, as well as the task of verifying that these
+notions of limits and colimits are compatible with the definitions of
+\cite{limits}.
+
+In \cite{GabrielZisman}, Gabriel and Zisman introduced a notion of homotopy
+fibre product in a strict $2$-category, and they used it
+to construct the functor $\Omega$ on the homotopy category $Ho(Top)$
+giving rise to the long exact sequence of a fibration. Dually they
+introduced a
+notion of homotopy coproduct and used it to construct the
+functor $\Sigma$
+on $Ho(Top)$. In both cases, using the structure of a
+$2$-category, they
+produce well-defined limits or colimits in the
+$1$-category obtained by truncation (in this case the homotopy
+category). One can see the notion of homotopy fibre product above
+as a generalisation of their notion to the case of
+$n$-categories ($1$-groupoidal)
+% the French prints "($1$-groupiques)" here
+as $n$ tends to infinity. Let us explain in what way the two constructions
+are compatible:
+if $A$ is a simplicial category then the construction of
+\cite{GabrielZisman}
+for $Top$ extends to a version for $\tau _{\leq 2}A$, which is a
+strict $2$-category; and one can then apply the argument of
+\cite{GabrielZisman} to
+$\tau _{\leq 2}A$. If $A$ admits homotopy fibre products in the sense
+above, then $\tau _{\leq 2}A$ satisfies conditions (A), (B),
+(C)
+of \cite{GabrielZisman},
+and the product they define is the image of our homotopy
+fibre product in the truncation $\tau _{\leq 1}A$
+(in fact they are mainly interested in
+the homotopy fibre over a base point, but for the fibre
+product the argument is the same).
+
+The argument of Gabriel--Zisman allows---passing through $\tau _{\leq 2}A$---
+one to equip $\tau _{\leq 1}A$
+with an additional structure with the
+operations $\Omega$ (when $A$ is pointed and admits
+homotopy fibre products) and $\Sigma$ (when $A$ is pointed and admits
+homotopy coproducts). Alternatively
+(but we emphasise all the same that the argument of Gabriel--Zisman
+dates from 1964) one can induce directly towards
+the truncation $\tau _{\leq 1}A$ these operations, which one can define
+on $A$ by
+$$
+\Omega X := \ast \times ^h_X \ast
+$$
+and
+$$
+\Sigma Y:= \ast \cup _h^Y \ast .
+$$
+A version of the argument of Gabriel--Zisman adapted to the d.g. categories
+of complexes is given by Bondal--Kapranov
+\cite{BondalKapranov}. We did not become aware of the existence of
+the argument of Gabriel--Zisman until M.~Kontsevich pointed out to us
+the result of Bondal--Kapranov.

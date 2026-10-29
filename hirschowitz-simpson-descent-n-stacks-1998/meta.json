@@ -1,0 +1,23 @@
+{
+  "slug": "hirschowitz-simpson-descent-n-stacks-1998",
+  "title": "Descent for n-Stacks",
+  "title_original": "Descente pour les n-champs",
+  "author": "André Hirschowitz, Carlos Simpson",
+  "year": 1998,
+  "version": "arXiv:math/9807049v3 (13 March 2001)",
+  "pages": "250",
+  "first_page": 1,
+  "last_page": 250,
+  "url": "https://arxiv.org/abs/math/9807049v3",
+  "source": "https://arxiv.org/e-print/math/9807049v3",
+  "language": "French",
+  "status": "translated",
+  "note": "The source is a single gzipped TeX file. The English abstract is the authors' own; the body is translated from the French. The translation follows the modernized source prepared in arxiv-fixes/math_9807049v3 (v3, 2001), which preserves the authors' v2/v3 errata. The build produces 182 pages against the original's 250; %@ pages always refers to the original PDF.",
+  "license": "arXiv.org perpetual, non-exclusive licence (original); translation prepared for this repository.",
+  "warnings": [
+    "Translation in progress; see the per-file %@ status comments in src/.",
+    "The authors' v3 errata (an error in Proposition 6.1/Lemma 6.2, with consequences for 10.11, 12.1, 14.4, 15.8, 19.4 and 21.1) is preserved in the translation but was not independently checked.",
+    "Section 4 as printed says 'if A is fibrant over X then p_*(A) is fibrant over X' although A lives over Z; left as printed (the first X is presumably Z).",
+    "Bibliographic titles are left in their original language; only the authors' annotations are translated. The repository's French-leftover detector therefore reports French function words inside the bibliography."
+  ]
+}

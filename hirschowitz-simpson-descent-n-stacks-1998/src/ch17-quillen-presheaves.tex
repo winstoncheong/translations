@@ -1,0 +1,822 @@
+%@ pages 172-184
+%@ status translated
+% Original section 17, "Préfaisceaux de Quillen", pp. 172--184.
+
+\clearpage
+\section{Quillen presheaves}
+\label{quipage}
+
+It was in studying the example of the stack of modules of complexes (cf.\ \S21
+below) that we felt the need to consider ``presheaves of cmc''.
+A point of view which is currently spreading is that the ``good'' morphisms
+between closed model categories are the {\em left Quillen functors} (a notion
+recalled in \S4)---cf.\ for example the book of Dwyer--Hirschhorn--Kan
+\cite{DHK}, or also \cite{HoveyBook}, where Hovey defines the {\em $2$-category
+of closed model categories}, whose objects are the closed model categories and
+whose morphisms are the left Quillen functors.
+One is thus naturally led to the following notion.
+
+
+Let $\Xx$ be a category. A {\em left Quillen presheaf} (resp.\ a {\em right
+Quillen presheaf}) on $\Xx$ is a presheaf of categories ${\bf M}$, in which each
+${\bf M}_X$ is equipped with a structure of closed model category, such that the
+restriction functors are left (resp.\ right) Quillen functors.
+\footnote{
+It would perhaps be preferable to speak of a {\em Quillen $1$-stack}, since
+the values are $1$-categories and one could envisage a coherence problem. In
+fact, since the notion of closed model category is stable under equivalence of
+the underlying category, one can always strictify and speak only of presheaves
+of categories. There could also be a coherence problem for the choice of
+adjoints of the restriction functors. We ignore these problems, considering
+that if they exist they are of neither geometric nor topological interest
+(just as we ignore the subtleties of cardinality questions).}
+Note that the restriction functors do not necessarily preserve all the
+structure (they preserve the cofibrations and trivial cofibrations, but not
+necessarily the fibrations nor the weak equivalences which are not
+cofibrations).
+
+If one draws a connection between the notions of topos and of cmc, the notions
+of left or right Quillen presheaf are analogous to the notions of ``category
+fibred in toposes'' and ``category fibred in duals of toposes'' of SGA 4
+(\cite{SGA4b} Exposé Vbis, Def.~1.2.1, 1.2.2).
+
+If ${\bf M}$ is a left Quillen presheaf, let ${\bf M}^{\ast}$ be the presheaf
+which to each $x\in \Xx$ associates the closed model category ${\bf
+M}^{\ast}(x)$ dual to ${\bf M} (x)$. Then ${\bf M}^{\ast}$ is a right Quillen
+presheaf. This allows us to take an interest only in left Quillen presheaves. A
+little more interesting: let ${\bf M}^{\dag}$ be the presheaf on the opposite
+category $\Xx ^o$, with the same closed model categories ${\bf M}(x)$ as
+values, but obtained by using the right adjoints as restriction morphisms.
+Then ${\bf M}^{\dag}$ is also a (right) Quillen presheaf.
+
+Let ${\bf M}$ be a Quillen presheaf over $\Xx$. The cofibrant objects define a
+subpresheaf of categories ${\bf M}_c$ and its subpresheaf $W{\bf M}_c$ in which
+the morphisms are the weak equivalences between cofibrant objects (which are
+indeed preserved by the restrictions). One defines a presheaf of simplicial
+categories $L({\bf M})$ over $\Xx$ by taking for
+$
+L({\bf M})(X)
+$
+the Dwyer--Kan localised simplicial category
+$$
+L(\mm )(X):= L({\bf M}_c(X), W{\bf M}_c(X)).
+$$
+As usual, one regards this presheaf as a Segal $1$-prestack on $\Xx$.
+
+To simplify the later notation, it is more convenient to take the ``covariant''
+point of view. From now on we consider a category $Y$ and a left Quillen
+presheaf $\mm$ on $Y^o$; it is thus a family of cmc's $\mm (y)$ with left
+Quillen restriction functors, which are covariant.
+
+
+
+Let $\mm$ be a left Quillen presheaf on $Y^o$; if $f: y\rightarrow z$ is a
+morphism of $Y$, let us denote by
+$$
+res_f: \mm (y)\rightarrow \mm (z)
+$$
+the left Quillen restriction functor; and let $res_f^{\ast}$ denote its right
+adjoint. One has the ``fibred category'' (cf.\ the preceding section)
+$$
+\int _Y\mm \rightarrow Y
+$$
+and the category of sections
+$$
+Sect (Y,\int _Y\mm ).
+$$
+An object $\sigma$ of $Sect (Y,\int _Y\mm )$ consists of a collection of
+objects $\sigma (y)\in
+\mm (y)$ for $y\in Y$, together with morphisms
+$$
+\sigma (f): res_f\sigma (y)\rightarrow \sigma (z),
+$$
+which one may interpret by adjunction:
+$$
+\sigma (f): \sigma (y)\rightarrow res_f^{\ast}\sigma (z).
+$$
+These morphisms are subject to an associativity constraint.
+A morphism $a:\sigma \rightarrow \tau$ in $Sect (Y,\int _Y\mm )$
+is a collection of morphisms
+$$
+a(y): \sigma (y)\rightarrow \tau (y)\;\;\;\; \mbox{in}\;\;\; \mm (y)
+$$
+subject to the usual naturality condition.
+We shall say that a morphism $a$ is a {\em weak equivalence} if, for each $y$,
+$a(y)$ is a weak equivalence in $\mm (y)$.
+
+One may observe that if $\mm = \underline{M}$ is the constant presheaf taking as
+value the fixed closed model category $M$ (which is indeed a left Quillen
+presheaf), then one has
+$$
+\int _Y\underline{M} = Y\times M
+$$
+and
+$$
+Sect (Y,\int _Y\underline{M}) = M^Y.
+$$
+Recall that one has at one's disposal several structures of closed model
+category on $M^Y$ under various hypotheses concerning $M$ and $Y$.
+\newline
+(I)\,\, First there is the structure generated by Hirschhorn's cofibrations, of
+Bousfield--Kan type (we had called it of ``type HBKQ'' in \S5);
+this one exists as soon as $M$ is
+generated by cofibrations (Hirschhorn \cite{Hirschhorn}). The fibrations are
+the object-by-object fibrations.
+\newline
+(II)\,\, Next there is the structure which Dwyer--Hirschhorn--Kan qualify as
+``unusual'' but which is the structure usually used in $K$-theory, and
+apparently due to K.~Brown, Joyal and Jardine in the case of diagrams of
+simplicial sets (Hirschhorn calls it the ``Heller structure''); here the
+cofibrations are the object-by-object cofibrations. The existence of this
+structure seems to coincide roughly with that of the structure (I) of type
+HBKQ, but we have not found in the literature a general criterion for this
+existence (cf.\ however the book of Goerss--Jardine \cite{JardineGoerssBook}).
+\newline
+(III)\,\, Finally, if $Y$ is a Reedy category, there is a model structure on
+$M^Y$ with no further hypothesis on $M$ (at most, if the degree function is
+indexed by an ordinal larger than $\omega$, one must assume that limits of that
+size exist in $M$). This structure is in general different from the other two
+(for the definition, see the proof of the theorem below). For this {\em Reedy
+structure} see \cite{Reedy}, \cite{Hirschhorn}, \cite{DHK},
+\cite{JardineGoerssBook}. The essential part of the notion of Reedy fibration
+also appears in the notion of hypercovering expounded by Verdier in SGA 4
+(\cite{SGA4b}, Exposé V, \S7, definition 7.3.1.1 (H3)).
+
+If $\mm$ is a left Quillen presheaf on $Y^o$, one has the analogous structures
+on $Sect (Y,\int _Y\mm )$:
+
+\begin{theorem}
+\label{sectionscmf}
+Let $\mm$ be a left Quillen presheaf on $Y^o$. Then one has the following
+structures of closed model category on $Sect (Y,\int
+_Y\mm )$ (the weak equivalences are always the morphisms which are
+object-by-object weak equivalences):
+\newline
+(I)\,\, The structure of type HBKQ in which the fibrations are the morphisms
+$a:\sigma \rightarrow \tau $ such that $a(y)$ is a fibration for every $y\in
+Y$: it exists if each $\mm (y)$ is generated by cofibrations;
+\newline
+(II)\,\, The structure of type Brown--Jardine--Heller in which the cofibrations
+are the morphisms $a:\sigma \rightarrow \tau$ such that $a(y)$ is a cofibration
+for every $y\in Y$,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% old condition: unusable because the retractions will never be functorial ....
+%%
+%% if each $\mm (y)$ is generated by cofibrations with
+%% generating sets $I(y)$, $J(y)$ such that $res _f(I(y))\subset I(z)$
+%% (resp.\ $res _f(J(y))\subset J(z)$) for every arrow $f: y\rightarrow z$,
+%% and if
+%% the $I(y)$-cofibrations are functorially (in $y$) retracts of
+%% regular $I(y)$-cofibrations; and
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% here is the new condition:
+%%%%%%%%%
+provided that this class of cofibrations (resp.\ the cofibrations $\cap$ the
+weak equivalences) admits a generating set $I$ (resp.\ $J$) allowing the small
+object argument
+(see before \ref{dhklemme}),
+and that moreover each $\mm (y)$ is generated by cofibrations; and
+\newline
+(III)\,\, The structure of Reedy type (cf.\ the definition
+below), if $Y$ is a Reedy category.
+\end{theorem}
+Compare with
+Proposition 1.2.12 of SGA 4 \cite{SGA4b} Exposé Vbis.
+
+\noindent
+{\em Proof:}
+It may be useful to review the proof of the statement \ref{dhklemme}
+above, but for (I) we advise the reader to turn directly to the references
+\cite{Hirschhorn} \cite{DHK} instead of keeping to \ref{dhklemme}, since we
+shall use here directly arguments of the type of \cite{DHK}.
+
+Note first that the set $W$ of weak equivalences automatically satisfies
+closure under retracts and the ``three for the price of two'' property.
+
+In (I) and (II) the condition that each $\mm (y)$ be generated by
+cofibrations (and
+hence admit small limits and colimits) implies that
+$Sect (Y,\int
+_Y\mm )$ admits small limits and colimits.
+
+
+For (I) the proof is the same as in \cite{Hirschhorn},
+\cite{DHK}.
+Let $\sigma$ be a section and $i: \sigma (y)\rightarrow u$ a cofibration in
+$\mm (y)$. One then obtains the {\em cofibration freely generated by $i$},
+$Lib(i): \sigma \rightarrow \nu$, defined by
+$$
+\nu (z) = \coprod _{f: y\rightarrow z} res_f(u) \sqcup ^{\coprod_{f}
+res_f(\sigma (y))}\sigma (z).
+$$
+Let $I$ (resp.\ $J$) be the set of cofibrations
+of the form $Lib(i)$ with $i\in I(y)$, $y\in Y$ (resp.\ $i\in J(y)$, $y\in
+Y$).
+The $I$-injectives (resp.\
+$J$-injectives) are just the morphisms which are object-by-object fibrations
+(resp.\ trivial fibrations); and one checks easily that the recognition
+criterion (``Recognition lemma'' \cite{Hirschhorn} 13.3.1, \cite{DHK} 8.1)
+is satisfied. \footnote{Essentially the
+only thing to check---as is indicated in
+(\cite{DHK}, proof of 48.7: the model category structure on
+$S-Cat$, p.~61), see also our Lemma \ref{dhklemme}---is that the colimit of
+regular $J$-cofibrations is again in $W$. In the present case
+this is
+true object-by-object over each object of $Y$.}
+
+%% For (II) one takes as generating sets $I$ the set of
+%% morphisms $a$ such that $a(y)\in I(y)$ for every $y\in Y$ (resp.\ $J$ the
+%% set
+%% of morphisms $a$ such that $a(y)\in J(y)$). Since these sets
+%% contain the
+%% sets of (I) above, one obtains that the $I$-injectives are in $W$.
+%% On the other hand the hypothesis implies that a morphism which is
+%% object-by-object an
+%% $I(y)$-cofibration for every $y$ is a retract of a regular $I$-cofibration,
+%% hence the cofibrations are the morphisms which are cofibrations
+%% object-by-object. The coproduct or sequential colimit of morphisms in
+%% $J$ is
+%% a weak equivalence, which leads to the verification of the recognition
+%% criterion (\cite{Hirschhorn} 13.3.1, \cite{DHK} 8.1), and gives (II).
+
+For (II) we rely on Lemma \ref{dhklemme}. Recall that the condition that each
+$\mm (y)$
+is generated by cofibrations gives us the properties of
+\ref{dhklemme} (0)--(7) for each
+$\mm (y)$. As a consequence one obtains immediately the properties (0), (1),
+(2),
+(6) and (7) for $Sect (Y,\int
+_Y\mm )$. One may remark that the cofibrations of the structure (I)
+above are
+cofibrations here as well, so the lifting property for these
+cofibrations implies that a
+morphism is object-by-object a weak equivalence. This gives (3).
+Finally (4) and (5) form
+the first part of the hypothesis here, so by Lemma \ref{dhklemme}
+one obtains (II).
+
+{\em Remark:} Just as for the application of Lemma \ref{dhklemme}, one
+may say that the part
+of the hypothesis (II) which corresponds to \ref{dhklemme} (4) and (5) would be
+a consequence of the
+set-theoretically reasonable character of the notions of cofibration and
+weak equivalence,
+in all the examples one will encounter. See Jardine \cite{Jardine} for the
+technique needed to
+give a rigorous proof of this type of condition. In view of this
+remark, one may
+consider that the hypothesis of (II) reduces to asking (as for
+(I)) simply that the
+$\mm (y)$ be generated by cofibrations.
+
+\subnumero{Reedy categories}
+
+
+Before tackling part (III) of Theorem \ref{sectionscmf},
+we recall a few facts about ``Reedy categories''. The
+references are
+\cite{Reedy}, \cite{BousfieldKan}, \cite{Hirschhorn}, \cite{DHK},
+\cite{JardineGoerssBook}, see also \cite{DwyerKan3}.
+
+The interplay between the ``latch'' and the ``match'' which follows is only a
+systematic way, with an abstract notation, of taking into account the fact that
+there are degeneracy morphisms in $\Delta$ which go in the opposite direction
+from the ``face'' morphisms. In all applications one can probably consider,
+instead of simplicial objects, objects parametrised by the subcategory
+$\direct{\Delta}$ generated by the face morphisms. In that case one would only
+have to consider the ``Latch'' part of the discussion below and many arguments
+would become easier.
+
+
+We first recall the definition: a {\em Reedy category}
+is a category $Y$ equipped with two subcategories (with the same objects
+as $Y$) called respectively the {\em direct subcategory} and the {\em
+inverse subcategory}
+$$
+\direct{Y}\subset Y \;\;\; \mbox{and} \;\;\; \inverse{Y}\subset Y,
+$$
+such that there exists a {\em degree} function (to an ordinal which will most
+often be $\omega$) such that the morphisms of $\direct{Y}$ other than the
+identities strictly increase the degree, the morphisms of $\inverse{Y}$ other
+than the identities strictly decrease the degree, and every morphism $f$
+factors uniquely
+$$
+f= \direct{f}\inverse{f} \;\;\; \mbox{with} \;\;\; \direct{f}\in \direct{Y},
+\;\; \inverse{f}\in \inverse{Y}.
+$$
+We specify here that we write compositions in the usual direction, so in this
+formula the source of $\direct{f}$ (which is the target of $\inverse{f}$) has
+degree $\leq$ the minimum of the degrees of the source and of the target of
+$f$; and in case of equality $f$ is either direct or inverse.
+
+The classical examples are the category $\Delta$ and its opposite $\Delta
+^o$, \cite{BousfieldKan}, \cite{Reedy}.
+The example we shall use is the category $\Delta K$ of simplices of a
+simplicial set $K$ (or its opposite $\Delta ^oK$). This example appears
+in \cite{Hirschhorn}, \cite{DHK}, etc. More particularly we shall use
+the case of $\Delta \nu \Yy$ where $\nu \Zz$ is the nerve of a
+$1$-category $\Zz$. It is the category denoted $\beta (\Zz )$ in \S16
+above.
+
+
+
+
+For an object $y\in Y$ one defines the {\em latching} ({\em relâchantes})
+categories
+\footnote{
+The word ``relâchant'' is not a strict translation of
+``latching'' but has the same ring to it and seems
+to correspond well to the situation.}
+$Latch(y)$
+and the {\em matching} ({\em appariantes}) categories $Match(y)$.
+In fact one defines
+$$
+Latch(y)+\{ y\} := \direct{Y}/y
+$$
+(the objects of $\direct{Y}$ over $y$)
+and one sets
+$$
+Latch(y):= \direct{Y}/y -\{ y\} \subset Latch(y)+\{ y\} .
+$$
+Also
+$$
+\{ y\} + Match(y):= y/\inverse{Y}
+$$
+(the objects of $\inverse{Y}$ under $y$)
+and
+$$
+Match(y):= y/\inverse{Y} -\{ y\} \subset \{ y\} + Match(y).
+$$
+One denotes by
+$$
+Latch(y)+ \{ y\} + Match(y)
+$$
+the category obtained by attaching $Latch(y)+\{ y\} $ to
+$\{ y\} + Match(y) $ along the object $y$, with exactly one morphism between
+the objects of $Latch(y)$ and $Match(y)$. One denotes by
+$$
+Latch(y)+Match(y)\subset Latch(y)+ \{ y\} + Match(y)
+$$
+the subcategory obtained by removing $y$.
+The morphism of Segal $1$-precategories
+$$
+(Latch(y)+\{ y\} ) \cup ^{\{ y\} } (\{ y\} + Match(y))\rightarrow
+Latch(y)+ \{ y\} + Match(y)
+$$
+is a weak equivalence (we leave the proof, which is similar to that
+of \ref{reedydecomp} below, to the reader). In particular, for a
+fibrant Segal $n$-category $C'$ a morphism
+$$
+Latch(y)+ \{ y\} + Match(y)\rightarrow C'
+$$
+is essentially the same thing as two morphisms
+$$
+Latch(y)+\{ y\} \rightarrow C', \;\;\; \{ y\} + Match(y) \rightarrow C'
+$$
+which send $y$ to the same object of $C'$.
+
+For a fixed degree $k$, one denotes by $F^kY\subset Y$ the subcategory
+of objects of degree $\leq k$. If $y$ has degree $k$ then one has a
+morphism
+$$
+Latch(y)+Match(y) \rightarrow F^{k-1}Y.
+$$
+One has that $Y$ is the filtered colimit of the $F^kY$.
+
+The description of diagrams on a Reedy category of \cite{DHK},
+\cite{JardineGoerssBook}, \cite{BousfieldKan},
+\cite{DwyerE2}, \cite{BousfieldFriedlander}, \cite{Reedy}, \cite{DwyerKan3},
+and particularly Hirschhorn (\cite{Hirschhorn} Theorem 16.2.12) where this
+appears very clearly, amounts essentially to the following lemma.
+
+\begin{lemma}
+\label{reedydecomp}
+For every $d$, the morphism of Segal $1$-precategories
+$$
+F^{d-1}Y \cup ^{\coprod _{deg(y)=d}Latch(y)+Match(y)}\coprod_{deg(y)=d}
+Latch(y)+ \{ y\} + Match(y)
+$$
+$$
+\rightarrow F^dY
+$$
+is a weak equivalence.
+\end{lemma}
+
+This lemma possibly generalises the above references by taking into account
+(via the
+notion of Segal $1$-precategory) the higher homotopies. We shall need
+this aspect in the following chapters. For part
+(III) of Theorem \ref{sectionscmf}, the version
+(\cite{Hirschhorn} Theorem 16.2.12)---which is the statement obtained from our
+lemma by
+applying the truncation $\tau_{\leq 1}$---would suffice. In view of this, we
+postpone the
+proof until the end of the chapter.
+
+
+
+Lemma \ref{reedydecomp} says that for a fibrant Segal $n$-category $C'$, to
+give a morphism
+$f_k:F^kY\rightarrow C'$ amounts to giving a morphism
+$f_{k-1}: F^{k-1}Y\rightarrow C'$ and, for every object $y$, extensions of the
+morphisms
+$$
+f_{k-1}|_{Latch(y)} \;\; \mbox{into}\;\; Latch(y)+\{ y\} \rightarrow C',
+$$
+and
+$$
+f_{k-1}|_{Match(y)} \;\; \mbox{into}\;\; Match(y)+\{ y\} \rightarrow C',
+$$
+taking the same value on $y$,
+and such that the induced morphism (essentially well defined)
+$$
+Latch(y)+ \{ y\} + Match(y)\rightarrow C'
+$$
+has $f_{k-1}$ as its restriction to $Latch(y)+Match(y)$.
+This interpretation comes from Hirschhorn \cite{Hirschhorn}.
+
+
+\subnumero{The structure (III) of \texorpdfstring{Theorem~\ref{sectionscmf}}{Theorem}}
+
+One must say what the fibrations and cofibrations are.
+Let $\sigma$ be a section and $y\in Y$.
+Let $latch(\sigma , y)$ and $match(\sigma , y)$ in $\mm (y)$ be the {\em
+latching} and {\em matching objects} of $\sigma$. These objects are defined
+respectively
+as the colimit over $Latch(y)$ of the functor
+$$
+res_{Latch(y)\rightarrow y} \circ \sigma : Latch(y)\rightarrow \mm (y)
+$$
+where
+$$
+res_{Latch(y)\rightarrow y} : \int _{Latch(y)}\mm |_{Latch(y)} \rightarrow \mm
+(y)
+$$
+is the morphism given by the restrictions $res_f$ for $f: z\rightarrow y$;
+and the limit over $Match(y)$ of the functor
+$$
+res_{y\rightarrow Match(y)} ^{\ast}\circ \sigma : Match(y)\rightarrow \mm
+(y)
+$$
+where
+$$
+res_{y\rightarrow Match(y)}^{\ast} : \int _{Match(y)}\mm |_{Match(y)}
+\rightarrow \mm (y)
+$$
+is the morphism given by the adjoints of the restrictions
+$res_g^{\ast}$ for $g: y\rightarrow w$.
+To define $res_{y\rightarrow Match(y)}^{\ast}$ one notes that one has, for
+$$
+y\stackrel{g}{\rightarrow} w \stackrel{h}{\rightarrow} x,
+$$
+a natural transformation
+$$
+res_g^{\ast} \rightarrow res _{hg}^{\ast} \circ res_h,
+$$
+which comes from the adjunction morphism
+$$
+1\rightarrow res_h^{\ast} \circ res_h.
+$$
+One has a factorisation
+$$
+latch(\sigma ,y)\rightarrow \sigma (y) \rightarrow match(\sigma , y).
+$$
+We shall say (following \cite{Reedy} \cite{Hirschhorn} \cite{DHK} {\em et al.})
+that
+$\sigma$ is {\em (Reedy) cofibrant} if the morphisms $latch(\sigma
+,y)\rightarrow \sigma (y)$ are cofibrations in $\mm (y)$, and that
+$\sigma$
+is {\em (Reedy) fibrant} if
+the morphisms $\sigma (y)\rightarrow match(\sigma ,y)$ are fibrations in
+$\mm (y)$. More generally for $a:\sigma \rightarrow \tau$
+one obtains the relative latching object
+$$
+latch(a,y):= latch(\tau , y) \cup ^{latch(\sigma , y)}\sigma (y)
+$$
+with morphism
+$$
+latch (a,y)\rightarrow \tau (y);
+$$
+we shall say that $a$ is a {\em (Reedy) cofibration} if this morphism is a
+cofibration in $\mm (y)$. Dually one obtains the relative matching object
+$$
+match (a,y):= match (\sigma ,y)\times _{match(\tau , y)}\tau (y)
+$$
+with morphism
+$$
+\sigma (y)\rightarrow match(a,y);
+$$
+and we shall say that $a$ is a {\em (Reedy) fibration} if this morphism is a
+fibration in $\mm (y)$.
+
+The proof that these three classes of morphisms form a structure of
+closed model
+category is the same as in the case of the constant presheaf
+$\mm =\underline{M}$, cf.\ \cite{Reedy} \cite{Hirschhorn} {\em et al.};
+we leave this verification to the reader.
+
+This completes the proof of (III) and hence of Theorem
+\ref{sectionscmf}.
+\eop
+
+\subnumero{Proof of \texorpdfstring{Lemma~\ref{reedydecomp}}{Lemma}}
+
+We keep the notation of the lemma to be proved.
+
+One may assume that $Y=F^dY$ and one sets $Z:= F^{d-1}Y$. Let $A^0$ denote the
+coproduct of the statement. It is a simplicial set
+(subset of $\nu Y$), which one regards as a Segal $1$-precategory. We shall
+obtain $\nu Y$ as the limit of a sequence (possibly transfinite if the number
+of objects of $Y$ is more than countable)
+$$
+\ldots A^i\subset A^{i+1}\ldots
+$$
+of simplicial subsets of $\nu Y$. Each time one adds a
+``regular simplex'' (definition below), and one proves that the
+$A^i\subset A^{i+1}$ are trivial cofibrations of Segal $1$-precategories.
+
+Recall that the elements of $\nu (Y)_p$ are the composable sequences
+$$
+(y,f) =(y_0,\ldots , y_p; f_1,\ldots , f_p)
+$$
+with $f_i:
+y_{i-1}\rightarrow y_i$ in $Y$. We shall say that such an element is a {\em
+regular simplex} if none of the $f_i$ is the identity, and if for every
+$1\leq i \leq p$, either $f_i \in \direct{Y}$, or $f_i \in \inverse{Y}$.
+For a regular simplex, we shall call a {\em peak} any vertex, i.e.\ object
+$y_i$ with $f_{i-1}\in \direct{Y}$ and $f_i\in \inverse{Y}$, which is
+equivalent
+to the condition $deg(y_{i-1}) < deg(y_i) > deg(y_{i+1})$. We shall call a {\em
+valley} any object $y_i$ such that $f_{i-1}\in \inverse{Y}$ and $f_i\in
+\direct{Y}$, which is equivalent to the condition $deg(y_{i-1}) > deg(y_i) <
+deg(y_{i+1})$. The Reedy condition implies that if $y_i$ is a valley,
+then the simplex in question is the only regular simplex of length $\leq
+p$ containing the face obtained by removing $y_i$.
+
+For an element $(y,f)\in \nu (Y)_p$ one obtains a morphism
+$(y,f):h(p)\rightarrow Y$ where $h(p)$ is the simplicial set represented
+by $p$, i.e.\ the standard $p$-simplex.
+We shall call the ``image of a simplex $(y,f)$'' the image
+of this morphism.
+The image contains
+all the ``hyperface'' simplices of $(y,f)$, which are all the simplices
+obtained by removing some of the $y_i$, as well as all their
+degeneracies.
+
+One chooses a total order $\prec$ on the set of regular simplices of
+$\nu Y$ not contained in $A^0$, subject to the following conditions: if
+$$
+(y_0,\ldots , y_p; f_1,\ldots , f_p) \prec
+(y'_0,\ldots , y'_q; f'_1,\ldots , f'_q)
+$$
+then
+$$
+p\leq q
+$$
+and, if $p=q$ then
+$$
+\sum _{i=0}^p deg (y_i) \leq \sum _{i=0}^p deg(y'_i).
+$$
+Now one starts from $A^0$ and adds the images of $h(p)$ for the
+regular simplices $(y,f): h(p)\rightarrow \nu (Y)$, one by one, following
+the total order $\prec$ (at limit ordinals one inserts an object which is the
+colimit of what comes before, then one starts again by adding the next
+simplex). One obtains a sequence $A^i\subset \nu (Y)$. We shall show that a
+cofibration $A^i\rightarrow A^{i+1}$ which corresponds to the addition of a
+regular simplex $(y_0,\ldots , y_p; f_1,\ldots , f_p)$ is a
+weak equivalence of Segal $1$-precategories. This will give the lemma
+(there is a filtered colimit argument to be made for limit ordinals and
+at the end of the process, which we leave to the reader).
+
+
+We shall prove, by induction on $i$, the following statement:
+
+$(\ast )$ a degenerate simplex
+is in $A^i$ if and only if the corresponding non-degenerate simplex
+is in $A^i$.
+
+Let $A^i\rightarrow A^{i+1}$ be a cofibration which corresponds to
+the addition of a regular simplex $(y_0,\ldots , y_p; f_1,\ldots , f_p)$, and
+let $h(p)\rightarrow \nu (Y)$ be the morphism corresponding to this simplex.
+If one sets
+$$
+U:= h(p)\times _{A^i} \nu (Y) \subset h(p),
+$$
+then one has
+$$
+A^{i+1} = h(p)\cup ^U A^i.
+$$
+It is therefore a matter of proving that $U\rightarrow h(p)$ is a trivial
+cofibration of Segal $1$-precategories. Note first that by hypothesis $(\ast )$ for
+$A^i$, a degenerate element of $h(p)_q$ is in $U$ if and only
+if the corresponding non-degenerate element is in $U$. It is therefore
+a matter of understanding which hyperfaces of $h(p)$ are in $U$. One has the
+following characterisation:
+
+$(\ast \ast )$ \, {\em A hyperface of $h(p)$ which corresponds to a
+subset $J\subset \{ 0,\ldots , p\}$ belongs to $U$ if and only
+if there exists $i\in \{ 0,\ldots , p\}$ with $i\not \in J$ and such that $y_i$
+is not a
+valley of $(y_0,\ldots , y_p; f_1,\ldots , f_p)$.}
+
+
+Let us prove this. One considers the hyperface corresponding to
+$$
+J= \{j_0,\ldots ,
+j_q\} \subset \{ 0,\ldots , p\}
+$$
+(strict inclusion). This corresponds to
+the element
+$$
+J^{\ast}(y,f):=(y_{j_0}, \ldots , y_{j_q}, f'_1,\ldots , f'_q)\in \nu Y
+$$
+where
+the $f'_j$ are composites of the $f_i$. Let $(z,g)=(z_0,\ldots , z_r;
+g_1,\ldots , g_r)$ be the regular simplex obtained by replacing in
+$J^{\ast}(y,f)$ every arrow $f'_k: y_{j_{k-1}}\rightarrow y_{j_k}$ which is
+not
+in $\direct{Y}$ nor in $\inverse{Y}$, by the pair of arrows
+$$
+y_{j_{k-1}}\stackrel{g'}{\rightarrow}z\stackrel{g''}{\rightarrow} y_{j_k}
+$$
+with $g'\in \inverse{Y}$ and $g''\in \direct{Y}$.
+One leaves unchanged the
+arrows $f'_k$ which are either in $\direct{Y}$ or in
+$\inverse{Y}$.
+Also one contracts all the identities $f'_k$ which appear in
+$J^{\ast}(y,f)$. One notes that $J^{\ast}(y,f)$ is in the image of $(z,g)$.
+
+An arrow $f'_k$ which is replaced (or contracted) in the
+above procedure necessarily comes from a composite of at least two arrows
+$f_i$. Hence the length $r$ of $(z,g)$ is $\leq p$. On the other hand, if $r=p$
+then
+$$
+\sum _{i=0}^p deg (z_i) \leq \sum _{i=0}^p deg (y_i).
+$$
+Indeed, if $f'_k=f_{i+1}f_i = g_{i+1}g_i$ then $y_i$ is either a peak
+or a valley: in the contrary case, $f'_k$ is either in
+$\direct{Y}$
+or in $\inverse{Y}$ and is not replaced in $(z,g)$ (and $f'_k$
+is not an identity either, so it is not contracted either).
+If $y_i$ is a valley then $z_i=y_i$; if $y_i$ is a peak, then in this case
+$z_i$ is a valley of $(z,g)$ and $deg(z_i) < deg (y_i)$.
+
+By the preceding paragraph, if the complement of $J$ in $\{
+0,\ldots , p\}$ contains a peak $y_i$ then one of the two
+inequalities is strict and (by what we imposed on the order
+$\prec$) one has $(z,g)\prec (y,f)$ and hence $J^{\ast}(y,f)\in A^i$. If the
+complement
+of $J$ contains a $y_i$ which is neither a peak nor a valley, then since one of
+the arrows $f'_k$ which is a composite of at least two arrows $f_i$ is
+not replaced by two arrows $g$, one has $r<p$ and again
+$J^{\ast}(y,f)\in A^i$.
+This proves one direction of the statement $(\ast \ast )$
+(one should note that, in the above argument, one may land, without saying so,
+on a
+simplex which is in $A^0$ instead of being added in the sequence organised
+by $\prec$).
+
+
+Moreover, if there is a contraction of some $f'_k= 1$ then the length
+decreases: $ r<p$ and $J^{\ast}(y,f)\in A^i$. One sees that every new
+simplex
+of the form $J^{\ast}(y,f)$ in $A^{i+1}$ which is degenerate belongs
+already to $A^{i}$; and the other degenerate simplices
+come from the degeneracies of simplices of the form
+$J^{\ast}(y,f)$. This proves $(\ast )$ for $A^{i+1}$.
+
+To complete the proof of $(\ast \ast )$, suppose that the complement
+of $J$ consists entirely of valleys of $(y,f)$. In this case, for every
+$i\not \in J$, one has $i-1\in J$ and $i+1\in J$, and one of the morphisms in
+$J^{\ast}(y,f)$ is
+$$
+f'_k=f_{i+1}f_i: y_{i-1}\rightarrow y_{i+1}.
+$$
+One notes that $f'_k$ is not in $\direct{Y}$ nor in $\inverse{Y}$.
+Hence, if the simplex $J^{\ast}(y,f)$ comes from the image of a regular
+simplex
+$(w,h)$ then the arrow $f'_k$ is necessarily decomposed in $(w,h)$
+as a product of at least two arrows $h$. It follows that the length of
+$(w,h)$
+is at least $p$. In case of equality, each of the arrows $f'_k$ will be
+decomposed into a product of the form $h_{i+1} h_i$. Here there are two
+options: either $w_i$ is a valley, in which case one has $w_i=y_i$ by
+the uniqueness of
+the decomposition in the axiom for Reedy categories; or $w_i$ is
+a peak, in which case one has $deg (w_i)> deg(y_i)$. Hence, finally, there are
+three cases:
+either $(w,h)$ has length $>p$; or $(w,h)$ has length $p$ but
+$$
+\sum _{i=0}^p deg(w_i)>  \sum _{i=0}^p deg(y_i);
+$$
+or $(w,h)=(y,f)$. In all cases $(w,h)$ does not precede $(y,f)$ for
+the order $\prec$ and hence $J^{\ast}(y,f)$ does not belong to $A^i$.
+
+In fact, for this last sentence one must also justify that
+$J^{\ast}(y,f)$ does not belong to $A^0$. One notes that $(y,f)$ has
+at least one peak of degree $d$ (i.e.\ in $Y$ but not in $Z$), and this peak
+persists in
+$J^{\ast}(y,f)$. The only simplices of this form in $A^0$ are
+the regular simplices with a single peak (i.e.\ the simplices added in
+the coproduct of the statement of the lemma); but by removing valleys one has
+made
+$J^{\ast}(y,f)$ irregular and one has therefore $J^{\ast}(y,f)\not \in A^0$.
+This
+proves $(\ast \ast )$.
+
+The statement $(\ast \ast )$ says that $U$ is the union of all the
+faces of $h(p)$ obtained by removing vertices other than valleys.
+This implies
+that the morphism
+$$
+U\rightarrow
+h(p)
+$$
+is a weak equivalence of Segal $1$-precategories, by the following
+lemma (which we isolate because the statement could be of interest in its own
+right). This will complete the
+proof of
+Lemma \ref{reedydecomp}.
+\eop
+
+\begin{lemma}
+\label{faces}
+Let $h(p)$ denote the simplicial set ``standard $p$-simplex'', and let
+$f:U\hookrightarrow h(p)$ be an inclusion such that $U$ is the union of a
+certain
+number of faces of $h(p)$. Suppose that $U$ contains the first and the
+last face, and does not contain all the others; then the morphism
+$f$ is a weak equivalence of Segal $1$-precategories, i.e.\ the
+induced morphism
+$$
+SeCat(U)\rightarrow SeCat(h(p))\cong I^{(p)}
+$$
+is an equivalence.
+\end{lemma}
+{\em Proof:}
+One argues by induction on $p$; suppose therefore
+the statement known for $p-1$.
+Let us write
+$$
+U= V^0\cup V^p \cup V^{b_1}\cup \ldots \cup V^{b_k}
+$$
+as a union (not disjoint!) of faces, where $V^j$ is the face (simplicial
+set isomorphic to $h(p-1)$) obtained by removing the $j^{\rm th}$
+vertex. One fixes
+$a\in \{ 1,\ldots , p-1\}$ with $b_i\neq a$, i.e.\ the face $V^a$
+does not appear
+in $U$. For $0\leq j\leq k$ set
+$$
+U^j:= V^0\cup V^p \cup V^{b_1}\cup \ldots \cup V^{b_j}\subset U.
+$$
+In particular $U^0= V^0\cup V^p$, and $U^k=U$. Note first that
+$U^0\rightarrow h(p)$ is an equivalence (from here to the end of the proof,
+this will mean that it is a weak equivalence of Segal $1$-precategories).
+To see this, let $W(p)\subset h(p)$ be the union of the principal
+edges,
+i.e.\ of the edges of the form $\{ i-1, i\}$. The morphism
+$W(p)\rightarrow h(p)$ is an equivalence (indeed, $h(p)$ is obtained
+from $W$ by one application of the operation $Gen[p]$, see \S2;
+see also the discussion in \cite{limits} \S2.4.8).
+Now $V^0\cap W(p)$ is of the form $W(p-1)\subset V^0=h(p-1)$.
+Hence one may express $Q(p):=V^0\cup W(p)$ as a coproduct:
+$$
+Q(p):=V^0\cup W(p) = V^0 \cup ^{W(p-1)}W(p)
+$$
+where the first morphism is a trivial cofibration (of Segal
+$1$-precategories). Hence the morphism $W(p)\rightarrow Q(p)$ is a trivial
+cofibration and one obtains that $Q(p)\rightarrow h(p)$ is an
+equivalence (and it is a cofibration, hence it is a trivial cofibration).
+Note that $Q(p)$ is the union of the first face with the last edge.
+Now $Q(p) \cap V^p = Q(p-1)\subset V^p=h(p-1)$. Hence (by the result
+just proved but for $Q(p-1)$) the second morphism in the
+coproduct
+$$
+U^0= V^0\cup V^p = Q(p)\cup V^p = Q(p) \cup ^{Q(p-1)}V^p
+$$
+is a trivial cofibration. It follows that $Q(p)\rightarrow U^0$ is a
+trivial cofibration and $U^0\rightarrow h(p)$ is an
+equivalence.
+
+Let us now show by induction on $j$ that $U^j\rightarrow h(p)$ is
+an equivalence. We have just proved it for $j=0$, so one may suppose
+that $j\geq 1$ and that it is known for $j-1$. One has
+$$
+U^j = U^{j-1} \cup ^{(U^{j-1}\cap V^{b_j})}V^{b_j}.
+$$
+To prove that $U^j\rightarrow h(p)$ is an equivalence it suffices to prove
+that
+$$
+(U^{j-1}\cap V^{b_j})\rightarrow V^{b_j}
+$$
+is an equivalence. Now $V^{b_j} = h(p-1)$, and one denotes by
+$0,\ldots , \widehat{b_j}, \ldots , p$
+the vertices of this simplex. The simplicial subset
+$(U^{j-1}\cap V^{b_j})$ is a union of faces of this $h(p-1)$. This
+union
+of faces contains the first and the last face (since $V^0\cup V^p\subset
+U^{j-1}$), and does not contain the face obtained by removing the vertex
+$a$. Hence the lemma for $p-1$ applies and one obtains that
+$(U^{j-1}\cap V^{b_j})\rightarrow V^{b_j}$ is an equivalence, as required.
+\eop

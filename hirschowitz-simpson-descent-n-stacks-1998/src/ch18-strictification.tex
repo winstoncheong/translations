@@ -1,0 +1,1575 @@
+%@ pages 185-208
+%@ status translated
+% Original section 18, "Strictification", pp. 185--208.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * "foncteur large" is rendered "weak functor", as elsewhere in the
+%    translation; "précat (de Segal)" is "precategory", as in section 2.
+%  * "cmf" and "cmc" are both rendered "cmc".
+%  * In the first paragraph the source prints $nSeCat$ (lower case) beside
+%    $nSeCAT'$; both are kept as printed.
+%  * In Lemma \ref{equivalence2} the source prints "Soit $L(M)$ un
+%    remplacement fibrant ... pour $L(M)$", naming the replacement $L(M)$;
+%    this is kept as printed (a % comment marks the spot).
+%  * In part (2) of the proof of Theorem \ref{uneequivalence} the source
+%    reads "ses composantes sont fibrantes et la flèche $02$ est une
+%    cofibration"; "fibrantes" is kept as printed (a % comment marks the
+%    spot).
+%  * The source has "dans \cite{Hirschhorn} où Hirschhorn où prend soin",
+%    with "où Hirschhorn" doubled; the duplication is not reproduced.
+
+\clearpage
+\section{Strictification}
+\label{strictpage}
+
+The question of the essential surjectivity of the morphism $\Phi$ of
+Theorem \ref{correlation} poses the problem of ``strictifying'' a weak
+functor $A: Y \rightarrow nSeCAT'$ into a strict functor $Y \rightarrow
+nSeCat$. In the literature, the answers to this type of question are called
+``strictification'' theorems, or ``coherence'' theorems.
+See the discussion in \S 4 of Baez--Dolan \cite{BaezDolan};
+there they refer to Gordon--Power--Street \cite{Gordon-Power-Street},
+and to Mac Lane's coherence theorem \cite{MacLane2}.
+See also Dunn \cite{Dunn97}.
+%%%%%% added in v3: %%%%%%%%
+See Cordier and Porter \cite{CordierPorter2} \cite{CordierPorter3}
+who speak of ``rectification'' of diagrams, and Segal
+(\cite{SegalTopology} Prop. B1).
+
+A theorem very close to what we shall do in this chapter is
+``A realization theorem 2.4'' of Dwyer--Kan \cite{DwyerKanDiags}.
+In their theorem (which concerns simplicial presheaves, i.e.
+Segal $0$-stacks), a ``weak functor'' is a functor
+$Free _{\cdot}(Y)\rightarrow EnsSpl$ where $Free_{\cdot}(Y)$ is the standard
+resolution by free categories. They show that every weak functor in this
+sense is equivalent to a strict functor $Y\rightarrow EnsSpl$.
+
+The theorem-type of this kind is the result of SGA 1 \cite{SGA1}
+which says that a fibred category is equivalent to a split fibred category.
+Our method of proof
+for \ref{strictif3} will be
+based on the method of SGA 1, but with a contribution from the techniques of
+``Reedy categories'' coming from homotopy theory \cite{Reedy}
+\cite{BousfieldKan} \cite{Hirschhorn} \cite{DHK} \cite{DwyerKanDiags}.
+This method has already been used by the second author
+to obtain a strictification result
+for weak presheaves of topological spaces
+(``flexible presheaves'') in \cite{flexible},
+which turns out to be essentially equivalent to that of
+\cite{DwyerKanDiags}.
+
+
+One may envisage a slightly more general framework.
+Let $M$ be a closed model category, and let $Y$ be a
+$1$-category. Let $L(M)'$ be a fibrant replacement for the category
+$L(M)$ (which is the Dwyer--Kan localisation of $M$ with respect to the weak
+equivalences). Let
+$F: Y \rightarrow L(M)'$ be a functor; one would like to find a functor
+$G: Y \rightarrow M$ such
+that
+$p\circ G \sim F$ where $p: M\rightarrow L(M)'$ is the tautological morphism.
+For the
+closed model category $M=nSePC$, this would give the strictification for
+functors $A:Y \rightarrow nSeCAT'$ in view of
+Theorem \ref{intereqloc}.
+
+
+We shall generalise further by considering, instead of a single
+closed model category $M$, a left Quillen presheaf
+$\mm$ over $Y ^o$. One recovers the result of the preceding paragraph by
+taking the constant Quillen presheaf $\mm = \underline{M}$.
+
+Recall that $\int '_YL(\mm )$ is a fibrant replacement for $\int
+_YL(\mm )$ over $Y$
+(i.e. the morphism to $Y$ becomes a fibrant morphism of
+Segal $1$-categories).
+
+\begin{definition}
+\label{sestrictifient}
+Let $Y$ be a small category and $\mm$ a left Quillen presheaf
+on $Y^o$. We shall say that {\em the weak sections of $\mm$ over $Y$
+strictify} if the morphism of Segal $1$-precategories
+$$
+Sect (Y, \int _Y\mm )\rightarrow Sect (Y, \int '_YL(\mm ))
+$$
+is essentially surjective.
+\end{definition}
+
+
+
+\begin{theorem}
+\label{strictif1A}
+If $\mm $ is a left Quillen presheaf on a Reedy category
+$Y$ then the weak sections of $\mm$ over $Y$ strictify in the sense of
+Definition \ref{sestrictifient}.
+\end{theorem}
+
+We shall give the proof below.
+
+One should have the same result over an arbitrary category, provided
+that the $\mm (y)$ admit sufficiently many limits. We have a
+sketch of proof but there is a part that we did not want to carry out, so we
+leave the statement in the form of a ``conjecture''.
+
+\begin{conjecture}
+\label{strictif1B}
+Let $Y$ be a small category and $\mm$ a left Quillen presheaf
+on $Y$. Suppose that $\mm$ satisfies hypothesis (o) which will be introduced
+in \S 19 (which says in particular that the $\mm (y)$ admit arbitrary small
+limits). Then the weak sections of $\mm$
+over $Y$ strictify in the sense of Definition \ref{sestrictifient}.
+\end{conjecture}
+
+We shall propose a sketch of proof for this conjecture below.
+
+
+\begin{corollary}
+\label{strictif2A}
+Let $Y$ be a Reedy $1$-category.
+Let $M$ be a closed model category.
+Then the morphism (of Segal $1$-categories)
+$$
+\underline{Hom} (Y,M)\rightarrow \underline{Hom}(Y,L(M)')
+$$
+is essentially surjective.
+\end{corollary}
+{\em Proof:} One applies Theorem \ref{strictif1A} to the constant Quillen
+presheaf $\underline{M}$.
+\eop
+
+Conjecture \ref{strictif1B} would give the same corollary for every
+category $Y$, provided one has hypothesis (o) of \S 19 for
+$\underline{M}$.
+In fact, we are interested in the statement in question for $M=nSePC$: the
+following theorem will finally complete the proof of Theorem
+\ref{correlation}.
+
+\begin{theorem}
+\label{strictif3}
+Let $Y$ be a small $1$-category (not a Segal one). The weak sections of the
+constant presheaf $\underline{nSePC}$ over $Y$ strictify
+in the sense of Definition \ref{sestrictifient}.
+
+In particular, every
+object of $\underline{Hom}(Y, nSeCAT')$ is equivalent (in this
+Segal $n+1$-category) to an object coming from a presheaf of
+Segal $n$-categories on $Y$, i.e. the morphism $\Phi$ of Theorem
+\ref{correlation} is essentially surjective.
+\end{theorem}
+
+
+{\em Proof of \ref{strictif3} using Conjecture
+\ref{strictif1B}:}
+One applies \ref{strictif1B} to the constant presheaf $\underline{M}$ for
+the cmc
+$M=nSePC$ of Segal $n$-precategories. It is easy to see that
+$\underline{M}$ will satisfy
+hypothesis (o). The tautological morphism
+$$
+M_f \rightarrow nSeCAT'
+$$
+sends equivalences to
+equivalences, and hence extends (by the universal
+property of the localisation) to a morphism
+$$
+L(M_f) \rightarrow nSeCAT'.
+$$
+The morphism $L(M_f)\rightarrow L(M)$ is a trivial cofibration,
+as is the morphism to a fibrant replacement
+$L(M)\rightarrow L(M)'$, and one obtains a
+morphism
+$$
+L(M)' \rightarrow nSeCAT'.
+$$
+By Theorem \ref{intereqloc} this
+morphism induces an equivalence
+$$
+L(M)' \stackrel{\cong}{\rightarrow} (nSeCAT')^{int, 1}.
+$$
+This morphism is by choice strictly compatible with the morphism from
+$M_f$. The fact that $Y$ is a $1$-category (in particular
+$1$-groupic) entails the equality
+$$
+\underline{Hom}(Y, nSeCAT')^{int, 1} =
+\underline{Hom}(Y, (nSeCAT')^{int, 1}).
+$$
+An object $f\in \underline{Hom}(Y, nSeCAT')$ is therefore equivalent (in this
+Segal $n+1$-category) to a morphism coming from
+$g: Y\rightarrow L(M)'$. Applying the version of Corollary
+\ref{strictif2A}
+corresponding to \ref{strictif1B}, one obtains that $g$ is
+equivalent (in $\underline{Hom}(Y, L(M)')$) to a morphism coming from
+$h: Y\rightarrow M$; composing with a functorial fibrant replacement which
+exists for $M=nSePC$, one obtains that $h$ can be chosen as a
+morphism $h:
+Y\rightarrow M_f$. The projection of $h$ in $\underline{Hom}(Y, nSeCAT')$ is
+therefore equivalent to the projection of $g$, which in turn is equivalent
+to $f$.
+
+This statement is exactly the essential surjectivity of $\Phi$.
+\eop
+
+Since we can only propose a sketch of proof for \ref{strictif1B}, we shall
+now give a complete proof of Theorem \ref{strictif3}.
+
+
+
+
+\subnumero{Proof of Theorem \ref{strictif1A}}
+We begin with the proof of Theorem \ref{strictif1A},
+keeping the notation $\mm$ and $Y$. Our method of proof
+consists in
+a precise analysis of the diagrams indexed by a Reedy category,
+using the ideas and techniques developed precisely
+for this purpose by Reedy
+\cite{Reedy}, Bousfield--Kan \cite{BousfieldKan}, Hirschhorn \cite{Hirschhorn},
+Dwyer--Hirschhorn--Kan \cite{DHK}. One should regard our proof
+as merely an application of the techniques of these references. We follow
+more particularly the point of view of \cite{Hirschhorn}.
+
+Part of the analysis has already been carried out in Lemma
+\ref{reedydecomp} above, which we shall use now. Let $F^kY$ be the
+filtration of $Y$ by
+the full subcategories formed of the objects of degree $\leq k$. We
+suppose given a section $\sigma$ of $\int '_YL(\mm )$ and we would like to
+construct a section $u$ of $\int _Y\mm$ which is equivalent to $\sigma$.
+We shall proceed by recursion on the degree,
+and define $u$ on the
+$F^kY$.
+In the recursion we shall moreover choose $u$ fibrant and cofibrant for the
+Reedy structure.
+
+We suppose
+therefore that we have found a suitable section $v$ on $F^kY$ and we want
+to extend it to $u$ on $F^{k+1}Y$.
+By \ref{reedydecomp}, $F^{k+1}Y$ decomposes (up to weak equivalence)
+as the coproduct of $F^kY$
+with categories of the form
+$$
+Y(y):= Latch (y) + \{ y\} + Match (y)
+$$
+for objects $y\in Y$ of degree $k+1$.
+Set $F^kY(y):= F^kY\cap Y(y)$ whence
+$$
+F^kY(y)= Latch (y)  + Match (y).
+$$
+We shall extend $v|_{F^kY(y)}$ to a section $u_y$ on $Y(y)$,
+equivalent to $\sigma |_{Y(y)}$. This will suffice to find $u$ and
+the equivalence between $u$ and $\sigma |_{F^{k+1}Y}$ in view of
+\ref{reedydecomp}.
+On the other hand, the condition that $u$ be cofibrant and fibrant for the
+Reedy structure is expressed in terms of the restrictions $u|_{Y(y)}$, i.e.
+$u$ is cofibrant and fibrant if and only if (1) $v= u|_{F^kY}$ is, and
+(2) for every $y$ of degree $k+1$, $u_y= u|_{Y(y)}$ is.
+
+In sum, it suffices
+to solve the problem of extending $v$ to $u$, for $F^kY(y) \subset
+Y(y)$.
+We have therefore reduced to the following situation: $Y=Y(y)$ and
+$Z:= F^kY(y)$;
+we have a section $\sigma$ of $\int '_YL(\mm )$ over $Y$, and a section
+$v$ of $\int _Z\mm |_Z$ which is equivalent to $\sigma |_Z$; and we
+seek a section $u$ over $Y$ which extends $v$ and which is equivalent
+(as a section of $\int '_YL(\mm )$) to $\sigma$.
+Recall the following notation:
+$$
+Y= Latch (y) + \{ y\} + Match (y);\;\;\;
+Z= Latch (y) + Match (y).
+$$
+
+We have a morphism
+$$
+R: \int _{Latch(y)}L(\mm )\rightarrow L(\mm (y))
+$$
+corresponding to the
+restriction morphisms $res_f: \mm (z)\rightarrow \mm (y)$
+for every $f:z\rightarrow y$ in $Z$. This gives
+(by extension along a trivial cofibration)
+$$
+R': \int '_{Latch(y)}L(\mm )\rightarrow L(\mm (y))' .
+$$
+Our section $\sigma |_{Latch (y)}$ gives a morphism
+$$
+R'\circ \sigma |_{Latch(y)} : Latch (y) \rightarrow L(\mm (y))'.
+$$
+The section $\sigma$ over $Latch(y)+ \{ y\}$ corresponds
+(via a homotopy version, adapted to Segal categories, of the description of
+Reedy diagrams of \cite{Hirschhorn} \cite{DHK}---a generalisation which
+we use here without proof) to a morphism
+$$
+hocolim (R'\circ \sigma |_{Latch(y)})\rightarrow \sigma (y)
+$$
+in $L(\mm (y))'$. On the other hand, we also have the morphism
+$$
+{\bf r}: \int _{Latch(y)}\mm \rightarrow \mm (y)
+$$
+whence
+$$
+{\bf r}\circ v|_{Latch (y)}: Latch(y)\rightarrow \mm (y).
+$$
+The fact that $v|_{Latch(y)}$ is Reedy cofibrant, coupled with the condition
+that the restriction functors be left Quillen functors,
+implies that ${\bf r}\circ v|_{Latch (y)}$ is a $Latch(y)$-diagram of
+$\mm (y)$ which is itself Reedy cofibrant. This implies that there exists a
+natural equivalence in $L(\mm (y))'$:
+$$
+colim ({\bf r}\circ v|_{Latch (y)}) \cong
+hocolim (R'\circ \sigma |_{Latch(y)})
+$$
+(in fact, this is the definition of $hocolim$, see \cite{BousfieldKan}
+\cite{Hirschhorn} \cite{DHK}).
+
+To have an extension of $v$ to a section $u_L$
+over $Latch (y)+ \{ y\}$ it suffices (by the description of
+\cite{Hirschhorn} \cite{DHK}) to have an object $u(y)\in \mm (y)$ and a
+morphism
+$$
+colim ({\bf r}\circ v|_{Latch (y)})\rightarrow u(y).
+$$
+Moreover, $u_L$ is Reedy cofibrant (as is any extension of $u_L$ to $u$
+over $Z$) if and only if the preceding morphism is a
+cofibration. The section $u_L$ is equivalent
+(as a section of the localised categories)
+to $\sigma |_{Latch(y)+ \{ y\}}$ if there exists an equivalence in
+$L(\mm (y))'$, $u(y)\cong \sigma (y)$, and a homotopy of commutativity for
+the diagram
+$$
+\begin{array}{ccc}
+colim ({\bf r}\circ v|_{Latch (y)})
+& \cong & hocolim (R'\circ \sigma |_{Latch(y)})\\
+\downarrow && \downarrow \\
+u(y) & \cong & \sigma (y).
+\end{array}
+$$
+
+Dually (although the argument is a little different) one studies the
+extensions of
+$v$ to a section $u_M$ over $Match (y)+ \{ y\}$. First, let us denote
+$$
+{\bf t}: \mm (y)\times Y \rightarrow \int _{Match (y)}\mm
+$$
+the morphism given by the restrictions. For
+$$
+y\stackrel{f}{\rightarrow}z\stackrel{g}{\rightarrow}w
+$$
+with composite $h:= gf$, one obtains, using the adjunctions, a
+morphism (for $a\in \mm (z)$)
+$$
+res_f^{\ast} a \rightarrow res _h^{\ast} (res_ga).
+$$
+This gives a morphism
+$$
+{\bf t}^{\ast} : \int _{Match (y)}\mm \rightarrow
+\mm (y).
+$$
+One likewise obtains on the localised categories
+$$
+T^{\ast} : \int '_{Match (y)}L(\mm )\rightarrow
+L\mm (y)'.
+$$
+Composing with $\sigma$ one obtains
+$$
+T^{\ast}\circ \sigma |_{Match(y)}: Match(y)\rightarrow L(\mm (y)).
+$$
+The restriction of $\sigma$ to $\{ y\} + Match(y)$ corresponds
+(again via
+the homotopy version for Segal categories, of the description of
+Reedy diagrams of \cite{Hirschhorn} \cite{DHK} which we do not prove
+here) to a morphism
+$$
+\sigma (y) \rightarrow
+holim (T^{\ast} \circ \sigma |_{Match(y)})
+$$
+in $L(\mm (y))'$.
+
+Similarly, an extension $u_M$ of $v$ to $\{ y\} + Match(y)$
+corresponds to an object $u(y)\in \mm (y)$ and a morphism
+$$
+u(y)\rightarrow lim ({\bf t}^{\ast} \circ v|_{Match(y)}).
+$$
+Here the limit exists because the indexing is finite.
+The section $u_M$, as well as its possible extension $u$ to all of $Z$, is
+Reedy fibrant if and only if this morphism is a fibration in $\mm
+(y)$.
+
+On the other hand, as above, one has an equivalence in $L(\mm (y))'$
+$$
+lim ({\bf t}^{\ast} \circ v|_{Match(y)})\cong
+holim (T^{\ast} \circ \sigma |_{Match(y)})
+$$
+because $v|_{Match(y)}$ is Reedy fibrant by the recursion hypothesis, and the
+adjoints $res _f^{\ast}$ are right Quillen functors, hence
+${\bf t}^{\ast} \circ v|_{Match(y)}$ is a $Match(y)$-diagram of $\mm (y)$
+which is
+Reedy fibrant. An extension of the equivalence of $v$ with $\sigma |_Z$ to
+an equivalence between $u_M$ and $\sigma |_{\{ y\} + Match (y)}$ corresponds
+to the data of an equivalence $u(y)\cong \sigma (y)$ and of a homotopy of
+commutativity for the diagram
+$$
+\begin{array}{ccc}
+u(y) & \cong & \sigma (y) \\
+\downarrow && \downarrow \\
+lim ({\bf t}^{\ast} \circ v|_{Match(y)})& \cong &
+holim (T^{\ast} \circ \sigma |_{Match(y)}).
+\end{array}
+$$
+
+Let $x\in Latch(y)$ and $z\in Match(y)$
+and denote by $f: x\rightarrow y$ and $g: y\rightarrow z$ the morphisms.
+Then---
+by the homotopy adjoint property (Lemma \ref{adjointh}) of the functors
+induced by $res_g$ and $res_g^{\ast}$ between the simplicial categories $L(\mm
+(y))$ and $L(\mm (z))$---the morphism
+$$
+res_{gf}(\sigma (x))\rightarrow \sigma (z)
+$$
+is equal to a morphism
+$$
+res_f(\sigma (x)) \rightarrow res_g^{\ast} (\sigma (z)).
+$$
+When $x$ varies in $Latch (y)$ and $z$ in $Match (y)$ one obtains the
+following result.
+Let us denote by $Latch(y)\sqcup Match(y)$ the disjoint union of these two
+categories; it
+is contained in $Z$ but in $Z$ there is, in addition, a (unique)
+morphism from each object of $Latch(y)$ to each object of $Match(y)$.
+An extension of $\sigma |_{Latch(y)\sqcup Match(y)}$ to $\sigma |_Z$
+corresponds to a morphism
+$$
+hocolim (R'\circ \sigma |_{Latch(y)})\rightarrow
+holim (T^{\ast} \circ \sigma |_{Match(y)}).
+$$
+If $\sigma |_Z$ is equivalent to the section induced by $v$, the map
+above is induced by
+$$
+colim ({\bf r}\circ v|_{Latch (y)})\rightarrow
+lim ({\bf t}^{\ast} \circ v|_{Match(y)}).
+$$
+
+The extension of $\sigma$ from $Z$ to $Y=Z\cup \{ y\}$ is determined
+by a factorisation
+$$
+hocolim (R'\circ \sigma |_{Latch(y)})\rightarrow \sigma (y) \rightarrow
+holim (T^{\ast} \circ \sigma |_{Match(y)}).
+$$
+This being given, in order to extend $v$ to a section $u$ on $Y$, one must
+find a factorisation
+$$
+colim ({\bf r}\circ v|_{Latch (y)})\rightarrow u(y)\rightarrow
+lim ({\bf t}^{\ast} \circ v|_{Match(y)})
+$$
+which induces the factorisation corresponding to $\sigma$.
+
+We note moreover that $colim ({\bf r}\circ v|_{Latch (y)})$
+is cofibrant (it is the colimit of a diagram which is cofibrant for the
+Reedy structure, since ${\bf r}$ is a left Quillen functor);
+and $lim ({\bf t}^{\ast} \circ v|_{Match(y)})$ is fibrant---it is the limit
+of a diagram which is fibrant for the Reedy structure, since ${\bf t}^{\ast}$
+is a right Quillen functor.
+
+We have therefore reduced to the following problem: given a morphism
+$$
+h:a\rightarrow b
+$$
+in a closed model category $M=\mm (y)$, and a factorisation
+$$
+\overline{a} \rightarrow w \rightarrow \overline{b}
+$$
+in $L(M)$ where $\overline{a}$ and $\overline{b}$ are the images of $a,b\in M$
+in $L(M)$, one wants to lift it to a factorisation
+$$
+a\rightarrow c \rightarrow b
+$$
+in $M$ with the first morphism cofibrant and the second
+fibrant. One may suppose that $a$ is cofibrant and $b$ fibrant.
+
+One may also suppose that one
+has $w=\overline{c}$ in $L(M)$ with $c$ fibrant and
+cofibrant. In this case, the morphisms of $L(M)$ come from morphisms
+$f: a\rightarrow c$ and $g: c\rightarrow b$. One may suppose moreover that $g$
+is a fibration. The factorisation in $L(M)$ is a homotopy between $gf$ and
+$h$, as morphisms from $a$ to $b$. The homotopy may be
+considered
+as Quillen defined it, that is to say as a diagram
+$$
+i_0,i_1 :a\tworightarrows \alpha \stackrel{p}{\rightarrow} a ,\;\;\; k:\alpha
+\rightarrow b
+$$
+with $pi_0=pi_1=1_a$ and $ki_0=gf$, $ki_1=h$ (and $p$ a trivial fibration, and
+$i_0\sqcup i_1$ a cofibration). The morphism $i_0:a\rightarrow \alpha$
+is a
+trivial cofibration. The fact that we assumed
+that $g$ is a fibration implies that there
+exists a lift $w: \alpha \rightarrow c$ with $gw=k$
+and $wi_0= f$. If one sets $f':= wi_1$, one obtains a homotopy (which we
+still denote $w$) between $f$ and $f'$;
+one also has $gf'=h$ and the homotopy $w$ composed with
+$g$ is the homotopy $k$. In other words, the factorisation $h=gf'$ with
+the identity as homotopy is equivalent to the factorisation which
+corresponds to the homotopy $k$ between $gf$ and $h$. One obtains the
+lift of our factorisation in $L(M)$ to a factorisation
+$$
+a\stackrel{f'}{\rightarrow}c\stackrel{g}{\rightarrow}b
+$$
+in $M$, which solves the problem.
+
+To complete the proof of Theorem \ref{strictif1A},
+let us apply the solution of the
+problem above to the preceding situation with
+$$
+a= colim ({\bf r}\circ v|_{Latch (y)}),\;\;\;\;\;\;  b =
+lim ({\bf t}^{\ast} \circ v|_{Match(y)});
+$$
+$$
+\overline{a} = hocolim (R'\circ \sigma |_{Latch(y)}), \;\;\;\;\;\;
+\overline{b}=  holim
+(T^{\ast} \circ \sigma |_{Match(y)});
+$$
+and $w = \sigma (y)$. One finds the desired factorisation with $c=u(y)$.
+\eop
+
+
+
+\subnumero{The case of \texorpdfstring{$1$}{1}-stacks}
+
+Before embarking on the sketch of proof for \ref{strictif1B}
+and the proof of Theorem \ref{strictif3}, let us point out
+the origin of
+the idea by making the comparison with the case of $1$-stacks.
+
+One can show that the $2$-category of $1$-stacks over $\Xx$
+is equivalent (via Tamsamani's comparison \cite{Tamsamani} between the
+$2$-categories following his definition, and Benabou's $2$-categories)
+to the $2$-category $1CHAMP(\Xx )$ of $1$-stacks (not Segal ones) over
+$\Xx$. If one adopts the definition of $1$-stack which uses the notion of
+fibred category \cite{SGA1}, it is essentially a matter of showing that a
+fibred category is equivalent to a split fibred
+category, i.e. one which comes from a presheaf of categories.
+
+This result is a theorem of SGA 1 \cite{SGA1}. The idea of the
+proof is that if $\Ff \rightarrow Y$ is a fibred category
+over a category $Y$, then the functor
+$$
+A:y\mapsto Sect^{eq} (Y/y, \Ff \times _Y(Y/y))
+$$
+(where $Sect^{eq}$ are the ``cartesian'' sections, i.e. those which send the
+arrows downstairs to cartesian arrows upstairs) will be a strict functor from
+$Y$ to
+the $1$-category
+$1Cat$ of $1$-categories, such that one has
+an equivalence $\int _YA \cong \Ff $ of
+fibred categories
+over $Y$.
+
+The key observation is that this strictification property comes
+from the fact that the base $Y$ is a strict $1$-category.
+
+This idea was taken up in \cite{flexible} to give a result of
+strictification of ``flexible sheaves'' of topological spaces, which is
+the analogue of Theorem \ref{strictif3} for the case $n=0$.
+
+\subnumero{Idea for a direct proof of \ref{strictif3}}
+
+We sketch here an idea for a direct proof of the strictification
+for functors $\Xx ^o \rightarrow nSeCAT'$ (Theorem \ref{strictif3}),
+following the case of $1$-stacks mentioned above.
+
+Suppose now that $M= nSePC$ is the cmc
+of Segal $n$-precategories. A functor $Y ^o\rightarrow M$ is a
+Segal $n$-precategory over $Y$. On the other hand, one has \ref{intereqloc}
+$$
+L(M) \cong nSeCAT ^{int, 1}.
+$$
+Since $Y$ is already $1$-groupic, a functor
+$Y ^o \rightarrow L(M) '$ is therefore, up to equivalence, the same thing
+as a functor $Y ^o\rightarrow nSeCAT '$. Our question therefore becomes: is
+every functor $Y ^o\rightarrow nSeCAT'$ equivalent to
+a Segal $n$-precategory over $Y$?
+
+The basic idea is to use the fact that $Y$ is a $1$-category which is
+necessarily strict.
+Let $F: Y ^o \rightarrow nSeCAT'$ be a morphism. For
+$y\in Y$, we set
+$$
+G(y):= \Gamma (Y/y, F|_{Y/y}):= \underline{Hom}((Y/y)^o,
+nSeCAT')_{1/}(\ast _y,  F|_{Y/y}).
+$$
+This varies functorially in $y$ and the values are fibrant Segal
+$n$-categories. The problem is to show that $G$ is equivalent
+to $F$.
+
+We do not at present know how to find directly a morphism
+between
+$F$ and $G$ (and this is why this paragraph is only a sketch).
+However, let us note for later that if $F$ already came
+from a strict section, then there
+would be an equivalence between $F$ and $G$ given
+by the morphism
+$$
+F(y)\rightarrow \Gamma (Y/y, F|_{Y/y}).
+$$
+
+We shall circumvent the problem of finding a morphism between $F$ and $G$
+by relying on Theorem \ref{strictif1A},
+and by replacing $Y$ by a
+Reedy category $B$ equipped with a subcategory $D\subset B$ such that
+the localisation $L(B,D)$ is equivalent to $Y$. The idea that diagrams
+over $Y$ are the same as diagrams over $B$ which are equivalences
+in the direction of $D$ comes from the paper of Dwyer--Kan
+\cite{DwyerKanDiags}.
+
+
+
+\subnumero{Sketch of proof of Conjecture \ref{strictif1B}:}
+Let $Y$ be a $1$-category and $\mm$ a left Quillen presheaf
+on
+$Y$ which satisfies conditions (o) of \S 19 below. We shall need the
+following Reedy category. Let $\nu Y$ be the nerve of $Y$, and let
+$B=\int _{\Delta} \nu Y$ be the category introduced for Lemma \ref{bd}.
+Note that $B$ is also the category of simplices of $\nu Y$, denoted
+$B=\Delta \nu Y$ in \cite{Hirschhorn} \cite{DHK}; by {\em loc. cit.}
+$B$ is a Reedy category (the Reedy structure being induced by the
+functor $B\rightarrow \Delta$). The morphism of simplicial sets
+$$
+\nu B\rightarrow \nu Y
+$$
+comes from a functor $B\rightarrow Y$, and moreover this functor sends
+the morphisms of $D\subset B$ to the identities of $Y$. By Lemma
+\ref{bd}, this induces an equivalence of simplicial or Segal
+$1$-categories
+$$
+L(B,D)\cong 1SeL(B,D) \stackrel{\cong}{\rightarrow} Y.
+$$
+
+Consider the following diagram:
+$$
+\begin{array}{ccc}
+Sect (Y, \int _Y\mm ) & \rightarrow & Sect (Y, \int '_YL(\mm ))\\
+\downarrow && \downarrow \\
+Sect (B, \int _B \varphi ^{\ast} \mm )&\rightarrow & Sect (B, \int '_B \varphi
+^{\ast}L(\mm )).
+\end{array}
+$$
+From the result \ref{strictif1A}, one obtains that the bottom morphism
+is essentially surjective. On the other hand, the equivalence between $Y$
+and $L(B,D)$ implies that the right-hand vertical morphism is fully
+faithful with essential image the class
+of sections $\sigma : B\rightarrow \varphi ^{\ast}L(\mm )'$ such that
+$\sigma (g)$
+is an equivalence for every morphism $g$ of $D$
+(this idea comes from Dwyer--Kan \cite{DwyerKanDiags}). We shall call this
+condition $D-eq$. If a section $\sigma $ is $D-eq$ and if $\sigma$ comes
+from a section $u: B\rightarrow \int _B\varphi ^{\ast}\mm$ then $u$ is also
+$D-eq$ in the sense that the restriction morphisms $res_g(u)$ are weak
+equivalences
+for $g\in D$. It suffices for us to prove that if
+$u\in Sect (B, \int _B\varphi ^{\ast} \mm )$ is a $D-eq$ section in this
+sense, then $u$ comes (up to weak equivalence for the structure of
+model category) from a section $v\in Sect (Y, \int _Y\mm )$.
+
+The functor
+$$
+p^{\ast}: Sect (Y, \int _Y\mm )\rightarrow Sect (B, \int _Bp^{\ast}\mm )
+$$
+admits a right adjoint
+$$
+p_{\ast}: Sect (B, \int _Bp^{\ast}\mm )
+\rightarrow  Sect (Y, \int _Y\mm ).
+$$
+We claim that if $u\in Sect ^{D-eq}(B, \int _Bp^{\ast}\mm )$
+is fibrant for the structure of type (II),
+then one has the equivalence
+$p^{\ast}p_{\ast} u\cong u$. For this we envisage a proof which would
+follow the lines of the argument of \S 19 below (in particular this is
+why one needs hypothesis (o), the essential point of which is the existence
+of limits in the $\mm (y)$). This result would be in some sense a
+relative version of the argument of \S 19. However, for the present version
+of the paper
+we have not verified the details of this argument and
+this is why the
+proof of \ref{strictif1B} contains a gap.
+
+Granting this fact, one obtains that every
+$u\in Sect ^{D-eq}(B, \int _Bp^{\ast}\mm )$ is equivalent to
+a section of the form $p^{\ast} v$ for
+$v\in Sect (Y, \int _Y\mm )$, which completes the proof in view of the
+preceding remarks.
+\eop
+
+
+
+
+
+\subnumero{Proof of Theorem \ref{strictif3}}
+
+Since there is a gap in our sketch of proof of
+Conjecture \ref{strictif1B}, and since the idea for the direct proof given
+earlier did not succeed either, we finally give a
+complete proof by combining these two ideas. One had to apply
+\ref{strictif1B} to the case of the constant Quillen presheaf $\mm =
+\underline{M}$
+with values $M=nSePC$, the model category of Segal $n$-precategories.
+Note for example that $\int _Y\mm = Y\times M$ etc. With this notation, one
+returns to the diagram
+$$
+\begin{array}{ccc}
+Sect (Y, Y\times M ) & \rightarrow & Sect (Y, Y\times L(M )')\\
+\downarrow && \downarrow \\
+Sect (B, B\times M )&\rightarrow & Sect (B, B\times L(M )').
+\end{array}
+$$
+Given $\sigma : Y\rightarrow L(M)'$,
+one may apply the construction
+of the paragraph before last, to obtain a section $G_{\sigma} :
+Y\rightarrow
+M$, essentially by $G_{\sigma}(y)= \lim _{Y/y} \sigma |_{Y/y}$. This is
+compatible with the restriction to $B$ (via the morphism $\psi :
+B\rightarrow Y$) in the sense that one has a morphism
+$$
+r:G_{\sigma} \circ  \psi \rightarrow G_{\sigma \circ \psi }.
+$$
+The fact that $\psi$ induces an equivalence $L(B,D)\cong Y$ implies
+that for $b\in B$, one has
+$$
+\lim _{Y/\psi (b)}\sigma |_{Y/\psi (b)}\stackrel{\cong}{\rightarrow}
+\lim _{B/b}(\sigma \circ \psi )|_{B/b},
+$$
+i.e. that the morphism $r$ is an equivalence (object-by-object over
+$B$). On the other hand, by Theorem \ref{strictif1A}, $\sigma
+\circ \psi $ is equivalent to a section coming from $u: B\rightarrow M$.
+For strict sections, one has the desired morphism in the paragraph
+before last. One therefore has an equivalence
+$$
+G_u \cong u,
+$$
+which gives
+$$
+G_{\sigma} \circ \psi \cong G_{\sigma \circ \psi} \cong \sigma \circ \psi .
+$$
+Setting $v:= G_{\sigma} : Y\rightarrow M$, one has solved (for this case) the
+problem which gave rise to the gap in the proof of
+Conjecture \ref{strictif1B}. One finishes the proof as before: the
+fact that
+$\psi$ induces an equivalence $L(B,D)\stackrel{\cong}{\rightarrow} Y$
+implies that the morphism $Sect (Y,Y\times L(M)')\rightarrow Sect(B, B\times
+L(M)')$ is fully faithful (cf \cite{DwyerKanDiags}).
+Hence the equivalence $G_{\sigma}\circ \psi\cong \sigma \circ \psi$ comes
+from an equivalence $G_{\sigma} \cong \sigma$.
+This finally gives a complete proof of Theorem \ref{strictif3}.
+\eop
+
+Theorem \ref{strictif3} gives the essential surjectivity which was
+missing
+in order to complete the proof of Theorem \ref{correlation}.
+
+{\em Remark--Exercise:}
+\newline
+In the proof of \ref{strictif3} one
+could have
+taken $B=\beta ^{\rm poset}(Y)$, see \ref{bdvariant}. In this case,
+$B$ is the category underlying a partially ordered set;
+because of this one would need Theorem \ref{strictif1A} only for this
+type of category, which is a direct Reedy category. That
+would simplify the proof of \ref{strictif1A} greatly, in particular
+the matching objects $Match$ would be trivial and one would not need to
+consider the connecting morphisms $Latch\rightarrow Match$. We leave to the
+reader the exercise of writing a proof of \ref{strictif3}
+(including the part of \ref{strictif1A} that would be needed) on the basis of
+this remark.
+
+
+
+
+\subnumero{An equivalence}
+
+We now give an improvement of the preceding result
+concerning
+the essential surjectivity of the morphism \ref{sestrictifient}; this
+morphism becomes an
+equivalence if one localises (in the Dwyer--Kan sense) the model category
+at the source of the morphism \ref{sestrictifient}. We give the statement
+only for the case of
+Reedy categories; we think that it remains true for an arbitrary base
+category, under
+hypotheses of type (o) of \S 19.
+
+\begin{theorem}
+\label{uneequivalence}
+Let $Y$ be a Reedy category, and let $\mm$ be a left Quillen presheaf
+on $Y$. Suppose that each $\mm (y)$ admits ``functorial
+factorisations'' for the Quillen structure. Suppose the same thing for
+$Sect (Z,\int _Z\mm |_Z)$ for every Reedy category $Z$ with a functor
+to $Y$ (this functor not necessarily respecting the Reedy structure).
+Then the
+morphism
+$$
+L(Sect (Y,\int _Y\mm ))\rightarrow Sect (Y,\int '_YL(\mm ))
+$$
+is an equivalence.
+\end{theorem}
+
+\begin{corollary}
+\label{pqcalclim}
+Let $Y$ be a Reedy category and let $\mm$ be a left Quillen presheaf
+on $Y$. Then one has an equivalence
+$$
+\lim _{\leftarrow , Y^o}L(\mm )\cong L(Sect ^{\rm eq}(Y,\int _Y\mm )).
+$$
+\end{corollary}
+{\em Proof:}
+In the equivalence of the theorem, a section $\sigma \in Sect (Y,\int _Y\mm
+)$ goes to an $eq$-section of $\int 'L(\mm )$ if and only if the transition
+morphisms $res_f\sigma (y)\rightarrow \sigma (z)$ (for $f:y\rightarrow z$
+in $Y$) are weak equivalences; i.e. if and only if $\sigma$ is
+an $eq$-section of $\int _Y\mm$. One therefore has (see \ref{stabilite}) an
+equivalence:
+$$
+L(Sect ^{\rm eq}(Y,\int _Y\mm ))
+\stackrel{\cong}{\rightarrow} Sect ^{\rm eq}(Y,\int '_YL(\mm )).
+$$
+On the other hand, one has by Proposition \ref{gammasect} that for the fibrant
+replacement $L(\mm )'$ of $L(\mm )$,
+$$
+\Gamma (Y, L(\mm )')\rightarrow
+Sect ^{\rm eq}(Y,\int '_YL(\mm )')
+$$
+is an equivalence; the morphism
+$$
+Sect ^{\rm eq}(Y,\int '_YL(\mm ))\rightarrow Sect ^{\rm eq}(Y,\int '_YL(\mm )')
+$$
+is an equivalence; and by Proposition \ref{calclim},
+$$
+\lim _{\leftarrow , Y^o}L(\mm ) \cong \Gamma (Y, L(\mm )').
+$$
+Hence the statement.
+\eop
+
+Before giving the proof of Theorem \ref{uneequivalence}
+in general, we shall treat a few particular cases. We isolate
+these lemmas because they show well, by
+examples, what happens in \ref{uneequivalence}.
+
+For these lemmas, we shall use the technique of ``homotopy function
+complexes''
+developed in Hirschhorn \cite{Hirschhorn}, Dwyer--Hirschhorn--Kan
+\cite{DHK} and which has its origins in the work on the localisation
+\cite{DwyerKan3} as well as in the work of Reedy \cite{Reedy}.
+We briefly recall what
+this is about.
+This recall partially overlaps that of \S 8.
+
+Here $M$ is a closed model category, and we want
+to compute the homotopy types of the simplicial $Hom$ sets in the
+Dwyer--Kan localisation $L(M)$, i.e. for $x,y\in M$ we want to compute
+$L(M)_{1/}(x,y)$. For this, one introduces (in the references above)
+the notion of a {\em fibrant simplicial resolution} $y\rightarrow {\bf y}$.
+Here ${\bf y}$ is a simplicial object of $M$, i.e. an object ${\bf y}\in
+M^{\Delta ^o}$, with a morphism $c^{\ast} y\rightarrow {\bf y}$ where
+$c^{\ast} y$ is the constant simplicial object with values $y$. One requires
+that
+for $p\in \Delta$, $y\rightarrow {\bf y}(p)$ be a weak equivalence;
+and that ${\bf y}$ be fibrant for the Reedy closed model category
+structure (i.e. what is called here ``of
+type (III)'') on $M^{\Delta ^o}$.
+In this case, the simplicial set
+$$
+M_{1/}(x, {\bf y}):= \; p \mapsto M_{1/}(x, {\bf y}(p))
+$$
+is a simplicial set
+which is naturally equivalent to $L(M)_{1/}(x,y)$
+\cite{DwyerKan3}.
+\footnote{
+Technically the
+natural morphism here is a morphism
+$$
+M_{1/}(x, {\bf y})\rightarrow L^H(M)
+$$
+in the localisation {\em by hammocks}, see \cite{DwyerKan3} 4.4 and 7.2.
+Note that the argument of \cite{DwyerKan3} 7.2, which they give for
+the case of a pair of resolutions ${\bf x}$ ${\bf y}$ (cosimplicial and
+simplicial respectively), works equally well to provide the morphism which
+we are looking for here in the case of a single resolution. In what follows
+we shall use the notation $L(M)$ but to be technically correct (i.e. to have
+the morphisms we speak of) one should read $L^H(M)$. }
+The notation $M_{1/}(a,b):= Hom _M(a,b)$
+denotes the set of morphisms for the category $M$.
+
+
+We note now that the simplicial set $M_{1/}(x, {\bf y})$ is
+fibrant, i.e. Kan. Indeed, the Kan extension condition for
+$M_{1/}(x, {\bf y})$ becomes a lifting condition for morphisms
+from $x$ to an arrow of the form ${\bf y}(p)\rightarrow {\bf w}$ where
+${\bf w}$ is a (recursive) fibre product of components of ${\bf y}$ (this
+fibre product depends on which extension condition, i.e. which
+``horn'', one is
+looking at; we leave to the reader the task of writing down precisely the
+expression for the
+fibre product in question). The condition that ${\bf y}$ is fibrant for the
+Reedy structure implies that these morphisms ${\bf y}(p)\rightarrow {\bf w}$
+are fibrant; and the condition that all the ${\bf y}(p)$ are equivalent to
+$y$ implies (in view of the form of the fibre product which corresponds to a
+``horn'') that ${\bf y}(p)\rightarrow {\bf w}$ is a weak equivalence.
+Hence (since $x$ is cofibrant) every morphism from $x$ to ${\bf w}$ lifts to
+a morphism $x\rightarrow {\bf y}(p)$, which gives the Kan extension
+condition.
+
+The same argument shows that a cofibration $x\rightarrow x'$ induces a
+Kan fibration
+$$
+M_{1/}(x', {\bf y})\rightarrow M_{1/}(x, {\bf y}).
+$$
+
+
+The first lemma concerns the direct product: it is the case of Theorem
+\ref{uneequivalence} where the base category $Y$ is discrete, equal
+to a set. Despite
+appearances, this case is not totally obvious
+because of the fact that an infinite product of simplicial sets may fail to
+have the right homotopy type, if the factors are not fibrant (Kan). This fact
+was noted in particular by Jardine in \cite{JardineBool} (who gives a
+counterexample).
+
+\begin{lemma}
+\label{equivalence1}
+Let $\{ M_i\}$ be a collection of closed model categories
+(indexed by a set). We equip the product $\prod _i M_i$
+with the product closed model category structure: the fibrations,
+cofibrations and weak equivalences are the morphisms which are so with
+respect to
+each variable. Let $L(M_i)'$ be fibrant replacements (as
+Segal categories) of the Dwyer--Kan localisations $L(M_i)$.
+Then the natural morphism
+$$
+L(\prod _i M_i)\rightarrow \prod _i L(M_i)'
+$$
+(induced by its restriction to $\prod _i M_i$) is an equivalence.
+\end{lemma}
+{\em Proof:}
+We note first that the set of objects is the same on both sides;
+it is therefore a matter of proving that the morphism is (homotopically)
+fully
+faithful. Let $(y_i)$ and $(z_i)$ be two objects of the product $\prod _i M_i$.
+For each $i$ one chooses a fibrant simplicial resolution $z_i
+\rightarrow
+{\bf z}_i$. One thus obtains a fibrant simplicial resolution
+$$
+(z_i)\rightarrow ({\bf z}_i)
+$$
+for the product. Hence
+$$
+L(\prod _i M_i) _{1/}((y_i), (z_i))\cong
+(\prod _i M_i)_{1/}((y_i), ({\bf z}_i)) = \prod _i \left(
+(M_i)_{1/}(y_i,{\bf z}_i)\right) .
+$$
+On the other hand, for each $i$ the morphism
+$$
+L(M_i)_{1/}(y_i, z_i)\rightarrow L(M_i)'_{1/}(y_i,z_i)
+$$
+is an equivalence of simplicial sets with the second term fibrant.
+One has for each $i$
+$$
+L(M_i)_{1/}(y_i, z_i)\cong (M_i)_{1/}(y_i,{\bf z}_i),
+$$
+and as we remarked above, the
+$(M_i)_{1/}(y_i,{\bf z}_i)$ are fibrant. The direct product of fibrant
+simplicial sets preserves homotopy equivalences
+\cite{JardineBool}, hence
+$$
+\prod _i \left(L(M_i)'_{1/}(y_i, z_i)\right) \cong \prod _i \left(
+(M_i)_{1/}(y_i,{\bf z}_i)\right) .
+$$
+Note that one has
+$$
+\prod _i \left(L(M_i)'_{1/}(y_i, z_i)\right) =
+(\prod _i L(M_i)')_{1/}(y_i, z_i);
+$$
+one obtains the equivalence
+$$
+(\prod _i L(M_i)')_{1/}(y_i, z_i)\cong
+L(\prod _i M_i) _{1/}((y_i), (z_i)).
+$$
+This equivalence is homotopic to the morphism
+$$
+L(\prod _i M_i) _{1/}((y_i), (z_i))\rightarrow
+(\prod _i L(M_i)')_{1/}(y_i, z_i)
+$$
+of the lemma, which is (by definition) the one induced by the morphism
+$$
+(\prod _i M_i) _{1/}((y_i), (z_i))\rightarrow
+(\prod _i L(M_i)')_{1/}(y_i, z_i),
+$$
+which sends weak equivalences to equivalences.
+\eop
+
+\begin{lemma}
+\label{equivalence2}
+Let $M$ be a closed model category. Let $I$ be the category
+with objects $0,1$ and one morphism $0\rightarrow 1$, and let $M^I$ be the
+category of the $I$-diagrams in $M$ (which admits a Reedy cmc structure, for
+example). Let $L(M)$ be a fibrant replacement (as a
+Segal category) for $L(M)$. % The source prints $L(M)$ twice here; kept as printed.
+Then the natural morphism
+$$
+L(M^I)\rightarrow \underline{Hom}(I, L(M)')
+$$
+(induced by its restriction to $M^I$) is an equivalence. Here $\underline{Hom}$
+is the internal one for Segal $1$-precategories.
+\end{lemma}
+{\em Proof:}
+An arrow of $L(M)'$ is a homotopy class of morphisms of $M$,
+hence every object of $\underline{Hom}(I, L(M)')$ is equivalent to an object
+coming from $M^I$. It is therefore a matter of proving that the morphism in
+question is
+homotopically fully faithful. Let $y$ and $z$ be $I$-diagrams of
+$M$, i.e. $y= (f: y_0\rightarrow y_1)$ with $y_i\in M$ and
+$z= (g: z_0\rightarrow z_1)$.
+We suppose that $y$ is cofibrant for that one
+of the two possible Reedy structures for which
+$f$ is a cofibration.
+If ${\bf z}$ is a fibrant simplicial
+resolution of $z$ then one has
+$$
+L(M^I)_{1/}(y,z) \cong M^I_{1/}(y, {\bf z}).
+$$
+One may write ${\bf z} = ({\bf g}: {\bf z}_0\rightarrow {\bf z}_1)$.
+
+
+On the other hand,
+$$
+\underline{Hom}(I, L(M)')_{1/}(y,z)
+$$
+represents the functor of simplicial sets
+$$
+K\mapsto Hom ^{y,z}(I\times \Upsilon (K), L(M)')
+$$
+where the right-hand term is the subset of morphisms
+$r:I\times \Upsilon (K)\rightarrow L(M)'$ with $r|_{I\times \{ 0\} } = y$
+and $r|_{I\times \{ 1\} } = z$. A morphism
+$$
+I\times \Upsilon (K)\rightarrow L(M)'
+$$
+is equivalent (by dividing the square into two triangles---the reader
+is invited to
+draw a square with $f: y_0\rightarrow y_1$ on one side and $g:
+z_0\rightarrow z_1$ on the other and with arrows labelled $K$ between $y_0$
+and $z_0$
+and between $y_1$ and $z_1$; divided into two triangles by an arrow labelled
+$K$
+from $y_0$ to $z_1$) to two morphisms
+$$
+\Upsilon ^2(\ast , K)\rightarrow
+L(M)' $$ and
+$$
+\Upsilon ^2(K,\ast )\rightarrow L(M)'
+$$
+with the same restriction to the diagonal $\Upsilon (K)$. The
+restriction morphisms of the simplicial sets of these diagrams, over
+the simplicial set of diagrams for the diagonal $\Upsilon (K)$, are
+fibrations. One obtains a formula with a homotopy fibre product,
+i.e. a homotopy cartesian square
+$$
+\begin{array}{ccc}
+\underline{Hom}(I, L(M)')_{1/}(y,z)&\rightarrow & L(M)_{1/}(y_0, z_0)\\
+\downarrow && \downarrow \\
+L(M)_{1/}(y_1, z_1) & \rightarrow &  L(M)_{1/}(y_0, z_1).
+\end{array}
+$$
+There are two possible Reedy structures on $M^I$ (one may
+choose $deg(0)>deg(1)$ or the opposite); we shall take the structure ($deg(0) <
+deg (1)$) for which the cofibrant objects are the cofibrations
+$y_0\rightarrow y_1$ between cofibrant $y_i$. In this case, and for a
+fibrant simplicial resolution ${\bf z}$ (whose component ${\bf z}_1$
+is in
+particular also a fibrant simplicial resolution), the morphism of
+composition with $f$
+$$
+M_{1/}(y_1, {\bf z}_1)\rightarrow M_{1/}(y_0, {\bf z}_1)
+$$
+is a fibration of simplicial sets (cf the discussion before these lemmas).
+It follows that the cartesian square of simplicial sets
+$$
+\begin{array}{ccc}
+M^I_{1/}(y,{\bf z}) & \rightarrow &  M_{1/}(y_0,{\bf z}_0)\\
+\downarrow && \downarrow \\
+M_{1/}(y_1,{\bf z}_1)& \rightarrow & M_{1/}(y_0,{\bf z}_1)
+\end{array}
+$$
+is also homotopy cartesian. The three corners
+of the bottom and of the right coincide
+up to homotopy with the three corresponding corners in the square
+above for the localised categories. One deduces the equivalence
+$$
+M^I_{1/}(y,{\bf z})\cong \underline{Hom}(I, L(M)')_{1/}(y,z)
+$$
+which gives the desired statement.
+\eop
+
+
+
+
+
+\subnumero{Proof of Theorem \ref{uneequivalence}}
+Note that the morphism in question is essentially surjective by
+\ref{strictif1A}. It is therefore a matter of proving that it is fully
+faithful.
+
+For the moment we shall suppose that the theorem is known for
+{\em direct} or {\em inverse} categories, i.e.
+categories with a function
+``degree'' where all arrows except the identity are strictly
+monotone for the degree. This will be justified later (cf point (1)
+below). In fact, we shall make a first pass of our proof to
+settle this case, then the second pass which we describe
+now---the
+reason for this contortion being that for the direct case we need
+exactly the same arguments as for the general case, with even
+a few simplifications but not enough to justify, for us who are
+lazy, repeating the argument twice; so, one begins with the
+most complicated version (this manoeuvre will be better explained in (1) at
+the end of the proof). We discovered this technique
+which consists in considering first the direct case and
+then the Reedy case in \cite{Hirschhorn} where
+Hirschhorn takes care to treat the ``direct'' case independently
+first.
+
+We shall proceed by recursion on the length of the degree function on $Y$.
+We suppose that all objects of $Y$ are of degree $\leq k$, and that the
+theorem is proved for Reedy categories with degree
+function of length $\leq k-1$. We set $Z:= F^{k-1}Y$; in particular this
+hypothesis applies to $Z$.
+
+We shall denote by $y_i$ the objects of $Y$ of degree
+$k$ (the index $i$ is in an index set which we do not put into the
+notation). For each of
+these objects, we denote
+$$
+Y_i:= Latch(y_i)+\{ y _i\} +Match (y_i),
+$$
+and $Z_i := Y_i \cap Z= Latch(y_i)+Match(y_i)$. Note that $Y_i$ and $Z_i$ are
+direct (or else inverse) categories, so one may suppose that the
+theorem applies to them.
+
+Let $[0,1,2]$ be the category associated to
+the ordered set $0 < 1 < 2$ and
+$[0,2]$ its full subcategory with objects $0$ and $2$.
+
+Let $\mm (y_i) ^{[0,1,2]}$
+(resp. $\mm (y_i) ^{[0,2]}$)
+be the category of $[0,1,2]$-diagrams (resp. $[0,2]$-diagrams)
+in $\mm (y_i)$. We shall denote the diagrams $u=(u_0\rightarrow u_1\rightarrow
+u_2)$ (or $u=(u_0\rightarrow u_2)$).
+
+One has the following cartesian square of categories:
+$$
+\begin{array}{ccc}
+Sect (Y_i,\int _{Y_i}\mm ) & \rightarrow & \mm (y_i) ^{[0,1,2]}\\
+\downarrow && \downarrow \\
+Sect (Z_i,\int _{Z_i}\mm ) & \rightarrow & \mm (y_i) ^{[0,2]}.
+\end{array}
+$$
+The top morphism sends a section $\sigma$ to the diagram
+$$
+latch(\sigma ,y_i) \rightarrow \sigma (y_i) \rightarrow match (\sigma , y_i).
+$$
+The bottom morphism sends a section $\tau$ over $Z$ to the diagram
+$$
+latch(\tau  ,y_i) \rightarrow  match (\tau , y_i).
+$$
+
+We shall denote by $Sect (Y_i,\int _{Y_i}\mm )_{c,f}$ the subcategory of
+sections
+whose direct part (i.e. the restriction of the section to $Latch(y_i)+\{
+y_i\}$) is cofibrant, and the inverse part (i.e. the restriction of the
+section
+to $\{ y_i\} +Match(y_i)$) is fibrant. Likewise for
+$Sect (Z_i,\int _{Z_i}\mm )_{c,f}$. We shall denote by $\mm (y_i) ^{[0,1,2]}_{c,f}$
+the category of diagrams $u$ in which
+$u_0$ is cofibrant, $u_0\rightarrow u_1$ is
+a cofibration, $u_2$ is fibrant and $u_1\rightarrow u_2$
+is a fibration. We
+shall denote by $\mm (y_i) ^{[0,2]}_{c,f}$ the category of diagrams $v$ with
+$v_0$
+cofibrant and $v_2$ fibrant.
+
+The square above also gives a cartesian square
+$$
+\begin{array}{ccc}
+Sect (Y_i,\int _{Y_i}\mm ) _{c,f}& \rightarrow & \mm (y_i) ^{[0,1,2]} _{c,f}\\
+\downarrow && \downarrow \\
+Sect (Z_i,\int _{Z_i}\mm )  _{c,f}& \rightarrow & \mm (y_i) ^{[0,2]} _{c,f}.
+\end{array}
+$$
+For each of these categories one has an obvious notion of weak
+equivalence---which we shall dispense with putting into the notation of the
+localised categories. The advantage
+of this second square is that the horizontal morphisms respect
+weak equivalences (which is not the case for the first square,
+since the
+horizontal morphisms involve limits and colimits).
+
+Now one also has the cartesian square of categories
+$$
+\begin{array}{ccc}
+Sect (Y,\int _{Y}\mm )& \rightarrow & \prod _iSect (Y_i,\int _{Y_i}\mm )
+\\ \downarrow && \downarrow \\
+Sect (Z,\int _{Z}\mm ) & \rightarrow &
+\prod _i Sect (Z_i,\int _{Z_i}\mm ).
+\end{array}
+$$
+If one denotes by $Sect (Y,\int _{Y}\mm )_{c,f}$ the subcategory of objects
+cofibrant and fibrant for the Reedy structure
+(with the analogous notation for
+$Z$) then one obtains the cartesian square
+$$
+\begin{array}{ccc}
+Sect (Y,\int _{Y}\mm ) _{c,f}& \rightarrow & \prod _iSect (Y_i,\int _{Y_i}\mm )
+_{c,f}
+\\ \downarrow && \downarrow \\
+Sect (Z,\int _{Z}\mm )  _{c,f}& \rightarrow &
+\prod _i Sect (Z_i,\int _{Z_i}\mm )  _{c,f}.
+\end{array}
+$$
+Here again, the horizontal morphisms respect weak equivalences.
+It follows that the cartesian square
+$$
+\begin{array}{ccc}
+Sect (Y,\int _{Y}\mm ) _{c,f}& \rightarrow & \prod _i \mm (y_i) ^{[0,1,2]}
+_{c,f}\\ \downarrow && \downarrow \\
+Sect (Z,\int _{Z}\mm )  _{c,f}& \rightarrow & \prod _i\mm (y_i) ^{[0,2]} _{c,f}.
+\end{array}
+$$
+
+Let $N$ be one of the model categories in the preceding cartesian square
+(either one of the factors of a product, or the product), and let
+$N_{c,f}$ be its subcategory defined above. Under the hypothesis of
+functorial factorisations, there exists a functor $\zeta : N\rightarrow
+N_{c,f}$ and a natural transformation $t_u: \zeta
+(u)\stackrel{\cong}{\rightarrow} u$. This functor respects weak
+equivalences and the $t_u$ are weak equivalences. In particular, it
+establishes an equivalence $L(N_{c,f})\cong L(N)$.
+
+
+
+Let $\sigma , \tau \in Sect (Y, \int _Y\mm )_{c,f}$, and denote by
+$\sigma |_Z$, $\tau |_Z$, $\sigma ^i_{012}$, $\tau ^i_{012}$, and $\sigma
+^i_{02}$, $\tau ^i_{02}$ their images respectively in $Sect (Z,\int _Z\mm
+|_Z)_{c,f}$, $\mm (y_i)^{[0,1,2]}_{c,f}$, and $\mm (y_i)^{[0,2]}_{c,f}$. We
+claim that the square $(\ast )$
+$$
+\begin{array}{ccc}
+L(Sect (Y, \int _Y\mm )_{c,f})_{1/}(\sigma , \tau )
+&\rightarrow & \prod _i L(\mm (y_i)^{[0,1,2]}_{c,f})_{1/}(\sigma
+^i_{012},\tau ^i
+_{012})\\ \downarrow && \downarrow \\
+L(Sect (Z, \int _Z\mm |_Z)_{c,f})_{1/}(\sigma |_Z, \tau |_Z)
+& \rightarrow & \prod _i L(\mm (y_i)^{[0,2]}_{c,f})_{1/}(\sigma ^i_{02},\tau
+^i_{02}) \end{array}
+$$
+is homotopy cartesian.
+
+Suppose that we have shown that $(\ast )$ is homotopy cartesian,
+and let us finish the proof of the theorem.
+One has a homotopy cartesian square
+$$
+\begin{array}{ccc}
+Sect (Y, \int _Y L(\mm ))_{1/}(\sigma , \tau )
+&\rightarrow & \prod _i L(\mm (y_i))^{[0,1,2]}_{1/}(\sigma ^i_{012},\tau ^i
+_{012})\\ \downarrow && \downarrow \\
+Sect (Z, \int _Z L(\mm )|_Z)_{1/}(\sigma |_Z, \tau |_Z)
+& \rightarrow & \prod _i L(\mm (y_i))^{[0,2]}_{1/}(\sigma ^i_{02},\tau
+^i_{02}), \end{array}
+$$
+where for the direct products one first takes Kan replacements of the
+simplicial sets (i.e. one takes the homotopy direct products). To justify
+this, one makes a ``homotopy'' version for the $L(\mm )$ of the
+discussion of diagrams over Reedy categories, using the notion
+of homotopy adjoint of \S 8. See also the proof of
+Theorem \ref{strictif1A}. We do not give further
+details
+on this point.
+
+The morphism from the square $(\ast )$ into this one
+induces an equivalence on the three terms
+at the bottom and on the right. Indeed, for $Z$ one supposes
+the theorem
+known by recursion, and on the right it is a matter of diagrams
+indexed by the direct categories $[0,1,2]$ and $[0,2]$---which we
+suppose
+already treated.
+By Lemma
+\ref{equivalence1}, the direct products in the square $(\ast )$ are
+homotopy direct products.
+
+The fact that the two squares are
+homotopy cartesian then implies that the morphism
+$$
+L(Sect (Y, \int _Y\mm )_{c,f})_{1/}(\sigma , \tau )
+\rightarrow Sect (Y, \int _Y L(\mm ))_{1/}(\sigma , \tau )
+$$
+is an equivalence, which proves the recursion step.
+
+To finish the proof, we must: (1) justify the hypothesis that
+the theorem is known for direct categories (of finite length,
+this is what we use in the proof above); (2) show that the
+square $(\ast )$ above is homotopy cartesian; and (3) justify the
+passage to the limit over
+the $k$ of the $F^kY$ for a Reedy category $Y$ with
+unbounded degree function.
+
+For (1), suppose now that one wants to prove the theorem for a
+direct category $Y$ (of finite length). One proceeds in the same way
+by recursion on the length of $Y$, and one copies the steps of the
+proof above. The only change is that the categories
+$Match(y_i)$ are empty and hence the terms $match (\sigma , y_i)$
+do not appear. In particular, one may replace
+the category of diagrams
+$\mm (y_i)^{[0,1,2]}$ of length $3$ by a category of
+diagrams $\mm (y_i)^{[0,1]}$ of length $2$; and the category of diagrams
+$\mm (y_i)^{[0,1]}$ becomes just $\mm (y_i)$. This means that in the end
+one is reduced to considering the case of $\mm (y_i)^{[0,1]}$,
+in other words the case of diagrams indexed by $Y= I=[0,1]$ with values in
+a fixed closed model category $M=\mm (y_i)$. This case was
+treated by Lemma \ref{equivalence2}.
+
+For (2), we shall again use the method of resolutions. First, one may
+suppose that $\sigma$ is fibrant and cofibrant, as is $\tau$. One chooses
+a simplicial resolution $\tau \rightarrow {\bf t}$ and one may
+suppose that ${\bf t}$ is fibrant and cofibrant as a simplicial object,
+i.e.
+$$
+{\bf t}\in Sect (Y,\int _Y\mm )^{\Delta ^o}.
+$$
+Note here that it is a matter of iterating twice the operation
+which consists in ``taking the
+Reedy structure'': first one took the Reedy structure on
+$Sect (Y,\int _Y\mm )$ and then, with respect to this structure, one took
+the Reedy structure on the simplicial diagrams inside it.
+
+In particular, for every $p\in \Delta$, ${\bf t}(p)\in Sect (Y,\int _Y\mm )$
+is both fibrant and cofibrant, hence
+$$
+{\bf t}\in [Sect (Y,\int _Y\mm )_{c,f}]^{\Delta ^o}.
+$$
+The images ${\bf t} |_Z$,  ${\bf t} ^i_{012}$, and  ${\bf t} ^i_{02}$,
+which are simplicial objects in the other cmc's $N$ appearing above,
+are in fact simplicial objects of the $N_{c,f}$.
+
+One must fix a structure
+of cmc on $\mm (y_i)^{[0,1,2]}$ and on $\mm (y_i)^{[0,2]}$. For this, one
+will use a
+Reedy structure on $[0,1,2]$ for which the object $1$ is of maximal
+degree; thus the arrow $01$ is direct, and $12$ is inverse. Now there
+is a choice to be made as regards the arrow $02$: we shall choose to say
+that it is a direct arrow, which corresponds to saying $deg (0)<deg(2)$
+(one must make the degree function ``tilt'' one way or the other).
+The corresponding structure on $\mm (y_i)^{[0,2]}$ consists in saying
+again that the
+arrow $02$ is direct. With this choice, an object of $\mm (y_i)^{[0,2]}$ is
+fibrant if and only if its components are fibrant, while an object is
+cofibrant if and only if its components are fibrant % source prints "fibrantes"; kept as printed
+and the arrow $02$
+is a cofibration. An object of $\mm (y_i)^{[0,1,2]}$ is fibrant if and
+only if
+its components as well as the arrow $12$ are; and an object is cofibrant if
+and only if its components as well as the arrows $01$ and $02$ are.
+
+One still has that $\tau ^i_{012}$ and ${\bf t}^i_{012}$ are fibrant objects
+(likewise for $\tau ^i_{02}$ and ${\bf t}^i_{02}$). By contrast, $\sigma
+^i_{012}$ and $\sigma ^i_{02}$ are no longer cofibrant since one cannot
+guarantee that the arrow $\sigma ^i_0\rightarrow \sigma ^i_2$ be a
+cofibration.
+To arrange this one chooses a cofibrant replacement
+$\tilde{\sigma}^i_{012}\rightarrow  \sigma ^i_{012}$ in the following
+way: one
+chooses a diagram
+$$
+\begin{array}{ccc}
+\sigma ^i_1 & \rightarrow & \tilde{\sigma}^i_2\\
+\uparrow & \nearrow & \downarrow \\
+\sigma ^i_0 & \rightarrow & \sigma ^i_2
+\end{array}
+$$
+with a trivial fibration on the right, and
+a cofibration
+on the diagonal. The left-hand morphism remains a cofibration and we say
+nothing about the top morphism. The composite $\sigma ^i_1\rightarrow \sigma ^i_2$
+should be the one we already have. One sets
+$$
+\tilde{\sigma}^i_{012}:= [\sigma ^i_0\rightarrow \sigma ^i_1 \rightarrow
+\tilde{\sigma}^i_2].
+$$
+The square of simplicial sets
+$$
+\begin{array}{ccc}
+\mm (y_i)^{[0,1,2]}(\sigma ^i_{012},{\bf t} ^i
+_{012})
+&\rightarrow & \mm (y_i)^{[0,1,2]}(\tilde{\sigma} ^i_{012},{\bf t} ^i
+_{012})\\ \downarrow && \downarrow \\
+\mm (y_i)^{[0,2]}_{1/}(\sigma ^i_{02},{\bf t}
+^i_{02})
+& \rightarrow & \mm (y_i)^{[0,2]}_{1/}(\tilde{\sigma} ^i_{02},{\bf t}
+^i_{02})
+\end{array}
+$$
+is cartesian. Likewise the square
+$$
+\begin{array}{ccc}
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t} )
+&\rightarrow & \prod _i \mm (y)^{[0,1,2]}(\sigma ^i_{012},{\bf t} ^i
+_{012})\\ \downarrow && \downarrow \\
+Sect (Z, \int _Z\mm |_Z)_{1/}(\sigma |_Z, {\bf t} |_Z)
+& \rightarrow & \prod _i \mm (y)^{[0,2]}_{1/}(\sigma ^i_{02},{\bf t}
+^i_{02}) \end{array}
+$$
+is cartesian and by composing with the product over $i$ of the preceding
+squares
+one obtains the cartesian square $(\ast \ast )$ of simplicial sets
+$$
+\begin{array}{ccc}
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t} )
+&\rightarrow & \prod _i \mm (y_i)^{[0,1,2]}(\tilde{\sigma} ^i_{012},{\bf t} ^i
+_{012})\\ \downarrow && \downarrow \\
+Sect (Z, \int _Z\mm |_Z)_{1/}(\sigma |_Z, {\bf t} |_Z)
+& \rightarrow & \prod _i \mm (y_i)^{[0,2]}_{1/}(\tilde{\sigma} ^i_{02},{\bf t}
+^i_{02}).
+\end{array}
+$$
+This square is equivalent to the square $(\ast )$
+(to find the morphism between squares, note in general that
+if $(C,W)$ is a category with a subcategory of ``equivalences'' and if
+$x,y$
+are objects of it, with an augmented simplicial object $y\rightarrow {\bf y}$
+such that for every $p$ the morphism $y\rightarrow {\bf y}(p)$ lies in $W$,
+then one obtains a natural morphism of simplicial sets
+$C_{1/}(x,{\bf y})\rightarrow L^H(C,W)_{1/}(x,y)$ where $L^H$ is the
+localisation by hammocks \cite{DwyerKan2} \cite{DwyerKan3}; one applies this
+to the
+categories $C=N_{c,f}$ which appear in $(\ast )$).
+
+Hence for (2) it suffices to see that $(\ast \ast )$ is
+homotopy cartesian,
+so it suffices to see that for every $i$ the morphism
+$$
+\mm (y_i)^{[0,1,2]}(\tilde{\sigma} ^i_{012},{\bf t} ^i
+_{012})\rightarrow
+\mm (y_i)^{[0,2]}_{1/}(\tilde{\sigma} ^i_{02},{\bf t}
+^i_{02})
+$$
+is a Kan fibration.
+
+For this
+we shall simplify the notation: one takes a cmc $M$ and two diagrams
+$x,y\in M^{[0,1,2]}$ plus a fibrant simplicial resolution $y\rightarrow
+{\bf y}$. For this one equips (as before) $M^{[0,1,2]}$ with a cmc structure
+such that the fibrant objects are the diagrams of fibrant objects with the
+second morphism $12$ fibrant, and the cofibrant objects are the diagrams
+of cofibrant objects with the morphisms $01$ and $02$ cofibrant. Likewise one
+equips $M^{[0,2]}$ with the structure for which the cofibrant objects are
+the diagrams of cofibrant objects with a cofibration in $02$.
+
+Let us denote by $i$ the morphism $ [0,2]\hookrightarrow [0,1,2]$; one has the
+functor
+$$
+i^{\ast}: M^{[0,1,2]}\rightarrow M^{[0,2]}
+$$
+and its left adjoint $i_!$. This adjoint has the following concrete
+description. If $u= (u_0\rightarrow u_2)\in M^{[0,2]}$ then
+$$
+i_!(u)= [u_0 \stackrel{=}{\rightarrow} u_0 \rightarrow u_2]\in M^{[0,1,2]}.
+$$
+If $x$ is a cofibrant object of $M^{[0,1,2]}$ then
+the adjunction morphism $i_!i^{\ast}x\rightarrow x$ is
+$$
+[x_0 \stackrel{=}{\rightarrow} x_0 \rightarrow x_2]
+\rightarrow [x_0\rightarrow x_1\rightarrow x_2]
+$$
+which is a cofibration.
+
+One has
+$$
+M^{[0,2]}_{1/}(i^{\ast} x, i^{\ast} {\bf y})=
+M^{[0,1,2]}_{1/}(i_!i^{\ast} x, {\bf y}).
+$$
+The morphism in question is therefore the morphism induced by
+$i_!i^{\ast}x\rightarrow x$,
+$$
+M^{[0,1,2]}_{1/}(x, {\bf y})
+\rightarrow
+M^{[0,1,2]}_{1/}(i_!i^{\ast} x, {\bf y}).
+$$
+If $x$ is cofibrant then the cofibration $i_!i^{\ast}x\rightarrow x$
+induces here a Kan fibration of simplicial sets,
+which shows that $(\ast \ast )$ is homotopy cartesian,
+whence the same thing
+for $(\ast )$, which gives (2).
+
+
+
+By the way, the argument above shows that if $\sigma$ and $\tau$ (resp. ${\bf
+t}$) are cofibrant and fibrant sections (resp.
+is a fibrant
+and cofibrant simplicial
+resolution) then the morphism
+$$
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t} )\rightarrow
+Sect (Z, \int _Z\mm |_Z)_{1/}(\sigma , {\bf t} )
+$$
+is a Kan fibration.
+
+For (3) one now fixes a Reedy category $Y$ with a degree
+function not necessarily bounded. One fixes a fibrant replacement
+$$
+\int '_YL(\mm )\rightarrow Y
+$$
+which determines fibrant replacements by restriction
+$$
+\int '_{F^kY} L(\mm )|_{F^kY}\rightarrow F^kY.
+$$
+Under these conditions, $Sect (Y, \int '_YL(\mm ))$ is the limit of the
+sequence
+$$
+\ldots \rightarrow Sect (F^kY, \int '_{F^kY}L(\mm )|_{F^kY})
+\rightarrow Sect (F^{k-1}Y, \int '_{F^{k-1}Y}L(\mm
+)|_{F^{k-1}Y})\rightarrow \ldots ,
+$$
+and the transition morphisms in this sequence are fibrations
+of Segal $1$-categories. On the other hand, let us fix sections $\sigma$ and
+$\tau$ in $Sect (Y, \int _Y\mm )$, with $\sigma$ cofibrant, and fix a
+fibrant simplicial resolution $\tau \rightarrow {\bf t}$. One has that
+$$
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t})
+$$
+is the limit of the sequence of simplicial sets
+$$
+\ldots \rightarrow Sect (F^kY, \int _{F^kY}\mm |_{F^kY})_{1/}(\sigma
+|_{F^kY}, {\bf t}|_{F^kY})
+\rightarrow \ldots .
+$$
+By the argument given for (2), the transition morphisms
+of this sequence are
+Kan fibrations. This sequence is, term by term, equivalent
+(by the same argument) to the sequence
+$$
+\ldots \rightarrow Sect (F^kY, \int '_{F^kY}L(\mm )|_{F^kY})_{1/}(\sigma
+|_{F^kY}, \tau |_{F^kY}
+) \rightarrow \ldots ,
+$$
+and these equivalences being functorial one obtains an equivalence
+of diagrams between the two sequences (in fact, to really have a morphism
+here it would be appropriate to use the localisation by hammocks $L^H$
+instead of $L$). The
+fact that the transition morphisms in the two cases are Kan
+fibrations implies that the morphism on the limits is an equivalence
+$$
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t})\stackrel{\cong}{\rightarrow}
+Sect (Y, \int '_YL(\mm ))_{1/}(\sigma , \tau ).
+$$
+Now
+$$
+Sect (Y, \int _Y\mm )_{1/}(\sigma , {\bf t}) \cong
+L(Sect (Y, \int _Y\mm ))_{1/}(\sigma , \tau )
+$$
+whence part (3).
+
+This completes the proof of Theorem \ref{uneequivalence}.
+\eop

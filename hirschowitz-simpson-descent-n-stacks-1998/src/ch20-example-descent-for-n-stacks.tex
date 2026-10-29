@@ -1,0 +1,662 @@
+%@ pages 223-232
+%@ status translated
+% Original section 20, "Exemple: la descente pour les n-champs", pp. 223--232.
+%
+% Translation notes (the mathematics is left exactly as printed):
+%  * "précat (de Segal)" is "precategory", "préchamp (de Segal)" is
+%    "prestack", as in sections 2 and 3; "cmf" is rendered "cmc"; "somme
+%    disjointe" is "disjoint sum" and "produit direct" is "direct product"
+%    (distinct from "produit fibré", "fibre product").
+%  * "intérieur $k$-groupique" is "$k$-groupic interior", as in section 2.
+%  * In the display after "En effet, on a" the source prints $nSeCHAMP$,
+%    without the \underline used everywhere else, and $\Yy /Y$ where
+%    $\Xx /Y$ is meant; both are kept as printed (% comments mark the spots).
+%  * The source prints "Noua affirmons" for "Nous affirmons"; the prose is
+%    translated normally, the mathematics around it is unaffected.
+
+\clearpage
+\section{Example: descent for \texorpdfstring{$n$}{n}-stacks}
+
+\label{exemplepage}
+
+The first example of an application of Theorem \ref{dansleschamps} is descent
+for $n$-stacks, the analogue of the fact that the prestack of sheaves is a
+stack. This descent theorem is classical for $n=1$. For $n=2$ it was stated by
+Breen in \cite{Breen}, without proof. Breen uses it to give one of the two
+directions of his description of $2$-stacks in terms of cocycles.
+
+
+\begin{theorem}
+\label{descente}
+The Segal $n+1$-prestack $nSe\underline{CHAMP}(\Xx )$ is a Segal $n+1$-stack
+(i.e.\ $\infty$-stack) over $\Xx$.
+\end{theorem}
+
+This theorem means that Segal $n$-stacks glue together, i.e.\ in particular
+that descent data for Segal $n$-stacks are effective. However, since we do not
+have a very good concrete description of what exactly a descent datum is (see
+the end of \S5 for the best that can currently be said), we cannot give a
+description, entirely in terms of cocycles, à la Breen \cite{Breen}, of what
+this effectivity of descent data means.
+
+
+\subnumero{Proof using \texorpdfstring{Theorem~\ref{dansleschamps}}{Theorem}}
+Suppose that $\Xx$ admits fibre products and has sufficiently many disjoint
+sums compatible with fibre products. In that case one can deduce the present
+Theorem \ref{descente} directly from Theorem \ref{dansleschamps}.
+Indeed, one can verify that the family of cmc's
+$$
+X\mapsto nSePCh(\Xx /X)
+$$
+is a left Quillen presheaf, with compatibility with direct products. The
+adjoint of the restriction for $s: Y\rightarrow X$ and $A\in
+nSePCh(\Xx /Y)$ is defined by
+$$
+s_{\ast}(A)(U\rightarrow X):= A(Y\times _XU\rightarrow Y).
+$$
+The restriction evidently preserves cofibrations and trivial cofibrations, and
+compatibility with direct products (i.e.\ condition (3) of
+\ref{dansleschamps}) follows from an easy computation.
+
+For condition (2),
+it suffices to observe that if
+$i: U\hookrightarrow X$ is a component
+of a disjoint sum, and if $A$ is any kind of presheaf on
+$U$, then one has
+$i^{\ast}i_{\ast}A=A$.
+
+Condition (1) is an
+immediate consequence of the local character of the
+notion of $\Gg$-weak equivalence between Segal $n$-prestacks.
+
+The
+fibred model categories admit arbitrary limits and colimits, and
+functorial factorisations. For the structures of type (II), see
+Theorem
+\ref{sectionscmf}; as usual we refer to \cite{Jardine} for the
+technique needed
+to give a rigorous proof of the first part of
+the hypothesis of \ref{sectionscmf}
+(II). One thus obtains condition (0) of Theorem \ref{dansleschamps}.
+
+%%% verification added in version 2
+%%% this is at the top of page 220 in v1
+
+One must verify condition (4)
+(added in version 2 of the paper) of Theorem \ref{dansleschamps}.
+So let $f:X\rightarrow
+Y$ be a morphism in $\Xx$. The point is to see that
+$$
+f^{\ast} :L(nSePCh , W)(Y) \rightarrow L(nSePCh , W) (X)
+$$
+preserves (homotopy) limits. Here $f^{\ast}$ is just the restriction
+to $\Xx /X$ of the Segal $n$-stacks on $\Xx /Y$. Limits of
+Segal $n$-stacks are computed object by object, so the restriction preserves
+these limits. The fact that limits are computed object by object
+is a generalisation of Lemma \ref{fiprodchamp}, which concerns the case of the fibre
+product. For the general case one can use the commutation of limits
+(\cite{Vogt2}, \cite{limits} 3.4.11) as well as criterion \ref{critereaveclim} (c) to see that a
+limit (as a prestack)
+of stacks is still a stack. Limits of prestacks are computed
+object by object according to \cite{limits} 3.4.4.
+
+%%% end of the v2 verification; I also changed the first sentence of the following.
+
+%%%%% for v3 we verify condition (5) by modifying slightly the
+%%%%%% wording of the following paragraph %%%%%
+
+It will then only remain to verify hypothesis (5) of
+\ref{dansleschamps} (new in {\tt v3})
+in order to prove that $L(nSePCh, W)$
+is a Segal $1$-stack. We shall do this at the same time as the proof, by
+criterion \ref{critere}, that $nSe\underline{CHAMP}$ is a stack.
+
+Recall that by \ref{intereqloc}, $L(nSePCh, W)$
+is equivalent (for the coarse topology)
+to the $1$-groupic interior
+$$
+L(nSePCh, W) \cong nSe\underline{CHAMP}^{int,1}.
+$$
+Part (a) of criterion \ref{critere} for $nSe\underline{CHAMP}$
+is automatic because, by definition, the
+objects of $nSe\underline{CHAMP}(X)$ are the $\Gg$-fibrant Segal $n$-stacks,
+and if $A$ and $B$ are $\Gg$-fibrant on $\Xx /X$
+then
+$$
+nSe\underline{CHAMP}_{1/}(A,B) :=
+\underline{Hom}(A,B)
+$$
+is fibrant---in particular it is a stack.
+It follows that the $0$-groupic interior of the latter,
+$nSe\underline{CHAMP}_{1/}(A,B)$, is a stack. The object of morphisms in
+the $1$-groupic interior is also the $0$-groupic interior of
+the object of morphisms, so we obtain that
+the $1$-groupic interior
+$nSe\underline{CHAMP}^{int,1}$
+(equivalent to $L(nSePCh, W)$)
+satisfies part (a) of criterion \ref{critere}. Now this condition
+is exactly condition (5) of Theorem \ref{dansleschamps}.
+
+We have therefore finished verifying the hypotheses of \ref{dansleschamps},
+and by this theorem the localised category $L(nSePCh, W)$
+is a Segal $1$-stack.
+From this result one obtains part (b) of the criterion of \ref{critere}
+(see also \ref{devissage}) for
+$nSe\underline{CHAMP}$.
+
+Proposition \ref{critere}
+now applies to conclude that
+$nSe\underline{CHAMP}$ is
+a Segal $n+1$-stack.
+\eop
+
+%%%%%%%
+
+\subnumero{A direct proof}
+We now give a direct proof of Theorem \ref{descente},
+which does not use
+Theorem \ref{dansleschamps}. This proof seems
+to give more indications than the first one about the way in which
+Segal $n$-stacks glue together. Moreover, it applies
+without any further hypothesis on
+$\Xx$ and adapts {\em mutatis mutandis} to the case of $n$-stacks that are not
+of Segal.
+
+In what follows we fix
+a site $\Xx$, which we shall no longer mention
+in the notation. When needed we shall write
+$\Gg$ for the
+topology on $\Xx$ (as opposed to the coarse topology).
+
+We shall use the construction $\Upsilon$ (or its variants $\Upsilon ^k$) of
+\cite{limits}. It generalises immediately
+to Segal $n$-precategories and, by functoriality, to presheaves of
+Segal $n$-precategories, i.e.\ to Segal $n$-prestacks, while preserving its
+universal properties, of which we shall sometimes have need.
+
+
+Let
+$$
+nSe\underline{CHAMP}\rightarrow nSe\underline{CHAMP}'
+\rightarrow nSe\underline{CHAMP}''
+$$
+denote two cofibrations: the first is a trivial cofibration for the coarse
+topology (in particular an object-by-object equivalence) towards a
+fibrant model for the coarse topology; the second is a trivial cofibration
+for the topology $\Gg$ towards a fibrant model for the topology $\Gg$. Their
+composite is likewise a trivial cofibration for the topology
+$\Gg$ towards
+a fibrant model for the topology $\Gg$.
+
+By construction the $nSe\underline{CHAMP}(X)$ are already
+Segal $n+1$-categories. The condition that $nSe\underline{CHAMP}$ be
+a Segal $n+1$-stack is therefore equivalent to the condition that the morphism
+$$
+nSe\underline{CHAMP}'\rightarrow nSe\underline{CHAMP}''
+$$
+be an equivalence for the coarse topology, i.e.\ an
+object-by-object equivalence.
+
+We shall use criterion \ref{critere}.
+For $A$ and $B$ in $nSe\underline{CHAMP}(X)$
+one has by construction
+$$
+nSe\underline{CHAMP}(X)_{1/} (A,B) = \underline{Hom}(A,B).
+$$
+In particular, since $A$ and $B$ are cofibrant and fibrant (by
+the very definition of $nSe\underline{CHAMP}$), this is a Segal $n$-stack.
+The first hypothesis of \ref{critere} is therefore verified.
+
+
+It follows that, for every $X$, the morphism
+$$
+nSe\underline{CHAMP}(X)
+\rightarrow
+nSe\underline{CHAMP}''(X)
+$$
+is fully faithful. Indeed, the morphism
+$$
+nSe\underline{CHAMP}
+\rightarrow
+nSe\underline{CHAMP}''
+$$
+is a $\Gg$-weak equivalence of Segal $n+1$-prestacks whose values are Segal
+$n+1$-categories; by definition, for every $X$ and all
+$A,B\in nSe\underline{CHAMP}'(X)_0$, the morphism
+$$
+nSe\underline{CHAMP}_{1/}(A,B)
+\rightarrow
+nSe\underline{CHAMP}''_{1/}(A,B)
+$$
+is a weak equivalence of Segal $n$-prestacks whose
+source and target
+are already Segal $n$-stacks; by \ref{morphentrechamps}
+it is a weak equivalence for the coarse topology.
+This result admits the following generalisation:
+
+\begin{lemma}
+\label{hompleinfidele}
+If $A$ is a Segal $n+1$-prestack then the morphism of
+Segal $n+1$-prestacks on $\Xx$
+$$
+\underline{Hom}(A, nSe\underline{CHAMP}')\rightarrow
+\underline{Hom}(A,nSe\underline{CHAMP}'')
+$$
+is fully faithful for the coarse topology.
+\end{lemma}
+{\em Proof:}
+Let $Z$ be the full subprestack of $nSe\underline{CHAMP}''$
+consisting of the objects that are in the image of $nSe\underline{CHAMP}'$.
+Then the morphism
+$nSe\underline{CHAMP}'\rightarrow Z$ is a weak equivalence for the
+coarse topology. Hence the same is true of the morphism
+$$
+\underline{Hom}(A, nSe\underline{CHAMP}')\rightarrow
+\underline{Hom}(A, Z).
+$$
+But the morphism
+$$
+\underline{Hom}(A, Z)\rightarrow
+\underline{Hom}(A, nSe\underline{CHAMP}'')
+$$
+is fully faithful for the coarse topology: if $a,b$ are
+two objects of $\underline{Hom}(A, Z)(X)$ then a morphism
+$$
+U\rightarrow \underline{Hom}(A, Z)_{1/}(a,b)
+$$
+corresponds to a morphism
+$$
+A\times \Upsilon (U)\rightarrow Z
+$$
+which gives $a$ (resp.\ $b$) on $A\times 0$ (resp.\ $A\times 1$);
+since all the objects of $A\times \Upsilon (U)$ are either in
+$A\times 0$ or in $A\times 1$, this
+still corresponds to a morphism
+$$
+A\times \Upsilon (U)\rightarrow nSe\underline{CHAMP}''
+$$
+which gives $a$ (resp.\ $b$) on $A\times 0$ (resp.\ $A\times 1$),
+in other words to a morphism
+$$
+U\rightarrow \underline{Hom}(A, nSe\underline{CHAMP}'')_{1/}(a,b).
+$$
+In fact, one has the equality
+$$
+\underline{Hom}(A, Z)_{1/}(a,b)  =
+\underline{Hom}(A, nSe\underline{CHAMP}'')_{1/}(a,b).
+$$
+By composition, one obtains that
+$$
+\underline{Hom}(A, nSe\underline{CHAMP}')\rightarrow
+\underline{Hom}(A, nSe\underline{CHAMP}'')
+$$
+is fully faithful for the coarse topology.
+\eop
+
+
+We continue the proof of Theorem \ref{descente}.
+In view of the criterion of Proposition \ref{critere},
+it is now a matter of proving that for every covering
+sieve $\Bb \subset \Xx /X$, every
+morphism
+$$
+f:\ast _{\Bb} \rightarrow nSe\underline{CHAMP}'|_{\Xx /X}
+$$
+extends to a morphism defined on $\ast _X$. Since the formation of
+$nSe\underline{CHAMP}$ is compatible with base change, and since
+the fibrant replacement for the coarse topology can also be
+chosen compatible with restrictions (Lemma \ref{shriek}), we may place
+ourselves henceforth on the site $\Xx /X$ and delete from our notation the
+reference to the ``restriction
+to $\Xx
+/X$''.
+
+Let $$
+E:= \underline{Hom}(\ast _{\Bb},nSe\underline{CHAMP}')_{1/}(\ast , f).
+$$
+Here $\underline{Hom}$ is the internal $Hom$ of Segal $n+1$-prestacks on
+$\Xx /X$. In particular, $E$ is a Segal $n$-prestack on $\Xx /X$.
+
+The morphism
+$$
+\underline{Hom}(\ast _{\Bb},nSe\underline{CHAMP}')_{1/}(\ast , f)
+\rightarrow
+\underline{Hom}(\ast _{\Bb},nSe\underline{CHAMP}'')_{1/}(\ast , f)
+$$
+is a weak equivalence of $n$-prestacks
+for the coarse topology on
+$\Xx /X$ by Lemma \ref{hompleinfidele}. Since the target of this
+morphism is
+$\Gg$-fibrant, it is a Segal $n$-stack, hence
+its source
+---which is $E$---is
+also a Segal $n$-stack. The latter being also fibrant for the
+coarse topology, we obtain that $E$ is $\Gg$-fibrant by
+\ref{grofibchampimplfib}.
+
+The idea of the proof is that $E$ solves the descent problem that is
+posed. A little more technique is needed
+to obtain a morphism
+between $f$ and the constant morphism $cst(E)$, and
+to complete the proof of the theorem.
+
+We first define a Segal $n+1$-prestack $\Upsilon (E)$ by
+applying the
+definition of \cite{limits} object by object, i.e.
+$$
+\Upsilon (E)(Y):= \Upsilon (E(Y))
+$$
+(the extension of the constructions of \cite{limits} object by object will be used
+below without further remark).
+
+By the universal
+property that defines $\Upsilon$ one obtains a morphism $$
+\Upsilon (E)\rightarrow \underline{Hom}(\ast _{\Bb},nSe\underline{CHAMP}')
+$$
+or equivalently
+$$
+h: \ast _{\Bb} \times \Upsilon (E) \rightarrow nSe\underline{CHAMP}'.
+$$
+One has
+$$
+h|_{\ast _{\Bb} \times 0} = \ast
+$$
+and
+$$
+h|_{\ast _{\Bb} \times 1} = f.
+$$
+
+We now use the extension properties for morphisms defined
+on parts of $\Upsilon ^k$---we
+refer to \cite{limits} for the details---,
+noting that they extend to the framework of prestacks.
+Recall the notation $01$, $12$ and $02$ for the copies of $\Upsilon (A)$,
+$\Upsilon (B)$ and $\Upsilon (A\times B)$ respectively in $\Upsilon ^2(A,B)$.
+
+By the analogue of \cite{limits} 4.3.5, there exists a morphism
+$$
+h^2: \ast _{\Bb} \times \Upsilon ^2(E,\ast )
+$$
+with
+$$
+h^2|_{01} = 1_E,
+$$
+and
+$$
+h^2|_{02} = h.
+$$
+Recall that in the notation of \cite{limits}
+$1_E$ is a map
+$$
+\Upsilon (E) \rightarrow nSe\underline{CHAMP}'
+$$
+which induces $\ast$ on the first vertex $0$; and
+which induces the constant morphism
+$$
+cst(E) :\ast \rightarrow nSe\underline{CHAMP}'
+$$
+with value $E$, on the second vertex $1$.
+
+The restriction of $h$ to the edge $12$ therefore provides a morphism
+$$
+g: \ast _{\Bb} \times I \rightarrow nSe\underline{CHAMP}',
+$$
+where we have written $I$ for the $1$-category with two objects and one arrow,
+which is also equal to $\Upsilon (\ast )$.
+The objects of $I$ will be called $0$ and $1$ although this notation is
+incompatible with the notation for the vertices of $\Upsilon ^2(E,\ast )$
+(the object $0$ of $I$ corresponding to the vertex $1$,
+and the object $1$ of $I$ corresponding to the
+vertex $2$).
+
+The image of the first object $0$ of $I$ (hence the image of the vertex $1$ of
+$\Upsilon ^2$)
+is the constant map $cst(E)$ composed with the projection $\ast
+_{\Bb}\rightarrow \ast$. The image
+of the second object $1$ of $I$ is the map $f$.
+
+We assert that $g$ extends to a morphism
+$$
+\overline{g}: \ast _{\Bb} \times \overline{I} \rightarrow
+nSe\underline{CHAMP}'
+$$
+where $\overline{I}$ is the $1$-category with two objects $0,1$ and an
+isomorphism between them (one has $I\subset \overline{I}$). One
+first observes the following property:
+
+$(\ast
+)$ for every
+$Y\in \Bb$, the morphism induced by $g$
+$$
+E(Y)\rightarrow f_Y(\ast _{\Bb}(Y))
+$$
+is a weak equivalence of Segal $n+1$-precategories.
+
+Indeed, one has
+$$
+E(Y)= \Gamma \underline{Hom}(\ast _{\Bb }|_{\Xx /Y},
+nSe\underline{CHAMP}'|_{\Xx /Y})_{1/}(\ast , f),
+$$
+but also $\ast _{\Bb }|_{\Xx /Y}=\ast _{\Xx /Y}$ and therefore
+$$
+E(Y)= \Gamma (\Yy /Y, nSe\underline{CHAMP}')_{1/}(\ast , f|_{\Xx /Y})
+% the source prints \Yy/Y here (for \Xx/Y) and nSeCHAMP without \underline
+$$
+$$
+\cong nSeCHAMP (Y)_{1/}(\ast , f_Y(\ast _{\Bb}(Y))) \cong
+f_Y(\ast _{\Bb}(Y)).
+$$
+
+Let $C$ denote the result obtained
+from $\ast _{\Bb} \times I$, by freely adding
+above each object of $\Bb$ a cell corresponding to the cofibration
+$I\hookrightarrow \overline{I}$. One has a morphism from $C$ to
+$\ast_{\Bb} \times \overline{I}$. This morphism is an equivalence, because by
+\cite{limits} 2.5.1, doing (in order to invert the same arrow)
+the coproduct with the cofibration $I\rightarrow
+\overline{I}$ several times has the same effect as doing it only once.
+Now the statement $(\ast )$ above implies that $g$ extends to a
+morphism $C\rightarrow nSe\underline{CHAMP}'$. By the usual arguments,
+this implies that $g$ extends to $\overline{g}$ as announced.
+
+Thanks to this result, one can set
+$$
+V:= (\ast _{\Bb}\times \overline{I}) \cup ^{\ast _{\Bb} \times 0}\ast _X.
+$$
+The map $V\rightarrow \ast _X$ is a weak equivalence for the
+coarse topology. The map
+$$
+cst(E): \ast _X \rightarrow nSe\underline{CHAMP}'
+$$
+glues with the map
+$$
+\overline{g}: \ast _{\Bb} \times \overline{I} \rightarrow
+nSe\underline{CHAMP}'
+$$
+because one has, by construction,
+$$
+\overline{g}|_{\ast _{\Bb} \times 0} = cst(E).
+$$
+One obtains a map
+$$
+V\rightarrow nSe\underline{CHAMP}'
+$$
+whose restriction to $\ast _{\Bb} \times 1$ is equal to $f$.
+Let
+$$
+V\rightarrow V' \rightarrow \ast _X
+$$
+be a factorisation with a trivial cofibration as first morphism and
+a trivial fibration as
+second morphism (all of this for the coarse topology).
+The above map extends to a map
+$$
+\alpha : V'\rightarrow nSe\underline{CHAMP}'
+$$
+whose restriction to
+$\ast _{\Bb} \times 1\subset V \subset V'$ is still equal to $f$.
+Consider the diagram
+$$
+\begin{array}{ccc}
+\ast _{\Bb} & \rightarrow & V' \\
+\downarrow && \downarrow \\
+\ast _X & = & \ast _X.
+\end{array}
+$$
+The top arrow is the inclusion
+$$
+i: \ast _{\Bb}=\ast _{\Bb} \times 1\subset V
+\subset V'.
+$$
+One can write $\alpha \circ i = f$.
+The right-hand arrow is a trivial fibration for the coarse topology,
+in particular it has the lifting property for every
+cofibration.
+Hence there exists a lift $j:\ast _X\rightarrow V'$ equal to
+$i$ on $\ast _{\Bb}$.   The morphism
+$$
+\alpha \circ j: \ast _X \rightarrow nSe\underline{CHAMP}'
+$$
+is the extension of $f$ that we are looking for, which completes the
+proof
+of Theorem \ref{descente}.
+\eop
+
+
+
+\begin{corollary}
+The presheaves of simplicial categories $X\mapsto L(nSePCh(\Xx /X))$
+are Segal $1$-stacks. In particular the presheaf of simplicial
+categories
+$$
+X\mapsto L(PrefSpl(\Xx /X),W^{\rm Illusie})
+$$
+is a Segal $1$-stack.
+\end{corollary}
+{\em Proof:}
+By Theorem \ref{descente}, $nSe\underline{CHAMP}$ is a Segal $n+1$-stack.
+Hence (cf.\ \S10) its $1$-groupic interior is a Segal $1$-stack.
+One applies \ref{intereqloc}.
+\eop
+
+This corollary shows that the homotopy descent data for simplicial
+presheaves or Segal $n$-prestacks are effective, up to
+equivalence.
+
+
+Let $nSeChamp(\Xx )$ be the strict $1$-category of presheaves of
+Segal $n$-categories that are Segal $n$-stacks on $\Xx$.
+Here the notion of $\Gg$-equivalence coincides with that of object-by-object
+equivalence. One obtains that {\em for
+$L(nSeChamp(\Xx ))$ the descent data are effective}, which means
+that Segal $n$-stacks glue together, up to object-by-object
+equivalence. This statement is
+the analogue of the classical gluing result for sheaves.
+
+\subnumero{Statements for \texorpdfstring{$n$}{n}-stacks (not of Segal)}
+
+Essentially, all the statements of the
+present work, except those concerning
+directly the Dwyer--Kan localised categories, are also valid for
+$n$-categories, $n$-stacks etc., not of Segal. Without entering into details,
+we indicate here the main facts (among other things, in order to justify the
+title chosen!).
+
+First, the category $nPC$ of $n$-precategories replaces $nSePC$, that
+of Segal $n$-precategories, and one has at one's disposal the operation $Cat$ (analogous to
+$SeCat$), and the notion of $n$-category has the same definition---all of this
+is to be found in
+\cite{Tamsamani} and \cite{nCAT}.  An {\em $n$-prestack on $\Xx$} is a
+presheaf on $\Xx$ with values in $nPC$; we denote by
+$nPCh(\Xx )$ the category of
+$n$-prestacks.
+
+The categories $nPC$ and $nPCh(\Xx )$ have
+cmc structures analogous to those of \ref{SeCmf} and \ref{cmf}, and
+$nPCh(\Xx )$ also has the structure of type HBKQ of \ref{cmfHirschho}.
+
+One says (in the same way as in \S9) that an $n$-prestack $A$ is
+an {\em
+$n$-stack} if the morphism $A\rightarrow A'$ of fibrant replacement for the
+topology $\Gg$ is an object-by-object equivalence. The properties of
+\S9 and the other definition of \S10 adapt {\em mutatis mutandis}.
+
+The cmc's $nPC$ and $nPCh(\Xx )$ are internal (\S11; for $nPC$ this is in
+\cite{nCAT}), which allows one to define the $n+1$-categories
+$$
+nCAT\;\;\; \mbox{and} \;\;\; nCHAMP(\Xx )
+$$
+as well as the $n+1$-stack $n\underline{CHAMP}(\Xx )$.
+
+One defines a universal family and a morphism $\Phi$ as in \S12.
+Theorem \ref{correlation} takes the following form.
+
+
+\begin{theorem}
+\label{correlationNdS}
+Let $nCAT'$ be a fibrant replacement of $nCAT$.
+If the topology of $\Xx$ is
+coarse then $nCHAMP(\Xx )$ is equivalent via $\Phi$ to the
+$n+1$-category $\underline{Hom}(\Xx ^o, nCAT')$.
+
+If $\Xx$ is equipped with an arbitrary topology
+$\Gg$ then $nCHAMP(\Xx )$ is equivalent to the full subcategory
+of
+$\underline{Hom}(\Xx ^o, nCAT')$ consisting of the morphisms
+$F:\Xx ^o\rightarrow nCAT'$ that satisfy the descent condition
+(\cite{limits} 6.3), which says that the arrow
+$$
+\lim _{\leftarrow} F|_{\Xx /X} \rightarrow
+\lim _{\leftarrow} F|_{\Bb}
+$$
+is an equivalence for every sieve $\Bb \subset \Xx /X$ of $\Gg$.
+\end{theorem}
+\eop
+
+One has an ``associated stack'' functor between $n+1$-categories
+$$
+{\bf ch} : nCHAMP (\Xx ^{\rm gro})\rightarrow nCHAMP (\Xx ^{\Gg})
+$$
+with natural transformation $F\rightarrow {\bf ch}(F)$,
+and (Theorem \ref{cestadjoint}) this natural
+transformation makes this functor the homotopy adjoint of the inclusion
+$$
+nCHAMP (\Xx ^{\Gg})\subset nCHAMP (\Xx ^{\rm gro}).
+$$
+
+Finally, the main theorem of the present chapter \ref{descente} becomes:
+
+\begin{theorem}
+\label{descenteNdS}
+The $n+1$-prestack  $n\underline{CHAMP}(\Xx )$ is an $n+1$-stack
+over $\Xx$.
+\end{theorem}
+
+The direct proof adapts {\em mutatis mutandis}. If one wants to obtain a proof
+by applying \ref{dansleschamps}, one must observe the following fact:
+
+\begin{proposition}
+\label{segalounon}
+The $n+1$-category $nCAT$, considered
+by induction as a Segal $n+1$-category, is equivalent
+to the full Segal sub-$n+1$-category of $nSeCAT$ consisting
+of the objects that are $n$-truncated.
+
+The $n+1$-category $nCHAMP(\Xx )$,
+considered in the same way as a Segal $n+1$-category,
+is equivalent to the full Segal sub-$n+1$-category
+of
+$nSeCHAMP$ consisting of the Segal $n$-stacks that are $n$-truncated
+object by object over $\Xx$.
+
+The Segal $n+1$-prestack $n\underline{CHAMP}(\Xx )$,
+considered by induction as a Segal $n+1$-prestack,
+is equivalent to the full Segal subprestack of
+$nSe\underline{CHAMP}(\Xx )$
+consisting of the objects whose values (on every $X\in \Xx$) are
+Segal $n$-stacks (on $\Xx/X$) that are $n$-truncated object by object.
+\end{proposition}
+\eop
+
+One can then apply \ref{preservetronque}.
+\eop

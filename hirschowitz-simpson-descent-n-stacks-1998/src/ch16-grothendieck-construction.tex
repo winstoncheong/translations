@@ -1,0 +1,1164 @@
+%@ pages 154-171
+%@ status translated
+% Original section 16, "La construction de Grothendieck", pp. 154--171.
+% The original leaves the parenthesis opened before the "resp." display in
+% the definition of beta^poset/delta^poset unclosed; we close it at the end
+% of the parenthetical sentence (marked below).
+
+\clearpage
+\section{The Grothendieck construction}
+\label{gropage}
+
+We indicate here how one can construct a ``fibred $n$-category'' over a
+$1$-category $Y$, starting from a presheaf of $n$-categories over $Y^o$; this
+is the analogue of the construction of SGA1 \cite{SGA1}.
+
+It would be interesting to have a definition of
+{\em fibred $n$-category} and a construction going in the other direction (so
+as to obtain the analogue of the whole of the theory of SGA1); but we do not
+treat this question here.
+
+Let $Y$ be a $1$-category and $A$ a Segal $n$-prestack over $Y^o$. (this
+covariance is better suited to certain aspects of the discussion which
+follows).
+\footnote{In fact there is a choice to be made as to the direction of the
+arrows, as in SGA 1's distinction between ``fibred category'' and
+``cofibred category'', and we consider only one of the two possibilities.
+The other is deduced from it by conjugation with the operation ``opposite
+category''.}
+We regard $A$ as a covariant functor $\Yy
+\rightarrow nSePC_f$ (i.e. each $A(y)$ is assumed fibrant) and we shall
+define a Segal $n$-precategory equipped with a functor to $Y$
+$$
+\int _YA \rightarrow Y.
+$$
+This generalises the {\em
+Grothendieck construction} (cf \cite{ThomasonLimits} and \cite{DwyerKan2}) which
+concerns the case where $A$ is a presheaf of $1$-categories.
+
+The objects of $\int _YA$ are the pairs $(y,a)$ with $y\in Y$ and
+$a\in A(y)$. For a sequence $(y_0,a_0),\ldots , (y_p,a_p)$
+and a sequence of arrows $\varphi _i : y_{i-1}\rightarrow y_i$ of $Y$ one
+will construct the $n-1$-category
+$$
+(\int _YA)_{p/}((y_0,a_0),\ldots , (y_p,a_p); \varphi _1,\ldots , \varphi _p)
+$$
+which will be the inverse image of
+$$
+(\varphi _1,\ldots , \varphi _p)\in Y_{p}(y_0,\ldots , y_p).
+$$
+One makes this construction by induction on $p$; assuming that it is done
+for $p-1$ one sets $(\ast )$
+$$
+(\int _YA)_{p/}((y_0,a_0),\ldots , (y_p,a_p); \varphi _1,\ldots , \varphi _p)
+:=
+$$
+$$
+(\int _YA)_{p-1/}((y_0,a_0),\ldots , (y_{p-1},a_{p-1});
+\varphi _1,\ldots , \varphi
+_{p-1})
+$$
+$$
+\times _{A(y_{p})_{p-1/}(\phi _0(a_0), \ldots , \phi _{p-1}(a_{p-1}))}
+A(y_{p})_{p/}(\phi _0(a_0), \ldots , \phi _{p}(a_{p}))
+$$
+where the
+$$
+\phi _i : A(y_i)\rightarrow A(y_p)
+$$
+are the morphisms composed of the $res_{\varphi _p}\cdots res _{\varphi
+_{i+1}}$. Here, moreover, one has by construction a morphism
+$$
+(\int _YA)_{p/}((y_0,a_0),\ldots , (y_p,a_p); \varphi _1,\ldots , \varphi _p)
+\rightarrow
+A(y_{p})_{p/}(\phi _0(a_0), \ldots , \phi _{p}(a_{p}))
+$$
+and the first morphism in the fibred product $(\ast )$ is this morphism for
+$p-1$, composed with $res_{\varphi _p}$ to pass from $A(y_{p-1})_{p-1/}$ to
+$A(y_p)_{p-1/}$.
+
+Now one sets
+$$
+(\int _YA)_{p/}((y_0,a_0),\ldots , (y_p,a_p))
+:=
+\coprod _{\varphi _1,\ldots , \varphi _p}(\int _YA)_{p/}((y_0,a_0),\ldots ,
+(y_p,a_p); \varphi _1,\ldots , \varphi _p),
+$$
+where the coproduct is taken over all
+$$
+(\varphi _1,\ldots , \varphi _p)\in Y_{p}(y_0,\ldots , y_p).
+$$
+This indeed defines the Segal $n$-precategory $\int _YA$ together with a
+tautological map to $Y$.
+
+One checks that $\int _YA$ is a Segal $n$-category with
+$$
+(\int _YA)_{1/}((y_0,a_0), (y_1,a_1))=\coprod _{\varphi _1: y_0\rightarrow y_1}
+A(y_1)_{1/}(\varphi _1(a_0), a_1).
+$$
+The fact that $\int _YA$ is a Segal $n$-category uses the fact that
+each $A(y_p)$ is fibrant, and more particularly the fact that, consequently,
+the second morphism in the fibred product $(\ast )$ is
+fibrant.
+
+
+
+
+If $A$ is a presheaf of $1$-categories on $Y^o$ (the $A(y)$ are in this case
+fibrant) then $\int _AY$ is the category whose objects are
+the pairs $(y,a)$ and whose morphisms from $(y,a)$ to $(z,b)$ are the pairs
+$(f,r)$ where $f: y\rightarrow z$ in $Y$ and $r: f(a)\rightarrow b$ in $A(z)$.
+This is the {\em Grothendieck construction} \cite{SGA1} \cite{ThomasonLimits}
+\cite{DwyerKan2}.
+
+
+A first use of this construction is the {\em barycentric
+subdivision}, following Thomason's point of view \cite{ThomasonLimits}.
+Let $X$ be a simplicial set and set
+$$
+B:= \int _{\Delta ^o} X.
+$$
+This is a category, which is also the {\em category of simplices of $X$}
+denoted $\Delta X$ in \cite{Hirschhorn} \cite{DHK}.
+Its nerve $\nu B$ is described explicitly as follows: the elements of
+$\nu B_p$ are the
+$$
+(n,\sigma , x)= (n_0,\ldots , n_p; \sigma _1,\ldots , \sigma _p; x)
+$$
+where $n_i\in \Delta$, $\sigma _i: n_{i-1}\rightarrow n_i$ in $\Delta$,
+and $x\in X(n_p)$. One denotes by
+$$
+g(n,\sigma ): p\rightarrow n_p
+$$
+the morphism which to $i'\in p$ associates the image
+$$
+g(n,\sigma )(i'):= \sigma _p\cdots \sigma _{i+1}(n'_i)
+$$
+where $n'_i\in n_i$ is the last element (we use here the ``prime''
+to distinguish between the elements of the ordered sets, and the sets
+which are themselves objects of $\Delta$). One has a morphism
+of simplicial sets
+$$
+\psi : \nu B \rightarrow X
+$$
+defined by
+$$
+\psi (n,\sigma , x):= g(n,\sigma )^{\ast} (x)\in X(p).
+$$
+On the other hand, let $\Delta ^r$ be the subcategory of $\Delta$ where the
+morphisms are only those which send the last element to the last
+element. One sets
+$$
+D:=\int _{\Delta ^r} X|_{(\Delta ^r)^o} \subset B.
+$$
+The elements of $\nu D_p$ are the $(n,\sigma , x)$ such that
+$\sigma _i(n'_{i-1})=n'_i$. In particular, the morphism
+$g(n,\sigma )$ factors through the projection $p\rightarrow 0$
+via the inclusion $0\rightarrow n_p$ corresponding to the last element $n'_p$.
+One has the factorisation
+$$
+\nu D\rightarrow X_0 \rightarrow X.
+$$
+Consequently the morphism $\psi$ extends directly to a morphism
+$$
+L\psi : 1SeL(B,D)\rightarrow X
+$$
+because every morphism $I\rightarrow D$ is sent in $X$ to an object $\{ x\}$,
+and therefore extends automatically to $\overline{I}\rightarrow \{ x\}$.
+
+The following lemma must in reality be due to Thomason
+\cite{ThomasonLimits}
+(in any case,
+it shows that the morphism on the groupic completions is an
+equivalence).
+
+\begin{lemma}
+\label{bd}
+For every simplicial set $X$, the morphism
+$L\psi : 1SeL(B,D)\rightarrow X$ above is a weak equivalence of
+Segal $1$-precategories.
+\end{lemma}
+{\em Proof:}
+The formation of $B$, $D$, $1SeL(B,D)$ and of the morphisms $\psi$ and $L\psi$
+is compatible with colimits. Since every simplicial set is a colimit
+of simplicial sets of the form $h(m)$ (the presheaf represented by
+$m$, i.e. the standard $m$-simplex), it suffices to prove the lemma for
+$X=h(m)$. In this case $B=\Delta /m$ and $D$ is the subcategory of the objects of
+$\Delta ^r$ over (with respect to $\Delta$) $m$, denoted $i/m$ where $i:
+\Delta ^r\rightarrow \Delta $ is the inclusion. Let $I^{(m)}$ be the category
+with objects $0'',\ldots , m''$ and a morphism $i''\rightarrow j''$ for
+$i\leq j$. One has a weak equivalence of Segal $1$-precategories
+$h(m)\rightarrow I^{(m)}$.
+One has a functor $a: I^{(m)}\rightarrow B$ which to $i''$ associates the object
+$i\rightarrow m$ where this morphism sends $j'\in i$ to $j'\in m$
+(here again, we denote with a ``prime'' the elements of the $p\in \Delta$).
+On the other hand one has a functor $b: B\rightarrow I^{(m)}$ which to an object
+$p\rightarrow m$ of $B$ associates $i''\in I^{(m)}$ where (for the same
+$i$) the last element in the image of $p\rightarrow m$ is $i'$.
+One notes that $b$ factors through the morphism of Segal $1$-precategories
+$B\rightarrow h(m)$ via the inclusion $h(m)\rightarrow I^{(m)}$. Also, $b$
+sends the morphisms of $D$ to the identities of $I^{(m)}$. To prove the
+lemma, it therefore suffices to prove that $b$ induces an equivalence between
+$1SeL(B,D)$ and $I^{(m)}$. Now, by proposition \ref{dklocsegloc}, it
+suffices to prove that $b$ induces an equivalence
+between $L(B,D)$ and $I^{(m)}$. For this, one applies Corollary 3.6 of
+\cite{DwyerKan2} in the form of lemma \ref{nonadjoint} above: one has that
+$ba$ is the identity of $I^{(m)}$, and there is a natural
+transformation $\eta : 1\rightarrow ab$ whose value on $p\rightarrow m$
+(object of $\Delta /m$) is the morphism $p\rightarrow i \rightarrow m$ where $i'$
+is the last element in the image of $p\rightarrow m$ and $i\rightarrow
+m$ is $a(i'')$, the injection which sends $j'$ to $j'$ for $j'\in i$.
+One notes that the $\eta _{p\rightarrow m}$ are morphisms in $D$, so
+this natural transformation induces a deformation retraction of $L(B,D)$ onto
+$I^{(m)}$.
+\eop
+
+When it comes to applying this construction to several simplicial
+sets $X$, we shall write $\beta (X):= B$ and $\delta (X):= D\subset \beta (X)$.
+The lemma says that one has a weak equivalence
+$$
+1SeL(\beta (X), \delta (X))\stackrel{\cong}{\rightarrow} X.
+$$
+
+We now give a variant which may be useful. This
+variant falls within the
+more general framework of the theory of ``test categories'' envisaged by
+Grothendieck in \cite{Grothendieck}. Here we use an example which comes
+from the work of Thomason \cite{ThomasonLimits} \cite{ThomasonCatMod}; the
+second author thanks G. Maltsiniotis and A. Bruguières for having
+explained this idea to him.
+
+
+For $p\in \Delta$ let ${\rm poset}(p)$
+be the partially ordered set of hyperfaces in the standard $p$-simplex
+(including the $p$-simplex itself). One regards ${\rm poset}(p)$ as a
+category. For what we shall do with it, the direction of the arrows is not
+important; one can fix a choice by saying that the $p$-simplex is the initial
+object of ${\rm poset}(p)$. One obtains a functor
+$$
+{\rm poset}: \Delta \rightarrow Cat.
+$$
+One also defines the subcategory ${\rm Dposet} (p)\subset
+{\rm poset}(p)$ consisting of the hyperfaces containing the first vertex. One
+has on the other hand the functor $p\mapsto I^{(p)}$ where $I^{(p)}$ is the
+category with $p+1$ objects $0',\ldots , p'$ and a morphism $i'\rightarrow j'$
+for $i\leq j$. We shall denote by ${\rm std}: \Delta \rightarrow Cat$ this
+functor.
+The functor
+$$
+{\rm poset}(p)\rightarrow {\rm std}(p)= I^{(p)}
+$$
+which sends
+a hyperface of the $p$-simplex to its first vertex regarded
+as an object of $I^{(p)}$, gives a natural transformation
+$$
+{\rm poset} \rightarrow {\rm std}.
+$$
+of functors $\Delta
+\rightarrow Cat$.
+This natural transformation sends the subcategory $ {\rm Dposet}$
+to the identities in ${\rm std}$ and the morphism of Segal $1$-precategories
+$$
+1SeL({\rm poset}(p), {\rm Dposet}(p) )\rightarrow {\rm std}(p)=I^{(p)}
+$$
+is a weak equivalence.
+
+If $X$ is a simplicial set then $X$ can be viewed as the coproduct
+of its simplices, and one can write
+$$
+X= \coprod _p\coprod _{x\in X_p}\nu I^{(p)} /\sim .
+$$
+If one performs the same coproduct, but with the $\nu {\rm poset}(p)$
+(resp. $\nu {\rm Dposet}(p)$) as
+factors, one obtains a simplicial set
+$$
+\beta ^{\rm poset} (X):= \coprod _p \coprod _{x\in X_p}{\rm poset}(p) /\sim
+$$
+(resp.
+$$
+\delta ^{\rm poset} (X):= \coprod _p \coprod _{x\in X_p} {\rm Dposet}(p)
+/\sim
+$$
+and the morphism
+$$
+1SeL(\beta ^{\rm poset} (X), \delta ^{\rm poset} (X))\rightarrow
+X
+$$
+is a weak equivalence of Segal $1$-precategories.)
+% the original leaves the parenthesis opened before "resp." unclosed; we
+% close it here
+On the other hand, one may
+remark that $\beta ^{\rm poset} (X)$ is the nerve of the category
+underlying a partially ordered set, and
+$\delta ^{\rm poset} (X)$ a subcategory. This gives the following variant
+of lemma \ref{bd}.
+
+\begin{lemma}
+\label{bdvariant}
+For every simplicial set $X$, there is a category
+$\beta ^{\rm poset} (X)$ underlying a partially ordered set,
+with a subcategory $\delta ^{\rm poset} (X)$ and a
+weak equivalence of Segal $1$-precategories
+$$
+1SeL(\beta ^{\rm poset} (X), \delta ^{\rm poset} (X))
+\stackrel{\cong}{\rightarrow}
+X.
+$$
+\end{lemma}
+\eop
+
+We shall apply this to the nerve $X$ of a $1$-category $Y$. In this case
+the morphism
+$$
+\beta ^{\rm poset} (X)\rightarrow Y
+$$
+is a morphism of
+categories and the lemma implies that the morphism
+$$
+L(\beta ^{\rm poset} (X), \delta ^{\rm poset} (X))
+\stackrel{\cong}{\rightarrow}
+Y
+$$
+is an equivalence of simplicial categories.
+
+
+
+
+\subnumero{Sections of the integral}
+
+If $F\rightarrow Y$ is a morphism (assumed fibrant) from a
+Segal $n$-category to a $1$-category $Y$, we denote by $Sect
+(Y,F)$ the
+Segal $n$-category of sections. If $F$ is a $1$-category then
+$Sect(Y,F)$ is a $1$-category. The objects are the sections $\sigma :
+Y\rightarrow F$ and the morphisms between sections are the natural
+transformations which project onto the natural transformation
+identity of the
+identity functor of $Y$.
+
+If $A$ is a Segal $n$-prestack over $Y$ one therefore has at one's disposal
+the
+Segal
+$n$-precategory
+$$
+Sect(Y, \int _YA).
+$$
+The latter might not have the expected properties. One therefore begins by
+choosing
+a fibrant replacement (over $Y$), of the form
+$$
+\int _YA\rightarrow \int '_YA \rightarrow Y
+$$
+where the first arrow is an equivalence and the second is
+a fibration; and one considers rather $Sect(Y,\int '_YA)$
+which is a fibrant Segal $n$-category.
+
+\begin{lemma}
+\label{inchange}
+With the preceding notation, for every $y\in Y$, let $A'(y)$ be the fibre of
+$\int '_YA$ (i.e. the fibred product of the latter with $\ast = \{ y\}$
+over $Y$). Then the morphism
+$$
+g:\int _YA\rightarrow \int '_YA
+$$
+induces an equivalence $g(y): A(y)\stackrel{\cong}{\rightarrow} A'(y)$.
+\end{lemma}
+{\em Proof:}
+The fact that $g$ is (by hypothesis) an equivalence implies
+directly that the morphism $g(y):A(y)\rightarrow A'(y)$ is fully
+faithful. One shows that $g(y)$ is essentially surjective.
+If $(y,a)\in A'(y)$ then there is an equivalence in $\int '_YA$ between
+$(y,a)$ and an object $(z,b)\in A(z)$ for another $z\in Y$. This equivalence,
+which we shall denote $I\rightarrow \int '_YA$, extends to $\eta :
+\overline{I}\rightarrow \int '_YA$ which therefore projects to a morphism
+$\psi :
+\overline{I}\rightarrow Y$ which corresponds to an isomorphism between $y$ and $z$.
+Now one can lift this to a ``horizontal'' morphism (see the descriptions
+in \ref{casi} and \ref{gammasect} below)
+$h:\overline{I}\rightarrow \int _YA$. Now let $\overline{I}^{(2)}$ be the
+category with objects $0,1,2$ and an isomorphism between each pair
+of objects,
+containing subcategories equivalent to $\overline{I}$ which we shall denote
+$\overline{I}^{01}$, $\overline{I}^{12}$, $\overline{I}^{02}$. All these
+categories are contractible i.e. equivalent to $\ast$. One has on the other
+hand a projection
+$$
+p_{0,12}: \overline{I}^{(2)}\rightarrow \overline{I}
+$$
+which sends $0$ to $0$ and $1,2$ to $1$. With this one obtains a morphism
+$$
+\psi \circ p_{0,12}: \overline{I}^{(2)}\rightarrow Y,
+$$
+with a partial lift over the union $\overline{I}^{01}\cup
+\overline{I}^{02}$ to a morphism
+$$
+\eta \sqcup ^{(z,b)}h: \overline{I}^{01}\cup
+\overline{I}^{02}\rightarrow \int '_YA.
+$$
+The latter sends $0$ to $(z,b)$, sends $\overline{I}^{01}$ via $\eta$, and
+sends $\overline{I}^{02}$ via $h$. Since the inclusion
+$$
+\overline{I}^{01}\cup
+\overline{I}^{02}\subset
+\overline{I}^{(2)}
+$$
+is an equivalence (hence a trivial cofibration), there is a lift
+and extension to a morphism
+$$
+H: \overline{I}^{(2)}\rightarrow \int '_YA.
+$$
+The restriction $H^{12}$ of $H$ to $\overline{I}^{12}$ stays over the
+subcategory $\{ y\} \subset Y$ (containing the object $y$ and the identity
+as its only morphism), so one can write
+$$
+H^{12}: \overline{I}^{12}\rightarrow A'(y).
+$$
+Also $H^{12}$ sends
+the vertex $1$ to $\eta (1)= (y,a)$, and sends the vertex $2$ to an object of
+$A(y)$. One therefore obtains that $(y,a)$ is equivalent to an object of
+$A(y)$, which proves the essential surjectivity of $g(y)$.
+\eop
+
+\begin{corollary}
+The formation of $\int '_YA$ commutes with base change: if $f:Z\rightarrow Y$
+then $(\int '_YA)\times _YZ$ is a possible choice for $\int '_Z(A|_Z)$.
+\end{corollary}
+{\em Proof:}
+The morphism $(\int '_YA)\times _YZ\rightarrow Z$ is fibrant, and it only
+remains
+to prove that
+$$
+\int _Z(A|_Z)\rightarrow  (\int '_YA)\times _YZ
+$$
+is an equivalence. In view of the lemma, this morphism is essentially
+surjective.
+If $\varphi : u\rightarrow v$ is an arrow of $Z$ (which gives an arrow
+$f\varphi : fu\rightarrow fv$ of $Y$), then, for $a\in A(fu)$ and $b\in A(fv)$,
+\begin{align*}
+(\int _ZA|_Z)_{1/}((u,a), (v,b); \varphi ) &= A(fv)_{1/}(res_{f\varphi}(a),
+b)\\
+&= (\int _YA)_{1/}((fu,a), (fv,b); f\varphi ) \\
+& = ((\int _YA)\times _YZ)_{1/}(((fu,a), u), ((fv,b), v); \varphi )\\
+& \stackrel{\cong}{\rightarrow}
+((\int' _YA)\times _YZ)_{1/}(((fu,a), u), ((fv,b), v); \varphi ).
+\end{align*}
+The last equivalence
+comes from the fact that $\int _YA\rightarrow \int '_YA$ is an
+equivalence. This shows that the morphism
+$$
+\int _Z(A|_Z)\rightarrow  (\int '_YA)\times _YZ
+$$
+is fully faithful.
+\eop
+
+
+We now return to the consideration of the sections of $\int '_YA$.
+An object of \linebreak
+$Sect(Y,\int '_YA)$ is a morphism $\sigma : Y\rightarrow
+\int '_YA$. For every morphism $f:y\rightarrow z$ in $Y$ one obtains a
+morphism $\sigma ^r(f): res_f(\sigma (y))\rightarrow \sigma (z)$, well defined
+up to homotopy as a morphism of $A(z)$. We shall say that $\sigma$ is an
+$eq$-section if the $\sigma ^r(f)$ defined above are equivalences.
+One denotes by $Sect^{\rm eq}(Y,\int '_YA)$ the full sub-$n$-precategory of
+$Sect(Y,\int '_YA)$ whose objects are the
+$eq$-sections.
+
+If $A$ is a presheaf of $1$-categories, the section $\sigma$
+is determined by the morphisms $\sigma ^r(f)$ (which are well defined
+in this case).
+
+Before treating the general case of sections over a category
+$Y$, we treat the case (in some sense irreducible) of the category $Y=I$
+with two objects $0,1$ and a morphism $0\rightarrow 1$.
+
+\begin{lemma}
+\label{casi}
+Let $A$ be a Segal $n$-prestack over $I^o$ whose values
+$A(0)$ and
+$A(1)$ are fibrant. Let $\int '_IA$ be the fibrant replacement for $\int  _IA$
+over $Y$ and denote by $A'(0)$ the fibre of the latter over $0\in
+I$. Then the evaluation morphism
+$$
+ev(0): Sect ^{\rm eq}(I, \int '_IA)\rightarrow A'(0)
+$$
+is an equivalence.
+\end{lemma}
+{\em Proof:}
+We first recall that a Segal $n$-prestack $A$ over $I^o$
+consists
+of a triple $(A(0), A(1), r: A(0)\rightarrow A(1))$.
+Let $a\in A(0)_0$, and
+let $r(a)$ be its image in $A(1)$. We shall construct a
+``horizontal''
+section
+$\sigma :I\rightarrow\int _IA$ which sends $0$ to $a$ and $1$ to $r(a)$. A
+simplex in the nerve $\nu I$ is of the form $(0,\ldots , 0, 1, \ldots
+1)$ (say, with $p$ times $0$ and $q$ times $1$).
+Recall that
+$$
+A(0)_{p+q/}((0, a),\ldots , (0,a),(1,r(a)),\ldots , (1,r(a)))
+$$
+$$
+= A(0)_{p/}(a,\ldots , a)\times _{A(1)_{p/}(r(a),\ldots , r(a))}
+A(1)_{p+q/}(r(a),\ldots , r(a)).
+$$
+One specifies $\sigma$ by saying that $\sigma (0,\ldots, 0, 1,\ldots , 1)$
+is the pair of the two degenerate simplices in this fibred product.
+Note that $\sigma$ is an $eq$-section.
+
+This construction shows that every object of $A'(0)$ which comes from an object
+of
+$A(0)$ is in the essential image of the morphism $ev(0)$. In view of lemma
+\ref{inchange}, this shows that $ev(0)$ is essentially surjective.
+
+
+
+
+It remains now to show that $ev(0)$ is fully faithful.
+The argument above in fact gives a morphism $A(0)\rightarrow
+Sect ^{\rm eq}(I, \int '_IA)$ which splits $ev(0)$.
+We shall say that a morphism coming from this splitting is ``horizontal''.
+Every morphism $f:(0,u)\rightarrow (1,v)$ in $\int '_IA$
+(i.e. an object $f\in (\int '_IA)_{1/}((0,u),(1,v))_0$) can be written, up to
+equivalence, as the ``composite'' $gh$ (this
+composite being defined up to
+equivalence) where $h$ is horizontal and $g$ a morphism of $A'(1)$.
+If $a: I\rightarrow \int '_IA$ then the image $a(\varphi )$ is well defined
+as a morphism $f\in (\int '_IA)_{1/}((0,u),(1,v))_0$. By the
+definition of $eq$-section, $a$ is an $eq$-section if and only if
+$f=gh$ with $g$ an equivalence in $A'(1)$. It follows
+(we leave it to the reader to work out this point in detail) that every
+$eq$-section is equivalent (in $Sect(I, \int '_IA)$) to a horizontal
+section.
+
+To show that $ev(0)$ is fully faithful one may then consider
+two horizontal sections $a,b: I\rightarrow \int _IA$, and one would like
+to show that the morphism
+$$
+Sect ^{\rm eq}(I, \int '_IA)_{1/}(a,b)\rightarrow A'(1)_{1/}(a(1), b(1))
+$$
+is an equivalence.
+
+One has the following equality
+(formulated by representable functor
+of Segal $n-1$-precategories)
+$$
+Sect ^{\rm eq}(I, \int '_IA)_{1/}(a,b)= \left(
+E\mapsto Hom ^{a,b/I}(I\times \Upsilon (E), \int '_IA)
+\right)
+$$
+where $Hom ^{a,b/I}$ is the set of morphisms which restrict to $a$
+and $b$ on $I \times \{ 0\}$ and $I\times \{ 1\}$ and which project to
+the second projection $I\times \Upsilon (E)\rightarrow I$.
+The evaluation morphism corresponds to the restriction of morphisms $I\times
+\Upsilon (E)\rightarrow \int '_IA$ to morphisms $\{ 0\} \times \Upsilon
+(E) \rightarrow A'(0)$. One would like to show that this restriction is an
+equivalence. Let us divide the square $I\times \Upsilon (E)$ into two triangles
+denoted $\Upsilon ^2(E,\ast )$ and $\Upsilon ^2(\ast , E)$ glued along
+the diagonal $\Upsilon (E)$. The functor (in $E$) of the morphisms on the first
+triangle $\Upsilon ^2(E, \ast )\rightarrow \int '_IA$ is equivalent, by
+restriction to the edge $01$, to $A'(0)_{1/}(a(0), b(0))$.
+It therefore suffices to see that the restriction map between the functor
+in $E$ of the
+morphisms with source the square, and the functor in $E$ of the morphisms
+with source the first
+triangle, is an equivalence.
+Now this question concerns only the
+second triangle: it suffices to see that the morphism (of restriction to
+the edge $02$)
+$$
+r_{02}:\left(
+E\mapsto Hom ^{a,b(1)/I}(\Upsilon ^2(\ast , E), \int '_IA)
+\right) \rightarrow
+$$
+$$
+\left(
+E\mapsto Hom ^{a(0),b(1)/I}( \Upsilon (E), \int '_IA)
+\right)
+$$
+is an equivalence of Segal $n-1$-precategories. Here
+$Hom ^{a,b(1)/I}$ is the set of morphisms which give $a$ on $\Upsilon
+(\ast )$ (edge $01$), which give $b(1)$ on the vertex $2$, and which are
+compatible with the projection to $I$; and
+$Hom ^{a(0),b(1)/I}$ is the set of morphisms which give $a(0)$ on the
+first vertex $0$ and $b(1)$ on the second vertex (which we denote here by $2$),
+and which are compatible with the projection to $I$. But
+% the original omits the closing parenthesis after "$2$"; we close it there
+the target
+of the morphism
+$r_{02}$ is just what we denoted
+$$
+(\int '_IA)_{1/}((0,a(0)), (1,b(1)); \varphi )
+$$
+above, where $\varphi : 0\rightarrow 1$ is the morphism of $I$. And
+because of the weak
+equivalence $\Upsilon ^2(\ast , E)\cong \Upsilon (\ast )\sqcup ^{\{ 1\} } \Upsilon
+(E)$,
+the source
+of the morphism $r_{02}$ above is equivalent via
+$r_{12}$ to
+$$
+\left(
+E\mapsto Hom ^{a(1),b(1)}(\Upsilon ( E), \int '_IA)
+\right) = A'(1)_{1/}(a(1), b(1)).
+$$
+Recall that we assumed that $a$ corresponds to a horizontal morphism
+$I\rightarrow \int _IA$, i.e. $a(1)=ra(0)$ for $r$ the structural morphism of
+$A$. One therefore has at one's disposal the same morphism as $r^{02}$, which
+we shall call
+$\tilde{r}^{02}$, which one could have manufactured with $\int _IA$ instead of $\int
+'_IA$, which is (via the same identifications as above but for
+$\int _IA$) the morphism of composition with $a(\varphi ):a(0)\rightarrow a(1)$
+$$
+A(1)_{1/}(a(1), b(1))\rightarrow
+(\int _IA)_{1/}((0,a(0)), (1,b(1)); \varphi ).
+$$
+But this morphism is by construction an isomorphism. The fact that
+$\int _IA\rightarrow \int '_IA$ is an equivalence of categories
+implies that in the diagram
+$$
+\begin{array}{ccccc}
+A(1)_{1/}(a(1), b(1))&\stackrel{=}{\leftarrow} &
+{\rm source(\tilde{r}^{02})} &\stackrel{\tilde{r}^{02}}{\rightarrow}&
+(\int _IA)_{1/}((0,a(0)), (1,b(1)); \varphi )\\
+\downarrow && \downarrow && \downarrow \\
+A'(1)_{1/}(a(1), b(1)) &
+\stackrel{\cong}{\leftarrow} &
+{\rm source(r^{02})} &\stackrel{r^{02}}{\rightarrow}&
+(\int '_IA)_{1/}((0,a(0)), (1,b(1)); \varphi )
+\end{array}
+$$
+the vertical arrows are equivalences. The fact that the morphism at the
+top right is an isomorphism (by construction---and this is here
+the essential point where one uses the fact that $a$ is horizontal) implies
+that $r^{02}$ is an equivalence. This completes the proof.
+\eop
+
+
+
+
+\begin{proposition}
+\label{gammasect}
+Let $A$ be a Segal $n$-prestack on $Y^o$. Then there is a natural morphism of
+Segal $n$-precategories
+$$
+\Gamma (Y^o,A)\rightarrow Sect (Y,\int _YA),
+$$
+and if $A$ is fibrant then the composite morphism
+$$
+\Gamma (Y^o,A)\rightarrow Sect (Y,\int '_YA)
+$$
+is fully faithful with essential image
+$Sect^{\rm eq} (Y,\int '_YA)$.
+\end{proposition}
+{\em Proof:}
+First one defines the morphism. At the level of objects, it is easy: a
+section $\sigma$ of
+$A$ over $Y^o$ gives directly a morphism
+$Y\rightarrow \int _YA$ which sends $y$ to $(y,\sigma (y))$.
+The simplex
+$(y_0,\ldots , y_p; \varphi _1,\ldots , \varphi _p)$ goes to the element of
+$$
+(\int _YA)_{p/}((y_0,\sigma (y_0)),\ldots , (y_p, \sigma (y_p));
+\varphi _1,\ldots , \varphi _p)
+$$
+whose second projections in the fibred products $(\ast )$
+(by the induction there is one for each $0<p\leq p$) are the
+degenerate simplices in $A_{q/}(\sigma (y_q), \ldots , \sigma (y_q))$.
+
+To specify the morphism more precisely, one uses the definition of
+$\Gamma (Y^o, A)$ by universal property: for a Segal $n$-precategory
+$E$, a morphism $E\rightarrow \Gamma (Y^o , A)$ is the same thing as a
+morphism $\underline{E}\rightarrow A$ where $\underline{E}$ is the
+Segal $n$-prestack constant on $Y^o$ with values $E$. One has (with the same
+definition as above even if $E$ is not fibrant)
+$$
+\int _Y\underline{E} = Y\times E.
+$$
+By functoriality of the construction $\int _Y$, a morphism
+$\underline{E}\rightarrow A$ furnishes a morphism
+$$
+Y\times E =\int _Y\underline{E} \rightarrow \int _YA
+$$
+whose composition with the projection to $Y$ is the first projection
+$Y\times E\rightarrow Y$. This gives, by definition of $Sect (Y, -)$, a
+morphism
+$$
+E\rightarrow Sect (Y, \int _YA)
+$$
+and we have defined the morphism $\Gamma (Y^o, A)\rightarrow Sect (Y, \int _YA)$.
+
+
+To show the equivalence,
+one would like to decompose $Y$ into cells and treat each cell
+individually. The first part of the argument therefore consists in reducing
+the proposition to the case $Y=I^{(p)}$. In the second part of the argument,
+one will treat this particular case (and for this one reduces still easily
+to the case
+$Y=I$). For the reduction of the first part, one needs the
+barycentric
+subdivision defined above. This argument will be in some sense a
+forerunner of the use we shall make of {\em Reedy categories} in \S
+18 below; but for the moment we do not need this formalism.
+
+For a category $Y$ we shall denote (with a slight abuse of notation)
+$$
+\beta (Y):= \beta (\nu Y)\stackrel{\psi}{\rightarrow} Y
+$$
+the barycentric subdivision of the nerve of $Y$, with functor $\psi$ to $Y$.
+(Also recall that, by definition, there is a structural functor
+$\beta (Y)\rightarrow \Delta ^o$.) An
+object of the category $\beta (Y)$ is a composable sequence $(y_0,\ldots , y_p;
+f_1,\ldots , f_p)$ of arrows $f_i: y_{i-1}\rightarrow y_i$ of $Y$.
+A morphism of $\beta (Y)$ is deduced from a morphism of $\Delta ^o$, i.e. from a
+morphism $q\rightarrow p$ but going in the other direction.
+If $u: q\rightarrow p$ is defined by the sequence $u_0,\ldots , u_q\in \{
+0,\ldots , p\}$ then the corresponding morphisms are of the form
+$$
+(y_0,\ldots , y_p;
+f_1,\ldots , f_p)\rightarrow (y_{u_0}, \ldots , y_{u_q};
+g_1, \ldots , g_q)
+$$
+where $g_i = f_{u_i} \cdots f_{u_{i-1}+1}$ (if $u_i=u_{i-1}$ then $g_i$ is
+the identity). The functor to $Y$ is
+$$
+(y_0,\ldots , y_p;
+f_1,\ldots , f_p)\mapsto y_0.
+$$
+One notes that in fact one will often use the opposite $\beta (Y)^o$ and that
+the morphisms in $\beta (Y)^o$, which go in the other direction than above,
+may be regarded as ``inclusions (or degeneracies)
+of sequences''.
+
+We shall say
+that a sequence $(y_0,\ldots , y_p; f_1,\ldots , f_p)$ (which corresponds to an
+object of $\beta (Y)$) is {\em non-degenerate} if $f_i\neq 1_{x_{i-1}}$
+for every $i$. To every degenerate sequence one associates the
+non-degenerate sequence obtained by removing all the identities. Let $\beta
+_m(Y)\subset \beta (Y)$ be the full subcategory consisting
+of the objects whose
+corresponding non-degenerate sequence has length $\leq m$. On the other
+hand, for each non-degenerate sequence $(p; y,f)=(y_0,\ldots , y_p;
+f_1,\ldots , f_p)$, one considers the morphism
+$$
+\eta (p; y,f): I^{(p)}\rightarrow Y
+$$
+where $I^{(p)}$ is the category with $p+1$ objects $0',\ldots , p'$ and a
+morphism $i'\rightarrow j'$ for every pair $i\leq j$. The morphism
+$\eta (p; y,f)$ sends $i'$ to $y_i$ and the arrow $(i-1)'\rightarrow i'$ to
+$f_i$. This morphism induces
+$$
+\beta (I^{(p)})\rightarrow \beta (Y),\;\;\;\; \mbox{and} \; \forall m,\;\;
+\beta _m (I^{(p)})\rightarrow \beta _m(Y).
+$$
+One notes the equality
+$$
+\beta _p(I^{(p)})=\beta (I^{(p)}).
+$$
+One has the formula
+$$
+\beta _{m+1}(Y)= \beta _{m}(Y) \cup ^{\coprod _{(m+1; y,f)}\beta _m(I^{(m+1)})}
+\coprod _{(m+1; y,f)}\beta (I^{(m+1)}).
+$$
+The coproduct is taken over all the non-degenerate sequences of length
+$m+1$, denoted $(m+1; y,f)$.
+
+This formula is true as well with the coproduct of categories as with
+the coproduct of their nerves (one could write the second version:
+$$
+\nu \beta _{m+1}(Y)= \nu \beta _{m}(Y) \cup ^{\coprod _{(m+1; y,f)}\nu \beta
+_m(I^{(m+1)})}  \coprod _{(m+1; y,f)}\nu \beta (I^{(m+1)}).
+$$
+to be more precise).
+To see this one notes (by writing explicitly what a
+$p$-simplex of the nerve of $\beta (Y)= \beta (\nu Y)$ is, as was done above
+for $\beta (X)$) that a $p$-simplex in the nerve of $\beta _{m+1}(Y)$ is either
+in $\nu \beta _{m}(Y)_p$, or else in one of the
+$\nu \beta (I^{(m+1)})$.
+
+By this second interpretation,
+the formula decomposes $\beta _{m+1}(Y)$
+as a coproduct as a Segal $1$-category. The subcategories
+$\delta$
+fit into it in a compatible way (in
+the sense that one has the same decomposition
+for $\nu \delta _{m+1}(Y)$), and one has
+$$
+1SeL(\beta _{m+1}(Y), \delta  _{m+1}(Y)) =
+1SeL(\beta _{m}(Y),\delta _m(Y))
+$$
+$$
+\cup ^{\coprod _{(m+1; y,f)}1SeL(\beta
+_m(I^{(m+1)}),\delta _m(I^{(m+1)}))}  \coprod _{(m+1; y,f)} 1SeL(\beta
+(I^{(m+1)}),\delta (I^{(m+1)})).
+$$
+
+If $U\rightarrow Y$ is a fibrant morphism of Segal $n$-precategories, then
+$\psi$ induces an equivalence
+$$
+\psi ^{\ast}: Sect (Y, U)\rightarrow Sect (1SeL(\beta (Y), \delta (Y)), \psi
+^{\ast}(U)).
+$$
+This is due to the fact that $\psi $ induces a weak equivalence between
+$1SeL(B,D)$
+and $Y$ (this principle is the subject of \cite{DwyerKanDiags}). If $A$ is a
+Segal $n$-prestack on $Y$ one obtains the equivalence $$
+\psi ^{\ast}: Sect (Y, \int '_YA)\stackrel{\cong}{\rightarrow}
+Sect ^{\delta (Y)-eq}(\beta (Y), \int '_{\beta (Y)}\psi ^{\ast}(A)).
+$$
+Here $Sect ^{\delta (Y)-eq}(\beta (Y), \int '_{\beta (Y)}\psi ^{\ast}(A))$
+is the full sub-Segal-$n$-category
+of the sections which, restricted to $\delta (Y)$, are $eq$-sections.
+To see this one would have to use Theorem 2.5.1 of \cite{limits}.
+
+
+A section over $Y$ is an $eq$-section if and only if its restriction to
+$\beta (Y)$ is an $eq$-section. So $\psi$ induces an equivalence
+$$
+\psi ^{\ast}: Sect ^{eq}(Y, \int '_YA)\stackrel{\cong}{\rightarrow}
+Sect ^{eq}(\beta (Y), \int '_{\beta (Y)}\psi ^{\ast}(A)).
+$$
+
+On the other hand $\psi$ induces an {\em isomorphism}
+$$
+\psi ^{\ast}: \Gamma (Y^o,A) \stackrel{\cong}{\rightarrow}\Gamma (\beta (Y) ^o,
+\psi ^{\ast}A).
+$$
+This is because the morphisms of $\delta (Y)$ act as the identity in the
+presheaf $\psi ^{\ast}(A)$, and therefore every section of
+$\psi ^{\ast}(A)$ over $\beta (Y)^o$ is necessarily constant on $\delta
+(Y)^o$.
+The sections of $\psi ^{\ast}(A)$ therefore descend (uniquely) to the
+category
+quotient of $\beta (Y)^o$ by $\delta (Y)^o$, which is $Y^o$.
+
+Unfortunately, the pullback $\psi ^{\ast}(A)$ is not in general
+fibrant
+over $\beta (Y)^o$. One will get around this problem by using \ref{calclim},
+which gives a natural equivalence
+$$
+\Gamma (Y^o, A)\stackrel{\cong}{\rightarrow}
+\lim _{\leftarrow , Y} A.
+$$
+Using the description
+$$
+\lim _{\leftarrow , Y} A= \underline{Hom}(Y, nSeCAT')_{1/}(\ast , A)
+$$
+one obtains (because of lemma \ref{bd} above as well as Theorem 2.5.1
+of \cite{limits}) that the morphism
+$$
+\lim _{\leftarrow , Y} A\rightarrow \lim _{\leftarrow , \beta (Y)} \psi ^{\ast}A
+$$
+is an equivalence. This implies that the morphism
+$$
+\Gamma (\beta (Y)^o, \psi ^{\ast} A) \rightarrow
+\lim _{\leftarrow , \beta (Y)} \psi ^{\ast}A
+$$
+is an equivalence.
+
+Let $\psi ^{\ast} (A) \rightarrow F$ be a fibrant replacement over
+$\beta (Y)$, and look at the diagram
+$$
+\begin{array}{ccc}
+\Gamma (\beta (Y)^o, \psi ^{\ast} A) &\rightarrow &
+\lim _{\leftarrow , \beta (Y)} \psi ^{\ast}A \\
+\downarrow && \downarrow \\
+\Gamma (\beta (Y)^o, F)&\rightarrow &
+\lim _{\leftarrow , \beta (Y)}F.
+\end{array}
+$$
+One knows, as above, that the bottom arrow is an equivalence.
+On the other hand, since the morphism $\psi ^{\ast} (A) \rightarrow F$
+is an equivalence in $\underline{Hom}(Y, nSeCAT')$, one obtains that
+the vertical arrow on the right is an equivalence. Finally, we saw
+previously that the top arrow is an equivalence. So
+$$
+\Gamma (\beta (Y)^o, \psi ^{\ast} A)
+\stackrel{\cong}{\rightarrow}
+\Gamma (\beta (Y)^o, F).
+$$
+The fact that $\psi ^{\ast} (A) \rightarrow F$ is an equivalence
+object-by-object over $\beta (Y)$ implies that the induced morphism
+$$
+\int '_{\beta (Y)}\psi ^{\ast}(A) \rightarrow
+\int '_{\beta (Y)}F
+$$
+is an equivalence, and hence that
+$$
+Sect ^{eq}(\beta (Y), \int '_{\beta (Y)}\psi ^{\ast}(A) )
+\rightarrow
+Sect ^{eq}(\beta (Y), \int '_{\beta (Y)}F )
+$$
+is an equivalence. In sum, it suffices to prove that the morphism
+$$
+\Gamma (\beta (Y)^o, F)\rightarrow Sect ^{eq}(\beta (Y), \int '_{\beta (Y)}F )
+$$
+is an equivalence.
+
+In view of this reduction, one may say that we have reduced ourselves to
+proving the
+proposition for categories of the form $\beta (Y)$. The same argument
+holds with $\beta^{\rm poset}(Y)$ in place of $\beta (Y)$ (using
+lemma \ref{bdvariant} in place of \ref{bd}). This means that one may
+from now on assume that $Y$ is already of the form  $Y= \beta^{\rm
+poset}(Z)$
+for a category $Z$, i.e. that $Y$ is the category associated with a
+partially ordered set (this idea of using the barycentric
+subdivision twice comes from Thomason \cite{ThomasonCatMod}).
+
+Now, for $F$ one can use the decomposition of $\beta _{m+1}(Y)$ into a
+coproduct: one has
+$$
+\Gamma (\beta _{m+1}(Y)^o, F|_{\beta _{m+1}(Y)})=
+$$
+$$
+\Gamma (\beta _m(Y)^o, F|_{\beta _{m}(Y)^o}) \times
+_{\prod _{(m+1; y,f)}\Gamma (\beta _m(I^{(m+1)})^o, F|_{\beta
+_{m}(I^{(m+1)})^o})}
+\prod _{(m+1; y,f)}\Gamma (\beta (I^{(m+1)})^o, F|_{\beta (I^{(m+1)})^o}).
+$$
+
+Let $i_m: \beta_m (Y)^o\rightarrow \beta (Y)^o$ be the inclusion. One notes
+that
+$i_m$ is a sieve, i.e. that if
+$a\rightarrow b$ is a morphism in $\beta (Y)^o$ (i.e. the
+non-degenerate sequence which corresponds to $a$ is included in that which
+corresponds to $b$) and if $b\in \beta _m(Y)^o$ then $a\in \beta _m(Y)$. One
+obtains, by corollary \ref{crible}, that $i_m^{\ast}$ is a
+right Quillen functor, i.e. preserves fibrations. So $F|_{\beta
+_m(Y)^o}$ is
+fibrant. Also, one can write
+$$
+\Gamma (\beta (Y)^o, F) =
+\underline{Hom}(\ast_{\beta (Y)^o}, F),
+$$
+whereas
+$$
+\Gamma (\beta _m(Y)^o, F|_{\beta _m(Y)^o}) = \underline{Hom}(i_{m,!}\ast_{\beta
+_m(Y)^o}, F|_{\beta (Y)^o})
+$$
+(this in view of the explicit description of $i_{m,!}$ cf the remark
+after \ref{crible}). The morphism
+$$
+\Gamma (\beta (Y)^o, F)
+\rightarrow
+\Gamma (\beta _m(Y)^o, F|_{\beta _m(Y)^o})
+$$
+is fibrant, because it
+comes from the cofibration
+$$
+i_{m,!}\ast_{\beta
+_m(Y)^o}\hookrightarrow \ast _{\beta (Y)^o}
+$$
+(the fact that the next-to-last morphism is fibrant will be used
+directly on $Y$ but also on the $I^{(m+1)}$).
+
+One now applies \ref{shriek} to a morphism
+$$
+p: \beta (I^{(m+1)})^o\rightarrow \beta (Y)^o
+$$
+coming from a non-degenerate sequence $(m+1; y,f)$ in $Y$. It is here
+that one uses the hypothesis that $Y$ is the category associated with a
+partially ordered set $S$: in this case, the objects of $\beta
+(Y)$ are the decreasing sequences
+for the order in $S$. So, for the morphism
+$p$ associated with a non-degenerate sequence $(m+1; y,f)$ in $Y$ (i.e.
+a strictly decreasing sequence of $S$), one has that the category of objects
+$b\in \beta (I^{(m+1)})$ below an object $a\in \beta (Y)$ is either
+empty (if $a$ does not correspond to a subsequence of objects of the sequence $(m+1;
+y,f)$), or else admits an initial object (if $a$ corresponds to a
+subsequence of objects of the sequence $(m+1; y,f)$, the initial object
+being the corresponding subsequence of objects of $I^{(m+1)}$). So in both
+cases, the colimit of
+\ref{shriek} preserves cofibrations and trivial cofibrations, i.e. $p_!$
+is a left Quillen functor and hence $p^{\ast}$ preserves
+fibrant objects.
+In particular,
+$$
+F|_{\beta (I^{(m+1)})^o}
+$$
+is a fibrant Segal $n$-prestack over $\beta (I^{(m+1)})^o$. By the
+earlier arguments, one obtains that
+$$
+F|_{\beta _m(I^{(m+1)})^o}
+$$
+is also fibrant.
+
+The morphisms
+$$
+\Gamma (\beta (I^{(m+1)})^o,
+F|_{\beta (I^{(m+1)})^o}) \rightarrow
+\Gamma (\beta _m(I^{(m+1)})^o, F|_{\beta _m(I^{(m+1)})^o})
+$$
+are fibrant (by one of the remarks above,
+which we had applied to $Y$, and
+which we apply here to $I^{(m+1)}$). So the decomposition of $\Gamma (\beta
+_{m+1}(Y)^o, F|_{\beta _{m+1}(Y)^o})$ into a fibred product is
+also a homotopy fibred product.
+
+One has exactly the same decomposition (which we do not rewrite) for
+$$
+Sect ^{eq}(\beta
+_{m+1}(Y), \int '_{\beta _{m+1}(Y)} F|_{\beta _{m+1}(Y)} ),
+$$
+and this decomposition is also a
+homotopy fibred product. Indeed, the decomposition of
+$\beta _{m+1}(Y)$ into a coproduct is a coproduct decomposition of
+Segal $1$-precategories, whence the decomposition for the sections; and
+the morphism on the sections which corresponds to $\beta
+_m(I^{(m+1)})\hookrightarrow \beta (I^{(m+1)})$ is a fibration, whence
+it follows that
+the fibred product in the decomposition is a homotopy fibred product.
+
+One now remarks that one has
+$$
+\Gamma (\beta (Y)^o, F)
+= \lim _{\leftarrow , m}
+\Gamma (\beta _m(Y)^o, F|_{\beta _m(Y)^o}),
+$$
+and this limit is a limit in which all the morphisms are fibrant;
+it is therefore also a homotopy limit. Moreover, one has
+$$
+Sect ^{eq}(\beta (Y), \int '_{\beta (Y)} F)=
+\lim _{\leftarrow , m}
+Sect ^{eq}(\beta
+_{m}(Y), \int '_{\beta _{m}(Y)} F|_{\beta _{m}(Y)} ),
+$$
+and this limit is again a limit in which the morphisms are fibrant, so
+it is a homotopy limit.
+
+Because of these last remarks on limits,
+it suffices to prove that the morphisms
+$$
+\Gamma (\beta _m(Y)^o, F|_{\beta _m(Y)^o})\rightarrow
+Sect ^{eq}(\beta _m(Y), \int
+'_{\beta _m(Y)}F |_{\beta _m(Y)})
+$$
+are equivalences. We shall do this by induction on $m$.
+We may assume that this is known for $m$, for all
+the initial data $(Y,A)$ and
+for every choice of $F$. One can in particular apply
+the induction hypothesis to obtain that the morphism
+$$
+\Gamma (\beta _m(I^{(m+1)})^o, F|_{\beta _m(I^{(m+1)})^o})
+\rightarrow Sect ^{eq}(\beta _m(I^{(m+1)}), \int
+'_{\beta _m(I^{(m+1)})}F |_{\beta _m(I^{(m+1)})})
+$$
+is an equivalence
+(because, in reality, $F|_{\beta (I^{(m+1)})^o}$ could just as well
+have come from the pair
+$(I^{(m+1)}, A|_{I^{(m+1), o}})$). In view of our decompositions of the two
+sides of the morphism
+$$
+\Gamma (\beta _{m+1}(Y)^o, F|_{\beta _{m+1}(Y)^o})\rightarrow
+Sect ^{eq}(\beta _{m+1}(Y),
+\int '_{\beta _{m+1}(Y)}F |_{\beta _{m+1}(Y)})
+$$
+into homotopy fibred products, and in view of the induction hypothesis, it
+suffices, to obtain that this is an equivalence, to prove that the
+morphism
+$$
+\Gamma (\beta (I^{(m+1)})^o, F|_{\beta (I^{(m+1)})^o})\rightarrow
+Sect ^{eq}(\beta (I^{(m+1)}),
+\int '_{\beta (I^{(m+1)})}F |_{\beta (I^{(m+1)})})
+$$
+is an equivalence.
+
+Running our argument above backwards,
+one sees that it suffices to prove that the morphism
+$$
+\Gamma (I^{(m+1),o}, A|_{I^{(m+1),o}})\rightarrow
+Sect ^{eq}(I^{(m+1)},
+\int '_{I^{(m+1)}}A |_{I^{(m+1)}})
+$$
+is an equivalence.
+In sum, we have now reduced ourselves to proving the proposition for
+the case $Y= I^{(m+1)}$.
+
+To simplify the notation, one sets $p:= m+1$ and
+one will
+prove the proposition in the case $Y:= I^{(p)}$. For two objects
+$i$ and $j$ of $Y$, one has
+an arrow $i\rightarrow j$ for $i\leq
+j$. In particular, $0$ is the initial object of $Y$. If $A$ is a Segal $n$-prestack
+on $Y^o$, one has
+$$
+\Gamma (Y, A^o) =A(0).
+$$
+It is therefore a question (in view of lemma \ref{inchange}) of proving that
+the morphism
+$$
+Sect ^{eq}(Y, \int '_YA)\rightarrow A'(0)
+$$
+is an equivalence (here $A'(0)$ is the fibre of $\int '_YA$ over
+$0\in Y$, which is equivalent to $A(0)$). By writing the weak
+equivalence of Segal $1$-precategories
+$$
+I\cup ^{\{ 1\}} I \cup ^{\{ 2\} } \cup \ldots \cup ^{\{ (p-1)\} } I
+\rightarrow Y
+$$
+one sees that it suffices to treat the case $Y=I$, i.e. to prove that
+$$
+Sect ^{eq} (I, \int '_IA)\rightarrow A'(0)
+$$
+is an equivalence.
+But this is the result of lemma \ref{casi}, which completes
+the proof of the proposition
+\ref{gammasect}. \eop
+
+
+
+
+
+
+This statement, combined with proposition \ref{calclim},
+indicates
+that if $A$ is a strict functor from a $1$-category $Y$ to $nSeCat$
+one can compute its limit by means of the sections of the integral:
+$$
+\lim _{\leftarrow , Y}A \cong Sect ^{\rm eq}(Y, \int '_YA).
+$$
+There is a ``dual'' result (but which does not follow from it by duality)
+which allows the computation of colimits: it is Thomason's theorem
+\cite{ThomasonLimits}
+in the case of simplicial presheaves ($n=0$). For arbitrary $n$,
+we formulate it as a conjecture.
+
+
+\begin{conjecture}
+Let $A$ be a presheaf of Segal $n$-categories over $Y^o$.
+Let $horiz$ be the set of ``horizontal'' arrows, i.e. from $y$ to
+$res_f(y)$
+corresponding to the identity of $res_f(y)$, in $\int _YA$. Then
+one has
+$$
+\lim _{\rightarrow , Y} A \cong nSeL(\int _YA, horiz )
+$$
+i.e. the colimit of $A$ over $Y$ is computed by localising $\int _YA$ at the
+horizontal $1$-arrows.
+\end{conjecture}
+
+
+We end this section with the formulation of a problem. In
+SGA1, the theory of stacks and of descent was envisaged in the
+framework
+of {\em fibred categories} \cite{SGA1} \cite{GiraudThese}, but we
+have taken up above only the easy half of this, i.e. the construction
+of a ``fibred Segal $n$-category'' from a strict presheaf
+of Segal $n$-categories.
+
+\begin{problem}
+\label{problemefibree}
+Define a notion of {\em fibred Segal $n$-category}
+$F\rightarrow \Yy$ over a $1$-category $\Yy$ (or even ---more
+difficult--- over another Segal $n$-category), and establish
+the correspondence with our Segal $n$-stacks. For example, define the
+Segal $n+1$-category $nSeCATFIB /\Yy $ of fibred Segal
+$n$-categories over $Y$ and give an equivalence $nSeCATFIB
+/\Yy \cong nSeCHAMP (\Yy ^{\rm gro})$.
+
+This equivalence should pass through
+a construction $A\mapsto \int _{\Yy} A$ for every weak morphism $A$, i.e.
+morphism $A: \Yy ^o\rightarrow nSeCAT'$.
+\end{problem}
+

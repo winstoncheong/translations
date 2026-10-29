@@ -1,0 +1,248 @@
+%@ pages 1-3
+%@ status translated
+% Title page, abstract, translator's note and contents.
+% The original's title, authors, English abstract and French "Résumé"
+% occupy pp. 1--3; the hand-written Sommaire follows on p. 3.
+%
+% The English abstract is the authors' own text and is reproduced verbatim.
+% The French "Résumé" is not reprinted: it duplicates the abstract.
+
+\maketitle
+
+\noindent
+\textit{Originally published in French as ``Descente pour les $n$-champs'',
+arXiv:math/9807049v3 (13 March 2001). This is an English translation of the
+body; the French original remains authoritative.}
+
+\bigskip
+
+\begin{abstract}
+\noindent
+We develop the theory of $n$-stacks (or more generally Segal $n$-stacks
+which are $\infty$-stacks such that the morphisms are invertible above
+degree $n$). This is done by systematically using the theory of
+closed model categories (cmc). Our main results are: a definition of
+$n$-stacks in terms of limits, which should be perfectly general for stacks
+of any type of objects; several other characterizations of $n$-stacks in
+terms of ``effectivity of descent data''; construction of the stack
+associated to an $n$-prestack; a strictification result saying that any
+``weak'' $n$-stack is equivalent to a (strict) $n$-stack; and a descent
+result saying that the $(n+1)$-prestack of $n$-stacks (on a site) is an
+$(n+1)$-stack. As for other examples, we start from a ``left Quillen
+presheaf'' of cmc's and introduce the associated Segal $1$-prestack. For
+this situation, we prove a general descent result, giving sufficient
+conditions for this prestack to be a stack. This applies to the case of
+complexes, saying how complexes of sheaves of $\Oo$-modules can be glued
+together via quasi-isomorphisms. This was the problem that originally
+motivated us.
+\end{abstract}
+
+\bigskip
+
+\noindent
+\textit{Translator's note.} The authors' v3 errata header, which records an
+error in Proposition~6.1/Lemma~6.2 and its consequences for 10.11, 12.1,
+14.4, 15.8, 19.4 and 21.1, is preserved in the source and is reproduced in
+the relevant places. The mathematical content itself has not been
+independently checked. French terminology is translated as recorded in
+\texttt{terminology.tex}; a few terms are kept in French at first
+occurrence because they are part of the history.
+
+\newpage
+
+\begin{center}
+{\Large \underline{Contents}}
+\end{center}
+
+\noindent
+{\bf 1. Introduction}---p. \pageref{intropage}
+\newline
+{\small
+Motivation, description of the results.
+}
+
+\noindent
+{\bf 2. Segal $n$-categories}---p. \pageref{ncatsegpage}
+\newline
+{\small
+Definition of Segal $n$-categories, truncation, interior. The general
+method for obtaining a cmc structure, and its application to Segal
+$n$-categories. Homotopy classes of morphisms.}
+
+\noindent
+{\bf 3. Segal $n$-prestacks}---p. \pageref{nchampsegpage}
+\newline
+{\small
+The cmc structure for Segal $n$-prestacks (notions of weak equivalence,
+cofibration, fibration), comparison with the coarse topology, compatibility
+with truncation, properness. Descent data.}
+
+\noindent
+{\bf 4. The functorialities $p^{\ast}$, $p_{\ast}$, $p_!$}---p.
+\pageref{fonctorialitepage}
+\newline
+{\small
+Relation between Segal $n$-prestacks on $\Xx$ and $\Zz$ for a functor
+$p:\Zz\rightarrow \Xx$, criteria for preservation of fibrant objects.}
+
+\noindent
+{\bf 5. The Bousfield--Kan-type structure after Hirschhorn}---p.
+\pageref{bousfieldkanpage}
+\newline
+{\small
+The HBKQ cmc structure for Segal $n$-prestacks, in which the cofibrations
+are obtained by freely adding cells; application to the notion of descent
+data.}
+
+\noindent
+{\bf 6. The localisation viewpoint}---p.
+\pageref{localisationpage}
+\newline
+{\small
+The cmc's of Segal $n$-prestacks for the topology $\Gg$ can be obtained
+from the cmc's for the coarse topology by inverting the arrows corresponding
+to the sieves of $\Gg$.}
+
+\noindent
+{\bf 7. Segal categories and simplicial categories}---p.
+\pageref{segsimplpage}
+\newline
+{\small
+Relation between Segal $1$-categories and simplicial categories; homotopy
+products and coproducts and the Gabriel--Zisman argument.}
+
+\noindent
+{\bf 8. Dwyer--Kan localisation}---p.
+\pageref{dwyerkanpage}
+\newline
+{\small
+Dwyer--Kan localisation provides many examples of simplicial categories,
+and moreover makes it possible to show that every Segal $1$-category is
+equivalent to a simplicial category.}
+
+\noindent
+{\bf 9. A first definition of stack}---p.
+\pageref{notionchamppage}
+\newline
+{\small
+Definition of Segal $n$-stack as a Segal $n$-prestack $A$ whose $A(X)$ are
+Segal $n$-categories and for which the morphism $A\rightarrow A'$ to the
+$\Gg$-fibrant replacement is an object-by-object equivalence. Notion of
+associated stack, compatibilities.}
+
+\noindent
+{\bf 10. Criteria for a prestack to be a stack}---p.
+\pageref{caracterisationpage}
+\newline
+{\small
+$A$ is a Segal $n$-stack if and only if the $A_{1/}(x,y)$ are Segal
+$n-1$-stacks on $\Xx /X$ for all $x,y\in A_0(X)$, and if the descent data
+for a sieve $\Bb \subset \Xx /X$ are effective. Several versions of this
+criterion are given.}
+
+\noindent
+{\bf 11. Internal model categories}---p.
+\pageref{cmipage}
+\newline
+{\small
+We define the notion of internal model category and use it to define the
+$n+1$-prestack $nSe\underline{CHAMP}(\Xx )$ of Segal $n$-stacks over $\Xx$,
+as well as its Segal $n+1$-category $nSeCHAMP(\Xx )$ of global sections.
+Comparison with the Dwyer--Kan localisation.}
+
+\noindent
+{\bf 12. The universal family}---p.
+\pageref{universellepage}
+\newline
+{\small
+We define a morphism $nSeCHAMP(\Xx )\rightarrow \underline{Hom}(\Xx ^o,
+nSeCAT')$, show that it is fully faithful (and state the result
+\ref{correlation}, which identifies its essential image). This leads us to
+a new version of the notion of stack.}
+
+\noindent
+{\bf 13. The stack associated to a prestack}---p.
+\pageref{associepage}
+\newline
+{\small
+We define the functor ``stack associated to a prestack'' from
+$nSeCHAMP(\Xx ^{\rm gro})$ to $nSeCHAMP (\Xx ^{\Gg})$, which is adjoint to
+the inclusion functor in the other direction.}
+
+\noindent
+{\bf 14. Limits}---p.
+\pageref{limitespage}
+\newline
+{\small
+Computation of limits using cmc structures; definition of stacks in terms
+of limits.}
+
+\noindent
+{\bf 15. A little more on the descent condition}---p.
+\pageref{peupluspage}
+\newline
+{\small
+We redo the criteria of \S10 in terms of limits, and make explicit the
+computation of these limits in the case of a sieve defined by a covering
+family, in terms of limits taken over $\Delta$.}
+
+\noindent
+{\bf 16. The Grothendieck construction}---p.
+\pageref{gropage}
+\newline
+{\small
+We construct the ``$n$-fibred category'' associated to an $n$-prestack over
+a category, an operation denoted like an integral following Thomason. We
+compare the sections of the $n$-prestack and those of the associated
+$n$-fibred category.}
+
+\noindent
+{\bf 17. Quillen presheaves}---p.
+\pageref{quipage}
+\newline
+{\small
+We introduce the notion of left Quillen presheaf, a kind of presheaf of
+cmc's in which the restriction functors are left Quillen functors. We give
+various cmc structures for the sections of the integral of a Quillen
+presheaf.}
+
+\noindent
+{\bf 18. Strictification}---p.
+\pageref{strictpage}
+\newline
+{\small
+We strictify the weak sections of Segal $1$-prestacks which come from
+Quillen presheaves by Dwyer--Kan localisation. This makes it possible to
+strictify weak families of Segal $n$-categories into Segal $n$-prestacks.
+End of the proof of \ref{correlation}.}
+
+\noindent
+{\bf 19. Descent for left Quillen presheaves}---p.
+\pageref{quidescentepage}
+\newline
+{\small
+For a left Quillen presheaf $\mm$ we give a criterion for the associated
+Segal $1$-prestack $L(\mm )$ to be a stack.}
+
+\noindent
+{\bf 20. Example: descent for $n$-stacks}---p.
+\pageref{exemplepage}
+\newline
+{\small
+We use the criterion of \S19 to prove that $nSe\underline{CHAMP}(\Xx )$ is a
+Segal $n+1$-stack. This generalises the classical theorem on the gluing of
+sheaves. We also give a direct proof.}
+
+\noindent
+{\bf 21. Example: descent for complexes}---p.
+\pageref{complexepage}
+\newline
+{\small
+We use the criterion of \S19 to prove that $L(Cpx _{\Oo},qis)$ is a Segal
+$1$-stack, for a reasonable ringed site $(\Xx , \Oo )$. We state a
+geometricity result for the moduli stack of perfect complexes.}
+
+\bigskip
+
+\noindent
+\textit{References}---p. \pageref{references}.
