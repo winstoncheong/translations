@@ -234,6 +234,10 @@ jobs:
           name: pdf-${{ matrix.document }}
           path: ${{ matrix.document }}/build/${{ matrix.document }}.pdf
           if-no-files-found: error
+          # Only the site job in this same run needs the artifact.  Keep it
+          # briefly rather than the repository default (90 days for public
+          # repositories), so the artifact list stays small.
+          retention-days: 7
 
   # ------------------------------------------------------------------
   # Assemble the static site and hand it to GitHub Pages.

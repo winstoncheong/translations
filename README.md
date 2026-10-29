@@ -99,6 +99,10 @@ To enable the site: **Settings → Pages → Source: GitHub Actions**. A push
 that changes a document rebuilds that document and redeploys the site;
 unchanged PDFs are reused from the current deployment rather than rebuilt.
 
+Build artifacts are kept for 7 days (`retention-days: 7`); they only need to
+survive the site job of the same run. The published PDFs on Pages are
+independent of that retention.
+
 The `report` job's French-leftover check is a safety net against passages that
 were copied over instead of translated. It is a warning by default (a word list
 cannot be perfect); run the workflow manually with the `strict` input to make
